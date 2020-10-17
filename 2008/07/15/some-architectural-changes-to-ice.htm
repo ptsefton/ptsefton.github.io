@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Some architectural changes to ICE - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2008/07/15/some-architectural-changes-to-ice.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="View as PDF This post is a look at some architectural changes we&#39;re looking at for the ICEsystem, as we hit the limits of what we could squeeze out of the old architecture. Ron Ward has just finished a major rewrite of lots of the application, designed to make …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Some architectural changes to ICE"/>
+        <meta property="og:url" content="../../../2008/07/15/some-architectural-changes-to-ice.htm"/>
+        <meta property="og:description" content="View as PDF This post is a look at some architectural changes we&#39;re looking at for the ICEsystem, as we hit the limits of what we could squeeze out of the old architecture. Ron Ward has just finished a major rewrite of lots of the application, designed to make …"/>
+        <meta property="article:published_time" content="2008-07-15" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2008/07/15/some-architectural-changes-to-ice.htm"
+                       rel="bookmark"
+                       title="Permalink to Some architectural changes to ICE">
+                        Some architectural changes to ICE
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-07-15T06:59:23+00:00"> Tue 15 July 2008</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p><span class="pdf-rendition-link"><a href="/wp-content/uploads/2008/07/ice-architecture.pdf">View as
+PDF</a></span></p>
+<div class="page-toc">
+</div>
+<div>
+<p>This post is a look at some architectural changes we're looking at for
+the <a href="http://ice.usq.edu.au/">ICE</a>system, as we hit the limits of what we
+could squeeze out of the old architecture.</p>
+<p>Ron Ward has just finished a major rewrite of lots of the application,
+designed to make it work on a central web server with multiple users, in
+addition to the 'classic' mode where everyone has their own ICE server
+running on their own computer. He's spent the last few months trying to
+get Subversion to do things it was clearly never meant to do.</p>
+<p>ICE uses Subversion as a back-end version controlled data store. In the
+ICE classic mode multiple users work with checked-out working copies of
+a repository and hit 'Sync' to send their changes back to the server and
+get updates. Behind the Sync button is a fiendishly complicated bit of
+code that gets updates from the server, detects conflicts, tries to
+resolve them as gracefully as possible and provide a usable web GUI for
+the authors.</p>
+<p><span
+style="display: block"><a name="Object1"></a><img src="/wp-content/uploads/2008/07/785b09d7.gif" alt="Object1" /></span>Figure
+1: ICE Classic mode: each user has their own ICE application which looks
+after their working copy, ICE uses the Subversion protocol to
+synchronize everyone's work</p>
+<p>Ron's big rewrite has lots of unit tests based on all the trouble we've
+come across (mis)using Subversion for the last couple of years so we're
+happy that it will be robust when running in classic mode.</p>
+<p>But the new server version is a problem. If you have multiple users
+trying to access the same working copy all at once, then Subversion gets
+in the way <span class="spCh spChx2013">–</span> it starts locking files
+all over the place for example. One simple solution is just to put out a
+server version that doesn't allow distributed editing like ICE classic
+does, but our courseware authors really need the ability to manage large
+volumes of stuff on their own PCs as some courses are pretty big, with a
+lot of digital assets, while we want to have web access for reviewers
+and casual contributors to the same courses via a central web service.</p>
+<p>So we're looking at a new server mode where ICE still has a working copy
+but it knows that it is the only user-agent who has it checked out so it
+doesn't need to do updates, it can just do commits. If all you want is a
+web based content management system then this will be all you need to
+install and it should run pretty well.</p>
+<p>If you are following this technobabble then you'll be asking <span
+class="spCh spChx201c">“</span>but how does that help the ICE classic
+users work when there's an ICE server? That would mean that changes made
+on an ICE client would never make it to the server!<span
+class="spCh spChx201d">”</span></p>
+<p><span
+style="display: block"><a name="Object2"></a><img src="/wp-content/uploads/2008/07/m423f1e98.gif" alt="Object2" /></span>Figure
+2: ICE Server mode: No subversion updates required as it is the only
+user-agent committing changes to the working copy</p>
+<p>That's the tricky part <span class="spCh spChx2013">–</span> we need to
+create a new mode of operation for ICE where people want the benefits of
+the server version AND the classic distributed mode of working. In this
+mode the ICE application will work in a new 'client' mode. It will only
+ever get updates from the central repository. Any additions or changes
+won't be fed back to subversion directly <span
+class="spCh spChx2013">–</span> the ICE client will post them just like
+any other user into the ICE server.
+This will require some more coding, but probably not as much as it would
+have taken to get the ICE server working any other way <span
+class="spCh spChx2013">–</span> and it opens up the possibility that we
+can replace Subversion and use a simpler version control system,
+possibly of our own devising in future. So a future model might have the
+ICE server acting not only as interface for humans but for other ICE
+systems.</p>
+<p><span
+style="display: block"><a name="Object3"></a><img src="/wp-content/uploads/2008/07/m1c10f8b2.gif" alt="Object3" /></span>Figure
+3: ICE Client mode: Users can update their local repository but all
+changes go via the ICE server. We will automate this so it is seamless
+for users.</p>
+<p>Having made this architectural decision we can press on with testing the
+ICE server straight away, even without making any changes to the client
+version. Here's the plan which we will roll through over then few weeks:</p>
+<ol>
+<li>
+<p>For the repositories which currently allow both server and classic
+access we turn off the ability for users to commit using ICE
+classic. If people want to check out their own copy of the content
+they can, as long as they post their changes back in through the
+server version manually.</p>
+</li>
+<li>
+<p>We modify the ICE server so it now assumes that it has THE working
+copy and only commits changes <span class="spCh spChx2013">–</span>
+never updates <span class="spCh spChx2013">–</span> this will mean
+we can support multiple users with no dramas (that's the plan
+anyway).</p>
+</li>
+<li>
+<p>We will make a new client mode for ICE which automate the process of
+detecting changes and posting them from the client version of ICE
+through the 'front door' of the server version pretty much like any
+other user. Updates will happen as they do now, from the subversion
+repository.</p>
+</li>
+</ol>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'some-architectural-changes-to-ice';
+                var disqus_url = 'http://ptsefton.com/2008/07/15/some-architectural-changes-to-ice.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

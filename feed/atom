@@ -1,0 +1,2656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>/</id><updated>2020-03-24T00:00:00+01:00</updated><entry><title>You won't believe this shocking semantic web trick I use to avoid publishing my own ontologies! Will I end up going to hell for this?</title><link href="2020/03/24/semantic_web_hacks.htm" rel="alternate"></link><published>2020-03-24T00:00:00+01:00</published><updated>2020-03-24T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:None,2020-03-24:2020/03/24/semantic_web_hacks.htm</id><summary type="html">&lt;p&gt;[Update - as soon as this went live I spotted an error in the final example and fixed it].&lt;/p&gt;
+&lt;p&gt;In this post I describe a disgusting, filthy, but possibly beautiful hack* I
+devised to get around a common problem in data description using semantic web
+techniques, specifically JSON-LD and schema.org …&lt;/p&gt;</summary><content type="html">&lt;p&gt;[Update - as soon as this went live I spotted an error in the final example and fixed it].&lt;/p&gt;
+&lt;p&gt;In this post I describe a disgusting, filthy, but possibly beautiful hack* I
+devised to get around a common problem in data description using semantic web
+techniques, specifically JSON-LD and schema.org . How can we allow people who
+don't happen to be Semantic Web über-geeks to be able to define their own
+vocabularies when they need to go beyond common vocabularies like schema.org?&lt;/p&gt;
+&lt;p&gt;* You tell me - beautiful or evil?&lt;/p&gt;
+&lt;p&gt;&lt;a href="#spoiler"&gt;Jump to the spoiler at end - actually there are two hacks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For the last few years most of the posts on this blog have been presentations
+I've given at conferences, for example there's a series of posts on &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt;,
+the
+&lt;a href="http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm"&gt;most recent of which&lt;/a&gt;
+was from eResearch Australasia. &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt; is a specification for describing and packaging
+research data (could be any data, really, but the main use cases that drove
+development come from research).&lt;/p&gt;
+&lt;p&gt;RO-Crate uses &lt;a href="https://json-ld.org/"&gt;JSON-LD&lt;/a&gt; as its main metadata format, with vocabulary terms which
+mostly come from Schema.org: this makes it reasonably&lt;br /&gt;
+easy for developers to write tools to generate good-quality low-ambiguity metadata in an
+extensible way. I'm not going to do a full JSON-LD tutorial, but to give you an idea
+RO-CRATE JSON-LD looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;@id&amp;quot;: &amp;quot;./&amp;quot;,
+    &amp;quot;@type&amp;quot;: &amp;quot;Dataset&amp;quot;,
+    &amp;quot;name&amp;quot;: &amp;quot;My dataset&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is easy to work with because it's just &lt;a href="https://en.wikipedia.org/wiki/JSON"&gt;JSON&lt;/a&gt;, with a trick up its sleeve - the keys in the JSON object, such as &lt;code&gt;name&lt;/code&gt; are are defined in a 'context'. At its simplest, the context is a just a lookup between a key and a URI - in this case the context is defined like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;@context&amp;quot;: &amp;quot;https://w3id.org/ro/crate/1.0/context&amp;quot;,
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And in the JSON document you get from &lt;a href="https://w3id.org/ro/crate/1.0/context"&gt;https://w3id.org/ro/crate/1.0/context&lt;/a&gt;, among a few hundred other properties is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;     &amp;quot;name&amp;quot;: &amp;quot;http://schema.org/name&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you go to &lt;a href="http://schema.org/name"&gt;http://schema.org/name&lt;/a&gt; you can read a definition of the &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Having definitions is important. Let's take the metadata term &amp;quot;title&amp;quot;. In Dublin Core
+&lt;a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/title/"&gt;title's the name of a resource&lt;/a&gt;
+in
+&lt;a href="http://xmlns.com/foaf/spec/#term_title"&gt;FOAF it's a title as in Mr, Mrs, Dr, Reverend etc&lt;/a&gt;
+in &lt;a href="https://schema.org/title"&gt;schema.org title's a job title&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With all these terms I can use a URI to get to a human readable page to read about the term but here's our problem:
+not everyone has the resources to define metadata terms by making an ontology and hosting it somewhere online.&lt;/p&gt;
+&lt;p&gt;So, what to do when you want to describe something, and provide some definitions
+but there's no obvious ontology to hand?&lt;/p&gt;
+&lt;p&gt;Lets look at an example.
+&lt;a href="https://orcid.org/0000-0002-9369-5862"&gt;Dr Alana Piper&lt;/a&gt; at UTS has some criminal
+history data, which includes transcriptions of prison records - she sent  me a
+spreadsheet with data on about 2600 prison records in PDF format.&lt;/p&gt;
+&lt;p&gt;Some of the variables in Alana's data were
+easy to map to schema.org vocabulary, like &lt;a href="http://schema.org/name"&gt;name&lt;/a&gt; and
+&lt;a href="http://schema.org/birthDate"&gt;birthDate&lt;/a&gt; but some others that are not defined in
+a handy online ontology, like &lt;code&gt;sentence&lt;/code&gt; and &lt;code&gt;offence&lt;/code&gt;. You can see some sample
+data of Alana's
+&lt;a href="https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/ConvictionsSample/#action_1"&gt;here in an RO-Crate&lt;/a&gt;.
+RO-Crates come with web-previews - this is a bit of data that refers to a
+&lt;code&gt;sentence&lt;/code&gt; for one Nora Abbot for the &lt;code&gt;offence&lt;/code&gt; of Vagrancy.&lt;/p&gt;
+&lt;p&gt;I like JSON-LD in general but if you don't define mappings for the keys you're
+using then when you use JSON-LD software to process the files the undefined keys
+and their values disappear from your document, which is &lt;em&gt;not&lt;/em&gt; user or developer
+friendly. I don't like that at all - nobody expects their data to be discarded
+when self-important, opinionated software library feels like it.&lt;/p&gt;
+&lt;p&gt;And more annoyingly, if you have an ad-hoc vocabulary there's no way to define
+that in your JSON-LD file or even the data that ships with it. Context keys MUST
+map to complete URLs.&lt;/p&gt;
+&lt;p&gt;There's a workaround. You can use a catch all &lt;code&gt;@vocab&lt;/code&gt; key in the &lt;code&gt;@context&lt;/code&gt; for
+your JSON-LD which points to a URI so that any undefined terms get forced into a
+particular vocabulary. Schema.org does this - so if you use that context then
+you use whatever terms you like and JSON-LD processors won't swallow your data
+BUT that's cheating and it's not useful as you don't get real URIs that can be
+resolved to read a definition of the term. You get FAKE URIs.&lt;/p&gt;
+&lt;p&gt;Here's a screenshot of what the initial RO-Crate I made with Alana's data looked
+like - it shows that some of terms (like &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;startTime&lt;/code&gt; and &lt;code&gt;location&lt;/code&gt; are
+defined - these have a question-mark link beside them you can follow to read the
+definition. But a couple of others (&lt;code&gt;sentence&lt;/code&gt; and &lt;code&gt;offence&lt;/code&gt;) didn't have
+definitions - cos while they do map to a URI, The URI is a FAKE and it's not
+listed in the official RO-Crate @context.&lt;/p&gt;
+&lt;img src="blog/semantic-web-hackery/sentence.png" alt="Screen capture of metadata in RO-CRATE, described above"&gt;
+&lt;p&gt;I've been thinking about this a lot, and looking for approaches
+to publishing light-weight semantic web vocabs (about which I found pretty much
+nothing) and eventually I came across some &lt;a href="http://ptsefton.com/2009/04/08/journal-20-embedding-semantics-in-documents.htm"&gt;very interesting work&lt;/a&gt; from ten years ago, which
+looked at how to encode semantic statements into a URL for use in content
+authoring systems that don't allow entry of linked data directly. The solution was to
+encode semantic web stuff like &lt;code&gt;this-document&lt;/code&gt; &lt;code&gt;has-author&lt;/code&gt; &lt;code&gt;https://orcid.org/0000-0002-3545-944X&lt;/code&gt;  into a URL. Hey, that idea could be adapted to this situation.&lt;/p&gt;
+&lt;p&gt;Anyway, what I came up with &lt;em&gt;this&lt;/em&gt; decade was the idea of coding the entire
+definition for property into a URL so we can put that URL into a local context.
+Stupid? Probably. Naughty Fun that's likely to get disapproving looks from
+computer scientists and semantic-web purists? Certainly.&lt;/p&gt;
+&lt;p&gt;Ok, so what does a definition for a property look like? We can ask the schema.org
+server about that from the command line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl  -L -H &amp;quot;Accept: application/ld+json&amp;quot; schema.org/name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we do that, we get: some JSON-LD which I've pruned a bit here:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;@context&amp;quot;: {
+    &amp;quot;schema&amp;quot;: &amp;quot;http://schema.org/&amp;quot;,
+    ...
+    &amp;quot;rdf&amp;quot;: &amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;quot;,
+    &amp;quot;rdfa&amp;quot;: &amp;quot;http://www.w3.org/ns/rdfa#&amp;quot;,
+    &amp;quot;rdfs&amp;quot;: &amp;quot;http://www.w3.org/2000/01/rdf-schema#&amp;quot;,
+    &amp;quot;schema&amp;quot;: &amp;quot;http://schema.org/&amp;quot;,
+   ...
+  },
+  &amp;quot;@id&amp;quot;: &amp;quot;schema:name&amp;quot;,
+  &amp;quot;@type&amp;quot;: &amp;quot;rdf:Property&amp;quot;,
+  
+  ...
+  &amp;quot;rdfs:comment&amp;quot;: &amp;quot;The name of the item.&amp;quot;,
+  &amp;quot;rdfs:label&amp;quot;: &amp;quot;name&amp;quot;,
+   ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Seems to me the MVD (that's &amp;quot;Minimum Viable Document&amp;quot;) for defining
+a property are an &lt;code&gt;@id&lt;/code&gt;, &lt;code&gt;rdf:label&lt;/code&gt; and the &lt;code&gt;rdfs:comment&lt;/code&gt; so I threw together a
+simple single-page web thing on the examples bit of our repository server at
+work that would decode those out of a URL and, well, just show them to you (and I linked to it via
+the venerable PURL service so it doesn't need a domain name).&lt;/p&gt;
+&lt;a name="spoiler"&gt; 
+&lt;h1&gt;Hack 1&lt;/h1&gt;
+&lt;/a&gt;
+&lt;p&gt;So, my first filthy web hack was to change the code I used to generate the RO-Crate of Alana's data - fed it some extra config with definitions of her metadata terms, then set up a super simple one-page web app which ACTs like it's the documentation for an ontology, but actually, you supply your own documentation, in the form of a link, like this:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://purl.org/adhoc?@type=rdf:Property&amp;rdfs:label=sentence&amp;rdfs:comment=Penalty imposed by court for criminal conviction. As the data is drawn from prison records, this will usually consist of a specified term of imprisonment and the type of imprisonment conditions, e.g. 6 months hard labour. However, during this historical period it was common for persons convicted of a minor offence to be sentenced to a fine 'with the option' of a prison sentence if they were unable to pay it. After the introduction in Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been declared 'habitual criminals' could also receive an indefinite sentence that meant they were imprisoned until the government authorities determined that they had sufficiently reformed. Some prisoners also faced additional penalties in addition to their prison sentence, such as periods of solitary confinement, in irons or whippings.&amp;@id=http%3A%2F%2Fpurl.org%2Fadhoc%3F%40type%3Drdf%3AProperty%26rdfs%3Alabel%3Dsentence"&gt;http://purl.org/adhoc?@type=rdf:Property&amp;amp;rdfs:label=sentence&amp;amp;rdfs:comment=Penalty imposed by court for criminal conviction. As the data is drawn from prison records, this will usually consist of a specified term of imprisonment and the type of imprisonment conditions, e.g. 6 months hard labour. However, during this historical period it was common for persons convicted of a minor offence to be sentenced to a fine 'with the option' of a prison sentence if they were unable to pay it. After the introduction in Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been declared 'habitual criminals' could also receive an indefinite sentence that meant they were imprisoned until the government authorities determined that they had sufficiently reformed. Some prisoners also faced additional penalties in addition to their prison sentence, such as periods of solitary confinement, in irons or whippings.&amp;amp;@id=http%3A%2F%2Fpurl.org%2Fadhoc%3F%40type%3Drdf%3AProperty%26rdfs%3Alabel%3Dsentence&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Follow that and you get a page something like this (it will change and may be removed by the internet police):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1&gt;Property: sentence&lt;/h1&gt;
+&lt;p&gt;@id: http://purl.org/adhoc?@type=rdf:Property&amp;amp;rdfs:label=sentence&lt;/p&gt;
+&lt;p&gt;Label: sentence&lt;/p&gt;
+&lt;h2&gt;Description:&lt;/h2&gt;
+&lt;p&gt;Penalty imposed by court for criminal conviction. As the data is
+drawn from prison records, this will usually consist of a specified term of
+imprisonment and the type of imprisonment conditions, e.g. 6 months hard
+labour. However, during this historical period it was common for persons
+convicted of a minor offence to be sentenced to a fine 'with the option' of a
+prison sentence if they were unable to pay it. After the introduction in
+Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been
+declared 'habitual criminals' could also receive an indefinite sentence that
+meant they were imprisoned until the government authorities determined that
+they had sufficiently reformed. Some prisoners also faced additional penalties
+in addition to their prison sentence, such as periods of solitary confinement,
+in irons or whippings.&lt;/p&gt;
+&lt;p&gt;To use this property use this text Copy to clipboard &amp;lt;...&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;See what I did there? Got around the limitations of JSON-LD and its (I think
+harmful) insistence that context terms must resolve to URLs and supplied a
+self-documenting URL which, at least in the context of RO-Crate will allow a user to see
+something &lt;em&gt;useful&lt;/em&gt; when they view the data.&lt;/p&gt;
+&lt;p&gt;(If JSON-LD is Linked Data encoded in JSON then this must be &lt;em&gt;URL-LD&lt;/em&gt;,
+linked data encoded in URLs - or is it &lt;em&gt;URI-LD&lt;/em&gt;?)&lt;/p&gt;
+&lt;h2&gt;Hack 2&lt;/h2&gt;
+&lt;p&gt;Having done this work, and actually put up that web page to illustrate it I then came up with what might be a more elegant solution to the actual problem at hand, which is shipping usable definitions of ad-hoc terms around in an &lt;a href="https://researchobject.github.io/ro-crate/1.0/#ro-crate-metadata-file-ro-crate-metadatajsonld"&gt;RO-Crate Metadata File&lt;/a&gt;. The trick is similar to something we already do in RO-Crate to make metadata as useful as possible. The thing is, some URIs in the semantic web world don't actually resolve to anything usable by most humans which means that in the &lt;a href="https://researchobject.github.io/ro-crate/1.0/#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files"&gt;RO-Crate Website&lt;/a&gt; that can accompany a crate the explanatory links are not helpful, so we came up with a way to provide links that &lt;em&gt;are&lt;/em&gt; useful by adding an item to the RO-CRate metadata that species a more useful link using the &lt;em&gt;sameAs&lt;/em&gt; property.&lt;/p&gt;
+&lt;p&gt;The example in the RO-Crate spec uses the BIBO &lt;code&gt;interviewee&lt;/code&gt; property. It's URL does not resolve to a useful page (that used to be because it went to an RDF file not a web page, but is doubly so at time of writing because it resolves to an error page at purl.org).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;@context&amp;quot;: [ 
+    &amp;quot;https://w3id.org/ro/crate/1.0/context&amp;quot;,
+    {&amp;quot;interviewee&amp;quot;: &amp;quot;http://purl.org/ontology/bibo/interviewee&amp;quot;},
+  ],
+  &amp;quot;@graph&amp;quot;: [
+  {
+      &amp;quot;@id&amp;quot;: &amp;quot;http://purl.org/ontology/bibo/interviewee&amp;quot;,
+      &amp;quot;sameAs&amp;quot;: &amp;quot;http://neologism.ecs.soton.ac.uk/bibo.html#interviewee&amp;quot;,
+      &amp;quot;@type&amp;quot;: &amp;quot;Thing&amp;quot;
+  }
+ ]
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The above offers &lt;a href="http://neologism.ecs.soton.ac.uk/bibo.html#interviewee"&gt;a more useful alternative URL&lt;/a&gt; and the code that generates the HTML summary of the RO-Crate can use that to provide a gloss [?]. But what if we actual also include the definition?&lt;/p&gt;
+&lt;p&gt;Instead of the above outrageously big URL with all the info to define &lt;code&gt;sentence&lt;/code&gt; in it we could add this to our metadata with a made-up URL for the term and an on-board rdf:Property to define it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;quot;@context&amp;quot;: [ 
+    &amp;quot;https://w3id.org/ro/crate/1.0/context&amp;quot;,
+    {&amp;quot;sentence&amp;quot;: &amp;quot;http://example.com/criminal-characters/sentence&amp;quot;},
+  ],
+&amp;quot;@graph&amp;quot;: [
+  {
+      &amp;quot;@id&amp;quot;: &amp;quot;http://example.com/criminal-characters/sentence&amp;quot;,
+      &amp;quot;@type&amp;quot;: &amp;quot;rdf:Property&amp;quot;,
+      &amp;quot;rdfs:label&amp;quot;: &amp;quot;sentence&amp;quot;,
+      &amp;quot;rdf:comment&amp;quot;: &amp;quot;Penalty imposed by court for criminal conviction. As the data is drawn from prison records, this will usually consist of a specified term of imprisonment and the type of imprisonment conditions, e.g. 6 months hard labour. However, during this historical period it was common for persons convicted of a minor offence to be sentenced to a fine 'with the option' of a prison sentence if they were unable to pay it. After the introduction in Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been declared 'habitual criminals' could also receive an indefinite sentence that meant they were imprisoned until the government authorities determined that they had sufficiently reformed. Some prisoners also faced additional penalties in addition to their prison sentence, such as periods of solitary confinement, in irons or whippings.&amp;quot;
+      }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I could then hack the RO-Crate web viewer to use the label and comment supplied here.&lt;/p&gt;
+&lt;p&gt;So - what do you think?&lt;/p&gt;
+&lt;p&gt;a.  Hack 1?
+b.  Hack 2?
+c.  Both?
+d.  Neither?&lt;/p&gt;
+&lt;p&gt;Will I go blind?&lt;/p&gt;
+&lt;p&gt;I think Hack 2 will work but Hack 1 is funnier.&lt;/p&gt;
+</content></entry><entry><title>eResearch Australasia 2019 trip report</title><link href="2019/11/07/eResearch_2019.htm" rel="alternate"></link><published>2019-11-07T00:00:00+01:00</published><updated>2019-11-07T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:None,2019-11-07:2019/11/07/eResearch_2019.htm</id><summary type="html">&lt;p&gt;By Mike Lynch and Peter Sefton&lt;/p&gt;
+&lt;p&gt;I'm re-posting / self-archiving this from the
+&lt;a href="http://eresearch.uts.edu.au"&gt;UTS eResearch Blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mike Lynch and Peter Sefton attended the 2019 eResearch Australasia conference
+in Brisbane from 22-24 October 2019, where we presented a few things - and a
+pre-conference summit on the 21st held by the Australian Research …&lt;/p&gt;</summary><content type="html">&lt;p&gt;By Mike Lynch and Peter Sefton&lt;/p&gt;
+&lt;p&gt;I'm re-posting / self-archiving this from the
+&lt;a href="http://eresearch.uts.edu.au"&gt;UTS eResearch Blog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mike Lynch and Peter Sefton attended the 2019 eResearch Australasia conference
+in Brisbane from 22-24 October 2019, where we presented a few things - and a
+pre-conference summit on the 21st held by the Australian Research Data Commons,
+where Mike presented our report from our small discovery project on scalable
+repository technology. UTS paid for the trip.&lt;/p&gt;
+&lt;h1&gt;What we presented - our work on Simple Scalable Research Data Repositories&lt;/h1&gt;
+&lt;p&gt;We've posted fleshed-out versions of our conference papers as usual. Mike
+presented a short version of
+&lt;a href="http://eresearch.uts.edu.au/2019/11/05/eResearch2019_lighting_ocfl_nginx.htm"&gt;ARDC funded work on data repositories&lt;/a&gt;
+at both the the summit and the conference and Peter had also put in an abstract
+for
+&lt;a href="/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm"&gt;longer version&lt;/a&gt;
+which is less technically focussed and gives more of the context for why this
+work is important.&lt;/p&gt;
+&lt;p&gt;Peter &lt;a href="/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm"&gt;presented an update on our ongoing work on describing and packaging
+research data - this time focussing on the new merged standard Research Object
+Crate&lt;/a&gt;(RO-Crate) and looking at what's coming next.&lt;/p&gt;
+&lt;h2&gt;Diversity breakfast&lt;/h2&gt;
+&lt;p&gt;I (Mike) went to the breakfast given in honour of the late Dr Jacky Pallas, a senior
+figure in the eResearch community who had given a keynote at last year's
+eResearch Australasia&lt;/p&gt;
+&lt;p&gt;The speaker was Dr Toni Collis, a research software engineer and director of
+&lt;a href="https://womeninhpc.org/"&gt;Women in High Performance Computing&lt;/a&gt;, on how lack of
+diversity is damaging your research, making the point that diverse research and
+support teams can be demonstrated to be more effective in terms of performance,
+and the importance of equity, diversity and inclusivity in attracting and
+retaining talent.&lt;/p&gt;
+&lt;h2&gt;Research as a primary function of Electronic Health Records&lt;/h2&gt;
+&lt;p&gt;Prof Nikolajz Zeps' presentation was one of a couple of talks which sold
+themselves as being provocative, in that they were arguing for a loosening of
+traditional, restrictive health care ethics and consent practices so that data
+could be made more readily available for research. He made the point that data
+sharing is very difficult in the Australian healthcare system not just because
+of ethical restrictions but because the system is so fragmented. He argued for
+an integration of research and clinical data consent and management practices,
+which would allow the information flows required for medical research to be used
+for the health care system itself to better monitor the effectiveness of
+treatments and patient outcomes. Moving the consent process from one of research
+ethics to clinical ethics can make things simpler, in terms of administration.&lt;/p&gt;
+&lt;p&gt;(I was less impressed by the other provocative keynote in which the speaker said
+&amp;quot;no-one ever died as the result of a health-care data breach&amp;quot;, which I thought
+was a bit of posturing, even though it got applause from some of the audience.)&lt;/p&gt;
+&lt;h1&gt;Notable presentations&lt;/h1&gt;
+&lt;h2&gt;Galaxy Australia and the Australian Bioinformatic Commons&lt;/h2&gt;
+&lt;p&gt;These two presentations were part of the bioinformatics stream, about the
+Australian node of the global Galaxy workflow and computational platform, and
+the Australian BioCommons Pathfinder Project.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_96_Galaxy-Australia-%E2%80%93-the-Bring-Your-Own-Data-platform.pdf"&gt;Gareth Price, Galaxy Australia - the “Bring Your Own Data” platform enabling multi-omics analysis for biology researchers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://usegalaxy.org.au/"&gt;Galaxy Australia&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_53_The-Australian-Bioinformatics-Commons-as-an-exemplar.pdf"&gt;Jeff Christiansen, The Australian Bioinformatics Commons&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.bioplatforms.com/biocommons/"&gt;The Australian BioCommons Pathfinder Project&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;9 Reproducible Research Things&lt;/h2&gt;
+&lt;p&gt;Amanda Miotto from Griffith University's eResearch team presented on
+&lt;a href="http://conference.eresearch.edu.au/wp-content/uploads/2019/10/2019-eResearch_-29-_8-Reproducible-Research-things.pdf"&gt;running workshops to introduce researchers to good reproducibility practice&lt;/a&gt; which focussed on immediate benefits, like safeguarding a research team against individual members leaving or falling ill, and practical steps.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://guereslib.github.io/Reproducible-Research-Things/"&gt;The workshop materials are available on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Physiome Journal&lt;/h2&gt;
+&lt;p&gt;An &lt;a href="http://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_18_Peer-Reviewing-Reproducibility-The-Physiome-Journal.pdf"&gt;interesting presentation by Karin Lundengård of the Auckland Bioengineering Institute&lt;/a&gt; about &lt;a href="https://journal.physiomeproject.org/"&gt;Physiome Journal&lt;/a&gt;, which will publish validated and reproducible mathematical models of physiological processes. The models will also be made available as Jupyter notebooks and shared on the &lt;a href="https://gigantum.com/"&gt;Gigantum&lt;/a&gt; platform.&lt;/p&gt;
+&lt;h2&gt;HASS BOF&lt;/h2&gt;
+&lt;p&gt;A lot of what we spoke about in this BOF, which was chaired by Ingrid Mason,
+echoed what I (Mike) had heard the week before at a Big Data for the Digital
+Humanities symposium in Canberra which was organised by the ARDC and AARNet (and
+which I should write a blog post about).&lt;/p&gt;
+&lt;p&gt;The challenges faced by digital humanities researchers and support staff mirror
+one another - researchers are unsure of the right way to engage with technical
+staff and vice versa, and good collaboration is too labour-intensive to be
+sustainable if it's going to be spread beyond a minority of researchers who are
+already linked in to support networks.&lt;/p&gt;
+&lt;p&gt;This gave me a kind of wistful feeling about an earlier
+&lt;a href="http://conference.eresearch.edu.au/wp-content/uploads/2019/10/2019-eResearch-Underwood-and-Carroll-1.pdf"&gt;keynote from  Dell&lt;/a&gt;
+about machine learning in medical science, because the speaker was very
+enthusiastic about moving HPC tools out of the realm where researchers needed to
+become technology experts to use them at all, into something more like commodity
+software. Although there are some areas of the humanities where this sort of
+thing is starting to happen - transcription is one which came up both in
+Canberra and Brisbane.&lt;/p&gt;
+&lt;h1&gt;Data Discovery&lt;/h1&gt;
+&lt;p&gt;I (Peter) chaired a session on Data Discovery with a couple of lead-in
+talks that outlined what's going on in the world of generic research data
+discovery, leading into a discussion.&lt;/p&gt;
+&lt;p&gt;From our viewpoint at UTS it was useful to get confirmation that discovery services are converging on using
+&lt;a href="https://schema.org"&gt;Schema.org&lt;/a&gt; for high-level description of data sets, for
+indexing by other services. Which is good, because that's the horse we bet on at UTS.
+It's being used by both &lt;a href="https://researchdata.ands.org.au/"&gt;Research Data Australia&lt;/a&gt; (RDA) and
+the new player
+&lt;a href="https://toolbox.google.com/datasetsearch"&gt;Google dataset search&lt;/a&gt; (that's run by
+a tiny team apparently, but it will have a huge impact on how everyone has to
+structure their metadata).&lt;/p&gt;
+&lt;p&gt;Amir Aryani (Swinburne) and Melroy Almeida (Australian Access Federation)
+&lt;a href="https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_133_Australian-ORCID-Research-Graph.pdf"&gt;presented on ORCID graph&lt;/a&gt;
+looking at collaboration networks. This is testament to the power of using
+strong, URI-based identifiers, once you start doing that, metadata changes from
+an un-reliable soup of differently spelled ambiguous names, to something you can
+do real analytics on.&lt;/p&gt;
+&lt;p&gt;Adrian Burton (ARDC, ex ANDS) has been dealing with metadata a long time - he
+put it that the Schema.org approach had won, and suggested that this might be a
+bit of a loss. The &lt;a href="https://en.wikipedia.org/wiki/RIF-CS"&gt;RIF-CS&lt;/a&gt; standard that ANDS
+inherited and built RDA around had a entity based model, with Collections,
+Parties, Activities and services (based on
+&lt;a href="https://en.wikipedia.org/wiki/ISO_2146"&gt;ISO 2146&lt;/a&gt;) rather than simple flat
+name-value metadata. I agree that the entity model was a strength of RIF-CS But
+actually, for those that want to convey rich context about data, then schema.org
+with linked data can do everything RIF-CS can, more elegantly and with more
+detail. See the work we've been doing on &lt;a href="/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm"&gt;RO-Crate&lt;/a&gt; which takes things to a
+deeper level with descriptions of files and (soon) even variables inside files
+including provenance chains (what people and equipment did to &lt;em&gt;make&lt;/em&gt; those files
+from observations, or other files).&lt;/p&gt;
+&lt;p&gt;The leaders of that session have done a follow up survey, so I think they'll be
+putting out more info soon.&lt;/p&gt;
+&lt;h1&gt;Preservation&lt;/h1&gt;
+&lt;p&gt;The &lt;a href="/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm"&gt;RO-Crate talk&lt;/a&gt; I gave (Peter here) was in a stream on Digital Preservation and data packaging.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/ErinGLib"&gt;Erin Gallant&lt;/a&gt; and
+&lt;a href="https://twitter.com/DigiGav"&gt;Gavin Kennedy, also from AARNet&lt;/a&gt; about digital
+preservation.&lt;/p&gt;
+&lt;img alt="picture of the panel" src="blog/eResearch2019/panel.png"/&gt;
+&lt;p&gt;I was talking, not taking notes, but we discussed what the research community
+and cultural collections folks can learn from each other - actually I think we
+made some of the same mistakes, both the eResearch community and GLAM sector
+invested in big silos which ended up not just storing data, but making it
+difficult to move, re-use. To labour the metaphor a bit, silos have small holes
+in the bottom, so getting data in and out is slow.&lt;/p&gt;
+&lt;p&gt;Mike's diagram of an OCFL Repository shows an alternative approach - instead of
+putting data in a container with constricted ingress and egress, lay it all out
+in the open. I'm not an expert in preservation systems, but I do know that
+that's the approach taken by the open source
+&lt;a href="https://www.archivematica.org/en/"&gt;Archivematica&lt;/a&gt; preservation system (Note:
+I've done a bit of work for Artefactual systems which looks after it), it works
+as an application that sits &lt;em&gt;beside&lt;/em&gt; a set of files on disk - if needed you can
+use the grandparent of all APIs, that is file operations to fetch data. All of
+our talks we gave, linked above, were about this idea in one way or another.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Picture of data layed-out and labelled in rows (like a field not a
+silo) - by Mike Lynch" src="blog/eResearch2019/field.png"/&gt;&lt;/p&gt;
+&lt;h1&gt;Trusted Repository certification - one for the UTS Roadmap&lt;/h1&gt;
+&lt;p&gt;I (Peter again) attended
+&lt;a href="https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_106_Trusted-Data-Community.pdf"&gt;a session MCed by Richard Ferrers&lt;/a&gt;
+from ARDC with contributions from people from a range of institutions and
+repositories who are part of an ARDC community of practice.&lt;/p&gt;
+&lt;p&gt;They talked about the Core Trust Seal repository certification program - and the process of getting certified.&lt;/p&gt;
+&lt;p&gt;Here's some background on CTS:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;Core Certification and its Benefits&lt;/h3&gt;
+&lt;p&gt;Nowadays certification standards are available at different levels, from a core level to extended and formal
+levels. Even at the core level, certification offers many benefits to a repository and its stakeholders.
+Core certification involves a minimally intensive process whereby data repositories supply evidence that they
+are sustainable and trustworthy. A repository first conducts an internal self-assessment, which is then
+reviewed by community peers. Such assessments help data communities—producers, repositories, and
+consumers—to improve the quality and transparency of their processes, and to increase awareness of and
+compliance with established standards. This community approach guarantees an inclusive atmosphere in
+which the candidate repository and the reviewers closely interact.&lt;/p&gt;
+&lt;p&gt;In addition to external benefits, such as building stakeholder confidence, enhancing the reputation of the
+repository, and demonstrating that the repository is following good practices, core certification provides a
+number of internal benefits to a repository. Specifically, core certification offers a benchmark for comparison
+and helps to determine the strengths and weaknesses of a repository.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Right now at UTS we're in the process of making a new Digital Strategy, aligned the &lt;a href="https://www.uts.edu.au/about/uts-2027-strategy"&gt;UTS 2027 Strategy&lt;/a&gt; - one of the core goals (which are still evolving so we can't link to them just yet) is to have trusted systems. CTS would be a great way for the IT Department (that's us) to demonstrate to the organisation that we have the governance, technology and operational model in place to run a repository.&lt;/p&gt;
+&lt;p&gt;We're talking now about getting at least the first step (self certification) on the 2021 Roadmap - but before that, we'll see if we can join the community discussion and start planning.&lt;/p&gt;
+&lt;p&gt;&lt;a rel="license" href="http://creativecommons.org/licenses/by/3.0/au/"&gt;&lt;img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/au/88x31.png" /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by/3.0/au/"&gt;Creative Commons Attribution 3.0 Australia License&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>FAIR Simple Scalable Static Research Data Repository</title><link href="2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm" rel="alternate"></link><published>2019-11-05T00:00:00+01:00</published><updated>2019-11-05T00:00:00+01:00</updated><author><name>Michael Lynch</name></author><id>tag:None,2019-11-05:2019/11/05/FAIR Repo - eResearch Presentation.htm</id><summary type="html">&lt;p&gt;This presentation was given by Peter Sefton &amp;amp; Michael Lynch at the eResearch Australasia 2019 Conference in Brisbane, on the 24th of October 2019.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide01.png' alt='FAIR Simple Scalable Static Research Data Repository
+Dr Peter Sefton and Michael Lynch
+University of Technology Sydney
+' title='FAIR Simple Scalable Static Research Data Repository
+Dr Peter Sefton and Michael Lynch
+University of Technology Sydney
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Welcome - we’re going to share this presentation. Peter/Petie will talk through the two major standards we’re building on, and Mike will talk about the …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This presentation was given by Peter Sefton &amp;amp; Michael Lynch at the eResearch Australasia 2019 Conference in Brisbane, on the 24th of October 2019.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide01.png' alt='FAIR Simple Scalable Static Research Data Repository
+Dr Peter Sefton and Michael Lynch
+University of Technology Sydney
+' title='FAIR Simple Scalable Static Research Data Repository
+Dr Peter Sefton and Michael Lynch
+University of Technology Sydney
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Welcome - we’re going to share this presentation. Peter/Petie will talk through the two major standards we’re building on, and Mike will talk about the software stack we ended up with.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide02.png' alt='The project in a nutshell
+A static, file-based research data repository platform using open standards and off-the-shelf web technology
+OCFL – versioned file storage
+RO-Crate – dataset / object metadata
+Solr – index and discovery
+nginx – baked in access control
+&lt;p&gt;' title='The project in a nutshell
+A static, file-based research data repository platform using open standards and off-the-shelf web technology
+OCFL – versioned file storage
+RO-Crate – dataset / object metadata
+Solr – index and discovery
+nginx – baked in access control&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This project is about building highly scalable research data repositories quickly, cheaply and above all sustainably by using Standards for organizing and describing data.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide03.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;We had a grant to continue our OCFL work from the &lt;a href="https://ror.org/038sjwq14"&gt;Australian Research Data Commons&lt;/a&gt;. (I’ve used the new Research Organisation Registry (ROR) ID for ARDC, just because it’s new and you should all check out the ROR).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide04.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;h3&gt;OCFL Specifications&lt;/h3&gt;
+&lt;blockquote&gt;
+This Oxford Common File Layout (OCFL) specification describes an application-independent approach to the storage of digital information in a structured, transparent, and predictable manner. It is designed to promote long-term object management best practices within digital repositories.
+Specifically, the benefits of the OCFL include:
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Completeness, so that a repository can be rebuilt from the files it stores&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Parsability, both by humans and machines, to ensure content can be understood in the absence of original software&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Robustness against errors, corruption, and migration between storage technologies&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Versioning, so repositories can make changes to objects allowing their history to persist&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Storage diversity, to ensure content can be stored on diverse storage infrastructures including conventional filesystems and cloud object stores&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Source: &lt;a href="https://ocfl.io"&gt;https://ocfl.io&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide05.png' alt='TODO	
+Progressively drill down on the architecture until it’s “just”  a partition.
+' title='TODO	
+Progressively drill down on the architecture until it’s “just”  a partition.
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Here’s a screenshot of what an OCFL object looks like - it’s a series of versioned directories, each with a detailed inventory.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide06.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;One of the standards we are using is RO-Crate - for describing research data sets. I presented this at eResearch as well [TODO - link]&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide07.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is an example of an RO-Crate showing that each Crate has a human-readable HTML view as well as a machine readable view.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide08.png' alt='
+&lt;p&gt;🖥️
+👩🏾‍🔬
+' title='&lt;/p&gt;
+&lt;p&gt;🖥️
+👩🏾‍🔬
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The two views (human and machine) of the data are equivalent - in fact the HTML version is generated from the JSON-LD version using a tool called &lt;a href="https://code.research.uts.edu.au/eresearch/CalcyteJS"&gt;CalcyteJS&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide09.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is a screenshot of work very much in progress - it’s a shows an example of the repository system working at the smallest scale, showing a single collection, “Farms to Freeways”; a social history project from Western Sydney, which we have exported into RO-Crate format as a demonstration. Each of the participants has been indexed for discovery. In a more deployment for a institutional repository, datasets would be indexed at the top level only. The point is to show that this software will be highly configurable.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide10.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;OCFL needs some explaining. I’ve had a couple of conversations with developers
+where it takes them a little while to get what it’s for.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide11.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;But they DO get it the standard is well designed.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide12.png' alt='over to Mike ...
+&lt;p&gt;' title='over to Mike ...&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide13.png' alt='Off-the-shelf components
+&lt;p&gt;' title='Off-the-shelf components&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Solr is an efficient search engine.&lt;/p&gt;
+&lt;p&gt;nginx is an industry-standard scalable web server, used by companies like DropBox and Netflix&lt;/p&gt;
+&lt;p&gt;Both are standard, open-source, easy to deploy and keep patched: unlike dedicated data repositories, which tend be fussy and make your server team swear.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide14.png' alt='ocfl-nginx
+Resolves a URL:
+&lt;p&gt;https://my.repo/3eacb986d1.v4/PATH/TO/FILE.html&lt;/p&gt;
+&lt;p&gt;To a file in an ocfl repository:&lt;/p&gt;
+&lt;p&gt;/mnt/ocfl/3e/ac/b9/86/d1/v4/content/PATH/TO/FILE.html&lt;/p&gt;
+&lt;p&gt;' title='ocfl-nginx
+Resolves a URL:&lt;/p&gt;
+&lt;p&gt;https://my.repo/3eacb986d1.v4/PATH/TO/FILE.html&lt;/p&gt;
+&lt;p&gt;To a file in an ocfl repository:&lt;/p&gt;
+&lt;p&gt;/mnt/ocfl/3e/ac/b9/86/d1/v4/content/PATH/TO/FILE.html&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Mapping incoming URLs to the right file in the ocfl repository is straightforward and done with an extension in nginx’s minimal flavour of JavaScript. This slide simplifies things a bit: in real life we have URL ids which solr maps to OIDs and then to a pairtree path.&lt;/p&gt;
+&lt;p&gt;Todo: we want to use the &lt;a href="http://mementoweb.org/guide/howto/"&gt;Memento standard&lt;/a&gt; so that clients can request versioned rsources.&lt;/p&gt;
+&lt;p&gt;We are also looking at versioned DOIs pointing to versioned URLs and resources&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide15.png' alt='Code
+&lt;p&gt;' title='Code&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/UTS-eResearch/ocfl-js"&gt;ocfl-js - a Node library for building and updating OCFL repositories&lt;/a&gt;
+&lt;a href="https://github.com/UTS-eResearch/ro-crate-js"&gt;ro-crate-js - a Node library for working with RO-Crates&lt;/a&gt;
+&lt;a href="https://github.com/UTS-eResearch/ocfl-nginx"&gt;ocfl-nginx - an extension to nginx allowing it to serve versioned OCFL content&lt;/a&gt;
+&lt;a href="https://cloud.docker.com/u/mikelynch/repository/docker/mikelynch/nginx-ocfl"&gt;a Docker image for ocfl-nginx&lt;/a&gt;
+&lt;a href="https://code.research.uts.edu.au/eresearch/solr-catalog"&gt;solr-catalog - a Node library for indexing an OCFL repository into a Solr index&lt;/a&gt;
+&lt;a href="https://code.research.uts.edu.au/eresearch/data-portal"&gt;data-portal - a single-page application for searching a Solr index&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The codebase is in a lot of places but that’s consistent with the approach - they are all just components which we can deploy as we need them&lt;/p&gt;
+&lt;p&gt;The nginx extension is very small and would be easy to reimplement against another server&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide16.png' alt='Access control
+licences on datasets in RO-Crate
+nginx authenticates users
+local group service map users to licences
+nginx enforces access on search results and payloads
+' title='Access control
+licences on datasets in RO-Crate
+nginx authenticates users
+local group service map users to licences
+nginx enforces access on search results and payloads
+' border='1'  width='85%'/&gt;
+&lt;p&gt;This is the most prototypical / primitive part of what we’ve got so far.&lt;/p&gt;
+&lt;p&gt;Licences on RO-Crate are indexed in the solr index. nginx authenticates web users, looks up which licences they can access, and applies access control to both search results and payloads.&lt;/p&gt;
+&lt;p&gt;At the moment, we’ve got a test server which doesn’t authenticate but which only serves datasets with a public licence and denies access to everything else.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide17.png' alt='Access control at its most basic
+&lt;p&gt;' title='Access control at its most basic&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The screenshot on the left is a Solr query showing public and internal licences&lt;/p&gt;
+&lt;p&gt;The screenshot on the right is a basic web view of what nginx serves to an unauthenticated guest user - datasets with internal licenses aren’t shown&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide18.png' alt='Development strategy
+Agile development around well-designed data standards pays off
+Successful collaborations with PARADISEC and State Library of New South Wales, showing the feasibility and ease-of-use of both OCFL and RO-Crate
+It’s worth engaging with standards at the new/evolving stage, even if this requires a bit of running around to keep up
+&lt;p&gt;' title='Development strategy
+Agile development around well-designed data standards pays off
+Successful collaborations with PARADISEC and State Library of New South Wales, showing the feasibility and ease-of-use of both OCFL and RO-Crate
+It’s worth engaging with standards at the new/evolving stage, even if this requires a bit of running around to keep up&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Good data standards make incremental development much easier.&lt;/p&gt;
+&lt;p&gt;We were able to get real results in one- and two-day workshops with teams from PARADISEC and the State Library of New South Wales, both with large, structured digital humanities collections behind APIs.&lt;/p&gt;
+&lt;p&gt;Both the OCLF and RO-Crate standards are new and changing, but agile development means that it’s OK and even productive to keep pace with this and feed back into community consultation.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide19.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;In the last couple of months Marco La Rosa, an independent developer working for PARADISEC, has ported 10,000 data and collection items into RO-Crate format, AND built a portal which can display them. This means that ANY repository with a similar structure Items in Collections could easily re-use the code and the viewers for various file types.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide20.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The Mitchell Collection - digitised public domain books with detailed metadata in METS and specialised OCR standards. We spend a day at the State Library and were able to successfully extract books into directories of JPEGs and metadata, package these using RO-Crate and start building an OCFL repository.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/FAIR Repo - eResearch Presentation/Slide21.png' alt='Acknowledgements and links
+UTS: Moises Sacal Bonequi
+PARADISEC: Marco De La Rosa, Nick Thieberger
+State Library of New South Wales: Euwe Ermita
+&lt;p&gt;https://ocfl.io/
+https://researchobject.github.io/ro-crate/
+https://code.research.uts.edu.au/eresearch/solr-catalog/
+https://github.com/UTS-eResearch/ocfl-js
+https://github.com/UTS-eResearch/ocfl-nginx
+Docker: mikelynch/nginx-ocfl&lt;/p&gt;
+&lt;p&gt;' title='Acknowledgements and links
+UTS: Moises Sacal Bonequi
+PARADISEC: Marco De La Rosa, Nick Thieberger
+State Library of New South Wales: Euwe Ermita&lt;/p&gt;
+&lt;p&gt;https://ocfl.io/
+https://researchobject.github.io/ro-crate/
+https://code.research.uts.edu.au/eresearch/solr-catalog/
+https://github.com/UTS-eResearch/ocfl-js
+https://github.com/UTS-eResearch/ocfl-nginx
+Docker: mikelynch/nginx-ocfl&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;p&gt;&lt;a rel="license" href="http://creativecommons.org/licenses/by/3.0/au/"&gt;&lt;img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/au/88x31.png" /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by/3.0/au/"&gt;Creative Commons Attribution 3.0 Australia License&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Meet RO-Crate</title><link href="2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm" rel="alternate"></link><published>2019-11-05T00:00:00+01:00</published><updated>2019-11-05T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:None,2019-11-05:2019/11/05/RO-Crate eResearch Australasia 2019.htm</id><summary type="html">&lt;p&gt;By Peter Sefton&lt;/p&gt;
+&lt;p&gt;This presentation was given by Peter Sefton at the eResearch Australasia 2019 Conference in Brisbane, on the 24th of October 2019.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide01.png' alt='Meet RO-Crate
+&lt;p&gt;' title='Meet RO-Crate&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This presentation is part of a series of talks delivered here at eResearch Australasia - so it won’t go back over all of the detail already …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;By Peter Sefton&lt;/p&gt;
+&lt;p&gt;This presentation was given by Peter Sefton at the eResearch Australasia 2019 Conference in Brisbane, on the 24th of October 2019.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide01.png' alt='Meet RO-Crate
+&lt;p&gt;' title='Meet RO-Crate&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This presentation is part of a series of talks delivered here at eResearch Australasia - so it won’t go back over all of the detail already covered - see the &lt;a href="http://ptsefton.com/2017/10/19/datacrate.htm"&gt;introduction of datacrate in 2017&lt;/a&gt; and and the &lt;a href="http://ptsefton.com/2018/10/29/sefton-ro2018.htm"&gt;2018 update&lt;/a&gt;. The standard formerly known as DataCrate has been subsumed into a new standard called Research Object Crate - RO-Crate for short.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide02.png' alt='
+&lt;p&gt;Eoghan Ó Carragáin https://orcid.org/0000-0001-8131-2150 (chair)
+Peter Sefton https://orcid.org/0000-0002-3545-944X (co-chair)
+Stian Soiland-Reyes https://orcid.org/0000-0001-9842-9718 (co-chair)
+Oscar Corcho https://orcid.org/0000-0002-9260-0753
+Daniel Garijo https://orcid.org/0000-0003-0454-7145
+Raul Palma https://orcid.org/0000-0003-4289-4922
+Frederik Coppens https://orcid.org/0000-0001-6565-5145
+Carole Goble https://orcid.org/0000-0003-1219-2137
+José María Fernández https://orcid.org/0000-0002-4806-5140
+Kyle Chard https://orcid.org/0000-0002-7370-4805
+Jose Manuel Gomez-Perez https://orcid.org/0000-0002-5491-6431
+Michael R Crusoe https://orcid.org/0000-0002-2961-9670
+Ignacio Eguinoa https://orcid.org/0000-0002-6190-122X
+Nick Juty https://orcid.org/0000-0002-2036-8350
+Kristi Holmes https://orcid.org/0000-0001-8420-5254
+Jason A. Clark https://orcid.org/0000-0002-3588-6257
+Salvador Capella-Gutierrez https://orcid.org/0000-0002-0309-604X
+Alasdair J. G. Gray https://orcid.org/0000-0002-5711-4872
+Stuart Owen https://orcid.org/0000-0003-2130-0865
+Alan R Williams https://orcid.org/0000-0003-3156-2105
+' title='&lt;/p&gt;
+&lt;p&gt;Eoghan Ó Carragáin https://orcid.org/0000-0001-8131-2150 (chair)
+Peter Sefton https://orcid.org/0000-0002-3545-944X (co-chair)
+Stian Soiland-Reyes https://orcid.org/0000-0001-9842-9718 (co-chair)
+Oscar Corcho https://orcid.org/0000-0002-9260-0753
+Daniel Garijo https://orcid.org/0000-0003-0454-7145
+Raul Palma https://orcid.org/0000-0003-4289-4922
+Frederik Coppens https://orcid.org/0000-0001-6565-5145
+Carole Goble https://orcid.org/0000-0003-1219-2137
+José María Fernández https://orcid.org/0000-0002-4806-5140
+Kyle Chard https://orcid.org/0000-0002-7370-4805
+Jose Manuel Gomez-Perez https://orcid.org/0000-0002-5491-6431
+Michael R Crusoe https://orcid.org/0000-0002-2961-9670
+Ignacio Eguinoa https://orcid.org/0000-0002-6190-122X
+Nick Juty https://orcid.org/0000-0002-2036-8350
+Kristi Holmes https://orcid.org/0000-0001-8420-5254
+Jason A. Clark https://orcid.org/0000-0002-3588-6257
+Salvador Capella-Gutierrez https://orcid.org/0000-0002-0309-604X
+Alasdair J. G. Gray https://orcid.org/0000-0002-5711-4872
+Stuart Owen https://orcid.org/0000-0003-2130-0865
+Alan R Williams https://orcid.org/0000-0003-3156-2105
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is a recent snapshot of the makeup of the current RO-Crate team- compiled by Stian.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide03.png' alt='What is RO-Crate?
+&lt;p&gt;RO-Crate is a community effort to establish a lightweight approach to packaging research data with their metadata. It is based on schema.org annotations in JSON-LD, and aims to make best-practice in formal metadata description accessible and practical for use in a wider variety of situations, from an individual researcher working with a folder of data, to large data-intensive computational research environments.&lt;/p&gt;
+&lt;p&gt;' title='What is RO-Crate?&lt;/p&gt;
+&lt;p&gt;RO-Crate is a community effort to establish a lightweight approach to packaging research data with their metadata. It is based on schema.org annotations in JSON-LD, and aims to make best-practice in formal metadata description accessible and practical for use in a wider variety of situations, from an individual researcher working with a folder of data, to large data-intensive computational research environments.&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The website says:
+RO-Crate is a community effort to establish a lightweight approach to packaging research data with their metadata. It is based on schema.org annotations in JSON-LD, and aims to make best-practice in formal metadata description accessible and practical for use in a wider variety of situations, from an individual researcher working with a folder of data, to large data-intensive computational research environments.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide04.png' alt='2017-06-16 Cry for help! Cameron Neylon: As a researcher... 
+2017-07-02 Research Data Crate started
+2017-10-12 DataCrate 0.1
+2018-03-22 DataCrate 0.2
+2018-03-22 RDA BoF: Approaches to Research Data Packaging
+2018-08-06 DataCrate 0.3
+2018-09-11 Calcyte 0.3.0
+2018-09-27 DataCrate 1.0
+2018-10-02 npm install calcyte@1.0.0
+2018-10-29 Workshop on Research Object RO2018
+2019-02-13 RO Lite 0.1
+2019-03-28 First RO-Lite community call
+2019-05-02 RO-Crate use case gathering
+2019-05-30 Google Docs-mode
+2019-06-07 Open Repositories workshop: Research Data Packaging
+2019-08-23 npm install calcyte@1.0.6
+2019-09-24 Workshop on Research Object RO2019
+2019-09-12 RO-Crate 0.2
+2019-11-?? RO-Crate 1.0
+' title='2017-06-16 Cry for help! Cameron Neylon: As a researcher... 
+2017-07-02 Research Data Crate started
+2017-10-12 DataCrate 0.1
+2018-03-22 DataCrate 0.2
+2018-03-22 RDA BoF: Approaches to Research Data Packaging
+2018-08-06 DataCrate 0.3
+2018-09-11 Calcyte 0.3.0
+2018-09-27 DataCrate 1.0
+2018-10-02 npm install calcyte@1.0.0
+2018-10-29 Workshop on Research Object RO2018
+2019-02-13 RO Lite 0.1
+2019-03-28 First RO-Lite community call
+2019-05-02 RO-Crate use case gathering
+2019-05-30 Google Docs-mode
+2019-06-07 Open Repositories workshop: Research Data Packaging
+2019-08-23 npm install calcyte@1.0.6
+2019-09-24 Workshop on Research Object RO2019
+2019-09-12 RO-Crate 0.2
+2019-11-?? RO-Crate 1.0
+' border='1'  width='85%'/&gt;
+&lt;p&gt;This is a timeline for the merging of the &lt;a href="http://www.researchobject.org/"&gt;Research Object&lt;/a&gt; packaging work with DataCrate - again compiled by Stian. While our DataCrate work was driven by practical concerns and a desire to describe research data with high-quality metadata Research Object shared those concerns but with more of a focus on reproducibility and detailed provenance for research data.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide05.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is what an RO-Crate looks like if you open the HTML file that’s in the root directory (or you see one on the web).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide06.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is the &lt;a href="https://researchobject.github.io/ro-crate/"&gt;home page for RO-Crate&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide07.png' alt='💒
+' title='💒
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Where did RO-Crate come from?
+RO-Crate is the marriage of &lt;a href="https://www.researchobject.org/"&gt;Research Objects&lt;/a&gt; with &lt;a href="https://github.com/UTS-eResearch/datacrate"&gt;DataCrate&lt;/a&gt;. It aims to build on their respective strengths, but also to draw on lessons learned from those projects and similar research data packaging efforts. For more details, see &lt;a href="https://researchobject.github.io/ro-crate/background.html"&gt;background&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide08.png' alt='👨‍⚕️ Man Health Worker 👩‍⚕️ Woman Health Worker 👨‍🎓 Man Student 👩‍🎓 Woman Student 👨‍🏫 Man Teacher 👩‍🏫 Woman Teacher 👨‍⚖️ Man Judge 👩‍⚖️ Woman Judge 👨‍🌾 Man Farmer 👩‍🌾 Woman Farmer 👨‍🍳 Man Cook 👩‍🍳 Woman Cook 👨‍🔧 Man Mechanic 👩‍🔧 Woman Mechanic 👨‍🏭 Man Factory Worker 👩‍🏭 Woman Factory Worker 👨‍💼 Man Office Worker 👩‍💼 Woman Office Worker 👨‍🔬 Man Scientist 👩‍🔬 Woman Scientist 👨‍💻 Man Technologist 👩‍💻 Woman Technologist 👨‍🎤 Man Singer 👩‍🎤 Woman Singer 👨‍🎨 Man Artist 👩‍🎨 Woman Artist 👨‍✈️ Man Pilot 👩‍✈️ Woman Pilot 👨‍🚀 Man Astronaut 👩‍🚀 Woman Astronaut 👨‍🚒 Man Firefighter 👩‍🚒 Woman Firefighter 👮 Police Officer 👮‍♂️ Man Police Officer 👮‍♀️ Woman Police Officer 🕵 Detective 🕵️‍♂️ Man Detective 🕵️‍♀️ Woman Detective 💂 Guard 💂‍♂️ Man Guard 💂‍♀️ Woman Guard 👷 Construction Worker 👷‍♂️ Man Construction Worker 👷‍♀️ Woman Construction Worker 🤴 Prince 👸 Princess 👳 Person Wearing Turban 👳‍♂️ Man Wearing Turban 👳‍♀️ Woman Wearing Turban 👲 Man With Skullcap 🧕 Woman With Headscarf 🤵 Man in Tuxedo 👰 Bride With Veil 🤰 Pregnant Woman 🤱 Breast-Feeding 👼 Baby Angel 🎅 Santa Claus 🤶 Mrs. Claus 
+' title='👨‍⚕️ Man Health Worker 👩‍⚕️ Woman Health Worker 👨‍🎓 Man Student 👩‍🎓 Woman Student 👨‍🏫 Man Teacher 👩‍🏫 Woman Teacher 👨‍⚖️ Man Judge 👩‍⚖️ Woman Judge 👨‍🌾 Man Farmer 👩‍🌾 Woman Farmer 👨‍🍳 Man Cook 👩‍🍳 Woman Cook 👨‍🔧 Man Mechanic 👩‍🔧 Woman Mechanic 👨‍🏭 Man Factory Worker 👩‍🏭 Woman Factory Worker 👨‍💼 Man Office Worker 👩‍💼 Woman Office Worker 👨‍🔬 Man Scientist 👩‍🔬 Woman Scientist 👨‍💻 Man Technologist 👩‍💻 Woman Technologist 👨‍🎤 Man Singer 👩‍🎤 Woman Singer 👨‍🎨 Man Artist 👩‍🎨 Woman Artist 👨‍✈️ Man Pilot 👩‍✈️ Woman Pilot 👨‍🚀 Man Astronaut 👩‍🚀 Woman Astronaut 👨‍🚒 Man Firefighter 👩‍🚒 Woman Firefighter 👮 Police Officer 👮‍♂️ Man Police Officer 👮‍♀️ Woman Police Officer 🕵 Detective 🕵️‍♂️ Man Detective 🕵️‍♀️ Woman Detective 💂 Guard 💂‍♂️ Man Guard 💂‍♀️ Woman Guard 👷 Construction Worker 👷‍♂️ Man Construction Worker 👷‍♀️ Woman Construction Worker 🤴 Prince 👸 Princess 👳 Person Wearing Turban 👳‍♂️ Man Wearing Turban 👳‍♀️ Woman Wearing Turban 👲 Man With Skullcap 🧕 Woman With Headscarf 🤵 Man in Tuxedo 👰 Bride With Veil 🤰 Pregnant Woman 🤱 Breast-Feeding 👼 Baby Angel 🎅 Santa Claus 🤶 Mrs. Claus 
+' border='1'  width='85%'/&gt;
+&lt;h3&gt;Who is it for?&lt;/h3&gt;
+&lt;p&gt;The RO-Crate effort brings together practitioners from very different backgrounds, and with different motivations and use-cases. Among our core target users are: a) research engaged with computation and data-intensive, wokflow-driven analysis; b) digital repository managers and infrastructure providers; c) individual researchers looking for a straight-forward tool or how-to guide to “FAIRify” their data; d) data stewards supporting research projects in creating and curating datasets.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide09.png' alt='🌏🌍
+' title='🌏🌍
+' border='1'  width='85%'/&gt;
+&lt;p&gt;RO-Crate is a collaboration between people all over the world, but the Editors are from Cork, Manchester and Katoomba
+Version one of the standard will be out in by Summer.
+But which summer? Standard reference points are important. Standards are important.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide10.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;p&gt;Which brings us the benefits of Standards. Without this standardised date format chaos would reign. What if that date had been written 05/08 or 08/05 - someone might end up eating food from May in August, or worse, eating last August’s food in May.&lt;/p&gt;
+&lt;p&gt;Anyway, If you find a partner who’ll adopt the ISO 8601 data standard then ...&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide11.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;… you should marry them.&lt;/p&gt;
+&lt;p&gt;Like how we married the Research Object and DataCrate - we bonded over standardisation.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide12.png' alt='title
+' title='title
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Let’s explore standards a bit more. Iif you see this in metadata - what does it mean?&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide13.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Is it &lt;a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/title/"&gt;a name given to the resource&lt;/a&gt;? URI: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/title/&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide14.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;An &lt;a href="http://xmlns.com/foaf/spec/#term_title"&gt;honorific like Ms, or Dr&lt;/a&gt;? As it would be in the FOAF ontology.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide15.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Or &lt;a href="https://schema.org/title"&gt;a very specific meaning relating to job titles&lt;/a&gt;? As in Schema.org.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide16.png' alt='
+http://schema.org/name
+' title='
+http://schema.org/name
+' border='1'  width='85%'/&gt;
+&lt;p&gt;In RO-Crate - there’s an HTML page which ships with each dataset that allows you to browse the object in as much detail as the author described it and we are careful to avoid ambiguity by adding help links to each metadata term so you see the definition.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide17.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Just wanted to shout out to ResearchGraph - led by Amir Aryani at Swinburne Uni - they are also using schema.org.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide18.png' alt='
+&lt;p&gt;🖥️
+👩🏾‍🔬
+' title='&lt;/p&gt;
+&lt;p&gt;🖥️
+👩🏾‍🔬
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;RO-Crates ship with two files, a human readable one and a machine readable JSON file. The two views (human and machine) of the data are equivalent - in fact the HTML version is generated from the JSON-LD version, via the DataCrate nodejs library.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide19.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;And here’s an automatically generated diagram extracted from the sample DataCrate showing how two images were created. The first result was an image file taken by me (as an agent) using two instruments (my camera and lens), of a place (the object: Catalina park in Katoomba). A sepia toned version was the result of a CreateAction, with the instrument this time being the ImageMagick software. The DataCrate also &lt;a href="https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/5ddf53df/4d0b61c3/d4172208/d5c24816/bad69891/index.html"&gt;contains information&lt;/a&gt; about that CreateAction such as the command used to do the conversion and the version of the software-as-instrument.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;convert -sepia-tone 80% test_data/sample/pics/2017-06-11\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This way of representing file provenance is Action-centred - the focus is on the action that creates a file, rather than the more usual metadata approach of having the file at the centre with properties for “Author” and the like. The action-based approach is MUCH more flexible as it can model the contribution of multiple agents and instruments separately at the expense of being somewhat counter-intuitive to those of us who are used to a library-card approach to metadata where the work is at the centre and has simple properties.&lt;/p&gt;
+&lt;p&gt;There was a question after this presentation about whether I had the arrows in this diagram pointing in the right direction. Yes, I do! The convention here is the standard way of representing a &lt;a href="https://en.wikipedia.org/wiki/Semantic_triple"&gt;subject-predicate-object semantic triple&lt;/a&gt; with the subject as the source of the arrow, the predicate (in this case Schem.org property) as a label, and the pointy end pointing at the object.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide20.png' alt='🐥
+&lt;p&gt;' title='🐥&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;What’s new / developing at the moment in the RO-Crate world? I will illustrate by looking at recent activity on our Github project.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide21.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;We’re working on ways to &lt;a href="https://github.com/ResearchObject/ro-crate/issues/27"&gt;describe not just files, but the CONTENTS of files&lt;/a&gt; - using properties like &lt;a href="https://schema.org/variableMeasured"&gt;variableMeasured&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide22.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;We have a way to &lt;a href="https://github.com/ResearchObject/ro-crate/blob/master/docs/0.3-DRAFT/index.md#workflows-and-scripts"&gt;describe a workflow&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide23.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;and actions that can be performed on data such as firing up a computational environment to re-run the workflow.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide24.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;You too can add Use Cases like &lt;a href="https://github.com/ResearchObject/ro-crate/issues/39"&gt;this one about software containers&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide25.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Breakig news: In the last couple of months Marco La Rosa, an independent developer working for PARADISEC, has ported 10,000 data and collection items into RO-Crate format, AND built a portal which can display them. This means that ANY repository with a similar structure Items in Collections could easily re-use the code and the viewers for various file types.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide26.png' alt='
+&lt;p&gt;http://45.113.232.73/paradisec.org.au/NT1/98007
+' title='&lt;/p&gt;
+&lt;p&gt;http://45.113.232.73/paradisec.org.au/NT1/98007
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This shows an intralinear transcription where you can play various segments of a recording and see the transcription.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide27.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The .eaf files in the previous example are produced using ELAN software. Marco has done the groundwork for a system that could work across multiple repositories and for stand-alone RO-Crates - the crate metadata describes the files, and what format they’re in, and the viewer which is an HTML page either served by a repository or possibly just off your hard disk, can use that information to load an appropriate viewer.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/Slide28.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;RO-Crate will be released in version 1 in November 2019 - we were aiming for
+October, but missed that.&lt;/p&gt;
+&lt;p&gt;We will publish the parts that are well-tested and stable, and immediately start
+on a new version with bleeding-edge cases.&lt;/p&gt;
+&lt;p&gt;We want input from potential users, current and prospective implementers and
+help drafting new parts of the spec is welcome.&lt;/p&gt;
+&lt;p&gt;You can &lt;a href="https://github.com/ResearchObject/ro-crate/issues/1"&gt;join the team&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;a rel=&amp;quot;license&amp;quot; href=&amp;quot;http://creativecommons.org/licenses/by/3.0/au/&amp;quot;&amp;gt;&amp;lt;img alt=&amp;quot;Creative Commons Licence&amp;quot; style=&amp;quot;border-width:0&amp;quot; src=&amp;quot;https://i.creativecommons.org/l/by/3.0/au/88x31.png&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;This work is licensed under a &amp;lt;a rel=&amp;quot;license&amp;quot; href=&amp;quot;http://creativecommons.org/licenses/by/3.0/au/&amp;quot;&amp;gt;Creative Commons Attribution 3.0 Australia License&amp;lt;/a&amp;gt;.
+&lt;/code&gt;&lt;/pre&gt;
+</content></entry><entry><title>DataCrate - a progress report on packaging research data for distribution via your repository</title><link href="2019/07/01/DataCrate-OR2019.htm" rel="alternate"></link><published>2019-07-01T00:00:00+02:00</published><updated>2019-07-01T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:None,2019-07-01:2019/07/01/DataCrate-OR2019.htm</id><summary type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide01.png' alt='DataCrate: a progress report on packaging research data for distribution via your repository
+Peter Sefton
+University of Technology Sydney
+&lt;p&gt;' title='DataCrate: a progress report on packaging research data for distribution via your repository
+Peter Sefton
+University of Technology Sydney&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is a talk that I delivered at Open Repositories 2019 in Hamburg Germany, reporting on developments in the DataCrate specification for research data description and packaging. The big news is that &lt;a href="https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md"&gt;DataCrate&lt;/a&gt; is now part of a broader international effort known as &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt;. I spent several hours at the …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide01.png' alt='DataCrate: a progress report on packaging research data for distribution via your repository
+Peter Sefton
+University of Technology Sydney
+&lt;p&gt;' title='DataCrate: a progress report on packaging research data for distribution via your repository
+Peter Sefton
+University of Technology Sydney&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is a talk that I delivered at Open Repositories 2019 in Hamburg Germany, reporting on developments in the DataCrate specification for research data description and packaging. The big news is that &lt;a href="https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md"&gt;DataCrate&lt;/a&gt; is now part of a broader international effort known as &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt;. I spent several hours at the conference working with co-conspirators Stian Soiland-Reyes and Eoghan Ó Carragáin on the first draft of the new spec which we hope to unveil at &lt;a href="https://conference.eresearch.edu.au/"&gt;eResearch Australasia&lt;/a&gt; 2019.&lt;/p&gt;
+&lt;p&gt;Eoghan, Stian and I ran a workshop at OR2019 for repository people to talk about the state of the art in Research Data Packaging, and collect use cases - we got lots of useful input from the workshop and the broader conference and had a chance to chat with people working on related standards such as the Oxford Common File Layout (&lt;a href="https://ocfl.io/"&gt;OCFL&lt;/a&gt;) and &lt;a href="https://swordapp.github.io/swordv3/technical-outline.html"&gt;Sword 3&lt;/a&gt; - Neil Jeffries, Andrew Woods, Simeon Warner and my old mate Richard Jones amongst others.&lt;/p&gt;
+&lt;p&gt;I also &lt;a href="/2019/07/01/OCLF.htm"&gt;presented work that Mike Lynch, Moises Sacal and I have been doing on OCFL&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My travel was funded by the University of Technology Sydney.&lt;/p&gt;
+&lt;p&gt;Peter Sefton&lt;/p&gt;
+&lt;p&gt;University of Technology Sydney, Australia&lt;/p&gt;
+&lt;p&gt;DataCrate is a ​specification​ for packaging research data for dissemination and reuse which has been presented at OR before as it developed to its current v1.0 status. This is an update on progress with the specification and tooling. The goals are of the specification are, (a) to maximise the utility of the data for researchers (including the original researchers' 'future selves') - given that a researcher has found a DataCrate package they should be able to tell what it is, how the data may be used and what all the files contain, (b) to enable discovery of the data by exposing metadata as widely as possible to both humans and machines and (c) to enable automated ingest into repositories or catalogues.
+DataCrate can express detailed information about which people, instruments and software were involved in capturing or creating data, where they did it and why, as well as how to cite a dataset.
+DataCrate draws on other standards (BagIt, JSON-LD, Schema.org) and is designed to be easy to implement.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide02.png' alt='😻
+' title='😻
+' border='1'  width='85%'/&gt;
+&lt;p&gt;When I proposed this update there had been some work going on to merge DataCrate with another standard - Research Object - but we didn’t know what form that would take. This presentation will now let the love-stuck cat out of the bag. I’m going to tell you a love story about two standards.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide03.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;The story is about DataCrate - which is a Specification for describing and distributing data (any data).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide04.png' alt='
+http://www.researchobject.org/
+' title='
+http://www.researchobject.org/
+' border='1'  width='85%'/&gt;
+&lt;p&gt;And &lt;a href="http://www.researchobject.org/"&gt;Research Object&lt;/a&gt; which is also about data packaging but with more emphasis on having a major impact on scholarly communications and practice, including distributing research data with code and workflows in the interests of making it more reproducible.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide05.png' alt='💒
+' title='💒
+' border='1'  width='85%'/&gt;
+&lt;p&gt;There’s going to be a marriage of these two standards.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide06.png' alt='⏪
+' title='⏪
+' border='1'  width='85%'/&gt;
+&lt;p&gt;But before we talk about the upcoming marriage of two specifications, let’s go back over what we’re trying to achieve. I will use examples from DataCrate but the same principles apply with Research Object.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide07.png' alt='Data packaging Functions: S-words 
+Strategic: Transform scholarly practice, distribute the stuff that makes research complete, focus on redo-ability and reproducibility (eg Research Object)
+Self-documenting: Describe the stuff in a programmer friendly way (eg FD, DataCrate), with a view to making it interoperable (eg DataCrate, RO), try to ensure Reusability (RO) - add human readable HTML (DataCrate, DataSpice)
+Self-contained: Bundle stuff (eg Zip, TAR, .dmg, RAR). 
+Safe: Make sure the stuff is what it’s supposed to be using checksums (eg BagIt, FD) &amp;amp; Preservation / archival practice
+Serialization Syntax: XML (Legacy systems), JSON (FD) Linked Data (RDF, JSON-LD eg RO, DataCrate)
+Schemas - which one(s) to use?
+' title='Data packaging Functions: S-words 
+Strategic: Transform scholarly practice, distribute the stuff that makes research complete, focus on redo-ability and reproducibility (eg Research Object)
+Self-documenting: Describe the stuff in a programmer friendly way (eg FD, DataCrate), with a view to making it interoperable (eg DataCrate, RO), try to ensure Reusability (RO) - add human readable HTML (DataCrate, DataSpice)
+Self-contained: Bundle stuff (eg Zip, TAR, .dmg, RAR). 
+Safe: Make sure the stuff is what it’s supposed to be using checksums (eg BagIt, FD) &amp;amp; Preservation / archival practice
+Serialization Syntax: XML (Legacy systems), JSON (FD) Linked Data (RDF, JSON-LD eg RO, DataCrate)
+Schemas - which one(s) to use?
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Here’s a slide from the workshop we ran at the OR conference, setting out some of the functional requirements for a distribution format.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide08.png' alt='
+&lt;p&gt;← CLICK HERE TO DOWNLOAD
+' title='&lt;/p&gt;
+&lt;p&gt;← CLICK HERE TO DOWNLOAD
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Here’s a screenshot from a sample DataCrate.  It shows the basic metadata for the dataset. This example is online, but the same view is available if you download it as a zip file.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide09.png' alt='
+&lt;p&gt;← CLICK HERE
+' title='&lt;/p&gt;
+&lt;p&gt;← CLICK HERE
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;If you do download the zip then you’ll see these files - the payload data is/are in the &lt;code&gt;/data&lt;/code&gt; directory and the other files are all metadata and fixity checking information. A human can open CATALOG.html and then click around a little website that describes the data, including information down to the file level and about the contents of files.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide10.png' alt='
+&lt;p&gt;← Feed this to your computer
+' title='&lt;/p&gt;
+&lt;p&gt;← Feed this to your computer
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;There’s also machine readable data in JSON-LD format.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide11.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The JSON-LD is designed to be easily consumed by programs that can do things with the data - and is compatible ith Google’s DataSet search.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide12.png' alt='
+&lt;p&gt;🖥️
+👩🏾‍🔬
+' title='&lt;/p&gt;
+&lt;p&gt;🖥️
+👩🏾‍🔬
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The two views (human and machine) of the data are equivalent - in fact the HTML version is generated from the JSON-LD version using a tool called &lt;a href="https://code.research.uts.edu.au/eresearch/CalcyteJS"&gt;CalcyteJS&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide13.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Here’s a screenshot of an HTML page about one of the files in the sample dataset - including detailed EXIF technical metdata which from INSIDE the file.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide14.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;And here’s an automatically generated diagram extracted from the sample DataCrate showing how two images were created. The first result was an image file taken by me (as an agent) using two instruments (my camera and lens), of a place (the object: Catalina park in Katoomba). A sepia toned version was the result of a CreateAction, with the instrument this time being the ImageMagick software. The DataCrate also &lt;a href="https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/5ddf53df/4d0b61c3/d4172208/d5c24816/bad69891/index.html"&gt;contains information&lt;/a&gt; about that CreateAction such as the command used to do the conversion and the version of the software-as-instrument.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;convert -sepia-tone 80% test_data/sample/pics/2017-06-11\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg&lt;/code&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide15.png' alt='URIs as names for things
+&lt;p&gt;' title='URIs as names for things&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Because DataCrate is based on JSON-LD, and linked data principles, each term used can have a link to its definition, eg: &lt;a href="https://schema.org/CreateAction"&gt;https://schema.org/CreateAction&lt;/a&gt; so DataCrates are self-documenting.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide16.png' alt='But (🔧🔨🔩🔪🔬)ing is limited:
+JSON-LD →  🙅
+⛓💾 →  👶 
+&lt;p&gt;' title='But (🔧🔨🔩🔪🔬)ing is limited:
+JSON-LD →  🙅
+⛓💾 →  👶&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;BUT. tools for humans to generate linked-data are under-developed.&lt;/p&gt;
+&lt;p&gt;JSON-LD tooling is limited to high-level transformations and there are no easily available libraries for  Research Software Engineers to do simple stuff like traversing graphs or looking up context keys.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide17.png' alt='⛓💾’s still too much like
+&lt;p&gt;🚀⚗️
+👩🏽‍🚀👷‍🏗️🏢
+🛐
+' title='⛓💾’s still too much like&lt;/p&gt;
+&lt;p&gt;🚀⚗️
+👩🏽‍🚀👷‍🏗️🏢
+🛐
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Linked data is still too much like rocket science because of all the architecture astronauts:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.joelonsoftware.com/2001/04/21/dont-let-architecture-astronauts-scare-you/"&gt;Joel Splosky&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These are the people I call Architecture Astronauts. It’s very hard to get them to write code or design programs, because they won’t stop thinking about Architecture. They’re astronauts because they are above the oxygen level, I don’t know how they’re breathing. They tend to work for really big companies that can afford to have lots of unproductive people with really advanced degrees that don’t contribute to the bottom line.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Also, as with many technologies, RDF can be a bit of a religious matter.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide18.png' alt='💒
+' title='💒
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Speaking of relgion, back to the wedding of the decade ...&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide19.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;The new entity is called RO-Crate.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide20.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;We are collecting use-cases in the github repo. We collected several at our OR2019 workshop, and the the repository is still open for business.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide21.png' alt='
+' title='
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Members of the OR-Crate project (anyone can join by following the directions at the repo) are reviewing the spec - which is based on a set of examples - and we expect to have a simplified, clearer specification draft by the end of July, and to launch an Alpha version in October at &lt;a href="https://conference.eresearch.edu.au/"&gt;eResearch Australasia&lt;/a&gt; (subject to getting  presentation accepted :).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide22.png' alt='What are we working on
+Guidance on how to generate schema.org based metadata for datasets:
+Who created it, what is the subject matter? what are these files? where was it made? What format is each file in?  where is about, why was it made? (ie what funded project is it part of?)
+How does RO-Crate work with BagIt, OCFL, Zip et al
+How can I re-run this analysis? Via a workflow?
+How can I do stuff with this dataset?
+&lt;p&gt;' title='What are we working on
+Guidance on how to generate schema.org based metadata for datasets:
+Who created it, what is the subject matter? what are these files? where was it made? What format is each file in?  where is about, why was it made? (ie what funded project is it part of?)
+How does RO-Crate work with BagIt, OCFL, Zip et al
+How can I re-run this analysis? Via a workflow?
+How can I do stuff with this dataset?&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;We’re working on merging the DataCrate simple-to-implement approach with the bigger vision of Research Object.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/DataCrate-OR2019/Slide23.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Join us!&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+</content></entry><entry><title>Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney</title><link href="2019/07/01/OCLF.htm" rel="alternate"></link><published>2019-07-01T00:00:00+02:00</published><updated>2019-07-01T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:None,2019-07-01:2019/07/01/OCLF.htm</id><summary type="html">&lt;p&gt;This is a presentation by Michael Lynch and Peter Sefton, delivered by Peter Sefton at Open Repositories 2019 in Hamburg. My travel was funded by the University of Technology Sydney.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide01.png' alt='Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+Michael Lynch, Peter Sefton
+University of Technology Sydney, Australia
+&lt;p&gt;' title='Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+Michael Lynch, Peter Sefton
+University of Technology Sydney, Australia&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This presentation will discuss an implementation of the Oxford Common File Layout (OCFL) in an institutional research data repository at …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This is a presentation by Michael Lynch and Peter Sefton, delivered by Peter Sefton at Open Repositories 2019 in Hamburg. My travel was funded by the University of Technology Sydney.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide01.png' alt='Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+Michael Lynch, Peter Sefton
+University of Technology Sydney, Australia
+&lt;p&gt;' title='Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+Michael Lynch, Peter Sefton
+University of Technology Sydney, Australia&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This presentation will discuss an implementation of the Oxford Common File Layout (OCFL) in an institutional research data repository at the University of Technology. We will describe our system in terms of the conference themes of Open and Sustainable and with reference to the needs and user experience of data depositors and users (many have large data, and or large numbers of files). OCFL, which is an approach to repository implementation based on static data, was developed to deal with a number of issues with “traditional” repository design, many of which are particularly acute when dealing with research data. We will cover how this meets our user and institutional needs and is a sustainable approach to managing data.&lt;/p&gt;
+&lt;p&gt;This was presented by Peter Sefton - so the “I” throughout is him.&lt;/p&gt;
+&lt;p&gt;This presentation was in &lt;a href="https://www.conftool.net/or2019/index.php?page=browseSessions&amp;amp;form_session=380&amp;amp;presentations=show"&gt;a session about OCFL&lt;/a&gt; so we didn’t need to explain the standard in detail.&lt;/p&gt;
+&lt;p&gt;Here’s what they say on the &lt;a href="https://ocfl.io/"&gt;OCFL site&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This Oxford Common File Layout (OCFL) specification describes an application-independent approach to the storage of digital information in a structured, transparent, and predictable manner. It is designed to promote long-term object management best practices within digital repositories.&lt;/p&gt;
+&lt;p&gt;Specifically, the benefits of the OCFL include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Completeness, so that a repository can be rebuilt from the files it stores&lt;/li&gt;
+&lt;li&gt;Parsability, both by humans and machines, to ensure content can be understood in the absence of original software&lt;/li&gt;
+&lt;li&gt;Robustness against errors, corruption, and migration between storage technologies&lt;/li&gt;
+&lt;li&gt;Versioning, so repositories can make changes to objects allowing their history to persist&lt;/li&gt;
+&lt;li&gt;Storage diversity, to ensure content can be stored on diverse storage infrastructures including conventional filesystems and cloud object stores&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide02.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Also Moises Sacal worked with us on this.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide03.png' alt="&amp;gt; repo = new Repository()
+&lt;p&gt;&amp;quot; title='&amp;gt; repo = new Repository()&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Hello and welcome to this presentation about OCFL at UTS. Don’t be alarmed - yes there’s javascript code on the screen, but there will not be a test!&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide04.png' alt='&amp;gt; repo = new Repository()
+&lt;p&gt;Repository { ocflVersion: '1.0', objectIdToPath: [Function] }&lt;/p&gt;
+&lt;p&gt;R&lt;/p&gt;
+&lt;p&gt;' title='&amp;gt; repo = new Repository()&lt;/p&gt;
+&lt;p&gt;Repository { ocflVersion: '1.0', objectIdToPath: [Function] }&lt;/p&gt;
+&lt;p&gt;R&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;To me, being able to type &lt;code&gt;npm install ocfl&lt;/code&gt; then  instantiate a repository in an interactive shell is quite amazing - when I first worked with repositories, from about 2006, installing a repository was a big job, there were usually lots of prerequisites and installation (for example see this guide to installing UQ’s &lt;a href="https://web.archive.org/web/20130419100148/http://www.rubric.edu.au/techreports/Fez_Full_Installation_Procedure_LatestNov06.htm"&gt;Fez Fedora repository&lt;/a&gt; could be very finicky, but then in those days the repositories were “full stack” services whereas OCFL is just about the heart and soul of a repository, the storage.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide05.png' alt='What you’re going to get
+An explanation of OCFL ...
+... from a UTS perspective.
+&lt;p&gt;A confession.&lt;/p&gt;
+&lt;p&gt;And some philosophy:
+“What is a ‘repository’ anyway”
+' title='What you’re going to get
+An explanation of OCFL ...
+... from a UTS perspective.&lt;/p&gt;
+&lt;p&gt;A confession.&lt;/p&gt;
+&lt;p&gt;And some philosophy:
+“What is a ‘repository’ anyway”
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This talk is not just about OCFL, it reflects on the role of repositories and how we should view them in our infrastructure.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide06.png' alt='Confession TODO
+http://www.rubric.edu.au/techreports/migration_toolkit.htm
+' title='Confession TODO
+http://www.rubric.edu.au/techreports/migration_toolkit.htm
+' border='1'  width='85%'/&gt;
+&lt;p&gt;My first “Confession”.&lt;/p&gt;
+&lt;p&gt;Many, many years ago I was the technical manager for the RUBRIC project -
+Regional Universities Building Research Infrastructure Collaboratively. This
+project helped a group of about nine partner unis get their first publications
+repositories up and running and our team morphed into the the national
+repository support service for Australia. As part of this work we built a
+variety of migration tools to assist people in getting data from existing
+systems such as endnote, or ingesting MARC (library) metadata into a repository.
+To do this we used the DSpace archive format, a simple directory-plus-metadata
+file format that was not unlike OCFL.&lt;/p&gt;
+&lt;p&gt;It occurred to me at the time that we could build a simple static repository
+system that used something like the DSpace archive format, with separate ingest
+workflows, and build a portal using something like Apace Solr (though at that
+stage there really wasn’t anything else like Apache Solr).&lt;/p&gt;
+&lt;p&gt;I didn’t follow up on those thoughts, as I thought they
+were a bit heretical - the monolithic repository architecture was the orthodoxy,
+though I did flirt with this idea in this article about discovery portals and
+persistent identifiers. Anyway, it seems like those &lt;em&gt;wrong&lt;/em&gt; thoughts are
+something I can talk about, now that we have OCFL.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide07.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Confession 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When I was working on the Australian Government funded NeCTAR Virtual Lab project, Alveo I suggested we start with a Hydra/Fedora repository as the ‘heart’ of the Virtual Lab, the repository component. That worked well in that we got up and running very fast with a discovery portal for data - but ran into problems when it came to data access - for example making Item Lists - data-sets - performed terribly because of the overhead inherent in the Hydra architecture.&lt;/p&gt;
+&lt;p&gt;I &lt;a href="http://www.doria.fi/handle/10024/97740"&gt;delivered a presentation at Open Repositories 2014&lt;/a&gt;, written with other Alveo staff, that explored some of the problems with using a “full stack” repository at scale.&lt;/p&gt;
+&lt;p&gt;Initially (and throughout the project) &lt;a href="https://orcid.org/0000-0003-2357-9652"&gt;Steve Cassidy&lt;/a&gt; was suggesting a more OCFL-like way of loading data where it would be arranged on disk by some kind of curation human or machine orchestrated process and then indexed. Steve was right. I was wrong. I’d love to come back to the Alveo lab architecture for another go, maybe in a future round of &lt;a href="https://ror.org/038sjwq14"&gt;ARDC&lt;/a&gt; investment?&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide08.png' alt='&amp;gt; repo.create(&amp;quot;/Users/124411/everything&amp;quot;)
+&lt;p&gt;' title='&amp;gt; repo.create(&amp;quot;/Users/124411/everything&amp;quot;)&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Like I said, creating a repository is this simple.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide09.png' alt='What is a repository
+anyway?
+&lt;p&gt;' title='What is a repository
+anyway?&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;But what is a repository?&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide10.png' alt='
+A lifestyle
+An application for managing scholarly comms
+A service or collection of services like a Library
+A service or collection of services like an Archive
+A service or [...] like a Records Management department
+A place to put stuff
+An software application to store stuff
+' title='
+A lifestyle
+An application for managing scholarly comms
+A service or collection of services like a Library
+A service or collection of services like an Archive
+A service or [...] like a Records Management department
+A place to put stuff
+An software application to store stuff
+' border='1'  width='85%'/&gt;
+&lt;p&gt;There are a variety of ways to look at a “repository” - all of these are facets of what a repository can be.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide11.png' alt='🛒 📬 🐿 💽 🗃🗄🔭🔎🔬
+&lt;p&gt;' title='🛒 📬 🐿 💽 🗃🗄🔭🔎🔬&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Repositories are no longer just places to put stuff (if they ever were) - they’re positively bristling with services. Over the 13 years of this conference, repositories have become shall we say baroque. And in some cases slow. They also tend to have problems when you present them with a terabyte file, or ten million 1 kilobyte files. OCFL is, we think, in part a reaction from our community to those realities.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide12.png' alt='CON
+&lt;p&gt;' title='CON&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Using OCFL as the storage layer in a repository is a radical separation of con-&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide13.png' alt='CERNS
+&lt;p&gt;' title='CERNS&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;-cerns.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide14.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is a view of our eResearch Architecture - Stash is our Data Management service, which is an implementation of &lt;a href="https://www.redboxresearchdata.com.au/"&gt;ReDBox&lt;/a&gt;. The point of showing the diagram is not to go through it all in detail, but to show how complex the ecosystem of research data services can be - and where data archive / repository core sits. The OCFL components (the publication and archive file-systems) are shown in red, while Agents (the repository Adaptor that writes content from Research Workspace Services in a repository, the Public and Private data portales) that access OCFL are shown in blue.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide15.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This is our work-in-progress discovery portal - this is not built in to the repository like it would be with, say DSpace, it’s a separate service that indexes an OCFL repository (in this case the public data).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide16.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Here’s the same diagram stripped back a bit more ...&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide17.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;And even more stripped back, to show only the core repository service (in red) and a couple of services that interact with it (in blue).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide18.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;p&gt;And here’s the actually repository part - the storage layer.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide19.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The idea of OCFL is that there are services that all access this core layer but they’re disposable and/or interchangeable, and you just leave your precious data where it is, on disk (or some virtual disk-like view of whatever the storage solution &lt;em&gt;de jour&lt;/em&gt; happens to be).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide20.png' alt='TODO	
+Progressively drill down on the architecture until it’s “just”  a partition.
+' title='TODO	
+Progressively drill down on the architecture until it’s “just”  a partition.
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Here’s a screenshot of what an OCFL object looks like - it’s a series of versioned directories, each with a detailed inventory.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide21.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;No this slide is not about a zoological repository. It’s about the Elephants in the repository AKA the risks that come with an OCFL implementation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The main issue in implementation is making sure that you have to THINK about the design of software to update the repository at the same time. You don’t want to end up with (a) corrupt files or (b) transactions that didn’t complete.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;OCFL is also very new (it’s not at version 1 yet) so there’s some risk that the services we are hoping for won’t arrive - but given that our data are still safe on our own storage infrastructure and it possible to code-up an OCFL consuming application in a matter of days this is not a serious risk.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide22.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;OCFL needs some explaining. I’ve had a couple of conversations with developers where it takes them a little while to get what it’s for.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide23.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;But they DO get it.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide24.png' alt='But why do I have to use this?
+Every mature language now has a thing that builds a project for you, gives you a skeleton so they’re all in the same spot every time.
+Michael Lynch 
+' title='But why do I have to use this?
+Every mature language now has a thing that builds a project for you, gives you a skeleton so they’re all in the same spot every time.
+Michael Lynch 
+' border='1'  width='85%'/&gt;
+&lt;p&gt;Mike Lynch’s summary - this is a modern take on “how to I organise my stuff” - in this sense OCFL is like a framework for data - and we all use frameworks for code these days,&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide25.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;We have some good news to announce - we have a grant to continue our OCFL work from the &lt;a href="https://ror.org/038sjwq14"&gt;Australian Research Data Commons&lt;/a&gt;. (I’ve used the new Research Organisation Registry (ROR) ID for ARDC, just because it’s new and you should all check out the ROR).&lt;/p&gt;
+&lt;p&gt;We’re going to be demonstrating large-scale use of OCFL, with research objects described using &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt; metadata. (See also my presentation on &lt;a href="/2019/06/21/DataCrate-OR2019.htm"&gt;DataCrate&lt;/a&gt; which introduces RO-Crate).&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/OCLF-OR-2019/Slide26.png' alt='🤔
+&lt;p&gt;' title='🤔&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;So what do we think?&lt;/p&gt;
+&lt;p&gt;Working with OCFL has been really great for the team at UTS - it’s well designed, and just when you think “hey, how do I do file-locking” you find that there’s a hint in the design (a &lt;code&gt;/deposit&lt;/code&gt; directory in this case) that points towards a solution.&lt;/p&gt;
+&lt;p&gt;Over at the &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt; project Stian and Eoghan and I really liked the OCFL approach of having a clear spec with implementation notes, and we’re going to try to emulate that as we work on merging Research Object and DataCrate into one general purpose way of describing and packaging research data.&lt;/p&gt;
+&lt;p&gt;See also my presentation on &lt;a href="/2019/06/21/DataCrate-OR2019.htm"&gt;DataCrate&lt;/a&gt; which introduces RO-Crate.&lt;/p&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+</content></entry><entry><title>Trip Report - Open Repositories 2019 - Peter Sefton</title><link href="2019/07/01/OR2019.htm" rel="alternate"></link><published>2019-07-01T00:00:00+02:00</published><updated>2019-07-01T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:None,2019-07-01:2019/07/01/OR2019.htm</id><summary type="html">&lt;p&gt;This is &lt;a href="https://eresearch.uts.edu.au/2019/07/01/OR2019.htm"&gt;reposted from the UTS eResearch Website&lt;/a&gt; with minor edits.&lt;/p&gt;
+&lt;p&gt;This year Open Repositories was in Hamburg, Germany. I was funded by my employer the
+University of Technology Sydney to attend. I gave two presentations, one on &lt;a href="/2019/07/01/OCLF.htm"&gt;our work on scalable research data repositories&lt;/a&gt;
+and other on &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;research data …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is &lt;a href="https://eresearch.uts.edu.au/2019/07/01/OR2019.htm"&gt;reposted from the UTS eResearch Website&lt;/a&gt; with minor edits.&lt;/p&gt;
+&lt;p&gt;This year Open Repositories was in Hamburg, Germany. I was funded by my employer the
+University of Technology Sydney to attend. I gave two presentations, one on &lt;a href="/2019/07/01/OCLF.htm"&gt;our work on scalable research data repositories&lt;/a&gt;
+and other on &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;research data packaging&lt;/a&gt; and ran a workshop, more on
+which is below.&lt;/p&gt;
+&lt;p&gt;This year was an intense, focussed conference for me. &lt;a href="http://ptsefton.com/2018/07/10/or2018.htm"&gt;Last year&lt;/a&gt;
+I had a few take-aways from presentations; this year was one of those
+conferences where the value was in the conversations and in getting down to
+work.&lt;/p&gt;
+&lt;h1&gt;Keynotes&lt;/h1&gt;
+&lt;p&gt;I didn't get much out of the opening Keynote, from &lt;a href="https://jeffgothelf.com/"&gt;Jeff Gothelf&lt;/a&gt;, who's
+apparently a star in the User Experience (UX) world. It was a pretty generic
+presentation, with some well timed jokes but not very &lt;em&gt;useful&lt;/em&gt;. Ok, UX is
+important, but when your examples are coming from well-resourced projects what
+are resource-constrained repository workers supposed to do to improve UX?&lt;/p&gt;
+&lt;p&gt;My mate &lt;a href="https://cottagelabs.com/"&gt;Richard Jones&lt;/a&gt; from Cottage Labs asked a great question about how we can improve
+the UX for developers using APIs but didn't get much of an answer.&lt;/p&gt;
+&lt;p&gt;Even though I would have preferred a more on-topic keynote, it did spark a
+number of useful conversations in the breaks, including some I had with Richard
+about how we can build developer-friendly services. I always learn lots from Mr
+Jones at OR.&lt;/p&gt;
+&lt;p&gt;The closing Keynote was much more audience-appropriate. &lt;a href="https://orcid.org/0000-0003-1613-5981"&gt;Heather Piwowar&lt;/a&gt;, who
+has, like, direct User Experience of Open Repositories gave us all a kind of
+career-affirming hug; pointing out that the repository people in the room are
+helping to build huge database of open scholarly information.&lt;/p&gt;
+&lt;p&gt;We put up and maintain the content, and her &lt;a href="https://unpaywall.org/"&gt;Unpaywall&lt;/a&gt; site finds it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An open database of 23,565,946 free scholarly articles.
+We harvest Open Access content from over 50,000 publishers and repositories, and make it easy to find, track, and use.
+&lt;a href="https://unpaywall.org/"&gt;https://unpaywall.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;She reckons our
+time is about to come - that we're at the take-off point for hockey-stick
+growth. Here's her presentation
+&lt;a href="https://www.slideshare.net/hpiwowar/open-repositories-2019-closing-keynote-heather-piwowar"&gt;The Breakout Moment for open repositories is now&lt;/a&gt;.
+On topic, useful and inspiring.&lt;/p&gt;
+&lt;h1&gt;Workshop in data packaging&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://orcid.org/0000-0001-8131-2150"&gt;Eoghan Ó Carragáin&lt;/a&gt;, &lt;a href="https://orcid.org/0000-0001-9842-9718"&gt;Stian Soiland-Reyes&lt;/a&gt; and I ran an all-day workshop on Data Packaging
+which was well attended - we ran through the background in the morning, what
+data packaging is all about, why it's important and Eoghan gave us a tour of
+some of the major efforts going on in the space at the moment. Stian gave more
+detail on Research Objects, and &lt;a href="https://orcid.org/0000-0001-9530-627X"&gt;Marina  Soares E Silva&lt;/a&gt; talked about recent developments with Mendeley Data.&lt;/p&gt;
+&lt;p&gt;We structured the discussion around these themes or functions of Research Data Packaging:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Strategic: Transform scholarly practice, distribute the stuff that makes
+research complete, focus on redo-ability and reproducibility (eg Research
+Object) - Self-documenting: Describe the stuff in a programmer friendly way
+(eg FD, DataCrate), with a view to making it interoperable (eg DataCrate, RO),
+try to ensure Reusability (RO) - add human readable HTML (DataCrate,
+DataSpice)&lt;/li&gt;
+&lt;li&gt;Self-contained: Bundle stuff (eg Zip, TAR, .dmg, RAR).&lt;/li&gt;
+&lt;li&gt;Safe: Make sure the stuff is what it’s supposed to be using checksums (eg BagIt, FD) &amp;amp; Preservation / archival practice&lt;/li&gt;
+&lt;li&gt;Serialization Syntax: XML (Legacy systems), JSON (FD) Linked Data (RDF, JSON-LD eg RO, DataCrate)&lt;/li&gt;
+&lt;li&gt;Schemas - which one(s) to use?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We did a quick pass on these topics in the morning, looped back to the most
+popular ones in the afternoon - has some impromptu lightning talks and finished
+up with a session where we solicited Use Cases to go into the &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;RO-Crate&lt;/a&gt; process
+Thanks go to &lt;a href="https://orcid.org/0000-0003-1541-5631"&gt;Paul Walk&lt;/a&gt; and &lt;a href="https://orcid.org/0000-0003-3311-3741"&gt;Neil Jefferies&lt;/a&gt; both of whom I've known for a
+decade or so for showing up and contributing enthusiastically.&lt;/p&gt;
+&lt;h1&gt;My conference&lt;/h1&gt;
+&lt;img alt='Hotel converted from an old water tower' src='blog/or-2019/movenpick.jpg'&gt;
+&lt;p&gt;I was lucky in my choice of converted water tower to stay in. I got to have
+breakfast with &lt;a href="https://orcid.org/0000-0003-1419-2405"&gt;Martin Fenner&lt;/a&gt; from DataCite (we met back in 2011
+at the first Beyond the PDF meeting). He was on the list for our Monday workshop
+but couldn't make it. I filled Martin in on what we're doing with &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;RO-Crate&lt;/a&gt; - how we're using Schema.org metadata in JSON-LD. Martin was completely on-board
+with using Schema.org, and told me that if we have that, then using the DataCite
+XML format would probably be redundant. If that works out then that simplifies
+things - we need to talk more about this on the RO-Crate Project.&lt;/p&gt;
+&lt;p&gt;Martin also seemed to me to be frustrated that there are still a number of
+packaging efforts with no clear leader - simple, I said, just endorse RO-Crate
+when it comes out as DataCite approved :)&lt;/p&gt;
+&lt;p&gt;Stian and Eoghan and I took the opportunity to get stuck in to editing the
+RO-Crate draft, and getting to know each other a bit - forging a strong editorial team for &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;RO-Crate&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I chaired a short-presentation session (7 minutes, 24 slides) - I like to get
+the presenters all down on stage at the end, get them to re-introduce
+themselves, give them a minute to tell us anything they forgot in the heat of
+presentation then get a discussion going.&lt;/p&gt;
+&lt;img alt="The session I chaired" src="blog/or-2019/lecture-hall.jpg"&gt;
+&lt;h1&gt;Hamburg&lt;/h1&gt;
+&lt;img alt='A pretty shop' src='blog/or-2019/alsterhaus.jpg'&gt;
+&lt;img alt='Stickers on rubbish bins' src='blog/or-2019/stickers.jpg'&gt;
+&lt;p&gt;Hamburg's a great place to wander around - lots of parks and lots of stickers on
+garbage bins  that I really liked.&lt;/p&gt;
+&lt;img alt='Wedding photo in a park' src='blog/or-2019/gardens.jpg'&gt;
+&lt;img alt='"Antifa Zone" sticker on a road sign' src='blog/or-2019/antifa.jpg'&gt;
+&lt;p&gt;Hamburg harbour, where we went for the conference dinner boat ride, is a giant
+metaphor for Data Packaging. Container terminals as far as the eye can see being
+loaded and unloaded by giant robot-cranes. Shipping containers are, of course, a
+triumph of standardization and here you could see them being moved around at
+industrial scale - just like we're going to do using RO-Crate for Research Data.&lt;/p&gt;
+&lt;img alt='Shipping containers and a wind turbine, Hamburg harbour' src='blog/or-2019/containers.jpg'&gt;
+</content></entry><entry><title>DataCrate: a method of packaging, distributing, displaying and archiving Research Objects</title><link href="2018/10/29/sefton-ro2018.htm" rel="alternate"></link><published>2018-10-29T00:00:00+01:00</published><updated>2018-10-29T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:None,2018-10-29:2018/10/29/sefton-ro2018.htm</id><summary type="html">&lt;p&gt;Here are the slides for presentation I delivered this week at &lt;a href="http://www.researchobject.org/ro2018/"&gt;Research Object 2018&lt;/a&gt;
+in Amsterdam. The &lt;a href="https://doi.org/10.5281/zenodo.1445817"&gt;paper we wrote for this workshop&lt;/a&gt;
+is available. The contributors to the article are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peter Sefton&lt;/li&gt;
+&lt;li&gt;Michael Lynch&lt;/li&gt;
+&lt;li&gt;Gerard Devine&lt;/li&gt;
+&lt;li&gt;Duncan Loxton&lt;/li&gt;
+&lt;li&gt;Sharyn Wise&lt;/li&gt;
+&lt;li&gt;Christian Evenhuis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This presentation is &lt;em&gt;my&lt;/em&gt; view on some …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are the slides for presentation I delivered this week at &lt;a href="http://www.researchobject.org/ro2018/"&gt;Research Object 2018&lt;/a&gt;
+in Amsterdam. The &lt;a href="https://doi.org/10.5281/zenodo.1445817"&gt;paper we wrote for this workshop&lt;/a&gt;
+is available. The contributors to the article are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peter Sefton&lt;/li&gt;
+&lt;li&gt;Michael Lynch&lt;/li&gt;
+&lt;li&gt;Gerard Devine&lt;/li&gt;
+&lt;li&gt;Duncan Loxton&lt;/li&gt;
+&lt;li&gt;Sharyn Wise&lt;/li&gt;
+&lt;li&gt;Christian Evenhuis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This presentation is &lt;em&gt;my&lt;/em&gt; view on some the issues in data packaging and linked
+data metadata. In addition to giving a quick intro to DataCrate I tried to
+contrast it with the &lt;a href="http://www.researchobject.org/"&gt;Research Object&lt;/a&gt; and &lt;a href="https://frictionlessdata.io/data-packages/"&gt;Frictionless Data&lt;/a&gt;
+approaches and to talk about some of the issues we had with software tooling for
+linked data in JSON-LD.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide01.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 1&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;DataCrate is a specification for packaging research data for distribution and reuse. DataCrate packages may be distributed as archives with or without compression, and hosted on web sites, as they contain an index.html page that summarizes the contents of the package for human readers. For machines, there is a JSON-LD file containing metadata that will aid in the re-use of the data including licensing, publication dates, parties involved in creating the data. Where possible the terms from schema.org are used for metadata, with other ontologies used where needed. DataCrate optionally uses the BagIt data packaging standard which is widely used in libraries and archives and increasingly in research data management, including in recent discussions about data packaging at the Research Data Alliance (RDA).&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide02.png' alt='
+🧙‍♂️
+' title='
+🧙‍♂️
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 2&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Hi, I’m Peter, you can call me Petey.&lt;/p&gt;
+&lt;p&gt;I’ve made a solemn vow never to invent an ontology.&lt;/p&gt;
+&lt;p&gt;Also, I seem to have become the main contributor to a new standard. This was NOT one of my ambitions as a kid, frankly I’d like to spend my spare time playing or writing music rather than maintaining standards.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide03.png' alt='Motivation: package data with maximum useful context
+Who …  made it? funded the work? 
+What … format are these files? … is the research about?
+Where … was it collected? … is it about? 
+Why … was it done?  … &amp;lt;link to publication&amp;gt;
+How … were these files created? … can I repeat that process? 
+' title='Motivation: package data with maximum useful context
+Who …  made it? funded the work? 
+What … format are these files? … is the research about?
+Where … was it collected? … is it about? 
+Why … was it done?  … &amp;lt;link to publication&amp;gt;
+How … were these files created? … can I repeat that process? 
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 3&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;We wanted to be able to show data on the web and distribute it with useful metadata. That means allowing a data packager to anticipate what others (including their future self) might want to do with data, and providing enough detail on data provenance to make that possible.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide04.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 4&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;The &lt;a href="https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md"&gt;spec is available on github&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide05.png' alt='
+&lt;p&gt;“As a researcher…I’m a bit bloody fed up with Data Management”
+Cameron Neylon
+' title='&lt;/p&gt;
+&lt;p&gt;“As a researcher…I’m a bit bloody fed up with Data Management”
+Cameron Neylon
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 5&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Here’s an example. This is the dataset used as the test-case for the first &lt;a href="https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/4_/02/-S/im/on/_H/od/so/n,/fl/ac/index.html"&gt;DataCrate&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This came from Cameron Neylon’s &lt;a href="http://cameronneylon.net/blog/as-a-researcher-im-a-bit-bloody-fed-up-with-data-management/"&gt;As a researcher…I’m a bit bloody fed up with Data Management&lt;/a&gt;, which I covered in the &lt;a href="/2017/10/19/datacrate.htm"&gt;First presentation about DataCrate&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide06.png' alt=' 🛄it 
++
+⛓💾 
++
+ &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;
++
+&lt;p&gt;' title=' 🛄it
++
+⛓💾
++
+&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;
++&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 6&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;DataCrate uses several standards:&lt;/p&gt;
+&lt;p&gt;🛄it - BagIT&lt;/p&gt;
+&lt;p&gt;⛓💾  - Linked data as JSON-LD&lt;/p&gt;
+&lt;p&gt;&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; - HTML&lt;/p&gt;
+&lt;p&gt;And the &lt;a href="http://schema.org"&gt;Schema.org&lt;/a&gt; vocabulary.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide07.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 7&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Human-readable &lt;a href="https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/pi/cs/=2/01/7-/06/-1/1%5E/20/12/,5/6,/14/,j/pg/index.html"&gt;HTML data about files&lt;/a&gt; including detailed metadata.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide08.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 8&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Which allows us to describe &lt;a href="https://code.research.uts.edu.au/MIF/microscope-instructions/wikis/Nikon-Ti/Nikon-Ti-inverted-epifluorescent-microscope"&gt;individual items of equipment&lt;/a&gt; ...&lt;/p&gt;
+&lt;p&gt;As &lt;a href="https://www.isi.edu/~carl/"&gt;Carl Kesselman&lt;/a&gt; said at the workshop:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Why isn't &lt;a href="https://www.force11.org/group/fairgroup/fairprinciples"&gt;FAIR&lt;/a&gt; important when you take it off the microscope?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Chris Evenhuis at UTS thinks the same way. He is doing stuff because it is the &lt;strong&gt;right&lt;/strong&gt; thing to do.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide09.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 9&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;… people ...&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide10.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 10&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;All the metadata for a Datacrate is in a &lt;a href="https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG.json"&gt;single JSON-LD file&lt;/a&gt;. This is easy for programmers to deal with, and in my opinion, much more straightforward than the Research Object approach of using multiple annotation files - this has nothing to do with differences in the information model, its an implementation detail.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide11.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 11&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Processes  by which files are created&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide12.png' alt='URIs as names for things
+&lt;p&gt;' title='URIs as names for things&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 12&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Because DataCrate is based on JSON-LD, and linked data pricnples, each term used can have a link to its definition, eg: &lt;a href="https://schema.org/CreateAction"&gt;https://schema.org/CreateAction&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide13.png' alt='But (🔧🔨🔩🔪🔬)ing is limited:
+JSON-LD →  🙅
+⛓💾 →  👶 
+&lt;p&gt;' title='But (🔧🔨🔩🔪🔬)ing is limited:
+JSON-LD →  🙅
+⛓💾 →  👶&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 13&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Tools (🔧🔨🔩🔪🔬) for humans to generate linked-data are under-developed.&lt;/p&gt;
+&lt;p&gt;JSON-LD tooling is limited to high-level transformations and there are no easily
+available libraries for Research Software Engineers to do simple stuff like
+traversing graphs or looking up context keys.&lt;/p&gt;
+&lt;p&gt;Linked Data data tooling is also extremely lacking, there are very few good
+example of systems that allow people to enter linked-data metadata.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide14.png' alt='⛓💾’s still too much like
+&lt;p&gt;🚀⚗️
+👩🏽‍🚀👷‍🏗️🏢
+🛐
+' title='⛓💾’s still too much like&lt;/p&gt;
+&lt;p&gt;🚀⚗️
+👩🏽‍🚀👷‍🏗️🏢
+🛐
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 14&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;Linked data is still too much like rocket science (🚀⚗️) because of all the architecture (👩🏽‍🚀👷‍🏗️🏢) astronauts.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.joelonsoftware.com/2001/04/21/dont-let-architecture-astronauts-scare-you/"&gt;Joel Splosky&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These are the people I call Architecture Astronauts. It’s very hard to get them to write code or design programs, because they won’t stop thinking about Architecture. They’re astronauts because they are above the oxygen level, I don’t know how they’re breathing. They tend to work for really big companies that can afford to have lots of unproductive people with really advanced degrees that don’t contribute to the bottom line.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There’s also religious aspect to some of this.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide15.png' alt='
+Stop treating ontologies like https://www.joelonsoftware.com/2001/04/21/dont-let-architecture-astronauts-scare-you/
+' title='
+Stop treating ontologies like https://www.joelonsoftware.com/2001/04/21/dont-let-architecture-astronauts-scare-you/
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 15&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;We need to stop treating ontologies like toothbrushes (ie avoiding using other people’s) and get on with implementing usable systems.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/2018/10/sefton-ro2018/Slide16.png' alt='
+&lt;p&gt;' title='&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;h3&gt;Notes - Slide 16&lt;/h3&gt;
+&lt;/summary&gt;
+&lt;p&gt;So I’ll finish with a provocation.&lt;/p&gt;
+&lt;p&gt;Do we really really need more complicated ontologies when you can describe the what where when and why of research data in a &lt;em&gt;useful&lt;/em&gt; way with schema.org and JSON-LD? We need to recruit content and get experience describing it, not wait.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+</content></entry><entry><title>Trip Report (with bonus opinions) - Open Repositories 2018, Bozeman Montana, USA</title><link href="2018/07/10/or2018.htm" rel="alternate"></link><published>2018-07-10T00:00:00+02:00</published><updated>2018-07-10T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:None,2018-07-10:2018/07/10/or2018.htm</id><summary type="html">&lt;p&gt;I (Peter Sefton) recently attended &lt;a href="http://www.or2018.net/"&gt;OR2018&lt;/a&gt;, the Open
+Repositories conference from June 4-7, 2018 in Bozeman Montana.&lt;/p&gt;
+&lt;p&gt;This post is being posted on the &lt;a href="https://eresearch.uts.edu.au"&gt;UTS eResearch site&lt;/a&gt; and on &lt;a href="http://ptsefton.com"&gt;my site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My trip was funded by the University of Technology Sydney (UTS).&lt;/p&gt;
+&lt;img alt="The sign at the Lewis and Clark Motel" src="blog/2018/07/or-2018/lewis_and_clark_sign.JPG"&gt;
+&lt;h1&gt;Mission&lt;/h1&gt;
+&lt;p&gt;Gavin Kennedy from QCIF was also in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I (Peter Sefton) recently attended &lt;a href="http://www.or2018.net/"&gt;OR2018&lt;/a&gt;, the Open
+Repositories conference from June 4-7, 2018 in Bozeman Montana.&lt;/p&gt;
+&lt;p&gt;This post is being posted on the &lt;a href="https://eresearch.uts.edu.au"&gt;UTS eResearch site&lt;/a&gt; and on &lt;a href="http://ptsefton.com"&gt;my site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My trip was funded by the University of Technology Sydney (UTS).&lt;/p&gt;
+&lt;img alt="The sign at the Lewis and Clark Motel" src="blog/2018/07/or-2018/lewis_and_clark_sign.JPG"&gt;
+&lt;h1&gt;Mission&lt;/h1&gt;
+&lt;p&gt;Gavin Kennedy from QCIF was also in attendance, and we were on something of a
+mission - to promote and get feedback on the recent work we've been doing on the
+&lt;a href="https://www.redboxresearchdata.com.au/"&gt;ReDBox research data management
+platform&lt;/a&gt;. We ran a ReDBOX intro
+workshop on the Monday of the conference. Gavin and I also presented a general
+introduction to ReDBOX and the provisioner, and I went into more detail about
+&lt;a href="http://ptsefton.com/2018/06/29/DataCrate_2018.htm"&gt;the DataCrate standard&lt;/a&gt; for
+shipping and showing-off research data that I have been leading, with help from
+a growing community of supporters. I also did a presentation in the technical
+session which included a live demo of using ReDBox to ingest DataCrates -
+showing how it could 'sniff out' metadata from DataCrate packages.&lt;/p&gt;
+&lt;h1&gt;Research Data Management&lt;/h1&gt;
+&lt;p&gt;Open Repositories now has enough going on about Research Data Management that I
+was able to spend most in those sessions when I wasn't meeting with people
+directly.&lt;/p&gt;
+&lt;p&gt;I heard people talk about a few things that helped confirm some of our design
+choices at UTS, and a few things to challenge my world view as well.&lt;/p&gt;
+&lt;p&gt;Vladimir Bubalo from Macquarie, Gavin and I  chased up some more details about the &lt;a href="https://dataverse.org/"&gt;Dataverse
+repository software&lt;/a&gt;.There is some interest from
+Macquarie in what's available in the way of open source research data
+repositories.&lt;/p&gt;
+&lt;p&gt;As attested by the session &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;presentations=show&amp;amp;search=australian+data+archive"&gt;Reaching out with Data: Dataverse Creating a Global
+Community&lt;/a&gt;
+Dataverse looks like it's a thriving product and would be a good integration
+target for ReDBOX, it powers the &lt;a href="https://ada.edu.au/"&gt;Australian Data Archive&lt;/a&gt;
+for one thing and can be used as an institutional data repository. One problem
+they're still grappling with is large file support, which is the same issue with
+&lt;em&gt;any&lt;/em&gt; repository software when you try to put large volumes of, or large numbers
+of data streams through the API or web interface.&lt;/p&gt;
+&lt;p&gt;There was a really interesting talk from the UK Jisc Research Data Shared
+Services (RDSS) project (on which I have done some very part time consulting via
+Artefactual in Canada) about how they failed to get a Samvera repository working
+as part of their offering.&lt;/p&gt;
+&lt;p&gt;The have published &lt;a href="https://docs.google.com/document/d/1CQ_Oc9rRjub-e964_6PKEB1N0H03UEOUb52thDNA3p4/edit#heading=h.y6gyy9rpmdvk"&gt;their report&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It seems like the project to adapt Samvera failed not because of large files or
+large volumes of files, although that problem may have come up later, as &lt;a href="http://www.doria.fi/handle/10024/97641"&gt;we
+reported at OR2014&lt;/a&gt;, Hydra, which was
+rebranded Samvera had severe performance problems on the Alveo virtual lab
+related to processing number of files in a single transaction. Two issues Jisc
+called out in their report are &lt;em&gt;one&lt;/em&gt;, a failure to implement their complex
+domain model in Samvera.  They say:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In order to capture and store the range of metadata required by the RDSS CDM
+the internal storage model of the work type within RDSS Samvera needed to map
+closely to the CDM’s conceptual data model. However, it did not prove to be
+straightforward to translate the conceptual data model of the RDSS CDM, which
+leverages entity-relationships, to a programming/storage model that is largely
+intended to be flat.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And &lt;em&gt;two&lt;/em&gt;, they had problems implementing a message passing model.&lt;/p&gt;
+&lt;p&gt;In order to avoid the kind of problems reported by Jisc and to deal with the
+reality that many researchers just want to gulp-down files, or object-store
+blobs, or database tables and most emphatically do not want to sip data
+through a tiny API-straw we are building research data management
+systems that are distributed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Avoiding complex customisation of applications wherever possible and instead
+linking Research Data Management Plans (RDMPs) to  workspaces in research software
+such as lab notebooks or git repositories, and archival data stores using
+standard linked data techniques.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Not&lt;/em&gt; using message-queues that might block progress on workloads (lesson
+learned from ReDBOX 1 development and its ill-conceived &amp;quot;curation&amp;quot;
+workflows). We plan to run &amp;quot;bots&amp;quot;, stand alone agents instead which generate
+reports or make links or auto-provision spaces.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Keeping archival data, and data that needs rapid access in large scalable
+file storage systems, described and linked to RDMPs, data
+descriptions, and data publication records. For us, 'the repository' is a
+collection of services which includes the central index and a variety of
+stores, rather than a single application: It's a lifestyle; it's not just
+for Christmas; and most importantly it's a governance thing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Given the above one of the things I was keen to do at OR2018 was to find out more
+about the &lt;em&gt;Oxford Common Filesystem Layout&lt;/em&gt; (OCLF) which is being driven by people from
+Oxford, Emory, Stanford, Cornell and Duraspace - it's about how you organise
+digital assets in the kind of deconstructed architecture I described above for
+UTS. The files are kept on a file system (&lt;em&gt;yes&lt;/em&gt; cloud-first people, that might
+actually be backed by an object-store) so that you can run services against
+them: index them for discovery, check their integrity, generate dissemination
+versions for distribution, report on items due for disposal and so on.&lt;/p&gt;
+&lt;p&gt;I couldn't get to the OCFL presentation but lead author Neil Jeffries from Oxford
+talked me through the emerging standard and the process being used to develop
+it. Neil assured me we can go ahead and implement against the draft spec (and
+challenged me with the statement that at Oxford they don't like to talk about
+data vs metadata, it's all data. I'm still thinking that over Neil, but I think I
+still believe in metadata).&lt;/p&gt;
+&lt;p&gt;This is from the (still rather sparse) draft dated 2018-06-22, a couple of weeks
+after the conference:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A general observation is that the contents of a digital repository -- that is,
+the digital files and metadata that an institution might wish to manage -- are
+largely stable. Once content has been accessioned, it is unlikely to change
+significantly over its lifetime. This is in contrast to the software
+applications that manage these contents, which are ephemeral, requiring
+constant updating and replacement. Thus, transitions between
+application-specific methods of file management to support software upgrades
+and replacement cycles can be seen as unnecessary and risky change, changing
+the long-term stable objects to support the short-term, ephemeral software.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;By providing a specification for the file-and-folder layout on disk, the OCFL
+is an attempt at reducing, or even eliminating, the need for these
+transitions. As an application-independent specification, conforming
+applications will natively 'understand' the underlying file structure without
+needing to first transition these contents to their own format.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ocfl.io/"&gt;https://ocfl.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From my notes of the conversation with Neil:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Multiple things accessing the file system writing changes to LOGS. Eg fixity
+check, or create new.&lt;/p&gt;
+&lt;p&gt;There is no state. File system is the state.  Digital pres services are
+workers / crawler or message queue driven.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The incomplete &lt;a href="https://ocfl.io/is"&gt;spec&lt;/a&gt; is online - it's not enough to do a
+complete implementation yet, but we will track it.&lt;/p&gt;
+&lt;p&gt;The host university, Montana State had a nice take on this too. Sara Mannheimer,
+Jason A. Clark, James Espeland  presented &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;presentations=show&amp;amp;search=A+Prototype+for+the+Institutional+Research+Data+Index"&gt;A Prototype for the Institutional
+Research Data
+Index&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Most out-of-the-box institutional repository systems don’t provide the
+workflows and metadata features required for research data. Consequently, many
+libraries now support two institutional repository systems—one for
+publications, and one for research data—even when there are nearly a thousand
+data repositories in the United States, many of which provide services and
+policies that ensure their trustworthiness and suitability for institutional
+research data. Libraries are either increasing spending by purchasing data
+repository solutions from vendors, or replicating work by building,
+customizing, and managing individual instances of data repository software.
+This presentation suggests a potential solution to this issue: a prototype for
+an open source Institutional Research Data Index (IRDI) that promotes
+discovery and reuse of institutional datasets through automatic metadata
+harvesting and search engine optimization. IRDI could lead to a single,
+unified index for academic institutional research data. A unified data index
+would lead to three key impacts: increasing discovery, reuse, and citation of
+open research data; reinforcing the idea that research data is a legitimate
+scholarly product; and promoting community-wide systems that require less
+resource expenditure.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;They noted that getting a research data repository up and running is hard and
+expensive.&lt;/p&gt;
+&lt;p&gt;Their solution:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deposit data elsewhere in discipline repositories&lt;/li&gt;
+&lt;li&gt;Have a local IRDI - Institutional Research Data Index&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is similar to the ReDBox approach in that it is highly distributed and it
+contains an IRDI. The Montana team have soon-to-be-released code that helps find
+data that's residing &lt;em&gt;out there&lt;/em&gt; on the web, eg in Figshare, which we need to
+look in to.&lt;/p&gt;
+&lt;p&gt;Another thing we should explore ReDBOX is more about how data is stored and
+secured. We are working with a product, the DELL/EMC Isilon which has a lot of
+features in this area, but I plan to look at the Edinburgh &amp;amp; Manchester
+DataVault project as well  &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=328#paperID165"&gt;Sustaining the momentum, moving the DataVault
+project to a
+service&lt;/a&gt;
+Claire Knowles presented with with Mary McDerby, Robin Rice, Thomas Higgins&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/DataVault/datavault"&gt;DataVault&lt;/a&gt; does encrypted multi-site
+storage. 3 copies. One on site, one outer Edinburgh on UK cloud. They use
+chunking to reduce risk around encryption - lose less of a file if there's a
+problem.&lt;/p&gt;
+&lt;h1&gt;Some highlights&lt;/h1&gt;
+&lt;p&gt;An insight from Esme Cowles in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=231#paperID161"&gt;Valkyrie: Reimagining the Samvera Community&lt;/a&gt; which is looking at adding swappable back ends to the Samvera platform (so you can use something other than Fedora to store your stuff).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lesson from Islandora - don't fight your host platform.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Speaking of Islandora, in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;presentations=show&amp;amp;search=Relational+Databases+as+Repository+Objects"&gt;Relational Databases as Repository Objects&lt;/a&gt; Alexander
+Garnett showed off a plugin that gives live access to a SQL database &lt;em&gt;in&lt;/em&gt; your
+Islandora repository; it spins up a Docker container on demand. I asked Alex on
+The Twitter if he'd seen
+&lt;a href="https://datasette.readthedocs.io/en/stable/"&gt;Datasette&lt;/a&gt; but he said that SQLite
+does not scale well in his experience.&lt;/p&gt;
+&lt;p&gt;Thomas Morrell from Caltech mentioned a few interesting things in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=236#paperID171"&gt;Positioning a repository as campus research infrastructure&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Live visualization from a data reposioty&lt;/li&gt;
+&lt;li&gt;Demoed fetching data from a &lt;a href="https://tccondata.org/"&gt;live repository&lt;/a&gt; using a Jupyter notebook.&lt;/li&gt;
+&lt;li&gt;Harvesting metadata out of git repositories using the &lt;a href="https://codemeta.github.io/user-guide/"&gt;codemeta&lt;/a&gt; standard.
+Codemeta metadata is very close in design to our DataCrate. this could be straight out of DataCrate:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    {&amp;quot;author&amp;quot;:
+      {
+      &amp;quot;@id&amp;quot;:&amp;quot;http://orcid.org/0000-0003-0077-4738&amp;quot;,
+      &amp;quot;@type&amp;quot;:&amp;quot;Person&amp;quot;,
+      &amp;quot;email&amp;quot;:&amp;quot;slaughter@nceas.ucsb.edu&amp;quot;,
+      &amp;quot;givenName&amp;quot;:&amp;quot;Peter&amp;quot;,
+          &amp;quot;familyName: &amp;quot;Slaughter&amp;quot;
+      }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Joshua A. Westgard from the University of Maryland Libraries presented &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=234#paperID263"&gt;a Python
+Library for the Fedora
+API&lt;/a&gt;,
+which would have been of interest to us at UTS if we'd gone ahead with our
+planned Fedora 4 design for data management instead of joining forces with QCIF
+in the new MongoDB based ReDBox.&lt;/p&gt;
+&lt;p&gt;Chris Diaz from Northwestern University talked about making Static websites over
+the top of a repo in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=234#paperID170"&gt;Jekyll and Institutional
+Repositories&lt;/a&gt;,
+looks like a great, sustainable alternative to Omeka exhibitions worth
+considering in some situations.&lt;/p&gt;
+&lt;h1&gt;And the winners are...&lt;/h1&gt;
+&lt;p&gt;I thought I'd pick out a few of the best quotes and one-liners from my notes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Best quote: Robin Dean&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=234#paperID222"&gt;Fractional agile: how to do iterative development when it’s only part of your job&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;Agile development methods such as scrum strongly recommend a dedicated team
+for software development, meaning that all team members work solely on one
+project at a time. This is not feasible in many of the academic and
+open-source community environments where open repositories are developed. This
+presentation will encourage developers, managers, and open-source contributors
+to find sustainable ways to participate in agile development even if they
+can’t dedicate themselves full time to a project. Drawing from my experience
+as a scrum master on a digital repository team, I will share practical advice
+on setting expectations, communicating about availability, and maintaining a
+sustainable pace on a scrum team composed entirely of part-time members.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And the quote:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1&gt;THERE IS NO SUCH THING AS AN EXPECTATION THAT IS TOO CLEAR&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ta Robin, I've been using this at work.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Best catchphrase: Robert S. Doiel, Thomas Morrell&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=248#paperID173"&gt;Building software at the edges of heterogeneous repositories&lt;/a&gt;
+Caltech Library, United States of America&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;Caltech Library has a heterogeneous mix of repository systems (e.g. EPrints
+hosts CaltechAUTHORS and CaltechTHESIS, while CaltechDATA is based on
+Invenio). Caltech Library has changed its focus from developing in the
+specific repository system to one of development at the edges leveraging web
+APIs. This has allowed us to not only repurpose content but start working at
+collection level curation by integrating external data sources like ORCID,
+CrossRef, FundRef and DataCite. The philosophy we have evolved is to work from
+copies of the data in JSON form using an Open Source tool Caltech Library
+created called &lt;a href="http://caltechlibrary.github.io/dataset"&gt;dataset&lt;/a&gt; as well as
+additional Open Source tools in a project called
+&lt;a href="http://caltechlibrary.github.io/datatools"&gt;datatools&lt;/a&gt;. These command line
+tools are written in Go but can be easily used from more popular languages
+like Python. This talk will introducing these tools and demonstrate their
+usage via Python.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And the phrase:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1&gt;CONTINUOUS MIGRATION&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I liked this phrase because we're migrating data at the moment between RedBox
+1 and ReDBox 2 and it's causing my colleague Michael Lynch visible physical
+and psychic pain. Robert's articulation of the idea that data migration
+should be normal, and done constantly so it's easy and considered business as
+usual resonated. But now that I think about it - what we're really aiming for
+is to get the core data to stay put and not to move - as per the aims of the
+Oxford Common Filesystem Layout I quoted above. The systems that index,
+access and analyse the data, and trade metadata are the ones involved in
+continuous migration.&lt;/p&gt;
+&lt;p&gt;I am please to report that Robert has recently been in contact with me to
+talk about aligning their dataset project with DataCrate, this is a step
+towards DataCrate being able to look inside data files and do stuff like
+describe column-headers in tabular data, rather than just describing the
+files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Best &amp;quot;Lesson Learned&amp;quot;: Lars Holm Nielsen, Alexandros Ioannidis, Krzysztof
+Nowak, Jose Benito Gonzalez Lopez from CERN&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=249#paperID304"&gt;File loss: hits and near misses&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;Repositories increasingly depend on external cloud storage or other complex
+distributed systems in order to satisfy ever-growing needs for storing larger
+data volumes. The cloud system helps repository manages store terabytes and
+petabytes of data, and often simplifies the file management in the underlying
+repository software. We trust these systems to store our files, yet, often we
+lack understanding of the operation and internals of these systems and how
+they can fail. This talk will present two file loss incidents on Zenodo,
+uncovering some ways these distributed systems can fail. One incident was
+caused by a coincidence of two software bugs in independent systems (the hit),
+and a second incident was caused by a human operational mistake in the cloud
+storage system (the near miss).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Great talk about when things go wrong. We don't hear enough of these stories.&lt;/p&gt;
+&lt;p&gt;The lesson?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h1&gt;LOG EVERYTHING&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The venue etc&lt;/h1&gt;
+&lt;p&gt;Often the OR conference is at a conference centre when in North America but this
+one was at the uni, in a lovely part of Bozeman, walkable from Downtown, through
+a leafy suburb of early twentieth century houses. The venue was comfy, the food
+was fine, and there was a cash bar at the dinner, though with a distinct lack of
+options for people who didn't want alcohol, and a decent band, &lt;a href="https://www.littlejaneandthepistolwhips.com/"&gt;Little Jane and
+the pistol whips&lt;/a&gt;. Gotta love that
+gun culture. Downtown Bozeman is great, plenty of good food options including
+Bison from Ted Turner's ranch. Ted not only revolutionised TV news by inventing
+CNN, he is a largest private owner of Bison in the world according to our
+server. He's even involved in research...&lt;/p&gt;
+&lt;p&gt;Q. What did Ted Turner discover when he let 200 Bison loose in the top paddock
+for 1 year?&lt;/p&gt;
+&lt;img alt="The neon sign at Ted's" src="blog/2018/07/or-2018/teds.JPG"&gt;
+&lt;p&gt;A. The bisontennial.&lt;/p&gt;
+</content></entry><entry><title>Open Repositories 2018 Presentation: ReDBox 2.0 / Provisioner</title><link href="2018/07/06/RedBoX-Provisioner-OR2018.htm" rel="alternate"></link><published>2018-07-06T00:00:00+02:00</published><updated>2018-07-06T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:None,2018-07-06:2018/07/06/RedBoX-Provisioner-OR2018.htm</id><summary type="html">&lt;p&gt;This is a presentation that Gavin Kennedy and I gave at &lt;a href="http://www.or2018.net/"&gt;Open Repositories
+2018&lt;/a&gt; in Bozeman Montana.&lt;/p&gt;
+&lt;p&gt;I am posting this on the &lt;a href="https://eresearch.uts.edu.au/"&gt;UTS eResearch website&lt;/a&gt; and on &lt;a href="http://ptsefton.com"&gt;my own site&lt;/a&gt;.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide01.png' alt='ReDBox 2.0 / Provisioner
+&lt;p&gt;Gavin Kennedy, QCIF
+Peter Sefton, University of Technology Sydney
+' title='ReDBox 2.0 / Provisioner&lt;/p&gt;
+&lt;p&gt;Gavin Kennedy, QCIF
+Peter Sefton, University of Technology Sydney
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 1&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;The first part of this presentation was narrated by Gavin.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide02.png' alt='ReDBox
+ReDBox is a Research Data Management Platform that assists researchers and institutions to plan, create and publish their research data assets.
+Open source (github.com/redbox-mint)
+Managed and supported by QCIF
+Fully customisable
+Integration and interoperation
+Cloudified
+Community Driven
+' title='ReDBox
+ReDBox is a Research Data Management Platform that assists researchers and institutions to plan, create and publish their research data assets.
+Open source (github.com/redbox-mint)
+Managed and supported by QCIF
+Fully customisable
+Integration and interoperation
+Cloudified
+Community Driven
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 2&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;ReDBox is a …&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This is a presentation that Gavin Kennedy and I gave at &lt;a href="http://www.or2018.net/"&gt;Open Repositories
+2018&lt;/a&gt; in Bozeman Montana.&lt;/p&gt;
+&lt;p&gt;I am posting this on the &lt;a href="https://eresearch.uts.edu.au/"&gt;UTS eResearch website&lt;/a&gt; and on &lt;a href="http://ptsefton.com"&gt;my own site&lt;/a&gt;.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide01.png' alt='ReDBox 2.0 / Provisioner
+&lt;p&gt;Gavin Kennedy, QCIF
+Peter Sefton, University of Technology Sydney
+' title='ReDBox 2.0 / Provisioner&lt;/p&gt;
+&lt;p&gt;Gavin Kennedy, QCIF
+Peter Sefton, University of Technology Sydney
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 1&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;The first part of this presentation was narrated by Gavin.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide02.png' alt='ReDBox
+ReDBox is a Research Data Management Platform that assists researchers and institutions to plan, create and publish their research data assets.
+Open source (github.com/redbox-mint)
+Managed and supported by QCIF
+Fully customisable
+Integration and interoperation
+Cloudified
+Community Driven
+' title='ReDBox
+ReDBox is a Research Data Management Platform that assists researchers and institutions to plan, create and publish their research data assets.
+Open source (github.com/redbox-mint)
+Managed and supported by QCIF
+Fully customisable
+Integration and interoperation
+Cloudified
+Community Driven
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 2&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;ReDBox is a Research Data Management Platform. It assists researchers and institutions to plan, create and publish their research data assets.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is proudly open source.&lt;/li&gt;
+&lt;li&gt;It is managed and supported by the QCIF Engineering Services team.&lt;/li&gt;
+&lt;li&gt;It is fully customisable.&lt;/li&gt;
+&lt;li&gt;It is an integration platform, it will join your platforms together. It is interoperable, your platforms will happily exchange information with ReDBox.&lt;/li&gt;
+&lt;li&gt;It is in the cloud: mostly, we are progressively increasing our cloud options.&lt;/li&gt;
+&lt;li&gt;But most important is that it is community driven, the work we do to continuously improve ReDBox is determined, prioritised and often contributed by our community.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide03.png' alt='ReDBox History
+' title='ReDBox History
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 3&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;ReDBox has a rich history, with ongoing support from the Australian eResearch sector. Originally ReDBox was created on top of the Fascinator platform by USQ back in 2010 and taken up by successive institutions under the ANDS Metadata Stores funding program. In 2012 QCIF took over the management of ReDBox, giving it a stable non-partisan home. 2015 saw our first cloud version in ReDBox Lite, last year we produced our first SaaS version with the RAPportal, and this year we are releasing ReDBox 2.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide04.png' alt='ReDBox Community
+' title='ReDBox Community
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 4&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This slide shows the institutions we know are using ReDBOX. The ones above the
+line have support contract with QCIF which help to pay for maintenance and
+enhancement of the software.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide05.png' alt='ReDBox 1.x
+Institutional Data Catalogue ++
+Metadata Store
+Mint Name Space Authority
+DMPt
+Curator
+Harvester
+Transformers
+API
+OAI/PMH Publisher
+&lt;p&gt;' title='ReDBox 1.x
+Institutional Data Catalogue ++
+Metadata Store
+Mint Name Space Authority
+DMPt
+Curator
+Harvester
+Transformers
+API
+OAI/PMH Publisher&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 5&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;At its core ReDBox is a customisable research data registry, providing forms, workflows and system
+integrations to assist institutions in creating and managing the metadata
+describing research data collections. It includes the innovative Mint platform
+to provide a name-authority lookup service for researcher information and
+project details, as well as commonly used research classifications, such as FOR
+codes. Mint helps to create high quality linked-data metadata, by supplying URIs
+as metadata values rather than strings which can be error-prone and ambiguous.&lt;/p&gt;
+&lt;p&gt;It incorporates a Data Management Planning tool, curation functions and a
+flexible harvester tool to pull data in from external platforms. It is a
+schemaless forms driven platform, incorporating configurable transformers to
+generate metadata from a standard schema, like RIF/CS or DataCite Citation
+format.&lt;/p&gt;
+&lt;p&gt;ReDBox includes a full set of APIs and provides an OAI-PMH interface for
+metadata harvesting by repositories including Research Data Australia.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide06.png' alt='ReDBox 2.0
+Technology refresh
+Single web application framework (Sails.js)
+Easy to configure forms
+New object model (JSON-LD in MongoDB)
+Modular/plug-in architecture
+Multi-institutional RBaaS (e.g. RAPortal.org.au)
+DLC (Data LifeCycle) support via RAiDs
+maDMPs
+Workspace concept to manage resources and datasets
+Flexible storage provisioning with the UTS Provisioner Framework
+Dataset harvesting, archiving (OCFL) and publishing
+Comprehensive search/discovery tool
+&lt;p&gt;' title='ReDBox 2.0
+Technology refresh
+Single web application framework (Sails.js)
+Easy to configure forms
+New object model (JSON-LD in MongoDB)
+Modular/plug-in architecture
+Multi-institutional RBaaS (e.g. RAPortal.org.au)
+DLC (Data LifeCycle) support via RAiDs
+maDMPs
+Workspace concept to manage resources and datasets
+Flexible storage provisioning with the UTS Provisioner Framework
+Dataset harvesting, archiving (OCFL) and publishing
+Comprehensive search/discovery tool&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 6&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;In late 2017 QCIF embarked upon a complete refresh of the ReDBox technology
+stack, assisted by RDS and UTS. We threw out the clunky front end tech stack and
+used Angular.js, a javascript framework that hasn’t gone off overnight. We have
+created a form configuration process to let you create your own forms and style
+them using bootstrap. It is easy to extend functionality using a plugin
+architecture. We can deploy it so multiple institutions to run off a hosted
+version of ReDBox, our ReDBox as a Service offering.  The DMP tool now supports
+Machine Actionable DMPs. We have introduced a Workspace concept for managing
+resources within ReDBox. And with UTS we are implementing provisioning, data
+harvesting and rewriting the search/discovery tool.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide07.png' alt='Data Life Cycle
+' title='Data Life Cycle
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 7&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;And this is where the Data Life Cycle is supported. It allows users to plan for
+their data, acquire the resources for storing their data, harvest file level
+data and metadata back into ReDBox, curate it, archive it, publish it and make
+it discoverable.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide08.png' alt='ReDBox
+maDMPs
+' title='ReDBox
+maDMPs
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 8&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;Mercifully for you, this is not a demo. This is just a screen shot of a full
+blown DMP, with the DMP components organised in a tabular form. At this point I
+will remind everyone that it is fully configurable and that the forms can be as
+minimal or extensive as you require.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide09.png' alt='RAP
+www.raportal.org.au
+Configurable SaaS Platform
+Proto-DMP
+RAiD Support in ReDBox
+Institutional Views
+&lt;p&gt;' title='RAP
+www.raportal.org.au
+Configurable SaaS Platform
+Proto-DMP
+RAiD Support in ReDBox
+Institutional Views&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 9&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;An example of the minimum form is the Research Activity Portal (RAP). The RAP is
+our first configurable SaaS platform. It is a proto-DMP designed for users to
+register their research activity in order to get a RAiD, which is a Research
+Activity ID. It is available nationally in Australia and supports institutional
+views, so an individual institution can have a RAP themed to their institution
+with customised forms.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide10.png' alt='Provisioner - principles
+&lt;p&gt;' title='Provisioner - principles&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 10&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;At this point Petie took over the talking.&lt;/p&gt;
+&lt;p&gt;The next few slides go through some of the principles behind the service-provisioning aspect of ReDBOX.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide11.png' alt='Give the people what they (should) want
+Improved ability to do
+high-integrity high-impact research
+' title='Give the people what they (should) want
+Improved ability to do
+high-integrity high-impact research
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 11&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;We try to appeal to Researcher’s better selves: who doesn’t want to do high
+integrity research that has high impact?&lt;/p&gt;
+&lt;p&gt;Knowing where your data are is obviously key to Research Integrity, and is
+mandated by research norms, codes of practice and by funders. The provisioner
+helps with this; because provisioning can be invoked from a Research Data
+Management Plan (RDMP), the provisioned research space - we call them
+&lt;em&gt;workspaces&lt;/em&gt; - has a bit of metadata that points back to the RDMP, which carries
+details about authorship, ownership of rights, retention requirements etc.&lt;/p&gt;
+&lt;p&gt;We also try to improve research impact - by making data available with as much
+provenance as possible to encourage re-use.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide12.png' alt='An army of bots
+To automate obvious things, like provisioning lab notebooks to everyone in a lab, providing a git repository for every software PhD
+' title='An army of bots
+To automate obvious things, like provisioning lab notebooks to everyone in a lab, providing a git repository for every software PhD
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 12&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;“An army of bots” is not really a principle, the principle is that everything
+possible should be done to automatically capture research data where it is and
+link it back to its custodian, and to metadata about the context in which the
+data were collected, curated or created. In the eResearch team at UTS we have
+long experience with customer requests such as “can we make sure that every
+student has a file-share to which the supervising panel also has read access
+even as the supervisors change” or “can I have an eNotebook for every PhD
+candidate in my department”. The provisioner will help with this kind of
+automation and more; we want to do things like report on how many electronic
+notebooks or git repositories are owned by the staff and students in a cohort
+that are NOT linked to an RDMP.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide13.png' alt='Small Pieces, loosely joined
+Avoid point to point integration, use standards for integration
+&lt;p&gt;' title='Small Pieces, loosely joined
+Avoid point to point integration, use standards for integration&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 13&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;When we started work on what became the Provisioner module of ReDBOX we were looking at how to integrate data applications that house research workspaces. For example how might we assist researchers in moving - maybe by reference rather than copying - data from a project in a microsocope-image database to the storage service in a visualization facility so the developers there can work on analytics and visualizations, and then archive the original data, code and outputs of the viz process? When we considered the scope of this and that we might be supporting dozens of applications that provide workspaces over the next few years, and working more loosely with hundreds more we realiased that we didn’t want to be doing &lt;code&gt;n * n&lt;/code&gt; integrations, where &lt;code&gt;n&lt;/code&gt; is the number of research apps we support. We looked to &lt;em&gt;standards&lt;/em&gt; for managing data.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide14.png' alt='DataCrate Packaging
+' title='
+&lt;p&gt;DataCrate Packaging
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 14&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;One of the key standards was a way of moving “packages” of research data, where a package might mean a zip file, a manifest of data-by-reference or a directory of well-described data on a file share. From this search was born DataCrate - a specification which links together several existing standards into what we think is a best-practice generic way to ship and display research data.&lt;/p&gt;
+&lt;p&gt;This screenshot is of a the index.html file from a DataCrate which you can take a look at &lt;a href="https://data.research.uts.edu.au/examples/v0.2/farms_to_freeways/"&gt;online&lt;/a&gt; or &lt;a href="https://data.research.uts.edu.au/examples/v0.2/farms_to_freeways.zip"&gt;download as a zip file&lt;/a&gt;.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide15.png' alt='DataCrate Packaging
+' title='
+&lt;p&gt;DataCrate Packaging
+' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 15&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;You can read more about the &lt;a href="https://github.com/UTS-eResearch/datacrate/tree/master/spec"&gt;spec at github&lt;/a&gt; and in the &lt;a href="http://ptsefton.com/2018/06/29/DataCrate_2018.htm"&gt;presentation&lt;/a&gt; I (Petie) gave at OR2018.&lt;/p&gt;
+&lt;p&gt;Summary: It uses BagIt for organizing files with checksums, JSON-LD for high-fidelity extensible metadata (linked data in JSON format), uses the schema.org vocabulary where possible for general metadata (dates, places, people) and specifies where to look for terms that are not covered by schema.org.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide16.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 16&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This diagram is a highly abstracted view of the UTS architecture for research-data management. Researchers are shown in many places in this diagram to emphasise, that while they &lt;em&gt;can&lt;/em&gt; use the Stash (ReDBox) portal to edit Research Data Management Plans, and describe data sets, them can ALSO continue to use research &lt;em&gt;workspaces&lt;/em&gt; independently. We aim to have an army of ‘provisioner bots’ working to help keep track of this.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide17.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 17&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This is a mock-up of the Redbox 2.0 functionality showing the way researchers will be able to manage the research process, creating data management plans and requesting workspaces, as well as identifying existing workspaces and linking to them. The right-hand screenshot shows how gitlab projects can be linked to a Research Data Management Plan as &lt;em&gt;workspaces&lt;/em&gt;.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide18.gif' alt='' title='
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 18&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This animation shows how a researcher will create a new workspace - in this case a gitlab repository. The Provisioner uses the gitlab API to connect as the user, create a new project/workspace, and leaves behind a calling card which links the project back to the RDMP. Later, the researcher will be able to archive and maybe publish this data via Provisioner, and it will know where to find the data.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide19.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 19&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This diagram shows how Research apps will be loosely coupled with Stash (the UTS name for our data management system that runs ReDBOX).&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide20.png' alt='' title='' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 20&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This diagram shows the technical architecture of the system. The “Repository” is actually several loosely coupled sub systems. The UTS implementation of ReDBox 2 will be a kind of “deconstructed” repository with the functions we see in more monolithic software such as DSPace or Samvera residing in different places. For example ReDBox is about data and workspace management, but the Data resides in research apps and in a static file-based archive, and the public-facing discovery service will be a separate application (which we’re working on at the moment).&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide21.png' alt='Future possibilities
+Generic long tail data repositories
+Integration with preservation systems
+More provisioning plugins (eg Github, OSF, Figshare)
+National data catalogue
+Actionable Service Catalogue
+(inter)National DMP
+Open data workflows
+Generate project portals
+' title='Future possibilities
+Generic long tail data repositories
+Integration with preservation systems
+More provisioning plugins (eg Github, OSF, Figshare)
+National data catalogue
+Actionable Service Catalogue
+(inter)National DMP
+Open data workflows
+Generate project portals
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 21&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;This slide lists some of the future possibilities for ReDBox - we’re particularly interested in its potential at a national or consortial level.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide22.png' alt='Sustainability
+Yes, it is FREE OPEN SOURCE SOFTWARE, but...
+QCIF is Not For Profit
+Competitive, commercial environment
+Sandstone mentality
+Small team, permanent staff
+Financial sustainability
+Support subscriptions
+Projects - implementations &amp;amp; customisations
+Managed hosting
+SaaS model
+Community and Communication
+Community driven development
+' title='Sustainability
+Yes, it is FREE OPEN SOURCE SOFTWARE, but...
+QCIF is Not For Profit
+Competitive, commercial environment
+Sandstone mentality
+Small team, permanent staff
+Financial sustainability
+Support subscriptions
+Projects - implementations &amp;amp; customisations
+Managed hosting
+SaaS model
+Community and Communication
+Community driven development
+' border='1'  width='85%'/&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 22&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;Finally (from Gavin) some words on sustainability.&lt;/p&gt;
+&lt;p&gt;ReDBox is free open source software and you can download and run it today. But&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;QCIF is a not for profit organisation that can’t afford to cover the costs of ReDBox and the NCRIS grants are a distant memory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;So we have multiple models for subscribing to a support service. This covers our maintenance costs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We fund development through projects like our collaboration with UTS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We offer increasingly commercial services like managed hosting of ReDBox.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We are rolling out the Software as a Service (SaaS) version with a transactional charging model, subject ot feedback, next year.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We depend on our community and free and open communication with our community, so we know what each are doing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And we depend on our community to drive the direction of ReDBox.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='blog/RedBoX-Provisioner-OR2018/Slide23.png' alt='More            www.redboxresearchdata.com.au
+&lt;p&gt;' title='More            www.redboxresearchdata.com.au&lt;/p&gt;
+&lt;p&gt;' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;details open="open"&gt;
+&lt;summary&gt;
+&lt;p&gt;&lt;em&gt;Notes&lt;/em&gt; - Slide 23&lt;/p&gt;
+&lt;/summary&gt;
+&lt;p&gt;If you would like to know more please check out our &lt;a href="https://www.redboxresearchdata.com.au"&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;/details&gt;
+&lt;/section&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
+</content></entry></feed>

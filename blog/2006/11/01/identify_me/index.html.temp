@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Does a text citation make a good persistent identifier?
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Does a text citation make a good persistent identifier?</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/11/index.html">11</a>-<a href="/blog/2006/11/01/index.html">01</a>
+<div><p class="P1">We've been talking about persistent identifiers at RUBRIC: how are people going to name the things in their repository so they can be cited and located in the future? We're looking to the  PILIN project (read a presentation in <a href="http://www.arrow.edu.au/docs/files/PILIN-IDEA-20061010.pdf">PDF</a> or <a href="http://www.arrow.edu.au/docs/files/PILIN-IDEA-20061010.txt">text</a>) for some advice. Expect to see more on this topic here over the next few months.</p><p>Lots of repositories use <a href="http://www.handle.net/">Handles</a> to name things and the handle infrastructure for naming things and storing metadata about them is pretty impressive; but others, like USQ have yet to buy-in and <a href="http://norman.walsh.name/2006/07/25/namesAndAddresses">some people</a> think that URIs are perfectly good names. Me, I'm still confused.</p><p>Anyway, a practical problem: how do you refer to an item in the <a href="http://eprints.usq.edu.au/">USQ ePrints repository</a>?</p><p>How about a plain-text citation? This identifies something; it's a perfectly good name.</p><blockquote class="bq"><p>"Sefton, Peter (2006) The integrated content environment. In: AusWeb06: The 12th Australasian World Wide Web Conference, 1-5 July 2006, Noosa, Australia."</p></blockquote><p>My theory was that I could use Google as a resolver to find versions of the paper by doing a phrase search but that doesn't work. The full citation with the quotes yields nothing. Without the quotes Google takes me to the ePrints <a href="http://eprints.usq.edu.au/archive/00000697/">page</a>. But <a href="http://search.yahoo.com/search?ei=UTF-8&amp;fr=sfp&amp;p=Sefton%2C+Peter+(2006)+The+integrated+content+environment.+In%3A+AusWeb06%3A+The+12th+Australasian+World+W">Yahoo</a> finds it using a phrase search. So does <a href="http://search.ninemsn.com.au/results.aspx?q=%22Sefton%2C+Peter+(2006)+The+integrated+content+environment.+In%3A+AusWeb06%3A+The+12th+Australasian+World+Wide+Web+Conference%2C+1-5+July+2006%2C+Noosa%2C+Australia.%22&amp;geovar=70&amp;FORM=REDIR">MSN</a>.</p><p>USQ ePrints has a version of the paper in PDF format but the actual paper is available from the conference web site in HTML format. As I write this there's no link from ePrints to the version at the conference; I'll see if I can get that added.</p><p>You can find the version of the paper at the conference web site by searching  for AusWeb06, then clicking through the<a href="http://ausweb.scu.edu.au/aw06/papers/refereed/sefton/index.html"> days of the program</a> (I was on Tuesday). </p><p>There is a also a paper version of the proceedings – so of course you can <a href="http://nla.gov.au/anbd.bib-an000040588911">find that</a> via  the National Library of Australia. (I searched to ausweb06). That finds the proceedings of the conference: <i>AusWeb06 : Making a Difference with Web Technologies / Treloar, Andrew(ed), Ellis, Allan(ed).</i> Maybe we could update the ePrints repository to use this as part of the citation but if we do that then the links in this post will eventually break – the citation I used  in this post will no longer be there. </p><p>At this stage its looking like the plain text citation is not a particularly good persistent name if you want automated resolution, but on the other hand a human being can use it find the paper, and it should work in a post-Internet world.</p><p>My understanding of handles is that you should be able to link all the different versions of the paper by storing URLs as metadata against a single name, the handle resolver service could be used to point to any one of those versions, or you could make a service that threw up a page where people could choose. </p><p>The handle could, in theory be like this (where n would be a number): <code>1959.n/"Sefton, Peter (2006) The integrated content environment. In: AusWeb06: The 12th Australasian World Wide Web Conference, 1-5 July 2006, Noosa, Australia."</code></p><p>Except that I have heard some people say that this kind of  local name (that's the bit after the /) is a bad idea and names should be meaningless. I don't understand that bit yet – maybe it's because of the issue I noted above with the wording of the citation. </p><p>We're working through lots of practical issues to do with naming, citing and locating things on the <a href="http://rubric.edu.au/">RUBRIC</a> and <a href="http://ice.usq.edu.au/introduction/ice_rs.htm">ICE-RS </a>projects – more soon.</p></div>
+</body>
+</html>

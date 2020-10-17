@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: I told you the lists in OpenOffice.org Writer were wacky!
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>I told you the lists in OpenOffice.org Writer were wacky!</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/10/index.html">10</a>-<a href="/blog/2006/10/20/index.html">20</a>
+<div><p class="P1">I have been <a href="http://ptsefton.com/blog/2005/10/31/why_do_i_keep_going_on_about_html_export_from_word_processors%3F">going on</a> about the way OpenOffice.org Writer deals with lists here for a while. It's complicated and confusing, but if you use styles in a sensible way, then you can get pretty good results. In this post I will show how some less-than perfect formatting can be fixed up using the styles from <a href="http://ice.usq.edu.au/">ICE</a>.</p><p>I have recently been <a href="http://ptsefton.com/blog/2006/10/20/sun-weblog">trying to use</a> the new Sun Weblog Publisher tool for OpenOffice.org with little success.</p><p>Along the way I had to use the help. Turns out that 'help' in this case is some kind of document . It doesn't contain anywhere near enough detail on how to use the product . It costs money, but comes with no support.</p><p>Look at the formatting (looks the same on the Mac using NeoOffice and on Windows XP using OpenOffice.org):</p><p class="x"><a id="graphics2" name="graphics2"></a><img alt="graphics2" class="fr1" height="212" src="/blog/2006/10/20/list_formatting_in_ooo_writer/1.png" width="552"/></p><p>Note how the numbering and indenting is all over the place. The outer list (1, 2, 3, 4) is indented more than the inner list (a, b, c, d). Except when it isn't.  </p><p class="x">To see what would happen I copied from the help to this here document where strangely it formats fairly nicely. Here's a screen shot:</p><p class="x"><a id="graphics1" name="graphics1"></a><img alt="graphics1" class="fr1" height="351" src="/blog/2006/10/20/list_formatting_in_ooo_writer/2.png" width="552"/></p><p class="x"></p><p class="x">It has a couple of strange features. One is that the inner (a.. d) list uses a style while the outer list doesn't. I recommend styles – particularly for technical writing, and particularly if you happen to be selling word processing software.</p><p class="x">If I get the weblog editor to work I want to paste-in this bit of documentation from the product itself and see how it goes being transformed into HTML.</p><p class="x">Now, here's how you'd format that help text in using ICE styles. I have added some text to show what style is used. </p><p class="x">----</p><h2>
+<a id="id1989458" name="id1989458"><!--id1989458--></a>{h2} To Connect to Your Weblog</h2><ol class="lin" style="list-style: decimal;"><li><p>{li1n} Open a Writer document, and choose Weblog - Settings.</p></li><li><p>{li1n} In the Weblog Settings dialog, click Add.</p></li><li><p>{li1n} In the New Weblog dialog, enter the account information for your weblog.</p><ol class="li-lower-alpha" style="list-style: lower-alpha;"><li><p>{li2a}  In the Weblog area, select the type of weblog that you want to connect to.</p><p>{li2p} Depending on the type of weblog that you select, you might need to enter additional information, for example, the name of the host server for the weblog.</p></li><li><p>{li2a} In the User name box, enter the user ID for your weblog account. </p></li><li><p>{li2a} In the Password box,  enter the password for your weblog account.</p></li><li><p>{li2a} Click OK.</p></li></ol></li><li><p>{li1n} In the Weblog Settings dialog, click OK.</p></li></ol><p class="x"></p><p class="x">----</p><p class="x">Note that if you use the ICE Styles menu it applies both a list style and a paragraph style to each list item. You don't have to know the style name – the style menu in ICE is hierarchical so you can choose <code>Styles</code> / <code>List Item</code> / <code>Level 1</code> / <code>Numbered</code>, or navigate through that menu using Alt-key combinations (on platforms that support it). Or set up direct key combinations for your most-used styles.</p><p class="x">ICE converts documents using ICE styles to good HTML, which you can see in this post. The styles tell it exactly how to structure the HTML. </p><p class="x">It tried converting Sun's instructions as-is to HTML using both the Save as HTML option and the Export as XHTML option in NeoOffice and in both cases the formatting was wrong; this is because mapping arbitrary word processing formatting to HTML is an impossible task.</p><p class="x">ICE is free software – and the template is available from the site. If any software vendor would like to use it to format their product documentation that would be great. Feel free to <a href="mailto:pt@ptsefton.com">contact me</a> for assistance.</p><p></p><p class="x"></p><p></p><p></p><p></p><p></p></div>
+</body>
+</html>

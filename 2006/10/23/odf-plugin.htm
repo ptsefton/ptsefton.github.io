@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>A first look at the ODF Add-in for Word 2003 - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2006/10/23/odf-plugin.htm">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="I finally got around to trying out the OpenDocument (ODF) add-in for Microsoft Word 2003. If this thing works well enough it would mean we could get ICE users who prefer to use Word to work in ODF format – and avoid some of the issues we have with ICE: Currently …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="A first look at the ODF Add-in for Word 2003"/>
+        <meta property="og:url" content="../../../2006/10/23/odf-plugin.htm"/>
+        <meta property="og:description" content="I finally got around to trying out the OpenDocument (ODF) add-in for Microsoft Word 2003. If this thing works well enough it would mean we could get ICE users who prefer to use Word to work in ODF format – and avoid some of the issues we have with ICE: Currently …"/>
+        <meta property="article:published_time" content="2006-10-23" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2006/10/23/odf-plugin.htm"
+                       rel="bookmark"
+                       title="Permalink to A first look at the ODF Add-in for Word 2003">
+                        A first look at the ODF Add-in for Word 2003
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2006-10-23T00:00:00+02:00"> Mon 23 October 2006</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>I finally got around to trying out the OpenDocument (ODF)
+<a href="http://odf-converter.sourceforge.net/">add-in</a>  for Microsoft Word
+2003.</p>
+<p>If this thing works well enough it would mean we could get
+<a href="http://ice.usq.edu.au/">ICE</a> users who prefer to use Word to work in
+ODF format – and avoid some of the issues we have with ICE:</p>
+<ol>
+<li>
+<p>Currently ICE can understand .doc files but it has to:</p>
+<ol>
+<li>
+<p>open them in OpenOffice.org</p>
+</li>
+<li>
+<p>save them in ODF format.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>OpenOffice.org can't (yet) translate Word documents well enough to
+match the controlled subset of Word functionality we use in ICE:</p>
+<ol>
+<li>
+<p>Document outlines get mangled.</p>
+</li>
+<li>
+<p>Lists get mangled; instead of creating Word list styles to match
+ODF list styles it creates new ones, so documents won't
+round-trip.</p>
+</li>
+<li>
+<p>Some complex tables don't work.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>(Formatting this post using lists is gratuitous, I know, but I'm eating
+the ODF converter dog food here and trying to post from ICE via a
+document written using Writer, loaded into Word, saved as a .doc).</p>
+<p>I don't care which standard(s) we end up supporting with ICE; the
+already standardized OpenDocument Format or Microsoft's XML format which
+is speeding through standardization right now. I suspect that either
+would do for ICE, because ICE is a middle-of-the-road application that
+uses core word processing functionality. Remember that ICE means
+<a href="http://ptsefton.com/blog/2005/12/12/ice:_interchange_comes_easily">Interchange Comes
+Easily</a>.</p>
+<p>At the moment, the ODF add-in for Word does not appear to know how to
+save documents as ODF. I went to find out whether this is meant to be
+the case, and found that the documentation for the product is in Excel
+and Word documents. Yet another sad example of how far we have to go
+with word processing software and the web. Why in 2006 aren't we all
+working with a word processor profile that gives us HTML export?</p>
+<p>Anyway, here's a <a href="http://puzzle.dl.sourceforge.net/sourceforge/odf-converter/ODF-Add-in-for-Word-2007-Functional-Specification.doc">quote from the
+documentation</a>:</p>
+<blockquote>
+<p>The Add-in when installed will become available as a easily available
+menu item in Word 2007. The sub items under the Menu item “ODF” will
+be –</p>
+<ol>
+<li>
+<p>Open ODF…</p>
+<p>Open an Open Document Format File</p>
+</li>
+<li>
+<p>Save as ODF…</p>
+<p>Save a copy of the document Fully Compatible with Open Document
+Format (ODF)</p>
+</li>
+</ol>
+<p>Of these two, the first one would be functional in the prototype while
+the second one would be a dummy menu item for now and would become
+functional in later releases.</p>
+</blockquote>
+<p>So for now you can't save ODF from Word so it's useless to ICE.  (But
+note that if you use ICE to format your product documentation then you
+get not only a printable version but a web view as well).</p>
+<p>But here's how the ODF add-in converted the first part of this document:</p>
+<p><span
+id="graphics1"></span><img src="/blog/2006/10/23/odf-plugin/1.png" alt="graphics1" /></p>
+<p>The add-in warned me about not supporting relative font sizes, which I
+can live with, 'cos I don't think we use them in ICE. And the
+translation has worked remarkably well, except for the first second
+level list, where the style information (<code>li2a</code>) has been lost. A new
+style called
+<code>Outline numbered, Times, 11 pt, Left:  0.6 cm, Hanging:  0.6 cm</code> has
+been created. Ugh.</p>
+<p>Weirdly the second example of a second-level list kept its style. I'll
+figure out how to report this to the add-in team.</p>
+<p>So I can't complete the mission of writing in Writer, importing into
+word, saving as .doc and using ICE to publish. But it's promising that
+the add-in is close to supporting the core ICE styles.  Still, until the
+add-in supports “Save as ODF” there's little point in looking at it for
+our purposes on the ICE project.</p>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'odf-plugin';
+                var disqus_url = 'http://ptsefton.com/2006/10/23/odf-plugin.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

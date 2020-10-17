@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>DataCrate - a progress report on creating a data packaging format for research data - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2018/06/29/DataCrate_2018.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="This is a presentation that I gave at Open Repositories 2018 in Bozeman Montana. I have made some minor edits to slides and updated the slide notes to reflect what I spoke about. I put together the presentation and wrote the spec, but lots of people have contributed: Thanks to …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="DataCrate - a progress report on creating a data packaging format for research data"/>
+        <meta property="og:url" content="../../../2018/06/29/DataCrate_2018.htm"/>
+        <meta property="og:description" content="This is a presentation that I gave at Open Repositories 2018 in Bozeman Montana. I have made some minor edits to slides and updated the slide notes to reflect what I spoke about. I put together the presentation and wrote the spec, but lots of people have contributed: Thanks to …"/>
+        <meta property="article:published_time" content="2018-06-29" />
+            <meta property="article:section" content="Repositories" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2018/06/29/DataCrate_2018.htm"
+                       rel="bookmark"
+                       title="Permalink to DataCrate - a progress report on creating a data packaging format for research data">
+                        DataCrate - a progress report on creating a data packaging format for research data
+
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-06-29T00:00:00+02:00"> Fri 29 June 2018</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is a presentation that I gave at <a href="http://www.or2018.net/">Open Repositories 2018 in Bozeman Montana</a>. I have made some minor edits to slides and updated the slide notes to reflect what I spoke about.</p>
+<p>I put together the presentation and wrote the spec, but lots of people have contributed:</p>
+<p>Thanks to:</p>
+<ul>
+<li>
+<p>Cameron Neylon for being customer number one</p>
+</li>
+<li>
+<p>Liz Stokes for working on metadata crosswalking/mapping</p>
+</li>
+<li>
+<p>Mike Lake for coding and ideas</p>
+</li>
+<li>
+<p>Conal Tuohy, Duncan Loxton &amp; Eoghan Ó Carragáin for help with the draft spec &amp; Katrin Leinweber for edits</p>
+</li>
+<li>
+<p>Amir Aryani for discussions about metadata</p>
+</li>
+<li>
+<p>Gerard Devine and Christian Evenhuis for starting to build tools</p>
+</li>
+<li>
+<p>Katrina Trewin for grooming data in Farms to Freeways</p>
+</li>
+<li>
+<p>The team at Artefactual for feedback</p>
+</li>
+</ul>
+<p>And the mainly Sydney-based metadata group who met in the leadup to this work
+Piyachat Ratana, Sharyn Wise, Michael Lynch, Craig Hamilton, Vicki Picasso, Gerard Devine, Katrin Trewin, Ingrid Mason, Peter Bugeia</p>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.001.jpeg' alt='DataCrate - a progress report on creating a data packaging format for research data
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This presentation is about a developing standard for research data packaging, DataCrate, which will be at version 0.2 or higher by the time of OR 2018. The purpose of DataCrate is to allow distribution of data sets via a single file (using Zip, TAR or a disc image format as appropriate) and/or via a URL with integrity checks. Another goal is to be able to host a dataset on a web server with appropriate access controls in a way that allows people to inspect the data set via an HTML page which summarises the data set and (optionally) describes the contents in detail, file by file or directory by directory.</p>
+<p>The aim is to maximise the utility of the data for researchers (including researchers’ ‘future selves’). Given that a researcher has found a DataCrate package they should be able to tell what it is, how the data may be used and what all the files contain, to enable discovery of the data by exposing metadata as widely as possible and to enable automated ingest into repositories or catalogues.</p>
+<p>DataCrate uses existing standards including schema.org and ontologies from the SPAR ontologies, as well as Bagit for data packaging.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.002.jpeg' alt='' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>The image on this slide  is of a container ship carrying standardised shipping containers.</p>
+<p>What is DataCrate?</p>
+<p>It’s a standard for Packaging data for distribution, built on other standards.  We created this standard because there was no general purpose way of shipping arbitrary research data
+with human readable metadata.</p>
+<p>Image
+<a href="https://www.flickr.com/photos/volvob12b/27321575845/in/photolist-HCjdCv-cjfUe3-LJwM9q-9njAr9-9ngy2K-9ngxBZ-tHaVtw-9ngzv4-QVwfJJ-RxKFMH-RpcY6S-eRdT6Q-XGDTVG-vcK3GH-9zc5oo-cjfR8q-cnzqCQ-vvwYTC-zmsA82-ddUxfq-bbts1K-HXcKUS-24HMuUK-F9sD5A-uzDKoq-bbtrmX-A8S742-A8SXie-JnWNPg-xiTosq-xhkiDG-xkbohz-yLDPn6-xiZtco-wnQSV9-xkeHki-x34aJU-wnzTFh-wnB2SL-xiR1Bq-HPp9VF-wnNzfT-xhuVXA-x3bCWq-x3byuC-Nkc2vV-PosH4z-CZHcba-QYUL7t-JLujsJ">source</a>.</p>
+<p>Image license:  &lt;
+https://creativecommons.org/publicdomain/zero/1.0/&gt;</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.003.jpeg' alt='Requirements
+<p>A packaging/display format with:
+An HTML manifest that describes as many of the files in a package as possible
+Linked-data semantics in JSON-LD
+Checksums, data by reference
+' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This is a summary of the requirements for the system - having something, an HTML page,  that a person can read that explains what the package <em>contains</em> is important. How many times have we all opened a zipped data file from the Downloads folder and tried to work out what it is and how to cite it?</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.004.jpeg' alt='Prior packaging art
+Frictionless data packages
+Not JSON-LD
+Packaging semantics are implied not explicit
+Research Object + BagIt
+Semantics oriented towards very nuanced human authorship roles
+Uses many annotation files
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>The <a href="https://github.com/UTS-eResearch/datacrate/blob/master/README.md">DataCrate github project</a> goes through some of the background research we did into other formats. In summary - we didn’t use the Frictionless data packaging because it was not based on recognized metadata standards. And the Research Object + BagIt standard had some unresolved issues around its use of BagIt, had a complicated multi-file system for describing files in JSON-LD and used metadata which was mainly specialised around nuances to do with authorship, but that said, we are
+aligning
+DataCrate with it where possible.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.005.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>In DataCrate there is an index.html file in the root of each package
+which is designed to:</p>
+<ul>
+<li>Show a datacite citation if
+there is enough metadata to make one</li>
+<li>Describe the dataset at a high level</li>
+</ul>
+<p>Packages are suitable for web display, or for zipping (or otherwise packaging) for distribution.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.006.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>There is a dataset-level metadata description, presented as a table.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.007.jpeg' alt='
+' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>In this talk I want to highlight a point about name ambiguity which serves to illustrate why using a linked data approach is useful.</p>
+<p>Here’s a dataset by four authors where the potential for name ambiguity is very high as the family names are very common.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.008.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide was not in the presentation I gave at OR2018 - it is a screenshot showing the first of ten pages of <a href="https://scholar.google.com.au/citations?view_op=search_authors&amp;mauthors=Lu,+j&amp;hl=en&amp;oi=ao">results in Google Scholar matching profiles for J. Lu</a>.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.009.jpeg' alt='
+&quot;creator&quot;: [
+        {
+<p>&quot;@id&quot;: &quot;http://orcid.org/0000-0002-8367-6908&quot;</p>
+<p>},
+{
+&quot;@id&quot;: &quot;http://orcid.org/0000-0003-0690-4732&quot;
+},
+{
+&quot;@id&quot;: &quot;http://orcid.org/0000-0003-3960-0583&quot;
+},
+{
+&quot;@id&quot;: &quot;https://orcid.org/0000-0002-6953-3986&quot;
+}
+],</p>
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>Behind the scenes there is JSON-LD that links these people using their ORCIDs. This does away with the ambiguity completely.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.010.jpeg' alt='{
+      &quot;@id&quot;: &quot;http://orcid.org/0000-0003-0690-4732&quot;,
+      &quot;@type&quot;: &quot;Person&quot;,
+      &quot;affiliation&quot;: &quot;University of Technology Sydney&quot;,
+      &quot;familyName&quot;: &quot;Lu&quot;,
+      &quot;givenName&quot;: &quot;J&quot;,
+      &quot;name&quot;: &quot;J. Lu&quot;
+    },
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This is what a description looks like  in JSON-LD for <a href="https://www.uts.edu.au/staff/jie.lu">Prof Jie Lu</a> from UTS.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.011.jpeg' alt='' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>Here is a screen shot of the same information</p>
+<p>Note that her name is linked - the link resolves to Prof Lu’s page at Orcid,
+preventing her work from being lost amongst the many other instances of the name
+Lu, J. in the literature.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.012.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide shows
+a screenshot of the HTML summary of information about a file from a <a href="https://data.research.uts.edu.au/examples/v0.2/Victoria_Arch_pub/">DataCrate of speleological data</a>.</p>
+<p>What do the little arrows mean? They’re offsite links.
+The link on <a href="https://schema.org/encodingFormat">encodingFormat</a> points to the documentation for the schema.org property <code>encodingFormat</code>.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.013.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide show a screenshot of the Schema.org defitintion for encodingFormat.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.014.jpeg' alt='' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>But even more interestingly, if we follow the link to Polygon File Format we get to the <a href="http://www.nationalarchives.gov.uk/PRONOM/fmt/831">UK National
+Archives’ Pronom Registry which describes the .ply format</a>.</p>
+<p>Next I go on to look very briefly at how this DataCrate was made.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.015.jpeg' alt='
+<p>https://github.com/richardlehane/siegfried
+' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p><a href="https://code.research.uts.edu.au/eresearch/CalcyteJS">CalcyteJS</a>, the tool used to
+generate the DataCrate we’re looking at
+uses <a href="https://github.com/richardlehane/siegfried">Siegfried</a></p>
+<p>by Richard Lehane at the State Archives of NSW to characterise files.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.016.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide, which shows <a href="https://upload.wikimedia.org/wikipedia/commons/6/6e/U.S._Lt._Governors_by_party_affiliation_2009.jpg">a map of the USA with states coloured red, blue and grey</a>
+has nothing to do with datacrate is designed to bring to mind
+the concept of...</p>
+<p>Image</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.017.jpeg' alt='
+Affiliation
+' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>… affiliation.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.018.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>Trying to represent affiliation is complex
+and has been a problem in metadata systems for a long time. On paper it is often represented by superscipt indices.</p>
+<p>This slide shows a screenshot of a <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181020">paper at Plosone</a> where
+13 authors have 11 affiliations to sub-parts of organizations (mostly universisities).</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.019.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>To create this DataCrate I used <a href="https://code.research.uts.edu.au/eresearch/CalcyteJS">CalcyteJS</a> – a work-in-progress tool we’re developing at UTS.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.020.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide shows how the creators of the data set are listed in an Excel spreadsheet that describes the data set. This is in the “Collection” tab that describes the entire datacrate - each of the creators of the dataset is listed.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.021.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide shows a screenshot of the  Person tab where each person is described, and their affiliations listed using shorthand IDs as in the paper (1 … n).</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.022.jpeg' alt='  {   &quot;@id&quot;: &quot;http://orcid.org/0000-0002-6756-6119&quot;,
+      &quot;@type&quot;: &quot;Person&quot;,
+      &quot;affiliation&quot;: [{
+&quot;@id&quot;: &quot;1&quot;
+}, {&quot;@id&quot;: &quot;2&quot;}, {&quot;@id&quot;: &quot;3&quot;}, {&quot;@id&quot;: &quot;4&quot;}],
+      &quot;family Name&quot;: &quot;Agar&quot;,
+      &quot;given Name&quot;: &quot;Meera&quot;,
+      &quot;identifier&quot;: &quot;http://orcid.org/0000-0002-6756-6119&quot;,
+      &quot;name&quot;: &quot;Meera Agar&quot;
+    },
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>This slide shows is a JSON-LD view of the data for the person with the most affiliations.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.023.jpeg' alt='{    &quot;@id&quot;: &quot;1&quot;,
+      &quot;@type&quot;: &quot;Organization&quot;,
+      &quot;address&quot;: &quot;Ultimo&quot;,
+      &quot;country&quot;: &quot;Australia&quot;,
+      &quot;identifier&quot;: &quot;1&quot;,
+      &quot;memberOf&quot;: {
+&quot;@id&quot;: &quot;http://uts.edu.au&quot;
+},
+      &quot;name&quot;: &quot;Faculty of Health, University of Technology Sydney&quot;,
+      &quot;state&quot;: &quot;New South Wales (NSW)”
+},
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>Here’s a description of one of the affiliations,
+“Faculty of Health, University of Technology Sydney”
+which is a sub-part of an
+organisation - this relationship is encoded using the schema.org property <a href="https://schema.org/memberOf">memberOf</a>, pointing to UTS, which is the organisation that our administrators would like people to use as their affiliation.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.024.jpeg' alt='
+{
+      &quot;@id&quot;: &quot;http://uts.edu.au&quot;,
+      &quot;@type&quot;: &quot;Organization&quot;,
+      &quot;identifier&quot;: &quot;http://uts.edu.au&quot;,
+      &quot;name&quot;: &quot;University of Technology Sydney&quot;
+    },
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>And here is the metadata for UTS.</p>
+<p>The point of this little demo of complex affiliation is to show that a linked data approach lets us describe
+complex
+things in a way that make it easy for machines to track, and via the HTML index page in each DataCrate, for people to explore by
+clicking
+links.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.025.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>I also wanted to demonstrate how an entire web-based collection can be exported as a datacrate. This is a screenshot of the <a href="http://omeka.uws.edu.au/farmstofreeways/">Farms to Freeways</a> repository, created by Katrina Trewin at Western Sydney University using some funding from the Australian National Data Service, made with the <a href="https://omeka.org/classic/">Omeka Classic</a> software.</p>
+<p>From the about page:</p>
+<blockquote>
+<p>This research project, titled Western Sydney Women's Oral History Project
+'From farms to freeways: Women's memories of Western Sydney' , sought to analyse
+the experiences of women who had lived in the Blacktown and Penrith areas since
+the early 1950s, including their responses to social changes brought about by
+rapid suburbanisation in the Western Sydney region in the post-war period.
+<a href="http://omeka.uws.edu.au/farmstofreeways/">http://omeka.uws.edu.au/farmstofreeways/</a></p>
+</blockquote>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.026.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>Using some <a href="https://github.com/UTS-eResearch/omeka-datacrate-tools">proof of concept code</a>
+I exported the data from the Omeka  site.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.027.jpeg' alt='
+' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>In to a Data Crate which is accessible &lt;
+https://data.research.uts.edu.au/examples/v0.2/farms_to_freeways/</p>
+<blockquote>
+</blockquote>
+<p>This demonstrates the use of the <a href="https://pcdm.org/2016/04/18/models">Portland Common Data Model</a> to describe a <a href="http://pcdm.org/models#Collection">collection</a>
+of data. The resulting DataCrate can be used, via its index.html page like a static version of the Omeka site, but could also be reconstituted into a new repository, such as the <a href="https://omeka.org/s/">new “S” version of Omeka</a>.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.028.jpeg' alt='' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>Another thing I wanted to show was that adding thumbnails was easy, because of
+the use of linked data. This image shows a screenshot of a mocked up dataset
+where there is a microscope image that has a thumbnail. In order to implement
+thumbnails, all that was needed was to add a few lines to the <a href="https://code.research.uts.edu.au/eresearch/CalcyteJS">calcytejs</a> tool
+to look for the schema.org <a href="https://schema.org/thumbnail">thumbnail</a> property in
+the CATALOG.json file and to render that as an image. This demonstrates the
+power of taking a semantic approach and drawing on an existing standard, rather
+than  making up our own property, or <em>worse</em>, using conventions such as magic
+filenames.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.029.jpeg' alt='A walk through the
+spec
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>In the talk I briefly scrolled through <a href="https://github.com/UTS-eResearch/datacrate/blob/master/spec/0.2/data_crate_specification_v0.2.md">version 0.2 of the DataCrate specification</a></p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.030.jpeg' alt='
+<p>' border=&quot;1&quot; /&gt;</p>
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>In looking at the spec I pointed out that
+DataCrate also (optionally) uses the BagitSpec to lay-out the files in the DataCrate, with checksums</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='../../../blog/DataCrate0_2/DataCrate-OR2018 (3).pptx_md.031.jpeg' alt='Help wanted
+Spec Review
+Additional coverage  (eg representing software provenance, recommended ontologies for scientific data)
+Tooling - write a data crate exporter
+' border="1" />
+<details open="open">
+<summary>
+<h3>Notes</h3>
+</summary>
+<p>The final slide was a request for help - we’d like people to read and comment on the DataCrate spec and we’d love more tool-makers to start building tools.</p>
+<h2>Tool summary</h2>
+<p><a href="https://github.com/gdevine/hiev_datacrate">HIEv DataCrate</a> by Gerry Devine: at the Hawkesbury Institute for the Environment at Western Sydney University, a bespoke data capture application (HIEv) harvests a wide range of environmental data (and associated file level metadata) from both automated sensor networks and analysed datasets generated by researchers. Leveraging built-in APIs within the HIEv a new packaging function has been developed, allowing for selected datasets to be identified and packaged in the DataCrate standard, complete with metadata automatically exported from the HIEv metadata holdings into the JSON-LD format. Going forward this will allow datasets within HIEv to be published regularly and in an automated fashion, in a format that will increase their potential for reuse.</p>
+<p>Calcytejs
+is a command line tool for packaging data into DataCrate developed at the University of Technology Sydney which allows researchers to describe any data set via the use of spreadsheets which the tool auto-creates in a directory tree.</p>
+<p>Omeka DataCrate Tools
+is a collection proof of concept tool for exporting data from Omeka Classic repositories into the DataCrate format I wrote  in Python.</p>
+</details>
+</section>
+<br/><br/><hr/>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'DataCrate_2018';
+                var disqus_url = 'http://ptsefton.com/2018/06/29/DataCrate_2018.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

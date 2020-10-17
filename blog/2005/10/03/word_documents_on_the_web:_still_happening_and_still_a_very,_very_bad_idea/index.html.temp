@@ -1,0 +1,64 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Word documents on the web: still happening and still a very, very bad idea
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Word documents on the web: still happening and still a very, very bad idea</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2005/index.html">2005</a>-<a href="/blog/2005/10/index.html">10</a>-<a href="/blog/2005/10/03/index.html">03</a>
+<div><style type="text/css">
+</style><p>As the team at USQ get the RUBRIC (Regional Universities Building Research Infrastructure Collaboratively | <a href="http://del.icio.us/tag/destrubric">del.icio.us tag: destrubric</a>) project started I have noticing a disturbing amount of documentation to do with sustainable repositories and related projects published in Microsoft Word format on the web. One would hope that people in this field would at least be putting up PDF. And HTML would be handy as well. This is the web after all, not some circus (you know; full of Acrobats).</p><p>In 2005 people can still not easily get good quality HTML and PDF versions of their word processing documents onto the web without fuss. </p><p>Why? Why are we still putting word documents on the web? That's a recurrent theme here – and the short answer is that you need two things that are not widely deployed. </p><ol class="li1n"><li><p>You need authors to use a known set of styles that map to HTML, ie a template. No generic 'save as HTML' will ever work, because the structure of an arbitrary word processing document can't be mapped to HTML reliably and 'nicely' without styles. There are things you can do in your word processor (but should not if you want long-life no-fuss documents) - that can't be done in HTML.</p></li><li><p>You need software infrastructure to catch documents and make HTML and PDF – even the <a href="http://ice.usq.edu.au/">ICE project</a> I'm working on is not quite there yet, but it is at least now letting me work in a word processor for this weblog. </p><p>While it does make web publishing easier blogging is not the answer here – that's typically done with web-only software which is usually not integrated with word processors well if at all.</p></li></ol><p>But back to Word on the web.</p><p>Before I give some examples, lets go over why Word on the web is a bad idea:</p><ul class="li1b"><li><p>It's not open access. Word is not available everywhere there's a web browser. </p><p>Think about Linux, mobile phones, Sony PSPs etc.</p></li><li><p>Word documents can contain history you probably don't want to publish for others to see. In some cases other people can reconstruct the entire editing history of your document, or worse, find traces of other documents that you might not want to publish.</p></li><li><p>Word documents are typically much bigger than HTML documents and they are hard to integrate with web sites using hyperlinks.</p></li><li><p>Word is not considered an archival format in a lot of repository projects, so putting word on the web is not good behavior for leaders in the field to be modeling.</p></li><li><p>Microsoft have made their web Windows web browser load Word when you hit a Word document from the web. Maybe they think people won't notice, but it can be disconcerting. If you accidentally change a document then try to go back, Word wants to save it, for example.</p></li></ul><p>Now the bad news about how people who are working in the sustainable digital repository field seem to be stuck with Word. </p><p>I want to be clear here that I am not blaming individuals. I am commenting on the lamentable state of the art in web  publishing tools that make it too much trouble to  get  decent HTML rendition from a Word document.</p><p>Last Monday I attended a meeting of the Australasian Digital Theses (<a href="http://adt.caul.edu.au/">ADT</a>) project. Amongst the presentations were a couple of instances of Word on the web. This is odd – given that theses on the web are usually in PDF format.</p><p>Last Tuesday I went to a round-table (<a href="http://www.humanities.org.au/Events/NSCF/CurrentRT/Current.htm">Open Access, Open Archives and Open Source</a>.  National Scholarly Communication Forum) on open access research. One of the recurrent threads was about making research papers openly available.</p><p>In presentations there I saw PowerPoint slides with links pointing to Word documents on the web, from senior people involved in research  infrastructure and policy.</p><p>But my favorite example is RUBRIC-related. The announcement from the Australian Government was done in a Word document. The URL for the document is:</p><blockquote><a href="http://www.dest.gov.au/sectors/research_sector/policies_issues_reviews/key_issues/australian_research_information_infrastructure_committee/documents/outcomes_call_for_proposals_doc.htm">http://www.dest.gov.au/sectors/research_sector/policies_issues_reviews/key_issues/australian_research_information_infrastructure_committee/documents/outcomes_call_for_proposals_doc.htm</a> </blockquote><p>This looks like a URL for an HTML page, doesn't it? But it actually points to a Word document. On my setup that means it downloads, and I have to open it to read it – hardly a seamless browsing experience. </p><p>Last time I looked (2005-09-21) there is an HTML version of this document as well, which is undated. I am guessing that someone in the DEST web team had to convert it by some copy-paste-convert process from the original.</p><p>The web version contains some very basic HTML code. While it is impossible to tell how it was created, like the word document that spawned it, it does not carry any structural information, such as headings. So instead of this heading being coded as such is is merely formatted with bold tags. </p><blockquote><b>B.        TECHNICAL DEVELOPMENT AND DEPLOYMENT PROJECTS</b><pre>&lt;P&gt;&lt;B&gt;B.&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;TECHNICAL DEVELOPMENT AND DEPLOYMENT PROJECTS&lt;/B&gt;&lt;/P&gt;
+</pre></blockquote><p>This format-driven approach is common, and I suppose it's not a huge issue if you are dealing with short documents like this, or lost-dog flyers, but for a longer document, like (say) a thesis you'd want to be using headings and other styles. <a href="http://ptsefton.com/blog/2005/03/02/use_styles">Use styles</a>.</p><p>The fact that a document announcing important infrastructure grants could not be put on the web as a web page immediately is a strong endorsement of the need for DEST to fund our project, because one of our goals in the RUBRIC project is to be able to provide researchers (and DEST, if they want) with word processor based tools that will give them HTML and PDF from a single source. Like this document. If you want a PDF version of this you can have one for $99.97 Australian including GST.</p><p>(And yes, I am aware that I have a couple of fixups to do on this site to make the HTML really good quality).</p></div>
+</body>
+</html>

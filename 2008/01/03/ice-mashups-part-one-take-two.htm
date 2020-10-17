@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>ICE Mashups, part one, take two - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2008/01/03/ice-mashups-part-one-take-two.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="The end result: an interactive map But what am I trying to achieve? How do you make a map like this? How do you publish a map like this? Issues [Update 2008-01-03 – fixed a technical issue] I showed my recent post on embedding maps into blog posts to my long-suffering …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="ICE Mashups, part one, take two"/>
+        <meta property="og:url" content="../../../2008/01/03/ice-mashups-part-one-take-two.htm"/>
+        <meta property="og:description" content="The end result: an interactive map But what am I trying to achieve? How do you make a map like this? How do you publish a map like this? Issues [Update 2008-01-03 – fixed a technical issue] I showed my recent post on embedding maps into blog posts to my long-suffering …"/>
+        <meta property="article:published_time" content="2008-01-03" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2008/01/03/ice-mashups-part-one-take-two.htm"
+                       rel="bookmark"
+                       title="Permalink to ICE Mashups, part one, take two">
+                        ICE Mashups, part one, take two
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-01-03T05:13:59+00:00"> Thu 03 January 2008</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id1">The end result: an interactive map</a></li>
+<li><a href="#id2">But what am I trying to achieve?</a></li>
+<li><a href="#id3">How do you make a map like this?</a></li>
+<li><a href="#id4">How do you publish a map like this?</a></li>
+<li><a href="#id5">Issues</a></li>
+</ul>
+</div>
+<div>
+<p>[Update 2008-01-03 <span class="spCh spChx2013">–</span> fixed a
+technical issue]</p>
+<p>I showed my <a href="http://ptsefton.com/2007/12/18/ice-mashups-part-one.htm">recent post on embedding maps into blog
+posts</a> to my
+long-suffering partner.</p>
+<p>She said that while the embedded Google map was cool, the explanation
+was incomprehensible to her. Me, I would prefer that even if some of the
+technical detail went over her head that she at least got the point,
+which apparently she didn't, on account of it was, well,
+incomprehensible.</p>
+<p>(And then she went on to read a few more posts and pointed out some
+really bad sentences that I had written in the recent past. I think it's
+my eyes that are causing the problem; they don't focus on text like they
+used to, but it could well be my brain.)</p>
+<p>Here's another try at the same post with the word processor zoomed in to
+150% so I can see what I'm typing.</p>
+<h1><span id="id1"></span><!--id1--></a>The end result: an interactive map</h1>
+<p>First up, I invite you to admire this map which shows the route of a
+bike ride I went on with the <a href="http://toowoombabug.blogspot.com/">Toowoomba Bicycle Users
+Group</a>.</p>
+<div class="embedded-html">
+<div id="routemapiframe"
+style="width: 450px; border: 1px solid #d0d0d0; background: #755; overflow: hidden; white-space: nowrap;">
+<p><span
+style="display: block; font: bold 11px verdana, arial; padding: 2px;"><a href="http://www.bikely.com/maps/bike-path/Toowoomba-Gowrie-Junction-Highfields-Loop">Toowoomba -
+Gowrie - Highfields
+Loop</a></span></p>
+<iframe frameborder="0" id="rmiframe" scrolling="no" src="http://www.bikely.com/maps/bike-path/Toowoomba-Gowrie-Junction-Highfields-Loop/embed/1" style="height:360px;  background: #eee;" width="100%">
+<!-- -->
+</iframe>
+<span
+style="display: block; font: normal 10px verdana, arial; text-align: right; padding: 1px;">[Share
+your bike routes @ Bikely.com](http://www.bikely.com/)</span>
+</div>
+</div>
+<p>If you click on the map you can drag it around.</p>
+<p>Use the <code>+</code> and <code>–</code> buttons to zoom in and out.</p>
+<p>And if you click on the title at the top (open it in a new window) it
+will take you to Bikely where you can look at the ups and downs of
+riding on the Darling Downs by clicking on <code>Show</code> then
+<code>Elevation profile</code>.</p>
+<p><a name="graphics4"></a><img src="/wp-content/uploads/2008/01/m518e62b6s364x1364.jpeg" alt="graphics4" /></p>
+<p>Which shows you this:</p>
+<p><span
+style="display: block"><a name="graphics5"></a><img src="/wp-content/uploads/2008/01/m49664bcas552x3024.jpeg" alt="graphics5" /></span></p>
+<p>(Note: I think there's something wrong; it shows a very dramatic dip in
+the ride that I don't remember, around the 26km mark).</p>
+<h1><span id="id2"></span><!--id2--></a>But what am I trying to achieve?</h1>
+<p>This is not just about putting up maps on a website. We are trying to
+develop tools so that authors can <strong>embed all kinds data into their
+publications</strong> and then visualize and explore and verify the data. As we
+work for a university we are particularly interested in this for
+educational and research purposes. We want to give authors tools to do
+three things:</p>
+<ol>
+<li>
+<p>Allow them to <strong>capture or link to some data</strong>.</p>
+</li>
+<li>
+<p>Generate a static <strong>2d representation of the data</strong> that they can
+paste into a word processing document and use for print or PDF.</p>
+</li>
+<li>
+<p>Publish <strong>rich interactive views of their data</strong> to the web:</p>
+</li>
+</ol>
+<blockquote>
+<p>Instead of publishing a bike route as a picture, why not embed an
+interactive map in a web document?</p>
+<p>Instead of publishing a chemical formula for a molecule, <a href="http://ptsefton.com/blog/2007/06/22/cml_demo/">why not show
+an interactive 3d
+model?</a></p>
+<p>Instead of citing chapter and verse in a classical text, why not have
+the citations turn into links to multiple translations of the text?
+(Have a look at <a href="http://www.perseus.tufts.edu/cgi-bin/perscoll?collection=Perseus:collection:PersInfo&amp;type=interactive+resource">this list of
+tools</a>
+and think about how they could be integrated with an online text.)</p>
+<p>Instead of a table of data or a static chart, why not show a chart
+tool where the reader can zoom in an out, and otherwise explore the
+data?</p>
+</blockquote>
+<p>This stuff is not easy at the moment. For example see this <a href="http://wwmm.ch.cam.ac.uk/blogs/murrayrust/?p=896">post by
+Peter Murray Rust about the difficulties of trying to paste a fragment
+of Wikipedia code into his
+blog</a>, following on
+from an <a href="http://wwmm.ch.cam.ac.uk/blogs/murrayrust/?p=894">earlier
+post</a>. Peter mentions
+the <a href="http://ice.usq.edu.au/">Integrated Content Environment</a> project
+that I lead at USQ where we are trying to help solve these problems.</p>
+<p>Now, I'm going to explain how I captured the data to make this map, and
+describe some of the challenges involved, and finish up by looking at
+some of the issues raised.</p>
+<h1><span id="id3"></span><!--id3--></a>How do you make a map like this?</h1>
+<p>If you want to make a map like mine, the short answer is: join
+<a href="http://www.bikely.com/">Bikely</a> and draw one yourself using the
+instructions on the site. It's a simple-yet-fiddly process of clicking
+on a map to draw your route.</p>
+<p>But there is a much more complicated way which, of course, is what I
+decided to do.</p>
+<p>I decided to use a <a href="http://en.wikipedia.org/wiki/Global_Positioning_System">GPS
+device</a> to
+record a bike ride, upload the data onto my computer, then upload that
+to Bikely. I used a free program called
+<a href="http://www.gpsbabel.org/">GPSBabel</a> to do the upload. (I had trouble
+with the USB cable I bought for my Garmin eTrex GPS. If you're planning
+to do this maybe choosing the absolute cheapest cable off eBay is not
+the best plan.)</p>
+<p>Once I got the upload working I ended up with a big file, with a couple
+of years worth of random data from the GPS as well as the route I
+wanted. Bikely wants to use the <a href="http://www.topografix.com/gpx.asp">GPX interchange
+format</a>, but it didn't want <strong>all</strong>
+my data <span class="spCh spChx2013">–</span> when I uploaded the whole
+lot it gave up in disgust. Eventually I figured out that I could load
+the data into Google Earth edit it down to just the route in question,
+then export it and upload to Bikely. That worked.</p>
+<h1><span id="id4"></span><!--id4--></a>How do you publish a map like this?</h1>
+<p>So having made the map at the Bikely site you can capture it:</p>
+<ul>
+<li>
+<p>Click on <code>Share</code>.</p>
+</li>
+<li>
+<p>Choose <code>Display this map on your blog or website</code>.</p>
+</li>
+</ul>
+<dl>
+<dd>
+![graphics1](/wp-content/uploads/2008/01/m795256cds524x4924.jpeg)
+</dd>
+<dd>
+The result is a fragment of HTML you can paste into the source of a web
+page.
+</dd>
+<dd>
+![graphics2](/wp-content/uploads/2008/01/m64ed2ed2s529x2154.jpeg)
+</dd>
+</dl>
+Only trouble is that if you are working in a word processor, and you
+paste in code like this all you get is ugly code in your document.
+Besides, the code by itself doesn't give me the static version of the
+map I want for the print / PDF version of the document.
+<p>So, Ron Ward has extended the existing 'embed' feature in ICE, for
+embedding stuff like audio and video. To use it I have to do three
+things:</p>
+<ol>
+<li>
+<p>Put the <em>Bikely on-my-site</em> code into a file somewhere that it can
+be accessed over the web. In the future we're going to make this
+really easy, so you don't have to think about it, but for now I had
+to create the file and copy it to my website. (You also need to
+change the empty <code>iframe</code> tag to contain a blank comment because of
+a Firefox rendering bug).</p>
+</li>
+<li>
+<p>Paste in a screenshot of the image, like this (on the Mac I hit
+<code>Cmd Ctrl Shift 4</code>, then selected the area I wanted to capture, and
+pasted into this document):</p>
+</li>
+</ol>
+<dl>
+<dd>
+![graphics3](/wp-content/uploads/2008/01/2306b635s529x4574.jpeg)
+</dd>
+</dl>
+1.  Link the image to the file. In my case the link looks like this:
+<ol start="2">
+<li>
+<p><a href="http://ptsefton.com/map2.html">http://ptsefton.com/map3.html?embed</a></p>
+</li>
+<li>
+<p>View the document in ICE, and the HTML version is magically turned
+into a live map, while the PDF version, which you can't see here,
+has a static image like the one immediately above.</p>
+</li>
+</ol>
+<p>Now, I know all that is complicated, but eventually we will automate the
+process so making a map is as easy as uploading the data from the GPS
+(which is hard enough on its own). ICE will automagically turn a
+tracklog into a map, and generate the printable version of the image for
+you. But this will not be a one-off development. There will be a plugin
+system so programmers can add formatters for lots of different kinds of
+data.</p>
+<h1><span id="id5"></span><!--id5--></a>Issues</h1>
+<p>While this process works, it raises some interesting questions, for
+which I don't have any answers:</p>
+<ul>
+<li>
+<p>In a scholarly context, would it be OK for me to edit my GPS log, as
+I have admitted to doing here? Depending on what the map is for that
+might be alright, but there are some kinds of data that really
+should not be edited.</p>
+</li>
+<li>
+<p>If I expose the raw GPS data how do you know whether I have edited
+it? Would you trust it if it was signed by the GPS device so you
+could tell if I had tampered with it? Do you trust me not to hack my
+GPS device? Would you prefer it if I took along a witness? What
+about if you sent your GPS device with me, with a tamper-proof seal?
+Do I trust you?</p>
+<p>(A quick search GPS units that can sign their data turned up a
+patent, but it's designed for shopping, not science <a href="#ftn1"><span
+style="vertical-align: super;"><span
+class="endnote">1</span></span></a>)</p>
+</li>
+<li>
+<p>If I do expose my data, and link off to the the Google map how do I
+preserve or future-proof my publication? Can I put the data file in
+my institutional repository? What if it's really big data, like the
+stuff<a href="#ftn2"><span style="vertical-align: super;"><span
+class="endnote">2</span></span></a> the <a href="http://www.tardis.edu.au/data.html">ARROW team recently
+added to the Monash repository</a>?
+What happens when Bikely disappears, or changes its terms of
+service? (Something like AONS<a href="#ftn3"><span
+style="vertical-align: super;"><span
+class="endnote">3</span></span></a> should hep here).</p>
+</li>
+<li>
+<p>How can we make the whole process work seamlessly so that working
+researchers to use it?</p>
+</li>
+</ul>
+<p>These are the kinds of questions the research and higher-education
+community will be looking at in Australia as part of activities going on
+around the new Australian National Data Service<a href="#ftn4"><span
+style="vertical-align: super;"><span
+class="endnote">4</span></span></a> (ANDS).</p>
+<hr />
+<div style="font-size: .9em;">
+<p><span class="endnote"><a href="#ftn1-text">1</a> Bradford H Needham and David
+Cowperthwaite, <em>EP1485842 Intel european software patent -
+Authenticatable positioning data - Gauss</em> (2003),
+<a href="http://gauss.ffii.org/PatentView/EP1485842">http://gauss.ffii.org/PatentView/EP1485842</a> (accessed December 19,
+2007).</span></p>
+</div>
+<div style="font-size: .9em;">
+<p><span class="endnote"><a href="#ftn2-text">2</a> Carlos J. Rosado et al., <span
+class="spCh spChx201c">“</span>A Common Fold Mediates Vertebrate Defense
+and Bacterial Attack,<span class="spCh spChx201d">”</span> <em>Science</em>
+317, no. 5844 (September 14, 2007),
+<a href="http://www.sciencemag.org/cgi/content/abstract/317/5844/1548">http://www.sciencemag.org/cgi/content/abstract/317/5844/1548</a> (accessed
+December 20, 2007).</span></p>
+</div>
+<div style="font-size: .9em;">
+<p><span class="endnote"><a href="#ftn3-text">3</a> Curtis et al., <span
+class="spCh spChx201c">“</span>AONS - An obsolescence detection and
+notification service for Web archives and digital repositories,<span
+class="spCh spChx201d">”</span> <em>New Review in Hypermedia and
+Multimedia</em> 13, no. 1 (January 2007),
+<a href="http://dx.doi.org/10.1080/13614560701423711">http://dx.doi.org/10.1080/13614560701423711</a> .</span></p>
+</div>
+<div style="font-size: .9em;">
+<p><span class="endnote"><a href="#ftn4-text">4</a> The ANDS Technical Working Group,
+<em>Towards the Australian Data Commons. A proposal for an Australian
+National Data Service</em> (Canberra: Australian Government Department of
+Science Education and Trainining, 2007),
+<a href="http://www.pfc.org.au/twiki/pub/Main/Data/TowardstheAustralianDataCommons.pdf">http://www.pfc.org.au/twiki/pub/Main/Data/TowardstheAustralianDataCommons.pdf</a>
+.</span></p>
+</div>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'ice-mashups-part-one-take-two';
+                var disqus_url = 'http://ptsefton.com/2008/01/03/ice-mashups-part-one-take-two.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

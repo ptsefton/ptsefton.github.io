@@ -1,0 +1,71 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: CML demo
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>CML demo</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/06/index.html">06</a>-<a href="/blog/2007/06/22/index.html">22</a>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<p align="right"><a href="/blog/2007/06/22/cml_demo/100.pdf">View this page as PDF</a></p><div>
+<script src="/files/jmol-11.2.0/Jmol.js" type="text/javascript"></script><script type="text/javascript">jmolInitialize("/files/jmol-11.2.0");</script><div><p>I <a href="http://ptsefton.com/blog/2007/06/15/etd_2007">mentioned before</a> that at the ETD 2007 conference I met <a href="http://wwmm.ch.cam.ac.uk/blogs/murrayrust/">Prof Peter Murray-Rust</a>. We're going to collaborate on adding support for CML <span class="spCh spChx2013">–</span> the Chemical Markup Language to ICE, so that people can write research publications that include 'live' data.</p><p>Here's a quick demo of the possibilities.</p><p>I went to the amazing <a href="http://wwmm.ch.cam.ac.uk/crystaleye/">Crystaleye</a> service.</p><blockquote class="bq"><p>The aim of the CrystalEye project is to aggregate crystallography from web resources, and to provide methods to easily browse, search, and to keep up to date with the latest published information.</p><p><a href="http://wwmm.ch.cam.ac.uk/crystaleye/">http://wwmm.ch.cam.ac.uk/crystaleye/</a></p></blockquote><p>Crystaleye automatically finds descriptions of crystals in web-accessible literature, turns them into CML and builds pages like <a href="http://wwmm.ch.cam.ac.uk/crystaleye/summary/acta/b/2007/03-00/index.html">Acta Crystallographica Section B, 2007, issue 03-00.</a></p><p>From that page I grabbed this two dimensional image of (C<sub>6</sub>H<sub>15</sub>N<sub>4</sub>O<sub>2</sub>)<sub>2</sub>(C<sub>4</sub>H<sub>4</sub>O<sub>6</sub><sup>-2</sup>), </p><p><a name="graphics3"></a><img alt="graphics3" class="fr1" height="278" src="/blog/2007/06/22/cml_demo/1.png" style="border:0px;" width="358"/></p><p class="P2">There's a Java applet on the page that lets you play with the crystal in 3d. Here's a screenshot. of the 3d rendering.</p><p><a name="graphics2"></a><img alt="graphics2" class="fr2" height="211" src="/blog/2007/06/22/cml_demo/2.jpg" style="border:0px;" width="283"/></p><p>There's lots more work to be done, but I thought I'd show how easy it is to make an ICE document that shows the 2d view for print, with the 3d view for the web, via the applet. Be warned, this may not work for you. The applet refuses to load in Firefox 2 for me, but it does work in Safari on Max OS X. If you follow the 'view this page in PDF' link above you'll see just the picture.</p><p><a href="http://ptsefton.com/files/cml/bk5044sup1_II.complete.cml.xml" name="graphics1"><img alt="graphics1" class="fr1" height="278" src="/blog/2007/06/22/cml_demo/1.png" style="border:0px;" width="358"/></a></p><div>
+<div id="jmolContainer">
+<script type="text/javascript">setMaxStructNum(55);highlightFirstStructure();maxImageNum=1</script><script type="text/javascript">jmolApplet([360, 280], "load http://ptsefton.com/files/cml/bk5044sup1_II.complete.cml.xml; set unitcell on");</script></div>
+<div id="rendering">
+</div>
+</div><p>What's happening here?</p><p>My initial hack is really simple. I grab the image and paste it into ICE like any other image, but then I link it to the <a href="../../../files/cml/bk5044sup1_II.complete.cml.xml">CML source</a>. I wrote a tiny fragment of Python in my ICE site to go through every page, and if it finds a link to to a CML file containing an image, it adds code to load the CML into the Jmol applet. This is a kind of integration-by-convention, AKA microformat.</p><p>The main bit of programming only took a  few minutes, but  sorting out where to put the CML files and the Jmol applet, and integrating the changes into this blog took ages. I ended up putting the files here on my web site which meant putting a big chunk of stuff into subversion, something that should have been done ages ago, but the version of svn that runs on my other server refuses to do large commits over HTTPS 'cos of some SSL bug and I can't figure out how to update it which meant switching the repository to use plain HTTP, and so on. It wasn't made easier by me mucking around with the Airport Extreme router and our ADSL modem at the same time, halting internet access at home for a couple of hours.</p><p>To make this integration a bit more usable and robust we want to:</p><ul class="lib"><li><p>Work out a workflow that lets you keep CML files in ICE and easily drop images in to your documents, letting ICE render using the applet when it makes HTML.</p></li><li><p>Integrate forthcoming work from Peter &amp; team that will provide high quality vector graphics instead of the PNG files I'm using now.</p></li><li><p>Investigate embedding CML in an image format such as EPS that word processors understand.</p></li><li><p>Generalize this approach for other e-scholarship applications. We're working with the <a href="http://www.alivex3d.org/">Alive team</a> at USQ on this.</p></li><li><p>Talk to the <a href="http://www.ariadne.ac.uk/issue51/treloar-groenewegen/">DART &amp; ARCHER teams</a>.</p></li></ul><p></p></div>
+</div>
+</body>
+</html>

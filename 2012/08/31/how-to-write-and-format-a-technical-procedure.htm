@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>How to write and format a technical procedure - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2012/08/31/how-to-write-and-format-a-technical-procedure.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="## About this document ### Background The first job I had after doing a PhD in linguistics, back in 1995 was as a technical writer for TAFE NSW, working exciting stuff like how to set up networking in the MicroVax servers they had running the networks in the computing labs (TAFE does …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="How to write and format a technical procedure"/>
+        <meta property="og:url" content="../../../2012/08/31/how-to-write-and-format-a-technical-procedure.htm"/>
+        <meta property="og:description" content="## About this document ### Background The first job I had after doing a PhD in linguistics, back in 1995 was as a technical writer for TAFE NSW, working exciting stuff like how to set up networking in the MicroVax servers they had running the networks in the computing labs (TAFE does …"/>
+        <meta property="article:published_time" content="2012-08-31" />
+            <meta property="article:section" content="How to" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2012/08/31/how-to-write-and-format-a-technical-procedure.htm"
+                       rel="bookmark"
+                       title="Permalink to How to write and format a technical procedure">
+                        How to write and format a technical procedure
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-08-31T08:54:15+00:00"> Fri 31 August 2012</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <article itemscope="itemscope" itemtype="http://schema.org/ScholarlyArticle">
+<section>
+## About this document
+<section>
+### Background
+<p>The first job I had after doing a PhD in linguistics, back in 1995 was
+as a technical writer for TAFE NSW, working exciting stuff like how to
+set up networking in the MicroVax servers they had running the networks
+in the computing labs (TAFE does vocational education). The tech-writing
+team leader was called David Drinkwater, and he taught me some simple
+rules that have proven to be very reliable[^1].</p>
+<p>The most important rule is to use the imperative voice. That is, tell
+the reader exactly what to do in each and every step without ‘you
+should’ or ‘the following needs to be done’.  Every job I’ve had since I
+have written up some kind of variant of this quick primer for my team,
+so this time I’m putting in on my own site so I don’t have to rewrite it
+every five or so years. Suggestions are welcome, via the comments.</p>
+</section>
+<section>
+### Scope
+<p>This is about reproducible procedures that need to be unambiguous. Think
+<em>training</em> rather than <em>education</em>. If something can be expressed as a
+kind of recipe then these guidelines will help to make it unambiguous
+and easy to digest. This approach is not what you want for discussing
+the history of food or reviewing a restaurant.</p>
+<p>There is a bit of a bias in this document towards command-line
+installation guides for server software because that’s what I have been
+working with lately, any suggestions of tips and tricks for other kinds
+of procedures will be gratefully received and incorporated.</p>
+<p>I pay some attention to document structure and formatting here. I’m
+assuming most documentation these days is destined for the web. If it’s
+going to be housed on a project site then it probably makes sense to
+draft and manage it in the project site. For many projects this will
+mean using a wiki format in GitHub, Google Code Jira, Trac or the like.
+If there’s interest I could do a Markdown template or similar. Me, I
+happen to use Word, because it’s a comfortable writing environment and I
+happen to have <a href="http://ptsefton.com/2011/10/18/worddown-word-to-html5-conversion-tool.htm">a tool for creating clean HTML from Word
+docs</a>.</p>
+<p>This document is intended to be an example of the procedural style it is
+expounding, even though it’s not strictly a procedural document.</p>
+</section>
+<section>
+### Audience
+<p>This document is for people writing technical procedures, particularly
+to do with software, such as installation or user guides. No special
+technical skills are required apart from the ability to format a
+document using headings and numbered lists.</p>
+</section>
+</section>
+<section>
+## The process
+<section>
+### Provide background
+<ol>
+<li>
+<p>Make sure that it is clear who the document is for by putting a
+heading near the top like “Audience” or “Who is this for”. Then, as
+I repeat below, write for the identified audience all the way
+through.</p>
+</li>
+<li>
+<p>As with a recipe, at the top of the document, list all the
+ingredients and any special tools, software, permissions, licenses
+or URLs for name authority services as well as where to find them
+(if you don’t know what that is then you understand that’s why it
+needs to be up the top of the document).</p>
+<p>Your reader doesn’t want to find out they need a second computer, an
+account on iTunes, two litres of ethanol, a sorbetière with the
+frozen bit already chilled, a special proprietary wrench and an 8”
+floppy disc half way through.</p>
+</li>
+</ol>
+</section>
+<section>
+### Document the steps
+<ol>
+<li>
+<p>Use imperative statements formatted as numbered lists.</p>
+<p>That is, command-sentences like the one above. Yes this is the way
+we talk to dogs. Think “Sit”, “Stay” and “Shake”. Yes, it might be a
+bit rude, but it is unambiguously something the reader is to do.</p>
+</li>
+<li>
+<p>If context is required, then add it to the beginning of the command,
+as I did in this sentence, which is a still a command (the verb is
+“add”).</p>
+</li>
+<li>
+<p>Write for your identified audience.</p>
+<p>For example a Linux systems administrator can be told to “Edit the
+file” while if you find yourself explaining this to a non-expert
+then a lot more detail will be needed about how to get in and out of
+the editor and how to make the change.</p>
+</li>
+<li>
+<p>Never, ever, use the passive voice in the actual procedural part of
+procedures.</p>
+<blockquote>
+<p>For example:</p>
+<blockquote>
+<p>The file is now loaded into the database.</p>
+<p>The machine is shut down.</p>
+</blockquote>
+</blockquote>
+<p>Both of these are ambiguous because the agency is missing. Who
+loaded the file? Who shut down or is about to shut down the machine?
+(This is not general advice for all documents, the passive is useful
+and appropriate in many genres, just not in the server room).</p>
+</li>
+<li>
+<p>Remembering to issue commands, in context, use forms like this:</p>
+<blockquote>
+<p>To shut down the machine:</p>
+<ol>
+<li>
+<p>Push the big blue button for ten seconds.</p>
+<p>The machine will emit an audible sigh and the lights will go
+out. When the lights are out that means it is shut down.</p>
+</li>
+<li>
+<p>If the machine did not sigh and shut down, repeat (i).</p>
+</li>
+<li>
+<p>If the machine is still not shut down after three tries, hit
+it with the hammer you prepared earlier.</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p>Don’t be relentlessly positive, even if they taught you that in
+business school. If there’s something that the reader shouldn’t do,
+warn them explicitly.</p>
+</li>
+</ol>
+</section>
+</section>
+<section>
+## Factor the procedure into blocks
+<p>Yes, sometimes you need some non-procedural background to your
+procedure. Put it below a heading like this text. This kind of
+background is where you can put options such as variations people might
+like to try, but if it’s a technical procedure you’re writing don’t be
+tempted to turn it into a training manual about all the configuration
+options that might be possible or some kind of narrative. Pick one
+unambiguous pathway and tell the reader how to follow it. Most of us
+need to learn a few scales before we improvise.</p>
+<ol>
+<li>
+<p>Don’t ask the reader to perform a lot of computational thinking such
+as adding alternatives such as “If you’re on a Mac”.</p>
+</li>
+<li>
+<p>If more than a few decisions need to be made along the way, make one
+or more separate procedures.</p>
+<p>Yes that might be a maintenance problem. Solve that problem yourself
+and spare the user.</p>
+</li>
+<li>
+<p>Avoid the use of variables like
+&lt;$wherever-you-decided-to-install-this&gt; and pick one
+best-practice way to do things. For example, on a Linux system tell
+people to install code in /opt/ or in the desktop world tell people
+to drag a mac application into Applications. If they disagree they
+can do it differently.</p>
+</li>
+<li>
+<p>Break procedures up into manageable blocks of, say, no more than
+seven steps which perform some logical sub task, use a particular
+user account or take place in a particular part of an application.
+There a couple of ways to do this:</p>
+<ol>
+<li>
+<p>Start a new list of steps with a paragraph like “To shut down
+the machine”.</p>
+</li>
+<li>
+<p>Use an imperative heading. That is, a command.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>NOTE: when I was drafting this document the above “Break procedures up
+into manageable blocks of, say, no more than seven steps” was step 8,
+that was funny, but it was also wrong, so I re-organized the document.
+No, seven is not a magic number.</p>
+<section>
+#### Test it!
+<p>When you have finished:</p>
+<ol>
+<li>
+<p>Get someone who fits the profile for the identified audience to test
+your procedure.</p>
+</li>
+<li>
+<p>Before they start, get the tester to read these or any other
+guidelines you have so they can check the procedure for compliance
+as well as tell you if it works.</p>
+</li>
+<li>
+<p>Fix any problems and retest.</p>
+</li>
+</ol>
+<p>NOTE: If you’re working on a development project, and the documentation
+isn’t working then there’s probably a problem with the process, which
+might mean the software has been built badly or the system isn’t
+working.</p>
+<p>If it’s hard to document it’s likely impossible to use.</p>
+<p>Tell someone!</p>
+</section>
+<section>
+### Avoid writing documentation
+<p>No, “Avoid writing documentation” does not mean “don’t document things
+that need to be documented”. It means, try to minimise the need for
+documentation.</p>
+<ol>
+<li>
+<p>For example, work towards turning multi-step installation procedures
+into installation packages or scripts.</p>
+</li>
+<li>
+<p>Go back to the business analysts, programmers, managers or whoever
+invented the process you’re documenting and work with them to
+automate or eliminate everything you can.</p>
+</li>
+</ol>
+</section>
+</section>
+<section>
+## Tips and tricks
+<section>
+### For command line documentation
+<ol>
+<li>
+<p>Format  command-line commands in &lt;pre&gt; blocks for the web or in
+monospace fonts for print.</p>
+</li>
+<li>
+<p>Make it easy to copy and paste commands, and not just one at a time:</p>
+<ol>
+<li>
+<p>Do not include the prompt unless you can let the user copy and
+paste commands without having to edit it out.</p>
+</li>
+<li>
+<p>Don’t let line-breaks creep into commands in a way that makes
+them hard to test (this is a problem with PDF).</p>
+</li>
+<li>
+<p>If you really wanted the prompt because it showed the working
+directory or username then make that explicit with commands. For
+example:</p>
+<pre><code>#Become the user this app will run assu dc21cd ~ 
+</code></pre>
+</li>
+<li>
+<p>Use comments, as seen in the previous example as you would in
+code.</p>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section>
+### For desktop or web software
+<ol>
+<li>
+<p>Use screenshots where they’re genuinely better than using text, at
+least the first time you refer to that particular visual interface
+device.</p>
+</li>
+<li>
+<p>Even if you have used a screenshot refer to things in text, such as
+“From the File menu choose Close”, this will help readers to find
+things via searching in the documents and in search engines.</p>
+</li>
+<li>
+<p>If there are a lot of configuration items, summarise them in a table
+in text so they can be searched; even if there are screenshots as
+well.</p>
+</li>
+<li>
+<p>Format menu items and using &lt;code&gt; in HTML or a monospace font in
+print.</p>
+</li>
+</ol>
+<p>Copyright<span class="apple-converted-space">  </span>Peter Sefton,
+2012. Licensed under<span class="apple-converted-space"> </span>Creative
+Commons Attribution-Share Alike 2.5<span
+class="apple-converted-space"> </span>Australia.
+&lt;<a href="http://creativecommons.org/licenses/by-sa/2.5/au/">http://creativecommons.org/licenses/by-sa/2.5/au/</a>&gt;</p>
+</section>
+</section>
+</article>
+<p>[^1]:   The only thing I’ve changed from David’s original advice on
+writing about software is to recommend formatting mentions of menu
+items using &lt;code&gt; in HTML or a monospace font in print, but as
+David said, it is sufficient to use the exact capitalisation and
+punctuation of the menu: “From the File menu choose Save as…” Also
+we didn’t have to deal with stuff like the Microsoft Word Ribbon in
+those days, so fewer screenshots were required.</p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'how-to-write-and-format-a-technical-procedure';
+                var disqus_url = 'http://ptsefton.com/2012/08/31/how-to-write-and-format-a-technical-procedure.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

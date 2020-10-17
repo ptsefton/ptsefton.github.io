@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Publish Everywhere? Not from word processors...
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Publish Everywhere? Not from word processors...</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/09/index.html">09</a>-<a href="/blog/2006/09/23/index.html">23</a>
+<div><p class="P1">Tim Bray reckons that you should be able to publish to the web, via ATOM, from anywhere:</p><blockquote class="bq"><p>Here’s the Atom dream: A “Publish” button on everything. On every word processor and email reader and web browser and cellphone and PDA and spreadsheet and photo-editor and digicam and outliner and sales-force tracker. Really, everywhere. If it doesn’t have a “Publish” button, it’s broken.</p><p><a href="http://www.tbray.org/ongoing/When/200x/2006/09/14/Why-Atom">http://www.tbray.org/ongoing/When/200x/2006/09/14/Why-Atom</a></p></blockquote><p>Wouldn't that be nice. </p><p>But there's one ongoing problem, which has been a constant theme on this blog. Word processors don't typically produce usable reliable good quality HTML, let alone XHTML. Adding a button that says 'Publish' is not going to change that.</p><p>Why? Because it is not possible to map everything you can do in your word processor to HTML. The word processor that Sun sells and gives away, for example, does a particularly awful job of producing HTML, and does not come with a default template that helps <b>at all</b>. And to feed stuff to a web site via Atom you <b>need HTML</b>.</p><p>For years word processors have had HTML export, and for years everyone seems to have been happy to accept that HTML export is awful and always will be. People just say “Word produces crappy HTML” and leave it at that, like it's a law of nature. </p><p>But it doesn't have to be that way. By using styles and adding some style-aware scripts to your word processor you can make word processors more productive and produce good HTML at the same time. The creators of these products could have encouraged people to use styles by shipping great templates and making the HTML export work with them. </p><p>Instead Microsoft have buried styles and templates under more and more layers of obfuscation and unhelpful automation. </p><p>OpenOffice.org Writer at least doesn't bury styles, the quirky interface is easy enough to find. But sun doesn't ship a sensible default template and its HTML export is really, really appalling. For example it doesn't even re-size images, just dumps them out at full resolution and adds height and width attributes to the <code>img</code> tag. And don't get me started on lists. Not again.</p><p>Here's <a href="http://ptsefton.com/blog/2005/10/31/why_do_i_keep_going_on_about_html_export_from_word_processors%3F"> one</a> of my previous rants on the subject.</p><p><a href="http://ptsefton.com/blog/2006/03/21/writely,__meet_the_ice_template">See also</a> what happens when  you try to feed OpenDocument Formatted documents to the web via Writely.</p><p>To be able to publish to the web from your word processor you either have to:</p><ol class="lin" style="list-style: decimal;"><li><p>Suss out which features export properly to HTML and stick to those.  Plain paragraphs should work OK.</p><p>Microsoft are actually documenting this for Word 2007 so you can produce simple HTML by sticking to a subset of Word's features and clicking the blog button. They don't seem to want to take this all the way and support styles. I asked, but no response.</p><p>(You also need to avoid things that are broken – like row and columns spanning in tables in OOo Writer which  has a <a href="http://qa.openoffice.org/issues/show_bug.cgi?id=60238">long standing bug. </a>Would any of you care to visit the OOo site and vote that bug up so it gets fixed? Tim can't get his publish everywhere button working properly without it.)</p></li><li><p>Set up an environment with a template, some styles, custom export scripts etc etc.</p><p>We've done that at USQ with the <a href="http://ice.usq.edu.au/">ICE project</a>. ICE doesn't do ATOM yet, but there is no reason that it couldn't, and no reason that its free code could not be turned into stand-alone plugins for OpenOffice.org and Word so they really can publish to the web.</p></li></ol><p>As always I invite you to take a look at the way this works here on this site. All my posts are produced using OpenOffice.org Writer (I now use NeoOffice as well) with ICE.</p><p></p><p></p><p></p></div>
+</body>
+</html>

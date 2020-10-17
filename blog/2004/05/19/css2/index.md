@@ -1,0 +1,50 @@
+---
+Title: "with inconsistent implementation, it would still probably require more"
+Slug: css2
+Date: 2004-05-19
+
+---language. We have settled on another way of separating content from
+style. For alternate skins our designers make templates consisting of
+plain-old (x)HTML. They get to use their favourite editor (usually
+DreamWeaver in our case). The template gets all its parts labelled in a
+consistent way using CSS classes. For example you could have a cell
+containing table of contents and content like so:
+
+<div class="TOC">
+
+...
+
+</div>
+
+<div class="content">
+
+...
+
+</div>
+
+The designer can put in sample content if they wish. And we \\\*do\\\*
+use CSS to make the tables look pretty. We don't usually come across
+problems with code samples, but ocassionally long unbroken strings of
+text break the formatting by forcing a table to stretch. I'm not sure
+what can be done about this in a table. Then we use those plain-old HTML
+templates to format every page we serve, via XSLT. We use XSLT on the
+server-side, although it is \\\*supposed\\\* to work with modern
+browsers at the client side. So far, though, client-side XSLT is even
+worse for me than CSS in that I can't make it work at all in either of
+the browsers I have on my computer, and yes they are supposed to support
+it (IE6 and Firefox). I need to spend more time on this. If client-side
+XSLT processing can be made to work, how about this approach: - Each
+page that is served can be tuned for accessibility; tables or divs would
+both work. Here ordering is the most important thing although there are
+ways to provide links that skip over content or navigation in non visual
+browsers. Lots of advice can be found in [Dive into
+Accessibility](http://diveintoaccessibility.org/). For simple sites like
+blogs, you can probably find a decent template and stylesheet to get you
+started either with your publishing tool or on the web. - Alternate
+templates can then be automatically turned into XSLT stylesheets that
+can re-order the default presentation. - The plain page can fire up a
+visually appealing rendition if it finds itself in the right browser. I
+understand that this is theoretically possible using JavaScript, as you
+can for CSS, so it should still be possible to flatten out a page for
+printing, or give the user other choices without getting the whole thing
+back from the server.

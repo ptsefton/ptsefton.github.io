@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>General purpose document formats, again - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2004/12/01/open_vs_custom_formats.htm">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="Emacs-addicted geek Jon Udell, who is not to be dismissed lightly has returned to the topic of open document formats vs custom schemas and where XHTML fits in. I have been working with the software development team at USQ&#39;s Distance and e-Learning Centre on this issue, and we are looking …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="General purpose document formats, again"/>
+        <meta property="og:url" content="../../../2004/12/01/open_vs_custom_formats.htm"/>
+        <meta property="og:description" content="Emacs-addicted geek Jon Udell, who is not to be dismissed lightly has returned to the topic of open document formats vs custom schemas and where XHTML fits in. I have been working with the software development team at USQ&#39;s Distance and e-Learning Centre on this issue, and we are looking …"/>
+        <meta property="article:published_time" content="2004-12-01" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2004/12/01/open_vs_custom_formats.htm"
+                       rel="bookmark"
+                       title="Permalink to General purpose document formats, again">
+                        General purpose document formats, again
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2004-12-01T00:00:00+01:00"> Wed 01 December 2004</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Emacs-addicted geek Jon Udell, who is not to be dismissed lightly has
+returned to the topic of <a href="http://weblog.infoworld.com/udell/2004/11/30.html#a1123">open document
+formats</a> vs
+custom schemas and where XHTML fits in. I have been working with the
+software development team at USQ's Distance and e-Learning Centre on
+this issue, and we are looking at bridging the gap between
+generic/general purpose and custom formats.</p>
+<p>Jon revisits Tim Bray's
+<a href="http://www.tbray.org/ongoing/When/200x/2004/06/17/CustomSchemas">piece</a>
+suggesting that XHTML might be a better choice than a custom XML dialect
+in many situations:</p>
+<blockquote>
+<p>No, I'm not saying that everyone should use XHTML or the
+OpenOffice.org formats for every document in the world. But I do think
+that the cost of rolling your own is a lot higher than you think, and
+you should really try to avoid doing that if you possibly can.</p>
+</blockquote>
+<p>Jon's conclusion:</p>
+<blockquote>
+<p>I'm not ready to go along with the other conclusion he reaches in that
+posting -- that custom schemas are a red herring. But I agree that
+XHTML is more valuable than most people think. For the vast majority
+of useful documents, it can have as much structure as we need, and for
+the rest it can be extended internally with namespaced inclusions. But
+the real power arises from its hypertextual nature. For me,
+increasingly, there is no office, and there is no desktop, there is
+only a network of linked documents. A successful open document format
+will have to be supremely well-adapted to that environment, as XHTML
+is.</p>
+</blockquote>
+<p>I have written on this matter numerous times and <a href="wp_interop_project">started the
+slow-moving Word Processor Interoperability project</a>
+(which does at least have a template to download now) to look into a
+practical implementation of Tim Bray's idea.</p>
+<p>I am now investigating this in new context. At USQ there is a custom
+schema for courseware for print, web and CD delivery, known as GOOD
+(Jacek Radajewski will present a
+<a href="http://www.cs.mu.oz.au/~alistair/adcs2004/program.html">poster</a> on GOOD
+at the Ninth Australasian Document Computing Symposium (ADCS 2004),
+December 13 in Melbourne).</p>
+<p>We are considering doing both: maintaining the custom schema at the back
+end, with a more flexible front-end system for creating content.
+Obviously, a generic general-purpose document format is more permissive
+than the back-end GOOD, so there will be some intervention to get
+documents from the authoring system 'up the
+<a href="blog/2004/05/03/potentialenergy">hill</a>' into GOOD. I think we have a
+few tricks that will minimize the manual conversion process, though.</p>
+<p>The GOOD system is a custom schema (expressed as a DTD) - with
+chapter-level elements that structure the overall flow of course
+materials in a standard way across a large corpus of offerings, and a
+content model that is appropriate for educational content. It also has
+an assessment module that can drive both print and computerized quizzing
+with hooks into the University grade-book at the back end, in
+PeopleSoft.</p>
+<p>GOOD is now used in the Distance and e-Learning Centre, and by a some
+course leaders. It produces print, web and CD offerings automatically
+from the XML source. To get it into wider use I have been asked to look
+at an easy-to-approach, cross-platform editing system. One thing that we
+are exploring is to use XHTML as the basis of an easier-to edit format,
+with the target remaining the GOOD system for production.</p>
+<p>It is early days yet, but these are the ingredients we are considering
+for the new system (and we <em>will</em> be seeking further input and pilot
+users from the university):</p>
+<ul>
+<li>A word processing template. Related to <a href="wp_interop_project">the one in the Word
+Processor Interoperability project</a> based on
+OpenOffice.org, with a Microsoft Word version as well.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Fragmentation. Rather than trying to author an entire course in one
+document each 'chapter' will have its own document. This will allow
+broad control over the content of parts, by using different template
+variants for different parts of the course, e.g. providing for
+quizzes in study modules but not in the introduction.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Ways of consistently marking-up pieces of content such as reading
+activities using word processing devices like tables so they can be
+mapped to the GOOD schema.</li>
+</ul>
+<!-- -->
+<ul>
+<li>A web-based content management application to manage the fragments
+of a course. This application will take on the role of a schema
+<em>above</em> the chapter level, controlling the way the pieces are
+assembled and acting as a hub for the <em>network of linked documents</em>.
+This will also map to the IMS Manifest format for packaging course
+materials, although that format has some problems with
+hypertextuality as I have <a href="blog/2004/08/06/implementingims">noted
+here</a>.</li>
+</ul>
+<!-- -->
+<ul>
+<li>XHTML templates for those who want to work in their favourite HTML
+editor.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Some human intervention from experienced editorial staff to help raw
+documents achieve GOODness.</li>
+</ul>
+<p>It is important to remember that at the low level of granularity there
+would be a relatively free form 'canvas' to draw on, using something not
+too far from XHTML, with its generic heading, table and list elements,
+but with domain specific extensions for things like activities, or
+learning outcomes. The extensions would be implemented in the Word
+processor using the least-ugly hacks available. At a higher level, there
+would be a schema-like content system that would stitch the smaller
+granules together according to domain specific rules, so you would be
+able to specify the top level structure of a course and have it drive
+the content management system; at least that level would be guaranteed
+to comply with the house schema.</p>
+<p>I know that such a system, with high-level schematization that ties
+together loosely structured granules can work well, as we used it in
+NextEd's Continuous Publishing System (CPS), described here in this
+<a href="http://ausweb.scu.edu.au/aw04/papers/edited/sefton2/paper.html">poster paper for
+AUSWEB04</a>,
+but the CPS was not trying to map to a complex schema. How much human
+intervention will be required to map word processor-produced or edited
+content, where it is virtually impossible to enforce constraints on
+structure, back to the GOOD structure is an open question; we will have
+to find out from trials.</p>
+<p>$LastChangedDate: 2004-12-01 01:29:05 -0600 (Wed, 01 Dec 2004) $
+$Rev: 108 $</p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'open_vs_custom_formats';
+                var disqus_url = 'http://ptsefton.com/2004/12/01/open_vs_custom_formats.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

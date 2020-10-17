@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Improving VALET - part 1 - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2008/07/30/improving-valet-part-1.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="This week the ARROW community is having get together for developers to work on the VALET repository ingest tool. This is probably of little interest if you&#39;re not a repository person (or rat) but if you are then this may be of interest whether you are associated with the VITAL …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Improving VALET - part 1"/>
+        <meta property="og:url" content="../../../2008/07/30/improving-valet-part-1.htm"/>
+        <meta property="og:description" content="This week the ARROW community is having get together for developers to work on the VALET repository ingest tool. This is probably of little interest if you&#39;re not a repository person (or rat) but if you are then this may be of interest whether you are associated with the VITAL …"/>
+        <meta property="article:published_time" content="2008-07-30" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2008/07/30/improving-valet-part-1.htm"
+                       rel="bookmark"
+                       title="Permalink to Improving VALET - part 1">
+                        Improving VALET - part 1
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-07-30T06:33:35+00:00"> Wed 30 July 2008</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>This week the ARROW community is having get together for developers to
+work on the VALET repository ingest tool. This is probably of little
+interest if you're not a repository person (or rat) but if you are then
+this may be of interest whether you are associated with the VITAL /
+Fedora world or not.</p>
+<p>VALET is a deposit tool designed to allow self-deposit of electronic
+stuff into a <a href="http://fedora-commons.org/">Fedora</a> repository,
+specifically one running <a href="http://www.vtls.com/vital">VTLS VITAL</a>. The
+bit about VITAL is crucially important <span
+class="spCh spChx2013">–</span> Fedora is an underlying storage layer, a
+kind of database, and different software will use it in different ways.
+VITAL has some tricks for storing datastreams derived form other assets,
+such as full-text extracted from PDF that other software like
+<a href="http://fez.sourceforge.net/">Fez</a> would not understand.</p>
+<p>VALET comes in two versions.</p>
+<ol>
+<li>
+<p>There's an open source one <span
+class="spCh spChx201c">“</span>Valet for ETDs<span
+class="spCh spChx201d">”</span> which is set up initially just to
+deal with Electronic Theses and Dissertations (ETDs). It's available
+from the VTLS website or from Google Code (last week the one at the
+VTLS site was out of date, and the package for download from Google
+Code was slightly less out of date but I think they might be
+up-to-date now).</p>
+</li>
+<li>
+<p>The other version is mostly the same but is not free. It is
+important to make the distinction because if you customize the
+non-free version then you would have to ask VTLS for permission to
+redistribute it, possibly even within your own institution. I am not
+a lawyer (although I have a 10 year old who is threatening to become
+one) but I would be very cautious about changing a file that says
+<span class="spCh spChx201c">“</span>(c) &lt;Some Corporation&gt; All
+rights reserved<span class="spCh spChx201d">”</span> (Her other
+potential career is being a computer programmer <span
+class="spCh spChx2013">–</span> might be a good idea to do both so
+she can be rich <strong>and</strong> happy).</p>
+</li>
+</ol>
+<p>So the outcome of the workshop will be to get a version of the
+open-source VALET with the best of the modifications that people have
+made at their sites, with maybe some new features.</p>
+<p>One much requested feature for VALET (and for VITAL too) is to be able
+to edit submissions that have already been approved and pushed through
+VALET workflow into the repository. It's kind-of surprising that VALET
+doesn't do this already but it doesn't.</p>
+<p>I had an idea about how this might work last week, and Tim McCallum has
+implemented the first part of it already. To explain it we have to go
+into a little bit of detail about how VALET works. VALET takes a very
+simple approach to workflow, of which I for one approve. In simple
+terms:</p>
+<ul>
+<li>
+<p>An administrator defines a workflow with a set number of steps and
+says who can approve a submission at each step.</p>
+</li>
+<li>
+<p>An administrator defines a web form, based on the example(s) shipped
+by VTLS to collect the metadata required for a submission.</p>
+</li>
+<li>
+<p>At each stage the software simply serializes the information in the
+form into XML and saves it on disk.</p>
+</li>
+<li>
+<p>For each new stage the program picks up the information from disk
+and puts the values back into the form.</p>
+</li>
+<li>
+<p>At the final stage the program runs XSLT stylesheets (supplied by
+the administrator) to transform the serialized form data into the
+'proper' metadata for the repository.</p>
+</li>
+</ul>
+<p>What Tim has done is simply to create an additional data stream
+containing the form data along with the other data streams when an item
+is approved. This means that it will be there alongside the repository
+item and all the other metadata streams. I think this will be really
+useful in solving some of the ongoing issues people are having with
+their repositories. For example, you might want to capture author email
+addresses but there is no sensible place to put them in a MODS
+datastream.</p>
+<p>I know, some of you are thinking about standards <span
+class="spCh spChx2013">–</span> how can I save my important data in a
+non-standard format? To which I say, better to save your data in a form
+which is not standard and not pretending to be standard, than to rush
+into inventing a new standard which only you support. Is there a
+standard out there that captures all the data you want to save? Then use
+it. If not, capture the data now and work with the community to define
+the standard you need.</p>
+<p>I'm not the only one who had this idea. I found out that Vicki Picasso
+from Newcastle also thought it would be good to capture the VALET form.</p>
+<p>This approach is actually very similar to what you do in ePrints <span
+class="spCh spChx2013">–</span> you can define any old metadata you want
+(as long as it's flat name-value pairs) and map it to Dublin Core as you
+see fit for dissemination purposes.</p>
+<p>In VITAL, and in our <a href="http://ptsefton.com/2008/06/27/tim-mccallum-shows-off-sun-of-fedora.htm">Sun Of
+Fedora</a>
+repository portal project you can index any XML datastream you like. So
+if you want to collect HERDC categories (that's to do with reporting
+research publications to the Australian Government <span
+class="spCh spChx2013">–</span> very important stuff) then you can,
+without having to jam them into a metadata schema that was not designed
+to take them.</p>
+<p>Next steps in the work Tim started:</p>
+<ol>
+<li>
+<p>Work out how to search for and retrieve an item to be re-edited,
+putting it back in the workflow.</p>
+</li>
+<li>
+<p>Work out how to create the formdata from existing items that did not
+get put in the repository. We already have some experience with
+generating VALET form data based on a very cool idea by Simon
+McMillan of UNE who can't make it to the workshop. Get well Simon!</p>
+</li>
+</ol>
+<p>(I put it to my daughter that she could be a programmer and a lawyer and
+that would make her rich and happy. She said of course being a lawyer
+would make her rich and happy. I asked what would being a programmer
+make her? A nerd, apparently.)</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'improving-valet-part-1';
+                var disqus_url = 'http://ptsefton.com/2008/07/30/improving-valet-part-1.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

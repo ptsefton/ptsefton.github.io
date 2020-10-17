@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Cutting off your word processor's tail - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2005/11/10/cutting_off_your_word_processor's_tail.htm">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="Jon Udell makes a return to the subject of word processors. He wonders about distilling, sorry reducing, the functionality of a word processor: Suppose we boiled down a large sample of office documents to their constituent elements and ranked them by frequency. We&#39;d find paragraphs, lists, tables, images, links, basic …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Cutting off your word processor&#39;s tail"/>
+        <meta property="og:url" content="../../../2005/11/10/cutting_off_your_word_processor's_tail.htm"/>
+        <meta property="og:description" content="Jon Udell makes a return to the subject of word processors. He wonders about distilling, sorry reducing, the functionality of a word processor: Suppose we boiled down a large sample of office documents to their constituent elements and ranked them by frequency. We&#39;d find paragraphs, lists, tables, images, links, basic …"/>
+        <meta property="article:published_time" content="2005-11-10" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2005/11/10/cutting_off_your_word_processor's_tail.htm"
+                       rel="bookmark"
+                       title="Permalink to Cutting off your word processor's tail">
+                        Cutting off your word processor's tail
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2005-11-10T00:00:00+01:00"> Thu 10 November 2005</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>Jon Udell makes a <a href="http://weblog.infoworld.com/udell/2005/11/10.html#a1337">return to the subject of word
+processors</a>.</p>
+<p>He wonders about distilling, sorry reducing, the functionality of a word
+processor:</p>
+<blockquote>
+<p>Suppose we boiled down a large sample of office documents to their
+constituent elements and ranked them by frequency. We'd find
+paragraphs, lists, tables, images, links, basic styling, and then a
+long diminishing tail of rarely used features.</p>
+<p><a href="http://weblog.infoworld.com/udell/2005/11/10.html#a1337">http://weblog.infoworld.com/udell/2005/11/10.html#a1337</a></p>
+</blockquote>
+<p>Yes! (Sounds like something culinary – a <em>reduction of Microsoft Word</em>)</p>
+<p>I discussed this a lot, last year when I kicked off the <a href="http://del.icio.us/ptsefton/ptsefton+wpinterop">WP Interop
+project</a>. While Jon's
+dream of a well-oiled word processor without a long tail is appealing,
+it's something that will take significant effort, <a href="http://www.tbray.org/ongoing/When/200x/2005/11/09/Lightweight-Authoring">according to Tim
+Bray</a>:</p>
+<blockquote>
+<p>Well, yeah, but... authoring software is hard. I’ve used a lot of
+different programs over the years, and written some myself, and I’ve
+never seen software, designed for use by human authors, that has good
+usability and isn’t a great big honking monster. And usually, they’re
+not only big, but they take years and years to get working properly.
+So I really hope Jon’s right, but I’m not holding my breath.</p>
+</blockquote>
+<blockquote>
+<p><a href="http://www.tbray.org/ongoing/When/200x/2005/11/09/Lightweight-Authoring">http://www.tbray.org/ongoing/When/200x/2005/11/09/Lightweight-Authoring</a></p>
+</blockquote>
+<p>So Tim Bray's not holding his breath waiting. Just as well because then
+he wouldn't be able to be a cheerleader for
+<a href="http://openoffice.org/">openoffice.org</a>.</p>
+<p>I'm not holding my breath either. I decided to build Jon Udell's
+'reduction of word processor', not on top of 'web 2.0' or 'the Internet'
+but on top of Word and OpenOffice.org.</p>
+<p>What?</p>
+<p>Well, the wait could be a long one, and I can't write an authoring
+application. But what I can do, and have done for ten years or so is
+design good, simple templates that do Udell's 'paragraphs, lists,
+tables, images, links, basic styling'. We're well on the way to having
+this working in the ICE project, where the same set of simple styles can
+be used in Microsoft Word and OpenOffice.org Writer reasonably
+interchangeably to produce, usable, reusable documents efficiently. ICE
+documents can be automatically published as XHTML (via OpenOffice.org
+and some XSLT and Python) or PDF (via OpenOffice.org) and <a href="http://www.bloglines.com/blog/barnes?id=17">maybe to
+DocBook</a> via work done by
+Ian Barnes for long term archiving and more publishing options.</p>
+<p>Even in the absence of a good lightweight authoring tool we need to do
+something to promote efficiency and sustainability and reusability. And
+the people who work in this way (basically the ones who <a href="http://ptsefton.com/blog/2005/03/02/use_styles%20">use
+styles)</a> will be
+ready for the new lightweight world, whereas some of the less considered
+word processor users will have a hard time migrating to a new tool.</p>
+<p>The application Jon Udell wishes for could well be based on a slice of
+XHTML. There was a bit of <a href="http://ptsefton.com/blog/2004/08/09/futureoffice">talk of such an
+application</a>last year,
+but it died down, and I have heard of no real progress, except, of
+course my dogged pursuit of the <a href="http://del.icio.us/ptsefton/ptsefton+wpinterop">word processor
+interoperability</a>
+stylesheets.</p>
+<p>The <a href="http://ice.usq.edu.au/">ICE project</a>has an OpenOffice.org v2
+template, which you can have a<a href="http://ice.usq.edu.au/file/ice/releases/0.2/beta/templates/ice.ott">look
+at</a>
+in the downloads section for our 0.2 release. A word template is coming
+in the next couple of weeks – email me if you're impatient to try one.
+To convert documents to HTML you need to install ICE because the export
+in OpenOffice.org (and Word) is so woeful as <a href="http://ptsefton.com/blog/2005/10/31">discussed
+here</a> last week. There are ICE
+binaries available, but unless you are particularly adventurous maybe
+wait a bit until we get some more instructions published.</p>
+<hr />
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'cutting_off_your_word_processor's_tail';
+                var disqus_url = 'http://ptsefton.com/2005/11/10/cutting_off_your_word_processor's_tail.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

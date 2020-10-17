@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Scratching an itch: my software for managing song-sheets - ptsefton</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/drafts/scratching-an-itch-my-software-for-managing-song-sheets.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="Summary: I made a new open source program to format song sheets in [chordpro] format in a variety of ways. It’s a command line thing. Not everyone understands, when I talk about it to my friends in the band we have IM exchanges like: Me: I have it set ..." />
+
+        <meta property="og:site_name" content="ptsefton" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Scratching an itch: my software for managing song-sheets"/>
+        <meta property="og:url" content="/drafts/scratching-an-itch-my-software-for-managing-song-sheets.html"/>
+        <meta property="og:description" content="Summary: I made a new open source program to format song sheets in [chordpro] format in a variety of ways. It’s a command line thing. Not everyone understands, when I talk about it to my friends in the band we have IM exchanges like: Me: I have it set ..."/>
+        <meta property="article:published_time" content="2015-10-18" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton ATOM Feed"/>
+ 
+
+<script src="/theme/js/j5slide_embed.js"></script>
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+
+
+	
+
+	<li>
+	<a href="/cv">Curriculum Vitae – Dr Peter Sefton
+		    </a>
+
+		    </li>
+
+           
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/drafts/scratching-an-itch-my-software-for-managing-song-sheets.html"
+                       rel="bookmark"
+                       title="Permalink to Scratching an itch: my software for managing song-sheets">
+                        Scratching an itch: my software for managing song-sheets
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-10-18T00:00:00+02:00"> Sun 18 October 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Summary: I made a new open source program to format song sheets in [chordpro] format in a variety of ways. It’s a command line thing. Not everyone understands, when I talk about it to my friends in the band we have IM exchanges like:</p>
+<p>Me:</p>
+<blockquote>
+<p>I have it set up now with a cloud server watching the dropbox, so if you put in a text file with a .cho extension it will auto-generate a PDF for the song</p>
+</blockquote>
+<p>Other band member:</p>
+<blockquote>
+<p>The what with the what now?</p>
+</blockquote>
+<p>So, I decided to tell you all here on the Interwebs where you will 100% get what I’m talking about.</p>
+<p>The problem was this: I had several years worth of song-sheets downloaded from various places on the internets or typed out by hand, for my own and other people’s songs, in a variety of formats, including Word docs, RTF and PDF but mostly text files. Then I started playing music with other people again for the first time in years, for example <a href="https://www.facebook.com/U4riaBand">this</a> , and we’d be trading bits of paper and files and mailing song files to each other, and so on, always searching for a fourth-generation photocopy of something someone had in their folder. Anyway, I got to looking at ways to manage this and create consistently formatted song sheets.</p>
+<p>Turns out there’s a handy format for marking-up songs called chordpro. This involves putting chord names in square brackets, inline, in amongst the lyrics. Like [C] this. Or [G#maj7] or this, with a {title: } at the top, and a few other simple commands. Here’s one I prepared earlier.</p>
+<pre><code>{title: Universe}
+{st: Peter Sefton}
+{key: C} 
+{transpose: -3} 
+
+[C] This is a song about [E7] everything
+[F] It&#39;s really div[C]erse
+[Caug9]Got something for [E7] everyone
+[Am] But only [G] has one [F] verse
+[F] Get it? Uni [D] Verse
+
+{c: Pre chorus}
+[D7] Here comes the chorus:
+
+{soc}
+{c: Chorus}
+[C] Uni [E7] verse Uni [F] verse
+[F] Uni [Fm] verse Uni [C] verse
+{eoc}
+
+{sob}
+{c: Bridge}
+[C] That&#39;s [G] it
+{eob}
+
+{c: Coda}
+[F] Sorry the song&#39;s [C] so terse
+</code></pre>
+<p>There are lots of software packages for managing chordpro songs, printing them out, showing them on your church projector, organising them on your iPad, transposing them between keys and so on, but none of the software did quite what I wanted in the way I wanted. For example, most of the packages are designed to put chords above the lyrics, but I prefer leaving the chords inline, the way Rob Weule did it in the <a href="http://katoombamusic.com.au/product/ukulele-club-songbook/">Ukulele Club Songbook</a> and <a href="http://www.scorpexuke.com/ukulele-songs.html">Richard G</a> does it in his Ukulele songs, it’s more compact for one thing not to mention easier to copy and paste. Here’s an example of some free software online:</p>
+<figure>
+<img src="/blog/chordprobook/geeks.png" alt="A nice online chordpro converter at ukegeeks.com" /><figcaption>A nice online chordpro converter at ukegeeks.com</figcaption>
+</figure>
+<p>I’ve been keeping my songs in text files in Dropbox for years and that suits me. I don’t want to have to suck all the files in to the maw of some slightly dodgy open source Java application on my laptop, or upload them somewhere, or install a web application, and it hurts me to say this after all the work I put into scholarly publishing in HTML but PDF is perfect for songs which are page-based, good for printing and good for displaying on tablets.</p>
+<p>And I like to keep my hand in with coding and, well, I have a few hours on the train every day which I don’t always use for work stuff and, you can probably see where this is heading. I got to wondering what would happen if I ran a few songs through <a href="http://pandoc.org">Pandoc</a>, the magnificent omniverous document conversion tool to make PDF and HTML versions, and one thing led to another. It started innocently enough with a simple script to process chordpro declarations into markdown. But then I asked myself; how would this look as an epub ebook made up of multiple songs? And then how do I make a word doc with a table of contents and start each song on a new page? And how might I get the script to make the songs scale (pun intended) so they fill up the page, for maximum readability? Which led to experiments with LaTeX, the taste of which I still don’t have out of my mouth entirely, and a brief flirtation with the Open Document Format and the LibreOffice presentation software (we’ve dated before but it has never worked out long term). I finally got friendly with an amazing bit of command line software called <a href="http://wkhtmltopdf.org/">wkhtmltopdf</a> which can turn HTML web pages into PDF <em>including</em> running any javascript they contain before doing so. This way I was able to write a script that scaled up text to fit an A4 page.</p>
+<p>I told myself “I’m not going to do chord grids”, you know, little images with fret-dots etc, cos me and my music buddies are all awesome players who know every chord ever, and if not can like totally work them out in our heads, but then I wondered if there was an existing open source library that did chords for multiple instruments I could just, like, drop in to my Python program so I could re-learn the banjo chords I’ve forgotten, and learn a bit more mandolin, and it turned out that there isn’t really, but a I used a few train trips and a hot saturday arvo to write a chord-grid-drawer. Turns this chord definition I got from the open source software at <a href="http://ukegeeks.com/">Uke Geeks</a> (thanks Buz!):</p>
+<p><code>{define: Aaug frets 2 1 1 4 fingers 2 1 1 4 add: string 1 fret 1 finger 1 add: string 4 fret 1 finger 1}</code></p>
+<p>Into this:</p>
+<div style="text-align: center">
+<p><strong>Aaug</strong></p>
+<p><img width='80' height='100' alt='Aaug' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABkCAIAAACemCBBAAAB+0lEQVR4nO2a3ZKDIAyFyc6+t+6TZy/YMi4gJIpt/r6rTntQjwRMGgERkye+Pn0B7yYMWycMWycMWycMW+ebO+AH4InruMPGShaRyc4cIk3vLqTDsHXCsHXCsHXcGQYkpynwP8eaDpSm/xtF0cF5OtkdLk1/ZB7Sx6Pn7Gx8bmn6CmrxQI98mfrCZIbLDQOAs5t3/F6avsXdLs2uh7twi+Sn9QMmu3R3629jphxEmr7lyqZ1dhrJ+sL8OTw9EPfB8GZ9hbtNa254fMPaX6XpK9zl0oyQrv4lVKfPxBq2DiPTKmtmB0g30vfPQjLcffSBTtu8epj7q0AYIX2W0OqCWg8f81VuricK6gzrcjVgTXm4r74sFtvC/nCr5B5kV9ofxtfc5mGMOyqMiWFsJnmqEY67TWt9PSwc0gxjb3NWZzXzYD0sE3flYRi2Thi2Thi2Thi2DqPVkokXxJXp3YV0GLZOGLZOGLaOO8NrXj38CNca9CoN32nQ6wvpmw16fYYrcoZM1yszTGkGmH1BHBEvdLyU1cP76wMe2reJ1QZiFZMX6s+1+sFlE02pfCylk7dtKChbw0hYgGON1hkucPctZTOcbjfoVc5wd91Soj1pnOFCtasTRyk2fI0wbJ0wbJ0wbJ0wbB1lfwB02TgW2Ia14y6kw7B1wrB13Bn+BUpG28tPtaJCAAAAAElFTkSuQmCC' /></p>
+</div>
+<p>Unlike most chord drawing software I found which has built-in limitations, It will also cheerfully render a really silly chord like this, which would require twelve strings, and 33 playable frets, not to mention 11 fingers, like that the dude in one fish two fish red fish blue fish:</p>
+<blockquote>
+<p>Say!</p>
+<p>Look at his fingers!</p>
+<p>One, two, three…</p>
+<p>How many fingers</p>
+<p>Do I see?</p>
+<p>One, two, three, four,</p>
+<p>Five, six, seven,</p>
+<p>Eight, nine, ten.</p>
+<p>He has eleven!</p>
+<p>Eleven!</p>
+<p>This is something new.</p>
+<p>I wish I had</p>
+<p>Eleven, too!</p>
+</blockquote>
+<p><code>{define: F#stupid base-fret 22 frets 1 2 3 x 4 5 6 7 8 9 10 11 fingers 11 10 9 8 0 7 6 5 4 3 2 1}</code></p>
+<div style="text-align: center">
+<p><strong>F#stupid</strong></p>
+<p><img width='240' height='220' alt='F#stupid' src='data:image/png;base64,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' /></p>
+</div>
+<p>So, I had the technology to render chords (even at grand piano scale) but then it turned I couldn’t find chord definition files for more instruments. There are lots of chord charts in image formats, of course, but no data that I can find, which led to working out how to compile <a href="http://sniff.numachi.com/~rickheit/chord/ch/">this old C code</a> and modify it a bit to produce chord-data files (my update to that code is not done enough to release).</p>
+<p>Anyway, the above song looks like this when run through <em>my</em> software. Now, after a couple of months of part-time tinkering in I can type <code>./chordprobook.py -o --instrument Uke uni-verse.cho</code> and this appears!</p>
+<figure>
+<img src="/blog/chordprobook/uni-verse.cho_key_C_uke.png" alt="Uni-verse rendered for printing" /><figcaption>Uni-verse rendered for printing</figcaption>
+</figure>
+<p>Better yet, <em>I have it set up now with a cloud server watching the dropbox, so if you put in a text file with a .cho extension it will auto-generate a PDF for the song</em>. That is, in our shared band folder in Dropbox, if anyone creates a new song file, a new PDF appears automagically about a second later. Drop me a line if you’d like to try it - all you have to do is share a Dropbox folder with an account of mine. This is one of my favourite deployment patterns for software, almost like a no-interface piece of software.</p>
+<p>Along the way I learned:</p>
+<ul>
+<li>How to make <a href="https://github.com/ptsefton/chordprobook/blob/master/example_output/sample-book.pdf">books</a>, by feeding in a <a href="https://github.com/ptsefton/chordprobook/blob/master/example_output/sample-book.book">list of files</a>, with a title both in a text file and on the command line.</li>
+<li>How to make a <a href="https://github.com/ptsefton/chordprobook/blob/master/example_output/setlist.pdf">setlist book</a> for a performance complete with additional performance notes.</li>
+<li>That even when we had a setlist book my bandmates typed up setlists in big writing to put on the floor, so I added a feature to write out set-per-page at the start of the book.</li>
+<li>That we really need the ability to do per-performance annotations, such as who goes first and whether we have a count-in or all-in approach to the song.</li>
+<li>How to keep two page songs on facing pages in said books so you don’t have to turn pages.</li>
+<li>How to generate chord-definitions for arbitrary instruments (still working on that bit).</li>
+<li>How to transpose chord definitions from one instrument to another if they have the same <em>relative</em> tuning between strings - eg soprano uke chords into baritone uke, or open-G banjo tuning into the C tuning used by my baby banjo, the Goldtone Plucky.</li>
+<li>How to make stand-alone one page versions of songs …</li>
+<li>.. automatically, whenever I drop a new on in my Dropbox, or change one.</li>
+</ul>
+<p>Now, I realise that a command line thing that’s a hassle to install and will almost certainly break the moment someone other than me tries to run it has limited appeal, but I’m releasing it to the world anyway. Even if the software is not to your taste, I think some of the things I’ve done will be useful to others. For example I:</p>
+<ul>
+<li>Liberated Buz Carter’s chord definitions for Soprano uke which were encoded in a <a href="https://github.com/buzcarter/UkeGeeks/blob/7bca97b47dd149fab892f8b81c29c3fa782eec09/src/js/scriptasaurus/ukeGeeks.definitions.sopranoUkuleleGcea.js">javascript program</a> into a <a href="https://github.com/ptsefton/chordprobook/blob/master/chord_data/soprano_ukulele_chords.cho">stand alone file</a>.</li>
+<li>Likewise liberated the <a href="https://github.com/ptsefton/chordprobook/blob/master/chord_data/guitar_chords.cho">guitar chords</a> from the venerable <a href="http://sourceforge.net/projects/chordii/">chordii</a> software.</li>
+<li>Generated chord definitions for 5 string <a href="https://github.com/ptsefton/chordprobook/blob/master/chord_data/5_string_banjo_g_chords.cho">banjo</a> G-tuning and <a href="https://github.com/ptsefton/chordprobook/blob/master/chord_data/mandolin_chords.cho">mandolin</a>; these may not be the best voicings or fingerings as they were auto-generated - let me know if you can help improve them.</li>
+</ul>
+<h1 id="the-future">The future</h1>
+<p>Here are some other things I am Never Ever Going To Do With This Software. Ever. Never. Absolutely promise.</p>
+<ul>
+<li><p>It will never have a Graphical User Interface.</p></li>
+<li><p>It will never be a web application you can just use without all this mucking around with files, or maybe with your Dropbox.</p></li>
+<li><p>It will never be a dot-com startup</p></li>
+</ul>
+<h1 id="help">Help?</h1>
+<p>Like I said, if anyone wants to help. We could:</p>
+<ul>
+<li><p>Build a decent library of chord shapes defined in chordpro format</p></li>
+<li><p>Improve the look of the generated books a lot, if anyone knows some modern HTML and CSS.</p></li>
+</ul>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'scratching-an-itch-my-software-for-managing-song-sheets';
+                var disqus_url = '/drafts/scratching-an-itch-my-software-for-managing-song-sheets.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Where I work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.bluemugs.com.au/" target="_blank">
+                Where I play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2015 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

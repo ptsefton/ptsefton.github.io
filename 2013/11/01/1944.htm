@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Introducing next year's model, the data-crate; applied standards for data-set packaging - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2013/11/01/1944.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="This is also up at the UWS eResearch blog [Update 2013-11-04: If you&#39;re reading this in Feedly and possibly other feed readers the images in this post won&#39;t show - click through to the site to see the presentation&gt; Added some more stuff from the proposal, including the reference list - clarified …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Introducing next year&#39;s model, the data-crate; applied standards for data-set packaging"/>
+        <meta property="og:url" content="../../../2013/11/01/1944.htm"/>
+        <meta property="og:description" content="This is also up at the UWS eResearch blog [Update 2013-11-04: If you&#39;re reading this in Feedly and possibly other feed readers the images in this post won&#39;t show - click through to the site to see the presentation&gt; Added some more stuff from the proposal, including the reference list - clarified …"/>
+        <meta property="article:published_time" content="2013-11-01" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2013/11/01/1944.htm"
+                       rel="bookmark"
+                       title="Permalink to Introducing next year's model, the data-crate; applied standards for data-set packaging">
+                        Introducing next year's model, the data-crate; applied standards for data-set packaging
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-11-01T04:02:36+00:00"> Fri 01 November 2013</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is also up at the <a href="http://eresearch.uws.edu.au/blog/2013/11/01/introducing-next-years-model-the-data-crate-applied-standards-for-data-set-packaging/">UWS eResearch
+blog</a></p>
+<p>[Update 2013-11-04:</p>
+<p>If you're reading this in Feedly and possibly other feed readers the
+images in this post won't show - click through to the site to see the
+presentation&gt;</p>
+<p>Added some more stuff from the proposal, including the reference list -
+clarified some quoted text]</p>
+<p><a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="Creative Commons
+Licence" /></a><br />
+<span property="dct:title" dct="http://purl.org/dc/terms/"> Introducing
+next year’s model, the data-crate; applied standards for data-set
+packaging </span> by <span property="cc:attributionName"
+cc="http://creativecommons.org/ns#"> Peter Seftton and Peter Bugeia
+</span> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0
+Unported
+License</a> .</p>
+<p>This presentation was delivered by Peter Sefton at eResearch Australasia
+2013 in Brisbane, based on <a href="https://github.com/PS1316/J5slide">this
+proposal</a> .</p>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img0.png" title="Slide 1">
+![Slide 1](/wp-content/uploads/2013/11/wpid-index.html_img0.png)
+<h2>Peter Sefton* p.sefton@uws.edu.au</h2>
+<h2>Peter Bugeia** <u> peter.bugeia@intersect.org.au </u></h2>
+<h2>*University of Western Sydney</h2>
+<h2>**Intersect Australia Ltd</h2>
+<h2></h2>
+<h2></h2>
+</object>
+<details open="open">
+<p>ABSTRACT</p>
+<p>In this paper we look at current options available for storing research
+data to maximize potential reuse and discoverability, both at the level
+of data files, and sets of data files, and describe some original work
+bringing together existing standards and metadata schemas to make
+well-described, reusable data sets that can be distributed as single
+files, dubbed “crates” with as much context and provenance as possible.
+We look at some of the issues in choosing file formats in which to
+archive and disseminate data, and discuss techniques for adding
+contextual information which is both human-readable and machine-readable
+in the context of both institutional and discipline data management
+practice.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img1.png" title="Slide 2">
+![Slide 2](/wp-content/uploads/2013/11/wpid-index.html_img1.png)
+</object>
+<details open="open">
+<p>When the eResearch team at UWS and Intersect were working on the ANDS
+DC21 “HIEv” (5) application to allow researchers to create data-sets
+from collections of files, we looked in vain for a simple-to-implement
+solution for making CSV-type data available with as much provenance and
+re-use metadata as possible. In this presentation we will discuss some
+of the many file-packaging options which were considered and rejected
+including METS (6), and plain-old zip files with no metadata.</p>
+<blockquote>
+<p>The Eucalyptus woodland free-air CO2 enrichment (EucFACE) facility is
+the only one of its kind in the southern hemisphere.</p>
+<p>It is unique in that it provides full-height access to the mature
+trees within remnant Cumberland Plain Forest, the only FACE system in
+native forest anywhere in the world. It is sited on naturally
+low-nutrient soils in what is close to original bushland, and offers
+researchers an amazing site at which to study the effects of elevated
+CO2 on water use, plant growth, soil processes and native biodiversity
+in a mature, established woodland within the Sydney Basin.</p>
+<p><a href="http://www.uws.edu.au/hie/research/research_projects/eucface">http://www.uws.edu.au/hie/research/research_projects/eucface</a></p>
+</blockquote>
+<p>This is in the context of the Hawkesbury Institute For the
+Environment,(HIE) experimental facility, pictured is the Free-Air-Co2
+exchange experiment ( <a href="http://www.uws.edu.au/hie/research/research_projects/eucface"><u>
+</u></a>
+EucFACE) under construction.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img2.png" title="Slide 3">
+![Slide 3](/wp-content/uploads/2013/11/wpid-index.html_img2.png)
+</object>
+<details open="open">
+<p>This is the context in which we did this data-packaging work, but it is
+designed to be more broadly applicable.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img3.png" title="What keeps us awake at night?">
+![What keeps us awake at
+night?](/wp-content/uploads/2013/11/wpid-index.html_img3.png)
+</object>
+<details open="open">
+<p>What if provide a zip download of a whole lot of environment-data files
+and someone writes and important article, but then they can’t work out
+which zip file and which data files they actually used?</p>
+<p>What if there’s some really important data that I know I have on my
+hard-disk but I can’t tell which file it’s in ‘cos they’re all called
+stuff like 34534534-er2.csv?</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img4.png" title="Some standards are not actually standards......
+">
+![Some standards are not actually standards......
+](/wp-content/uploads/2013/11/wpid-index.html_img4.png)
+</object>
+<details open="open">
+<p>We have reached the time when there is a genuine need to be able to
+match-up data from different sources; infrastructure projects funded by
+the Australian National Data Service (ANDS) (4) are now feeding
+human-readable metadata descriptions to the<a href="http://researchdata.ands.org.au/"><u> Research Data
+Australia</u></a> (RDA) website. But
+which standards to use? As Tanenbaum said, “The nice thing about
+standards is that you have so many to choose from. Furthermore, if you
+do not like any of them, you can just wait for next year's model” (1).
+However, when it comes to choosing file format standards for research
+data, we have found that while there might be many standards there is no
+single standard for general-purpose research data packaging. It is,
+however possible to stitch-together a number of different standards to
+do a reasonable job of packaging and describing research data for
+archiving and reuse.</p>
+<p>There are several issues with standards at the file level. For example
+consider one of the most commonly supported formats: CSV – or Comma
+Separated Values. CSV file is actually a non-standard, ie there is no
+agreed CSV specification, only a set of unreliable conventions used by
+different software,<a href="http://tools.ietf.org/html/rfc4180"><u> RFC
+4180</u></a> (2) notwithstanding. While
+a CSV file has column headers, there is no way to standardise their
+meaning. Moving up the complexity chain, the Microsoft Excel based .xslx
+format is a standard, as is the Open Document Format for spreadsheets
+but again, even though you can point to a header-row in a spreadsheet
+and say “that’s the header” there is no standard way to label variables
+in a way that will match with the labels used by other researchers, or
+to allow discovery of the same kind of data points in hetrogenous data
+sets. There is a well established standard which does allow for
+“self-describing, machine-independent data formats that support the
+creation, access, and sharing of array-oriented scientific data”, NetCDF
+(3) – we will consider how this might be more broadly adopted in
+eResearch contexts.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img5.png" title="Slide 6">
+![Slide 6](/wp-content/uploads/2013/11/wpid-index.html_img5.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img6.png" title="Data Packaging Principles for this environment…">
+![Data Packaging Principles for this
+environment…](/wp-content/uploads/2013/11/wpid-index.html_img6.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img7.png" title="Slide 8">
+![Slide 8](/wp-content/uploads/2013/11/wpid-index.html_img7.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img8.png" title="2. The packaging format should deal with any kind of data file">
+![2. The packaging format should deal with any kind of data
+file](/wp-content/uploads/2013/11/wpid-index.html_img8.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img9.png" title="3. The packaging format should work for any domain">
+![3. The packaging format should work for any
+domain](/wp-content/uploads/2013/11/wpid-index.html_img9.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img10.png" title="4. The packaging format should be platform neutral
+">
+![4. The packaging format should be platform neutral
+](/wp-content/uploads/2013/11/wpid-index.html_img10.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img11.png" title="Slide 12">
+![Slide 12](/wp-content/uploads/2013/11/wpid-index.html_img11.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img12.png" title="6. Metadata should be both human and machine-readable">
+![6. Metadata should be both human and
+machine-readable](/wp-content/uploads/2013/11/wpid-index.html_img12.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img13.png" title="Slide 14">
+![Slide 14](/wp-content/uploads/2013/11/wpid-index.html_img13.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img14.png" title="8.  The package format should cater for datasets of any size*">
+![8. The package format should cater for datasets of any
+size\*](/wp-content/uploads/2013/11/wpid-index.html_img14.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img15.png" title="The Crate Specification…">
+![The Crate
+Specification…](/wp-content/uploads/2013/11/wpid-index.html_img15.png)
+</object>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img16.png" title="Slide 17">
+![Slide 17](/wp-content/uploads/2013/11/wpid-index.html_img16.png)
+</object>
+<details open="open">
+<p>Can you guess which two standards are the basis for the crate?</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img17.png" title="Slide 18">
+![Slide 18](/wp-content/uploads/2013/11/wpid-index.html_img17.png)
+</object>
+<details open="open">
+<p>When the eResearch team at UWS and Intersect NSW were working on the
+ANDS DC21 “HIEv” (5) application to allow researchers to create
+data-sets from collections of files, we looked in vain for a
+simple-to-implement solution for making CSV-type data available with as
+much provenance and re-use metadata as possible, as per the principles
+outlined above. In this presentation we will discuss some of the many
+file-packaging options which were considered and rejected including METS
+(6), and plain-old zip files with no metadata. The project devised a new
+proof-of-concept specification, known as a ‘crate’, based on a number of
+standards,. This format:</p>
+<p>Uses the California Digital Libraries Bagit specification(7) for
+bundling files together into a bag.</p>
+<p>Creates a single-file for the bag using zip (other contenders would
+include TAR or disk image formats but zip is widely supported across
+operating systems and software libraries).</p>
+<p>Uses a human-readable HTML README file to make apparent as much metadata
+as is available from (a) within files and (b) about the context of the
+research data.</p>
+<p>Uses RDF with the W3C’s DCAT ontology (8) and others to add machine
+readable metadata about the package including relationships between
+files, technical metadata such as types and sizes and research context</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img18.png" title="Slide 19">
+![Slide 19](/wp-content/uploads/2013/11/wpid-index.html_img18.png)
+</object>
+<details open="open">
+<p>The following few slides from the DC21/HIEv ssystem show how a user can
+select some files...</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img19.png" title="Slide 20">
+![Slide 20](/wp-content/uploads/2013/11/wpid-index.html_img19.png)
+<h2>\</h2>
+</object>
+<details open="open">
+<p>... look at file metadata ...</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img20.png" title="Slide 21">
+![Slide 21](/wp-content/uploads/2013/11/wpid-index.html_img20.png)
+</object>
+<details open="open">
+<p>... add files to a cart ...</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img21.png" title="Slide 22">
+![Slide 22](/wp-content/uploads/2013/11/wpid-index.html_img21.png)
+<h2>\</h2>
+</object>
+<details open="open">
+<p>... download the files in a zip package ...</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img22.png" title="Slide 23">
+![Slide 23](/wp-content/uploads/2013/11/wpid-index.html_img22.png)
+<h2>\</h2>
+</object>
+<details open="open">
+<p>... inside the zip the files are structured using the bagit format ...</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img23.png" title="Slide 24">
+![Slide 24](/wp-content/uploads/2013/11/wpid-index.html_img23.png)
+</object>
+<details open="open">
+<p>... with a standalone README.html file containing all the metadata we
+know about the files and associated research context (experiments,
+facilites)</p>
+<p>This is something you can unzip on your laptop, put on a web server, or
+a repository could show to users as a ‘peek’ inside the data set</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img24.png" title="Slide 25">
+![Slide 25](/wp-content/uploads/2013/11/wpid-index.html_img24.png)
+<h2>\</h2>
+</object>
+<details open="open">
+<p>... with detail about every file as per the HIEv application itself</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img25.png" title="Slide 26">
+![Slide 26](/wp-content/uploads/2013/11/wpid-index.html_img25.png)
+</object>
+<details open="open">
+<p>... and embedded machine readable metadata using RDFa</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img26.png" title="Slide 27">
+![Slide 27](/wp-content/uploads/2013/11/wpid-index.html_img26.png)
+</object>
+<details open="open">
+<p>... the RDFa metadata describes the data-set as a graph.</p>
+<p>Completed packages flow-through to the Research Data Catalogue via an
+OAI-PMH feed, and there they are given a DOI so they can be cited. The
+hand-off between systems is important, once a DOI is issued the data set
+has to be kept indefinitely and must not be changed.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img27.png" title="Slide 28">
+![Slide 28](/wp-content/uploads/2013/11/wpid-index.html_img27.png)
+</object>
+<details open="open">
+<p>The README file not only contains human readable descriptions of the
+files and their context there is embedded machine readable metadata. The
+relationships such as “CreatedBy” use URIs from mainstream ontologies
+where possible.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img28.png" title="Slide 29">
+![Slide 29](/wp-content/uploads/2013/11/wpid-index.html_img28.png)
+</object>
+<details open="open">
+<p>We have not done this yet, but using platorms like R-Studio + Knitr it
+would be possiblet to include runnable-code in data packages, which
+would provide a ‘literate programming’ readme. This is an example of
+some data we got from Craig Barton and Remko Duursma.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img29.png" title="Slide 30">
+![Slide 30](/wp-content/uploads/2013/11/wpid-index.html_img29.png)
+</object>
+<details open="open">
+<p>So the README could include plots, etc, and a copy of the article</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img30.png" title="Slide 31">
+![Slide 31](/wp-content/uploads/2013/11/wpid-index.html_img30.png)
+</object>
+<details open="open">
+<p>Cr8it is designed to plug in to the ownCloud share-sync service so users
+can compile data sets from working data file for deposit in a
+repository.</p>
+<p>The HIE project is (in part) a simple semantic CMS system that will
+describe the research context at HIE.</p>
+</details>
+</section>
+<hr />
+<section typeof="http://purl.org/ontology/bibo/Slide">
+<object data="/wp-content/uploads/2013/11/wpid-index.html_img31.png" title="What’s next?">
+![What’s next?](/wp-content/uploads/2013/11/wpid-index.html_img31.png)
+</object>
+<details open="open">
+<p>Try this in more places</p>
+<p>Integrate research context</p>
+<p>Continue quest for decent ontologies and vocabs</p>
+<p>Get feedback</p>
+</details>
+</section>
+**REFERENCES**
+<p>1. Tanenbaum AS. Computer networks. Prentice H all PTR (ECS
+Professional). 1988;1(99):6.</p>
+<p>2. &lt;ietf@shaftek.org&gt; YS. Common Format and MIME Type for
+Comma-Separated Values (CSV) Files [Internet]. [cited 2013 Jun 8].
+Available from: http://tools.ietf.org/html/rfc4180</p>
+<p>3. Rew R, Davis G. NetCDF: an interface for scientific data access.
+Computer Graphics and Applications, IEEE. 1990;10(4):76–82.</p>
+<p>4. Sandland R. Introduction to ANDS [Internet]. ANDS; 2009. Available
+from: http://ands.org.au/newsletters/newsletter-2009-07.pdf</p>
+<p>5. Intersect. Data Capture for Climate Change and Energy Research: HIEv
+(AKA DC21) [Internet]. Sydney, Australia; 2013. Available from:
+http://eresearch.uws.edu.au/blog/projects/data-capture-for-climate-change-and-energy-research/</p>
+<p>6. Pearce J, Pearson D, Williams M, Yeadon S. The Australian METS
+Profile–A Journey about Metadata. D-Lib Magazine.
+2008;14(3/4):1082–9873.</p>
+<p>7. Kunze J, Boyko A, Vargas B, Madden L, Littman J. The BagIt File
+Packaging Format (V0.97) [Internet]. [cited 2013 Mar 1]. Available from:
+http://tools.ietf.org/html/draft-kunze-bagit-06</p>
+<p>8. Maali F, Erickson J, Archer P. Data Catalog Vocabulary (DCAT)
+[Internet]. World Wide Web Consortium; Available from:
+http://www.w3.org/TR/vocab-dcat/</p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = '1944';
+                var disqus_url = 'http://ptsefton.com/2013/11/01/1944.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

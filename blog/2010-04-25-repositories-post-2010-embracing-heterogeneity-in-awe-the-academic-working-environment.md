@@ -1,0 +1,525 @@
+---
+Author: ptsefton
+Comments: true
+Date: 2010-04-25 01:58:38+00:00
+Slug: repositories-post-2010-embracing-heterogeneity-in-awe-the-academic-working-environment
+
+Title: 'Repositories post 2010: embracing heterogeneity in AWE, the Academic Working
+  Environment'
+Wordpress_id: 527
+---
+
+<div>
+
+[update remove reference to a project which is not yet approved]
+<div class="page-toc">
+
+-   [1 Introduction](#id2)
+-   [2 AWE: Meeting the grand challenges for repositories](#id3)
+    -   [2.1 The web and the repository & The cloud and the
+        desktop](#id4)
+    -   [2.2 Knowledge and technology](#id5)
+    -   [2.3 Wild and curated content](#id6)
+    -   [2.4 Linked and isolated data & Ad-hoc and long-term
+        access](#id8)
+    -   [2.5 Disciplinary and institutional systems / Scholars and
+        service providers](#id9)
+    -   [2.6 Ubiquitous and personalized environments](#id10)
+-   [3 Conclusion](#id11)
+-   [4 References](#id12)
+
+</div>
+
+<div>
+
+[This paper has been accepted for the main track of the Open
+Repositories Conference with very strong reviewer feedback. I'll be
+there.]
+
+<div class="Table16"
+style="width: 100%; margin: 0px; padding: 0px; text-align: left;">
+
++--------------------------------------+--------------------------------------+
+| <span class="meta-familyname">Peter  | <span class="meta-familyname">Duncan |
+| Sefton</span>                        | Dickinson</span>                     |
+|                                      |                                      |
+| <p>                                  | <span                                |
+| <script type="text/javascript">      | class="meta-familyname">Duncan.Dicki |
+| <!--                                 | nson@usq.edu,au</span>               |
+| h='&#x75;&#x73;&#x71;&#46;&#x65;&#10 |                                      |
+| 0;&#x75;&#46;&#x61;&#x75;';a='&#64;' | <span                                |
+| ;n='&#x73;&#x65;&#102;&#116;&#x6f;&# | class="meta-familyname">University   |
+| 110;';e=n+a+h;                       | of Southern Queensland</span>        |
+| document.write('<a h'+'ref'+'="ma'+' |                                      |
+| ilto'+':'+e+'" clas'+'s="em' + 'ail" |                                      |
+| >'+e+'<\/'+'a'+'>');                 |                                      |
+| // -->                               |                                      |
+| </script>                            |                                      |
+| <noscript>                           |                                      |
+| sefton at usq dot edu dot au         |                                      |
+| </noscript>                          |                                      |
+| </p>                                 |                                      |
+| University of Southern Queensland    |                                      |
++--------------------------------------+--------------------------------------+
+
+</div>
+
+<span class="meta-familyname">Open Repositories July 2010, Madrid,
+Spain</span>
+
+<span class="Apple-style-span" mce_name="strong"
+mce_style="font-weight: bold;"
+style="font-weight: bold;">Abstract:</span> The organizers of the fifth
+international conference on Open Repositories list nine polar
+dichotomies that represent <span class="spCh spChx201c">“</span>The
+Grand Integration Challenge<span class="spCh spChx201d">”</span> for the
+repository community/movement. In this paper we take up the challenge.
+We do so in the context of a program of work being undertaken at our
+institution to build infrastructure for the academy in general, working
+towards a modular 'Academic Working Environment' (AWE) which encompasses
+both teaching and learning on one hand and research on the other.
+Repositories and the ecosystem of services and workflows that surround
+them play a key role in this emerging system.
+
+# <img class="mceItemAnchor" mce_name="a" name="id2"></img>1 Introduction
+
+This presentation uses the conference organizers' description of current
+issues in repositories as a way to structure discussion about a program
+being undertaken at the Australian Digital Futures Institute; The
+Academic Work Environment (AWE). The presentation will look at each of
+the integration challenges listed on the call for papers: the web and
+the repository, knowledge and technology,wild and curated content,
+linked and isolated data, disciplinary and institutional systems,
+scholars and service providers, ad-hoc and long-term access, ubiquitous
+and personalized environments, the cloud and the desktop.
+
+# <img class="mceItemAnchor" mce_name="a" name="id3"></img>2 AWE: Meeting the grand challenges for repositories
+
+The Academic Work Environment (AWE) is a label for a set of services and
+computational systems that support the academic enterprise. The acronym
+was coined to capture under a single identifier a range of research and
+development work going on in a group tasked with pragmatic, practical
+work on workflows and computer systems for eLearning and eResearch.
+
+## <img class="mceItemAnchor" mce_name="a" name="id4"></img>2.1 The web and the repository & The cloud and the desktop
+
+It is telling that <span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;" style="font-style: italic;"><span>the
+web vs the repository</span></span> is posed as a dichotomy or a
+challenge. While repositories are, by default, web-based systems the
+vast majority of document content housed in repositories is in a non-web
+format, PDF. Furthermore, vast amounts of potential repository content
+such as data-files are excluded from the repository, and from the
+web/cloud because of the lack of services that assist academic users in
+making their content available on the web. The Academic Work Environment
+addresses both of the issues identified above with systems to:
+
+1.  Allow academic documents to be made available in HTML as well as
+    PDF. This work, based on The Integrated Content Environment
+    ([ICE](http://ice.usq.edu.au/)) was presented at Open Repostiories
+    2009 (Sefton, Downing, & Day, 2009). Uptake on this has been very
+    slow, but repositories need to start using web formats if they are
+    to be part of the web and fulfill the promise of integrated
+    documents and data as envisaged by Murray Rust and Rzepa
+    (Murray-Rust & Rzepa, 2004).
+2.  Begin to close the gap between the desktop work environment and the
+    repository via an application which bring a web-based repository
+    view to all the files that a researcher/educator is using; allowing
+    them to describe them, back them up and have them routed to
+    appropriate repository for works-in-progress and completed research
+    outputs as appropriate. (Dickinson & Sefton, 2009; Sefton, 2009)
+
+Other work in this area includes Microsoft Research's work on embedding
+SWORD <span class="spCh spChx2013">–</span> named OfficeSWORD<span
+class="footnote" mce_style="vertical-align: super;"
+style="vertical-align: super;"><img class="mceItemAnchor" mce_name="a" name="ftn1-text"></img></span>
+<span class="spCh spChx2013">–</span> repository deposit into their word
+processing product as well as some attempts to allow structured
+authoring and semantic web-authoring in the browser (Fernicola, 2009;
+Fink et al., 2010).
+
+## <img class="mceItemAnchor" mce_name="a" name="id5"></img>2.2 Knowledge and technology
+
+Whilst individual web-pages may contain information that people can use
+to construct knowledge, the technology of the web itself is largely
+ignorant to the concept of information and the notion of a body of
+information being spread across the network. Authors may hyperlink to
+provide readers with further context but the web browser is a
+dumb-terminal that understands nothing about the actual information
+embedded in the content. Search engines provide a basic entry point to
+the information network but their reliance is on key phrases and not the
+context and meaning understood by a community of practice (Neumann &
+Prusak, 2007). The challenge now is to open up the information existing
+in online forms <span class="spCh spChx2013">–</span> including
+documents and data <span class="spCh spChx2013">–</span> so that it is
+findable<span class="footnote" mce_style="vertical-align: super;"
+style="vertical-align: super;"><img class="mceItemAnchor" mce_name="a" name="ftn2-text"></img></span>,
+a concept that spans more than just matching keywords:
+
+> Any system aiming to integrate heterogeneous data on an ad hoc basis
+> and present this to users will need to adopt sophisticated models of
+> relevance, quality, and trust that are sensitive to the user<span
+> class="spCh spChx2019">’</span>s current task and its context. (Heath
+> Heath, 2008 p. 91)
+
+Heath's discussion here is focused on the Semantic Web. Based on
+technologies from groups such as the W3C<span class="footnote"
+mce_style="vertical-align: super;"
+style="vertical-align: super;"><img class="mceItemAnchor" mce_name="a" name="ftn3-text"></img></span>,
+the Semantic Web provides a framework within the Web that gives web
+browsers and search engines the ability to interact with information.
+Navigation in this model is based on assembling meaning rather than
+merely providing presentation services (Heath, 2008). The challenge,
+then, is to get the semantics into the Semantic Web. Within the AWE we
+are looking at methods that allow researchers to easily provide semantic
+information in their data and documents. The Anotar<span
+class="footnote" mce_style="vertical-align: super;"
+style="vertical-align: super;"><img class="mceItemAnchor" mce_name="a" name="ftn4-text"></img></span>
+project presented a framework for adding semantics through the well
+understood concept of tagging and extending this by allowing taxonomies
+to be utilised. Created as an easy to adopt toolkit, Anotar is being
+adapted to systems such as The Fascinator, Moodle and WordPress. Initial
+pilot work has also been undertaken to provide facilities for adding
+semantic information to word processed documents so that semantic <span
+class="spCh spChx201c">“</span>mark up<span
+class="spCh spChx201d">”</span> can be created with the document rather
+as a deferred technical effort (Sefton, 2009).
+
+## <img class="mceItemAnchor" mce_name="a" name="id6"></img>2.3 Wild and curated content
+
+The AWE approach to wild and curated content is to gradually tame and
+domesticate the content, by allowing it to be husbanded by a series of
+'curation events'. Using the Fascinator Desktop, The initial creator may
+label data items or sets in simple ad-hoc terms using tags such as <span
+class="spCh spChx201c">“</span>My Thesis<span
+class="spCh spChx201d">”</span> or <span
+class="spCh spChx201c">“</span>Anthropology 101 Course Notes<span
+class="spCh spChx201d">”</span>. The incentive to do this is that when
+they do so, the items will be (a) backed up appropriately and (b) routed
+to collaborators automatically. This represents what we might call an
+emergent workflow; where object state changes result in items making
+progress through required stages.
+
+We also provide a more intentional kind of curation via 'acts of
+publishing' where a data owner can push content across curation
+boundaries (the term coined by ARROW project members (Treloar,
+Groenewegen, & Harboe-Ree, 2007)) for various reasons;
+
+-   a draft can be pushed to a blog (remember that, using ICE content
+    services, all word processing documents in the Academic Working
+    Environment are web-ready and can be delivered as HTML)
+-   a finished paper or approved draft can be pushed to the
+    institutional repository. Work is under way to enable this to happen
+    in a way that (a) data is also deposited and (b) both document and
+    data are web-ready and can be viewed in-browser as native web
+    content, as well as being available for print .
+
+## <img class="mceItemAnchor" mce_name="a" name="id8"></img>2.4 Linked and isolated data & Ad-hoc and long-term access
+
+Bootstrapping the linked-data web remains a grand challenge, but we are
+attempting to address it in work on The Fascinator Desktop by providing
+URIs (the formal name for links) for data while it is still in isolation
+in a lab or on a laptop computer for example. Managing identifiers
+through the lifecycle of a digital object is not easy when you consider
+that a researcher may have their digital files spread across multiple
+desktop, portable and mobile devices and that, in the messy landscape of
+desktop filesystems, filenames are changed at a whim and multiple
+versions may exist throughout a system.
+
+Within The Fascinator, every item will have a URI from the moment it is
+discovered on the user's desktop.
+
+Creating a URI for desktop files is a similar approach to the SemDeskURI
+Scheme suggested by members of the Nepomuk<span class="footnote"
+mce_style="vertical-align: super;"
+style="vertical-align: super;"><img class="mceItemAnchor" mce_name="a" name="ftn5-text"></img></span>
+project (Sauermann, 2008). However, instead of relying on a new protocol
+(in the case of SemDeskUri this is <span
+class="spCh spChx201c">“</span><span class="Apple-style-span"
+mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">desktop://<span
+class="spCh spChx201d">”</span></span>), URIs in The Fascinator will
+utilise <span class="spCh spChx201c">“</span><span
+class="Apple-style-span" mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">http://</span><span
+class="spCh spChx201d">”</span>. For example, whilst <span
+class="spCh spChx201c">“</span>http://localhost/dickinso@usq.edu.au/research/data<span
+class="spCh spChx201d">”</span> will not allow remote users to access
+the resource, it does provide for contextual identification.
+
+In terms of ad-hoc vs long-term access, under this scheme we would
+expect resources to move from an isolated desktop-web view of digital
+objects (remembering that our systems give people a web view from the
+very creation of the object) to ad-hoc team views where the provenance
+of items is preserved by keeping both desktop and team-URIs, through to
+more formally created views. As content is routed from the desktop to
+shared repositories the plan is to keep the URIs, so that the metadata
+for an item contains all of the known identifiers that we have for it.
+
+## <img class="mceItemAnchor" mce_name="a" name="id9"></img>2.5 Disciplinary and institutional systems / Scholars and service providers
+
+Whilst much of this presentation has focused on the technical aspects of
+<span class="spCh spChx201c">“</span>The Grand Integration
+Challenge<span class="spCh spChx201d">”</span>, the complexity of
+institutional and individual engagement must be considered. This is a
+challenge that threads through numerous areas of academia, including
+postgraduate researcher skills, central ICT provision, Government
+reporting requirements, Library systems, research project management
+etc. Indeed, it presents a <span class="spCh spChx201c">“</span>wicked
+problem<span class="spCh spChx201d">”</span><span class="footnote"
+mce_style="vertical-align: super;"
+style="vertical-align: super;"><img class="mceItemAnchor" mce_name="a" name="ftn6-text"></img></span>
+for the academic research sector and is one that various stakeholders
+approach with a carrot and/or stick approach.
+
+From the carrot side, we are working with motivated pilot users and
+faculties to build the AWE to meet their needs. Another carrot, of
+course, is grants - such as those offered by the Australian National
+Data Service <span class="spCh spChx2013">–</span> to teams developing
+solutions. The stick often presents itself as institutionalised mandates
+(<span class="spCh spChx201c">“</span>Data-sharing culture has
+changed,<span class="spCh spChx201d">”</span> 2009; Australian
+Government, 2007) but for many researchers, the technical complexities
+around data management are an intrusion into their time (Henty, Weaver,
+Bradbury, & Porter, 2008). As mentioned earlier, a central goal of the
+AWE is to provide services that meet the various stakeholder demands but
+don't interfere with the researcher's core tasks.
+
+## <img class="mceItemAnchor" mce_name="a" name="id10"></img>2.6 Ubiquitous and personalized environments
+
+Two central goals of the AWE are to hide the technicalities around data
+management and the semantic web and to provide services that meet
+various stakeholder demands. These goals are both aimed at allowing the
+researcher to focus on their research. We envisage a mesh of repository
+services, building on the existing standards for linking repository
+content; the Fascinator Desktop work (and before it The Integrated
+Content Environment) introduces the idea of a personal desktop web; with
+services such as tagging and note-taking acting not only in their
+traditional role of assisting in the research process, but as triggers
+in emergent workflows.
+
+A good example to illustrate how the personal and ubiquitous can meet
+and <span class="spCh spChx201c">“</span>intermesh<span
+class="spCh spChx201d">”</span> is our work on a general framework for
+annotations, Anotar. In work extending from that described in Dickinson
+and Sefton (2009), we are adding Anotar annotation services to The
+Fascinator. In the case of our work with USQ's Public Memory Research
+Centre, this facility will allow the researcher to tag photos in their
+desktop repository for release to an online repository for viewing.
+Research participants can log onto this repository and provide the
+researcher with essential information regarding the people and locations
+in various photos and movies through the use of taxonomy-based tagging.
+Furthermore, the open-ended nature of the annotations will provide an
+online forum for the participants to share their memories and even
+debate points of view <span class="spCh spChx2013">–</span> providing a
+rich data-set for the researcher as well as a first-person public memory
+archive.
+
+Whilst tagging and annotation services are provided (to some extent) by
+various online Web 2.0 systems, the AWE solution meets research-specific
+data management requirements by keeping research data in a way that
+adheres to the University's ethical clearance requirements. For the
+researcher and their community of participants, it provides a
+personalized environment that lets them focus on their own goals rather
+than the technical infrastructure.
+
+# <img class="mceItemAnchor" mce_name="a" name="id11"></img>3 Conclusion
+
+The Academic Working Environment is not a single monolithic application
+with a <span class="spCh spChx201c">“</span>one size fits all<span
+class="spCh spChx201d">”</span> approach. Its name defines its
+structure: an environment of interoperable services that works with the
+researcher and doesn't hamper their efforts.
+
+# <img class="mceItemAnchor" mce_name="a" name="id12"></img>4 References
+
+Australian Government. (2007). <span class="Apple-style-span"
+mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">Australian code for the responsible conduct
+of research</span><span mce_style="font-style: normal;"
+style="font-style: normal;"><span class="T5">. Canberra, Australia:
+Australian Government. Retrieved from
+http://www.nhmrc.gov.au/\_files\_nhmrc/file/publications/synopses/r39.pdf</span></span>
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Data-sharing culture has changed. (2009, December 11).
+</span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;" style="font-style: italic;">Research
+Information</span><span mce_style="font-style: normal;"
+style="font-style: normal;"><span class="T5">. Retrieved November 19,
+2009, from
+http://www.researchinformation.info/news/news\_story.php?news\_id=553</span></span>
+
+Dickinson, D., & Sefton, P. (2009). Creating an eResearch desktop for
+the Humanities. Presented at the eResearch Australasia 2009, Manly,
+Australia. Retrieved from http://eprints.usq.edu.au/6090/
+
+Fernicola, P. F. (2009). Incorporating Semantics and Metadata as Part of
+the Article Authoring Process. Retrieved March 1, 2010, from
+http://elpub.scix.net/cgi-bin/works/Show?152\_elpub2009
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Fink, J. L., Fernicola, P., Chandran, R., Parastitidas, S.,
+Wade, A., Naim, O., Quinn, G., et al. (2010). Word add-in for ontology
+recognition: semantic enrichment of scientific literature.
+</span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;" style="font-style: italic;">BMC
+Bioinformatics</span><span mce_style="font-style: normal;"
+style="font-style: normal;"><span class="T5">, </span></span><span
+class="Apple-style-span" mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">11</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">(1), 103. doi:10.1186/1471-2105-11-103</span></span>
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Heath, T. (2008). How Will We Interact with the Web of Data?
+</span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;" style="font-style: italic;">Internet
+Computing, IEEE</span><span mce_style="font-style: normal;"
+style="font-style: normal;"><span class="T5">, </span></span><span
+class="Apple-style-span" mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">12</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">(5), 88-91.</span></span>
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Henty, M., Weaver, B., Bradbury, S. J., & Porter, S. (2008).
+</span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;"
+style="font-style: italic;">Investigating Data Management Practices in
+Australian Universities</span><span mce_style="font-style: normal;"
+style="font-style: normal;"><span class="T5">. Retrieved from
+http://eprints.qut.edu.au/14549/</span></span>
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Murray-Rust, P., & Rzepa, H. S. (2004). The Next Big Thing:
+From Hypermedia to Datuments. </span></span><span
+class="Apple-style-span" mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">Journal of Digital Information</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">, </span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;"
+style="font-style: italic;">5</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">(1), 248.</span></span>
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Neumann, E., & Prusak, L. (2007). Knowledge networks in the
+age of the Semantic Web. </span></span><span class="Apple-style-span"
+mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">Briefings in Bioinformatics</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">, </span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;"
+style="font-style: italic;">8</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">(3), 141-149. doi:10.1093/bib/bbm013</span></span>
+
+Sauermann, L. (2008, October 27). RFC-draft: SemDesk URI Scheme.
+Retrieved February 25, 2010, from
+http://dev.nepomuk.semanticdesktop.org/repos/trunk/doc/2008\_09\_semdeskurischeme/index.html
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Sefton, P. (2009, April 8). Journal 2.0: Embedding semantics
+in documents. </span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;"
+style="font-style: italic;">ptsefton</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">. Retrieved February 26, 2010, from
+http://ptsefton.com/2009/04/08/journal-20-embedding-semantics-in-documents.htm</span></span>
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Sefton, P., Downing, J., & Day, N. (2009). ICE-theorem - end
+to end semantically aware eResearch infrastructure for theses.
+</span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;" style="font-style: italic;">University
+of Southern Queensland</span><span mce_style="font-style: normal;"
+style="font-style: normal;"><span class="T5">. Retrieved August 24,
+2009, from
+http://eprints.usq.edu.au/5248/1/ice-theorem-paper-OR09.htm</span></span>
+
+Sefton, P. M. (2009). The Fascinator - Desktop eResearch and Flexible
+Portals. Presented at the 4th International Conference on Open
+Repositories, Georgia Institute of Technology. Retrieved from
+http://smartech.gatech.edu/handle/1853/28483
+
+<span mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">Treloar, A., Groenewegen, D., & Harboe-Ree, C. (2007). The
+Data Curation Continuum. </span></span><span class="Apple-style-span"
+mce_name="em" mce_style="font-style: italic;"
+style="font-style: italic;">D-Lib Magazine</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">, </span></span><span class="Apple-style-span" mce_name="em"
+mce_style="font-style: italic;"
+style="font-style: italic;">13</span><span
+mce_style="font-style: normal;" style="font-style: normal;"><span
+class="T5">(9/10). doi:10.1045/september2007-treloar</span></span>
+
+Copyright Peter Sefton and Duncan Dickinson, 2010. Licensed under
+Creative Commons Attribution-Share Alike 2.5 Australia.
+\<<http://creativecommons.org/licenses/by-sa/2.5/au/>\>
+
+<span class="Default_20_Paragraph_20_Font"><span
+mce_style="country: US; language: en;"
+style="country: US; language: en;"><span
+class="T6"><img class="mceItemAnchor" mce_name="a" name="HTTP:::DBPEDIA.ORG:SNORQL:?QUERY=SELECT+%3FRESOURCE%0D%0AWHERE+{+%0D%0A%3FRESOURCE+%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FONTOLOGY%2FPERSON%2FBIRTHPLACE%3E+%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FRESOURCE%2FSYDNEY%3E+%3B%0D%0A%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FONTOLOGY%2FPERSON%"></img>![HTTP://DBPEDIA.ORG/SNORQL/?QUERY=SELECT+%3FRESOURCE%0D%0AWHERE+{+%0D%0A%3FRESOURCE+%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FONTOLOGY%2FPERSON%2FBIRTHPLACE%3E+%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FRESOURCE%2FSYDNEY%3E+%3B%0D%0A%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FONTOLOGY%2FPERSON%](/wp-content/uploads/2010/04/m40ca94ba.png)</span></span></span>
+
+------------------------------------------------------------------------
+
+<div mce_style="font-size: .9em;" style="font-size: .9em;">
+
+<span
+class="footnote-defined"><img class="mceItemAnchor" mce_name="a" name="ftn1"></img><http://officesword.codeplex.com/>
+</span>
+
+</div>
+
+<div mce_style="font-size: .9em;" style="font-size: .9em;">
+
+<span
+class="footnote-defined"><img class="mceItemAnchor" mce_name="a" name="ftn2"></img><http://en.wikipedia.org/wiki/Findable>
+</span>
+
+</div>
+
+<div mce_style="font-size: .9em;" style="font-size: .9em;">
+
+<span
+class="footnote-defined"><img class="mceItemAnchor" mce_name="a" name="ftn3"></img><http://www.w3.org/2001/sw/>
+</span>
+
+</div>
+
+<div mce_style="font-size: .9em;" style="font-size: .9em;">
+
+<span
+class="footnote-defined"><img class="mceItemAnchor" mce_name="a" name="ftn4"></img><http://www.purl.org/anotar/>
+</span>
+
+</div>
+
+<div mce_style="font-size: .9em;" style="font-size: .9em;">
+
+<span
+class="footnote-defined"><img class="mceItemAnchor" mce_name="a" name="ftn5"></img><http://nepomuk.semanticdesktop.org/xwiki/bin/view/Main1/>
+</span>
+
+</div>
+
+<div mce_style="font-size: .9em;" style="font-size: .9em;">
+
+<span
+class="footnote-defined"><img class="mceItemAnchor" mce_name="a" name="ftn6"></img><http://en.wikipedia.org/wiki/Wicked_problem>
+</span>
+
+</div>
+
+</div>
+
+<span class="Apple-style-span" mce_name="strong"
+mce_style="font-weight: bold;" style="font-weight: bold;"> </span>
+
+</div>
+
+<span class="Apple-style-span" mce_name="strong"
+mce_style="font-weight: bold;" style="font-weight: bold;"> </span>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>What should we call this name-authority, vocabulary-server, linked-data URI factory service we are building for ANDS? - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2010/06/18/what-should-we-call-this-name-authority-vocabulary-server-linked-data-uri-factory-service-we-are-building-for-ands-2.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="Today I am at the National Library, at the “Names Round Table”. I&#39;m part of the ARDCPIPAG, which stands for “Australian Research Data Commons Party Identifier Advisory Group”. We&#39;re advising a team at the library who are building party-identifier services for researchers and research institutions in Australia. At my work …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="What should we call this name-authority, vocabulary-server, linked-data URI factory service we are building for ANDS?"/>
+        <meta property="og:url" content="../../../2010/06/18/what-should-we-call-this-name-authority-vocabulary-server-linked-data-uri-factory-service-we-are-building-for-ands-2.htm"/>
+        <meta property="og:description" content="Today I am at the National Library, at the “Names Round Table”. I&#39;m part of the ARDCPIPAG, which stands for “Australian Research Data Commons Party Identifier Advisory Group”. We&#39;re advising a team at the library who are building party-identifier services for researchers and research institutions in Australia. At my work …"/>
+        <meta property="article:published_time" content="2010-06-18" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2010/06/18/what-should-we-call-this-name-authority-vocabulary-server-linked-data-uri-factory-service-we-are-building-for-ands-2.htm"
+                       rel="bookmark"
+                       title="Permalink to What should we call this name-authority, vocabulary-server, linked-data URI factory service we are building for ANDS?">
+                        What should we call this name-authority, vocabulary-server, linked-data URI factory service we are building for ANDS?
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-06-18T02:31:07+00:00"> Fri 18 June 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>Today I am at the National Library, at the <span
+class="spCh spChx201c">“</span>Names Round Table<span
+class="spCh spChx201d">”</span>. I'm part of the ARDCPIPAG, which stands
+for <span class="spCh spChx201c">“</span>Australian Research Data
+Commons Party Identifier Advisory Group<span
+class="spCh spChx201d">”</span>. We're advising a team at the library
+who are <a href="https://wiki.nla.gov.au/pages/viewpage.action?pageId=17039683">building party-identifier services for researchers and research
+institutions in
+Australia</a>.</p>
+<p>At my work, at <a href="http://usq.edu.au/adfi">ADFI</a> we're working on
+developing specifications for Metadata stores for ANDS. The first cab
+off the rank is an application architecture developed with The
+University of Newcastle and Swinburne University. I posted about this
+earlier this year. ANDS agreed that it would be a good idea to take a
+linked data approach to the design of the application. Linked Data is a
+non-threatening way of talking about the The Semantic Web, which is
+definitely coming real soon now. No, really, 2010 will be the year, or
+at the very outside 2012.</p>
+<p>Or 2013.</p>
+<div class="slide">
+<h1>The linked data rules (from Tim Berners-Lee)</h1>
+<blockquote>
+<p>Like the web of hypertext, the web of data is constructed with
+documents on the web. However,  unlike the web of hypertext,
+ where links are relationships anchors in hypertext documents written
+in <span style="font-size:10pt; "><span class="T1">HTML</span></span>,
+for data they links  between arbitrary things described by <span
+style="font-size:10pt; "><span class="T1">RDF</span></span>,.
+ The <span style="font-size:10pt; "><span
+class="T1">URI</span></span>s identify any kind of object or  concept.
+  But for <span style="font-size:10pt; "><span
+class="T1">HTML</span></span> or <span style="font-size:10pt; "><span
+class="T1">RDF</span></span>, the same expectations apply to make the
+web grow:</p>
+<p>1. <strong>Use URIs</strong> as names for things</p>
+<p>2. <strong>Use HTTP URIs</strong> so that people can look up those names.</p>
+<p>3. When someone looks up a <span style="font-size:10pt; "><span
+class="T1">URI</span></span>, <strong>provide useful information, using the
+standards (RDF, SPARQL)</strong></p>
+<p>4. <strong>Include links to other <span>URIs</span></strong>. so that they can
+discover more things.</p>
+<p>Simple.  In fact, though, a surprising amount of data isn't linked in
+2006, because of problems with one or more of the steps.  This article
+discusses solutions to these problems, details of implementation, and
+factors affecting choices about how you publish your data.</p>
+<p><a href="http://www.w3.org/DesignIssues/LinkedData.html">http://www.w3.org/DesignIssues/LinkedData.html</a></p>
+</blockquote>
+</div>
+<p>Our metadata stores work is covered in <a href="http://delicious.com/ptsefton/andsmetadatastores">blog
+posts</a> here.</p>
+<p>My presentation today focussed on the name-authority part of the
+architecture and looked at the process of establishing name-identities
+at an institutional level <strong>before</strong> joining in a broader federation. I
+asked the audience, what is the name we should use for this class of
+service? (We're still looking for a name for the metadata-stores app as
+well, something better than <span class="spCh spChx201c">“</span>The
+Fascinator, Research Metadata Store Edition, Pro<span
+class="spCh spChx201d">”</span> or the current working title of <span
+class="spCh spChx201c">“</span>Ingect<span
+class="spCh spChx201d">”</span>.</p>
+<div class="slide">
+<h1>Architecture - <span class="spCh spChx201c">“</span>Ingect<span class="spCh spChx201d">”</span> (working title)</h1>
+<p><a name="Picture_8"></a><img src="/wp-content/uploads/2010/06/m74901623_554x3921.jpeg" alt="Picture
+8" /></p>
+</div>
+<div class="slide">
+<h1>What does a Linked Data Approach mean for a metadata stores project?</h1>
+<ol>
+<li>
+<p><strong>No more typing name-strings</strong> into web forms.</p>
+</li>
+<li>
+<p><strong>Agreed names/URIs</strong> for things like resource-types.</p>
+</li>
+<li>
+<p><strong>Sorting out URIs</strong> for things so that (unlike with Institutional
+Repositories) we can:</p>
+<ol>
+<li>
+<p><strong>Agree on terms</strong> before we start.</p>
+</li>
+<li>
+<p><strong>Match-up terms later</strong> if we don't reach agreement.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<p>In our forthcoming collaboration with the UoX we wanted to make sure
+that when we named the things in the institution with the role of
+'research' or 'owner' of data we used URIs. In ANDS speak, these things
+are 'parties'. Some of the are people, some are institutions,
+organisations, or organisational units.</p>
+<div class="slide">
+<h1>Goal: Establish URIs for person-parties at UoX before we start</h1>
+<p>So, a simple matter of:</p>
+<ul>
+<li>
+<p><strong>Extracting name data</strong> from the existing institutional repository<br />
+(the UoX model is to build their metadata store so collections are
+described in the IR)</p>
+</li>
+<li>
+<p><strong>Disambiguating name-strings</strong>, for the usual reasons; there is
+typically more than one string used to refer to the same person and
+often the same string used to refer to more than one person. Sorry,
+party.</p>
+</li>
+<li>
+<p><strong>Establishing new URIs</strong> for each party that the UoX cares about
+(they don't care about parties from UoY).</p>
+</li>
+<li>
+<p><strong>Injecting the URIs back in to the IR</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="slide">
+<h1>Establishing IDs? How?</h1>
+<p>We considered these options.</p>
+<ol>
+<li>
+<p><strong>Use People Australia</strong> / ARDC-PIP services. (It was a bit early)</p>
+</li>
+<li>
+<p><strong>Use Nicnames</strong> (plus).</p>
+</li>
+<li>
+<p><strong>Use a combination</strong> of the above.</p>
+</li>
+</ol>
+</div>
+<div class="slide">
+<h1>We chose option 4</h1>
+<p>Build a name-authority server inspired by and informed by the NicNames
+work.</p>
+<p>Why?</p>
+<ol>
+<li>
+<p>Can ship as an integrated part of the broader application we are
+building, in the same language (Java).</p>
+<ol>
+<li>
+<p><strong>Easy-install</strong> under the same web container as Fedora and
+Solr.</p>
+</li>
+<li>
+<p><strong>Same configuration files</strong> as the <span
+class="spCh spChx201c">“</span>Ingect<span
+class="spCh spChx201d">”</span> application.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Having a local service means we can use:</p>
+<ol>
+<li>
+<p><strong>Private data such as staff-IDs</strong> internal to the application.</p>
+</li>
+<li>
+<p><strong>Local URI-schemes</strong> for local things, such as internal
+projects.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Our service will <strong>deal with JSON formatted , not RDF</strong> to make it
+easy for web-interface designers.</p>
+</li>
+</ol>
+</div>
+<div class="slide">
+<h1>The process <span class="spCh spChx2013">–</span> disambiguating names</h1>
+<ol>
+<li>
+<p>Import all the name-string/publication pairs from the IR into a new
+repository (in EAC format) .</p>
+<p>That's one for each name on a paper. Records will be presented as
+citations keyed by a name.</p>
+<p><code>name:&lt;name-string&gt; id:&lt;pID&gt; title:&lt;dc:title&gt; (subject:&lt;dc:subject&gt;)*</code></p>
+</li>
+<li>
+<p>Import a set of canonical names we care about into the new
+repository.</p>
+</li>
+<li>
+<p>Turn all the canonical names from a local directory into
+master-records/name-packages.</p>
+</li>
+<li>
+<p>Allow a data librarian to drag all the name-strings into the
+name-packages.</p>
+<blockquote>
+<p><code>[Jane Hunter CONTAINER RECORD</code></p>
+<p><code>Hunter, J: </code><a href="../../../../../../list/author_id/10933/"><code>Gerber, A.</code></a><code> and </code><a href="../../../../../../list/author_id/3813/"><code>Hunter, J.</code></a><code> (</code><a href="../../../../../../list/year/2008/"><code>2008</code></a><code>). </code><a href="../../../../../../view/UQ:187804"><code>A compound object authoring and publishing tool for literary scholars based on the IFLA-FRBR</code></a><code>. In: C. Rusbridge, A. Trefethen and D. Berry, Proceedings of: 4th International Digital Curation Conference &quot;Radical Sharing: Transforming Science?&quot;. ``4th International Digital Curation Conference (IDCC 2009)``, Edinburgh, Scotland, (1-10). 1-3 December 2008.</code></p>
+<p><code>Hunter, Jane: </code><a href="../../../../../../list/author_id/3813/"><code>Hunter, Jane</code></a><code> (</code><a href="../../../../../../list/year/2001/"><code>2001</code></a><code>). </code><a href="../../../../../../view/UQ:7845"><code>Adding Multimedia to the Semantic Web: Building an MPEG-7 Ontology</code></a><code>. In:``International Semantic Web Working Symposium (SWWS)``, Stanford University, California, (). July, 2001.</code></p>
+<p><code>Hunter, J.: </code><a href="../../../../../../list/author_id/3813/"><code>Hunter J.</code></a><code> (</code><a href="../../../../../../list/year/1999/"><code>1999</code></a><code>). </code><a href="../../../../../../view/UQ:151497"><code>An &quot;Improved&quot; Proposal for an MPEG-7 DDL</code></a><code>. ISO/IEC JTC1/SC29/WG11, 47th MPEG Meeting M4518, .</code></p>
+<p><code>...</code></p>
+<p><code>]</code></p>
+</blockquote>
+</li>
+</ol>
+<h1>``</h1>
+</div>
+<div class="slide">
+</div>
+<div class="slide">
+<h1>Process</h1>
+<p><span
+style="display: block"><a name="graphics1"></a><img src="/wp-content/uploads/2010/06/m13df4043_635x8991.jpeg" alt="graphics1" /></span></p>
+</div>
+<div class="slide">
+<h1>But wait! There's more!</h1>
+<p>This new module, which is called, um <span
+class="spCh spChx2026">…</span> will:</p>
+<ul>
+<li>
+<p>'Mint' a new URI whenever someone types a string (in desperation).</p>
+</li>
+<li>
+<p>Provide locally available, fast services for accessing any ontology.
+Eg:</p>
+<ul>
+<li>
+<p>FOR codes.</p>
+</li>
+<li>
+<p><a href="http://www.geonames.org/">Geonames</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="slide">
+<h1>One final thing</h1>
+<p>(And this bit is not ANDS funded)</p>
+<p>We want to make it possible to encode and decode web-semantics in a URI.
+Eg:</p>
+<p><a href="http://ontologize.me/meta/?r=http://purl.org/dc/terms/creator&amp;o=http://nla.gov.au/nla.party-541658">http://ontologize.me/meta/?r=http://purl.org/dc/terms/creator&amp;o=http://nla.gov.au/nla.party-541658</a></p>
+<p><span
+style="color:#000000; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; text-transform:none; "><span
+class="T4">I can use this to assert that <span
+class="spCh spChx201c">“</span></span></span><a href="http://ontologize.me/meta/?r=http://purl.org/dc/terms/creator&amp;o=http://nla.gov.au/nla.party-541658%20">ptsefton</a><span
+style="color:#000000; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; text-transform:none; "><span
+class="T4"><span class="spCh spChx201d">”</span> is the author of this
+resource.</span></span></p>
+<p><span
+style="color:#000000; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; text-transform:none; "><span
+class="T4">Would ANDS and/or the NLA consider supporting services like
+this?</span></span></p>
+</div>
+<p>Oh, and nobody at the ARDCPIP round table had an answer for me about
+what we call this class of name-authority linked-data-endpoint-factory
+application.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'what-should-we-call-this-name-authority-vocabulary-server-linked-data-uri-factory-service-we-are-building-for-ands-2';
+                var disqus_url = 'http://ptsefton.com/2010/06/18/what-should-we-call-this-name-authority-vocabulary-server-linked-data-uri-factory-service-we-are-building-for-ands-2.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

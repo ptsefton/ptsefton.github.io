@@ -1,0 +1,41 @@
+<p>tl;dr: I made a new open source utility to manage song sheets in [chordpro] format.</p>
+<p>ESR says in <a href="http://www.catb.org/esr/writings/homesteading/cathedral-bazaar/ar01s02.html">The Cathedral and the Bazaar</a></p>
+<blockquote>
+<p>The problem was this: suppose someone named <code>joe' on locke sent me mail. If I fetched the mail to snark and then tried to reply to it, my mailer would cheerfully try to ship it to a nonexistent</code>joe' on snark. Hand-editing reply addresses to tack on &lt;<span class="citation">@ccil.org</span>&gt; quickly got to be a serious pain. This was clearly something the computer ought to be doing for me. But none of the existing POP clients knew how! And this brings us to the first lesson: 1. Every good work of software starts by scratching a developer's personal itch.</p>
+</blockquote>
+<p>Like Raymond, I wanted the computer to be doing stuff for me. I'm not claiming that I have created a good work of software, but I have created a work of software that <em>Works For Me</em>.</p>
+<p>The problem was this: I had several years worth of song-sheets downloaded from various places on the internets and typed out by hand, for my own and other people's songs, in a variety of formats, but mostly text files. Then I started playing music with other people again for the first time in years and we'd be trading bits of paper and files and mailing song files and so on. Anyway, I got to looking at ways to manage this.</p>
+<p>Turns out there's a handy format for making-up songs called chordpro. This involved putting chord names in square brackets, inline, in amongst the lyrics. Like [C] this. Or [G#maj7] or this. There are lots of software packages for managing said songs, putting them into books, printing them out, showing them on your church projector, transposing them and so on.</p>
+<p>None of the software did quite what I wanted in the way I wanted. I've been keeping my songs in text files in Dropbox for years and that suits me and I don't want to have to suck them all in to the maw of some slightly dodgy open-source Java application. And I like to keep my hand in with coding and, well, I have a few hours on the train every day which I don't always use for work stuff and, you can probably see where this is heading. I got to wondering what would happen if I ran a few songs through [pandoc], the magnificent omniverous document conversion tool to make PDF and HTML versions, and one thing led to another. It started innocently enough with a simple script process chordpro declarations into markdown. So this:</p>
+<p>{title: My song title}</p>
+<p>Turns into a markdown heading like so:</p>
+<pre><code># My song title</code></pre>
+<p>And then I asked myself. How would this look as an epub ebook made up of multiple songs? What about in Word format? Hmmm, how do I make a table of contents and start each song on a new page? And how might I get the script to make the songs scale (pun intended) so they fill up the page, for maximum readability? Which led to experiments with LaTeX, the taste of which I still don't have out of my mouth entirely, and a brief flirtation with the Open Document Format and the LibreOffice presentation software (we've dated before but it has never worked out long term). I finally got friendly with an amazing bit of command line software called wkhtmltopdf.</p>
+<p>I told myself &quot;I'm not going to do chord charts&quot;, you know images with fret-dots etc, cos me and my music buddies are all totally 1337 players who know every chord ever and if not can like totally work them out in our heads, but then I wondered if there was an existing open source library that did chords for multiple instruments I could just, like drop in and it turned out that (a) there isn't really (the UKE Geeks stuff is cool but it's Javascript an it looked like a lot of work to disentangle it from their very cool songbook app). And it turns out, that if you concentrate then in few days of daily commutes you can totally write code that turns this Uke-geeks flavoured chordpro definition for an Augmented A chord:</p>
+<p><code>{define: Aaug frets 2 1 1 4 fingers 2 1 1 4 add: string 1 fret 1 finger 1 add: string 4 fret 1 finger 1}</code></p>
+<p>Into this:</p>
+<div class="figure">
+<img src="data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABkCAIAAACemCBBAAABt0lEQVR4nO2c0Q6DIAxFZdl/676cPZgQwyZUBFpv73naA6metaAdZCHGuHjipX0Ds3En/J58vRBC+qwym3QyvKse5afhrqQpjI6O8D57VRatcHbVtKLEGBXvrzunGU56SLZLuaSTJIztUhZOVa3ywBzEqXBWyTDOp4sWKu6ew/Xm4fOoYl6rBRtrbLUx1QGmgrgraQqjQ2F0KIwOhdGhMDoURqf+AwDbw5amzE4QdyVNYXQojA6F0XEnPPsUzy9p12q7sS8rD6Ip/HeD7up29NUgaiVd3o4UblY2BHE3hzUPtdwc0xbEXYZ1+uGtxzBhkFxwTheajZHdah62SxB3Ja15mvbmmLYgzPAsyvkRTtGGIJqvlvHfMXH5atQWRL+ksxV4dBB94cm4E9bvhyV06Zl3rAt36ZmPmC7pLj1zhmnhEdgV7tIz/2JXeBB294e3pmHrc/eHhd/L1TtxV9J2hSVJlhdCwq7wIEwLlxPYkN7F/qtl7NEzHzGd4US2CN8J9QzhjlAYHQqjQ2F03Anb7YfbWJ/bDw8K4q6kKYwOhdGhMDoURofC6FAYHXfC7vph/mMaOhRG5wtf2rFfLc7YAQAAAABJRU5ErkJggg==" alt="Aaug" />
+<p class="caption">Aaug</p>
+</div>
+<p>Or TODO.</p>
+<p>Along the way I kind of dealt with a lot of things:</p>
+<ul>
+<li>How to make [books], by feeding in a [list of files], with a title both in a text file and on the commandline.</li>
+<li>How to make a [setlist book] for a performance</li>
+<li>How to keep two-page songs on facing pages in said books.</li>
+<li>How to make stand-alone one page versions of songs ...</li>
+<li>.. automatically, whenever I drop a new on in my Dropbox, or change one.</li>
+</ul>
+<p>Now, I realise that a commandline thing that's a hassle to install and will almost certainly break the moment someone other than me tries to run it, but I'm releasing it to the world anyway. Even if the software is not to your taste, I think some of the things I've done will be useful to others. For example I:</p>
+<ul>
+<li><p>Liberated Buz's chord definitions for Soprano UKE which were encoded in a javascript tile into a stand alone file.</p></li>
+<li><p>Likewise liberated the guitar chords from the venerable Chordie software.</p></li>
+</ul>
+<p>Here are some other things I am Never Ever Going To Do With This Software. Ever. Never. * It will never have a Graphical User Interface. * It will never be a web application you can just use without all this mucking around with files, or maybe with your Dropbox. * It will never be cool.</p>
+<h1 id="help-wanted">Help wanted</h1>
+<p>If anyone wants to help out here there are a few things I would like:</p>
+<ul>
+<li>Chordpro files (or any data file for that matter) specifiying chords in other intruments.</li>
+</ul>
+<p>[list of files]: [books]: [setlist book]: [wkhtmltopdf]: [Aaug]:data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABkCAIAAACemCBBAAABt0lEQVR4nO2c0Q6DIAxFZdl/676cPZgQwyZUBFpv73naA6metaAdZCHGuHjipX0Ds3En/J58vRBC+qwym3QyvKse5afhrqQpjI6O8D57VRatcHbVtKLEGBXvrzunGU56SLZLuaSTJIztUhZOVa3ywBzEqXBWyTDOp4sWKu6ew/Xm4fOoYl6rBRtrbLUx1QGmgrgraQqjQ2F0KIwOhdGhMDoURqf+AwDbw5amzE4QdyVNYXQojA6F0XEnPPsUzy9p12q7sS8rD6Ip/HeD7up29NUgaiVd3o4UblY2BHE3hzUPtdwc0xbEXYZ1+uGtxzBhkFxwTheajZHdah62SxB3Ja15mvbmmLYgzPAsyvkRTtGGIJqvlvHfMXH5atQWRL+ksxV4dBB94cm4E9bvhyV06Zl3rAt36ZmPmC7pLj1zhmnhEdgV7tIz/2JXeBB294e3pmHrc/eHhd/L1TtxV9J2hSVJlhdCwq7wIEwLlxPYkN7F/qtl7NEzHzGd4US2CN8J9QzhjlAYHQqjQ2F03Anb7YfbWJ/bDw8K4q6kKYwOhdGhMDoURofC6FAYHXfC7vph/mMaOhRG5wtf2rFfLc7YAQAAAABJRU5ErkJggg==</p>

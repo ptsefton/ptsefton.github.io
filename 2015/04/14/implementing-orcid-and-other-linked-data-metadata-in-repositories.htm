@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Implementing ORCID and other linked-data metadata in repositories - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2015/04/14/implementing-orcid-and-other-linked-data-metadata-in-repositories.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="# Implementing linked data metadata systems Peter Sefton University of Technology, Sydney This is a short presentation for the [ORCID](http://orcid.org/) (Open Researcher and Contributor ID) implementers Roundtable in Canberra April 14, 2015. The ORCID site says: ORCID provides a persistent digital identifier that distinguishes you from every other …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Implementing ORCID and other linked-data metadata in repositories"/>
+        <meta property="og:url" content="../../../2015/04/14/implementing-orcid-and-other-linked-data-metadata-in-repositories.htm"/>
+        <meta property="og:description" content="# Implementing linked data metadata systems Peter Sefton University of Technology, Sydney This is a short presentation for the [ORCID](http://orcid.org/) (Open Researcher and Contributor ID) implementers Roundtable in Canberra April 14, 2015. The ORCID site says: ORCID provides a persistent digital identifier that distinguishes you from every other …"/>
+        <meta property="article:published_time" content="2015-04-14" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2015/04/14/implementing-orcid-and-other-linked-data-metadata-in-repositories.htm"
+                       rel="bookmark"
+                       title="Permalink to Implementing ORCID and other linked-data metadata in repositories">
+                        Implementing ORCID and other linked-data metadata in repositories
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-04-14T00:38:25+00:00"> Tue 14 April 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <section typeof="http://purl.org/ontology/bibo/Slide">
+# Implementing linked data metadata systems
+<h2>Peter Sefton</h2>
+<h3>University of Technology, Sydney</h3>
+<details open="open"> This is a short presentation for the
+[ORCID](http://orcid.org/) (Open Researcher and Contributor ID)
+implementers Roundtable in Canberra April 14, 2015.
+<p>The <a href="http://orcid.org/">ORCID</a> site says:</p>
+<blockquote>
+<p>ORCID provides a persistent digital identifier that distinguishes you
+from every other researcher and, through integration in key research
+workflows such as manuscript and grant submission, supports automated
+linkages between you and your professional activities ensuring that
+your work is recognized.</p>
+</blockquote>
+<p>I will post this so I can present - and come back later to expand, and
+clean up typos, so this post will evolve a bit.</p>
+<p>This event is launching a document:</p>
+<blockquote>
+<p>The ‘<a href="http://www.ands.org.au/discovery/orcid-discussion-paper20150306.pdf">Joint Statement of Principle: ORCID - Connecting Researchers and
+Research</a>'
+[PDF 297KB] proposes that Australia's research sector broadly embrace
+the use of ORCID (Open Researcher and Contributor ID) as a common
+researcher identifier. The statement was drafted by a small working
+group coordinated by the Australian National Data Service (ANDS)
+comprised of representatives from Universities Australia (UA), the
+Council of Australian University Librarians (CAUL) and the
+Australasian Research Management Society (ARMS). Representatives of
+the Australian Research Council and the National Health and Medical
+Research Council also provided input through the working group.</p>
+</blockquote>
+<p>In this presentation I talk about some of the details of how to
+implement the ORCID. Just how do you <em>use</em> an ORCID ID in a
+institutional repository?</p>
+<p>This is not that simple, as most of our systems are set up to expect
+string-values for names, not IDs.</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+# This talk is not *all* about ORCIDs...
+<p>... it's about <em>implemeting</em> linked data principles</p>
+<details open="open">
+<p>This talk is about why ORCIDs are important, as part of the linked-data
+web. I will give examples of some of the work that's going on at UTS and
+other institutions on linked-data approaches to research data management
+and research data publishing and conclude with some comments about the
+kinds of services I think ORCID needs to offer.</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+# Modern metadata should be linked-data
+<blockquote>
+<ul>
+<li>
+<p>Thou Shalt Have No Data Without Metadata</p>
+</li>
+<li>
+<p>RDF is best practice for Metadata</p>
+</li>
+<li>
+<p>Use Metadata Standards where they exist</p>
+</li>
+<li>
+<p>Use URIs rather than Scalars (eg Strings) as names</p>
+</li>
+<li>
+<p>Name all data and metadata ASAP</p>
+</li>
+</ul>
+<p><a href="http://eresearch.uws.edu.au/blog/2014/08/08/principles-for-eresearch-systems-development-and-selection">Clarke and Sefton
+2014</a></p>
+</blockquote>
+<details open="open"> But using URIs as names for thing is not easy to
+do. Most repository software doesn't support this out of the box, and
+it's difficult to graft URIs onto a lot of existing metadata schemas,
+such as the ubiquitous Dublin Core which in its simple, flat form has no
+way for URIs to be used as metadata values.
+<p>And while it's easy enought to say &quot;RDF is best practice for Metadata&quot;
+<em>entering</em> RDF metadata is non-trivial for humans. So I wanted to show
+you some of the work we've been doing to make it possible to build
+research data systems that are compliant with the above principles.</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+# 1. ReDBOX
+<p><a href="/wp-content/uploads/2015/04/namelookup.png"><img src="/wp-content/uploads/2015/04/namelookup-1024x454.png" alt="namelookup" /></a></p>
+<p>Screenshot from the UTS Stash data catalogue showing a party lookup, to
+get a URI that identifies a person.</p>
+<details open="open"> The ANDS-funded ReDBOX project embraced linked
+metadata principles from the very beginning, it has a name-authority
+service, Mint which is a clearing house for sources of truth about
+people, organisational units, subject codes, grant codes etc.
+<p>But, the ReBOX/Mint partnership is a very close one, there's no general
+way to lookup other name authorities, without loading them into Mint.</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+[![Picture1](/wp-content/uploads/2015/04/Picture1-1024x768.png)](/wp-content/uploads/2015/04/Picture1.png)
+<details open="open">
+<p>In 2014 I asked, what if there were a <em>general</em> way to do this, so that
+we could use URIs from a wide range of sources, and a team of developers
+from NZ and the UK responded as part of the Developer Challenge Event at
+that year's Open Repositories conference in Helsinki, supported by Rob
+Peters from ORCID, who is at this meeting in Canberra.</p>
+<p>Slide by:</p>
+<ul>
+<li>Adam Field : iSolutions, University of Southampton</li>
+<li>Claire Knowles: Library Digital Development Manager, University of
+Edinburgh</li>
+<li>Kim Shepherd: Digital Development, University of Auckland Library</li>
+<li>Jared Watts: Digital Development, University of Auckland Library</li>
+<li>Jiadi Yao: EPrints Services, University of Southampton</li>
+</ul>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+# Enter Fill my List
+<div class="figure">
+<p><img src="/wp-content/uploads/2015/04/fml-300x225.jpg" alt="Members of the Fill My List team (minus Claire Knowles who took the
+pic) hard at work at Open Repositories
+2014" />
+Members of the Fill My List team (minus Claire Knowles who took the pic)
+hard at work at Open Repositories 2014</p>
+</div>
+<details open="open">
+<p>See their <a href="https://github.com/gobfrey/OR2014-chalege">git repo</a>.</p>
+<p>This modest github repository might not look like much, but as far as I
+know, it's the first example of an attempt to create an easy-to use
+protocol for web developers to make lookup services.</p>
+<p>Fill my list enabled auto-complete lookup to multiple sources of truth
+including ORCID, so a user can find the particular Lee or Smith they
+want to assert is a creator of a work, specify which kind of Python they
+mean for the subject of a work and get a URI. The FML team did prototype
+implementations for ePrints and Dspace software.</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+[![Screen Shot 2015-04-13 at 9.56.39
+am](/wp-content/uploads/2015/04/Screen-Shot-2015-04-13-at-9.56.39-am.png)](/wp-content/uploads/2015/04/Screen-Shot-2015-04-13-at-9.56.39-am.png)
+<p>Looking up the Schools Online Thesaurus (ScOT) for the URI for
+&quot;Billabongs&quot;.</p>
+<p>!!!SPOILER ALERT!!!</p>
+<p>it's <a href="http://vocabulary.curriculum.edu.au/scot/9962">http://vocabulary.curriculum.edu.au/scot/9962</a></p>
+<details open="open"> We have since picked FML up at UTS, and are using
+it to make high quality metadata for our Australian National Data
+Service funded Major Open Data Collections project.
+<p>The above screenshot shows a prototype lookup service which shows
+auto-complete hints as you type.</p>
+<p>Note that typing &quot;Oxb&quot; find the same URI - Billabongs are also know as
+'oxbow lakes'.</p>
+<p>Note that in the screenshot you can see one of the important changes we
+made to the Omeka repository software to support linked data, as part of
+the <a href="https://github.com/ozmeka/ozmeka">Ozmeka</a> project.</p>
+<p>Instead of just a string field for the subject there is a URI as well.
+So, even though some records might say &quot;Billabongs&quot; and some might say
+&quot;Oxbow lakes&quot; both would have the same URI.</p>
+<p>Note that to make this work we had to hack the Omeka software we're
+using because like most repository software it didn't have good support
+for using URIs as metadata values.</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+# So, why am I telling you all this?
+<p><a href="/wp-content/uploads/2015/04/Screen-Shot-2015-04-13-at-10.29.28-am.png"><img src="/wp-content/uploads/2015/04/Screen-Shot-2015-04-13-at-10.29.28-am.png" alt="Screen Shot 2015-04-13 at 10.29.28
+am" /></a></p>
+<p>The raw, machine-readable Fill My List protocol in action, looking up an
+ORCID index.</p>
+<details open="open">
+<p>When we refer to researchers on the web, we should use their ORCID ID,
+in the form of a URI. But to be <em>able</em> to do this we often have to
+update repository software (as my tean at UTS are doing with Omeka).</p>
+</details>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+# In conclusion
+<p>The ORCID API (machine to machine interface) provides pretty good but
+not perfect open lookup services so...</p>
+<p>Repository developers can make their repositories linked-data compliant</p>
+<p>But it's a lot of work and it will involve a community effort to update
+our repository systems, many of which are open source.</p>
+<details open="open"> We have made a lot of progress on improving the
+quality of metadata in the Australian research sector - and a lot of
+that has been community driven, for example the ReBOX project's
+insistence on using URIs led to the first URIs for Australian grant
+being minted by developers from Griffith and USQ, because it was the
+right thing to do.
+<p>Now, a few years later, the government is making its own URIs and the
+Australian National Data services is providing vocab services.</p>
+<p>ORCID does have a public API to allow us to build Fill My List type
+lookup services - allowing to query on name-parts, it would be better if
+it included bibliographic information, wich might help someone entering
+metadata choose between two people with the same name.</p>
+</details>
+</section>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'implementing-orcid-and-other-linked-data-metadata-in-repositories';
+                var disqus_url = 'http://ptsefton.com/2015/04/14/implementing-orcid-and-other-linked-data-metadata-in-repositories.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

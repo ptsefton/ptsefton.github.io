@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: A first look at the ODF Add-in for Word 2003
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>A first look at the ODF Add-in for Word 2003</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/10/index.html">10</a>-<a href="/blog/2006/10/23/index.html">23</a>
+<div><p class="P1">I finally got around to trying out the OpenDocument (ODF) <a href="http://odf-converter.sourceforge.net/">add-in</a>  for Microsoft Word 2003.</p><p>If this thing works well enough it would mean we could get <a href="http://ice.usq.edu.au/">ICE</a> users who prefer to use Word to work in ODF format – and avoid some of the issues we have with ICE:</p><ol class="lin" style="list-style: decimal;"><li><p>Currently ICE can understand .doc files but it has to:</p><ol class="li-lower-alpha" style="list-style: lower-alpha;"><li><p> open them in OpenOffice.org</p></li><li><p> save them in ODF format.</p></li></ol></li><li><p>OpenOffice.org can't (yet) translate Word documents well enough to match the controlled subset of Word functionality we use in ICE:</p><ol class="li-lower-alpha" style="list-style: lower-alpha;"><li><p>Document outlines get mangled.</p></li><li><p>Lists get mangled; instead of creating Word list styles to match ODF list styles it creates new ones, so documents won't round-trip.</p></li><li><p>Some complex tables don't work.</p></li></ol></li></ol><p>(Formatting this post using lists is gratuitous, I know, but I'm eating the ODF converter dog food here and trying to post from ICE via a document written using Writer, loaded into Word, saved as a .doc).</p><p>I don't care which standard(s) we end up supporting with ICE; the already standardized OpenDocument Format or Microsoft's XML format which is speeding through standardization right now. I suspect that either would do for ICE, because ICE is a middle-of-the-road application that uses core word processing functionality. Remember that ICE means <a href="http://ptsefton.com/blog/2005/12/12/ice:_interchange_comes_easily">Interchange Comes Easily</a>.</p><p class="P2">At the moment, the ODF add-in for Word does not appear to know how to save documents as ODF. I went to find out whether this is meant to be the case, and found that the documentation for the product is in Excel and Word documents. Yet another sad example of how far we have to go with word processing software and the web. Why in 2006 aren't we all working with a word processor profile that gives us HTML export?</p><p class="P2">Anyway, here's a <a href="http://puzzle.dl.sourceforge.net/sourceforge/odf-converter/ODF-Add-in-for-Word-2007-Functional-Specification.doc">quote from the documentation</a>:</p><blockquote class="bq"><p>The Add-in when installed will become available as a easily available menu item in Word 2007. The sub items under the Menu item “ODF” will be – </p><ol class="lin" style="list-style: decimal;"><li><p>Open ODF…</p><p>Open an Open Document Format File</p></li><li><p>Save as ODF…</p><p>Save a copy of the document Fully Compatible with Open Document Format (ODF)</p></li></ol><p>Of these two, the first one would be functional in the prototype while the second one would be a dummy menu item for now and would become functional in later releases.</p></blockquote><p class="P2">So for now you can't save ODF from Word so it's useless to ICE.  (But note that if you use ICE to format your product documentation then you get not only a printable version but a web view as well).</p><p class="P2">But here's how the ODF add-in converted the first part of this document:</p><p class="P2"><a id="graphics1" name="graphics1"></a><img alt="graphics1" class="fr1" height="502" src="/blog/2006/10/23/odf-plugin/1.png" width="552"/></p><p class="P2">The add-in warned me about not supporting relative font sizes, which I can live with, 'cos I don't think we use them in ICE. And the translation has worked remarkably well, except for the first second level list, where the style information (<code>li2a</code>) has been lost. A new style called <code>Outline numbered, Times, 11 pt, Left:  0.6 cm, Hanging:  0.6 cm</code> has been created. Ugh.</p><p class="P2">Weirdly the second example of a second-level list kept its style. I'll figure out how to report this to the add-in team.</p><p class="P2">So I can't complete the mission of writing in Writer, importing into word, saving as .doc and using ICE to publish. But it's promising that the add-in is close to supporting the core ICE styles.  Still, until the add-in supports “Save as ODF” there's little point in looking at it for our purposes on the ICE project.</p><p class="P2"></p><p class="P2"></p></div>
+</body>
+</html>

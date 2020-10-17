@@ -1,0 +1,77 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: I'm back
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>I'm back</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2005/index.html">2005</a>-<a href="/blog/2005/07/index.html">07</a>-<a href="/blog/2005/07/26/index.html">26</a>
+<p>
+I've been away on a <a class="external" href="http://www.imdb.com/title/tt0089670/">European Vacation</a>. 
+</p>
+<p>
+Back now, and about to present a tutorial on Word Processing and XML at the <a class="external" href="http://www.openpublish.com.au/">Open Publish</a> conference. I'll use this blog to follow-up questions from the tutorial session and my presentation in the conference. 
+</p>
+<p>
+This is an interesting time to be talking about word processing and XML, with the Microsoft Word team blogging as hard as they can about their new XML formats.
+</p>
+<p>
+There's a <a class="external" href="http://blogs.msdn.com/brian_jones/archive/2005/07/25/443044.aspx">podcast interview with Brian Jones</a> about the new XML format, and <a class="external" href="http://blogs.msdn.com/brian_jones/archive/2005/07/25/443044.aspx">a post by Brian</a> about how to use custom schemas with Word.
+</p>
+<p>
+</p><blockquote>When we built the support for customer defined schemas into Word 2003 there were a couple scenarios we had in mind. The main goal though was that we wanted people to take existing Word documents and existing Word solutions, and make them more powerful. There has long been support for bookmarks, which have some similarities to the XML support, but that just wasn't enough. The custom XML support finally gave developers the ability to add structure to a Word document and to program against it. Did you know that once you add you're XML to a Word document, you can capture events when a user moves in or out of that element? Did you know that you can use XPath queries to navigate the Word document based on your XML, and get a Word range object as a result? There is a ton of power here, even if your end goal has nothing to do with XML. Of course you can always save out as XML and use that data in some other process, but even if you don't care about getting XML out, the XML support still makes building solutions easier.</blockquote>
+<p>
+I'm not convinced. This looks like high-cost, fragile development to me, particularly with a new format coming. I think a better alternative is to use a 'microformat' approach, and embed information in something like a table, with a known structure, so that it can be found and processed. I have been doing this for years with educational content, using simple mechanisms like two-cell tables to mark-up content such as activities or readings. This is the approach we are taking in <a class="external" href="http://www.usq.edu.au/dec/staff/ice.htm">ICE</a>.</p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: First post using Word 2007 Beta 2
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>First post using Word 2007 Beta 2</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/05/index.html">05</a>-<a href="/blog/2006/05/24/index.html">24</a>
+<div><p class="P1">The public beta of Office 2007 is out. I thought the best test would be to take Word  for a test drive on this here weblog via my home computer.</p><p>How did I go? Overall I fared OK, but there are some backwards steps in usability we’re going to have to fight in ICE.</p><dl><dt>Installing the Beta version</dt><dd>Verdict: Went fine. </dd><dd>The only issue, and it’s a big one, is that Office wanted to uninstall previous versions. Nice try Microsoft.  Just wanted me to be that much closer to buying  copy of this thing when it ships? I have a legal copy of  Word 2003 bought through the university, but I’m not forking out another $20 unless there’s a bloody good reason. Hate paying for software. Waste of good drinking money.</dd><dt>Downloading the ICE template</dt><dd>I went to the ICE site <a href="http://ice.usq.edu.au/svn/ice/downloads/latest/templates/ice-template-installer.dot"><span class="Internet_20_link">and download the template</span></a> That worked as expected.</dd><dd>BTW: The ICE template contains macros to install itself. This is necessary because by default in a Windows system the PLACE WHERE TEMPLATES ARE KEPT IS INVISIBLE. That’s right, the simple-minded windows XP operating system hides some folders from you, including places that used to be important to other Microsoft Software.</dd><dd>This was a huge problem when I worked for NextEd, with a distributed customer base, and it prompted the development of the self installing template. I’m not sure that this new release will help.</dd><dt>Opening a new document based on a template</dt><dd><ul class="lib"><li><p>Click on the big ugly angular thing, top left.: seems close enough in function to what we used to call the File menu.</p></li><li><p>Select New.</p></li><li><p>Click on My Templates to open the folder.</p></li><li><p>Select the template.</p></li></ul></dd><dd>The verdict: An improvement over the nasty, nasty system in Word 2003 that I <a href="http://ptsefton.com/blog/2005/01/20/templates_atrpohy"><span class="Internet_20_link">complained about last year</span></a>. </dd><dt>Using styles</dt><dd>I was afraid that styles would be buried in Office 2007.  They are, but not that deeply. There are, though, several serious issues; starting with the way that as far as I can tell there is no way to tell at a glance what style a paragraph is using. Lots of new nuances to styles – but which one is <b>this</b> paragraph using? I can find out, but only by scrolling up and down a long list of style names in a list called Styles or by bringing up the Apply Styles box (these two do pretty much the same thing in different not very satisfying ways).</dd><dd>Took me a while to figure this out, but you can get a complete pick-list of styles to show up by clicking on the tiny arrow next to Change Styles in the Home section of the Ribbon. This, like the styles thing in OpenOffice.org is next to useless. As is the new Quick Style Gallery – which shows styles, three at a time, on the Ribbon. The Quick Style Gallery hurts my eyes – it’s a jumble of stuff that is impossible to absorb.</dd><dd>I reckon we got it right in the ICE template, which goes back to work I did for Standards Australia in the late nineties. O’Reilly use one two for their Word-based Authors. A hierarchical menu of Styles sorted by type. Headings. Lists. Quotes. Not a hard-on-the eyes, unsorted  jumble like the Quick Style Gallery. The Quick Style Gallery shows you a preview of the style ‘AaBbCcDd’ over and over so you can see what the style looks like, and the name of the style is underneath, and smaller. Does NOT work for me. Most of the styles I use look <b>identical</b>, font-wise so the AaBbCcDd is just visual mush. Incidentally Word tells me that AaBbCcDd is a SPELLING ERROR.</dd><dd>There is this new thing called Manage Styles (after you click the little arrow in the Styles bit of the Home part of the Ribbon (how are we supposed to talk about this new interface?)). This new thing allows you to ‘recommend’ styles and apparently ban them. Nice, but how about we organize them into a sensible hierarchical menu by function?</dd><dd>And where’s my toolbar? The one with my handy ICE hierarchical styles menu? There it is, in Add-ins. No problem. Except that the Alt-Keys we had set up to drive it  no longer work . (Pressing Alt-<your favourite="" letter=""> seems to bring up semi-random bits on the famous Ribbon.)</your></dd><dd>How do I show the styles in the left margin the way you used to be able to in Normal view? Can’t find this anywhere. What used to be Tools / Options is now hidden behind the ugly Office button (top left).  There’s a Word Options button down the bottom of the menu.</dd><dd>And list styles? My favourite bang-your-head-against-a-splintery-paling-fence-litmus-test for word processors? I’ll save that for another post.</dd><dt>Setting the title</dt><dd>ICE uses the document properties to divine the title of a document (plus some magic to deal with interoperability problems between Word and OpenOffice.org Writer).</dd><dd>The help (?) system tells me I need to Click the Microsoft Office Button (The ugly one), point to Finish, and then click Properties. This brings up a place you can type in basic metadata. But ‘Finish’? Really? That’s bizarre.</dd><dt>General accessibility</dt><dd>Old fashioned Windows programs let you learn shortcuts by showing them to you in menus. Word 2003 shows you in the late File menu that Ctrl S will save your document. I dunno how you learn that from Word 2007. And how do I use keys to get to my beloved Style menu, the one that comes with ICE? I’ll let you know.</dd><dd>I hate to keep going on about this, but styles deal with most of the formatting and so on that is the focus of the new interface. I’m sure we can customize this a lot, but it will take some time. Maybe we can get a grant.</dd></dl><h1>
+<a id="id934809" name="id934809"><!--id934809--></a>Conclusion</h1><p>I knew this was going to be a radical reinvention of the user interface, and it is. Up to a point. There are places where a couple of confused clicks through unfamiliar interface gadgetry get you back to familiar old Word dialogue boxes. But this thing is a challenge. And if it’s a challenge for someone like me then it’s going to be a really big challenge to organizations who have to count the cost of supporting their word processing users. Simple things like showing style names at the left of the document in Normal view appear to me to be gone. As is the Normal view for that matter. How many hours will be wasted worldwide next year by people looking for that feature, or others that have moved and/or disappeared?</p><p>As for ICE which is all about working out how to make the best of the software we are handed from on high, I’m sure we’ll work out ways of working in Office 2007. They have to support all the legacy of Word, so the stuff we use will be in there somewhere. </p><p>I’ll follow up on a couple of things I have not had time to investigate. Two big ones are <b>lists</b> and the new <b>bibliography</b> feature. The really big one is the new <b>XML file format</b>..</p><dl><dd></dd><dt></dt></dl><p></p></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: USQ joins the Open Courseware movement
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>USQ joins the Open Courseware movement</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/07/index.html">07</a>-<a href="/blog/2007/07/30/index.html">30</a>
+<p align="right"><a href="/blog/2007/07/30/11-39-44.679295/100.pdf">View this page as PDF</a></p>
+<div><h1><a id="id1" name="id1"><!--id1--></a>OCW Launched</h1><p>Ever since MIT launched their Open Courseware initiative I've though that USQ should show them how it's <b>really</b> done. MIT's courseware tends to be materials that support face to face teaching, whereas USQ has <b>real distance education materials</b>. </p><p>It has taken a while to organize (and I didn't do any of the hard work myself) but our <a href="http://ocw.usq.edu.au/">Open Courseware site</a> is up. There was <a href="http://www.usq.edu.au/newsevents/news/usqocw1.htm">an announcement</a>. And we're <a href="http://www.ocwconsortium.org/use/index.html">linked from the Open Courseware Consortium site</a>. Professor Jim Taylor launched the USQ Open Courseware site over afternoon tea noting how helpful it is to come from a country that starts with the letter 'A' so we're up the top of the list.</p><p>Vice Chancellor Professor Bill Lovegrove asked me afterwards if it required a lot of technical effort. Actually, I told him, it didn't. It was technically straightforward for USQ to put courses online because we have them in HTML, and in many cases PDF already.  The major achievement is not technical <span class="spCh spChx2013">–</span> it's USQ's long term commitment to creating distance learning materials. </p><p><b>There was a fair bit of editorial effort</b> involved in checking over the courses and making sure that copyright materials licensed for USQ use were not inadvertently included. There was also some re-factoring of material into more digestible units and removing USQ specific content.  But the bottom line is that USQ has lots of courses available in HTML, so on a technical level it was just a matter of putting it on the web (it's in <a href="http://moodle.org/">Moodle</a>, but that's no trouble for our Moodle guru). What we put up is not just used power point presentations either, most of it is real distance education material that you could work through on your own, whereas many other OCW offerings tend to be a bit thinner.</p><p>One exciting thing is that this is the first time I've been able to point to real-life <a href="http://ice.usq.edu.au/">ICE</a> materials that are out in the open, see the list below. There are some courses in there that were created using a previous publishing system known as GOOD. And there's one course, <a href="http://ocw.usq.edu.au/course/view.php?id=15">Creating Interactive Multimedia</a> that was written in HTML <span class="spCh spChx2013">–</span> it's the only one for which there is no PDF available for any of the content. Both ICE and GOOD can create PDF and HTML from a single source, although in ICE someone has to set up a 'book' version of the content if you want a single PDF for all of it <span class="spCh spChx2013">–</span> this has not yet been done for all of the content.</p><p>One reason that Open Courseware is good is that with many eyeballs typos should be easy to spot. I found one in the <a href="http://ocw.usq.edu.au/course/view.php?id=10">General Science</a> course and reported it via the feedback form.</p><h1><a id="id2" name="id2"><!--id2--></a>The courses</h1><p class="P3">Here's the current list: I hope we'll see a lot more courses in the near future. Note that the last three are really important <span class="spCh spChx2013">–</span> these are tertiary preparation courses <span class="spCh spChx2013">–</span> we think we're among the first to release this sort of thing under an OCW banner.</p><p class="P4"></p><ol class="lin" style="list-style: decimal;"><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=12">CMS2016    Communication, Technology and Policy</a> (ICE)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=13">CSC2402    Object Oriented Programming in C++</a> (ICE)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=11">EDU5322    Teaching Students with Special Needs: Behaviour Management </a>(GOOD)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=14">ENG2002    Technology and Society</a> (GOOD)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=15">FET5622    Creating Interactive Multimedia</a> (HTML)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=7">TEA5101    Exploring Teaching and Learning in Tertiary Contexts</a> (ICE)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=16">TOU1003    Introduction to Tourism</a> (GOOD)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=17">TPP7120a    Studying to Succeed: Part 1</a> (ICE)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=18">TPP7120b    Studying to Succeed: Part 2</a> (ICE)</p></li><li><p><a href="http://ocw.usq.edu.au/course/view.php?id=10">TPP7155 General Science</a> (GOOD)</p></li></ol><h1><a id="id4" name="id4"><!--id4--></a>The future</h1><p>There are several things we're looking at for the future <span class="spCh spChx2013">–</span> one of which is a major surprise that I can't talk about. But there are some things that I can share.</p><p>At the moment it's not particularly easy to DO anything with these courses, but because many of them are in ICE we should be able to make it simple to download a copy of the course and change it. <b>We're thinking about hosting an ICE repository </b><span style="font-weight:normal; "><span class="T2">where you can clone a course and edit it, </span></span>to make it easy for people to adapt, fix, improve or remix our materials.</p><p>In the current release we're also putting up just static HTML, but I see this body of material as a great place to start developing ways that people <b>can interact more directly with content and with each other in the context of the content</b>. If I spot a typo, wouldn't it be nice to be able to report it in-situ, or to carry on a discussion within the content. Or tick-off activities and readings as I go and have the <b>table of contents for the course adapt</b> to show me the bits I have left to do.</p><p>I think that if USQ were to put a lot more content online then it would bring a lot of web visitors, and would probably <b>result in more enrollments</b>, which we really, really need, but there are fears that large scale opening of the content might lead decreasing enrollments, so we're going to have to work that issue through and see how open courseware fits with our institutional focus on flexibility.</p><p>On a more mundane level we're looking at how to improve the integration with Moodle, and maybe get rid of the frames which make it hard to bookmark a particular part of a course.</p></div>
+</body>
+</html>

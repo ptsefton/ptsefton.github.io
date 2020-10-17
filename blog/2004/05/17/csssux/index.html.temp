@@ -1,0 +1,38 @@
+<html><body><p>Title: would write something like this [widely blogged, more reasonable
+Date: 05-17-csssux
+
+Nice. Mine would not have been as well informed or reasoned. What this
+'objective look' doesn't do strongly enough, is to look at the problems
+with CSS as a page layout system. (Of course here in Australia we have a
+classless society, so we are not allowed to use CSS.) CSS has two faces.
+The smiling, benign face of CSS is setting 'style' information the way
+you would do it in a word processor. You can set the font sizes and
+colours for your pages in one spot. No problem (well, there are a few,
+but nothing to what's coming). The horrible, harmful, leering face of
+CSS is trying to arrange containers on a page. First you wrap up the
+parts of your page in \\ tags, and give the div elements id's or
+classes. \\
+</p><div class="layout-header">
+
+... \\ \\
+<div class="layout-content">
+
+... \\ The next trick is to lay out the page by writing CSS to position
+the divs. This is where I have a problem - there is too much unnecessary
+abstraction here. Actually abstraction is too kind, this is a case of
+disconnection. I have to go over \*here\*, to a separate file to CSS and
+try to move them divs around. me: "Hey you - go left". me: You there -
+yes you, the table of contents, can you just sort of float there under
+that logo. No not UNDER the logo, beneath it, I mean further down the
+page." me: "And you, the main content div - can you get back up here
+where we can see you." header: "Hey - the footer is sitting on me." I'd
+say its like herding cats, but I don't use that metaphor. It makes sense
+that it's this way - it suits the web design crowd. They can spend their
+time evangelising at each other and selling website makeovers. Now
+there's an idea for reality TV. PS - there are no tables here because
+[this man](http://james.tauber.name) is a genius, like [that old Italian
+bloke](http://james.tauber.name/leonardo).
+
+</div>
+</div>
+</body></html>

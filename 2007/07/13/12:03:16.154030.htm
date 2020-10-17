@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Identifiers should not contain semantics - except when they should - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2007/07/13/12:03:16.154030.htm">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="View this page as PDF I&#39;ve been working with software designed for institutional repsoitories (IRs) now for quite a while. At RUBRIC we helped our network of partners to evaluate repository software. Follow that link to read about DSpace, Eprints, Fez and VITAL. Having worked with four and a bit …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Identifiers should not contain semantics - except when they should"/>
+        <meta property="og:url" content="../../../2007/07/13/12:03:16.154030.htm"/>
+        <meta property="og:description" content="View this page as PDF I&#39;ve been working with software designed for institutional repsoitories (IRs) now for quite a while. At RUBRIC we helped our network of partners to evaluate repository software. Follow that link to read about DSpace, Eprints, Fez and VITAL. Having worked with four and a bit …"/>
+        <meta property="article:published_time" content="2007-07-13" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2007/07/13/12:03:16.154030.htm"
+                       rel="bookmark"
+                       title="Permalink to Identifiers should not contain semantics - except when they should">
+                        Identifiers should not contain semantics - except when they should
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2007-07-13T00:00:00+02:00"> Fri 13 July 2007</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><a href="/blog/2007/07/13/12:03:16.154030/100.pdf">View this page as PDF</a></p>
+<div>
+<p>I've been working with software designed for <a href="http://en.wikipedia.org/wiki/Institutional_Repository">institutional
+repsoitories</a>
+(IRs) now for quite a while. At RUBRIC we <a href="http://rubric.edu.au/repositories/choosing_a_repository.htm">helped our network of
+partners to evaluate repository
+software</a>.
+Follow that link to read about DSpace, Eprints, Fez and VITAL.</p>
+<p>Having worked with four and a bit applications (the 'bit' is the Mura
+application which is not complete), and with the RUBRIC project coming
+to an end in December 2007, I've started to think about things that
+could be improved in future generations of repositories.</p>
+<p>One area where I don't think any of the applications are doing the best
+they could is in helping repository managers in enforcing best practice
+for keeping stable URLs for objects, and giving things <strong>useful
+identifiers for use in different contexts</strong> (No, It's not enough just to
+have handles).</p>
+<p>A lot of people say that best practice for identifiers is that they
+should be semantically null. That is, there's no meaning in them that
+humans think they can decode. This really makes sense for published
+resources. If you base an identifier on anything that might change or
+you might get wrong then you have a problem; once an identifier has been
+published then someone may have used it and it is not good to invalidate
+the old identifier. You either have to have infrastructure to maintain
+old identifiers or be very strict about not renaming things. For
+example, if part of the name is the name of your company or university
+what happens if it gets gobbled up by a bigger company or university or
+your department moves between institutions?</p>
+<p>(See <a href="http://weibel-lines.typepad.com/weibelines/2006/02/identifier_ideo.html">this easy to read discussion of the
+issue</a>.)</p>
+<p>On the other hand, having identifier with some semantics can be really
+helpful in some cases, and it's essential for things that people need to
+manage by hand, such as word processing files.</p>
+<p>One example where identifiers with semantics are nice is blogging, where
+it feels right, and is really useful to have the classic blog
+/year/month/day/ as part of the path. But there are issues with the last
+part. I sometimes create identifiers for blog posts that are a bit funny
+looking by mistyping.</p>
+<p>So if I had been blogging when I was thirteen, I might have made an
+identifier like: <em>http://ptsefton.com/blog/1978/05/16/mispellled_id</em></p>
+<p>Note the identifier is not just he misspelled bit at the end, <strong>it's the
+entire URI</strong>. <a href="http://norman.walsh.name/2006/07/25/namesAndAddresses">Norm Walsh spells this
+out.</a> As he says:</p>
+<blockquote>
+<p>As names, <span class="spCh spChx201c">“</span>HB88<span
+class="spCh spChx201d">”</span>, <span
+class="spCh spChx201c">“</span>http://norman.walsh.name/knows/what#nikon-5700<span
+class="spCh spChx201d">”</span>, and <span
+class="spCh spChx201c">“</span>newscheme:x:y:n5700<span
+class="spCh spChx201d">”</span> are entirely equivalent. They're just
+strings.</p>
+<p><a href="http://norman.walsh.name/2006/07/25/namesAndAddresses">http://norman.walsh.name/2006/07/25/namesAndAddresses</a></p>
+</blockquote>
+<p>For me this is an OK identifier <span class="spCh spChx2013">–</span> I
+figure I can keep the domain registered and make sure that as I migrate
+the blog across software platforms I can keep supporting those
+identifiers. There's little chance of error as the year / month / day
+part of the identifier is generated for me by a machine. And I really
+don't see what harm the date in the path is doing. (And if I decide to
+move things around I can always use handles to help me)</p>
+<p><strong>My policy</strong> at my web site is that once I have published an item I
+won't go back and change the identifier, because it's out there and one
+of my four regular readers may have bookmarked it or tagged it, or
+posted about it. (I will fix typos within a post if I see them, but
+apart from that all updates will be noted at the top of the post).</p>
+<p>But <strong>I often make mistakes</strong> in generating identifiers. So I'm going to
+remove the error-prone bit and change the way I make ID's starting with
+this post.</p>
+<p>The last part of the Identifier on posts is usually generated from the
+file name I use to write the document.. The filename on this one is
+<code>repository-interfaces.odt</code> which is not at all what it ended up being
+about. See, that's an example of a <em><strong>meaningful identifier gone
+wrong</strong></em>.</p>
+<p>So I'm going to replace this code which generates the last part of the
+ID from the filename:</p>
+<pre><code>thisPostName = os.path.splitext( os.path.split(self.path)[1])[0]
+</code></pre>
+<p>With this, which uses the time:</p>
+<pre><code>thisPostName = str(datetime.datetime.now().time())
+</code></pre>
+<p>The time will reflect the point at which I decide the post is nearly
+ready not the time it goes onto my server. For my purposes this is
+<strong>unique and it's machine generated</strong> so there will be no spelling
+errors (there's only one of me to hit the button so I can't do two posts
+at the same millisecond).</p>
+<p>At the moment I make a new document in ICE by clicking <span
+class="spCh spChx201c">“</span>Create new Writer document<span
+class="spCh spChx201d">”</span> , and choosing a file name.</p>
+<p>As I refine the process I use for blogging, it may be that I can let go
+of the idea of having an identifier I need to manage at all. I could let
+ICE create a new document with a GUID (Globally Unique ID) and tell it
+the title. That way, if the document evolves and the title changes then
+I will see the new title via ICE, and I will see the item in any of the
+categories I've added it to using our forthcoming tagging feature <span
+class="spCh spChx2013">–</span> I never need to see the filename, and it
+may as well be an opaque number.</p>
+<p>Some other examples:</p>
+<p>For photos
+:   I'm happy to have opaque names for individual files because Picassa
+does a good hob of showing me my photos.</p>
+<p>For music files
+:   I use ITunes and virtually never look at the files <span
+class="spCh spChx2013">–</span> happy to have it handle the naming
+when it imports a CD, and it's almost irrelevant to me that songs
+happen to have semantically useful filenames because the metadata
+does all the work and I never see the files.</p>
+<p>For item in an institutional repository
+:   These can (and usually are) be represented by a semantically opaque
+identifier such as this one. You'll have to go and look at it to see
+what it is :-)
+:   <a href="http://eprints.usq.edu.au/archive/00002653/">http://eprints.usq.edu.au/archive/00002653/</a>
+:   But the actual paper for item 2653 uses an identifier with a bit
+more semantics:
+:   <a href="http://eprints.usq.edu.au/archive/00002653/01/Sefton_etd_2007.pdf">http://eprints.usq.edu.au/archive/00002653/01/Sefton_etd_2007.pdf</a>
+:   This is not ideal, as naming the paper is done by humans. I have
+worked through some the issues to do with the naming of papers in
+USQ's repositories with the humans who run it. The software doesn't
+help them as much as it should. I think the datastreams (eg a PDF)
+should have opaque identifiers at the server side, but if a user
+downloads one the repository software should assign it a file name
+that helps the reader to manage it. So the filename for a paper like
+this could be: usq_2653_sefton_2006-1. Or something. At least
+this gives someone a clue what's in the paper.</p>
+<p>For PDFs downloaded from online sources
+:   I used to leave them lying around my Desktop, so if repositories
+assigned useful names to downloaded files (not their online
+identifiers) that would really help.
+:   But I bet I'll soon be using a tool like
+<a href="http://www.zotero.org/">Zotero</a> to pull documents out of web sites
+and manage them for me, so I need never see a file name.</p>
+<p>So here's a draft principle.</p>
+<p>Identifiers should have semantics only under some circumstances:</p>
+<ol>
+<li>
+<p>For items managed by computers identifiers should be semantically
+null except where semantics are absolutely inarguable and guaranteed
+to be correct. (Eg a time-stamp for a blog entry)</p>
+</li>
+<li>
+<p>For items managed by users, or which might need to be managed by
+users later, on their own computers identifiers should have useful
+semantics, but we should work hard on building tool-chains that mean
+that user's <em>don't have to manage identifiers at all,</em> anyway.</p>
+</li>
+</ol>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = '12:03:16.154030';
+                var disqus_url = 'http://ptsefton.com/2007/07/13/12:03:16.154030.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

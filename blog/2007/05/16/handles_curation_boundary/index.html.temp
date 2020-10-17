@@ -1,0 +1,65 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Another good use for handles: identifying items in the ICE content management system throughout thier lifecycle
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Another good use for handles: identifying items in the ICE content management system throughout thier lifecycle</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/05/index.html">05</a>-<a href="/blog/2007/05/16/index.html">16</a>
+<div><p class="P1">Back to talking about persistent identifiers, specifically handles, and this time it's to do with the <a href="http://ice.usq.edu.au/introduction/ice_rs.htm">ICE-RS</a> project.</p><p>I have mentioned that I was a handles <a href="http://ptsefton.com/blog/2006/11/01/repository-maintenance">skeptic</a>, but now I'm <a href="http://ptsefton.com/blog/2007/03/16/killer_handles">coming around</a>.</p><p>In writing-up how <a href="http://ice.usq.edu.au/">ICE</a> can be used for a multimedia thesis for my paper at <a href="http://epc.ub.uu.se/etd2007/">ETD 2007</a> it became clear that there is a workflow issue to with identifying and linking to multimedia content. My paper is on in <a href="http://epc.ub.uu.se/etd2007/sessions/1.html">this session</a> <span class="spCh spChx2013">–</span> maybe the full text will show up there at some point.</p><p>The indetifier / linking problem is that right from the draft stage you want to be able to distribute a thesis to supervisors or reviewers in two forms; online, and in print.</p><p>One crucial stage is the examination stage; how can we deal with distribution? The easy way is electronically. If you're sending to reviewers electronically then the multimedia will just be there, and it can be linked relative to the text. But what about a printed version? The print copy should include URLs that can be used to fetch the media file. But how does the author know what that URL will be? And who will change it when the thesis goes into the institutional repository?</p><p>These are all issues to do with the <a href="http://ptsefton.com/blog/2007/02/07/curation-boundary">curation boundary</a> which is now documented in an <a href="http://www.ariadne.ac.uk/issue51/treloar-groenewegen/">article</a> (Treloar and Groenewegen 2007).</p><p>Enter handles. If everything in an ICE repository had a persistent ID in the <a href="http://handle.net/">handles</a> infrastructure then ICE could take care of the URL for you. All the author would have to do is link to the media they'd like to include in the usual way, and the ICE system would make a new handle and update links to use a handle resolver. The result of all this would be that authors would not have to worry about finding appropriate copies of their work, the ICE system would be able to take care of all that, and the URL for a media file that might be out there in an examiner's copy of the thesis would still work years later even if the thesis itself has moved around since then.</p><p>Without some system like handles the author and/or support staff would need to be continually editing documents as they moved through different stages and were distributed for different purposes.</p><p>How would this work? (Warning <span class="spCh spChx2013">–</span> gets detailed and boring from here down)</p><p>For my thesis I want to link my piano performance. </p><ol class="lin" style="list-style: decimal;"><li><p>Get the sound file and put it in ICE.</p></li><li><p>Find the file in the ICE file manger.</p></li><li><p>Right click on the file and copy the URL. It might look something like:</p>
+<pre>http://localhost:8000/pacakges/phd/media/performance.m4a</pre></li><li><p>Paste into an ICE document with the URL showing up as text either in-line or in the references section. Now I've got a text document with a link to the sound file that a reader can type in to their web browser.</p></li><li><p>Render the document into PDF using ICE. Magically the URL changes to be something like:</p>
+<pre>http://resolver.usq.edu.au/hdl/xxxx.x/385329084239058239058</pre></li><li><p>If you visit that URL then it would resolve to something like:</p>
+<pre>http://ice-repos.usq.edu.au/pacakges/phd/media/performance.m4a</pre></li><li><p>Behind the scenes ICE will do some technical stuff:</p><ul class="lib"><li><p>Assign unique ID to the sound file, say 385329084239058239058. ICE can be offline to do this step.</p></li><li><p>When ICE is online, change the link I used to use the handle and tell the handle server that this document now lives in my ICE repository <span class="spCh spChx2013">–</span> this way I can move or rename the file in ICE without breaking the link.</p></li><li><p>On rendering the document within ICE, change from the handle back to a relative link.</p></li><li><p>On creating  a PDF file change the link that I inserted to show a handle ID. </p></li><li><p>On export to a repository  change ALL the links within the thesis to use handles and change the handle records to resolve to the item's new home in the repository,.</p></li><li><p>On export to an ordinary web server change all the links back to ordinary paths.</p></li></ul></li></ol><h1><a id="id62" name="id62"><!--id62--></a>Bibliography</h1><p>Treloar, A, and D Groenewegen. 2007. ARROW, DART and ARCHER: A Quiver Full of Research Repository and Related Projects. <i>Ariadne</i>. <a href="http://www.ariadne.ac.uk/issue51/treloar-groenewegen/">http://www.ariadne.ac.uk/issue51/treloar-groenewegen/</a> (accessed May 16, 2007).</p></div>
+</body>
+</html>

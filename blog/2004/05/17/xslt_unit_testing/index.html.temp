@@ -1,0 +1,23 @@
+<html><body><p>Title: Queensland" USQ](http://www.usq,edu.au), (I work amongst USQ, but I am
+Date: 05-17-xslt_unit_testing
+
+simple XML format for expressing tests in XML, with input, expected
+output(s) and a few parameters. They are using it test transforms on
+parts of their proprietary format into both XHTML and XSL Formatting
+Objects. As I understand it you take the input, run it through the
+stylesheet and see if the output is \*\*exactly\*\* what you wanted. - A
+choice to validate the output against a DTD or not, depending on how
+practical that might be. - Some kind of extension to JUnit that
+automatically finds test files, validates the tests themselves then runs
+them. - Most impressively, HTML and PDF outputs that show what each of
+the tests will look like in XHTML and in print (via xsl:fo). Jacek
+reports that they are now doing their formatting test-first. I can
+imagine how well this could work; commissioning formatting from
+designers for each part of your schema \*before\* you start coding,
+creating tests, validating the tests themselves to make sure that the
+target output is sensible and then coding each part. Just like I can
+imagine legions of designers standing by to save me from my predeliction
+from whatever you call these colours we have here (currently \\\#FF6699;
+\\\#FFFF00; and others I forget). Jacek has done some free software
+before, so I'll encourage him to release what he can.
+</p></body></html>

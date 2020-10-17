@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Submitting a paper to a conference using ICE
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Submitting a paper to a conference using ICE</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/05/index.html">05</a>-<a href="/blog/2007/05/15/index.html">15</a>
+<div><p class="P1">It's been quiet here because I have been busy writing up my paper for the <a href="http://epc.ub.uu.se/etd2007/">ETD conference</a> in Uppsala Sweden. For the unitiated, ETD means 'Electronic Theses and Dissertations'. My paper is on Thursday 14<span class="T1">th</span> June 2007 in the session on <a href="http://epc.ub.uu.se/etd2007/sessions/1.html?keepThis=true&amp;TB_iframe=true&amp;height=480&amp;width=640">Realising the vision of ETDs</a>. Seems like a good session for our work on the <a href="http://ice.usq.edu.au/introduction/ice_rs.htm">ICE-RS</a> project, which is mid way through. We have some progress to report and a vision to share.</p><p>As usual, I used the ICE template to write the paper, 'cos that's by far the fastest way for me to work, and I can use the paper itself as a demonstration of the extraordinary powers of the Integrated Content Environment, ICE.</p><p>Like most journals and conferences the ETD conference has a template that you're supposed to use to submit the paper. They accept Word or OpenOffice.org Writer formats which is nice. The template's pretty straightforward. I wrote to the organizers to find out whether they minded wanted me to use their style names or whether it was the look that mattered. Turns out in this case that it is the look that's important into the style names. </p><p>This was an opportunity to make a contribution to the ICE-RS project where one of the goals is to show how ICE might be used to contribute to various conferences and journals. So I worked out how to get a document that looked right for the ETD conference, but used ICE styles.</p><p>For those of you who know your way around the more technical side of your word processor this may be of interest. I'm putting this stuff up here so I don't forget. We'll come back to this on the ICE-RS project as this is one of our deliverables. </p><p>The process for OpenOffice.org or Word is as shown in this picture. I expand on it below with more words specific to OpenOffice.org. (I'm leaving out the issue of toolbars and macros here as we're working on making the ICE template into an OpenOffice.org extension).</p><p></p><p><a name="Object1"></a><img alt="Object1" class="fr1" height="468" src="/blog/2007/05/15/etd_paper/1.gif" style="border:0px;" width="534"/></p><p>Here are my notes on how to create conference template that uses ICE styles:</p><ol class="lin" style="list-style: decimal;"><li><p>Open the conference template using OOo Writer.</p></li><li><p>Rename all the obvious styles to ICE equivalents:</p><ul class="lib"><li><p>Heading-2 -&gt; h2</p></li><li><p>Standard -&gt; p</p></li></ul></li><li><p>For less obvious styles create new ICE styles that are subclasses. </p><p>For example we have not finalised our metadata styles in ICE yet, so I mapped as follows:</p><ul class="lib"><li><p>Abstract heading -&gt; h-abstract</p></li><li><p>Abstract -&gt; p-abstract</p></li><li><p>Author -&gt; p-author</p></li></ul></li><li><p>Save the new document as an OpenOffice.org template <span class="spCh spChx2013">–</span> leave any sample text in there as this will be your new conference template.</p></li><li><p>Open a blank ICE document using the default ICE template.</p></li><li><p><code>Load Styles...</code> from the new conference template. </p><p>The <code>Load Styles...</code> dialog is hidden in the Styles and Formating widget:</p><p><a name="graphics1"></a><img alt="graphics1" class="fr2" height="102" src="/blog/2007/05/15/etd_paper/2.jpg" style="border:0px;" width="310"/></p><ol class="li-lower-alpha" style="list-style: lower-alpha;"><li><p>Set the checkboxes as shown</p><p><a name="graphics2"></a><img alt="graphics2" class="fr3" height="32" src="/blog/2007/05/15/etd_paper/3.jpg" style="border:0px;" width="507"/></p></li><li><p>Click From File... and select your new conference template.</p></li></ol><p>You now have an ICE document where some of the styles are formatted in correctly for the new template, and others may be a bit off depending on how well the style inheritance stuff is working in the ICE template. (I say this because I think we can improve it).</p></li><li><p>Fix the ICE styles so they're consistent with the conference styles. </p><p>In my case that meant fixing all the list and blockquote styles to have the correct spacing before and after. This should have been easier than it was; we need to repair the ICE template so inheritance works better, it really should be a matter of fixing one style, say the basic list bullet and having all the others fall into line. </p><p>To fix the styles I resorted to saving my document, unzipping the parts inside and doing search and replace on the formatting. </p></li><li><p>Save the ICE document.</p><p>This has all the styles you need with the right look, but won't have the right margins and headers and footers etc.</p></li><li><p>Reopen the conference template, which has some, but not all ICE style.</p></li><li><p>Load the styles from the ICE document.</p></li></ol><p>Voila! A document that looks like it belongs at the conference, but which actually uses ICE style naming conventions.</p><p>For the other case where the conference organizers want the document with their styles we'll need a variant of the above process. I'm thinking along the lines of a style-mapping table that can be run to change the style names back to their styles on submission.</p><p></p></div>
+</body>
+</html>

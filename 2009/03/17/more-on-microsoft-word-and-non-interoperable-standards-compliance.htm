@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>More on Microsoft Word and non-interoperable standards compliance - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2009/03/17/more-on-microsoft-word-and-non-interoperable-standards-compliance.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="Glyn Moody was pleased with my response to his rant on Microsoft Collaboration. Others were less so. And Jim Downing would like me to expand on what I think might be good ways to do interoperable plugins. I&#39;ll start by dealing with the comments, which leads to looking at how …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="More on Microsoft Word and non-interoperable standards compliance"/>
+        <meta property="og:url" content="../../../2009/03/17/more-on-microsoft-word-and-non-interoperable-standards-compliance.htm"/>
+        <meta property="og:description" content="Glyn Moody was pleased with my response to his rant on Microsoft Collaboration. Others were less so. And Jim Downing would like me to expand on what I think might be good ways to do interoperable plugins. I&#39;ll start by dealing with the comments, which leads to looking at how …"/>
+        <meta property="article:published_time" content="2009-03-17" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2009/03/17/more-on-microsoft-word-and-non-interoperable-standards-compliance.htm"
+                       rel="bookmark"
+                       title="Permalink to More on Microsoft Word and non-interoperable standards compliance">
+                        More on Microsoft Word and non-interoperable standards compliance
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-03-17T04:12:51+00:00"> Tue 17 March 2009</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>Glyn Moody was
+<a href="http://opendotdotdot.blogspot.com/2009/03/opening-minds-about-closed-source.html">pleased</a>
+with <a href="http://ptsefton.com/2009/03/16/opening-up-microsoft.htm">my
+response</a> to
+his
+<a href="http://opendotdotdot.blogspot.com/2009/03/open-science-closed-source.html">rant</a>
+on Microsoft Collaboration.</p>
+<p>Others were less so. And Jim Downing would like me to expand on what I
+think might be good ways to do interoperable plugins. I'll start by
+dealing with the comments, which leads to looking at how plugins like
+Chem4Word might work. I don't have time right now to do a lot of
+background research for this post so I will pose a few questions and I'd
+appreciate more feedback.</p>
+<p>First up, Ian Easson has some advice for me.</p>
+<blockquote>
+<p>The essence of your objection to custom XML embedded in OOXML files is
+this:</p>
+<p><span class="spCh spChx201c">“</span>This custom XML is an insidious
+trick in my opinion as it makes documents non-interoperable. As soon
+as you use custom XML via Word 2007 you are guaranteeing that
+information will be lost when you share documents with OpenOffice.org
+users and potentially users of earlier versions of Word.<span
+class="spCh spChx201d">”</span></p>
+<p>You should learn more about something before you make a big fuss about
+it.</p>
+</blockquote>
+<p>Thanks Ian, I'll try to fit that into my busy schedule.</p>
+<p>He then says:</p>
+<blockquote>
+<p>First, it is entirely a question of the *consumer* of this
+information as to whether the custom XML gets lost. In the case of
+older versions of Word using Microsoft<span
+class="spCh spChx2019">’</span>s free add-on to read and write OOXML,
+THE INFORMATION IS NOT LOST. The <span
+class="spCh spChx201c">“</span>write<span
+class="spCh spChx201d">”</span> part of the add-in preserves any such
+information.</p>
+</blockquote>
+<p>Right. The information is written out into OOXML then when you open it
+in an earlier version of Word you can't see it. I tried this with the
+NLM plugin and as far as I recall there was no structure apparent if you
+open the file in an earlier version of Word. The result is that if you
+try to edit the document you break the structure at which point THE
+INFORMATION IS LOST.</p>
+<p>And then there's OpenOffice.org:</p>
+<blockquote>
+<p>As for Open Office not preserving it (if it does so, I don<span
+class="spCh spChx2019">’</span>t know), the fault is with OpenOfiice,
+not with Word or with the OOXML ability to embed custom XML. Talk to
+them about it.</p>
+</blockquote>
+<p>I'm pretty sure that the official Sun OOo build can read OOXML but not
+write it (thanks Sun for your commitment to interoperability) and
+whether it discards the XML is irrelevant in that case as there is no
+equivalent mechanism in the Open Document Format. There is another
+version of OOo with some code contributed by (I think) Novell <span
+class="spCh spChx2013">–</span> which may preserve the XML but the
+situation is the same as with earlier versions of Word <span
+class="spCh spChx2013">–</span> the XML is unlikely to survive editing
+of the document.</p>
+<blockquote>
+<p>As for the general argument that the custom XML in IS29500 documents
+acts to reduce interoperability, you are simply wrong, for two
+reasons:</p>
+<p>1) Applications that consume and generate IS29500 (OOXML) documents, if
+properly written, are supposed to ignore (not strip out) any such custom
+XML if they don<span class="spCh spChx2019">’</span>t understand it. So,
+the custom XML is totally invisible to such applications.<br />
+2) For applications that are specially written to consume or generate a
+specific variety of custom XML, the ability to have such XML embedded in
+ordinary office documents acts greatly to IMPROVE their specific kind of
+interoperability.</p>
+<p>So, the end result is: improved interoperability, with no downside.</p>
+</blockquote>
+<p>I disagree. This doesn't promote interoperability in practice, as I
+noted above, it promotes sales of Word 2007. I think this 'feature' is a
+trick.</p>
+<p>What <strong>does</strong> promote interoperability is the approach that Microsoft
+itself used to use with <a href="http://en.wikipedia.org/wiki/Object_Linking_and_Embedding">OLE
+embedding</a>.
+We saw this in action with Peter Murray-Rust last year. He brought a
+Word document with embedded ChemDraw chemistry pictures in it. Guess
+what? When you open them in OpenOffice.org Writer you can view the
+rendered image, even if you don't have ChemDraw. Even better, when you
+crack open the ODT file the original ChemDraw binary is there <span
+class="spCh spChx2013">–</span> we were able to feed that to some open
+source software that PMR and team were involved in writing and extract
+data. The result of using OLE was: workable interoperability. That's
+because OLE objects are embedded using standard interfaces not vague
+hand-wavy whatever-you-like Custom XML.</p>
+<p>If he'd turned up with a document authored with the Microsoft Word
+ontology plugin we would have seen none of the embedded semantics in OOo
+Writer. So, the end result would have been: reduced interoperability and
+no upside.</p>
+<blockquote>
+<p>You should rethink your attitude towards this matter after you have
+checked out the facts first.</p>
+</blockquote>
+<p>Thanks for visiting. Feel free to correct any factual mistakes.</p>
+<p><a href="http://blogs.msdn.com/dmahugh/">Doug Mahugh</a> of the Microsoft Office
+interoperability project also dropped by.</p>
+<blockquote>
+<p>I agree with your view of the value of interoperability with open
+software. Unfortunately, that isn<span
+class="spCh spChx2019">’</span>t possible yet for this issue, because
+there is no approach to semantic tagging that has been implemented in
+open-source applications. When the RDF approach in ODF 1.2 becomes
+widely implemented (assuming it does, of course), there may be some
+interesting options there, but for now implementers need to either use
+a product like Word, or overload styles (or something similar) to get
+the job done.</p>
+</blockquote>
+<p>Actually, Doug, my question was for the specific case being covered in
+the ontology Add-in. If I want to link a to bit of my text to a node in
+an ontology why could I not just use a link,as in <a href="http://linkeddata.org/">Linked
+Data</a>? Say I'm talking about my long suffering
+mongrel dog Spensa. I might want to link 'Spensa' using, say his OpenId
+and maybe the words 'mongrel dog' to some kind of taxonomy and/or
+ontology (I guess a taxonomy is an ontology or is that wrong?). This
+link could be styled to look unobtrusive in text, and could possibly be
+automatically footnoted for print viewing and linked in some cool way on
+the web. I had a go at this but I was unable to find a useful endpoint
+for my link for whatever species he is, canus-spensis I suppose.</p>
+<p>Or the case I mentioned of wanting to assert that authorship. What if my
+local ePrints repostiory had a page for me-as-author. It might look like
+<a href="http://eprints.usw.edu.au/authors/PeterMacolmSefton">http://eprints.usw.edu.au/authors/PeterMacolmSefton</a> and resolve to a
+page that describes me and the works that are attributed to me with a
+note there that says <span class="spCh spChx201c">“</span>if you want to
+indicate that this person is an author of a paper, link their name as it
+appears on the work to this page<span class="spCh spChx201d">”</span>.
+That is way simpler to implement than the stuff we talked about in our
+paper on <a href="http://www.dspace.cam.ac.uk/handle/1810/206423">embedding semantics in word processing
+documents</a>.</p>
+<p>Now, this linking is something anyone could do with a little training
+but you could build a Word plugin to make it easier. I'd have no
+objection to that <span class="spCh spChx2013">–</span> particuarly
+because it is possible to build code that can work in both Word (for
+Windows) and OOo as we have shown in our ICE project.</p>
+<p>If I'm wrong about simple hyperlinks being a workable solution there are
+a couple of mechanisms in Word for embedding semantics. Styles are
+probably no use in the case, but fie lds could work. A custom field
+could contain the semantic info, it will get stored in the underlying
+XML just fine and it will work with any version of Word. Why didn't the
+ontology tool get built using fields to store the info? It wouldn't have
+anything to do with wanting to sell more copies of Word 2007 now would
+it? (I know, OOo dumps Word fields but it would still be an improvement)</p>
+<p>Bookmarks are another (clumsy) way to do interop. I know this stuff
+because I did a lot of checking of facts when we worked to build the
+first interoperable citation toolbar for Zotero that would let you round
+trip documents from Word to Writer and back.</p>
+<p>I am well aware that this is a jungle. Microsoft is a big cat whose DNA
+tells it to sell more copies of Word 2007. That's fine, none of my
+business. My business, amongst other things is to help the people at USQ
+make web pages and books from their writing. And they don't all have
+Word 2007 and they don't all want Word 2007. I suspect that with the
+ontology project there would be a more interoperable way to do the
+in-document tagging. Maybe someone from the project could share some of
+the background. Did you try to use fields? Did you consider interop with
+OpenOffice.org? Do you test tagged documents that have been passed to
+older versions of Word, edited, saved and reopened?</p>
+<p>Now, onto the final bit where I think Doug is talking about the use case
+where you want to author a document in Word that is later going to be
+mapped onto a complex schema. After working in this field since 1995 I
+am pretty well convinced that attempting to write a fully featured
+editor layered on a word processor for the likes of the NLM DTD or
+DocBook is not going to end well. I have seen enough of these things
+marched out at SGML and XML conferences with great hopes and waited in
+vain for the follow up presentation next year. Anyone remember
+BladeRunner? Microsoft SGML Author?</p>
+<blockquote>
+<p>In most scenarios people have a specific schema in mind for tagging
+the content of the document, so with the styles approach you end up
+imitating XML structure through nested styles. That can get very
+complicated, and can cause interop issues for consumers that don<span
+class="spCh spChx2019">’</span>t handle nested styles well. I like the
+microformats/customXml approach because it<span
+class="spCh spChx2019">’</span>s simple for developers to work with,
+and consumers that don<span class="spCh spChx2019">’</span>t care
+about custom semantics can just ignore it without losing any
+formatting (as would happen if styles were ignored). It<span
+class="spCh spChx2019">’</span>s also easy to round-trip the customXml
+element, since it<span class="spCh spChx2019">’</span>s in the
+WordprocessingML namespace.</p>
+</blockquote>
+<p>Easy to round trip in Word 2007, but what happens if someone without the
+plugin edits a document with the custom XML in it, particularly one like
+an NLM document where the stuff is all over the place? What if they
+reorder sections, or delete a section heading? Has this been tested or
+is the intention with the NLM plugin to recommend that people only use
+Word 2007?</p>
+<p>Doug is right that overly complex style systems don't work for authors.
+Been there. Done that. That's why we have devised a simple, generic set
+of styles that users can use to create structured HTML, on the
+<a href="http://ice.usq.edu.au/">ICE</a> project. Ian Barnes used the same styles
+to create DocBook, and I'm pretty sure we could do the same for NLM but
+all we would be doing is producing a small subset of those formats.</p>
+<p>There are so many words flying around here it may not be clear what I'm
+complaining about. So I will try again. What I am saying is:</p>
+<p>We in the Academic community have an interest in promoting interoperable
+authoring practices so our users across platforms can collaborate on
+documents together. Therefore if we get involved in working with
+proprietary software we should make a serious effort to make sure that
+what work <em>we</em> do will work as widely as possible. <em>Our</em> goal is not to
+promote Word 2007. If we could get the work done using an older version
+or a free alternative then we might save some money that we can use for
+whatever it is we do here in the academy.</p>
+<p>I think that the XML format under Microsoft Office is being used as a
+distraction from real practical issues of interoperability. Whether this
+is good for Microsoft in the long run is for them to work out but I am
+pretty convinced that some of the solutions coming out of Microsoft
+Research are no good for me or my colleagues and I will continue to say
+so and continue to work with my team to do things in a way that benefits
+all of us.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'more-on-microsoft-word-and-non-interoperable-standards-compliance';
+                var disqus_url = 'http://ptsefton.com/2009/03/17/more-on-microsoft-word-and-non-interoperable-standards-compliance.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

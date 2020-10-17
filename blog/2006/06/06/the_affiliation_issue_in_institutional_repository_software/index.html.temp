@@ -1,0 +1,143 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: The Affiliation Issue in Institutional Repository software
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>The Affiliation Issue in Institutional Repository software</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/06/index.html">06</a>-<a href="/blog/2006/06/06/index.html">06</a>
+<div><p class="P1">My favourite issue in the work we're doing with institutional repositories is what I call the Affiliation Issue. It's all about how you record authors and their institutional affiliation in your repository. In the Australian context there are two very good reasons to do this:</p><ol class="lin"><li><p><b>For reporting</b> to the Australian Department of Education, Science and Training and Training, know to its friends as <a href="http://dest.gov.au/">DEST</a>,  institutions need to keep track of research output. </p></li><li><p>For their own purposes institutions often also want to know not just the total number of publications, but <b>which departments are publishing</b>.</p></li></ol><p>Sounds simple, but there are lots of issues. Affiliation can change over time. Departments change their names or merge and as with any metadata consistency is important. Am I the same Peter Sefton who also calls himself Petie Sefton, whose honours thesis  is cited in <a href="http://portal.acm.org/citation.cfm?id=972659&amp;dl=GUIDE&amp;coll=GUIDE">this paper</a>. </p><p>(Answer: yes. Google Scholar seems to be able to work out that Peter Sefton and Petie Sefton are synonyms. Cuts my vanity searching time in half.  But I'm not the only Peter Sefton mentioned.).</p><p>I'll talk about the four repository software packages with which I have some experience through the RUBRIC project. They are:</p><ol class="lin"><li><p><a href="http://www.eprints.org/software/">ePrints</a> (not part of RUBRIC but used by USQ)</p></li><li><p><a href="http://sourceforge.net/projects/fez/">Fez</a></p></li><li><p><a href="http://www.dspace.org/">DSpace</a></p></li><li><p><a href="http://www.vtls.com/Products/vital.shtml">VTLS Vital</a></p></li></ol><p>But first, a few words on identity management.</p><h1>
+<a id="id801514" name="id801514"><!--id801514--></a>Identity management</h1><p>Broadly speaking, there are two approaches to identify management in repository software. Either it's managed or it aint. </p><p>That is, in some systems there is a table of Authors, and the metadata for a record contains a key that points to that table. So instead of putting my name in the author field I pick it off a list and the system stores the fact that author 8342947 (that's my student number from the University of Sydney) wrote this item. </p><p>Other systems just store a name, as a string.</p><dl><dt>Author identities managed:</dt><dd>ePrints and Fez both do it this way. Fez has a lot of functionality in this area for describing the structure of your organization.</dd><dt>Not managed: </dt><dd>DSpace and VTLS Vital / VALET.</dd></dl><p>I think that managed identities need to be used with caution. Affiliations change, even potentially over short timeframes so someone might be publishing from two departments and departments can change their names, split and merge.</p><h1>
+<a id="id801492" name="id801492"><!--id801492--></a>Affiliation</h1><p>So the repository solutions we're looking at divide neatly into ID Managed and ID Not Managed, but it gets better. They also divide equally on the issue of whether affiliation can be stored with the author's name as a bundle or not.</p><p>Some repository software, like DSpace uses flat metadata consisting of name value pairs. So you can say:</p><div align="left" class="Table49"><table class="Table49"><tbody><tr><th class="Table49_A1">
+<p>Name</p></th>
+<th class="Table49_B1">
+<p>Value</p></th>
+</tr><tr><td class="Table49_A2">
+<p>Name</p></td>
+<td class="Table49_B2">
+<p>Peter Sefton</p></td>
+</tr><tr><td class="Table49_A2">
+<p>Affiliation</p></td>
+<td class="Table49_B2">
+<p>Rubric Project, USQ</p></td>
+</tr></tbody></table></div><p></p><p>Which is OK until we get to two authors. Now which affiliation belongs with which person? There are no guarantees that the order of the metadata will stay the same as it goes in and out of repositories.</p><div align="left" class="Table50"><table class="Table50"><tbody><tr><th class="Table50_A1">
+<p>Name</p></th>
+<th class="Table50_B1">
+<p>Value</p></th>
+</tr><tr><td class="Table50_A2">
+<p>Author Name</p></td>
+<td class="Table50_B2">
+<p>Peter Sefton</p></td>
+</tr><tr><td class="Table50_A2">
+<p>Author Affiliation</p></td>
+<td class="Table50_B2">
+<p>Rubric Project, USQ</p></td>
+</tr><tr><td class="Table50_A2">
+<p>Author Name</p></td>
+<td class="Table50_B2">
+<p>Catherine Sefton</p></td>
+</tr><tr><td class="Table50_A2">
+<p>Author Affiliation</p></td>
+<td class="Table50_B2">
+<p>Department of Presents, Summer Hill University</p></td>
+</tr></tbody></table></div><p>There are a number of ugly hacks one might use to record author affiliation in systems that use flat metadata:</p><ol class="lin"><li><p>Make a field with author and affiliation concatenated. Yuck. Violates several basic principles of computer science, the names of which I have forgotten. Error prone.</p></li><li><p>Create another data stream that <b>does</b> do nested metadata and then change the repository to be aware of it. This is a possible DSpace solution, but would take some work.</p></li><li><p>Add special fields like author1, affiation1, author2, affiliation2. Workable, but really, really ugly.</p></li></ol><p>Some solutions do allow nested metadata so if I were to write a paper with my little sister the repository could keep track of our affiliation like so:</p><p></p><div align="left" class="Table51"><table class="Table51"><tbody><tr><th class="Table51_A1" colspan="2">
+<p>Name</p></th>
+<th class="Table51_C1">
+<p>Value</p></th>
+</tr><tr><td class="Table51_A2">
+<p>Author</p></td>
+<td colspan="2">
+<table><tbody><tr><td class="Table51_A2">
+<p>Name</p></td>
+<td class="Table51_B2_2_1">
+<p>Peter Sefton</p></td>
+</tr><tr><td class="Table51_A2">
+<p>Affiliation</p></td>
+<td class="Table51_B2_2_1">
+<p>Rubric Project, University of Southern Queensland</p></td>
+</tr></tbody></table></td>
+</tr><tr><td class="Table51_A2">
+<p>Author</p></td>
+<td colspan="2">
+<table><tbody><tr><td class="Table51_A2">
+<p>Name</p></td>
+<td class="Table51_B2_2_1">
+<p>Catherine Sefton</p></td>
+</tr><tr><td class="Table51_A2">
+<p>Affiliation</p></td>
+<td class="Table51_B2_2_1">
+<p>Department of Presents, Summer Hill University</p></td>
+</tr></tbody></table></td>
+</tr></tbody></table></div><p>That's nested metadata. Now our simple taxonomy of repository solutions looks like this. The two that support nested metadata are both based on the <a href="http://www.fedora.info/">Fedora repository backend</a>, which is no surprise as it is a very flexible component that allows multiple streams of structured metadata.</p><div align="left" class="Table48"><table class="Table48"><tbody><tr><th class="Table48_A1">
+<p></p></th>
+<th class="Table48_A1">
+<p><b>ID Managed</b></p></th>
+<th class="Table48_C1">
+<p><b>ID Not Managed</b></p></th>
+</tr><tr><td class="Table48_A2">
+<p><b>Flat metadata</b></p></td>
+<td class="Table48_A2">
+<p>GNU ePrints</p></td>
+<td class="Table48_C2">
+<p>DSpace</p></td>
+</tr><tr><td class="Table48_A2">
+<p><b>Nested metadata</b></p></td>
+<td class="Table48_A2">
+<p>Fez (sort-of the feature is there but I ran into some bugs trying it out)</p></td>
+<td class="Table48_C2">
+<p>VTLS VITAL</p></td>
+</tr></tbody></table></div><p></p><h1>
+<a id="id857341" name="id857341"><!--id857341--></a>My opinion</h1><p>This is my opinion, which is why this is being posted here rather than on the RUBRIC site, but I think that storing references to database tables is not a good idea for repositories. Repositories should reflect the state of an item when it was created, with the name of the person and department involved <b>as they were at the time</b>. If the repository software stores references to information elsewhere instead then important information will be lost.</p><p>Lookup tables that help you pick canonical versions of author names and correctly spelled department names are a good idea. But I think that the details of author affiliation need to be a snapshot in time, and not a reference to database tables that might change. Although a unique ID as well might be a good idea, so if I change my name from Petie Sefton to Peter Sefton to ptsefton you can track me.</p><p>I want to be clear that I don't think one should or should not use any of the above software just because of this issue. What I do think is that repository implementors need to be aware of the affiliation issue and work out what they're going to do about it. </p><p>My feeling (not a RUBRIC recommendation, my feeling) is that even if one is using one of the ID managed repositories there should be a plain-text 'snapshot' of author affiliation as well as any managed ID, so that's not a barrier to using something like Fez or ePrints. For recording affiliation repositories that allow nested metadata make it much more straightforward.</p><p>Note that I left out a lot of technical detail here – and generalized a fair bit to make this simple taxonomy of repositories.</p><p>(I'll leave the comments open here for a change, so please contribute if you have anything to add.)</p><p></p></div>
+</body>
+</html>

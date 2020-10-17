@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Deflation in repository clicks - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2008/06/11/deflation-in-repository-clicks.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="My thoughts on repository workflow Net-benefit repository workflows Chris Rusbridge is contributing to repository click deflation at the Digital Curation Blog with a post about Negative Click Repositories. Why deflation? At Open Repositories 20008 a group of us Australian developers entered in the Repositories Challenge, with an entry entitled Zero …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Deflation in repository clicks"/>
+        <meta property="og:url" content="../../../2008/06/11/deflation-in-repository-clicks.htm"/>
+        <meta property="og:description" content="My thoughts on repository workflow Net-benefit repository workflows Chris Rusbridge is contributing to repository click deflation at the Digital Curation Blog with a post about Negative Click Repositories. Why deflation? At Open Repositories 20008 a group of us Australian developers entered in the Repositories Challenge, with an entry entitled Zero …"/>
+        <meta property="article:published_time" content="2008-06-11" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2008/06/11/deflation-in-repository-clicks.htm"
+                       rel="bookmark"
+                       title="Permalink to Deflation in repository clicks">
+                        Deflation in repository clicks
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-06-11T03:56:46+00:00"> Wed 11 June 2008</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id2">My thoughts on repository workflow</a></li>
+<li><a href="#id3">Net-benefit repository workflows</a></li>
+</ul>
+</div>
+<div>
+<p>Chris Rusbridge is contributing to repository click deflation at the
+Digital Curation Blog with a post about <a href="http://digitalcuration.blogspot.com/2008/06/negative-click-repositories.html">Negative Click
+Repositories</a>.</p>
+<p>Why deflation?</p>
+<p>At Open Repositories 20008 a group of us Australian developers entered
+in the Repositories Challenge, with an entry entitled <a href="http://pubs.or08.ecs.soton.ac.uk/119/">Zero Click
+Ingest</a> [1]<span
+class="spCh spChx2060">⁠</span>. The introduction puts it like this:</p>
+<blockquote>
+<p>This micro-project demonstrates a way to eliminate the repository
+deposit step altogether, by having the repository software take
+responsibility for collecting the <span style="font-size:10pt; "><span
+class="T1">content that it needs. It involves using the Integrated
+Content Environment</span></span><span style="font-size:7pt; "><span
+class="T2">1</span></span><span style="font-size:10pt; "><span
+class="T1"> (Sefton </span></span>2006)[2]<span
+class="spCh spChx2060">⁠</span> (ICE) as a document authoring system,
+but the principle could be applied to other content management systems
+which support metadata or category-aware ATOM or RSS feeds, with the
+ability to supply the requisite formats. We show how documents created
+and managed in ICE can be automatically ingested into a repository at
+the appropriate time, based on document state.</p>
+</blockquote>
+<p>So we did <strong>zero click</strong> but now we have to go for negative clicks?
+That's not fair!</p>
+<p>There are two aspects of this I'd like to comment on.</p>
+<ol>
+<li>
+<p>Chris is calling for other people's take on the negative click
+repository, so I'll contribute my thoughts.</p>
+</li>
+<li>
+<p>It would be wrong to think that we can only get people to use new
+software if it means they don't have to learn anything new. I don't
+buy that; people can change when they see the benefits. The trick is
+to get them to want to change by themselves.</p>
+</li>
+</ol>
+<h1><span id="id2"></span><!--id2--></a>My thoughts on repository workflow</h1>
+<p>I've been thinking about repository workflow ever since I joined the
+<a href="http://rurbic.edu.au/">RUBRIC</a> project in 2005. I was outraged that
+this Institutional Repository business seemed to be all about putting
+PDFs into ugly web sites. Here were all these custodians of collections
+of a few thousand PDF files getting together at conferences to talk
+about how they were doing Web two-dot-oh. Um, no you're not. Try using a
+web format first. The program committee at Open Repositories 2007 didn't
+accept my paper along those lines but they let me give a
+<a href="http://ice.usq.edu.au/presentations/or07/ice-rs.htm">poster</a>. That
+poster is available in HTML, PDF and as a slideshow, all generated from
+a single source document. Now that's at least web 1.01.</p>
+<p>In 2006, I talked about some of the possibilities for smart content
+management systems (like ICE) to supply content directly to
+repositories, in <a href="http://ptsefton.com/blog/2006/10/24/workflow_2_0/">Workflow
+2.0</a>.</p>
+<p>We still haven't done most of what I talked about in Workflow 2.0,
+although the Zero Click Ingest demo was a big step in proving the
+concept. But we're about to make a big push in this direction in
+collaboration with Jim Downing and team at Cambridge as part of the
+<a href="http://infteam.jiscinvolve.org/2008/06/04/orejisc/">JISC TheOREM
+project</a>.</p>
+<p>In TheOREM we're going to set up ICE as a 'Thesis Management System'
+where a candidate can work on a thesis which is a true mashup of data
+and document aka a datument [3]<span class="spCh spChx2060">⁠</span>.
+When it's done and the candidate is rubber-stamped with a big PhD, the
+Thesis management system will flag that, and the thesis will flow off to
+the relevant IR and subject repositories, as a fully-fledged part of the
+semantic web, thanks the embedded semantics and links to data.</p>
+<p>One more idea: consider repository ingest via Zotero or EndNote. In
+writing this post I just went to the OR08 repository and used Zotero to
+grab our paper from there so I could cite it here. It would be cool to
+push it to the USQ ePrints with a single click.</p>
+<p>That's one click but it's about fifty <strong>less</strong> than the alternative. Is
+that what you mean by negative, Chris?</p>
+<h1><span id="id3"></span><!--id3--></a>Net-benefit repository workflows</h1>
+<p>I'm not sure I'm happy with the implications of the term <em>negative
+click</em> here (even 'zero clicks' is a bit suss). As Chris puts it:</p>
+<blockquote>
+<p>So we need to develop repositories that make the data work to take
+human work away: negative click repositories.</p>
+</blockquote>
+<p>Not that I don't agree that we want to take the work away, just that I
+think this will involve change and I think we should be careful not to
+imply that we can perform magic.</p>
+<p>At USQ, the <a href="http://ice.usq.edu.au/presentations/or07/ice-rs.htm">Integrated Content
+Environment</a> is on
+the way to becoming a 'core' system for producing courseware. It has
+been available for a few years under an open source license, but as far
+as I know it's not used much at all outside of USQ. Why?</p>
+<p>I think its because it represents a net loss for most users; they don't
+need to do what ICE does and/or they can't afford the time to set it all
+up. This is why almost nobody has taken it up spontaneously for general
+writing tasks or even for courseware outside of our institution.</p>
+<p>But at USQ, where we are reaffirming our commitment to flexible delivery
+<span class="spCh spChx2013">–</span> we call it Fleximode <span
+class="spCh spChx2013">–</span> staff know they <strong>have to</strong> create
+resources that suit on-campus, web and print use. ICE helps with that,
+so it has grown organically from our first user to a couple of hundred
+because overall it makes life easier. Learning ICE is not trivial, you
+have to do some training, you have to change the way you work, and the
+organization needs to supply support. If you do use it, though, there's
+a net benefit.</p>
+<p>I think it is a mistake to focus on the Negative Click repository as a
+goal and assume that it's going to happen without changing user
+behavior. If people are bashing away in word processors as though they
+are typewriters then you miss the opportunity to create XHTML reliably,
+and you throw out heaps of semantics. We'll be stuck with PDF
+repositories for a long time until we empower our authors to do better.</p>
+<p>If we can seed the change by empowering some researchers to perform much
+better <span class="spCh spChx2013">–</span> to more easily write up
+their research, to begin to embed data and visualizations, to create
+semantic-web-ready documents <span class="spCh spChx2013">–</span> then
+their colleagues will notice and make the change too. That's two things:</p>
+<ol>
+<li>
+<p>Make it easier.</p>
+</li>
+<li>
+<p>Make the result sexier.</p>
+</li>
+</ol>
+<p>This is one reason why TheOREM is so exciting; not that it's going to
+look at ORE but that it will be a first step to providing tools for PhD
+candidates and their supervisors that I hope will be the envy of others,
+just as Shirley Reushle used the first version of ICE to make an online
+course that met the USQ standards and her colleagues saw it and wanted
+to do the same.</p>
+<p>At one point in the development of ICE we were beating off potential
+users. I reckon we can do the same with eResearch and repositories but
+it's hard work and it takes time.</p>
+<p>[1] L. Monus et al., <span class="spCh spChx201c">“</span>Zero Click
+Ingest,<span class="spCh spChx201d">”</span> Apr. 2008;
+http://pubs.or08.ecs.soton.ac.uk/119/.</p>
+<p>[2] P. Sefton, <span class="spCh spChx201c">“</span>The Integrated
+Content Environment for Research and Scholarship,<span
+class="spCh spChx201d">”</span> <em>ICE Website</em>, 2006;
+http://ice.usq.edu.au/introduction/ ice_rs.htm.</p>
+<p>[3] P. Murray-Rust and H.S. Rzepa, <span
+class="spCh spChx201c">“</span>The Next Big Thing: From Hypermedia to
+Datuments,<span class="spCh spChx201d">”</span> <em>Journal of Digital
+Information</em>, vol. 5, 2004, p. 248;
+http://jodi.tamu.edu/Articles/v05/i01/Murray-Rust/?printable=1.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'deflation-in-repository-clicks';
+                var disqus_url = 'http://ptsefton.com/2008/06/11/deflation-in-repository-clicks.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

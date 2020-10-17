@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/ptsefton
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ptsefton.com
+  * I am ptsefton (https://keybase.io/ptsefton) on keybase.
+  * I have a public key ASC4tD4OhLPv55oYWLyTpAjkOcP3SaOuVLCLWL4xB-daUAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120b8b43e0e84b3efe79a1858bc93a408e439c3f749a3ae54b08b58be3107e75a500a",
+      "host": "keybase.io",
+      "kid": "0120b8b43e0e84b3efe79a1858bc93a408e439c3f749a3ae54b08b58be3107e75a500a",
+      "uid": "870d5d5d9bfe3671f2403c66e053a919",
+      "username": "ptsefton"
+    },
+    "merkle_root": {
+      "ctime": 1516568706,
+      "hash": "628aba954448b009136c37bb17c5b0a0d22b3895c163d32e17b2d6a23eadd6889d7b9e7c524e17f77797c53d01a77041b65109c012069259e8661a5a68999cf4",
+      "hash_meta": "40da9ab5b169e2506b7da27a459039b3828367199ee5dd80a8fcd5e68fd91a76",
+      "seqno": 1953067
+    },
+    "service": {
+      "hostname": "ptsefton.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.38"
+  },
+  "ctime": 1516568726,
+  "expire_in": 504576000,
+  "prev": "00022e7a6ebb8b1303f60a8503576e2e189d1d8a40a2aa1e0d37ddde5e8cda23",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEguLQ+DoSz7+eaGFi8k6QI5DnD90mjrlSwi1i+MQfnWlAKp3BheWxvYWTFA0N7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYjhiNDNlMGU4NGIzZWZlNzlhMTg1OGJjOTNhNDA4ZTQzOWMzZjc0OWEzYWU1NGIwOGI1OGJlMzEwN2U3NWE1MDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYjhiNDNlMGU4NGIzZWZlNzlhMTg1OGJjOTNhNDA4ZTQzOWMzZjc0OWEzYWU1NGIwOGI1OGJlMzEwN2U3NWE1MDBhIiwidWlkIjoiODcwZDVkNWQ5YmZlMzY3MWYyNDAzYzY2ZTA1M2E5MTkiLCJ1c2VybmFtZSI6InB0c2VmdG9uIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE2NTY4NzA2LCJoYXNoIjoiNjI4YWJhOTU0NDQ4YjAwOTEzNmMzN2JiMTdjNWIwYTBkMjJiMzg5NWMxNjNkMzJlMTdiMmQ2YTIzZWFkZDY4ODlkN2I5ZTdjNTI0ZTE3Zjc3Nzk3YzUzZDAxYTc3MDQxYjY1MTA5YzAxMjA2OTI1OWU4NjYxYTVhNjg5OTljZjQiLCJoYXNoX21ldGEiOiI0MGRhOWFiNWIxNjllMjUwNmI3ZGEyN2E0NTkwMzliMzgyODM2NzE5OWVlNWRkODBhOGZjZDVlNjhmZDkxYTc2Iiwic2Vxbm8iOjE5NTMwNjd9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoicHRzZWZ0b24uY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zOCJ9LCJjdGltZSI6MTUxNjU2ODcyNiwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiIwMDAyMmU3YTZlYmI4YjEzMDNmNjBhODUwMzU3NmUyZTE4OWQxZDhhNDBhMmFhMWUwZDM3ZGRkZTVlOGNkYTIzIiwic2Vxbm8iOjUsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAxXTLmDiz0Fzz8B0fUigV+Z5yHfrDg31BXIlHRiJp6+jMM+Wro1O2MYmGoHcEkMJvOKImZtknEucJDNv1HeRTAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGHiOQn5LJoIo4mRdJ/H4QQiBX2SXOzfAjvBQkfc/NZJo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ptsefton
+
+==================================================================

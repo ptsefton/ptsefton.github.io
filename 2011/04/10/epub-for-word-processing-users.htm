@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>EPub for word processing users - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2011/04/10/epub-for-word-processing-users.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="Summary Initial impressions Demonstration software Where next? Lessons learned [This is a repost of http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/ - if you have comments please make them over on there on the jiscPUB blog.] +--------------------------------------+--------------------------------------+ | Author: | | | | &lt;span | | | rel=&#34;http://purl.org/dc/elements/1.1 | | | /creator&#34; | | | resource …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="EPub for word processing users"/>
+        <meta property="og:url" content="../../../2011/04/10/epub-for-word-processing-users.htm"/>
+        <meta property="og:description" content="Summary Initial impressions Demonstration software Where next? Lessons learned [This is a repost of http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/ - if you have comments please make them over on there on the jiscPUB blog.] +--------------------------------------+--------------------------------------+ | Author: | | | | &lt;span | | | rel=&#34;http://purl.org/dc/elements/1.1 | | | /creator&#34; | | | resource …"/>
+        <meta property="article:published_time" content="2011-04-10" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2011/04/10/epub-for-word-processing-users.htm"
+                       rel="bookmark"
+                       title="Permalink to EPub for word processing users">
+                        EPub for word processing users
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-04-10T22:46:29+00:00"> Sun 10 April 2011</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id2"><span>Summary</span></a></li>
+<li><a href="#id4"><span>Initial impressions</span></a></li>
+<li><a href="#id5"><span>Demonstration software</span></a></li>
+<li><a href="#id7"><span>Where next?</span></a></li>
+<li><a href="#id9"><span>Lessons learned</span></a></li>
+</ul>
+</div>
+<div>
+<p>[This is a repost of <a href="http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/"><span
+class="Hyperlink">http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/</span></a> -
+if you have comments please make them <a href="http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/"><span class="Hyperlink">over on
+there on the jiscPUB
+blog</span></a>.]</p>
+<div class="Table3"
+style="width: 100%; margin: 0px; padding: 0px; text-align:left;">
+<p>+--------------------------------------+--------------------------------------+
+| Author:                              | <p>                                  |
+|                                      | &lt;span                                |
+|                                      | rel=&quot;http://purl.org/dc/elements/1.1 |
+|                                      | /creator&quot;                            |
+|                                      | resource=&quot;http://trove.nla.gov.au/pe |
+|                                      | ople/541658&quot;&gt;&lt;span                   |
+|                                      | property=&quot;http://xmlns.com/foaf/0.1/ |
+|                                      | name&quot;                                |
+|                                      | resource=&quot;http://trove.nla.gov.au/pe |
+|                                      | ople/541658&quot;&gt;[&lt;span                  |
+|                                      | class=&quot;Internetlink&quot;&gt;Peter           |
+|                                      | Sefton</span>](http://ontologize.me/ |
+|                                      | ?tl_p=http://purl.org/dc/terms/creat |
+|                                      | or&amp;triplink=http://purl.org/triplink |
+|                                      | /v/0.1&amp;tl_o=http://trove.nla.gov.au/ |
+|                                      | people/541658)</span></span>         |
+|                                      | &lt;                                   |
+|                                      | <script type="text/javascript">      |
+|                                      | <!--                                 |
+|                                      | h='&#112;&#116;&#x73;&#x65;&#102;&#1 |
+|                                      | 16;&#x6f;&#110;&#46;&#x63;&#x6f;&#x6 |
+|                                      | d;';a='&#64;';n='&#112;&#116;';e=n+a |
+|                                      | +h;                                  |
+|                                      | document.write('<a h'+'ref'+'="ma'+' |
+|                                      | ilto'+':'+e+'" clas'+'s="em' + 'ail" |
+|                                      | >'+'<span class="Internetlink">pt@pt |
+|                                      | sefton.com</span>'+'<\/'+'a'+'>');   |
+|                                      | // -->                               |
+|                                      | </script>                            |
+|                                      | <noscript>                           |
+|                                      | &lt;span                               |
+|                                      | class=&quot;Internetlink&quot;&gt;pt@ptsefton.co |
+|                                      | m&lt;/span&gt;                           |
+|                                      | (pt at ptsefton dot com)             |
+|                                      | </noscript>                          |
+|                                      | &gt;                                   |
+|                                      | </p>                                 |
++--------------------------------------+--------------------------------------+
+| Date:                                | Time-stamp: &lt;2011-04-05 15:38:38&gt;  |
++--------------------------------------+--------------------------------------+
+| Description:                         | First informal report on progress    |
+|                                      | with [&lt;span                          |
+|                                      | class=&quot;Internetlink&quot;&gt;Workpackage     |
+|                                      | 3</span>](http://jiscpub.blogs.edina |
+|                                      | .ac.uk/2011/03/03/workpackage-3/).   |
+|                                      | Looks at tools for turning word      |
+|                                      | processing documents such as         |
+|                                      | Microsoft Word documents into epub.  |
++--------------------------------------+--------------------------------------+</p>
+</div>
+<h1><span id="id2"></span><span></span></a>Summary</h1>
+<p>Last week I started on the JISCPub project on <a href="http://jiscpub.blogs.edina.ac.uk/2011/03/03/workpackage-3/"><span
+class="Internetlink">workpackage
+3</span></a>.
+My role on this project is to be the <span
+class="spCh spChx201c">“</span>Wordprocessing Tool Expert<span
+class="spCh spChx201d">”</span>.</p>
+<p>I started by considering the first use case, seeing how a PhD thesis
+could be converted to EPUB for mobile use. I happen to have a very
+worthy test file in the form of Danny Kingsley's Creative Commons
+Licensed: <span class="spCh spChx201c">“</span>The effect of scholarly
+communication practices on engagement with open access: Australian study
+of three disciplines<span class="spCh spChx201d">”</span> from 2008.</p>
+<p>I am working three kinds of deliverable:</p>
+<ul>
+<li>
+<p>Blog reports. This is the first.</p>
+</li>
+<li>
+<p>Demonstration software <span class="spCh spChx2013">–</span> I have
+produced a simple demo that can covert word documents into EPUB
+files <span class="spCh spChx2013">–</span> you <a href="http://ec2-50-16-170-243.compute-1.amazonaws.com/api/convert/odt"><span
+class="Internetlink">try it
+out</span></a>,
+assuming you can work out how, or read on for more background about
+the service, how raw it is, excuses about its somewhat agricultural
+interface and the fact that it might not work very well yet.</p>
+</li>
+<li>
+<p>Demonstration files showing the results of various processes. I have
+set up a dropbox.com folder for the project team, where I will be
+keeping records of the experiments I'm doing with various bits of
+software. This will be available as a data set at the end of the
+project. One demo is this post, formatted as an EPUB file <span
+class="spCh spChx2013">–</span> using the tool I discuss below. I
+tried to upload it to WordPress but it does not meet security
+requirements, you can <a href="http://dl.dropbox.com/u/24994372/JISCPub-wpack3-post1.epub"><span>grab the post in EPUB format from
+here</span></a>.
+Comments welcome <span class="spCh spChx2013">–</span> this is a
+test process only.</p>
+</li>
+</ul>
+<h1><span id="id4"></span><span></span></a>Initial impressions</h1>
+<p>I started this investigation by assuming that I had a thesis I wanted to
+publish as an ebook, via EPUB and doing various Google searches for
+stuff like <span class="spCh spChx201c">“</span>How to make an EPUB<span
+class="spCh spChx201d">”</span>. Theo Andrew is going to talk to some
+real users about this soon <span class="spCh spChx2013">–</span> so
+we'll find out a lot more about what kinds of assumptions are valid to
+make about our users, graduate students and academics.</p>
+<p>There are some sites which review software, notably <a href="http://www.jedisaber.com/eBooks/tutorial.asp"><span
+class="Internetlink">Jedisaber's</span></a>,
+which has reviews of many software packages related to EPUB and ebooks
+in general, and a how-to on making an EPUB from scratch, by hand. I have
+been trying out various bits of software against the uses cases for this
+project <span class="spCh spChx2013">–</span> without a great deal of
+success <span class="spCh spChx2013">–</span> and I will document this
+behind the scenes and save input and output documents as part of the
+data set for this project.</p>
+<p>As it says in the plan for this workpackage the most obvious bit of
+software to try out is <a href="http://calibre-ebook.com/"><span
+class="Internetlink">Calibre</span></a> which is
+a mature open source ebook management application available for all the
+major platforms. Calibre is a very feature-rich application with a
+somewhat quirky interface which doesn't do the one thing I wanted for my
+first experiment. It doesn't convert Microsoft Word .doc files into
+<code>.epub</code> format. Yes, you can deal with Word docs by doing a 'Save as
+HTML' but that's not the ideal process for casual users. Calibre does do
+open document format (<code>.odt</code>) files, though, so I tried that with
+Danny's thesis, using open office to save it as <code>.odt</code>, after some minor
+tweaking in OpenOffice. I found that:</p>
+<ul>
+<li>
+<p>On large files like the thesis it takes around 100-200 minutes to
+convert the document, in the background, using the GUI on my modest
+desktop PC.</p>
+</li>
+<li>
+<p>Some graphics are not supported, for example embedded vector
+drawings. I don't think there's a good solution for this that does
+not involve firing up a word processor to render some things <span
+class="spCh spChx2013">–</span> I will come back to this in a future
+post on the current (terrible) state of the art in Word processor to
+HTML conversion, and what could be done about it.</p>
+</li>
+</ul>
+<p>(I am wondering if the speed of Calibre is the reason I never heard back
+from the odt2ebook.com site, which offered free conversions; there was
+supposed to be an email notification but it has been a few days.)</p>
+<h1><span id="id5"></span><span></span></a>Demonstration software</h1>
+<p>After about half a day of investigation, It became clear that there was
+a big crater in the ebook software landscape. There is no obvious way to
+make an ebook from a Word document. Yes there are a some word processing
+packages which will do it, but nothing simple or online. Liza Daly <span
+class="spCh spChx2013">–</span> the ebook expert on this project
+confirmed this so I set out to at least try to fill that gap. My
+starting point was the <a href="http://ice.usq.edu.au/"><span
+class="Internetlink">ICE</span></a> software I
+established at the <a href="http://www.usq.edu.au/"><span class="Internetlink">University of
+Sout</span><span class="Internetlink">hern
+Queensland</span></a>, where I worked until very
+recently Over the years this has evolved into a very capable word
+processing format converter for the web. It is mainly designed to work
+with documents with a known input format, using its own set of styles,
+but it can also deal with generic documents with standard headings. It
+already had some EPUB export but only for collections of documents, not
+for a single word processing file via a simple web service.</p>
+<p>The idea was to use ICE to generate HTML then write code to break it up
+and store it a zip file, EPUB style. ICE does a reasonable job of
+converting the test thesis to HTML by looking for standard heading
+styles (Heading 1 .. n) and guessing that 'Quote' is a style for
+quotations. There are no widely used standards for word processing
+styles, so some heuristics are required; the current ICE code does not
+do a lot of this, but it could be extended.</p>
+<p>What I did was:</p>
+<ul>
+<li>
+<p>Looked at building on work already in ICE and other USQ software
+that makes EPUB files. I got something running, but in the process
+of developing it, I discovered the command line features in Calibre
+were probably a better option.</p>
+</li>
+<li>
+<p>Set up a possibly temporary <a href="http://code.google.com/p/integrated-content-environment/source/checkout"><span class="Internetlink">code
+repo</span><span class="Internetlink">sitory at Google
+Code</span></a>
+and checked in the latest trunk of ICE.</p>
+</li>
+<li>
+<p>Added simple code to the ICE conversion service to <a href="http://calibre-ebook.com/user_manual/cli/ebook-convert-3.html#html-input-to-epub-output"><span
+class="Internetlink">call
+Calibr</span></a>e
+on the ICE-generated HTML. The command currently looks like this.</p>
+<p><code>ebook-convert &quot;/tmp/ICE-u6hayU.ice/Kingsley-Formatted PhD 12May09.htm&quot; &quot;/tmp/ICE-u6hayU.ice/Kingsley-Formatted PhD 12May09.epub&quot;  --chapter &quot;//*[name()='h1']&quot;  --level1-toc &quot;//*[name()='h1']&quot; --level2-toc &quot;//*[name(``)='h2']&quot; --title &quot;The effect of scholarly communication practices on engagement &quot; --authors &quot;&quot; --publisher &quot;&quot; --pubdate &quot;&quot;  </code></p>
+</li>
+<li>
+<p>Using Word docs there are some problems, like the way the title is
+truncated above, and other metadata is missing. I'll come back to
+metadata in a future post making sure that works are correctly
+described and labelled is an important dimension of scholarship. I
+see metadata as a gateway feature (as in gateway drug) for improving
+the semantic content of documents in general and I think once people
+see the power of embedding metadata semantics in their documents
+<span class="spCh spChx2013">–</span> so they don't have to retype
+stuff all the time <span class="spCh spChx2013">–</span> they'll be
+ready to deal with citations and rhetorical structure, and
+domain-specific semantics.</p>
+</li>
+<li>
+<p>Set up a <a href="http://ec2-50-16-170-243.compute-1.amazonaws.com/api/convert/odt"><span class="Internetlink">test/demo server in Amazon's
+cloud
+services</span></a>.
+Here's <a href="http://dl.dropbox.com/u/24994372/test-2011-04-05-Kingsley-Formatted_PhD_12May09.epub"><span>Danny's thesis as rendered by the
+service</span></a>.
+The input document was a word document, the output is a EPUB file.
+It takes about ten minutes to create.</p>
+<ul>
+<li>
+<p>Try it out with a couple of sample files (these might change
+during the project as we get more ambitious) by uploading the
+documents into the service or pasting the URL into the form.</p>
+<ul>
+<li>
+<p>A word document using a sample thesis template from the
+University of Edinburgh:
+<a href="http://dl.dropbox.com/u/24994372/thesis-test-document.doc"><span>http://dl.dropbox.com/u/24994372/thesis-test-document.doc</span></a></p>
+</li>
+<li>
+<p>An ICE-version of the same thing in OpenDocument form using
+the ICE style-set with a few more examples of formatting,
+such as bullets and pre-formatted text.
+<a href="http://dl.dropbox.com/u/24994372/test-thesis-ice-styles.odt"><span>http://dl.dropbox.com/u/24994372/test-thesis-ice-styles.odt</span></a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The test service uses ICE to convert .doc and .odt documents to HTML
+<span class="spCh spChx2013">–</span> you can feed it generic documents
+using Heading styles and it will do its best. ICE deals with all sorts
+of images and maths etc., it does a better job than most processors
+because it uses the OpenOffice.org word processor to create images using
+its rendering engine <span class="spCh spChx2013">–</span> most tools
+can't deal with some kinds of content because they can't render them.
+Then the service calls Calibre's HTML to EPUB conversion tools. To start
+with I coded this to treat <code>&lt;h1&gt;</code> elements in the HTML as the major
+sections in the document. This contrasts with the way Calibre attempts
+to generate HTML directly from the <code>.odt </code>file, which means that lots of
+graphics won't be able to be rendered at all.</p>
+<p>Status:</p>
+<ul>
+<li>
+<p>Alpha code only.</p>
+</li>
+<li>
+<p>Might break.</p>
+</li>
+<li>
+<p>Slow (circa 5 minutes for a big document, though, not 100-ish)</p>
+</li>
+<li>
+<p>I will endeavour to keep this up and running for the life of this
+project.</p>
+</li>
+</ul>
+<p>Later in the project I plan to work with Theo and his focus group users
+to see whether the ICE approach for styles is viable for thesis
+production and for the various other use cases. Other questions include:</p>
+<ol>
+<li>
+<p>Should long documents such as theses be managed as multiple parts or
+single documents?</p>
+</li>
+<li>
+<p>What's the demand for being able to integrate other kinds of
+resources (spreadsheets, images, other data like chemistry) and are
+there viable ways to embed this stuff in EPUB documents? The
+question here is whether EPUB is suitable for the 'research object
+of the future' where publications are not just documents, but need
+to be embedded in or carry-around more of their context.</p>
+</li>
+<li>
+<p>Should we be thinking about EPUB converters as part of repository
+deposit processes?</p>
+</li>
+</ol>
+<p>Known issues with the ICE/EPUB generator:</p>
+<ul>
+<li>
+<p>Sometimes he first section of the document appears in the TOC as
+'unnamed'. I don't want to resort to hacks like adding a heading
+called 'frontmatter' to the document, but I might.</p>
+</li>
+<li>
+<p>I have been focussing initial testing on the Firefox addon for EPUB:
+<a href="https://addons.mozilla.org/en-us/firefox/addon/epubreader/"><span
+class="Internetlink">https://addons.mozilla.org/en-us/firefox/addon/epubreader/</span></a>
+more testing and validation required (this goes for all the tools I
+have been looking at.)</p>
+</li>
+</ul>
+<h1><span id="id7"></span><span></span></a>Where next?</h1>
+<p>Potential next steps include:</p>
+<ul>
+<li>
+<p>Improving and glamorising the test conversion service.</p>
+</li>
+<li>
+<p>Creating new calibre plugin to use ICE as an HTML generator <span
+class="spCh spChx2013">–</span> this could be used to add Word
+support, and potentially improve Open Document support.</p>
+</li>
+</ul>
+<h1><span id="id9"></span><span></span></a>Lessons learned</h1>
+<p>Even if you start from good quality HTML, writing an automated tool for
+creating EPUB is likely to be quite a big job. Calibre already does it,
+has lots of configuration options and seems to be a good starting point
+for a conversion tool <span class="spCh spChx2013">–</span> I'm
+interested in comments about this though. A couple of days of my own
+coding didn't get me close to what I could do with Calibre in about an
+hour learning what command-line options to use (there were several hours
+spent refining the initial options, though). And it's not just me,
+others of the staff at USQ have spent a fair bit of time getting basic
+EPUB support working; the one thing that makes me think it might be
+worth tackling is the glacial speed of Calibre <span
+class="spCh spChx2013">–</span> but that might just be because Calibre
+is doing all sorts of important things and a new converter could be just
+as slow.</p>
+<p>[This is a repost of <a href="http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/"><span
+class="Hyperlink">http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/</span></a> -
+if you have comments please make them <a href="http://jiscpub.blogs.edina.ac.uk/2011/04/05/epub-for-word-processing-users/"><span class="Hyperlink">over on
+there on the jiscPUB
+blog</span></a>.]</p>
+<p>Copyright Peter Sefton, <span
+rel="http://purl.org/dc/elements/1.1/date"><a href="http://ontologize.me/?tl_p=http://purl.org/dc/terms/date&amp;triplink=http://purl.org/triplink/v/0.1"><span
+class="Internetlink">20</span><span
+class="Internetlink">11</span></a></span>.
+Licensed under Creative Commons Attribution-Share Alike 2.5 Australia.
+&lt;<a href="http://creativecommons.org/licenses/by-sa/2.5/au/"><span
+class="Internetlink">http://creativecommons.org/licenses/by-sa/2.5/au/</span></a>&gt;
+<span rel="http://purl.org/dc/elements/1.1/publisher"
+resource="http://ptsefton.com/"><span
+property="http://xmlns.com/foaf/0.1/name"
+resource="http://ptsefton.com/"><a href="http://ontologize.me/?tl_p=http://purl.org/dc/terms/publisher&amp;triplink=http://purl.org/triplink/v/0.1&amp;tl_o=http://ptsefton.com/"><span class="Internetlink">Published by
+http://ptsefton.com</span></a></span></span></p>
+<p><span
+class="DefaultParagraphFont"><a name="graphics1"><span></span></a><img src="/wp-content/uploads/2011/04/m40ca94ba.png" alt="" /></span></p>
+<p>This post was written in OpenOffice.org, using templates and tools
+provided by the <a href="http://ice.usq.edu.au/"><span class="Internetlink">In</span><span
+class="Internetlink">tegrated Content
+Environment</span></a> project and published to
+WordPress.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'epub-for-word-processing-users';
+                var disqus_url = 'http://ptsefton.com/2011/04/10/epub-for-word-processing-users.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

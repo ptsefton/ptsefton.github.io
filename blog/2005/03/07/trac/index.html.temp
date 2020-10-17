@@ -1,0 +1,84 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Trac is the answer to all our problems
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Trac is the answer to all our problems</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2005/index.html">2005</a>-<a href="/blog/2005/03/index.html">03</a>-<a href="/blog/2005/03/07/index.html">07</a>
+<p>
+It's official. Chris Mills, who is on our team at USQ  (<a class="external" href="http://del.icio.us/tag/usqsdt">see our communal bookmarks here</a>) has declared <a class="external" href="http://www.edgewall.com/trac">Trac</a> to be the answer to all our problems.
+</p>
+<p>
+What is Trac? It's a project management tool that ties together Subversion for version control, an issue/bug/feature/ticket-tracking system and a <a class="external" href="http://en.wikipedia.org/wiki/Wiki">wiki</a>. There are some gaps, to be sure, but it's a pretty useful tool out of the box. 
+</p>
+<p>
+You can set up milestones for the ends of engineering cycles and releases, build whatever web of 'stories' you like to represent user-requested features and add development and maintenance tasks as tickets. The nice bit is the integration; a wee bit of scripting (thanks Sally MacFarlane) completes the already impressive web of links between tickets and the wiki, between commits to the repository and tickets. You can say, like:
+</p>
+<p>
+</p><pre>svn commit -m "Added a yellow background. Fixes #978"</pre>
+<p>
+And it will close ticket number 978.
+</p>
+<p>
+I found Trac as part of my relentless web-surfing, but the rest of the team did the hard work to test it out and install it as part of a general overhaul of our development toolset. This included slurping up all the bugs out of <a class="external" href="http://en.wikipedia.org/wiki/Bugzilla">Bugzilla</a> and moving all the code from <a class="external" href="http://en.wikipedia.org/wiki/Concurrent_Versions_System">CVS</a> to Subversion.
+</p>
+<p>
+I have a trac system of my own which I will use to get serious about the <a class="external" href="http://del.icio.us/ptsefton/ptsefton+wpinterop">Word processor interoperability project (WP Interop)</a> any day now.
+</p>
+<p>
+But Chris, it's not going to solve some of our other problems, such as finding just one more old Sun Microsystems disk-enclosure to prop up my desk so we can replace those unsightly bricks, or working out how some of us are going to get to work (if there is any) when petrol hits $8.50 a litre.
+</p>
+</body>
+</html>

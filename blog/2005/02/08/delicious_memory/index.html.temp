@@ -1,0 +1,94 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Del.icio.us as outboard memory
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Del.icio.us as outboard memory</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2005/index.html">2005</a>-<a href="/blog/2005/02/index.html">02</a>-<a href="/blog/2005/02/08/index.html">08</a>
+<p>
+I have started using <a class="external" href="http://en.wikipedia.org/wiki/Del.icio.us">del.icio.us</a> as part of my 'pt management system' (for managing me, something many so-called managers have had an interesting time with in the past), in addition to its role in forming an online log and <a href="blog/2005/01/07/delicious_team">resource</a> for our team at work.
+</p>
+<p>
+I am trying to remain on track with
+<a class="external" href="http://en.wikipedia.org/wiki/Getting_Things_Done">Getting Things Done
+(GTD)</a>, and I'm now onto my third pocket-sized notebook. This is much
+better than I've ever done before, School diaries and work log-books
+only ever lasted a week in the past. 
+</p>
+<p>
+So, with the stuff that I write down in the notebook I now make sure that everything is reviewed once a week and anything that requires further action is put into a system, often Outlook/Exchange; the calendar, the task list (yes it's sub-optimal, but it's there and it works through the web). Other things I turn into new documents in this site, or new articles in the home Subversion repository - stubs that remind me to get typing.
+</p>
+<p>
+Today I was processing stuff from last week's CAUDIT conference in Sydney, and I had a couple of quotes from <a class="external" href="http://en.wikipedia.org/wiki/James_Gosling">James Gosling</a> to process. I didn't want to forget them, but they were not tasks, or things I wanted to write about (at least I didn't think I did). I'm not one of those four post a day kind of bloggers.
+</p>
+<p>
+I had this idea: look up the quotes on the net, working under the assumption that most Goslingisms are probably fairly well documented and bookmark them using del.icio.us. It worked for <a class="external" href="http://del.icio.us/ptsefton/learnonceworkanywhere">"Learn once. Work anywhere"</a>, a cute play on the Java slogan "Write once, run anywhere" which is kinder than the usual parody. 
+</p>
+<p>
+</p><blockquote>Portability is a technically difficult goal to achieve, and Java's success at that goal is a matter of some controversy. Although it is indeed possible to write programs for the Java platform that behave consistently across many host platforms, the large number of available platforms with small errors or inconsistencies led some to parody Sun's "Write once, run anywhere" slogan as "Write once, debug everywhere". <a class="external" href="http://en.wikipedia.org/wiki/Java_programming_language">Wikipedia: The Java programming language</a></blockquote>
+<p>
+So, I am using the bookmark manager to bookmark offline happenings by finding online analogues. Sounds wrong. Feels OK.
+</p>
+<p>
+But for something that I transcribed, probably a bit inaccurately as "Speaking as the guy who jiggled the butterfly's wings" there appears to be nothing available. What to do? It doesn't belong at the wikipedia, at least not until the article there has a lot of other very basic stuff, so I guess I have to blog it so I can put it in del.icio.us.
+</p>
+<p>
+Which reminds me: must do that backup of my del.icio.us accounts, and consider what I'm going to do if the service stops or things turn nasty (In the calendar for tomorrow).
+</p>
+<p>
+$LastChangedDate: 2005-02-15 01:50:00 -0600 (Tue, 15 Feb 2005) $
+</p>
+</body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Mustering - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2011/06/07/mustering.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="[This is a repost from the DevCSI blog. I am at Open Repositories 2011 conference in Austin Texas, courtesy of UKOLN, helping Mahendra Mahey run the developer competition. DevCSI stands for &#34;Developer Community Supporting Innovation&#34;.] By Peter Sefton and Mahendra Mahey Pitching for the DevCSI Developer Challenge at Open Repositories …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Mustering"/>
+        <meta property="og:url" content="../../../2011/06/07/mustering.htm"/>
+        <meta property="og:description" content="[This is a repost from the DevCSI blog. I am at Open Repositories 2011 conference in Austin Texas, courtesy of UKOLN, helping Mahendra Mahey run the developer competition. DevCSI stands for &#34;Developer Community Supporting Innovation&#34;.] By Peter Sefton and Mahendra Mahey Pitching for the DevCSI Developer Challenge at Open Repositories …"/>
+        <meta property="article:published_time" content="2011-06-07" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2011/06/07/mustering.htm"
+                       rel="bookmark"
+                       title="Permalink to Mustering">
+                        Mustering
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-06-07T21:23:37+00:00"> Tue 07 June 2011</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>[This is a repost from the <a href="http://devcsi.ukoln.ac.uk/blog/2011/06/07/mustering-4/">DevCSI
+blog</a>. I am at
+Open Repositories 2011 conference in Austin Texas, courtesy of UKOLN,
+helping Mahendra Mahey run the developer competition. DevCSI stands for
+&quot;Developer Community Supporting Innovation&quot;.]</p>
+<div>
+<p>By Peter Sefton and Mahendra Mahey</p>
+<h2>Pitching for the DevCSI Developer Challenge at Open Repositories 11</h2>
+<p>On the first day of pre-conference meetings at Open Repositories 2011 we
+started promoting the DevCSI Developer Challenge. We visited all of the
+meetings we could and encouraged people, to:</p>
+<ul>
+<li>if at all possible, enter</li>
+<li>come along to the Developer Lounge during the conference and at the
+final 'Show and Tell Session' on Thursday afternoon to see 'the
+future of repostiories'</li>
+<li>encourage any of their colleagues who might have good ideas and some
+development skills to step up.</li>
+</ul>
+<p>Each of the meetings had a different mood. The <a href="https://wiki.duraspace.org/display/FCREPO/June+6th+2011%2C+OR11+Committer+Meeting" title="June 6th 2011, OR11 Committer Meeting">Fedora Commons
+committers</a>
+were committed to solving fundamental architectural questions around
+authentication, authorisation, modularity and so on. The <a href="http://sites.tdl.org/openrepositories/or11preconference/#monday" title="Monday's Pre Conference Sessions at OR11">Hydra
+Partners</a>
+were heads-down bringing together threads of work that have been going
+on all over the world on a major application. The <a href="http://curatecamp.org/" title="Curate Camp">Curate
+Camp</a>, was set up as a kind of
+unconference where delegates had to choose/vote from a <a href="http://wiki.curatecamp.org/index.php/CURATEcamp_OR11_Ideas" title="CURATEcamp OR11 Ideas">list of
+topics</a>
+(e.g. community consensus on the tools, specifications, and
+microservices that are most needed; use cases for those tools, specs,
+and services; and interoperability among tools and repositories/digital
+asset management systems) in the area of curation, either presented
+prior to the meeting or during and discuss them for 30 minutes. If
+discussions were deemed valuable enough to continue, they did, if not,
+they moved on to the next one.</p>
+<p>And the <a href="https://wiki.durhttps://wiki.duraspace.org/display/DSPACE/DevMtg+2011-06-06+-+OR11+Meetingspace.org/display/FCREPO/June+6th+2011%2C+OR11+Committer+Meeting" title="Developers Meeting before OR11 on Mon, June 6, 2011">DSpace
+group</a>
+had started their session with some blue-sky dreaming. They compiled a
+list of points on “What's the modern Repo?”. This is pretty close to our
+developer challenge theme of “The Future of Repositories”. Below, see a
+transcript of a whiteboard, taken from an <a href="http://piratepad.net/or11dspacemeeting">EtherPad
+document</a> from the DSpace
+meeting that we were not attending, via Tim Donohue. Might lack a little
+context, but worth glancing through for inspiration.</p>
+<p>There are some key words and phrases here we might have heard 5 years
+ago at the first <a href="http://www.apsr.edu.au/Open_Repositories_2006/" title="Australian Partnership for Sustainable Repositories">OR in
+Sydney</a>,
+such as “submission should be much much easier” or “preservation”. But
+back then we would not have been hearing about
+<a href="http://dropbox.com">Dropbox</a>, the beautifully simple cloud-based file
+replication system or the SWORD deposit protocol because they were not
+invented yet and nobody knew we wanted them until developers made them.</p>
+<p>One thing on the list is “new name”.  A potential entry in could be
+built around that. Think of a new name instead of repository and show
+something that demonstrates what it would look like.</p>
+<p>Or could you re-imagine the repository as set of small pieces that
+all “do one thing, [&amp;] do it well”? Get one piece working, and tell us
+about the rest.</p>
+<blockquote>
+<p><strong>“What’s the modern repo?” Brainstorm</strong></p>
+</blockquote>
+<blockquote>
+<p>Link (including
+photo: https://wiki.duraspace.org/display/DSPACE/Brainstorming+Activity)</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>not just research: photos, music, data, etc</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>-- More different kinds of content and metadata</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>research management systems</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>-- CRIS moves the repository to the back-end. As CRIS will be the
+front end</p>
+</blockquote>
+<blockquote>
+<p>-- In edinburgh, PURE is being used with the LNI to ingest</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>simple (visual?) import -- think dropbox?</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>DepositMO</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>SWORD / SWORD2</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Scott: submission should be much much easier.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Bram: ScribD also had very easy upload, but poor in metadata. Nice 
+feature in embedding lists &amp; collections in other applications</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>automated metadata capture</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>content easy to use / reuse</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>CRUD</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>branding / theming</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>customisations (metadata and metadata structure)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>storage system integrations</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>flexible content workflows</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>versioning / relationships</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>flexible authorisation</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>give control to user communities (branding, etc)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>complex objects (representation of), human- and machine-readable</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>scientific data sets</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>reporting</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>content reuse (&quot;open&quot; data)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>eg. embed in dept website</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>search (easy)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>faceting / filtering</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>statistics: regular reports to item authors (like Digital Commons),
+plus usage/admin reporting</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>bot filtering</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>getting stuff out</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>disciplinary aggregation</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>creating adhoc &quot;sets&quot; of content</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>(this made me think of http://www.apsr.edu.au/orca/ - Kim)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>shareable metadata</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>different metadata &quot;views&quot;</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>shared version vs local use</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>new name: just &quot;repository&quot; or &quot;storage&quot;?</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>preservation</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>identifiers / persistance (flexible, granular, parts of items,
+people, collections)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>the perils of handles...</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>DOIs vs Handles</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Truly *external* IDs</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>access / privacy</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>&quot;repository / DAM system that can display stuff vs. CMS that can do
+DAM&quot;</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>do one thing, do it well</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>flexible metadata schema</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>dissemination</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>make data usable http://piratepad.net/or11dspacemeeting</li>
+</ul>
+</blockquote>
+<p>[Update: added license] <span
+style="font-family: 'Times New Roman', serif;"><span
+style="font-size: x-small;">Copyright <a href="http://ontologize.me/?tl_p=http://purl.org/dc/terms/creator&amp;triplink=http://purl.org/triplink/v/0.1&amp;tl_o=http://trove.nla.gov.au/people/541658">Peter
+Sefton</a>
+and Mahendra Mahey, 2011-06-07. Licensed under <a href="http://ontologize.me/?tl_p=http://creativecommons.org/licence&amp;triplink=http://purl.org/triplink/v/0.1&amp;tl_o=http://creativecommons.org/licenses/by-sa/2.5/au/">Creative Commons
+Attribution-Share Alike 2.5
+Australia</a>.
+&lt;http://creativecommons.org/licenses/by-sa/2.5/au/&gt;</span></span></p>
+</div>
+<p>[This is a repost from the <a href="http://devcsi.ukoln.ac.uk/blog/2011/06/07/mustering-4/">DevCSI
+blog</a>. I am at
+Open Repositories 2011 conference in Austin Texas, courtesy of UKOLN,
+helping Mahendra Mahey run the developer competition. DevCSI stands for
+&quot;Developer Community Supporting Innovation&quot;.]</p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'mustering';
+                var disqus_url = 'http://ptsefton.com/2011/06/07/mustering.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

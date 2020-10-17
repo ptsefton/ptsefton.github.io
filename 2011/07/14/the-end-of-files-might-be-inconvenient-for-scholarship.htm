@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>The end of files might be inconvenient for scholarship - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2011/07/14/the-end-of-files-might-be-inconvenient-for-scholarship.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="O&#39;Reilly&#39;s Radar site has an post advocating a post-file computing paradigm. It&#39;s a bit short on concrete details about how this might be implemented, but it&#39;s something we need to think about in the context of repositories and libraries, particularly because the main place this post-file computing is being delivered …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="The end of files might be inconvenient for scholarship"/>
+        <meta property="og:url" content="../../../2011/07/14/the-end-of-files-might-be-inconvenient-for-scholarship.htm"/>
+        <meta property="og:description" content="O&#39;Reilly&#39;s Radar site has an post advocating a post-file computing paradigm. It&#39;s a bit short on concrete details about how this might be implemented, but it&#39;s something we need to think about in the context of repositories and libraries, particularly because the main place this post-file computing is being delivered …"/>
+        <meta property="article:published_time" content="2011-07-14" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2011/07/14/the-end-of-files-might-be-inconvenient-for-scholarship.htm"
+                       rel="bookmark"
+                       title="Permalink to The end of files might be inconvenient for scholarship">
+                        The end of files might be inconvenient for scholarship
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-07-14T23:04:21+00:00"> Thu 14 July 2011</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>O'Reilly's Radar site has an <a href="http://radar.oreilly.com/2011/07/why-files-need-to-die.html"><span>post advocating a post-file
+computing
+paradigm</span></a>.
+It's a bit short on concrete details about how this might be
+implemented, but it's something we need to think about in the context of
+repositories and libraries, particularly because the main place this
+post-file computing is being delivered is on the back of cloud computing
+services and vertically integrated computing platforms like Apple's. I
+talked this over with Duraspace CTO Bradely Mclean at Open Repositories
+and we both agree that there are some real challenges here for digital
+libraries.</p>
+<p>It's not that people have not noticed the looming threat to academic
+practice but I think that it is being underestimated. For example back
+at the <a href="http://adfi.usq.edu.au/"><span>Australian Digital Futures
+Institute</span></a> (ADFI) there's a post on
+<a href="http://adfi.usq.edu.au/starlog/?p=16"><span>Apple's iCloud</span></a>.
+They note:</p>
+<blockquote>
+<p>iCloud is a way of Apple retaining its dominance of the smartphone
+market which has recently given ground to phones powered by
+Google<span class="spCh spChx2019">’</span>s Android system. This will
+improve how users access content from different Apple devices. But be
+warned, once committed to this system, it will be difficult to move
+away because it just won<span class="spCh spChx2019">’</span>t be
+convenient.</p>
+<p><a href="http://adfi.usq.edu.au/starlog/?p=16"><span>http://adfi.usq.edu.au/starlog/?p=16</span></a></p>
+</blockquote>
+<p>But it's not just about the smartphone environment, it's about computing
+in general and <span class="spCh spChx201c">“</span>it just won't be
+convenient<span class="spCh spChx201d">”</span> is putting it mildly.
+Think about what happens when you're using these vertically controlled
+computing platforms to collect research data. You need to preserve the
+data to be able to validate your research and comply with policy and
+codes of practice and funder requirements. Or if you're using it for
+teaching, how do you keep records and build portfolios?</p>
+<p>How will we deposit this stuff in digital libraries?</p>
+<p>I fear that it's a very small step from 'not convenient' to 'not
+possible'.</p>
+<p>Right now there are several major challenges for libraries and
+repositories. One of the biggest, as many commentators have noted, is
+the rise of the rental licensing model for content. This has already
+happened for journals which are now sold as bundled electronic
+subscriptions, making the notion of 'deposit' of materials extremely
+problematic in many jurisdictions . We are now seeing related but
+different changes to <em>book</em> licensing . With the rise of e-reader
+devices we will see libraries cut out of many book transactions, with
+readers purchasing content via vertical supply channels locked to
+particular software and hardware stacks. Along with the huge
+proliferation of e-book titles, many assembled by machines, this will
+mean the notion of a library of legal deposit will be challenged in two
+significant ways, by huge volumes of often dynamic bespoke materials,
+and licensing that means much content now cannot be donated to a library
+or lent-out.</p>
+<p>Apart from licensing, the clouds (as in cloud computing) are gathering
+for a potential storm in academic computing. The seductive benefits of
+devices like Apple's iPad, iPhone and iPod are leading us to a potential
+future where many research and teaching objects are produced using
+highly specialised, proprietary <em>apps</em> (as opposed to applications such
+as office-suites with open formats) which are routed directly to
+vendor-controlled cloud storage. There is real potential that libraries
+will lose contact with and control of research and cultural resources
+altogether. We are seeing the disappearance of digital files, file
+systems and the ability to even determine in what format ones data are
+being stored. If we don't plan now it may not even be possible to
+procure resources for preservation. The challenge is to make sure that
+libraries have a tap into the information flows of the future, and the
+right licensing and technological infrastructure to fulfil their
+traditional role of depositing and disseminating those information flows
+be they research, learning or cultural artefacts. We are faced with a
+challenge which is quite different to digitisation or cataloguing of
+physical objects.</p>
+<p>There will be no quick answers, but I see the role of digital librarian
+as one of both education and outreach as well as systems development,
+making sure our academics and students understand these issues, together
+with engineering solutions that allow the library to fulfil its role in
+preserving and disseminating content that is created by our
+institutions. To do this, we need to make sure the infrastructure is
+there for libraries to tap into academic work-flows and new publishing
+models. We need to make sure that authoring and creation tools for
+viable preservable content are available, otherwise the scholarly record
+as we know it may become impossible to maintain, and library collections
+as we know them might become impossible to curate.</p>
+<p>One area where libraries are increasingly relevant is in assisting in
+the capture and husbandry of research data. Funder mandates world-wide
+are now requiring that data be made available as open access by default
+and discovery details for data be published, but we need to make sure we
+don't embrace technology that makes that impossible.</p>
+<p>So, while we're wondering, like ADFI how to use our iPads for teaching
+and learning and looking forward to a file-less future the academy needs
+t<span style="font-weight:normal; "><span class="T4">o speak up and tool
+up for the post-file digital future.</span></span></p>
+<p>Copyright <span rel="http://purl.org/dc/elements/1.1/creator"
+resource="http://trove.nla.gov.au/people/541658"><span
+property="http://xmlns.com/foaf/0.1/name"
+resource="http://trove.nla.gov.au/people/541658">Peter
+Sefton</span></span>, 2011-07-15. Licensed under <span
+rel="http://creativecommons.org/licence">Creative Commons
+Attribution-Share Alike 2.5 Australia</span>.
+&lt;http://creativecommons.org/licenses/by-sa/2.5/au/&gt;</p>
+<p><span class="Default_20_Paragraph_20_Font"><span
+style="country:US; language:en; "><span
+class="T1"><a><span></span></a><img src="/wp-content/uploads/2011/07/m40ca94ba.png" alt="graphics1" /></span></span></span></p>
+<p>This post was written in OpenOffice.org, using templates and tools
+provided by the <a href="http://ice.usq.edu.au/"><span>Integrated Content
+Environment</span></a> project.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'the-end-of-files-might-be-inconvenient-for-scholarship';
+                var disqus_url = 'http://ptsefton.com/2011/07/14/the-end-of-files-might-be-inconvenient-for-scholarship.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

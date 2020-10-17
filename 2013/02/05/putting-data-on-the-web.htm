@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Putting data on the web - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2013/02/05/putting-data-on-the-web.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="I attended this [data newsroom](http://www.eventbrite.com/event/4900494511) (\#datanews) event in Melbourne Monday Feb 3^rd^ [Correction - it was the 4th] 2013. David Flanders asked me to come prepared to give a talk on tools and techniques for embedding data into web pages, particularly using Schema.org …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Putting data on the web"/>
+        <meta property="og:url" content="../../../2013/02/05/putting-data-on-the-web.htm"/>
+        <meta property="og:description" content="I attended this [data newsroom](http://www.eventbrite.com/event/4900494511) (\#datanews) event in Melbourne Monday Feb 3^rd^ [Correction - it was the 4th] 2013. David Flanders asked me to come prepared to give a talk on tools and techniques for embedding data into web pages, particularly using Schema.org …"/>
+        <meta property="article:published_time" content="2013-02-05" />
+            <meta property="article:section" content="ScholarlyHTML" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2013/02/05/putting-data-on-the-web.htm"
+                       rel="bookmark"
+                       title="Permalink to Putting data on the web">
+                        Putting data on the web
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-02-05T03:25:49+00:00"> Tue 05 February 2013</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <article>
+<section>
+I attended this [data
+newsroom](http://www.eventbrite.com/event/4900494511) (\#datanews) event
+in Melbourne Monday Feb 3^rd^ [Correction - it was the 4th] 2013. David
+Flanders asked me to come prepared to give a talk on tools and
+techniques for embedding data into web pages, particularly using
+Schema.org, the corporate sponsored ontology of everything that matters
+for commerce.
+<p>So here are my semantically rich<a href="#_edn1">^[i]^</a> notes for the
+presentation. This is neither a tutorial nor a coherent story, so you
+may want to leave now, but there is a picture of Tim Berners-Lee about
+half way through.</p>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Why embed data in web pages?
+<p>You can make new things happen. Let other people or machines do things
+with the data. <a href="http://wraggelabs.com/shed/presentations/ndf2012/storydata/">Here’s an example by Tim
+Sherratt</a>
+showing how data embedded in the page (left) can drive new behaviour
+(the stuff on the right).</p>
+<p><img src="/wp-content/uploads/2013/02/wpid-putting-data-copy.html.html_putting-data-copy_filesimage0021.png" alt="" /></p>
+</section>
+<section typeof="http://schema.org/" vocab="http://schema.org/">
+#### What is this Schema.org?
+<p>(I have added a couple of tags to discuss later)</p>
+<blockquote>
+<p>Many sites are generated from structured data, which is often stored
+in databases. When this data is formatted into HTML, it becomes very
+difficult to recover the original structured data. Many applications,
+especially search engines, can benefit greatly from direct access to
+this structured data. On-page markup <strong>[#inlinedata]</strong> enables search
+engines to understand the information on web pages and provide richer
+search results in order to make it easier for users to find relevant
+information on the web. Markup <strong>[#semanticsyntax]</strong> can also enable
+new tools and applications that make use of the structure.</p>
+<p>A shared markup vocabulary <strong>[#sharedvocab]</strong> makes it easier for
+webmasters to decide on a markup schema and get the maximum benefit
+for their efforts. So, in the spirit of sitemaps.org, search engines
+have come together to provide a shared collection of schemas that
+webmasters can use.</p>
+<p>http://schema.org/</p>
+</blockquote>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Use Schema.org – get snippets
+<p><img src="/wp-content/uploads/2013/02/wpid-putting-data-copy.html.html_putting-data-copy_filesimage0041.png" alt="" /></p>
+</section>
+The point of this, for the vast majority of web practitioners is to get
+into the world of ‘rich snippets’. If you use the schema.org way then
+you get ‘better’ search results – but you’re also allowing the search
+engines, and anyone else who views your page to use the data. Right now
+if I search for movie times at my local cinema I enter a Google-trap
+which shows me films and when they’re on with no link to the cinema site
+itself. It’s also hard to tell what role Schema.org plays in all these
+search engine things – some of the data you see is harvested using older
+conventions for data services and who knows, maybe the cinemas just give
+Google a spreadsheet with the movie times in it.
+<p>For data journalism and research, we presumably want to get the data out
+in a form that it can be reused so the concerns are different – you want
+the data to be used, and your part in its collection or creation to be
+cited.</p>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### The other thing you need to know about: RDF
+<p>RDF is the Resource Description Framework.</p>
+<blockquote>
+<p>The<span class="apple-converted-space"> </span><strong>Resource Description
+Framework</strong><span class="apple-converted-space"> </span>(<strong>RDF</strong>) is a
+family of<span class="apple-converted-space"> </span><a href="http://en.wikipedia.org/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">World Wide Web
+Consortium</a><span
+class="apple-converted-space"> </span>(W3C)<a href="http://en.wikipedia.org/wiki/Specification" title="Specification">specifications</a><span
+class="apple-converted-space"> </span><a href="http://en.wikipedia.org/wiki/Resource_Description_Framework#cite_note-1">^[1]^</a><span
+class="apple-converted-space"> </span>originally designed as a<span
+class="apple-converted-space"> </span><a href="http://en.wikipedia.org/wiki/Metadata" title="Metadata">metadata</a><span
+class="apple-converted-space"> </span><a href="http://en.wikipedia.org/wiki/Data_model" title="Data model">data
+model</a>. It has
+come to be used as a general method for conceptual description or
+modeling of information <strong>[#sharedvocabularies]</strong> that is implemented
+in web resources, using a variety of syntax formats
+<strong>[#semanitcsyntax]</strong>.</p>
+<p><a href="http://en.wikipedia.org/wiki/Resource_Description_Framework">http://en.wikipedia.org/wiki/Resource_Description_Framework</a></p>
+</blockquote>
+</section>
+In the work I do in eResearch systems and repositories, RDF is clearly a
+very good framework for extensible metadata, and the associated “Linked
+data” approach of using URIs to describe things and concepts is a good
+way to implement shared vocabularies, but RDF is very hard to get to
+grips with as a general modelling framework.
+<p>Now it’s time to over-simplify the process of getting data into web
+pages via schema.org et al.</p>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Putting data on the web?
+<ul>
+<li>
+<p>Is it in some kind of web ready format?*</p>
+<ul>
+<li>
+<p><strong>Yes</strong>: Put it on the web as-is <strong>#justpublish</strong></p>
+</li>
+<li>
+<p><strong>No</strong>:  Make it into a web ready format. Options:</p>
+<ol>
+<li>
+<p>Reformat to a spreadsheet or something <strong>#justpublish</strong></p>
+</li>
+<li>
+<p>Embed the data in human readable HTML</p>
+<p><strong>#inlinedata</strong> and <strong>#semanticmarkup</strong></p>
+</li>
+<li>
+<p>Publish as a stand-alone RDF resource**</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>In any case publish a web page <em>about</em> it***</p>
+</li>
+<li>
+<p>Include metadata in the web page. <strong>#pagelevelmetadata</strong></p>
+</li>
+<li>
+<p>Make the metadata standards-based and proper****.
+<strong>#sharedvocab</strong></p>
+</li>
+<li>
+<p>Choose a syntax for the embedding <strong>#semanticsyntax</strong></p>
+</li>
+</ul>
+</section>
+<section>
+#### The fine print
+<p>*What is a web-ready format depends on how much of a pedant you are –
+for some only gold-plated RDF is good enough</p>
+<p>**And, you know, keep the web page UP.</p>
+<p>*** At <a href="http://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim
+Berners-Lee</a>’s talk in
+Melbourne that night David Flanders asked him what advice he had for
+researchers re data – should they put it on the web?</p>
+<p>Tim’s response was that researcher should work with their data in the
+format that suits them but they should get a ‘shim’ or adaptor built to
+provide an RDF interface to the data so others could use it as part of
+the semantic web.</p>
+<p>I think that’s easy for Sir Tim to say and he’s right that it would be a
+Good Thing, but experience has shown that projects like that run to
+about $200K in Australia and don’t always get results, so I’d add “and
+while you’re working on the RDF adaptor, publish what you have in the
+format in which you have it with as much metadata as you can manage”.</p>
+<p>****Good luck. If anybody comments at all it will be to ask “why
+didn’t you use the European/ISO/W3C Standard” (which will turn out to be
+a document that has been in development for 5 years but expected to be
+released in six months for the last four of those years)</p>
+<p><img src="/wp-content/uploads/2013/02/wpid-putting-data-copy.html.html_putting-data-copy_filesimage0061.png" alt="" /></p>
+<p>Figure 1 Tim Berners-Lee (right) dwarfed by the happy head on a
+sponsor's banner, which in turn is dwarfed by Art - at the University of
+Melbourne</p>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Google Scholar
+<p><img src="/wp-content/uploads/2013/02/wpid-putting-data-copy.html.html_putting-data-copy_filesimage008.png" alt="" /></p>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Case study Getting a scholarly work into Google Scholar
+<ul>
+<li>
+<p>A repository somewhere advertised the existence of the work via
+extensive use of the venerable meta-tag. #page-level-metadata</p>
+</li>
+<li>
+<p>Google found the data, entered it in its database.</p>
+</li>
+<li>
+<p>When you search it puts the metadata back in the page so other
+software can scrape it out #microformats*</p>
+</li>
+</ul>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### \*Microformats mean
+<p>Worst-case: maintaining a web-load of converters – see this from <a href="https://github.com/zotero/translators/issues/432">a
+patch</a> to keep the
+Zotero reference manager working with Google Scholar. Google changes
+their page? You change your code and redeploy to millions of people.</p>
+<blockquote>
+<p>'//div[@class=&quot;gs_r&quot;]/div[@class=&quot;gs_fl&quot;]/a[contains(@href,&quot;q=related:&quot;)]') +      
+'//div[@class=&quot;gs_r&quot;]//div[@class=&quot;gs_fl&quot;]/a[contains(@href,&quot;q=related:&quot;)]')</p>
+</blockquote>
+<p>These are XPath expressions looking in the webpage for stuff that Google
+coded for their own reasons, probably to make it <em>look</em> right, not
+primarily for data interchange.</p>
+</section>
+You see what’s happening there? Google indexes pages that conform to a
+standard they defined (not the one the repository community uses for its
+own interchange). Then to get the data back out the scholarly community
+has to keep track of a non-standard convention, again invented by
+Google.
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Sounds like a case for Schma.org?
+<p>You’d certainly think so.</p>
+<p>But don’t underestimate the power of commercial interests to distort the
+shape of the semantic web.</p>
+</section>
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### There are (at least) two things to be standardised in web semantics
+<ul>
+<li>
+<p>The (hopefully) shared vocabulary / world view - “ontology”
+<strong>#sharedvocab</strong></p>
+</li>
+<li>
+<p>The encoding method; how the meaning is embroidered on to the web
+<strong>#semanticsyntax</strong></p>
+</li>
+</ul>
+<p>And of course we have multiple overlapping but incomplete standards,
+best practices, worst practices and flame-wars for both.</p>
+</section>
+There are four basic ways to embed data into web pages.
+<section typeof="http://purl.org/ontology/bibo/Slide">
+#### Four ways to \#inlinedata
+<ul>
+<li>
+<p>Metadata about a <em>whole page</em> via meta tags in the head
+#pagelevelmetadata  #traditional</p>
+</li>
+<li>
+<p>Metadata/data about parts of a page: #semanticsyntax</p>
+<ul>
+<li>
+<p><a href="http://en.wikipedia.org/wiki/Microformat">Microformats</a>
+(obsolete but persisting) using conventions #byconvention</p>
+</li>
+<li>
+<p><a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> –
+part of the (non W3c) HTML5 spec  simple, flawed, controversial
+#worksbutpissedpeopleoff</p>
+</li>
+<li>
+<p><a href="http://en.wikipedia.org/wiki/Rdfa">RDFa</a> - obscenely
+complicated unless you use RDFa 1.1 lite #theonetrueway</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+I have been working with researchers at the Hawkesbury Institute for the
+Environment at UWS and the technical folks at Intersect NSW to implement
+an HTML readme file to accompany environmental researcher data sets –
+we’re working on a case-study that goes into how we made the choice of
+RDFa (\#semanticsyntax) and how we chose which vocabularies and terms to
+use (\#sharedvocab) which we’ll publish as soon as possible.
+<p>\</p>
+<hr />
+<p><a href="#_ednref1">^[i]^</a> Semantically rich? Look at the source – I’ve used a
+web-police-approved mechanism for embedding slides in my prose. That is,
+I have used a standard vocabulary (the bibliographic ontology
+#sharedvocab) and a syntactic specification (RDFa 1.1 lite
+#semanticsyntax) for saying that some parts of the page are special.</p>
+</section>
+</article>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'putting-data-on-the-web';
+                var disqus_url = 'http://ptsefton.com/2013/02/05/putting-data-on-the-web.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Adventures with Linux
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Adventures with Linux</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2004/index.html">2004</a>-<a href="/blog/2004/10/index.html">10</a>-<a href="/blog/2004/10/22/index.html">22</a>
+<p>
+It's not like I have been doing nothing, it's just that settling into a new job and replacing the computer I use at home, which belonged to someone else and ran Windows XP with one that belongs to me and runs Linux, and going out three times in one week, and being taken to school as a show and tell, like a live rat, and all that, it's just that that has slowed me down a bit on the all important blogging. Actually, apparently the kids liked the rat better than me singing <i>The Coat of Many Colors</i> with my twelve-string.
+</p>
+<p>
+However, we now have it all under control. I have made some good progress on the Word processor interoperability project. I now have a usable OpenOffice template which I will post here soon. A paper I wrote with my mate Cameron Loudon, all about Learning Management Systems is also forthcoming. Also, I think I've found a good place to publish some stuff about turning MS Word documents into  XML. Oh, and barring lightning strikes (which are pretty common up here on the Darling Downs this time of year) the courseware aware web publishing system I worked on for the last four years at NextEd is about to go open source.
+</p>
+<p>
+But this time, a few comments on the switch to Linux. This may be of interest if (a) you already know about this stuff and you want to reassure yourself that I am what my four year old calls an "it wit" or (b) you want to know about how one goes switching from Windows to Linux without pausing to <a class="external" href="http://catb.org/~esr/jargon/html/R/RTFM.html">RTFM</a>. 
+</p>
+<p>
+(Executive summary: RTFM)
+</p>
+<p>
+Last time I reported that I had put Ubuntu Linux on my computer for fairly frivolous reasons. But the battery meter didn't work, and it would not suspend and resume  actually maybe it would resume but how would I know when it wouldn't suspend? 
+</p>
+<p>
+So, given that they use this thing called "Red Hat" at work I borrowed the disks that came with TFM they bought and installed a thing called "Fedora Core 2". Now I have a battery meter. Yay! And I can suspend the laptop so the little light in the shape of a croissant comes on.
+</p>
+<p>
+One day I hope to be able to <i>resume</i> the laptop as well, without having to dip it in a bucket of water until all the lights go out, then put in the dryer until they come back on.
+</p>
+<p>
+And, while Ubuntu Linux looked great, the fonts now look really crappy and I have somehow configured it to use some weird keyboard setup that gives me accents all over things when I try to type of good old English quotes, and sometimes the network just Will Not Work. I have to reboot it, which is a skill I learned from running Windows all those years. 
+</p>
+<p>
+And buying a wifi card for it? Ha! I have asked a few retailers, and searched for a few others, and looked at lists I found, and I still can't find a straight answer about a card I can buy that has a better than maybe chance of working. 
+</p>
+<p>
+Not to mention the Palm, that tiny little computer that is supposed to talk to the laptop.
+</p>
+<p>
+But the most annoying part is this. Every time I get a fresh install of Windows I curse the way it comes configured to hide file extensions, and system files and so on. And guess what? This week I have been playing with OpenOffice, and configuring its menus, which are in XML, which is cool. I learned to hack the 'writermenubar.xml' file that lives somewhere in there. But while I could get it to work at work on Windows, to give me a usable way of styling my work, I could not find the same file at home, not by prodding or poking or using the Search For Files... thing they
+ give you. Until I worked out something I knew very well twenty years ago...
+</p>
+<p>
+There are these directories (folders) and files that you can't see that have names that start with '.'. And the file search does not go there by default which given the slightly obscure interface is <i>worse</i> than Windows. In Windows you <i>know</i> it's trying to trick you, and I trusted this Fedora. It wit. I have hereunto considered hats to be benign. 
+</p>
+<p>
+Anyway, you can see the files if you know this; you type |ls -a| or tell Search for Files to |Show hidden and backup files...|.
+</p>
+<p>
+Other parts of this Linux this are pretty cool - I am loving the little terminal thing with the tabs where I type stuff like |zip -r testdoc.sxw *| to package up some stuff and then |oowrite testdoc.sxw| to open it in OpenOffice.org. Better than all that clickety clickety Windows stuff.
+</p>
+<p>
+The bottom line is, of course, that if you want to run Linux you should RTFM. Really.</p>
+</body>
+</html>

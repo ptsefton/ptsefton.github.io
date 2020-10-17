@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: ICE is atomized!
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>ICE is atomized!</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/09/index.html">09</a>-<a href="/blog/2007/09/03/index.html">03</a>
+<div><p align="right"><a href="/blog/2007/09/03/18-43-00.855588/100.pdf">View this page as PDF</a></p><p>ICE is getting increasingly service-oriented. At the moment it's a great big application with a lot of dependencies, but we're going to make all the bits usable so other services can use them.</p><p>One major step in this direction is the addition of an Atom Publushing Protocol (APP) client. ICE users (on the bleeding edge only for now) can now compose posts in the comfortable ICE template and post to ATOM-aware blogs. </p><p>I've just <a href="http://aanro-repo.blogspot.com/">posted over at blogspot</a> for the new AANRO project we're doing at USQ. I wrote the post in an ICE doc and hit the publish button to send it. It just works. (OK, that's not pure ATOM, but we do standard APP as well).</p><p>What does this mean?</p><p>Well as far as I'm aware this is the first ATOM client for a word processor that works with styles, so it can produce valid HTML. I have yet to write up my experiences with the blog functionality in Word 2007, but it's pretty much like Word itself, and the <a href="http://ptsefton.com/blog/2006/10/20/sun-weblog">Sun weblog</a> plugin is subject to all the limitations of OpenOffice.org, which has particularly awful HTML export. (See my <a href="http://del.icio.us/ptsefton/xhtmlchallenge">ongoing invesigations into HTML generation from out-of-the-box word processors</a>).</p><p>Tim Bray <a href="http://www.tbray.org/ongoing/When/200x/2007/03/22/Atom">has this dream that everything should have a 'publish this' button on it</a>:</p><blockquote class="bq"><p>Once again, here<span class="spCh spChx2019">’</span>s the dream: Everything should have a <span class="spCh spChx201c">“</span>Publish<span class="spCh spChx201d">”</span> button. Your browser, your spreadsheet, your word processor, your feed reader, your camera, your phone, your email client, your calendar client; I mean everything. APP isn<span class="spCh spChx2019">’</span>t the whole solution, but it<span class="spCh spChx2019">’</span>s a necessary piece of the platform you need to build such a future on.</p></blockquote><p>And once again I point out that if you just hook up the button to a standard word processor you're going to get junk HTML. To get really good HTML from a word processor, ICE is one solution. We're well on the way to realizing Tim's dream, by doing what Microsoft and Sun and Google should have done, and providing a usable word processing template that you can adapt to your own look, but which comes with software to create proper web pages. Have a <a href="http://ice.usq.edu.au/media/videos/quick_ice_demo.swf">look at the demo</a> which shows a silent Daniel de Byl creating a document in ICE, using OpenOffice.org, using the ICE toolbar to apply styles by clicking dead simple buttons, then rendering his document to HTML and PDF. Works <b>exactly</b> the same with Word and documents are interchangeable between Word and Writer.</p><p>Next step for ICE is to build an extension for OpenOffice.org Writer that contains the new APP button, and a 'Save as HTML' that works using ICE styles. Once that's done we'll work out a way to call that code from Word, with Writer acting as a server, either on your own machine or remotely. (If anyone knows how to package Python applications for Writer can you <a href="mailto:pt@ptsefton.com">drop me a line</a>?)</p><p>I'm going to have to make a choice now whether to stick with <a href="http://jtauber.com/leonardo/">Leonardo</a> for this blog, as it looks like James Tauber is working towards making Leonardo talk APP. Or should I use ICE, running the new server-based version and teaching it how to blog?</p><p>As for the APP work, so far we don't handle images, or post the PDF or slideshow versions of documents, but that's next <span class="spCh spChx2013">–</span> we should be able to include this in the ICE release some time in the next few weeks.</p></div>
+</body>
+</html>

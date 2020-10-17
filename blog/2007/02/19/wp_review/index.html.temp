@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Balanced review of word processors? I don't think so.
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Balanced review of word processors? I don't think so.</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/02/index.html">02</a>-<a href="/blog/2007/02/19/index.html">19</a>
+<div><p class="P1">I had seen this <a href="http://www.donationcoder.com/Reviews/Archive/WordProcs/">review</a> of word processing software.</p><p>I skimmed this thing looking for:</p><ol class="lin" style="list-style: decimal;"><li><p>Evidence that it's credible.</p></li><li><p>Something that might be news to us at the ICE project.</p></li></ol><p>Found neither, so decided to ignore it.</p><p>But now that Simon Phipps, of Sun has <a href="http://blogs.sun.com/webmink/">called it</a> <span class="spCh spChx201c">“</span>Excellent and balanced reviews of the top three word-processors.<span class="spCh spChx201d">”</span> I thought I'd go back and take another look.</p><p>First time through I missed this bit:</p><blockquote class="bq"><p>Let us be clear: the choice is not between being able to interoperate with Microsoft <span class="spCh spChx2014">—</span> thanks to Novell and Corel doing interoperability work for them <span class="spCh spChx2014">—</span> or being stuck in some ODF ghetto, unable to read Microsoft documents. Everyone wants to interoperate. The question is how. The problem is Microsoft. The solution lies with Microsoft. It's 2007, and it's time that Microsoft followed the same standards everyone else, instead of insisting the world bend to their ways. Microsoft's OXML doesn't disrupt this propensity. It's not only unacceptable, but quite strange that even now we can't all freely share documents with one another, no matter what operating system we like to use. We can send each other email, read each others' blogs and websites, even if you are on Windows, I'm on Linux, and Uncle Fester is using OS X. Why isn't that the norm for everything? It ought to be. The bottleneck is Microsoft. FOSS software is happy to interoperate with any other software. Why won't Microsoft? That is the $64,000 question in 2007. All this only matters if you intend to use Microsoft Word. The good news is that there are many good alternatives.</p></blockquote><p>This is not what I'd call balanced., or even self-consistent. The paragraph starts out talking about interoperability being a problem which of course it is, and ends with <span class="spCh spChx201c">“</span>All this only matters if you intend to use Microsoft Word. The good news is that there are many good alternatives.<span class="spCh spChx201d">”</span> Well, no, as long as there are significant numbers of people using Word then interoperability matters. And while there are alternatives, this review doesn't convince me that the author would know a good alternative when he saw one.</p><p>There's no advice here about how to get interoperability to work: <a href="http://del.icio.us/ptsefton/usestyles">Use styles</a>? Stick to a subset of functionality? Save in a particular format? (If you want that advice <a href="http://ice.usq.edu.au/instructions/user_guide.htm">go to the ICE website</a>. You can use Word or Writer and share documents between them). </p><p>This 'review' has nothing much to offer. It doesn't look at simple use-cases across all three. Like how do the various word processors perform at saving HTML? For example, there are some real, obvious problems with the way Writer exports HTML. It doesn't  even resize images. And there are well-known issues with Word and its round-trappable HTML format which includes a lot of non-standard stuff. Are they fixed in Word 2007? </p><p>I'd think a review, even a brief one should be able to address these issues.</p><p>Instead, it makes different points about the different word processors without giving any sense of how they compare for given tasks.</p><p>They think Writer would be good for academic writing. Don't like Word's citation support, make passing reference to <a href="http://www.endnote.com/">EndNote</a> without even getting its name right. Nothing about citations for Word Perfect. </p><p>Anyone who set out to write a quick academic paper using OpenOffice.org rather than Word + EndNote on the basis of this review would likely be quite disappointed. (In the time it takes to get a PhD done we should be able to supply better tools via the <a href="http://ice.usq.edu.au/introduction/ice_rs.htm">ICE-RS</a> project and the OpenOffice bibliography project will likely have made some progress). I'm not sure you you'd go with Word 2007 <span class="spCh spChx2013">–</span> it would probably depend on whether the referencing style you wanted was available. But I'm betting that you'd have more chance of getting help than with OpenOffice.org.</p><p>But wait, there's more! The review says as a negative point about Writer:</p><blockquote class="bq"><p>Styles and Formatting dialog cannot be docked. Word processing is all about styles and while OpenOffice.org makes styles very easy, c'mon!</p></blockquote><p>OpenOffice.org does NOT make styles easy. The default is to apply styles using a non-dockable dialog. There are at least 3 other usability problems with this dialog. </p><ol class="lin" style="list-style: decimal;"><li><p>It <b>doesn't let you use the keyboard</b> to navigate through long lists of styles. Hitting 'h' should take you to the headings.</p></li><li><p>By default it <b>does not show you the styles</b> in the template you're actually using. My trick is to switch from showing paragraph styles to list styles and then back to paragraph styles.</p></li><li><p><b>List styles.</b> I hate to bring this up again, but OpenOffice.org has both list and paragraph styles which are sort-of linked together. I keep asking for someone to explain to me how it's all meant to work, but so far the best approach I've been able to find is the one we use in our ICE templates. We provide a custom menu that bypasses the non-dockable dialog. It calls macros to apply redundant paragraph and list style information, which aids enormously in document interoperability.</p></li></ol><p>(And if word processing is about styles then why is there so little about them in the review?) </p><p>Normally I'd ignore something like this, and I'm not going to spend any more time on it, but can we please elevate the debate about file formats and word processing from this level? Is anyone interested in solutions or do you all just want to score points in the ODF vs OOXML pissing competition.</p></div>
+</body>
+</html>

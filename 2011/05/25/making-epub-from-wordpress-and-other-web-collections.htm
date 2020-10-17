@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Making EPUB from WordPress (and other) web collections - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2011/05/25/making-epub-from-wordpress-and-other-web-collections.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="[This is a re-post of from the jiscPUB project please make any coments over there: http://jiscpub.blogs.edina.ac.uk/2011/05/25/making-epub-from-wordpress-and-other-web-collections/] Background As part of Workpackage 3 I have been looking at WordPress as a way of creating scholarly monographs. This post carries on from the …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Making EPUB from WordPress (and other) web collections"/>
+        <meta property="og:url" content="../../../2011/05/25/making-epub-from-wordpress-and-other-web-collections.htm"/>
+        <meta property="og:description" content="[This is a re-post of from the jiscPUB project please make any coments over there: http://jiscpub.blogs.edina.ac.uk/2011/05/25/making-epub-from-wordpress-and-other-web-collections/] Background As part of Workpackage 3 I have been looking at WordPress as a way of creating scholarly monographs. This post carries on from the …"/>
+        <meta property="article:published_time" content="2011-05-25" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2011/05/25/making-epub-from-wordpress-and-other-web-collections.htm"
+                       rel="bookmark"
+                       title="Permalink to Making EPUB from WordPress (and other) web collections">
+                        Making EPUB from WordPress (and other) web collections
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-05-25T03:09:05+00:00"> Wed 25 May 2011</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>[This is a re-post of from the jiscPUB project please make any coments
+over there:
+<a href="http://jiscpub.blogs.edina.ac.uk/2011/05/25/making-epub-from-wordpress-and-other-web-collections/">http://jiscpub.blogs.edina.ac.uk/2011/05/25/making-epub-from-wordpress-and-other-web-collections/</a>]</p>
+<div>
+<div class="page-toc">
+</div>
+<div>
+<h1><span id="id2"></span><span></span></a>Background</h1>
+<p>As part of <a href="http://jiscpub.blogs.edina.ac.uk/2011/03/03/workpackage-3/"><span>Workpackage
+3</span></a> I
+have been <a href="http://jiscpub.blogs.edina.ac.uk/2011/05/10/wordpress/"><span>looking at
+WordPress</span></a>
+as a way of creating scholarly monographs. This post carries on from the
+last couple, but it's not really about EPUB or about WordPress, it's
+about interoperability and how tools might work together in a
+<a href="http://scholarlyhtml.org/"><span>Scholarly HTML</span></a> mode so that
+people can package and repackage their resources much more reliably and
+flexibly than they can now.</p>
+<p>While exploring WordPress I had a look at the JISC funded
+<a href="http://knowledgeblog.org/"><span>KnowledgeBlog project</span></a>. The
+team there has released a plugin for WordPress to show a table of
+contents made up of all the posts in a particular category. It seemed
+that with a bit of enhancement this could be a useful component of a
+production workflow for book-like project, particularly for project
+reports and theses (where they are being written online in content
+management systems <span class="spCh spChx2013">–</span> maybe not so
+common now, but likely to become more common) and for course materials.</p>
+<p>Recently <a href="http://jiscpub.blogs.edina.ac.uk/2011/05/11/anthologize-a-wordpress-based-collection-tool/"><span>I
+looked</span></a>
+at <a href="http://anthologize.org/"><span>Anthologize</span></a>, a
+WordPress-based way of creating ebooks from HTML resources sourced from
+around the web (I noted a number of limitations which I am sure will be
+dealt with sooner or later). Anthologize is using a design pattern that
+I have seen a couple of times with EPUB, converting the multiple parts
+of a project to an XML format that already has some tools for rendering
+and using those tools to generate outputs like PDF or EPUB. Asciidoc
+does this using the DocBook tool-chain and Anthologize uses TEI tools. I
+will write more on this design pattern and its implications soon. There
+is another obvious approach; to leave things in HTML and build books
+from that, for example using
+<a href="http://calibre-ebook.com/"><span>Calibre</span></a> which already has ways
+to build ebooks from HTML sources. This is an approach which could be
+added to Anthologize very easily, to complement the TEI approach.</p>
+<p>So, I have put together a workflow using Calibre to build EPUBs straight
+from a blog.</p>
+<p>Why would you want to do this? Two main reasons. Firstly, to read a
+report, thesis or course, or an entire blog on a mobile device.
+Secondly, to be able to deposit a snapshot of same into a repository.</p>
+<p>In this post I will talk about some academic works:</p>
+<ul>
+<li>
+<p><a href="http://tait.josswinn.org/"><span>A thesis by Joss Winn </span></a>who
+is on the <a href="http://jiscpress.org/"><span>JISCPress project</span></a>.</p>
+</li>
+<li>
+<p>The Calibre
+<a href="http://calibre-ebook.com/user_manual/cli/ebook-convert.html"><span>ebook-convert</span></a>
+tool and the Calibre
+<a href="http://calibre-ebook.com/user_manual/cli/calibre-server.html"><span>server</span></a>.
+I am running both of these as command line tools but there are
+versions you can run as desktop applications.</p>
+</li>
+<li>
+<p>Project work from my own website including blog posts from the
+jiscPUB project workpackage 3. I set up a page <a href="http://ptsefton.com/projects/"><span>with two
+projects on it</span></a> to show how
+these can be compiled into a book together.</p>
+</li>
+<li>
+<p>A <a href="http://digitalworlds.wordpress.com/about/"><span>set of open course materials on game
+design</span></a> by Tony
+Hirst which I have <a href="http://anthologize.ptsefton.com/digital-worlds"><span>imported into a test
+blog</span></a>.</p>
+</li>
+</ul>
+<p>The key to this effort is the KnowledgeBlog table of contents plugin
+<a href="http://wordpress.org/extend/plugins/knowledgeblog-table-of-contents/"><span>ktoc</span></a>,
+with some enhancements <a href="http://code.google.com/r/ptsefton-schtml/source/browse#hg%2Ftrunk%2Fplugins%2Fkblog-table-of-contents"><span>I have
+added</span></a>
+to make it easier to harvest web content into a book.</p>
+<p>The <a href="http://ec2-50-19-73-99.compute-1.amazonaws.com/"><span>results are available on a Calibre server I'm running in the
+Amazon cloud</span></a>
+<span class="spCh spChx2013">–</span> just for the duration of this
+project. (The server is really intended for local use, the way I am
+running it behind an Apache reverse proxy it doesn't seem very happy
+<span class="spCh spChx2013">–</span> you may have to refresh a couple
+of times until it comes good). This is rough. It is certainly not
+production quality.</p>
+<p><a><span></span></a><img src="/wp-content/uploads/2011/05/m4163bf9b_643x328.jpeg" alt="graphics1" /></p>
+<p>These books are created using calibre 'recipes': <a href="https://bitbucket.org/wwmm/schtml/src/a5e876450421/recipes/"><span>available
+here</span></a>.
+You run them like this:</p>
+<blockquote>
+<p><code>ebook-convert thesis-demo.recipe .epub ``--test</code></p>
+</blockquote>
+<p>If you are just trying this out, to be kind to site owners <code>--test</code> will
+cause it to only fetch a couple of articles per feed.</p>
+<p>I added them to the calibre server like this:</p>
+<blockquote>
+<p><code>calibredb add --library-path=./books</code> <code>thesis-demo.epub </code></p>
+</blockquote>
+<p>The projects page at my site has two TOCs for two different projects.</p>
+<blockquote>
+<p><code>[ktoc cat=&quot;jiscPUB&quot; title=&quot;Digital Monograph Technical Landscape study #jiscPUB&quot;  show_authors=&quot;false&quot;  orderby=&quot;date&quot; toc_author=&quot;Peter Sefton&quot;]</code></p>
+<p><code>[ktoc cat=&quot;ScholarlyHTML&quot; title=&quot;Scholarly HTML posts&quot; orderby=&quot;date&quot; show_authors=&quot;false&quot; toc_author=&quot;Peter Sefton&quot; ]</code></p>
+</blockquote>
+<p>I the title is used to create sections in the book, in both cases the
+post are displayed in date-order and I am not showing the name of the
+author on the page because that's not needed when it is all me.</p>
+<p>The resulting book has a nested table of contents, seen here in Adobe
+Digital Editions.</p>
+<p><span
+style="display: block"><a><span></span></a><img src="/wp-content/uploads/2011/05/mbfd0b2d_442x273.jpeg" alt="graphics2" /></span>Illustration
+1: A book built from a WordPress page with two table of contents blocks
+generated from WordPress categories.</p>
+<p>Read on for more detail about the process of developing these things and
+some comments about the problems I encountered working with multiple
+conflicting WordPress plugins, etc.</p>
+<h1><span id="id3"></span><span></span></a>The Scholarly HTML way to EPUB</h1>
+<p>The first thing I tried in this exploration was writing a recipe to make
+an EPUB book from a Knowledge Blog, for the <a href="http://ontogenesis.knowledgeblog.org/table-of-contents"><span>Ontogenesis
+project</span></a>.
+It is a kind of encyclopaedia of ontology development maintained in a
+WordPress site with multiple contributors. It worked well, for a
+demonstration, and did not take long to develop. The <a href="https://bitbucket.org/wwmm/schtml/src/a5e876450421/recipes/ontogenesis.recipe"><span>Ontogenesis
+recipe is available
+here</span></a>
+and the resulting book is available on the <a href="http://ec2-50-19-73-99.compute-1.amazonaws.com/"><span>Calibre
+server</span></a>.</p>
+<p>But there was a problem.</p>
+<p>The second blog I wanted to try it on was my own, so I installed ktoc
+changed the URL in the recipe and ran it. Nothing. The problem is that
+Ontogenesis and my blog use different WordPress themes so the structure
+is different. Recipes have stuff like this in them to locate the parts
+of a page, such as <code>&lt;p class='details_small'&gt;</code>:</p>
+<blockquote>
+<p><code>remove_tags_before = dict(name='p', attrs={'class':'details_small'})</code></p>
+<p><code>remove_tags_after  = dict(name='div', attrs={'class':'post_content'})</code></p>
+</blockquote>
+<p>That's for Ontogenesis, different rules are needed for other sites. You
+also need code to find the table of contents amongst all the links on a
+WordPress page, and deal with pages that might have two or more
+ktoc-generated tables for different sections of a journal, or parts of a
+project report.</p>
+<p>Anyway, I wrote a different recipe for my site, but as I was doing so I
+was thinking about how to make this easier. What if:</p>
+<ul>
+<li>
+<p>The ktoc plugin output a little more information in its list of
+posts that made it easy to find no matter what WordPress theme was
+being used.</p>
+</li>
+<li>
+<p>The actual <em>post</em> part of each page (ie not the navigation, or ads)
+identified itself as such.</p>
+</li>
+<li>
+<p>The same technique could be extended to other websites in general.</p>
+</li>
+</ul>
+<p>There is already a standard way to do the most important part of this,
+listing a set of resources that make up an aggregated resource; the
+<a href="http://www.openarchives.org/ore/1.0/rdfa.html"><span>Object Reuse and Exchange specification, embedded in HTML using
+RDFa</span></a>. ORE in
+RDFa. Simple.</p>
+<p>Well no, it's not, unfortunately. ORE is complicated and has some very
+important but hard to grasp abstractions such the difference between an
+Aggregation, and a Resource Map. An Aggregation is a collection of
+resources which has a URI, while a resource map describes the
+relationship between the aggregation and the resources it aggregates.
+These things are supposed to have different URIs. Now, for a simple task
+like making a table of contents of WordPress posts machine-readable so
+you can throw together a book, these abstractions are not really helpful
+to developers or consumers. But what if there were a simple
+recipe/microformat <span class="spCh spChx2013">–</span> what we call a
+convention in Scholarly HTML <span class="spCh spChx2013">–</span> to
+follow, which was ORE compliant and that was also simple to implement at
+both the server and client end?</p>
+<p>What I have been doing over the last couple of days, as I continue this
+EPUB exploration is try to use the ORE spec in a way that will be easy
+implement, say in the Digress.it TOC page, or in Anthologize, while
+still being ORE compliant. That discussion is ongoing, and will take
+place in the Google groups for <a href="http://scholarlyhtml.org/"><span>Scholarly
+HTML</span></a> and ORE. It is worth pursuing
+because if we can get it sorted out then with a few very simple
+additions to the HTML they spit out, <em>any</em> web system can get EPUB
+export quickly and cheaply by adhering to a narrowly defined profile of
+ORE <span class="spCh spChx2013">–</span> subject to the donor service
+being able to supply reasonable quality HTML. More sophisticated tools
+that do understand RDFa and ORE will be able to process arbitrary pages
+that use the Scholarly HTML convention, but developers can choose the
+simpler convention over a full implementation for some tasks.</p>
+<p>The details may change, as I seek advice from experts, but basically,
+there are two parts to this.</p>
+<p><strong>Firstly</strong> there's adding ORE semantics to the ktoc (or any) table of
+contents. It used to be a plain-old unordered list, with list items in
+it:</p>
+<blockquote>
+<p><code>&lt;p&gt;&lt;strong&gt;Articles&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://ontogenesis.knowledgeblog.org/49&quot;&gt;Automaticmaintenance of multiple inheritance ontologies&lt;/a&gt; by Mikel Egana``Aranguren&lt;/li&gt;``&lt;li&gt;&lt;a href=&quot;http://ontogenesis.knowledgeblog.org/257&quot;&gt;CharacterisingRepresentation&lt;/a&gt; by Sean Bechhofer and Robert Stevens&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://ontogenesis.knowledgeblog.org/1001&quot;&gt;Closing Downthe Open World: Covering Axioms and Closure Axioms&lt;/a&gt; by RobertStevens&lt;/li&gt;&lt;/ul&gt; </code></p>
+</blockquote>
+<p>The list items now explicitly say what is being aggregated. The plain
+old &lt;li&gt; becomes:</p>
+<blockquote>
+<p><code>&lt;li  rel=&quot;http://www.openarchives.org/ore/terms/aggregates&quot;resource=&quot;http://ontogenesis.knowledgeblog.org/49&quot;&gt; </code></p>
+</blockquote>
+<p>(The fact that this is an <code>&lt;li&gt;</code> does not matter, it could be any
+element.)</p>
+<p>And there is a separate URI for the Aggregation and resource map <span
+class="spCh spChx2013">–</span> courtesy of different IDs. And the
+resource map says that it describes the Aggregation <span
+class="spCh spChx2013">–</span> as per the ORE spec.</p>
+<blockquote>
+<p>&lt;div id=&quot;AggregationScholarlyHTM<code>L&quot;&gt;</code></p>
+<p><code>&lt;div rel=&quot;http://www.openarchives.org/ore/terms/describes&quot; resource=&quot;#AggregationScholarlyHTML&quot; id=&quot;ResourceMapScholarlyHTML&quot; ``about=&quot;#ResourceMapScholarlyHTML&quot;&gt;</code></p>
+</blockquote>
+<p>It is verbose, but nobody will have to type this stuff. What I have
+tried to do here (and it is a work in progress) is to simplify an
+existing standard which could be applied in any number of ways and boil
+it down to a simple convention that's easy to implement but that still
+honours the more complicated specifications in the background. (Experts
+this will realise that I have used an RDFa 1.1 approach here, meaning
+that current RDFa processors will not understand, this is so that we
+don't have to deal with namespaces and CURIES which complicate
+processing for non-native tools.)</p>
+<p><strong>Secondly</strong><span style="font-weight:normal; "><span class="T5"> the
+plugin wraps a &lt;div&gt; element around the content for every post to
+label it as being </span></span><a href="http://scholarlyhtml.org/core-specification/"><span
+style="font-weight:normal; "><span class="T5">scholarly
+HTML</span></span></a><span
+style="font-weight:normal; "><span class="T5">, this is a way of saying
+that this part of the whole page is the content that makes up the
+article, thesis chapter or similar. Without a marker like this finding
+the content is a real challenge where pages are loaded up with all sorts
+of navigation, decoration and advertisements, it is different on just
+about every site, and it can change at the whim of the blog owner if
+they change themes. </span></span></p>
+<blockquote>
+<p><code>&lt;div rel=&quot;http://scholarly-html.org/schtml&quot;&gt;</code></p>
+</blockquote>
+<h2><span id="id5"></span><span></span></a>Why not define an even simpler format?</h2>
+<p>It would be possible to come up with a simple microformat that had nice
+human readable class attributes or something to mark the parts of a TOC
+page. I didn't do that because then people will rightly point out that
+ORE exists and we would end up with a convention that covered a subset
+of the existing spec, making it harder for tool makers to cover both and
+less likely that services will interoperate.</p>
+<h2><span id="id6"></span><span></span></a>So why not just use general ORE and RDFa?</h2>
+<p>There are several reasons:</p>
+<ul>
+<li>
+<p>Tool support is extremely limited for client and server side
+processing of full RDFa, for example in supporting the way
+namespaces are handled in RDFa using CURIES. (Sam Adams has pointed
+out that it would be a lot easier to debug my code if I did use
+CURIES and RDFa 1.0 <span class="spCh spChx2013">–</span> so I
+followed his advice, did some search and replacing and checked that
+the work I am doing here is indeed ORE compliant).</p>
+</li>
+<li>
+<p>The ORE spec is suited only for experienced developers with a lot of
+patience for complexities like the difference between an aggregation
+and a resource map.</p>
+</li>
+<li>
+<p>RDFa needs to apply to a whole page, with the correct document type
+<span class="spCh spChx2013">–</span> and that's not always possible
+to do when we're dealing with systems like WordPress. The convention
+approach means you can at least produce something that can become
+proper RDFa if put into the right context.</p>
+</li>
+</ul>
+<h2><span id="id8"></span><span></span></a>Why not use RSS/Atom feeds?</h2>
+<p>Another way to approach this would be to use a feed, in RSS or Atom
+format. WordPress <a href="http://codex.wordpress.org/WordPress_Feeds"><span>has good support for
+feeds</span></a> <span
+class="spCh spChx2013">–</span> there's one for just about everything.
+So you can look at all the posts on my website:</p>
+<blockquote>
+<p><a href="http://ptsefton.com/category/uncategorized/feed/atom"><span>http://ptsefton.com/category/uncategorized/feed/atom</span></a></p>
+</blockquote>
+<p>or use <a href="http://blog.ouseful.info/2009/02/02/single-item-rss-feeds-from-wordpress-blogs/"><span>Tony Hirst's
+approach</span></a>
+to fetch a singe post from the jiscPUB blog</p>
+<blockquote>
+<p><a href="http://jiscpub.blogs.edina.ac.uk/2011/05/23/a-view-from-academia-on-digital-humanities/feed/?withoutcomments=1"><span>http://jiscpub.blogs.edina.ac.uk/2011/05/23/a-view-from-academia-on-digital-humanities/feed/?withoutcomments=1</span></a></p>
+</blockquote>
+<p>The nice thing about this single post technique is that it gives you
+just the content in a content element <span
+class="spCh spChx2013">–</span> so there is no screen scraping involved.
+The problem is that the site has to be set up to provide full HTML
+versions of all posts in its feeds or you only get a summary. There's a
+problem with using feeds on categories too, I believe, in that there is
+an upper limit to how many posts a WordPress site will serve. The site
+admin can change that to a larger number but then that will affect
+subscribers to the general purpose feeds as well. They probably don't
+want to see three hundred posts in Google Reader when they sign up to a
+new blog.</p>
+<p>Given that Atom (the best standardised and most modern feed format) is
+one of the official serialisation formats for ORE it is probably worth
+revisiting this question later if someone, such as JISC, decides to
+invest more in this kind of web-to-ebook-compiling application.</p>
+<h1><span id="id9"></span><span></span></a>What next?</h1>
+<p>There are some obvious things that could be done to further this work:</p>
+<ul>
+<li>
+<p>Set up a more complete and robust book server which builds and
+rebuilds books from particular sites and distributes them in some
+way, using Open Publication Distribution System
+(<a href="http://opds-spec.org/specs/opds-catalog-1-0-20100830/"><span>OPDS</span></a>)
+or something like <a href="http://delivereads.com/"><span>this thing that sends stuff to your
+Kindle</span></a>.</p>
+</li>
+<li>
+<p>Write a 'recipe factory'. With a little more work the ScholarlyHTML
+recipe can be got to the point where the only required variable is a
+single page URL <span class="spCh spChx2013">–</span> everything
+else can be harvested from the page or over-ridden by the recipe.</p>
+</li>
+<li>
+<p>Combining the above to make a WordPress plugin that can create EPUBs
+from collections of in-built content (tricky because of the present
+calibre dependency but it could be re-coded in PHP).</p>
+</li>
+<li>
+<p>Add the same ScholarlyHTML convention for ORE to other web systems
+such as the Digress.it plugin and Anthologize. Anthologize is
+appealing because it allows you to order resources in 'projects' and
+nest them into 'parts' rather than being based on simple queries but
+at the moment it does not actually have a way to publish a project
+directly to the web.</p>
+</li>
+<li>
+<p>Explore the same technique in the next phase of WorkPackage 3 when I
+return to looking at word processing tools and examine how cloud
+replication services like DropBox might help people to manage
+book-like projects that consist of multiple parts.</p>
+</li>
+</ul>
+<h1><span id="id11"></span><span></span></a>Postscript: Lessons and things that need fixing or investiging</h1>
+<p>I encountered some issues. Some of these are mentioned above but I
+wanted to list them here as fodder for potential new projects.</p>
+<ul>
+<li>
+<p>As with Anthologize, if you use the WordPress RSS importer to
+bring-in content it does not change the links between posts so they
+point to the new location. Likewise with importing a WordPress
+export file.</p>
+</li>
+<li>
+<p>The RSS importer applied to the thesis created hundreds of blank
+categories.</p>
+</li>
+<li>
+<p>I tried to add my ktoc plugin to a Digress.it site, but ran into
+problems. It uses PHP's simplexml parser which chokes on what I am
+convinced is perfectly valid XML in unpredictable ways. And the
+default Digress.it configuration expects posts to be formatted in a
+particular way <span class="spCh spChx2013">–</span> as a list of
+top-level paragraphs, rather than with nested divs. I will follow
+this up with the developers.</p>
+</li>
+<li>
+<p>Calibre does a pretty good job of taking HTML and making it into
+EPUBs but it does have its issues. I will work through these on the
+relevant forums as time permits.</p>
+<ul>
+<li>
+<p>There are some encoding problems with the table of contents in
+some places. Might be an issue with my coding in the recipes.</p>
+</li>
+<li>
+<p>Unlike other Calibre workflows, such as creating books from raw
+HTML, <code>ebook-convert</code> adds navigation to each HTML page in the
+book created by a recipe. This navigation is redundant in an
+EPUB, but apparently it would require a source code change to
+get rid of it.</p>
+</li>
+<li>
+<p>It does something complicated to give each book its style
+information. There are some odd presentation glitches in the
+samples as a result of Calibre's algorithms. This requires more
+investigation.</p>
+</li>
+<li>
+<p>It doesn't find local links between parts of a book (ie links
+from one post to another which occur a lot in my work and in
+Tony's course), but I have coded around that in the Scholarly
+HTML recipes.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>It will be up to Theo Andrew, the project manager if any of these next
+steps or issues get any attention during the rest of this project.</p>
+<p>[This is a re-post of from the jiscPUB project please make any coments
+over there:
+<a href="http://jiscpub.blogs.edina.ac.uk/2011/05/25/making-epub-from-wordpress-and-other-web-collections/">http://jiscpub.blogs.edina.ac.uk/2011/05/25/making-epub-from-wordpress-and-other-web-collections/</a>]</p>
+<p>Copyright <span rel="http://purl.org/dc/elements/1.1/creator"
+resource="http://trove.nla.gov.au/people/541658"><span
+property="http://xmlns.com/foaf/0.1/name"
+resource="http://trove.nla.gov.au/people/541658">Peter
+Sefton</span></span>, 2011-05-25. Licensed under <span
+rel="http://creativecommons.org/licence">Creative Commons
+Attribution-Share Alike 2.5 Australia</span>.
+&lt;http://creativecommons.org/licenses/by-sa/2.5/au/&gt;</p>
+<p><span class="Default_20_Paragraph_20_Font"><span
+style="country:US; language:en; "><span
+class="T1"><a><span></span></a><img src="/wp-content/uploads/2011/05/m40ca94ba3.png" alt="graphics3" /></span></span></span></p>
+<p>This post was written in OpenOffice.org, using templates and tools
+provided by the <a href="http://ice.usq.edu.au/"><span>Integrated Content
+Environment</span></a> project.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'making-epub-from-wordpress-and-other-web-collections';
+                var disqus_url = 'http://ptsefton.com/2011/05/25/making-epub-from-wordpress-and-other-web-collections.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: At last, a template for OpenOffice.org
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>At last, a template for OpenOffice.org</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2004/index.html">2004</a>-<a href="/blog/2004/10/index.html">10</a>-<a href="/blog/2004/10/25/index.html">25</a>
+<p>
+As promised, but very late, here's a <a href="2004/wp-interop-0-1.stw">template for OpenOffice.org</a>, as part of the <a href="blog/2004/08/16/wordprocessorinterop">Word Processor Interoperability project I'm slowly</a> chiseling out of a block of mud. This implements the <a class="external" href="http://ptsefton.com/style-basics">styles</a>, give or take a few. The idea is that if you use this template you will be able to (a) generate good XHTML (once there is an output stylesheet) for your blog,  your intranet, your website or whatever, and (b) inter-operate with Microsoft Word, using the same names for things. This is version 0.1, not finished, but usable.
+</p>
+<p>
+Updated with a couple of corrections 2004-10-28
+</p>
+<p>
+In this release I have changed the name of list <a class="external" href="http://ptsefton.com/style-basics">styles</a> from 'l' to 'li', and ommitted the 'start' versions of styles to force numbering to 1 as they don't work in OO.o (they may need to go back in for interop with Word) but otherwise implemented them as promised. Still to come:
+</p>
+<ul><li>Metadata styles (there's a title style and nothing else).</li>
+<li>A menu to apply the styles, with 'Alt' (maybe this is called 'Meta' in Unix?) key combinations to apply them.</li>
+<li>Stylesheets to turn your docs into XHTML, and </li>
+<li>a way to apply the stylesheets.</li>
+<li>Outline numbering for h1# et al. (There appears to be a bug in OO.o that doesn't allow you to save changes to the outline numbering with a document or template).</li>
+<li>Definition lists.</li></ul>
+<p>
+What to do to get it?
+</p>
+<p>
+<a href="2004/wp-interop-0-1.stw">Download the template</a> and put it in your templates directory. If you're not sure where that is, look in |Tools / Options... / Paths / Templates| in OO.o, and pop it in one of the directories listed there. Then you can make new docs by via |File / New / Templates and Documents|.
+</p>
+<p>
+You will need to customize the look of the thing for your environment, of course. I'll publish more soon on good ways of hacking OO.o templates by  busting open the |.stw| file and fiddling with or transforming the XML found therein.</p>
+</body>
+</html>

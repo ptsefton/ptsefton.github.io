@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Unit testing for VBA in 2 minutes
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Unit testing for VBA in 2 minutes</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/03/index.html">03</a>-<a href="/blog/2007/03/13/index.html">13</a>
+<div><p class="P1">Here's the story of how I came to write a 5 line <a href="http://en.wikipedia.org/wiki/Unit_test">unit test</a> framework for use in Microsoft Word macros. OK <span class="spCh spChx2013">–</span> so it's not a framework, but it's very useful.</p><p>It's been a long time since I've written more than a few lines of VBA. That's Visual Basic for Applications. It's not exactly a pleasant experience, rather like communicating with the computer via grunts. String manipulation in particular is a real pain after using languages with regular expressions built-in. I guess these days in the Windows world you can use the .NET libraries with your choice of language; C#, VB, even Python. But for code that will work across lots of version of Word and on the Mac it's still VBA.</p><p>At the <a href="../http%3B//ice.usq.edu.au">ICE project</a> we're attempting to improve our user interface, which means putting in some new toolbar buttons to apply style features. Want a bulleted list? Hit the bullet button. Want to increase or decrease the level of indent on a list item? Or promote or demote a heading? Use the new array of buttons.</p><p>The buttons will look something like:</p><pre> * 1. (a) (A) (i) (I) | &lt;- -&gt; | [P] [H] [B] [I]</pre><p>Thats demote <code>-&gt;</code>, promote <code>&lt;-</code>, bullet, a few kinds of lists, H for heading and Bold and Italic.  Obviously the buttons will look nicer than those shown above. I've left off  blockquotes and a few other things.</p><p>Anyway, to make all this happen there needs to be some fairly smart code behind the scenes. What should happen if I press the 'promote' or 'de-indent' left-pointing button when I'm typing an ordinary paragraph like this? Nothing much. How about  the 'demote' button? Should that give me a blockquote? I think so, but maybe a bulleted list. There are <b>a lot</b> of permutations to think about.</p><p>Over the last few years I've become used to taking a test-first approach to this kind of problem. We can sit down and map out the behaviour we'd like and express it as a set of tests that both specify and document the code we're writing.</p><p>Enter the unit test framework for VBA. Only there doesn't seem to be one. </p><p>So I wrote this five line subroutine.</p><pre>Sub AssertEqual(name, string1, string2)</pre><pre>    If string1 &lt;&gt; string2 Then</pre><pre>        MsgBox ("Failed: " + name + ": '" + string1 + "' &lt;&gt; '" + string2 + "'")</pre><pre>    End If</pre><pre>End Sub</pre><p>All this does is take a test <b>name </b>and <b>two things</b> that are supposed to be the same (they're called strings in my code  but actually they're variants which could contain anything, silly me) and compare them. If they don't match then it throws up a message box. That's all. </p><p>Then all I had to do was write a test subroutine. Here's a few sample tests:</p><p> </p><p></p><pre> Sub tests()</pre><pre>    Call AssertEqual("Don't Indent li1b after p", Indent("li1b", "p"), "li1b")</pre><pre>    Call AssertEqual("Indent li1b after li1b", Indent("li1b", "li1b"), "li2b")</pre><pre>    Call AssertEqual("Indent p after li3b", Indent("p", "li3b"), "li3p")</pre><pre>    Call AssertEqual("Indent p after bq2", Indent("p", "bq2"), "bq2")</pre><pre>    Call AssertEqual("Indent p after dt1", Indent("p", "dt1"), "dd1")</pre><pre>    Call AssertEqual("Indent p after p", Indent("p", "p"), "bq1")</pre><pre>    Call AssertEqual("Indent li5b", Indent("li5b", "li5b"), "li5b")</pre><pre>End Sub</pre><p>Take one line of this:</p><pre>    Call AssertEqual("Indent li1b after li1b", Indent("li1b", "li1b"), "li2b")</pre><p>This is saying, when I'm currently in style li1b, a first level bulleted list, and the previous style is the same when I press the demote <code>-&gt;</code> button I want the result to to be a second level bulleted list</p><p>The idea is to write the tests before the <code>Indent()</code> function; I have started the job in an iterative way. Add a few tests, write a bit more code. You can see yesterday's version of  <a href="http://ice.usq.edu.au/trac/browser/ice/trunk/templates/word-macros/toolbar.txt?rev=6472">the code</a> on the ICE website; I have built on stuff written by other USQ staff, and they'll go on to do more.</p><p>I didn't bother with all the usual unit test framework stuff, counting tests, reporting on which ones worked and didn't and so on, just an annoying message box that pops up when something fails. This a great incentive to make things work, cos clicking the box is really annoying.</p></div>
+</body>
+</html>

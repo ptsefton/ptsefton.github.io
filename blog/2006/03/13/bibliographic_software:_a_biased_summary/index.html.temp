@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Bibliographic Software: a biased summary
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Bibliographic Software: a biased summary</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/03/index.html">03</a>-<a href="/blog/2006/03/13/index.html">13</a>
+<div><p class="P1">In February, Cameron Loudon (RUBRIC communications person and fellow NextEd roadkill) and I dropped in to <a href="http://www.melcoe.mq.edu.au/">MELCOE</a> at Macquarie Uni to talk to James Dalziel and Eric Vullings; we told them a bit about <a href="http://www.rubric.edu.au/">RUBRIC</a> and <a href="http://ice.usq.edu.au/">ICE</a> and they showed us some work they've been doing on repository access control using open standards. We look forward to seeing more of their work in this area in future.</p><p>One of the issues that came up was bibliographic software, which I've been sort-of tracking for the ICE project. I promised to send James a summary of some of the work going on at the moment so here goes.</p><p>If you want to keep up with what's going on in this space, and don't feel like reading my ramblings, subscribe to the RSS feed at Bruce D'Arcus' <a href="http://netapps.muohio.edu/blogs/darcusb/darcusb/">site</a>. Bruce is a bibliographic powerhouse who's working on several fronts to improve tools.</p><h2><a id="id628167" name="id628167"></a>What am talking about here?</h2><p>I'm talking about bibliographic software that lets you keep a library of references, insert citations into a document and then format citations and add a bibliography automatically. Here at USQ that means EndNote. Bruce D'Arcus has <a href="http://netapps.muohio.edu/blogs/darcusb/darcusb/index.php?s=endnote">plenty to say about EndNote. </a>But don't let him scare you off, if your institution has a site license you probably should still use it until a compelling replacement emerges.</p><p>(If you're doing academic work at any level including undergraduate and you're not using bibliographic software then you need to get down to your library and ask for help!)</p><p>There's a well-maintained list of this kind of software at the <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information">OpenOffice site</a>. And some advice for OpenOffice Writer users.</p><blockquote class="bq"><p><b>But what can I do now?</b> In the meantime, if you are not happy with OOo's basic bibliographic support, you may like to use some of the third-party bibliographic applications that can work with OpenOffice. See the <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information">bibliographic software page</a> for more details. You may like to look at the package <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information#B3">B3</a> or <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information#JabRef">Jabref </a>(version 2 beta +) both of which have a nice user interface and can write bibliographic records to a Openoffice Bibliographic text database. <a href="http://bibliographic.openoffice.org/biblio-sw.html#Bibus">Bibus</a> is Bibliography application with good integration with OpenOffice.</p></blockquote><blockquote class="bqs"><p><a href="http://bibliographic.openoffice.org/">http://bibliographic.openoffice.org/</a> </p></blockquote><p>For Word users I can't really recommend anything in particular, go with whatever is supported at your institution or <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information">pick something off the list</a>.</p><p>I am starting to hear a bit about <a href="http://www.refworks.com/">RefWorks</a> now. It's web-based with an optional local bit to add citations as you write, and I've signed up for a free trial. I'll see if it's bearable enough to work with, but I have already established that it <b>does not like OpenDocument</b> formatted docs one little bit.</p><h2><a id="id628361" name="id628361"></a>What are we doing in ICE?</h2><p>In the active ICE pilots our users will be using Word + EndNote to format bibliographies. OpenOffice is still used behind the scenes to make PDF and to generate XHTML. This is a bit of an anticlimax. Nothing to see here, move on.</p><h2><a id="id628373" name="id628373"></a>My opinion</h2><p>I think <a href="http://xbiblio.sourceforge.net/cite/">CSL</a>, the Citation Style Language invented by Bruce D'Arcus is a great idea, and I'd love to see software that works with it that can process word processing and XML documents to format citations and bibliographies. </p><p>CSL is a way of specifying a particular citation style in XML, and with supporting software should let you reformat a document with different referencing styles automatically, just like EndNote's Output Styles but with significant improvements in flexibility.</p><p>I am very pleased that Bruce has managed to get his ideas in front of the OpenDocument <a href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office">committee</a>, which he has joined, so that CSL will have a good chance of being implemented and adopted fairly widely.</p><p>But I also think that the proposed additions to OpenDocument which should appear in OpenOffice.org version 3 might be counter productive, because they might make interoperability with MS Word in particular much harder. I favour a lighter-weight approach as outlined in a <a href="http://www.mail-archive.com/dev@bibliographic.openoffice.org/msg00262.html">message I wrote to the OpenOffice.org bibliographic list.</a></p><p>Why not embed citations using a simple hyperlink? Links are already supported everywhere.</p><p>The link might be an <a href="http://en.wikipedia.org/wiki/OpenURL">OpenURL</a>, or it might point to a bibliographic application either on the web or running locally in the same way that ICE does (it has its own webserver), or it could be to an Institutional Repository, to a journal, to Amazon, or to your local library or to a plain-old web page. A document post-processor can then resolve that link and try to get bibliographic details for it. If it can't it can ask you to type them in or you might choose to ignore that link and leave it as a link rather than a citation.</p><p><b>My approach is microformat-ish</b>; I would like to see loose coupling by-convention because I think it has a chance of working now, without waiting for a future release of OOo and avoids building a silo that may trap content in OpenDocument.</p><p>I'd like to see the CSL-driven post-processor as a free software library, so we could build bibliographic support into the ICE application itself. I'm assuming that these libraries will emerge from the work that Bruce and others are doing. I should be helping, at least on the bits of which I approve, but I'm not finding the time at the moment.</p><p>And I think that the idea of a 'personal repository' has legs. Somewhere to keep my copies of articles and cache web pages used as references in case they change or go away. And of course, this should act like a music playing application, able to fetch metadata for an item automatically as discussed in this paper, <i>Why can’t I manage academic papers like MP3s</i> (<a href="http://freelancepropaganda.com/archives/MP3vPDF.pdf">PDF</a>) .</p><h2><a id="id628546" name="id628546"></a>Resources to watch</h2><ul class="lib"><li><p>The OpenOffice.org  <a href="http://bibliographic.openoffice.org/">bibliographic project page</a>.</p></li><li><p>The OpenOffice.org bibliographic <a href="http://bibliographic.openoffice.org/servlets/ProjectMailingListList">lists</a>.</p></li><li><p>Bruce's <a href="http://netapps.muohio.edu/blogs/darcusb/darcusb/">blog</a>.</p></li><li><p>My bibliographic software <a href="http://del.icio.us/ptsefton/ptsefton+bibliographicsoftware">posts</a> (via del.icio.us).</p></li></ul><p></p><p></p><p class="P3"></p><blockquote class="bqs"><p><b></b></p></blockquote></div>
+</body>
+</html>

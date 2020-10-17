@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: URIs as tags
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>URIs as tags</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2007/index.html">2007</a>-<a href="/blog/2007/08/index.html">08</a>-<a href="/blog/2007/08/22/index.html">22</a>
+<div><p align="right"><a href="/blog/2007/08/22/08-55-46.377000/100.pdf">View this page as PDF</a></p><h1><a id="id1" name="id1"><!--id1--></a>RDF</h1><p><a href="http://www.w3.org/RDF/">RDF</a> is a Good Thing, I gather, for metadata but I have been slow to get started with it. </p><p>Here's part of the current Wikipedia summary:</p><blockquote class="bq"><p>The RDF metadata model is based upon the idea of making statements about resources in the form of subject-predicate-object expressions, called triples in RDF terminology. The subject denotes the resource, and the predicate denotes traits or aspects of the resource and expresses a relationship between the subject and the object. For example, one way to represent the notion "The sky has the color blue" in RDF is as a triple of specially formatted strings: a subject denoting "the sky", a predicate denoting "has the color", and an object denoting "blue".</p><p>(Wikipedia contributors 2007)</p></blockquote><h1><a id="id3" name="id3"><!--id3--></a>Neil's Godfrey's idea</h1><p>In an email this morning <a href="http://metalogger.wordpress.com/">Neil Godfrey</a> of the RUBRIC project asked if we should assign a del.icio.us tag for each item in an institutional repository. That's a very very interesting idea. You could provide a virtual repository that way.</p><p>Bbut the immediate issue is how would you express the metadata?</p><p>If we're describing an item in a 'normal' repository they you can can say the author is Peter Sefton (or PT Sefton, or Petie Sefton, or Dr Peter Sefton, Petey Sefton, or Daddy). So that's predicate:author with object <span class="spCh spChx201c">“</span>Peter Sefton<span class="spCh spChx201d">”</span>.</p><p>So how would I do this in del.icio.us?</p><dl><dt>Use separate accounts for different predicates</dt><dd>I could make a del.icio.us account for describing authors say <code>usq_repos_predicat</code>e<code>_dc_creator</code>, and tag all the authors using that account. So you could decide on a canonical representation for each author in tag form and use the special account. A tag for me might be Peter_Malcolm_Sefton_1979-08-09 (if I wasn't lying about my age :-).</dd><dt>Conflate the predicate and the object</dt><dd>You could make up tags that had both the predicate and the object in them. So the tag might be <code> dc_creator:Peter_Malcolm_Sefton_1979-08-09</code>.</dd><dt>Use a URI</dt><dd>The semantic web dream, as I understand it is to be able to use URIs wherever possible for in RDF descriptions. I tried this morning, and guess what? Del.icio.us seems to be accept URLs as tags (but they don't actually work properly so you can't use them to see things only tag things).</dd><dd>Returning to <a href="http://ptsefton.com/blog/2006/06/06/the_affiliation_issue_in_institutional_repository_software">the issue of how to identify a person</a>, what we'd really like to be able to do is to find a unique identifier for each bit of metadata  that might appear in more than one place. So, rather than having strings all over the place, like different versions of my name, I would have a way to use a unique identifier.</dd><dd>If Wikipedia let you add entries for anyone at all, then that would be easy <span class="spCh spChx2013">–</span> you'd either find or create a record for the person. So I could use this is a URI/tag for myself. Note that I've added a predicate to the URL to show that we're talking about my role as an author and a ;manifestation' of my name which is the string that's used to refer to me in this instance.</dd><dd><a href="http://en.wikipedia.org/wiki/ptsefton?predicate=dc:creator&amp;manifestation=Peter%20Sefton">http://en.wikipedia.org/wiki/ptsefton?predicate=dc:creator&amp;manifestation=Peter%20Sefton</a></dd><dd>(Might be better to use three tags <span class="spCh spChx2013">–</span> one with just my name with not relation one with a predicate and one with a manifestation to allow better querying.)</dd><dd>But (a) It's wrong to make a page for myself and (b) it would be removed anyway, although I suppose one could just use the URI.</dd><dd>This scheme would let you find all the things I've authored across the whole of del.icio.us, if it worked. One could conceivably build harvesting technology to automate this. The problem remains, thought hat there's no single authoritative source for author names.</dd></dl><h1><a id="id5" name="id5"><!--id5--></a>What I did</h1><p>To test this out, I have made a new tag that means something was authored by me. It's a URI that points to a page about me on my website.</p><p><a href="http://ptsefton.com/pt?predicate=dc:creator">http://ptsefton.com/pt?predicate=dc:creator</a></p><p>I have used del.icio.us tag management to tag everything on my website as being written by me. And I've been off to a couple of other places on the web that have things I wrote and used that tag.</p><p>But sadly, while del.icio.us lets you <b>make </b>the tag, it doesn't work to <b>view</b> the tag. So you can see the tags here amongst the other tags on my account:</p><p><a href="http://del.icio.us/ptsefton/http://ptsefton.com/pt%3Fpredicate%3Ddc:creator">http://del.icio.us/ptsefton/</a></p><p>But if you click on the tag it doesn't work (as of today):</p><p><a href="http://del.icio.us/ptsefton/http://ptsefton.com/pt%3Fpredicate%3Ddc:creator">http://del.icio.us/ptsefton/http://ptsefton.com/pt%3Fpredicate%3Ddc:creator</a></p><h1><a id="id6" name="id6"><!--id6--></a>Conclusion</h1><p class="P3">I think Neil Godfrey might be onto something here, with his idea of tagging stuff in repositories, but I'm not sure what it is. </p><p>The tags I've created seem to me to be able to bundle together a predicate (is-author) with a object (an author), but we still have the problem that there is no common way to identify authors with a URI.</p><h1><a id="id7" name="id7"><!--id7--></a>References</h1><p>Wikipedia contributors. 2007. Resource Description Framework. <i>Wikipedia, The Free Encyclopedia</i>, August 15. http://en.wikipedia.org/w/index.php?title=Resource<i>Description</i>Framework&amp;oldid=151387368 (accessed August 20, 2007).</p><p></p></div>
+</body>
+</html>

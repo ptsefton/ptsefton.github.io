@@ -1,0 +1,106 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: General purpose document formats, again
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>General purpose document formats, again</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2004/index.html">2004</a>-<a href="/blog/2004/12/index.html">12</a>-<a href="/blog/2004/12/01/index.html">01</a>
+<p>
+Emacs-addicted geek Jon Udell, who is not to be dismissed lightly has returned to the topic of <a class="external" href="http://weblog.infoworld.com/udell/2004/11/30.html#a1123">open document formats</a> vs custom schemas and where XHTML fits in. I have been working with the software development team at USQ's Distance and e-Learning Centre on this issue, and we are looking at bridging the gap between generic/general purpose and custom formats.
+</p>
+<p>
+Jon revisits Tim Bray's <a class="external" href="http://www.tbray.org/ongoing/When/200x/2004/06/17/CustomSchemas">piece</a> suggesting that XHTML might be a better choice than a custom XML dialect in many situations:
+</p>
+<p>
+</p><blockquote>No, I'm not saying that everyone should use XHTML or the OpenOffice.org formats for every document in the world. But I do think that the cost of rolling your own is a lot higher than you think, and you should really try to avoid doing that if you possibly can.</blockquote>
+<p>
+Jon's conclusion:
+</p>
+<p>
+</p><blockquote>I'm not ready to go along with the other conclusion he reaches in that posting -- that custom schemas are a red herring. But I agree that XHTML is more valuable than most people think. For the vast majority of useful documents, it can have as much structure as we need, and for the rest it can be extended internally with namespaced inclusions. But the real power arises from its hypertextual nature. For me, increasingly, there is no office, and there is no desktop, there is only a network of linked documents. A successful open document format will have to be supremely well-adapted to that environment, as XHTML is.</blockquote>
+<p>
+I have written on this matter numerous times and <a href="wp_interop_project">started the slow-moving Word Processor Interoperability project</a> (which does at least have a template to download now) to look into a practical implementation of Tim Bray's idea.
+</p>
+<p>
+I am now investigating this in new context. At USQ there is a custom schema for courseware for print, web and CD delivery, known as GOOD (Jacek Radajewski will present  a <a class="external" href="http://www.cs.mu.oz.au/~alistair/adcs2004/program.html">poster</a> on GOOD at the Ninth Australasian Document Computing Symposium (ADCS 2004), December 13 in Melbourne).
+</p>
+<p>
+We are considering doing both: maintaining the custom schema at the back end, with a more flexible  front-end system for creating content. Obviously, a generic general-purpose document format is more permissive than the back-end GOOD, so there will be some intervention to get documents from the authoring system 'up the <a href="blog/2004/05/03/potentialenergy"> hill</a>' into GOOD. I think we have a few tricks that will minimize the manual conversion process, though.
+</p>
+<p>
+The GOOD system is a custom schema (expressed as a DTD) - with chapter-level elements that structure the overall flow of course materials in a standard way across a large corpus of offerings, and a content model that is appropriate for educational content. It also has an assessment module that can drive both print and computerized quizzing with hooks into the University grade-book at the back end, in PeopleSoft.
+</p>
+<p>
+GOOD is now used in the Distance and e-Learning Centre, and by a some course leaders. It produces print, web and CD offerings automatically from the XML source. To get it into wider use I have been asked to look at an easy-to-approach, cross-platform editing system. One thing that we are exploring is to use XHTML as the basis of an easier-to edit format, with the target remaining the GOOD system for production.
+</p>
+<p>
+It is early days yet, but these are the ingredients we are considering for the new system (and we <i>will</i> be seeking further input and pilot users from the university):
+</p>
+<ul><li>A word processing template. Related to <a href="wp_interop_project">the one in the Word Processor Interoperability project</a> based on OpenOffice.org, with a Microsoft Word version as well.</li></ul>
+<ul><li>Fragmentation. Rather than trying to author an entire course in one document each 'chapter' will have its own document. This will allow broad control over the content of parts, by using different template variants for different parts of the course, e.g. providing for  quizzes in study modules but not in the introduction.</li></ul>
+<ul><li>Ways of consistently marking-up pieces of content such as reading activities using word processing devices like tables so they can be mapped to the GOOD schema.</li></ul>
+<ul><li>A web-based content management application to manage the fragments of a course. This application will take on the role of a schema <i>above</i> the chapter level, controlling the way the pieces are assembled and acting as a hub for the <i>network of linked documents</i>. This will also map to the IMS Manifest format for packaging course materials, although that format has  some problems with hypertextuality as I have <a href="blog/2004/08/06/implementingims">noted here</a>.</li></ul>
+<ul><li>XHTML templates for those who want to work in their favourite HTML editor.</li></ul>
+<ul><li>Some human intervention from experienced editorial staff to help raw documents achieve GOODness.</li></ul>
+<p>
+It is important to remember that at the  low level of granularity there would be a relatively free form 'canvas' to draw on, using something not too far from XHTML, with its generic heading, table and list elements, but with domain specific extensions for things like activities, or learning outcomes. The extensions would be implemented in the Word processor using the least-ugly hacks available. At a higher level, there would be a schema-like content system that would stitch the smaller granules together  according to domain specific rules, so you would be able to specify the top level structure of a course and have it drive the content management system; at least that level would be guaranteed to comply with the house schema.
+</p>
+<p>
+I know that such a system, with high-level schematization that ties together loosely structured granules can work well, as we used it in NextEd's Continuous Publishing System (CPS), described here in this <a class="external" href="http://ausweb.scu.edu.au/aw04/papers/edited/sefton2/paper.html"> poster paper for AUSWEB04 </a>, but the CPS was not trying to map to a complex schema. How much human intervention will be required to map word processor-produced or edited content, where it is virtually impossible to enforce constraints on structure, back to the GOOD structure is an open question; we will have to find out from trials.
+</p>
+<p>
+$LastChangedDate: 2004-12-01 01:29:05 -0600 (Wed, 01 Dec 2004) $ $Rev: 108 $</p>
+</body>
+</html>

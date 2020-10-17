@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>More details on a metdata store for data in/alongside VITAL - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../2010/03/04/more-details-on-a-metdata-store-for-data-inalongside-vital.htm">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="1 Requirements 2 Implementation 2.1 Components 3 Risks Here&#39;s another post about the ANDS metadata store work I&#39;ve been doing. I was at the university of Newcastle last week working with Vicki Picasso and Dave Huthnance, with calls to Teula Morgan at Swinburne. Together we fleshed-out a model for …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="More details on a metdata store for data in/alongside VITAL"/>
+        <meta property="og:url" content="../../../2010/03/04/more-details-on-a-metdata-store-for-data-inalongside-vital.htm"/>
+        <meta property="og:description" content="1 Requirements 2 Implementation 2.1 Components 3 Risks Here&#39;s another post about the ANDS metadata store work I&#39;ve been doing. I was at the university of Newcastle last week working with Vicki Picasso and Dave Huthnance, with calls to Teula Morgan at Swinburne. Together we fleshed-out a model for …"/>
+        <meta property="article:published_time" content="2010-03-04" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 14px;
+background-color: #FF0;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../2010/03/04/more-details-on-a-metdata-store-for-data-inalongside-vital.htm"
+                       rel="bookmark"
+                       title="Permalink to More details on a metdata store for data in/alongside VITAL">
+                        More details on a metdata store for data in/alongside VITAL
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-03-04T00:55:03+00:00"> Thu 04 March 2010</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id2">1 Requirements</a></li>
+<li><a href="#id4">2 Implementation</a>
+<ul>
+<li><a href="#id6">2.1 Components</a></li>
+</ul>
+</li>
+<li><a href="#id13">3 Risks</a></li>
+</ul>
+</div>
+<div>
+<p>Here's another post about the <a href="http://delicious.com/ptsefton/ptsefton+andsmetadatastores">ANDS metadata
+store</a> work
+I've been doing. I was at the university of Newcastle last week working
+with Vicki Picasso and Dave Huthnance, with calls to Teula Morgan at
+Swinburne. Together we fleshed-out a model for how Newcastle might run a
+data-registry alongside their VITAL repository.</p>
+<p>I want to use this blog post to expand on the last blog post and refine
+the details of what will become an ANDS project plan for someone to
+develop this stuff. I'm going to talk about the <a href="http://ptsefton.com/2010/02/23/ands-metadata-stores-describing-metadata-collections-in-vital.htm">diagram from the last
+post</a>,
+in particular the application which has become known as <span
+class="spCh spChx201c">“</span>The Red Box<span
+class="spCh spChx201d">”</span>.</p>
+<p><span
+style="display: block"><a name="graphics1"></a><img src="/wp-content/uploads/2010/03/m117b3490_643x426.jpeg" alt="graphics1" /></span></p>
+<h1><span id="id2"></span></a>1 Requirements</h1>
+<p>The main requirements for this system, as collected from the
+stakeholders are that it:</p>
+<ol>
+<li>
+<p>Can provide a <strong>university-wide registry of research data,</strong> (the
+data collections will reside wherever they currently reside under
+access control, and I believe there is a policy in development that
+open data will all be served from the research storage service) with
+two main inputs:</p>
+<ul>
+<li>
+<p>Form-based deposit, with dead-simple workflow using a system
+which is as easy for the library and research office to
+customise as the current VALET system, with an option to port
+the existing ingest workflows as well (that's why there's a
+dotted red line around the current forms system).</p>
+</li>
+<li>
+<p>Discovery of data files and data collections on the university's
+new research storage facility.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Work alongside of the VITAL institutional repository by storing
+metadata (and potentially small collections themselves) in Fedora,
+which is the underlying storage layer for VITAL</p>
+<ul>
+<li>
+<p><strong>VITAL can be used as the portal for access to research
+collection metadata or not</strong>, as appropriate. Teula Morgan told
+us that at Swinburne they would likely connect the research data
+collections into their discovery layer rather than using VITAL.
+The following models need to be supported:</p>
+<ul>
+<li>
+<p>VITAL as the authoritative source for digital objects, with
+RedBox deleting objects which it has handed off to VITAL.</p>
+</li>
+<li>
+<p>RedBox as the authoritative source for digital objects, with
+VITAL or another portal acting as the discovery interface
+for research data collections. With the addition of a
+portal, this configuration could form the basis of a
+standalone metadata store.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The system needs to <strong>stay out of VITAL's way as much as
+possible</strong> to avoid the risk of unapproved material 'leaking'
+through VITAL and to avoid affecting performance.</p>
+</li>
+<li>
+<p><strong>The system should provide for batch-changes to repository
+content</strong>, in order to assist in cleaning up the document data
+that is already in there prior to adding research data. (This
+component came up both in discussions about how we can work in a
+linked-data way <span class="spCh spChx2013">–</span> adding
+URIs for people mentioned in the repository and as a requirement
+from Swinburne where they lament the lack of batch-editing tools
+in VITAL).</p>
+</li>
+<li>
+<p>The system needs to have <strong>no dependencies on the proprietary
+parts of VITAL</strong>, to allow the possibility of switching
+repositories.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>As far as possible <strong>deal only with the collections side of
+things</strong>, without attempting to become management system for
+activities (research projects) or parties (people). Following from
+this, to be a <span class="spCh spChx201c">“</span>Linked Data<span
+class="spCh spChx201d">”</span> application where Activities and
+Parties are referred to by URIs, and other terms also use
+well-define URIs rather than strings. (There is a potential
+side-project to this one to upgrade the NicNames system <span
+class="spCh spChx2013">–</span> more on that soon).</p>
+</li>
+</ol>
+<p>Caroline Drury the CAIRSS/ANDS liaison person pointed out that we should
+discuss how these requirements go beyond encouraging people to register
+data via the ANDS 'register my data' service for Research Data
+Australia. The big things are:</p>
+<ol>
+<li>
+<p>This allows an institution to have additional management metadata
+that is not in the RDA system, such as details of how long data
+should be held. We're working with Simon Porter from the University
+of Melbourne on this. The idea as that when this is implemented with
+University X they will work out the metadata they need and the
+developer would assist in creating the input forms and mappings from
+one metadata format to another.</p>
+</li>
+<li>
+<p>This provides for curation by a data librarians who can leave some
+submissions in the queue while they sort out details of the metadata
+or wait for data to be made available on the storage facility.</p>
+</li>
+<li>
+<p>This also encompasses data which is not destined for or not ready
+for listing on RDA.</p>
+</li>
+<li>
+<p>But most importantly it will allow the institution to meet its
+obligations under <a href="http://ands.org.au/resource/code.html">The Code.</a></p>
+</li>
+</ol>
+<h1><span id="id4"></span></a>2 Implementation</h1>
+<p>The deliverable for the work we're doing at USQ for ANDS is an ANDS
+project plan. That makes sense, as it makes starting up the next phase
+of work straightforward. But to put forward a complete plan, we need to
+make some assumptions about the design, mainly in what technologies we
+would use. So here's a proposed broad-brush architecture for a metadata
+stores solution work with VITAL. Remember this is only a proposal an the
+reason it's up on this blog is so you can comment on it.</p>
+<p>The large-scale assumptions are:</p>
+<ol>
+<li>
+<p>RedBox will use <strong>Fedora 3 as an internal storage component <span
+class="spCh spChx2013">–</span></strong> with data synchronised to VITAL as
+needed. This meets the requirement that VITAL is functioning as a
+portal and will reduce stress on the VITAL repository as much as
+possible. Fedora is an obvious choice for ARROW/VITAL sites. We are
+choosing to work with the latest version for the RedBox component,
+but it will need to synchronise with Fedora 2 which underpins the
+VITAL product.</p>
+</li>
+<li>
+<p>The application will be <strong>developed in Java,</strong> building on The
+Fascinator platform which was originally sponsored by the ARROW
+project in 2008 and which has been under development at USQ since
+then. Benefits include:</p>
+<ul>
+<li>
+<p>Being Java it can sit in the same Tomcat web-server as Fedora
+and the Apache Solr indexer used by most Fedora repositories
+these days.</p>
+</li>
+<li>
+<p>The ingest component we're developing for The Fascinator, while
+incomplete, meets the requirement that the system be
+configurable in a similar way to VALET <span
+class="spCh spChx2013">–</span> where extending the forms and
+integrating them with external systems like CrossRef is
+trivially easy. Existing VALET forms can also be ported to the
+new system (it's a manual process, but not difficult).</p>
+</li>
+<li>
+<p>It's highly modular and so can be used, for example, without a
+portal, a role which VITAL, or a discovery service can take on.
+One of the most important modules will be plugin harvest
+technology to pick up content that's on the storage system and
+provide a view to researchers and data librarians to begin
+describing it. The Fascinator has as extensible system of
+plugins and we already have file-indexers and a framework for
+extracting metadata from files, which can be extended to work
+with new kinds of research data as they appear.</p>
+</li>
+<li>
+<p>Our developers know the system, meaning we can be up and running
+with this application very quickly.</p>
+</li>
+</ul>
+<p>We are aware of other Fedora software components, but none that meet
+all of the above criteria. The closest would probably be Muradora
+<span class="spCh spChx2013">–</span> if there are ANDS contributors
+using that who want help setting it for research data then I think
+that would be in scope for us to look at in our ANDS work,</p>
+</li>
+<li>
+<p>While there was some discussion about using VALET or VITAL as the
+foundation for the RedBox early in the project neither of these
+systems has an architecture which can work on a university-wide
+scale if all data sets are to be described, or the ability to
+harvest metadata about files on the research storage service.</p>
+</li>
+</ol>
+<h2><span id="id6"></span></a>2.1 Components</h2>
+<p>I'll take a brief look at some of the components in turn.</p>
+<h3><span id="id7"></span></a>2.1.1 Batch editing</h3>
+<p>The Fascinator already has the basis for a batch-change tool. The
+Fascinator, whether it is sitting on top of Fedora or our simple file
+back-end has indexer component which can either watch a queue for
+changes in a repository or do a complete re-index.</p>
+<p>This indexer has an extensible set of rules which are small scripts that
+can be fired off to deal with various kinds of content. In our desktop
+work we use this for things like generating web-ready versions of video
+content and HTML versions of documents, but it could also be used to
+transform datastreams in the repository to make bulk changes.</p>
+<p>Here's an example of how it might be used. I talked previously about
+setting up a system with the NLA or locally using NicNames to assign
+unique IDs to researchers before we start the major part of this
+project. Once we had a set of name identities, they could be put back
+into the repository by writing an 'indexing' rule that for each document
+does a look up to the name authority system and puts it back into the
+MARCXML datastream in an appropriate field. Then you tell the system to
+re-index.</p>
+<p>For a batch edit, you'd back everything up, then set this up and run it
+on a copy of the repository and swap in the new data and test thoroughly
+with VITAL, before either running the process on the live repository or
+swapping in a new Fedora database underneath.</p>
+<h3><span id="id8"></span></a>2.1.2 OAI-PMH feeds</h3>
+<p>One of the key deliverables for this project is to get data flowing to
+<a href="http://services.ands.org.au/home/orca/rda/">Research Data Australia</a>.
+Part of the project scope will be to make sure that we have
+fully-functional OAI-PMH feeds, complete with support for deletions,
+working from both VITAL's copy of Fedora and from the RedBox itself to
+meet the requirement that the system is able to run in <span
+class="spCh spChx201c">“</span>headless<span
+class="spCh spChx201d">”</span> mode. Xiaobin Shen from ANDS in
+Melbourne has been working with OAI-PMH providers, so we don't expect
+this part to be hard., just a matter of careful selection, configuration
+and testing.</p>
+<h3><span id="id9"></span></a>2.1.3 VITAL configuration</h3>
+<p>One of the major tasks is to create customisations for VITAL to display
+metadata records about data and make sure that the result fits in to the
+rest of the VITAL repository portal.</p>
+<h3><span id="id10"></span></a>2.1.4 The Forms interface</h3>
+<p>While we're not proposing to use the Squire forms interface sponsored by
+ARROW directly, the code we will be using is based on and informed by
+the same VALET model. This system consists of:</p>
+<ul>
+<li>
+<p>Form-templates using the same Velocity template engine for Java as
+VITAL uses, to make this easy to deploy for ARROW sites.</p>
+</li>
+<li>
+<p>Form widgets that allow for linked-data lookups. The idea will be to
+use sources such as People Australia or a NicNames instance to
+provide a URI for a name; type in <span
+class="spCh spChx201c">“</span>John Smith<span
+class="spCh spChx201d">”</span> and it will give you a list of John
+Smiths and the areas in which they work to pick from, with similar
+lookups for research projects. Where there is no suitable John Smith
+then the forms application will create a new one with a temporary
+URI via a call to the name-authority.</p>
+<p>Another thing the ingest system will need is a link to the Identify
+My Data service or a local equivalent for those sites who are sold
+on the benefits of using Handles as persistent identifiers for their
+collections<span class="footnote"
+style="vertical-align: super;"><a href="#ftn0" title="1 I'm not convinced that using the ANDS handle infrastructure is a good idea. Firstly, ANDS is only funded for a short time and while ANDS staff express their aspirations for keeping things going there are no guarantees, secondly, data has to have URL pointing to where it is stored, and that has to be maintained as well, with redirects and so when things change. In a lot of use-cases I think that using Handles just increases complexity, cost and risk.">1</a></span>.</p>
+</li>
+<li>
+<p>Simple workflow descriptions like the following sample:</p>
+</li>
+</ul>
+<!-- -->
+<pre><code>&quot;stages&quot;: [
+
+    {
+
+            &quot;name&quot;: &quot;init&quot;,
+
+            &quot;security&quot;: [&quot;owner&quot;, &quot;admin&quot;],
+
+            &quot;visibility&quot;: [&quot;guest&quot;, &quot;owner&quot;, &quot;admin&quot;],
+
+            &quot;template&quot;: &quot;${user.home}/.fascinator/workflows/templates/basic-init.vm&quot;
+
+        },
+
+        {
+
+            &quot;name&quot;: &quot;live&quot;,
+
+            &quot;security&quot;: [&quot;owner&quot;, &quot;admin&quot;],
+
+            &quot;visibility&quot;: [&quot;guest&quot;, &quot;owner&quot;, &quot;admin&quot;],
+
+            &quot;template&quot;: &quot;${user.home}/.fascinator/workflows/templates/basic-live.vm&quot;
+
+        }
+
+    ]
+</code></pre>
+<h3><span id="id12"></span></a>2.1.5 Research storage harvest &amp; grants database triggers</h3>
+<p>The University of Newcastle has a research storage facility (a
+<a href="http://en.wikipedia.org/wiki/Storage_area_network">SAN</a>) and policies
+are under development which will likely see lots of RDA-ready data made
+available on the facility. One of the features of the RedBox application
+will be to he able to harvest metadata about such files; at the very
+least, file-paths, sizes and dates, and any other metadata that can be
+automatically extracted. For data that's on the storage facility the
+idea is that researchers can add it to the metadata store by finding the
+data files themselves and clicking <span
+class="spCh spChx201c">“</span>Describe this data<span
+class="spCh spChx201d">”</span> to fill out a form.</p>
+<p>The Fascinator has a number of features in this area such as the ability
+to generate thumbnail versions of files and web-ready renditions of
+various formats, which is of peripheral interest to the metadata stores
+activity.</p>
+<p>The harvester system is highly configurable, so it could be set up to
+index, or watch other kinds of storage service; one that Newcastle
+require is the ability to harvest an email account with messages from
+the grants database about grant completions; which are events that
+should trigger a metadata librarian to chase-up data from researchers.</p>
+<h1><span id="id13"></span></a>3 Risks</h1>
+<p>There will be a detailed risk assessment for ANDS, but here are some
+notes about the main risks:</p>
+<div class="Risks"
+style="width: 100%; margin: 0px; padding: 0px; text-align:left;">
+<p>+--------------------------------------------------------------------------+
+| Risk                                                                     |
++--------------------------------------------------------------------------+
+| The software we develop here might end up being only used at one or a    |
+| handful of institutions, which would then bear the maintenance load.     |
++--------------------------------------------------------------------------+
+| University X unable to supply full metadata schema on time; there is no  |
+| clear consensus on best practice for describing research data collection |
+| to meet the demands of The Code, while being able to serve RIF-CS to     |
+| Research Data Australia.                                                 |
++--------------------------------------------------------------------------+
+| Linked Data infrastructure including URI endpoints for parties and       |
+| activities doesn't come on-line in time for implementation               |
++--------------------------------------------------------------------------+</p>
+</div>
+<ol>
+<li></li>
+</ol>
+<p>Copyright Peter Sefton, 2010. Licensed under Creative Commons
+Attribution-Share Alike 2.5 Australia.
+&lt;<a href="http://creativecommons.org/licenses/by-sa/2.5/au/">http://creativecommons.org/licenses/by-sa/2.5/au/</a>&gt;</p>
+<p><a href="http://creativecommons.org/licenses/by-sa/2.5/au/"><img src="/wp-content/uploads/2010/03/m40ca94ba.png" alt="HTTP://DBPEDIA.ORG/SNORQL/?QUERY=SELECT+%3FRESOURCE%0D%0AWHERE+{+%0D%0A%3FRESOURCE+%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FONTOLOGY%2FPERSON%2FBIRTHPLACE%3E+%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FRESOURCE%2FSYDNEY%3E+%3B%0D%0A%3CHTTP%3A%2F%2FDBPEDIA.ORG%2FONTOLOGY%2FPERSON%" /></a></p>
+<p>This post was written in OpenOffice.org, using templates and tools
+provided by the <a href="http://ice.usq.edu.au/">Integrated Content Environment</a>
+project and published to WordPress using <a href="http://fascinator.usq.edu.au/desktop/desktop.htm">The
+Fascinator</a>.</p>
+<hr />
+<div style="font-size: .9em;">
+<p><span class="footnote-defined"><a href="#ftn0-text">1</a> I'm not convinced that
+using the ANDS handle infrastructure is a good idea. Firstly, ANDS is
+only funded for a short time and while ANDS staff express their
+aspirations for keeping things going there are no guarantees, secondly,
+data has to have URL pointing to where it is stored, and that has to be
+maintained as well, with redirects and so when things change. In a lot
+of use-cases I think that using Handles just increases complexity, cost
+and risk.</span></p>
+</div>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'more-details-on-a-metdata-store-for-data-inalongside-vital';
+                var disqus_url = 'http://ptsefton.com/2010/03/04/more-details-on-a-metdata-store-for-data-inalongside-vital.htm';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2020 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

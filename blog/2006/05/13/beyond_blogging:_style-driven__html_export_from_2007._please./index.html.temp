@@ -1,0 +1,278 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Beyond blogging: style-driven  HTML export from 2007. Please.
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Beyond blogging: style-driven  HTML export from 2007. Please.</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2006/index.html">2006</a>-<a href="/blog/2006/05/index.html">05</a>-<a href="/blog/2006/05/13/index.html">13</a>
+<div><p class="P1">Via <a href="https://rubric-central.usq.edu.au/projects/trac/rubric/timeline?ticket=on&amp;wiki=on&amp;max=50&amp;daysback=90&amp;format=rss">Brian Jones</a>, who writes about the new Office XML formats for Microsoft, I welcome the news from Joe Friend that there will be built-in<a href="http://blogs.msdn.com/joe_friend/archive/2006/05/12/595963.aspx"> blogging in Word 2007</a>.</p><p>This is good news not so much for the blogging bit but for the way that Word will be able to make clean HTML from styles. Joe Friend only <a href="http://blogs.msdn.com/joe_friend/archive/2006/05/12/595963.aspx">mentions</a> a couple of styles (h1 and, I assume, quotes, or does he mean any paragraph enclosed in quote marks and indented?):</p><blockquote class="bq"><p>Go ahead, click View, Source in your browser and look at the HTML starting with "Word is a great tool..." We really are going pretty basic here. Bold become &lt;strong&gt;, Italic becomes &lt;em&gt;, Heading 1 become &lt;h1&gt;, Quotes become &lt;blockquote&gt; and on it goes. There are definitely kinks in Beta 2. For example we are encoding smart quotes incorrectly so I had to turn off that feature in Word, but the goal is to output just what is needed to make your blog post clean and readable (code and rendered HTML).</p></blockquote><p>That's fine, but what about lists, and pre-formatted text embedded in quotes and so on? (And actually I think bold should map to &lt;b&gt;, or nothing, and you should use a style called 'strong' if that's what you want).</p><p>Well at the ICE project we have developed a stylesheet that can drive clean HTML output, and we have templates for both Word and OpenOffice.org – so I can post to this blog from Microsoft Word or any OpenDocument aware application, like OpenOffice.org. I have covered this in a number of previous posts. So look <a href="http://ptsefton.com/blog/2005/09/18">here</a> for an example, and <a href="http://ptsefton.com/blog/2005/09/05/blog_this_button_for_openoffice.org_(well_half_anyway)">here</a> for some stuff about the ICE approach to blogging from a word processor, and in the <a href="http://eprints.usq.edu.au/archive/00000697/">pre-print of the paper</a> I'll be giving on ICE at Ausweb 06 for some more detail about how the mapping works. I'll quote that paper here:</p><blockquote class="bq"><p>The core styles are listed below.</p></blockquote><p></p><div align="left" class="Table48"><table class="Table48"><tbody><tr class="Table48_1"><td class="Table48_A1">
+<p class="P2">Family</p></td>
+<td class="Table48_A1">
+<p class="P2">Type</p></td>
+<td class="Table48_C1" colspan="5">
+<p class="P2">Style names</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Paragraph (p)</p></td>
+<td class="Table48_A2">
+<p> </p></td>
+<td class="Table48_A2">
+<p>p</p></td>
+<td class="Table48_A2">
+<p> </p></td>
+<td class="Table48_A2">
+<p> </p></td>
+<td class="Table48_A2">
+<p> </p></td>
+<td class="Table48_G2">
+<p> </p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Heading (h)</p></td>
+<td class="Table48_A2">
+<p> </p></td>
+<td class="Table48_A2">
+<p>h1</p></td>
+<td class="Table48_A2">
+<p>h2</p></td>
+<td class="Table48_A2">
+<p>h3</p></td>
+<td class="Table48_A2">
+<p>h4</p></td>
+<td class="Table48_G2">
+<p>h5</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Heading (h)</p></td>
+<td class="Table48_A2">
+<p>Numbered (number)</p></td>
+<td class="Table48_A2">
+<p>h1n</p></td>
+<td class="Table48_A2">
+<p>h2n</p></td>
+<td class="Table48_A2">
+<p>h3n</p></td>
+<td class="Table48_A2">
+<p>h4n</p></td>
+<td class="Table48_G2">
+<p>h5n</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Numbered number)</p></td>
+<td class="Table48_A2">
+<p>li1n</p></td>
+<td class="Table48_A2">
+<p>li2n</p></td>
+<td class="Table48_A2">
+<p>li3n</p></td>
+<td class="Table48_A2">
+<p>li4n</p></td>
+<td class="Table48_G2">
+<p>li5n</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Bullet (bullet)</p></td>
+<td class="Table48_A2">
+<p>li1b</p></td>
+<td class="Table48_A2">
+<p>li2b</p></td>
+<td class="Table48_A2">
+<p>li3b</p></td>
+<td class="Table48_A2">
+<p>li4b</p></td>
+<td class="Table48_G2">
+<p>li5b</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Uppercase Alpha (A)</p></td>
+<td class="Table48_A2">
+<p>li1A</p></td>
+<td class="Table48_A2">
+<p>li2A</p></td>
+<td class="Table48_A2">
+<p>li3A</p></td>
+<td class="Table48_A2">
+<p>li4A</p></td>
+<td class="Table48_G2">
+<p>li5A</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Lowercase Alpha (a)</p></td>
+<td class="Table48_A2">
+<p>li1a</p></td>
+<td class="Table48_A2">
+<p>li2a</p></td>
+<td class="Table48_A2">
+<p>li3a</p></td>
+<td class="Table48_A2">
+<p>li4a</p></td>
+<td class="Table48_G2">
+<p>li5a</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Lowercase Roman (i)</p></td>
+<td class="Table48_A2">
+<p>li1i</p></td>
+<td class="Table48_A2">
+<p>li2i</p></td>
+<td class="Table48_A2">
+<p>li3i</p></td>
+<td class="Table48_A2">
+<p>li4i</p></td>
+<td class="Table48_G2">
+<p>li5i</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Lowercase Roman (I)</p></td>
+<td class="Table48_A2">
+<p>li1I</p></td>
+<td class="Table48_A2">
+<p>li2I</p></td>
+<td class="Table48_A2">
+<p>li3I</p></td>
+<td class="Table48_A2">
+<p>li4I</p></td>
+<td class="Table48_G2">
+<p>li5I</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>List item (li)</p></td>
+<td class="Table48_A2">
+<p>Continuing paragraph (p)</p></td>
+<td class="Table48_A2">
+<p>li1p</p></td>
+<td class="Table48_A2">
+<p>li2p</p></td>
+<td class="Table48_A2">
+<p>li3p</p></td>
+<td class="Table48_A2">
+<p>li4p</p></td>
+<td class="Table48_G2">
+<p>li5p</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Blockquote (bq)</p></td>
+<td class="Table48_A2">
+<p> </p></td>
+<td class="Table48_A2">
+<p>bq1</p></td>
+<td class="Table48_A2">
+<p>bq2</p></td>
+<td class="Table48_A2">
+<p>bq3</p></td>
+<td class="Table48_A2">
+<p>bq4</p></td>
+<td class="Table48_G2">
+<p>bq5</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Definition List </p><p>Term (dt)</p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_A2">
+<p>dt1</p></td>
+<td class="Table48_A2">
+<p>dt2</p></td>
+<td class="Table48_A2">
+<p>dt3</p></td>
+<td class="Table48_A2">
+<p>dt4</p></td>
+<td class="Table48_G2">
+<p>dt5</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Definition List</p><p>Description (dd)</p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_A2">
+<p>dd1</p></td>
+<td class="Table48_A2">
+<p>dd2</p></td>
+<td class="Table48_A2">
+<p>dd3</p></td>
+<td class="Table48_A2">
+<p>dd4</p></td>
+<td class="Table48_G2">
+<p>Dd5</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Pre formatted</p><p>(pre)</p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_A2">
+<p>pre1</p></td>
+<td class="Table48_A2">
+<p>pre2</p></td>
+<td class="Table48_A2">
+<p>pre3</p></td>
+<td class="Table48_A2">
+<p>pre4</p></td>
+<td class="Table48_G2">
+<p>Pre5</p></td>
+</tr><tr class="Table48_2"><td class="Table48_A2">
+<p>Metadata: title</p><p>(title)</p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_A2">
+<p>Title</p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_A2">
+<p></p></td>
+<td class="Table48_G2">
+<p></p></td>
+</tr></tbody></table></div><p class="center"><b>Table of style names for paragraph styles in ICE.</b></p><blockquote class="bq"><p>The set of style names is designed to be different to those that ship by default with major word processors in order to emphasize that this is a self-contained system. For example, a first level heading is called h1, rather than Heading 1 in Word or OpenOffice.org while a first level bulleted list item would be li1b for “list item, level 1, bullet”. </p><p>In the default style-sets that come with other word processors this kind of list item might be “List 1” in OpenOffice.org, or “List Bullet 1” in Word. The Word style name is more readable than the ICE style, but at the cost of being so long that it can be difficult to work with in Word itself, when trying to view style names in the left margin (a feature denied to users of OpenOffice.org).</p></blockquote><p>So, what if Word 2007 finally shipped with the Normal template containing a complete set of styles, like the ICE styles, that would cover pretty much the same territory as HTML? Not just headings, but different flavours of numbered list, definition lists, pre-formatted text and blockquotes in a number of levels that could be combined. Something a bit better than the feeble, incomplete set of styles Microsoft has been shipping for years.</p><p>Hey Joe, you can <a href="mailto:pt@ptsefton.com">contact me</a> if you'd like some help – I've been <b>working on this issue for ten years</b>.</p><p>(And what if the much hyped new clean Word interface defaulted to using styles for its formatting? Imagine if pressing those little list-icons have you not only list-like formatting but style-driven list-based formatting. That would mean that you could <b>export clean HTML</b> and <b>really interoperate with other packages</b>.)</p><p>Given a decent set of styles then finally the default <code>Save as HTML...</code> in Word could produce nice clean HTML. Please, please, Microsoft don't tell us that you've continued to bury and de-value styles, and make templates even harder to find in the interface.</p><p>For example, it Word's HTML export system saw a paragraph with the style <code>List Bullet 1</code> followed by <code>List Bullet 2</code>, it would know how to output nested list in HTML. At the moment <b>HTML export in any word processor is severely handicapped</b> by having to divine good mappings to HTML from a completely open-ended formatting palette, with the result that clean export is pretty much impossible. You can read about my frustrations with the OpenOffice.org Writer application <a href="http://ptsefton.com/blog/2005/10/31/why_do_i_keep_going_on_about_html_export_from_word_processors%3F">here</a>.</p><p>And going a bit further wouldn't it be great if OpenOffice.org and Microsoft Word and Google's Writely (see my <a href="http://ptsefton.com/blog/2006/03/21/writely,__meet_the_ice_template">post</a>)  all understood the same set of styles and could make clean HTML from them? (They all agree on “Heading 1, Heading 2” but that's as far as it goes).</p><p>Ok, so maybe Microsoft and Sun and Google don't care. But <a href="http://ice.usq.edu.au/"><b>we</b></a> do so we'll continue in our struggle to provide good word processor interoperability even if we have code it ourselves. It would just be so much easier if the vendors helped the community.</p><p></p></div>
+</body>
+</html>

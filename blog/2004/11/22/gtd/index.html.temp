@@ -1,0 +1,127 @@
+<html>
+<head>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-898010-1";
+urchinTracker();
+</script>
+<title>
+ptsefton.com :: Getting things done
+</title>
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-4309697012647581";
+/* 728x90, created 2/10/08 */
+google_ad_slot = "1205309022";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+<!-- SiteSearch Google -->
+<form action="http://www.google.com/custom" method="get" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tr><td align="left" height="32" nowrap="nowrap" valign="top">
+</td>
+<td nowrap="nowrap">
+<input name="domains" type="hidden" value="ptsefton.com"/>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input id="sbi" maxlength="255" name="q" size="31" type="text" value=""/>
+<label for="sbb" style="display: none">Submit search form</label>
+<input id="sbb" name="sa" type="submit" value="Google Search"/>
+</td></tr>
+<tr>
+<td> </td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input id="ss0" name="sitesearch" type="radio" value=""/>
+<label for="ss0" title="Search the Web"><font color="#000000" size="-1">Web</font></label></td>
+<td>
+<input checked="" id="ss1" name="sitesearch" type="radio" value="ptsefton.com"/>
+<label for="ss1" title="Search ptsefton.com"><font color="#000000" size="-1">ptsefton.com</font></label></td>
+</tr>
+</table>
+<input name="client" type="hidden" value="pub-4309697012647581"/>
+<input name="forid" type="hidden" value="1"/>
+<input name="ie" type="hidden" value="ISO-8859-1"/>
+<input name="oe" type="hidden" value="ISO-8859-1"/>
+<input name="cof" type="hidden" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1"/>
+<input name="hl" type="hidden" value="en"/>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+<h1>Getting things done</h1>
+<a href="/">Home</a>-<a href="/blog/index.html">blog</a>-<a href="/blog/2004/index.html">2004</a>-<a href="/blog/2004/11/index.html">11</a>-<a href="/blog/2004/11/22/index.html">22</a>
+<p>
+I have recently discovered <a class="external" href="http://www.davidco.com/">Getting things done</a> by David Allen. I read it through and on the way reinvented my life. No really, I did. Ask the long suffering Sandra. 
+</p>
+<p>
+There's a very active gtd meme on the web - you can track it using del.icio.us by watching the <a class="external" href="http://del.icio.us/tag/gtd">gtd tag</a> or try the <a class="external" href="http://del.icio.us/popular/gtd">most popular</a>. I first came across this via <a class="external" href="http://jtauber.com/blog/2004/09/19/43_folders:_the_latest_addition_to_my_blogroll">James Tauber</a>, and read about it on <a class="external" href="http://www.43folders.com/2004/09/how_does_a_nerd.html">43 Folders</a>.
+</p>
+<p>
+The main things I got out of the book were:
+</p>
+<ul><li>Capturing stuff. I captured all the tangible crap in my bedside drawer and the cables and so on stuffed in boxes and put them into labeled plastic drawers and file boxes and wrote down all the intangible crap in my head.</li></ul>
+<ul><li>Using the calendar. Anything I really need to do or tasks that have been hanging around for too long now goes on the calendar. And I take the calendar seriously. Check it every morning after walking the fierce black hounds and make sure it's all done or gets accounted for (everything except tax-return related tasks. I love paying tax, I just don't like the bit where I have to <i>do</i> stuff).</li></ul>
+<ul><li>Process notes. I never got this before, but it is essential to read back through notes and process them. I used to think people wrote stuff down and never looked at it again.</li></ul>
+<p>
+It's true that once you get  stuff out of your head and onto paper your head works better. It stops constantly scanning the list of things to do and is free to think about other stuff, like songs you'd like to write one day or how to build a recumbent  solar coffee maker.
+</p>
+<p>
+One side effect, though, is that I have now started doing stupid stuff like putting on coffee and leaving the jug off the Atomic when I make the 7am cuppa. Mind like water. Mind that's given up on worrying about little details.
+</p>
+<p>
+Not a black belt yet, but here's my emerging system.
+</p>
+<h3>Gear</h3>
+<p>
+I now carry a 35c notebook  (a Quill Q560), if my mind like water and I haven't left it in the post office, and whatever pen is to hand. In this I put stuff I will need, like the address for the mechanic, or shopping lists for on the way home. I use it to take notes. Used to delight in <i>not</i> taking notes, going right back to Uni days. Thought it was cool. Actually it is, and I can remember stuff, but I am also very good at remembering to forget stuff. On Monday morning, if not before, I process the notes into Outlook as tasks and events, or I put them into documents either on the at-work network or into my home system.
+</p>
+<p>
+At work I have a Windows XP machine, but I spend a lot of time in Linux via some kind of magic X thing. At home I have an immobile Linux laptop.
+</p>
+<p>
+The $25 linux server at home now runs subversion, or I can connect with a terminal using <a class="external" href="http://en.wikipedia.org/wiki/SSH">ssh</a> so I can work on my projects from anywhere (not that I'd do it at work of course, but it is handy to be able to grab a template or a draft or something from the home network).
+</p>
+<p>
+Why Outlook? It's there at work, backed up by Exchange so tasks are available from home over the web. It is simple to take a task and drag it onto the calendar when it becomes time-critical.
+</p>
+<p>
+I had visions of using Evolution from Linux to talk to exchange and getting the Palm 3c back in action, but it's all too hard at this stage, and I'm getting to like the notebook.
+</p>
+<p>
+Part of me wants to do something really geekish using Emacs but this works well.
+</p>
+<p>
+Also got a desk, an in-box (currently empty!), and a label maker. I'm not so happy about having a label maker, although David Allen insists that it is going to improve matters. I like the labels but I hate having yet another machine that creates waste. The best thing about it so far is that it proved that the 4 year old can read 'SEFTON' when I labeled a ukulele we have recently acquired. Another life changing event, getting a uke.
+</p>
+<h3>Task management</h3>
+<p>
+Tasks I keep in folders related to the context in which the task can be done on Exchange;  /home, /usq, /shopping, /waiting and so on. The advantage of having home stuff there is that when I think of something at work I can add a task and get it off my mind. I am experimenting with using the body of the task, which is a text field, to keep track of projects. The task title is the next action that's required and when I do that action I open up the task and pick the next thing to do as a new title. Also using the tasks to write blog postings like this one, in a wiki-style markup which I later add to the site via copy and paste in to a web form, or via a text file.
+</p>
+<h3>Filing</h3>
+<p>
+When I was at uni I used to work casually at a gear shop, selling tents and backpacks and suchlike. That was were I got my previous experience with filing. There used to be these rock climbing types there who used stainless steel bolts for protection on climbs. They would drill holes and stick in the bolts. They did some sort of machining on them before they used them. I heard them talking one day about it "We'll have to file those bolts before the weekend". I put them under B in the filing cabinet. Hehe. Took them days and days to figure it out.
+</p>
+<p>
+I have now convinced myself to file the kind of stuff that I used to leave lying around on any flat surface. Sometimes on not so flat surfaces as well. This was one of the biggest hurdles for me. It required (a) a new desk that's mine and has a file drawer (b) a change in my bad attitude. If it's worth keeping then it might as well be in the file drawer as on the office floor, or balanced on top of the router, eh.
+</p>
+<h3>Habits</h3>
+<p>
+The systems I have in place are only as good as the habits that keep them running. So far I am processing notes, respecting the calendar, and being much less messy than I used to be.
+</p>
+<p>
+I have a new rule that once a new flat surface is exposed I will not put crap down on it anymore. This includes the bedroom floor, and the sideboard, and so on. Getting there. We have a big house, so it can sometimes be quite a long walk to the right place to put something but I'm trying.
+</p>
+<p>
+Backsliding can't be far away though. 
+</p>
+<p>
+$LastChangedDate: 2004-11-22 05:51:16 -0600 (Mon, 22 Nov 2004) $ $Rev: 65 $</p>
+</body>
+</html>
