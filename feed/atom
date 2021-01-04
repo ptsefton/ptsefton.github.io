@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>/</id><updated>2020-11-23T00:00:00+01:00</updated><entry><title>An open, composable standards–based research eResearch platform: Arkisto</title><link href="2020/11/23/Arkisto.htm" rel="alternate"></link><published>2020-11-23T00:00:00+01:00</published><updated>2020-11-23T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:None,2020-11-23:2020/11/23/Arkisto.htm</id><summary type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>/</id><updated>2021-01-04T00:00:00+01:00</updated><entry><title>Redundant.</title><link href="2021/01/04/redundant.htm" rel="alternate"></link><published>2021-01-04T00:00:00+01:00</published><updated>2021-01-04T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:None,2021-01-04:2021/01/04/redundant.htm</id><summary type="html">&lt;p&gt;Thursday 10 December 2020 was my last day at &lt;a href="https://uts.edu.au"&gt;UTS&lt;/a&gt; as the eResearch Support Manager. The position was declared to be redundant under the &amp;quot;Voluntary Separation Program&amp;quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.&lt;/p&gt;
+&lt;p&gt;This is the third redundancy for me, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Thursday 10 December 2020 was my last day at &lt;a href="https://uts.edu.au"&gt;UTS&lt;/a&gt; as the eResearch Support Manager. The position was declared to be redundant under the &amp;quot;Voluntary Separation Program&amp;quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.&lt;/p&gt;
+&lt;p&gt;This is the third redundancy for me, and apart from fleeting feelings of uselessness, bitterness and mild despair being redundant, and of no use to anyone any more, has worked out fine for me in the past.&lt;/p&gt;
+&lt;p&gt;I've enjoyed working at UTS for the past nearly six years - this year was challenging for a lot of people, but working from home suited me.&lt;/p&gt;
+&lt;p&gt;My colleagues and I built a good strong eResearch team, developed an eResearch strategy, and worked towards it, reporting as we went (see last year's &lt;a href="https://eresearch.uts.edu.au/eresearch/strategy-2019/"&gt;update on 2019&lt;/a&gt;). The team provides &amp;quot;full-stack&amp;quot; support - from racking and stacking servers to policy and strategy development; from one-on-one help with coding problems to faculty research committee meetings about data management planning. Every one of the team works directly with our stakeholders from research students to Deputy Vice Chancellors. As I leave, UTS has a new joined-up Research Systems Strategic Plan to which we all contributed ready to go, and the team has clear strategies for Research Data Management and computing support.&lt;/p&gt;
+&lt;p&gt;So why did I go for the &amp;quot;separation&amp;quot;?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;I get a decent amount money, so I can have a break and have a think about what to do next, which I think will involve working on similar eResearch things internationally, nationally and for individual organizations.  Job number one, a small but I hope impactful international consulting gig is reaching the contract stage. I'll also keep working on the Research Object Crate (&lt;a href="http://www.researchobject.org/ro-crate/"&gt;RO-Crate&lt;/a&gt;) spec and on the &lt;a href="/2020/11/23/Arkisto.htm"&gt;Arkisto research platform&lt;/a&gt;. So, if you have any eResearching that wants doing please get in touch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To spend more time with the family. Actually that's not really a major factor with the eight kids Gail McGlinn and I have between us all grown up, but the dog will appreciate having me around and we are taking a road trip North to Cairns in March with visits to family and friends, pandemic willing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To avoid a &amp;quot;non-voluntary separation&amp;quot;; there are several not unlikely scenarios under which this might have happen in 2021.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I have accepted an honorary position as a Visiting Fellow in the School of Mathematical and Physical Sciences, within the Faculty of Science so I can keep working with some of the research teams on data management and analytical pipelines, and will sit on an advisory committee that I'll tell you about next year.&lt;/p&gt;
+&lt;p&gt;The core eResearch team had an end-of-2020/bye-bye-Petie get together. A couple of people couldn't make it but the rest of us chartered a double-decker and had a bit of a tour of the upper Blue Mountains followed by fully catered lunch. I can only hope that I came half way to the standard of the UTS Ariel Function Centre with my humble efforts at the stove, and some knife work from Pascal and Anselm (pictured below) on the side dishes.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="blog/2020-vsp/bus.jpg"&gt;
+&lt;figcaption&gt;It's not often the Explorer Bus comes down this particular little street - we had to fight our way out through the overhanging trees with machetes. And I'd forgotten how much Coach Captain banter eclipses mere dad jokes - and our captain Michael has been coach captaining for 34 years so he has all the good patter. &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src="blog/2020-vsp/cahills.jpg" alt="Nine people in front of a valley view" &gt;
+&lt;figcaption&gt;
+And here's the obligatory team snapshot at Cahill's lookout. Left to right - Fiona Tweedie, me, Sharyn Wise, Moises Sacal, Anselm Motha, Simon Kruik (front), Pascal Tampubolon, Michael Lake and Weisi Chen. (Mike Lynch couldn't make it)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+</content><category term="misc"></category></entry><entry><title>An open, composable standards–based research eResearch platform: Arkisto</title><link href="2020/11/23/Arkisto.htm" rel="alternate"></link><published>2020-11-23T00:00:00+01:00</published><updated>2020-11-23T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:None,2020-11-23:2020/11/23/Arkisto.htm</id><summary type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
 &lt;img src='blog/Arkisto/Slide01.png' alt='
 &lt;p&gt;' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
@@ -1965,327 +1994,4 @@ Stop treating ontologies like https://www.joelonsoftware.com/2001/04/21/dont-let
 &lt;/details&gt;
 &lt;/section&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
-</content><category term="DataCrate"></category></entry><entry><title>Trip Report (with bonus opinions) - Open Repositories 2018, Bozeman Montana, USA</title><link href="2018/07/10/or2018.htm" rel="alternate"></link><published>2018-07-10T00:00:00+02:00</published><updated>2018-07-10T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:None,2018-07-10:2018/07/10/or2018.htm</id><summary type="html">&lt;p&gt;I (Peter Sefton) recently attended &lt;a href="http://www.or2018.net/"&gt;OR2018&lt;/a&gt;, the Open
-Repositories conference from June 4-7, 2018 in Bozeman Montana.&lt;/p&gt;
-&lt;p&gt;This post is being posted on the &lt;a href="https://eresearch.uts.edu.au"&gt;UTS eResearch site&lt;/a&gt; and on &lt;a href="http://ptsefton.com"&gt;my site&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;My trip was funded by the University of Technology Sydney (UTS).&lt;/p&gt;
-&lt;img alt="The sign at the Lewis and Clark Motel" src="blog/2018/07/or-2018/lewis_and_clark_sign.JPG"&gt;
-&lt;h1&gt;Mission&lt;/h1&gt;
-&lt;p&gt;Gavin Kennedy from QCIF was also in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I (Peter Sefton) recently attended &lt;a href="http://www.or2018.net/"&gt;OR2018&lt;/a&gt;, the Open
-Repositories conference from June 4-7, 2018 in Bozeman Montana.&lt;/p&gt;
-&lt;p&gt;This post is being posted on the &lt;a href="https://eresearch.uts.edu.au"&gt;UTS eResearch site&lt;/a&gt; and on &lt;a href="http://ptsefton.com"&gt;my site&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;My trip was funded by the University of Technology Sydney (UTS).&lt;/p&gt;
-&lt;img alt="The sign at the Lewis and Clark Motel" src="blog/2018/07/or-2018/lewis_and_clark_sign.JPG"&gt;
-&lt;h1&gt;Mission&lt;/h1&gt;
-&lt;p&gt;Gavin Kennedy from QCIF was also in attendance, and we were on something of a
-mission - to promote and get feedback on the recent work we've been doing on the
-&lt;a href="https://www.redboxresearchdata.com.au/"&gt;ReDBox research data management
-platform&lt;/a&gt;. We ran a ReDBOX intro
-workshop on the Monday of the conference. Gavin and I also presented a general
-introduction to ReDBOX and the provisioner, and I went into more detail about
-&lt;a href="http://ptsefton.com/2018/06/29/DataCrate_2018.htm"&gt;the DataCrate standard&lt;/a&gt; for
-shipping and showing-off research data that I have been leading, with help from
-a growing community of supporters. I also did a presentation in the technical
-session which included a live demo of using ReDBox to ingest DataCrates -
-showing how it could 'sniff out' metadata from DataCrate packages.&lt;/p&gt;
-&lt;h1&gt;Research Data Management&lt;/h1&gt;
-&lt;p&gt;Open Repositories now has enough going on about Research Data Management that I
-was able to spend most in those sessions when I wasn't meeting with people
-directly.&lt;/p&gt;
-&lt;p&gt;I heard people talk about a few things that helped confirm some of our design
-choices at UTS, and a few things to challenge my world view as well.&lt;/p&gt;
-&lt;p&gt;Vladimir Bubalo from Macquarie, Gavin and I  chased up some more details about the &lt;a href="https://dataverse.org/"&gt;Dataverse
-repository software&lt;/a&gt;.There is some interest from
-Macquarie in what's available in the way of open source research data
-repositories.&lt;/p&gt;
-&lt;p&gt;As attested by the session &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;presentations=show&amp;amp;search=australian+data+archive"&gt;Reaching out with Data: Dataverse Creating a Global
-Community&lt;/a&gt;
-Dataverse looks like it's a thriving product and would be a good integration
-target for ReDBOX, it powers the &lt;a href="https://ada.edu.au/"&gt;Australian Data Archive&lt;/a&gt;
-for one thing and can be used as an institutional data repository. One problem
-they're still grappling with is large file support, which is the same issue with
-&lt;em&gt;any&lt;/em&gt; repository software when you try to put large volumes of, or large numbers
-of data streams through the API or web interface.&lt;/p&gt;
-&lt;p&gt;There was a really interesting talk from the UK Jisc Research Data Shared
-Services (RDSS) project (on which I have done some very part time consulting via
-Artefactual in Canada) about how they failed to get a Samvera repository working
-as part of their offering.&lt;/p&gt;
-&lt;p&gt;The have published &lt;a href="https://docs.google.com/document/d/1CQ_Oc9rRjub-e964_6PKEB1N0H03UEOUb52thDNA3p4/edit#heading=h.y6gyy9rpmdvk"&gt;their report&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;It seems like the project to adapt Samvera failed not because of large files or
-large volumes of files, although that problem may have come up later, as &lt;a href="http://www.doria.fi/handle/10024/97641"&gt;we
-reported at OR2014&lt;/a&gt;, Hydra, which was
-rebranded Samvera had severe performance problems on the Alveo virtual lab
-related to processing number of files in a single transaction. Two issues Jisc
-called out in their report are &lt;em&gt;one&lt;/em&gt;, a failure to implement their complex
-domain model in Samvera.  They say:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In order to capture and store the range of metadata required by the RDSS CDM
-the internal storage model of the work type within RDSS Samvera needed to map
-closely to the CDM’s conceptual data model. However, it did not prove to be
-straightforward to translate the conceptual data model of the RDSS CDM, which
-leverages entity-relationships, to a programming/storage model that is largely
-intended to be flat.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;And &lt;em&gt;two&lt;/em&gt;, they had problems implementing a message passing model.&lt;/p&gt;
-&lt;p&gt;In order to avoid the kind of problems reported by Jisc and to deal with the
-reality that many researchers just want to gulp-down files, or object-store
-blobs, or database tables and most emphatically do not want to sip data
-through a tiny API-straw we are building research data management
-systems that are distributed:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Avoiding complex customisation of applications wherever possible and instead
-linking Research Data Management Plans (RDMPs) to  workspaces in research software
-such as lab notebooks or git repositories, and archival data stores using
-standard linked data techniques.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Not&lt;/em&gt; using message-queues that might block progress on workloads (lesson
-learned from ReDBOX 1 development and its ill-conceived &amp;quot;curation&amp;quot;
-workflows). We plan to run &amp;quot;bots&amp;quot;, stand alone agents instead which generate
-reports or make links or auto-provision spaces.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Keeping archival data, and data that needs rapid access in large scalable
-file storage systems, described and linked to RDMPs, data
-descriptions, and data publication records. For us, 'the repository' is a
-collection of services which includes the central index and a variety of
-stores, rather than a single application: It's a lifestyle; it's not just
-for Christmas; and most importantly it's a governance thing.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Given the above one of the things I was keen to do at OR2018 was to find out more
-about the &lt;em&gt;Oxford Common Filesystem Layout&lt;/em&gt; (OCLF) which is being driven by people from
-Oxford, Emory, Stanford, Cornell and Duraspace - it's about how you organise
-digital assets in the kind of deconstructed architecture I described above for
-UTS. The files are kept on a file system (&lt;em&gt;yes&lt;/em&gt; cloud-first people, that might
-actually be backed by an object-store) so that you can run services against
-them: index them for discovery, check their integrity, generate dissemination
-versions for distribution, report on items due for disposal and so on.&lt;/p&gt;
-&lt;p&gt;I couldn't get to the OCFL presentation but lead author Neil Jeffries from Oxford
-talked me through the emerging standard and the process being used to develop
-it. Neil assured me we can go ahead and implement against the draft spec (and
-challenged me with the statement that at Oxford they don't like to talk about
-data vs metadata, it's all data. I'm still thinking that over Neil, but I think I
-still believe in metadata).&lt;/p&gt;
-&lt;p&gt;This is from the (still rather sparse) draft dated 2018-06-22, a couple of weeks
-after the conference:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A general observation is that the contents of a digital repository -- that is,
-the digital files and metadata that an institution might wish to manage -- are
-largely stable. Once content has been accessioned, it is unlikely to change
-significantly over its lifetime. This is in contrast to the software
-applications that manage these contents, which are ephemeral, requiring
-constant updating and replacement. Thus, transitions between
-application-specific methods of file management to support software upgrades
-and replacement cycles can be seen as unnecessary and risky change, changing
-the long-term stable objects to support the short-term, ephemeral software.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;By providing a specification for the file-and-folder layout on disk, the OCFL
-is an attempt at reducing, or even eliminating, the need for these
-transitions. As an application-independent specification, conforming
-applications will natively 'understand' the underlying file structure without
-needing to first transition these contents to their own format.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://ocfl.io/"&gt;https://ocfl.io/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;From my notes of the conversation with Neil:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Multiple things accessing the file system writing changes to LOGS. Eg fixity
-check, or create new.&lt;/p&gt;
-&lt;p&gt;There is no state. File system is the state.  Digital pres services are
-workers / crawler or message queue driven.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The incomplete &lt;a href="https://ocfl.io/is"&gt;spec&lt;/a&gt; is online - it's not enough to do a
-complete implementation yet, but we will track it.&lt;/p&gt;
-&lt;p&gt;The host university, Montana State had a nice take on this too. Sara Mannheimer,
-Jason A. Clark, James Espeland  presented &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;presentations=show&amp;amp;search=A+Prototype+for+the+Institutional+Research+Data+Index"&gt;A Prototype for the Institutional
-Research Data
-Index&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Most out-of-the-box institutional repository systems don’t provide the
-workflows and metadata features required for research data. Consequently, many
-libraries now support two institutional repository systems—one for
-publications, and one for research data—even when there are nearly a thousand
-data repositories in the United States, many of which provide services and
-policies that ensure their trustworthiness and suitability for institutional
-research data. Libraries are either increasing spending by purchasing data
-repository solutions from vendors, or replicating work by building,
-customizing, and managing individual instances of data repository software.
-This presentation suggests a potential solution to this issue: a prototype for
-an open source Institutional Research Data Index (IRDI) that promotes
-discovery and reuse of institutional datasets through automatic metadata
-harvesting and search engine optimization. IRDI could lead to a single,
-unified index for academic institutional research data. A unified data index
-would lead to three key impacts: increasing discovery, reuse, and citation of
-open research data; reinforcing the idea that research data is a legitimate
-scholarly product; and promoting community-wide systems that require less
-resource expenditure.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;They noted that getting a research data repository up and running is hard and
-expensive.&lt;/p&gt;
-&lt;p&gt;Their solution:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Deposit data elsewhere in discipline repositories&lt;/li&gt;
-&lt;li&gt;Have a local IRDI - Institutional Research Data Index&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This is similar to the ReDBox approach in that it is highly distributed and it
-contains an IRDI. The Montana team have soon-to-be-released code that helps find
-data that's residing &lt;em&gt;out there&lt;/em&gt; on the web, eg in Figshare, which we need to
-look in to.&lt;/p&gt;
-&lt;p&gt;Another thing we should explore ReDBOX is more about how data is stored and
-secured. We are working with a product, the DELL/EMC Isilon which has a lot of
-features in this area, but I plan to look at the Edinburgh &amp;amp; Manchester
-DataVault project as well  &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=328#paperID165"&gt;Sustaining the momentum, moving the DataVault
-project to a
-service&lt;/a&gt;
-Claire Knowles presented with with Mary McDerby, Robin Rice, Thomas Higgins&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/DataVault/datavault"&gt;DataVault&lt;/a&gt; does encrypted multi-site
-storage. 3 copies. One on site, one outer Edinburgh on UK cloud. They use
-chunking to reduce risk around encryption - lose less of a file if there's a
-problem.&lt;/p&gt;
-&lt;h1&gt;Some highlights&lt;/h1&gt;
-&lt;p&gt;An insight from Esme Cowles in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=231#paperID161"&gt;Valkyrie: Reimagining the Samvera Community&lt;/a&gt; which is looking at adding swappable back ends to the Samvera platform (so you can use something other than Fedora to store your stuff).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Lesson from Islandora - don't fight your host platform.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Speaking of Islandora, in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;presentations=show&amp;amp;search=Relational+Databases+as+Repository+Objects"&gt;Relational Databases as Repository Objects&lt;/a&gt; Alexander
-Garnett showed off a plugin that gives live access to a SQL database &lt;em&gt;in&lt;/em&gt; your
-Islandora repository; it spins up a Docker container on demand. I asked Alex on
-The Twitter if he'd seen
-&lt;a href="https://datasette.readthedocs.io/en/stable/"&gt;Datasette&lt;/a&gt; but he said that SQLite
-does not scale well in his experience.&lt;/p&gt;
-&lt;p&gt;Thomas Morrell from Caltech mentioned a few interesting things in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=236#paperID171"&gt;Positioning a repository as campus research infrastructure&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Live visualization from a data reposioty&lt;/li&gt;
-&lt;li&gt;Demoed fetching data from a &lt;a href="https://tccondata.org/"&gt;live repository&lt;/a&gt; using a Jupyter notebook.&lt;/li&gt;
-&lt;li&gt;Harvesting metadata out of git repositories using the &lt;a href="https://codemeta.github.io/user-guide/"&gt;codemeta&lt;/a&gt; standard.
-Codemeta metadata is very close in design to our DataCrate. this could be straight out of DataCrate:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;    {&amp;quot;author&amp;quot;:
-      {
-      &amp;quot;@id&amp;quot;:&amp;quot;http://orcid.org/0000-0003-0077-4738&amp;quot;,
-      &amp;quot;@type&amp;quot;:&amp;quot;Person&amp;quot;,
-      &amp;quot;email&amp;quot;:&amp;quot;slaughter@nceas.ucsb.edu&amp;quot;,
-      &amp;quot;givenName&amp;quot;:&amp;quot;Peter&amp;quot;,
-          &amp;quot;familyName: &amp;quot;Slaughter&amp;quot;
-      }
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Joshua A. Westgard from the University of Maryland Libraries presented &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=234#paperID263"&gt;a Python
-Library for the Fedora
-API&lt;/a&gt;,
-which would have been of interest to us at UTS if we'd gone ahead with our
-planned Fedora 4 design for data management instead of joining forces with QCIF
-in the new MongoDB based ReDBox.&lt;/p&gt;
-&lt;p&gt;Chris Diaz from Northwestern University talked about making Static websites over
-the top of a repo in &lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=234#paperID170"&gt;Jekyll and Institutional
-Repositories&lt;/a&gt;,
-looks like a great, sustainable alternative to Omeka exhibitions worth
-considering in some situations.&lt;/p&gt;
-&lt;h1&gt;And the winners are...&lt;/h1&gt;
-&lt;p&gt;I thought I'd pick out a few of the best quotes and one-liners from my notes.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Best quote: Robin Dean&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=234#paperID222"&gt;Fractional agile: how to do iterative development when it’s only part of your job&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h3&gt;Abstract&lt;/h3&gt;
-&lt;p&gt;Agile development methods such as scrum strongly recommend a dedicated team
-for software development, meaning that all team members work solely on one
-project at a time. This is not feasible in many of the academic and
-open-source community environments where open repositories are developed. This
-presentation will encourage developers, managers, and open-source contributors
-to find sustainable ways to participate in agile development even if they
-can’t dedicate themselves full time to a project. Drawing from my experience
-as a scrum master on a digital repository team, I will share practical advice
-on setting expectations, communicating about availability, and maintaining a
-sustainable pace on a scrum team composed entirely of part-time members.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;And the quote:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h1&gt;THERE IS NO SUCH THING AS AN EXPECTATION THAT IS TOO CLEAR&lt;/h1&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ta Robin, I've been using this at work.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Best catchphrase: Robert S. Doiel, Thomas Morrell&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=248#paperID173"&gt;Building software at the edges of heterogeneous repositories&lt;/a&gt;
-Caltech Library, United States of America&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h3&gt;Abstract&lt;/h3&gt;
-&lt;p&gt;Caltech Library has a heterogeneous mix of repository systems (e.g. EPrints
-hosts CaltechAUTHORS and CaltechTHESIS, while CaltechDATA is based on
-Invenio). Caltech Library has changed its focus from developing in the
-specific repository system to one of development at the edges leveraging web
-APIs. This has allowed us to not only repurpose content but start working at
-collection level curation by integrating external data sources like ORCID,
-CrossRef, FundRef and DataCite. The philosophy we have evolved is to work from
-copies of the data in JSON form using an Open Source tool Caltech Library
-created called &lt;a href="http://caltechlibrary.github.io/dataset"&gt;dataset&lt;/a&gt; as well as
-additional Open Source tools in a project called
-&lt;a href="http://caltechlibrary.github.io/datatools"&gt;datatools&lt;/a&gt;. These command line
-tools are written in Go but can be easily used from more popular languages
-like Python. This talk will introducing these tools and demonstrate their
-usage via Python.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;And the phrase:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h1&gt;CONTINUOUS MIGRATION&lt;/h1&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I liked this phrase because we're migrating data at the moment between RedBox
-1 and ReDBox 2 and it's causing my colleague Michael Lynch visible physical
-and psychic pain. Robert's articulation of the idea that data migration
-should be normal, and done constantly so it's easy and considered business as
-usual resonated. But now that I think about it - what we're really aiming for
-is to get the core data to stay put and not to move - as per the aims of the
-Oxford Common Filesystem Layout I quoted above. The systems that index,
-access and analyse the data, and trade metadata are the ones involved in
-continuous migration.&lt;/p&gt;
-&lt;p&gt;I am please to report that Robert has recently been in contact with me to
-talk about aligning their dataset project with DataCrate, this is a step
-towards DataCrate being able to look inside data files and do stuff like
-describe column-headers in tabular data, rather than just describing the
-files.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Best &amp;quot;Lesson Learned&amp;quot;: Lars Holm Nielsen, Alexandros Ioannidis, Krzysztof
-Nowak, Jose Benito Gonzalez Lopez from CERN&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.conftool.net/or2018/index.php?page=browseSessions&amp;amp;form_session=249#paperID304"&gt;File loss: hits and near misses&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h3&gt;Abstract&lt;/h3&gt;
-&lt;p&gt;Repositories increasingly depend on external cloud storage or other complex
-distributed systems in order to satisfy ever-growing needs for storing larger
-data volumes. The cloud system helps repository manages store terabytes and
-petabytes of data, and often simplifies the file management in the underlying
-repository software. We trust these systems to store our files, yet, often we
-lack understanding of the operation and internals of these systems and how
-they can fail. This talk will present two file loss incidents on Zenodo,
-uncovering some ways these distributed systems can fail. One incident was
-caused by a coincidence of two software bugs in independent systems (the hit),
-and a second incident was caused by a human operational mistake in the cloud
-storage system (the near miss).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Great talk about when things go wrong. We don't hear enough of these stories.&lt;/p&gt;
-&lt;p&gt;The lesson?&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h1&gt;LOG EVERYTHING&lt;/h1&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;The venue etc&lt;/h1&gt;
-&lt;p&gt;Often the OR conference is at a conference centre when in North America but this
-one was at the uni, in a lovely part of Bozeman, walkable from Downtown, through
-a leafy suburb of early twentieth century houses. The venue was comfy, the food
-was fine, and there was a cash bar at the dinner, though with a distinct lack of
-options for people who didn't want alcohol, and a decent band, &lt;a href="https://www.littlejaneandthepistolwhips.com/"&gt;Little Jane and
-the pistol whips&lt;/a&gt;. Gotta love that
-gun culture. Downtown Bozeman is great, plenty of good food options including
-Bison from Ted Turner's ranch. Ted not only revolutionised TV news by inventing
-CNN, he is a largest private owner of Bison in the world according to our
-server. He's even involved in research...&lt;/p&gt;
-&lt;p&gt;Q. What did Ted Turner discover when he let 200 Bison loose in the top paddock
-for 1 year?&lt;/p&gt;
-&lt;img alt="The neon sign at Ted's" src="blog/2018/07/or-2018/teds.JPG"&gt;
-&lt;p&gt;A. The bisontennial.&lt;/p&gt;
-</content><category term="Repositories"></category></entry></feed>
+</content><category term="DataCrate"></category></entry></feed>
