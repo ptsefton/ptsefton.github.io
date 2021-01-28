@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>A few discoveries - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2009/08/19/a-few-discoveries/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="I have been thinking lately about repository architecture, and wondering about whether the term &#39;repository&#39; is actually skewing our idea of what we should be doing to preserve and disseminate via Open Access, and report on research output and the other things we want out repositories to do. One of …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="A few discoveries"/>
+        <meta property="og:url" content="/2009/08/19/a-few-discoveries/index.html"/>
+        <meta property="og:description" content="I have been thinking lately about repository architecture, and wondering about whether the term &#39;repository&#39; is actually skewing our idea of what we should be doing to preserve and disseminate via Open Access, and report on research output and the other things we want out repositories to do. One of …"/>
+        <meta property="article:published_time" content="2009-08-19" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2009/08/19/a-few-discoveries/index.html"
+                       rel="bookmark"
+                       title="Permalink to A few discoveries">
+                        A few discoveries
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-08-19T00:28:17+00:00"> Wed 19 August 2009</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>I have been thinking lately about repository architecture, and
+<a href="http://ptsefton.com/2009/08/05/im-beginning-to-hate-the-word-repository.htm">wondering</a>
+about whether the term 'repository' is actually skewing our idea of what
+we should be doing to preserve and disseminate via Open Access, and
+report on research output and the other things we want out repositories
+to do.</p>
+<p>One of the ideas I'm keen on exploring is what librarians call a <span
+class="spCh spChx201c">“</span>discovery service<span
+class="spCh spChx201d">”</span> or a <span
+class="spCh spChx201c">“</span>discovery layer<span
+class="spCh spChx201d">”</span>, basically a web-view of a number of
+different services brought together in a smart index, with faceted
+browsing, like the National Library of Australia's <a href="http://sbdsproto.nla.gov.au/">Single Business
+Discovery Service prototype</a>which uses
+Apache Solr indexes to search across eight different types of resource
+all at once. In this post I want to give an example of another place
+where this might be useful, using an example that I came across when I
+was looking for examples for the conversation with Les Carr about
+<a href="http://ptsefton.com/2009/08/17/more-progress-on-exploded-powerpoints-in-a-desktop-repository.htm">PowerPoint
+dismantling</a>.</p>
+<p>I'm not picking on Southampton here, they're leaders in Open Access or
+the EPrints software they have given our community, which is wonderful
+(in parts) but I would like to use their two (are there more than two?)
+EPrints repositories as an example of the advantages of a Solr-powered
+discovery layer.</p>
+<p>How this came about was, I was poking around the Southampton EPrints
+site and I grabbed a PowerPoint presentation to use as an example; I
+knew that it was by Liz Lyon and Les Carr because that metadata was in
+the file, and The Fascinator managed to extract it. (Turns out there was
+a bunch of other authors listed on the EPrint, but maybe they were not
+authors of the PowerPoint.)</p>
+<p>Now, lets see if I can find it again. What you're about to read below
+might reflect badly on my search skills but this is roughly what I did,
+I'm sure there are other bumblies out there like me.</p>
+<p>A search on <a href="http://eprints.soton.ac.uk/">e-Prints at Southampton</a> has 8
+matches for the string <span class="spCh spChx201c">“</span><a href="http://eprints.soton.ac.uk/perl/search?simple=les+carr&amp;simple_merge=ALL&amp;_order=byname&amp;_action_search=Search">Les
+Carr</a><span
+class="spCh spChx201d">”</span>. But thing I'm after is not in that
+list. Took me a while to remember (and I did have to remember, the site
+doesn't tell you this) but there's another EPrints site for the School
+of Electronics and Computer Science (branded EPrints rather than
+e-Prints). So, having found the ECS EPrints site, I had a search for Les
+Carr. <a href="http://eprints.ecs.soton.ac.uk/cgi/search/quicksearch?basic_srchtype=ALL&amp;basic=Les+Carr&amp;full_text_status=&amp;_satisfyall=ALL&amp;_order=byyear&amp;_default_action=search&amp;_action_search=search">No
+results</a>.
+Searching for plain-old Carr in either site gave me too many results to
+sort through. After that I went back to the blog post where I talked
+about the thing and found a <a href="http://eprints.soton.ac.uk/11039/">direct
+link</a> <span
+class="spCh spChx2013">–</span> and yes it's there in the Southampton IR
+(not ECS) but the name I was after is Carr, Leslie. I can find it using
+that search (and I note that it was deposited by Carr, Dr Leslie).
+Right. Got it.</p>
+<p>With my team, I did a little experiment, harvesting both the Soton
+repositories into our repository software, The Fascinator. It's running
+on the Amazon EC2 cloud, so it might go away at some time in the future,
+but here you can see a portal Bron Chandler set up for an <a href="http://75.101.164.238:9999/portal/search/all_soton">aggregated
+view of the two
+repositories</a>: or
+drill down by facet to look at the two of them separately. The advantage
+of a faceted interface like this is that even if the data remain
+un-normalized, you can pick out what you might be looking for a bit
+easier than in the raw EPrints software, at least you can see the range
+of aliases this character operates under <span
+class="spCh spChx2013">–</span> here's an edited view of the list of
+authors when you do a simple search for Carr.</p>
+<blockquote>
+<p>Author</p>
+<ul>
+<li>
+<p><a href="http://75.101.164.238:9999/portal/search:addfacet/f_creator%3A%22Carr%2C%20Les%22?t:ac=all_soton/carr">Carr,
+Les</a>(56)</p>
+</li>
+<li>
+<p><a href="http://75.101.164.238:9999/portal/search:addfacet/f_creator%3A%22Carr%2C%20Leslie%22?t:ac=all_soton/carr">Carr,
+Leslie</a>(55)</p>
+</li>
+<li>
+<p><a href="http://75.101.164.238:9999/portal/search:addfacet/f_creator%3A%22Carr%2C%20Les%20A.%22?t:ac=all_soton/carr">Carr, Les
+A.</a>(38)</p>
+</li>
+<li>
+<p><a href="http://75.101.164.238:9999/portal/search:addfacet/f_creator%3A%22Carr%2C%20LA%22?t:ac=all_soton/carr">Carr,
+LA</a>(15)</p>
+</li>
+<li>
+<p><a href="http://75.101.164.238:9999/portal/search:addfacet/f_creator%3A%22Carr%2C%20L%22?t:ac=all_soton/carr">Carr,
+L</a>(10)</p>
+</li>
+<li>
+<p><a href="http://75.101.164.238:9999/portal/search:addfacet/f_creator%3A%22Carr%2C%20Leslie%20A.%22?t:ac=all_soton/carr">Carr, Leslie
+A.</a>(10)</p>
+</li>
+</ul>
+</blockquote>
+<p>On one level It's actually the function of a repository to preserve this
+seeming chaos <span class="spCh spChx2013">–</span> the different
+contexts in which Carr, Dr Leslie operates have resulted in different
+forms of the name and the repository needs to remember them for
+bibliographic integrity, I'll talk below about name authorities, but The
+Discovery service approach means I was able to discover all these
+name-forms across both repositories, which is a huge win over the more
+limited native EPrints search.</p>
+<p>Note that this was just a quick 'n' dirty experiment, we're not sure if
+we harvested everything and we did zero special configuration, but it
+seems like a pretty useful view of the Soton repostiories to me.</p>
+<p>I think EPrints has unbeatable workflows for item management and ingest
+and so on, but the interface is very beatable.</p>
+<p>Stepping back a bit I note that these EPrints sites are not that easy to
+find <span class="spCh spChx2013">–</span> I got to them by typing in
+the URL, but if you go to the university home page and browse to
+<a href="http://www.soton.ac.uk/research/researchdir/index.html">Research</a> it's
+not obvious where the EPrints are. A search for Les Carr works, as you
+can get to his home page where there are of course links to recent
+publications in EPrints. That's better than what you get searching for
+<a href="http://websearch.usq.edu.au/search?q=peter+Sefton&amp;btnG=Go&amp;entqr=0&amp;entsp=0&amp;sort=date%3AD%3AL%3Ad1&amp;output=xml_no_dtd&amp;client=default_frontend&amp;sa.x=0&amp;ud=1&amp;oe=UTF-8&amp;ie=UTF-8&amp;sa.y=0&amp;proxystylesheet=default_frontend&amp;site=default_collection">Peter
+Sefton</a>
+on the USQ site where a lot of the hits are from things like the test
+content that ships with ICE. No sign of my EPrints stuff in the first
+couple of pages).</p>
+<p>At USQ we're using Google, which seems to pick up the ICE site over
+other content, presumably because it has more incoming links than the
+other pages at USQ with my name (mostly from here at this blog I guess
+:-), whereas the Southampton search seems to be driven by SharePoint. In
+both cases, I think a discovery-service approach could be a real winner;
+instead of the Google-style metadata-poor view why not build your own
+faceted view of your own university's stuff?</p>
+<p>Here at USQ I'd like to see the main site brought together with EPrints,
+and the ePortfolio system and maybe courseware (particularly if we get
+around to taking Open Courseware seriously), and with any other
+databases of our stuff, like the <a href="http://www.usq.edu.au/library/">library
+catalogue</a>, which is already powered by
+Solr.</p>
+<p>I'll finish with a quick comment on name authorities. I <a href="http://caulcairss.wordpress.com/2009/07/21/nicnames-and-people-australia-some-thoughts-for-cairss/">talked about
+them on CAIRSS
+blog</a>
+recently. Of particular interest is the NicNames software which can help
+to link up all the instances of Les Carr, Carr, Leslie and Carr, Dr
+Leslie. NicNames should be able to suck up data from any repository and
+try to work out via subject codes and so on who is who, and let a
+repository administrator have the final say on name-authority matters.
+Once that's done and the system is trained to know that we have, say a
+Carr, L working in web systems and maybe another in physiology then when
+you're putting in a new record the system will be able to give you a
+choice between the two, and add an ID as well as the variant of the name
+string that happens to be on the item; there are two ways to approach
+this <span class="spCh spChx2013">–</span> one would be to integrate
+this service directly in ePrints, but another would be to leave them as
+separate services and bring them together at the discovery level. More
+on that soon.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'a-few-discoveries';
+                var disqus_url = 'http://ptsefton.com/2009/08/19/a-few-discoveries/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

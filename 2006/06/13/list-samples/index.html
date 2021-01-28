@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Some sample lists using styles - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2006/06/13/list-samples/index.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="I have been talking in email with Stuart Stuple, a Microsoft Program Manager for Word. Stuart asked me to clarify what I meant by ‘a list’ – I thought I’d do so publicly because if I’m confusing the experts then I might be confusing some of the rest of …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Some sample lists using styles"/>
+        <meta property="og:url" content="/2006/06/13/list-samples/index.html"/>
+        <meta property="og:description" content="I have been talking in email with Stuart Stuple, a Microsoft Program Manager for Word. Stuart asked me to clarify what I meant by ‘a list’ – I thought I’d do so publicly because if I’m confusing the experts then I might be confusing some of the rest of …"/>
+        <meta property="article:published_time" content="2006-06-13" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2006/06/13/list-samples/index.html"
+                       rel="bookmark"
+                       title="Permalink to Some sample lists using styles">
+                        Some sample lists using styles
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2006-06-13T00:00:00+02:00"> Tue 13 June 2006</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>I have been talking in email with Stuart Stuple, a Microsoft Program
+Manager for Word.</p>
+<p>Stuart asked me to clarify what I meant by ‘a list’ – I thought I’d do
+so publicly because if I’m confusing the experts then I might be
+confusing some of the rest of you.</p>
+<p>I’ll start with some lists that Stuart sent me, and show you how they
+look in Word.</p>
+<p>Stuart’s list:</p>
+<ol>
+<li>
+<p>My point</p>
+<ol>
+<li>
+<p>Ordered entry</p>
+</li>
+<li>
+<p>Ordered entry</p>
+</li>
+<li>
+<p>Ordered entry</p>
+</li>
+</ol>
+</li>
+<li>
+<p>My point</p>
+<ul>
+<li>
+<p>Unordered entry</p>
+</li>
+<li>
+<p>Unordered entry</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Here’s a screenshot of how that looks in Word when I’m writing it:</p>
+<p><span
+id="graphics1"></span><img src="/blog/2006/06/13/list-samples/1.png" alt="graphics1" /></p>
+<p>The styles show to the left. You don’t need to remember the cryptic
+names, though, as there is a nice menu for applying them and keyboard
+shortcuts:</p>
+<p><span
+id="graphics2"></span><img src="/blog/2006/06/13/list-samples/2.png" alt="graphics2" /></p>
+<p>What we have here is three lists. An ‘outer’ numbered list with two
+sub-lists, one ordered and one unordered.  You can view the source of
+this page to see how it comes out in HTML. If you’re viewing this page
+via the ATOM feed on my site then you may not see the correct style of
+numbering, ICE needs to be fixed up so it adds a ‘style’ attribute to
+lists.</p>
+<pre><code>&lt;p&gt;Stuart’s list:&lt;/p&gt;
+    &lt;ol class=&quot;lin&quot;&gt;
+        &lt;li&gt;
+            &lt;p&gt;My point&lt;/p&gt;
+            &lt;ol class=&quot;li-lower-alpha&quot;&gt;
+                &lt;li&gt;
+                    &lt;p&gt;Ordered entry&lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;p&gt;Ordered entry&lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;p&gt;Ordered entry&lt;/p&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;My point&lt;/p&gt;
+            &lt;ul class=&quot;lib&quot;&gt;
+                &lt;li&gt;
+                    &lt;p&gt;Unordered entry&lt;/p&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;p&gt;Unordered entry&lt;/p&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;
+</code></pre>
+<p>The three lists are implied by the styles. There is no actual list
+structure underneath, except what Word constructs internally – and
+authors don’t have to worry too much about that because the ICE styles
+clearly imply the nesting.</p>
+<p>You can’t use a single outline list to do this, because there are two
+different things going on at the second level. Outline lists would be
+good if you were working in an environment (like law) where the
+numbering is always going to be a certain way. More on outline lists
+below.</p>
+<p>Another of Stuart’s lists:</p>
+<ol>
+<li>
+<p>Test1</p>
+<ol>
+<li>
+<p>Sample paragraph</p>
+<p>Separate paragraph</p>
+</li>
+<li>
+<p>Another sample paragraph</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Test2</p>
+<p>Test3</p>
+<p>Test4</p>
+</li>
+</ol>
+<p>Here we have two lists. I’d say that the above is one two-item list
+(Test 1, Test 2) with another list embedded in it.</p>
+<p>Looks like this in the word processor:</p>
+<p><span
+id="graphics3"></span><img src="/blog/2006/06/13/list-samples/3.png" alt="graphics3" /></p>
+<p>You can see that to continue a list item you use the ‘liXp’ style where
+‘X’ is the appropriate level.</p>
+<p>A new lists starts when you put in a style that implies it. So if you
+have a paragraph in plain-old ‘p’ style followed by a li1n then that
+means start a new numbered list. The algorithm is fairly simple. Does
+the next item belong inside the same container as me? If so, include it,
+otherwise close the container and start a new one.</p>
+<p>The styles are a kind of contract with the ICE software. And they can
+mix and match with other styles like blockquotes and pre-formatted text.
+So if I were to quote someone I would use a blockquote style. Let’s
+quote the example above.</p>
+<p>Putting the first line in bq1 style starts a new quote, and the styles
+imply that the lists belong in the quote.</p>
+<blockquote>
+<p>Another of Stuart’s lists:</p>
+<ol>
+<li>
+<p>Test1</p>
+<ol>
+<li>
+<p>Sample paragraph</p>
+<p>Separate paragraph</p>
+</li>
+<li>
+<p>Another sample paragraph</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Test2</p>
+<p>Test3</p>
+<p>Test4</p>
+</li>
+</ol>
+</blockquote>
+<p>Or I could include preformatted text in a list, say in a user guide:</p>
+<ol>
+<li>
+<p>Type this:</p>
+<pre><code>cd ~
+ls
+</code></pre>
+</li>
+<li>
+<p>Make a cup of tea.</p>
+</li>
+</ol>
+<p>Which looks like this with the styles showing:</p>
+<p><span
+id="graphics4"></span><img src="/blog/2006/06/13/list-samples/4.png" alt="graphics4" /></p>
+<p>Without styles converting this stuff to HTML is basically impossible;
+how do you know where lists start and end? Which bits are quotes? Which
+bits are pre-formatted?</p>
+<p>Behind the scenes, our lists are actually associated with Word outline
+lists. Here’s another screenshot showing the Bullets and Numbering…
+ dialog This is showing the formatting for the style ‘li3a’.  This is
+part of the outline called LLowercaseAlpha. I’m still not sure why this
+optional name field was not used more fully in Word and why list styles
+were introduced.</p>
+<p>(Don’t try this at home, kids. Read <a href="http://ptsefton.com/blog/2006/06/07/word_lists_without_tears"><span class="Internet_20_link">my
+previous
+post</span></a>
+about how to manage lists using macros. Even while writing this post I
+had some bizarre and unusual things happen to my lists, but because I’m
+using <a href="http://ice.usq.edu.au/instructions/downloads.htm"><span class="Internet_20_link">the ICE
+template</span></a> I can
+run a macro to fix up most of the issues.)</p>
+<p><span
+id="graphics5"></span><img src="/blog/2006/06/13/list-samples/5.png" alt="graphics5" /></p>
+<p>We don’t set up outline lists for every possible combination, because
+it’s not possible, but we do use them to group together all the
+formatting for each type of numbering. So all five levels of lowercase
+Roman numbered lists are part of the same outline.</p>
+<p>There’s lots more to this list business but we find that with a couple
+of hours of experience most users get the hang of it. The best teacher
+is the ICE rendering system which turns styled Word documents into HTML
+in a couple of seconds, so users can see how their implied lists are
+interpreted by the ICE formatting software.</p>
+<p>I’d love to see a similar (optional) approach in Word 2007 for blogging
+and general-purpose HTML export.</p>
+<p>Why not make an ICE-like template that bloggers can use to produce posts
+like this one, complete with lovely nested structures?</p>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'list-samples';
+                var disqus_url = 'http://ptsefton.com/2006/06/13/list-samples/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

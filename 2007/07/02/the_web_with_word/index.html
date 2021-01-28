@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Challenge: Produce XHTML and print from a Word document - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2007/07/02/the_web_with_word/index.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="View this page as PDF I&#39;m working on a paper about how we use styles in the ICE system to structure and format documents for print and the web. To help define the problem and show why an ICE-like approach is needed I decided to see how far I got …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Challenge: Produce XHTML and print from a Word document"/>
+        <meta property="og:url" content="/2007/07/02/the_web_with_word/index.html"/>
+        <meta property="og:description" content="View this page as PDF I&#39;m working on a paper about how we use styles in the ICE system to structure and format documents for print and the web. To help define the problem and show why an ICE-like approach is needed I decided to see how far I got …"/>
+        <meta property="article:published_time" content="2007-07-02" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2007/07/02/the_web_with_word/index.html"
+                       rel="bookmark"
+                       title="Permalink to Challenge: Produce XHTML and print from a Word document">
+                        Challenge: Produce XHTML and print from a Word document
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2007-07-02T00:00:00+02:00"> Mon 02 July 2007</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><a href="/blog/2007/07/02/the_web_with_word/100.pdf">View this page as PDF</a></p>
+<div>
+<p>I'm working on a paper about how we <a href="http://del.icio.us/ptsefton/usestyles">use
+styles</a> in the
+<a href="http://ice.usq.edu.au/">ICE</a> system to structure and format documents
+for print and the web. To help define the problem and show why an
+ICE-like approach is needed I decided to see how far I got trying to
+format a paper for print and the web using out-of-the-box word
+processing tools.</p>
+<p>I covered this a little before when I <a href="http://ptsefton.com/blog/2005/10/31/why_do_i_keep_going_on_about_html_export_from_word_processors%3F">got
+cranky</a>
+about the HTML export in OpenOffice.org, but I haven't eviscerated
+Microsoft Word's HTML export here in detail.</p>
+<p>So, here's the challenge.</p>
+<p>Can I take my recent paper, <a href="http://eprints.usq.edu.au/archive/00002653/">An integrated approach to preparing,
+publishing, presenting and preserving
+theses</a> for the ETD
+conference. I <a href="http://ptsefton.com/blog/2007/05/15/etd_paper">wrote
+recently</a> about how I
+prepared this paper using ICE, meaning that of course I can produce both
+print and web versions, but how would I go using Word 2003 on Windows
+XP? Could I produce XHTML? This is, after all the year 2007 and the
+World Wide Web is in its late teens. (I didn't use Word 2007 because I
+don't have a copy, but I'll find one and try that too)</p>
+<p>The biggest challenge, I knew, would be getting stuff that looks OK on
+screen to export to the correct HTML elements.</p>
+<p>So here's the procedure: (I know this looks boring, but if you know a
+<code>&lt;ul&gt;</code> from a <code>&lt;p&gt;</code> you'll find it hysterically funny I promise)</p>
+<ol>
+<li>
+<p>Open a new blank document.</p>
+</li>
+<li>
+<p>Look in the styles pane showing at the left of the page; only a
+couple of styles there so;</p>
+</li>
+<li>
+<p>Select All styles from the Show drop down:
+<img src="/blog/2007/07/02/the_web_with_word/1.jpg" alt="graphics1" /></p>
+</li>
+<li>
+<p>That's better <span class="spCh spChx2013">–</span> there are lots
+of heading styles and some HTML styles that should come in handy.</p>
+</li>
+<li>
+<p>Select the <code>Title</code> style and type the title</p>
+</li>
+<li>
+<p>Select the <code>Heading 1</code> style and type the first heading (lets forget
+about the abstract for now)</p>
+</li>
+<li>
+<p>Type a few paragraphs of plain text.</p>
+</li>
+<li>
+<p>Look in the style pane and work out that there's no blockquote
+style. Weirdly there is a built-in style called <code>HTML Preformatted</code>.</p>
+</li>
+<li>
+<p>Save the document as a web page and note that the headings have
+worked.</p>
+</li>
+<li>
+<p>Realize that you've saved it as a <code>.mht</code> whatever that is.</p>
+</li>
+<li>
+<p>Save the document as HTML.</p>
+</li>
+<li>
+<p>Look at the document in Firefox. Looks OK.</p>
+</li>
+<li>
+<p>View source. Yuck!</p>
+</li>
+<li>
+<p>Save the document as Filtered HTML . Hmmmm Filtered.</p>
+</li>
+<li>
+<p>Have a look at the first bit of blockquote:</p>
+<pre><code>&lt;p style='margin-top:13.05pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+
+0cm;margin-bottom:.0001pt'&gt;&lt;span lang=EN-US style='font-size:11.0pt'&gt;ICE-RS is
+
+supported by the Systemic Infrastructure Initiative as part of the Australian
+
+Commonwealth Government's Backing Australia's Ability – An Innovative Action
+
+Plan for the Future (http://backingaus.innovation.gov.au).&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<p>Oh dear!</p>
+<p>(Those extra spans with 11pt text are because I copied an pasted
+rather than typing: I'd need to turn that into default paragraph
+font. Easy enough on Windows, but apparently impossible in the Mac
+version of Word <span class="spCh spChx2013">–</span> they left that
+bit out!)</p>
+</li>
+<li>
+<p>Use your 1337 skills to change the HTML that word exported to be
+proper: XHTML:</p>
+<pre><code>&lt;blockquote&gt;ICE-RS is
+
+supported by the Systemic Infrastructure Initiative as part of the Australian
+
+Commonwealth Government's Backing Australia's Ability - An Innovative Action
+
+Plan for the Future (http://backingaus.innovation.gov.au).&lt;/blockquote&gt;
+</code></pre>
+</li>
+<li>
+<p>Load the document back in to Word to see what happens.</p>
+</li>
+<li>
+<p>Observe that Word has turned the blockquote abck into a paragraph of
+Normal text.</p>
+</li>
+<li>
+<p>Save the document.</p>
+</li>
+<li>
+<p>Look at the source.</p>
+<pre><code>&lt;blockquote style=&quot;margin-top: 5pt; margin-bottom: 5pt;&quot;&gt;
+
+&lt;p class=&quot;MsoNormal&quot;&gt;ICE-RS is supported by the Systemic Infrastructure
+
+Initiative as part of the Australian Commonwealth Government's Backing
+
+Australia's Ability – An Innovative Action Plan for the Future
+
+(http://backingaus.innovation.gov.au).&lt;/p&gt;
+
+&lt;/blockquote&gt;
+</code></pre>
+<p>Wow! There's still a blockquote there, but guess what? In Word you
+can't <em>see</em> that it's there!</p>
+</li>
+<li>
+<p>Add some more text to the blockquote by going to the end of the
+paragraph.</p>
+</li>
+<li>
+<p>Save the document.</p>
+</li>
+<li>
+<p>Check that yes, you have added to the blockquote.</p>
+</li>
+<li>
+<p>Back in the document, experiment with the demote button, the
+left-facing arrow <code>&lt;-</code>. The first part of the blockquote won't move,
+but the second will. Here it is as rendered on-screen in Word.</p>
+<p><img src="/blog/2007/07/02/the_web_with_word/2.jpg" alt="graphics2" /></p>
+</li>
+<li>
+<p>Guess what the HTML for that might look like. Here it is rendered in
+Firefox:</p>
+<div>
+<p><img src="/blog/2007/07/02/the_web_with_word/3.jpg" alt="graphics3" /></p>
+</div>
+</li>
+<li>
+<p>Look at source to see where the text 'Test adding more text ' has
+gone.</p>
+<pre><code>&lt;blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'&gt;
+
+&lt;p class=MsoNormal&gt;ICE-RS is supported by the Systemic Infrastructure
+
+Initiative as part of the Australian Commonwealth Government's Backing
+
+Australia's Ability – An Innovative Action Plan for the Future (&lt;a
+
+href=&quot;http://backingaus.innovation.gov.au/&quot;&gt;http://backingaus.innovation.gov.au&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p class=MsoNormal style='margin-left:-180.0pt'&gt;Test adding more text.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+</code></pre>
+<p>You see that? Word has helpfully put on margin-left:-180.0pt. Hmm a
+left margin of minus one hundred and eighty points.</p>
+</li>
+<li>
+<p>Give up in disgust. I can't see a way to get Word 2007 to make a
+blockquote.</p>
+<p>(And I tried a couple of other things too, like guessing that if I
+used a style like <code>HTML Blockquote</code> Word might magically Do (Nearly)
+The Right Thing the way it does with <code>HTML Preformatted</code> style. It
+doesn't it makes a paragraph with class <code>HTMLBlockquote</code> but with
+the wrong CSS. Oh well.)</p>
+</li>
+</ol>
+<p>Actually I can't give up because I have yet to play with the lists.</p>
+<p>There's a bit in my paper where I have a blockquote with a list embedded
+in it. That's pefectly possible in ICE, but would be very hard in Word.
+So lets look for an easier case.</p>
+<p>So how would we do this example with a numbered list, with some
+pre-formatted text embedded in it? (note that the actual document has a
+rendering mistake in it that I have fixed here).</p>
+<p><img src="/blog/2007/07/02/the_web_with_word/4.jpg" alt="graphics4" /></p>
+<p>I used the built-in styles <code>List Number 1</code>, <code>List Continue</code> and
+<code>HTML Preformatted</code> (with a hit on the indent button).</p>
+<p>Result <em>looks</em> OK in Firefox but it's a million miles from being XHTML.
+The list is not a list at all, it's a paragraph with some creative
+formatting and a bunch of non-breaking spaces. Really. I used to know
+this stuff intimately <span class="spCh spChx2013">–</span> see <a href="http://www.xml.com/pub/a/2004/12/08/word-to-xml.html">my
+article</a> on
+geeting XML out of Word for xml.com.</p>
+<pre><code>&lt;p class=MsoListNumber&gt;&lt;span lang=EN-US&gt;1.&lt;span style='font:7.0pt &quot;Times New Roman&quot;'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+
+&lt;/span&gt;&lt;/span&gt;&lt;span lang=EN-US&gt;Initially the handle will resolve to the
+
+server-side ICE repository, which because it is in the Subversion system is
+
+web-addressable, although usually authentication will be required.&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<p>At this point I'd give up, but I love them lists too much. So, why not
+try ignoring styles and using the formatting buttons.</p>
+<p>Nope. Still no list. It's the same nonsense but without any CSS.</p>
+<pre><code>&lt;p style=&quot;margin-left: 36pt; text-indent: -18pt;&quot;&gt;
+
+&lt;span lang=&quot;EN-US&quot;&gt;1.&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; 
+
+font-style: normal; font-variant: normal; font-weight: normal;
+
+ font-size: 7pt; line-height: normal; font-size-adjust: none;
+
+font-stretch: normal;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+
+&lt;/span&gt;&lt;span lang=&quot;EN-US&quot;&gt;Initially the handle will resolve to the server-side ICE repository,
+
+which because it is in the Subversion system is web-addressable, although
+
+usually authentication will be required.&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<h1><span id="id2"></span>Conclusion</h1>
+<p>This sux.</p>
+<p>The worst bit was when I managed to get a word document that contained a
+blockquote that is invisible through the editing interface, but which
+creates nightmares like invisible paragraphs with their left margin
+miles off the screen.</p>
+<p>If you gave Word 2003 to somebody and asked them to write a paper that
+could be given to a fussy HTML publisher and also printed with nice
+headers and footers, or saved to PDF then they'd be stuck.</p>
+<p>Which I kind of knew, which is why we invented ICE. But I needed to go
+through this so I can show the results for the paper I'm writing.</p>
+<p>Next up, OpenOffice.org Writer. What do you think OOo fans? Will it do
+any better? An how about Google Docs?</p>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'the_web_with_word';
+                var disqus_url = 'http://ptsefton.com/2007/07/02/the_web_with_word/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

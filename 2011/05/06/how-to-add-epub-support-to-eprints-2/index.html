@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>How to add EPUB support to EPrints - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2011/05/06/how-to-add-epub-support-to-eprints-2/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="[This is a repost from the JISCPub project – please comment over there http://jiscpub.blogs.edina.ac.uk/2011/05/03/how-to-add-epub-support-to-eprints-8/ ] In a previous post here on the jiscPUB project I said it would be good for the EPrints repository software to support EPUB uploads. I’d …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="How to add EPUB support to EPrints"/>
+        <meta property="og:url" content="/2011/05/06/how-to-add-epub-support-to-eprints-2/index.html"/>
+        <meta property="og:description" content="[This is a repost from the JISCPub project – please comment over there http://jiscpub.blogs.edina.ac.uk/2011/05/03/how-to-add-epub-support-to-eprints-8/ ] In a previous post here on the jiscPUB project I said it would be good for the EPrints repository software to support EPUB uploads. I’d …"/>
+        <meta property="article:published_time" content="2011-05-06" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2011/05/06/how-to-add-epub-support-to-eprints-2/index.html"
+                       rel="bookmark"
+                       title="Permalink to How to add EPUB support to EPrints">
+                        How to add EPUB support to EPrints
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-05-06T00:31:19+00:00"> Fri 06 May 2011</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>[This is a repost from the JISCPub project <span
+class="spCh spChx2013">–</span> please comment over there
+<a href="http://jiscpub.blogs.edina.ac.uk/2011/05/03/how-to-add-epub-support-to-eprints-8/"><span>http://jiscpub.blogs.edina.ac.uk/2011/05/03/how-to-add-epub-support-to-eprints-8/</span></a>
+]</p>
+<p>In a <a href="http://ptsefton.com/2011/04/12/metadata-in-word-processing-monographs.htm">previous post here on the jiscPUB projec<span
+style="color:#000000; "><span
+class="T1">t</span></span></a><span
+style="color:#000000; "><span class="T1"> I sai</span></span>d it would
+be good for the EPrints repository software to support EPUB uploads.</p>
+<blockquote>
+<p>I<span class="spCh spChx2019">’</span>d love to do something with a
+repository <span class="spCh spChx2013">–</span> I<span
+class="spCh spChx2019">’</span>m thinking that it would be great to
+deposit theses in EPUB format <span
+class="spCh spChx2013">–</span> and the repository could provided a
+web-based reader, along the lines
+of <a href="http://ibisreader.com/"><span>IbisReader</span></a>, which Liza Daly
+and company created. I<span class="spCh spChx2019">’</span>m looking
+at you, Eprints! Eprints already almost supports this, if you upload a
+zip file it will stash all the parts for you in a single record. All
+we would need would be something like this<a href="../little%20reader%20my%20colleagues%20at%20USQ%20made"><span> little reader my
+colleagues at USQ
+made</span></a>.
+It would just be a matter of transforming the EPUB TOC into JSON, and
+loading the JavaScript into an Eprints page.</p>
+</blockquote>
+<p>I Called Les Carr's attention to the post and he responded:</p>
+<blockquote>
+<p><a href="https://twitter.com/#%21/lescarr"><span>lescarr</span></a>
+<a href="https://twitter.com/#%21/ptsefton"><span>@ptsefton</span></a> just tell us
+what to do and we'll do it.</p>
+</blockquote>
+<p>OK. Here goes with my specification for how EPrints could add at least
+basic support for EPUB.</p>
+<h1><span id="id2"></span><span></span></a>Putting EPUB into EPrints as-is</h1>
+<p>To explore this, I ran the <a href="http://wiki.eprints.org/w/EPrints_Live_CD_Help"><span>EPrints live
+CD</span></a>
+(livecd_v3.1-x.iso) under VirtualBox on Windows 7 <span
+class="spCh spChx2013">–</span> this worked well when I gave it a decent
+amount of memory <span class="spCh spChx2013">–</span> it didn't manage
+to boot in several hours at 256Mb. (Note that no repositories were
+harmed in the making of this post <span class="spCh spChx2013">–</span>
+I did not change the Eprints code at all.)</p>
+<p>The EPUB format is a zipfile containing some XHTML payload documents, a
+manifest, and a table of contents. On one level EPRINTS already supports
+this, in that there is support for uploading ZIP files. I tested this
+using Danny Kingsley's thesis (as received, with no massaging or adding
+metadata apart from tweaking the title in Word) <a href="http://dl.dropbox.com/u/24994372/Formatted_PhD_12May09.epub"><span>converted to
+EPUB</span></a>
+via the ICE service <a href="http://ec2-50-16-170-243.compute-1.amazonaws.com/api/convert/doc"><span>I have been working
+on</span></a>.</p>
+<p>The procedure:</p>
+<ol>
+<li>
+<p>Generated an EPUB using ICE.</p>
+</li>
+<li>
+<p>Changed the file extension to .zip.</p>
+</li>
+<li>
+<p>Uploaded it into EPrints.</p>
+</li>
+</ol>
+<p>The result is an EPrints item with many parts. If you click on any of
+the HTML files that make up the thesis then they work as web pages <span
+class="spCh spChx2013">–</span> ie the table of contents (if you can
+find it amongst the many files) links to the other pages. But there is
+no navigation to tie it all together you have to keep hitting back <span
+class="spCh spChx2013">–</span> each HTML page from the EPUB is a stand
+alone fragment.</p>
+<p><span
+style="display: block"><a><span></span></a><img src="/wp-content/uploads/2011/05/ma53f402_643x400.jpeg" alt="graphics1" /></span>Illustration
+1: The management interface in EPrints showing all the parts of an EPUB
+file which has been uploaded and saved as a series of parts in a single
+record.</p>
+<p>At this point I went off on a side trip, and <a href="http://ptsefton.com/2011/04/15/introducing-epub2html-adding-a-plain-html-view-to-an-epub.htm">wrote this little tool
+<span class="spCh spChx2013">–</span> to add an HTML view to an EPUB
+file</a>.</p>
+<h1><span id="id3"></span><span></span></a>Putting enhanced EPUB into Eprints</h1>
+<p>Now, lets try that again with <a href="http://dl.dropbox.com/u/24994372/Formatted_PhD_12May09.epub"><span>the
+version</span></a>
+where I added an HTML index page to the EPUB using the new demo tool,
+epub2html. I uploaded the file, clicked around semi-randomly until I
+figured out how to see all the files listed from the zip, and selected
+index.html as the 'main' file. From memory I thought the repository
+would do that for me but it didn't. Anyway, I ended up with this:</p>
+<p><span
+style="display: block"><a><span></span></a><img src="/wp-content/uploads/2011/05/5fc3b428_643x332.jpeg" alt="graphics3" /></span>Illustration
+2: The details screen that users see - clicking on the description takes
+you to the HTML page I picked as the main file.</p>
+<p><span
+style="display: block"><a><span></span></a><img src="/wp-content/uploads/2011/05/m629e91b8_643x417.jpeg" alt="graphics2" /></span>Illustration
+3: A rudimentary ebook reader using an inline frame.</p>
+<p>If I click on the link starting with Other, there we have it <span
+class="spCh spChx2013">–</span> more-or-less working navigation within
+the limits of this demo-quality software. All I had to do was change the
+extension from .epub to .zip and select the entry page, and I had a
+working, navigable document.
+The initial version of epub2html used the unsupported epubjs as a web
+based reader-application <span class="spCh spChx2013">–</span> but Liza
+Daly suggested I use the more up to date Monocle.js library instead. I
+tried that but I'm afraid the amount of setup required is too much for
+the moment so what you see here is an HTML page with an inline frame for
+the content.</p>
+<h1><span id="id4"></span><span></span></a>What does the repository need to do?</h1>
+<p>So what does the EPrints team need to do to support EPUB a bit better?</p>
+<ul>
+<li>
+<p>Add EPUB to the list of recognised files.</p>
+</li>
+<li>
+<p>Upon recognising an EPUB...</p>
+<ul>
+<li>
+<p>Use a service like epub2html that can generate an HTML view of
+the EPUB. I wrote mine in Python, Eprints is written in Perl but
+I'm sure that can be sorted out via a re-write or a web service
+or something<span class="footnote"
+style="vertical-align: super;"><span
+id="ftn1-text"><a href="#ftn1"><span>*</span></a></span></span>.</p>
+</li>
+<li>
+<p>Allow the user to download the whole EPUB, or choose to use an
+online viewer. Could be static HTML, frames (not nice), or some
+kind of JavaScript based viewer.</p>
+</li>
+<li>
+<p>Embed some kind of viewer in the EPrints page itself, or at
+least provide a back-link in the document viewer to the EPrints
+page.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Does that make sense, Les?</p>
+<p>[This is a repost from the JISCPub project <span
+class="spCh spChx2013">–</span> please comment over there
+<a href="http://jiscpub.blogs.edina.ac.uk/2011/05/03/how-to-add-epub-support-to-eprints-8/"><span>http://jiscpub.blogs.edina.ac.uk/2011/05/03/how-to-add-epub-support-to-eprints-8/</span></a>
+]</p>
+<p>Copyright <span rel="http://purl.org/dc/elements/1.1/creator"
+resource="http://trove.nla.gov.au/people/541658"><span
+property="http://xmlns.com/foaf/0.1/name"
+resource="http://trove.nla.gov.au/people/541658">Peter
+Sefton</span></span>, 2011-04-15. Licensed under <span
+rel="http://creativecommons.org/licence">Creative Commons
+Attribution-Share Alike 2.5 Australia</span>.
+&lt;http://creativecommons.org/licenses/by-sa/2.5/au/&gt;</p>
+<p>This post was written in OpenOffice.org, using templates and tools
+provided by the <a href="http://ice.usq.edu.au/"><span>Integrated Content
+Environment</span></a> project.</p>
+<hr />
+<div class="footnote-defined">
+<p><span id="ftn1"><a href="#ftn1-text"><span>*</span></a></span> Maybe there's a
+Python interpreter written in Perl?</p>
+</div>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'how-to-add-epub-support-to-eprints-2';
+                var disqus_url = 'http://ptsefton.com/2011/05/06/how-to-add-epub-support-to-eprints-2/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

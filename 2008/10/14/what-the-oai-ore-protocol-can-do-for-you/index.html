@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>What the OAI-ORE protocol can do for you - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2008/10/14/what-the-oai-ore-protocol-can-do-for-you/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="1 Introduction – Standards 2 Two examples of standards 2.1 OAI-PMH 2.2 XACML 3 OAI-ORE 4 Conclusion Peter Sefton University of Southern Queensland" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="What the OAI-ORE protocol can do for you"/>
+        <meta property="og:url" content="/2008/10/14/what-the-oai-ore-protocol-can-do-for-you/index.html"/>
+        <meta property="og:description" content="1 Introduction – Standards 2 Two examples of standards 2.1 OAI-PMH 2.2 XACML 3 OAI-ORE 4 Conclusion Peter Sefton University of Southern Queensland"/>
+        <meta property="article:published_time" content="2008-10-14" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2008/10/14/what-the-oai-ore-protocol-can-do-for-you/index.html"
+                       rel="bookmark"
+                       title="Permalink to What the OAI-ORE protocol can do for you">
+                        What the OAI-ORE protocol can do for you
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-10-14T03:47:54+00:00"> Tue 14 October 2008</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id1">1 Introduction – Standards</a></li>
+<li><a href="#id2">2 Two examples of standards</a>
+<ul>
+<li><a href="#id3">2.1 OAI-PMH</a></li>
+<li><a href="#id4">2.2 XACML</a></li>
+</ul>
+</li>
+<li><a href="#id5">3 OAI-ORE</a></li>
+<li><a href="#id6">4 Conclusion</a></li>
+</ul>
+</div>
+<div>
+<p><span class="meta-familyname">Peter Sefton</span></p>
+<p>University of Southern Queensland</p>
+<p>
+<script type="text/javascript">
+<!--
+h='&#x75;&#x73;&#x71;&#46;&#x65;&#100;&#x75;&#46;&#x61;&#x75;';a='&#64;';n='&#x73;&#x65;&#102;&#116;&#x6f;&#110;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script>
+<noscript>
+sefton at usq dot edu dot au
+</noscript>
+</p>
+A [presentation for the ARROW Repository
+day](http://arrow.edu.au/news/abstracts.php#What) 2008-12-14
+<p><strong>Abstract:</strong> Open Archives Initiative Object Reuse and Exchange
+(OAI-ORE), is an important new protocol for representing compound
+objects, or aggregations, in a web environment. The system is generating
+a lot of development activity in the repository community some of which
+will be reported in this presentation.</p>
+<p>One of the main contributions of ORE will be a way to describe an item
+that is made up of several parts. The classic example is an HTML
+document and its images <span class="spCh spChx2013">–</span> until the
+advent of OAI-ORE there has been no standardized way to draw a line
+around such an aggregation. What may seem obvious to a reader has not
+been obvious to machines for which the document and its images are
+treated as equivalent in status. Likewise ORE will help to define what
+is an item in a repository in a way that can help to make items portable
+between systems. It will also allow systems to exchange objects that are
+made up of multiple parts, such as a thesis with multiple chapters and
+data files.</p>
+<p>The presentation will include some ORE demonstrations and discussion
+<span class="spCh spChx2013">–</span> showing some USQ work on how
+documents from a content management system can be automatically ingested
+into repository systems (we will demo with
+<a href="http://ice.usq.edu.au/">ICE</a>, <a href="http://eprints.usq.edu.au/">ePrints</a> and
+<a href="http://ice.usq.edu.au/projects/fascinator/trac/wiki/">The Fascinator</a>),
+and how items can be migrated from one repository to another. There will
+also be some more speculative discussion of future possibilities and
+some examples of other work.</p>
+<p>OAI is a conceptually complex system with its own very tightly defined
+set of terms and some very refined and nuanced design. It is likely that
+for the most part, developers will work with OAI-ORE libraries to get
+things done, and for end users and repositarians the system will be
+completely transparent in much the same way most of us never need to
+look <em>inside</em> an OAI-PMH feed.</p>
+<h1><span id="id1"></span><!--id1--></a>1 Introduction <span class="spCh spChx2013">–</span> Standards</h1>
+<p>Before I go on to talk about ORE <span class="spCh spChx2013">–</span>
+that's Object Reuse and Exchange <span class="spCh spChx2013">–</span> I
+thought I'd talk a little bit about standards in general and then about
+some experiences with standards in the Australian repository domain,
+particularly in the ARROW community.</p>
+<p>I used to work at Standards Australia. They liked to say there <span
+class="spCh spChx201c">“</span>The good thing about standards is that
+there are so many of them.<span class="spCh spChx201d">”</span> It was a
+laugh a minute, at Standards at least when it was in Homebush in the
+good old days, before they moved it to the CBD and floated it on the
+stock exchange.</p>
+<p>Me, I always wanted a little sign in the office that said <span
+class="spCh spChx201c">“</span>We have standards to maintain<span
+class="spCh spChx201d">”</span>.</p>
+<p>Eventually I got sick of wearing a tie and moved to Queensland.</p>
+<p>So what's the point of a Standard?</p>
+<p>In the software world one thing people worry about is, can I replace
+this bit of software with a different one later? Can I shop around for a
+database? Even when we're dealing with open standards and open software
+he answer is often, <em>well sort of</em>.</p>
+<div class="slide">
+<h1>Standard components</h1>
+<div class="Table2"
+style="width: 100%; margin: 0px; padding: 0px; text-align:left;">
+<p>+--------------------------------------+--------------------------------------+
+| You might be able to drop in / screw | &lt;span                                |
+| in components such as:               | style=&quot;display: block&quot;&gt;<a name="grap |
+|                                      | hics5"></a>![graphics5](/wp-content/ |
+| 1.  A house brick.                   | uploads/2008/10/52685f4cs366x267.jpg |
+|                                      | )</span>                             |
+| 2.  A tap.                           |                                      |
+|                                      |                                      |
+| 3.  A database (given the right      |                                      |
+|     drivers). Eg Fedora works with   |                                      |
+|     several different databases.     |                                      |
+|                                      |                                      |
+| 4.  A screw (given the right         |                                      |
+|     drivers)                         |                                      |
+|                                      |                                      |
+| 5.  An authentication system like    |                                      |
+|     LDAP.                            |                                      |
++--------------------------------------+--------------------------------------+</p>
+</div>
+</div>
+<p>It's not just about components, though. The big thing is
+interoperability. Can my systems interoperate with yours now? And will
+my digital assets interoperate with <strong>my own</strong> future systems?</p>
+<p>The thing that's important about those standard components is their
+interfaces. That is, how they fit together.</p>
+<p>And how they behave if you move them from one site to another.</p>
+<p>I make the point about interop because I want to come back to it later.
+You need to think very hard about whether it is worth using a standard
+to do something that you can't later reuse.</p>
+<h1><span id="id2"></span><!--id2--></a>2 Two examples of standards</h1>
+<p>Lets look at two standards that have been used and/or promoted in the
+Repository space before going on to look at OAI-ORE; OAI-PMH and XACML.</p>
+<h2><span id="id3"></span><!--id3--></a>2.1 OAI-PMH</h2>
+<p>The Open Access Initiative Protocol for Metadata Harvesting is a
+must-have standard for repositories. It's used for disseminating
+repository content to registries and indexes that aggregate content.</p>
+<div class="slide">
+<h1>OAI-PMH</h1>
+<ul>
+<li>
+<p>Mostly works.</p>
+</li>
+<li>
+<p>A standard for moving metadata from one place to another.</p>
+</li>
+</ul>
+<p>But:</p>
+<ul>
+<li>
+<hr />
+<p>It's just the messenger.</p>
+<p>Not all the messages that people send over it are coherent.</p>
+</li>
+<li>
+<hr />
+<p>There are ugly bits.</p>
+<p>Particularly its use of <a href="http://metalogger.wordpress.com/2008/10/10/are-repositories-set-to-be-left-out-in-the-cold/">non-standard Dublin Core
+identifiers</a>.</p>
+</li>
+</ul>
+</div>
+<p>OAI-PMH is, basically A Good Thing. That's not to say that it's
+painless, though.</p>
+<p>The OAI-PMH standard actually clashes with the Dublin Core standard in
+at least one place. Neil Godfrey <a href="http://metalogger.wordpress.com/2008/10/10/are-repositories-set-to-be-left-out-in-the-cold/">nails the issue in a blog
+post</a>.</p>
+<p>But worse than that in practical terms harvesting is a mess. While the
+interchange protocol (PMH) more or less works the stuff that people
+interchange is very far from being standardized. At the National Library
+of Australia's <a href="http://search.arrow.edu.au/">ARROW discovery service</a>
+they have a normalization process built into their harvester that
+presents a coherent view. This is not the result of standardization,
+it's the result of Alison Dellit and the NLA team's hard work in writing
+rules that say thing like:</p>
+<pre><code>For the USQ repository:
+
+  If type is_equal_to “ADT_Thesis&quot;:
+
+     set type to &quot;australasian digital thesis”
+</code></pre>
+<p>These rules normalize the chaos that is Australian Institutional
+Repositories. This is certainly made easier by a pretty-good level of
+standardization in some areas. At least people put the resource type in
+the dc:type element!</p>
+<div class="slide">
+<h1>Don't shoot the messenger (PMH)</h1>
+<p>The <a href="http://aust-repos-census.usq.edu.au/the-fascinator/search/default/conference">Australian University Repository
+Census</a>
+(AUIRC <span class="spCh spChx2013">–</span> pronounced OIK) uses
+OAI-PMH to harvest items from as many Australian Universities as it can.</p>
+<p>Compare!</p>
+<div class="Table15"
+style="width: 100%; margin: 0px; padding: 0px; text-align:left;">
+<p>+--------------------------------------+--------------------------------------+
+| <a href="http://search.arrow.edu.au/">ARROW                               | AUIRC                                |
+| search</a> |                                      |
++--------------------------------------+--------------------------------------+
+| &lt;span                                | &lt;span                                |
+| style=&quot;display: block&quot;&gt;&lt;a name=&quot;grap | style=&quot;display: block&quot;&gt;<a name="grap |
+| hics2"></a>![graphics2](/wp-content/ | hics1&quot;&gt;</a>![graphics1](/wp-content/ |
+| uploads/2008/10/7754e6f6s202x218.jpg | uploads/2008/10/m2c14c6e3s333x334.jp |
+| )</span>                             | g)</span>                            |
++--------------------------------------+--------------------------------------+</p>
+</div>
+</div>
+<h2><span id="id4"></span><!--id4--></a>2.2 XACML</h2>
+<p>But not all standards have worked out so well. One thing that has
+definitely been much more painful for the ARROW community than OAI-PMH
+is XACML, the eXtensible Access Control Markup Language. There has been
+an expectation that this will be a key standard for repositories but it
+so far has not turned out that way.</p>
+<p>(Actually, it's not even a markup language! Markup is something that
+you'd put in-line in something else, like a bold tag in an HTML page, or
+a structural element like chapter in XML.)</p>
+<div class="slide">
+<h1>Great eXpectations for XACML</h1>
+<p>XACML is supposed to let you write role-based policies for items in your
+repository. For example:</p>
+<blockquote>
+<p><span class="spCh spChx201c">“</span>Only initiated females from the
+Australian Labor Party and mathematicians are allowed to see
+this.<span class="spCh spChx201d">”</span></p>
+</blockquote>
+<p>But:</p>
+<ul>
+<li>
+<p>How was your university going to share access policies for
+mathematicians with my university?</p>
+<p>See the
+<a href="http://www.nmi-edit.org/eduPerson/internet2-mace-dir-eduperson-200806.html">eduPerson</a>
+spec. Can you figure it out?</p>
+</li>
+<li>
+<p>And did we all expect to be interchanging XACML policies. Really?</p>
+</li>
+</ul>
+</div>
+<p>I was always vaguely worried about how XACML policies were going to work
+but one day I met Kent Fitch who really nailed it. On the subject of
+these use cases for XACML where you, an anthropologist want to grant
+access to a repository to other anthropologists, he asked <span
+class="spCh spChx201c">“</span>What's an anthropologist?<a href="#ftn1"><span
+style="vertical-align: super;"><span
+class="footnote">1</span></span></a><span
+class="spCh spChx201d">”</span></p>
+<p>This is a very, very good question. Does an academic working in the
+education faculty who self-identifies as a visual ehnographer qualify?
+What if she's got an honours degree in anthropology? In an access
+federation would the archaeologists who make up our anthropology
+department count as archaeologists?</p>
+<p>Just look at the wide variety of names used to refer to to a thesis in
+Australian repositories. Remember this is librarians we're talking about
+here (and maybe the research office), if these information professionals
+can't agree on what to call something as well defined as a thesis how
+will they go labeling archaeologists anthropologists, ethnographers,
+linguists and so on in such a way that I can trust the labels enough to
+give those people access to research materials in my repository?</p>
+<p>But that's not the biggest problem with the unrealistic expectations
+heaped on XACML.</p>
+<div class="slide">
+<h1>What's wrong with XACML for ARROW*?</h1>
+<p><a name="Object2"></a><img src="/wp-content/uploads/2008/10/m41282af1.gif" alt="Object2" /></p>
+<p>Got that? No good for search = no good for &gt; 50% of what you thought
+you wanted it for.</p>
+<p>*I'm not saying there's anything wrong with XACML in other contexts.
+Might be. Might not be.</p>
+</div>
+<p>The problem is that an XACML policy tells you who has what kind of
+access to an item, but if the XACML is not able to be integrated with
+the search index then you can't filter search results per-user without
+looking at every single item. Very slow, that. But if you don't then you
+risk letting on that your repository contains something that you should
+not be disclosing, like the name of a chemical which is the subject of a
+patent application, or worse the name of a person that you must not
+disclose.</p>
+<p>(The good news is that a project we've been doing at USQ called <a href="http://ice.usq.edu.au/projects/fascinator/trac">The
+Fascinator</a> takes an
+approach to access control that <strong>is</strong> integrated with search and so far
+that seems to be working.)</p>
+<p>So as I go on and I tell you about how I think ORE is going to be a very
+useful standard for your repository and the services that go around it,
+we all need to remember that standards are much less use if there's no
+possibility of interoperability. For XACML the possibility that you
+could move an access policy from one repository to another is
+vanishingly small <span class="spCh spChx2013">–</span> remember, we all
+call a PhD thesis something different. There might be an advantage to
+learning just one policy expression language but it's certainly not the
+same advantage as you'd get if you could share policies.</p>
+<p>And don't forget that the big problem with XACML is that it turns out to
+be no good for search. My advice is not to ask for a particular standard
+because someone else tells you it's important; look for useful software
+but check that it is going to interoperate with other services and with
+your own services into the future. Standards do matter.</p>
+<h1><span id="id5"></span><!--id5--></a>3 OAI-ORE</h1>
+<p>Now the the real topic of this presentation.</p>
+<p>Officially:</p>
+<blockquote>
+<p>Open Archives Initiative Object Reuse and Exchange (OAI-ORE) defines
+standards for the description and exchange of aggregations of Web
+resources. These aggregations, sometimes called compound digital
+objects, may combine distributed resources with multiple media types
+including text, images, data, and video. The goal of these standards
+is to expose the rich content in these aggregations to applications
+that support authoring, deposit, exchange, visualization, reuse, and
+preservation. Although a motivating use case for the work is the
+changing nature of scholarship and scholarly communication, and the
+need for cyberinfrastructure to support that scholarship, the intent
+of the effort is to develop standards that generalize across all
+web-based information including the increasing popular social networks
+of <span class="spCh spChx201c">“</span>web 2.0<span
+class="spCh spChx201d">”</span>.</p>
+<p><a href="http://www.openarchives.org/ore/">http://www.openarchives.org/ore/</a></p>
+</blockquote>
+<div class="slide">
+<h1>What is OAI-ORE?</h1>
+<div class="Table6"
+style="width: 100%; margin: 0px; padding: 0px; text-align:left;">
+<p>+--------------------------------------+--------------------------------------+
+| &gt; Open Archives Initiative Object    | &lt;span                                |
+| &gt; Reuse and Exchange* (OAI-ORE)     | style=&quot;display: block&quot;&gt;<a name="grap |
+| > defines standards for the          | hics3"></a>![graphics3](/wp-content/ |
+| &gt; description and exchange of        | u%0Aploads/2008/10/m682ff39cs393x300 |
+| &gt; aggregations of Web resources.     | .jpg)</span>                         |
+|                                      |                                      |
+|                                      | <em>Exchange and subsequent re-use of   |
+|                                      | an object.</em>                          |
+|                                      |                                      |
+|                                      | Used without permission.             |
++--------------------------------------+--------------------------------------+</p>
+</div>
+<p>*Shouldn't it be exchange <em>then</em><span style="font-style:normal; "><span
+class="T4"> reuse; OER</span></span>?</p>
+</div>
+<p>Look at my <a href="http://ptsefton.com/">blog</a>. To put content on the blog I
+use AtomPub <span class="spCh spChx2013">–</span> a standard protocol
+for pushing web content to a server.</p>
+<div class="slide">
+<h1>Consider a <a href="http://ptsefton.com/2008/09/19/is-this-thing-working.htm">blog post</a></h1>
+<p><span
+style="display: block"><a name="graphics4"></a><img src="/wp-content/uploads/2008/10/m7c38d25as519x281.jpg" alt="graphics4" /></span>Which
+bits of this page are part of the 'post'?</p>
+</div>
+<p>One of the really dumb things about blogs in general is that to the blog
+<em>application</em> an article usually consists of just the HTML part. In
+WordPress, for example a post is a bit of HTML and some metadata. If I
+want to include a picture it has to go into an uploads directory. To the
+reader, it is perfectly reasonable to think of a blog post with a couple
+of images as a single document but most blogging software and the ATOM
+protocol don't really support this. To further complicate matters a blog
+could be laced with advertisements and adorned with web 2.0 widgets that
+most of us would not consider part of the content. In the example above
+there's an automatically generated map which is actually <strong>not</strong> part of
+the content I typed in but which is generated from it.</p>
+<p>ORE offers a web-based way to describe an aggregate resource, what I
+think of as a post, made up of the HTML part and the images that the
+software likes to think of as uploads but which I think of as part of my
+document.</p>
+<p>Only it doesn't work like that. Not for WordPress. The <a href="http://lackoftalent.org/michael/blog/ore-wordpress-plug-in/#comment-91707">plugin I
+installed at my
+blog</a>
+doesn't treat stuff from the uploads directory as being part of the
+post. (But it will, it seems).</p>
+<div class="slide">
+<h1>The ORE view of a blog post</h1>
+<p><a name="Object1"></a><img src="/wp-content/uploads/2008/10/331aac20s526x355.jpg" alt="Object1" /></p>
+</div>
+<p>The ORE tutorial starts off with simple stuff like this, but it quickly
+gets fiendishly complicated, and you have to deal with prose which is
+obviously very carefully worded but can be quite impenetrable.</p>
+<div class="slide">
+<h1>More about OAI-ORE</h1>
+<ul>
+<li>
+<p>You can decorate the simple ORE graph above with lots and lots of
+extra metadata and rich semantics.</p>
+</li>
+<li>
+<p>The aggregation is <em>imaginary</em>. It is not the same as the resource
+map. It will have a URI something like:</p>
+<pre><code> http://ptsefton.com/2008/09/19/is-this-thing-working.htm#aggregation 
+</code></pre>
+<p>This imaginary aggregation can spark long discussions.</p>
+<p>I can't explain it to you.</p>
+<p>See <a href="http://groups.google.com.au/group/oai-ore/browse_thread/thread/8dac5e4c3d58709b">the
+list</a>.</p>
+</li>
+</ul>
+</div>
+<p>I'm looking forward to a time when there is some consensus on a 'blog
+post' type I can attach to the aggregation (failing that we can use
+NLA-style normalization a la ARROW discovery).</p>
+<div class="slide">
+<h1>What are other people doing with ORE?</h1>
+<ul>
+<li>
+<p>At the <a href="http://www.ukoln.ac.uk/repositories/digirep/index/CRIG_Repository_Challenge_at_OR08">Repository Challenge at OpenRepositories
+2008</a>
+some UK developers used it to move repository content between
+ePrints and Fedora.</p>
+</li>
+<li>
+<p>There was a recent competition, the <a href="http://www.openarchives.org/ore/RepoCamp2008/">ORE Challenge at RepoCamp
+2008</a> in which people
+presented various ORE-based ideas.</p>
+</li>
+<li>
+<p>People are writing software libraries to make it easy to use.</p>
+</li>
+</ul>
+</div>
+<p>(I don't much like the entry which won the ORE challenge, which was just
+a worse way to visualize relationships than you could get using text).</p>
+<div class="slide">
+<h1>What are we (USQ and friends) doing with it?</h1>
+<ol>
+<li>
+<p>Pushing theses and other research content around, as part of the
+JISC-funded ICE-TheOREM project.</p>
+</li>
+<li>
+<p>Harvesting repositories into <a href="http://ice.usq.edu.au/projects/fascinator/trac/wiki/">The
+Fascinator</a>.</p>
+</li>
+<li>
+<p>Ingesting image collections into The Fascinator, exploring
+possibilities for working repositories for eResearch.</p>
+</li>
+</ol>
+</div>
+<p>Here's a thesis in the ICE content management system.</p>
+<div class="slide">
+<h1>A BA (Hons) thesis in ICE</h1>
+<p><a name="graphics6"></a><img src="/wp-content/uploads/2008/10/3f0ee882s526x299.jpg" alt="graphics6" /></p>
+<p>This is a complex object with hundreds of HTML and PDF and image files.</p>
+<p>Using ICE we can push that thesis over SWORD using ORE to map it, to
+ePrints, or Fedora, or (soon) into the VALET system.</p>
+</div>
+<h1><span id="id6"></span><!--id6--></a>4 Conclusion</h1>
+<div class="slide">
+<h1>But what will ORE do for me?</h1>
+<p>IMHO here are a few examples:</p>
+<ol>
+<li>
+<p>Replace or supplement OAI-PMH for <strong>moving content</strong> between
+repositories <span class="spCh spChx2013">–</span> not just
+harvesting metadata but even upgrading to new software.</p>
+</li>
+<li>
+<p>Improve research <strong>tools like Zotero</strong> by making it easier to tell
+the tool what to download when saving a local copy of a paper.</p>
+</li>
+<li>
+<p><strong>Replace the use of METS packages</strong> in work like APSR's OJS to
+DSpace demo. [I may be on my own here]</p>
+</li>
+<li>
+<p>Allow for <strong>thesis by publication</strong> in a very elegant way.</p>
+</li>
+<li>
+<p>Pave the way for a new repository architecture which <strong>understands
+content models</strong>. (No more discussion of <em>atomistic</em> versus
+<em>compound</em> objects).</p>
+</li>
+</ol>
+</div>
+<h1></h1>
+<div class="slide">
+<h1>Finally</h1>
+<p>To help ORE it along I suggest a minor rebranding. From now on, call
+it...</p>
+<h1></h1>
+</div>
+<div class="slide">
+</div>
+<div class="slide">
+<h1><span class="spCh spChxd6">Ö</span><span class="spCh spChx42f">Я</span>3</h1>
+<p><a href="http://en.wikipedia.org/wiki/Heavy_metal_umlaut">http://en.wikipedia.org/wiki/Heavy_metal_umlaut</a></p>
+<p><a href="http://en.wikipedia.org/wiki/Faux_Cyrillic">http://en.wikipedia.org/wiki/Faux_Cyrillic</a></p>
+<p><a href="http://en.wikipedia.org/wiki/Leet">http://en.wikipedia.org/wiki/Leet</a></p>
+</div>
+<hr />
+<div style="font-size: .9em;">
+<p><span class="footnote"><a href="#ftn1-text">1</a> This was over a beer, and I'm not
+quoting exactly. </span></p>
+</div>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'what-the-oai-ore-protocol-can-do-for-you';
+                var disqus_url = 'http://ptsefton.com/2008/10/14/what-the-oai-ore-protocol-can-do-for-you/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

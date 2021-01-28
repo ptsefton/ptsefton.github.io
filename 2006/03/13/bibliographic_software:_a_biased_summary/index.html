@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Bibliographic Software: a biased summary - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2006/03/13/bibliographic_software:_a_biased_summary/index.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="In February, Cameron Loudon (RUBRIC communications person and fellow NextEd roadkill) and I dropped in to MELCOE at Macquarie Uni to talk to James Dalziel and Eric Vullings; we told them a bit about RUBRIC and ICE and they showed us some work they&#39;ve been doing on repository access control …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Bibliographic Software: a biased summary"/>
+        <meta property="og:url" content="/2006/03/13/bibliographic_software:_a_biased_summary/index.html"/>
+        <meta property="og:description" content="In February, Cameron Loudon (RUBRIC communications person and fellow NextEd roadkill) and I dropped in to MELCOE at Macquarie Uni to talk to James Dalziel and Eric Vullings; we told them a bit about RUBRIC and ICE and they showed us some work they&#39;ve been doing on repository access control …"/>
+        <meta property="article:published_time" content="2006-03-13" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2006/03/13/bibliographic_software:_a_biased_summary/index.html"
+                       rel="bookmark"
+                       title="Permalink to Bibliographic Software: a biased summary">
+                        Bibliographic Software: a biased summary
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2006-03-13T00:00:00+01:00"> Mon 13 March 2006</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>In February, Cameron Loudon (RUBRIC communications person and fellow
+NextEd roadkill) and I dropped in to
+<a href="http://www.melcoe.mq.edu.au/">MELCOE</a> at Macquarie Uni to talk to James
+Dalziel and Eric Vullings; we told them a bit about
+<a href="http://www.rubric.edu.au/">RUBRIC</a> and <a href="http://ice.usq.edu.au/">ICE</a>
+and they showed us some work they've been doing on repository access
+control using open standards. We look forward to seeing more of their
+work in this area in future.</p>
+<p>One of the issues that came up was bibliographic software, which I've
+been sort-of tracking for the ICE project. I promised to send James a
+summary of some of the work going on at the moment so here goes.</p>
+<p>If you want to keep up with what's going on in this space, and don't
+feel like reading my ramblings, subscribe to the RSS feed at Bruce
+D'Arcus' <a href="http://netapps.muohio.edu/blogs/darcusb/darcusb/">site</a>. Bruce
+is a bibliographic powerhouse who's working on several fronts to improve
+tools.</p>
+<h2><span id="id628167"></span>What am talking about here?</h2>
+<p>I'm talking about bibliographic software that lets you keep a library of
+references, insert citations into a document and then format citations
+and add a bibliography automatically. Here at USQ that means EndNote.
+Bruce D'Arcus has <a href="http://netapps.muohio.edu/blogs/darcusb/darcusb/index.php?s=endnote">plenty to say about
+EndNote.</a>But
+don't let him scare you off, if your institution has a site license you
+probably should still use it until a compelling replacement emerges.</p>
+<p>(If you're doing academic work at any level including undergraduate and
+you're not using bibliographic software then you need to get down to
+your library and ask for help!)</p>
+<p>There's a well-maintained list of this kind of software at the
+<a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information">OpenOffice
+site</a>.
+And some advice for OpenOffice Writer users.</p>
+<blockquote>
+<p><strong>But what can I do now?</strong> In the meantime, if you are not happy with
+OOo's basic bibliographic support, you may like to use some of the
+third-party bibliographic applications that can work with OpenOffice.
+See the <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information">bibliographic software
+page</a>
+for more details. You may like to look at the package
+<a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information#B3">B3</a>
+or
+<a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information#JabRef">Jabref</a>(version
+2 beta +) both of which have a nice user interface and can write
+bibliographic records to a Openoffice Bibliographic text database.
+<a href="http://bibliographic.openoffice.org/biblio-sw.html#Bibus">Bibus</a> is
+Bibliography application with good integration with OpenOffice.</p>
+</blockquote>
+<blockquote>
+<p><a href="http://bibliographic.openoffice.org/">http://bibliographic.openoffice.org/</a></p>
+</blockquote>
+<p>For Word users I can't really recommend anything in particular, go with
+whatever is supported at your institution or <a href="http://wiki.services.openoffice.org/wiki/Bibliographic_Software_and_Standards_Information">pick something off the
+list</a>.</p>
+<p>I am starting to hear a bit about <a href="http://www.refworks.com/">RefWorks</a>
+now. It's web-based with an optional local bit to add citations as you
+write, and I've signed up for a free trial. I'll see if it's bearable
+enough to work with, but I have already established that it <strong>does not
+like OpenDocument</strong> formatted docs one little bit.</p>
+<h2><span id="id628361"></span>What are we doing in ICE?</h2>
+<p>In the active ICE pilots our users will be using Word + EndNote to
+format bibliographies. OpenOffice is still used behind the scenes to
+make PDF and to generate XHTML. This is a bit of an anticlimax. Nothing
+to see here, move on.</p>
+<h2><span id="id628373"></span>My opinion</h2>
+<p>I think <a href="http://xbiblio.sourceforge.net/cite/">CSL</a>, the Citation Style
+Language invented by Bruce D'Arcus is a great idea, and I'd love to see
+software that works with it that can process word processing and XML
+documents to format citations and bibliographies.</p>
+<p>CSL is a way of specifying a particular citation style in XML, and with
+supporting software should let you reformat a document with different
+referencing styles automatically, just like EndNote's Output Styles but
+with significant improvements in flexibility.</p>
+<p>I am very pleased that Bruce has managed to get his ideas in front of
+the OpenDocument
+<a href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office">committee</a>,
+which he has joined, so that CSL will have a good chance of being
+implemented and adopted fairly widely.</p>
+<p>But I also think that the proposed additions to OpenDocument which
+should appear in OpenOffice.org version 3 might be counter productive,
+because they might make interoperability with MS Word in particular much
+harder. I favour a lighter-weight approach as outlined in a <a href="http://www.mail-archive.com/dev@bibliographic.openoffice.org/msg00262.html">message I
+wrote to the OpenOffice.org bibliographic
+list.</a></p>
+<p>Why not embed citations using a simple hyperlink? Links are already
+supported everywhere.</p>
+<p>The link might be an <a href="http://en.wikipedia.org/wiki/OpenURL">OpenURL</a>, or
+it might point to a bibliographic application either on the web or
+running locally in the same way that ICE does (it has its own
+webserver), or it could be to an Institutional Repository, to a journal,
+to Amazon, or to your local library or to a plain-old web page. A
+document post-processor can then resolve that link and try to get
+bibliographic details for it. If it can't it can ask you to type them in
+or you might choose to ignore that link and leave it as a link rather
+than a citation.</p>
+<p><strong>My approach is microformat-ish</strong>; I would like to see loose coupling
+by-convention because I think it has a chance of working now, without
+waiting for a future release of OOo and avoids building a silo that may
+trap content in OpenDocument.</p>
+<p>I'd like to see the CSL-driven post-processor as a free software
+library, so we could build bibliographic support into the ICE
+application itself. I'm assuming that these libraries will emerge from
+the work that Bruce and others are doing. I should be helping, at least
+on the bits of which I approve, but I'm not finding the time at the
+moment.</p>
+<p>And I think that the idea of a 'personal repository' has legs. Somewhere
+to keep my copies of articles and cache web pages used as references in
+case they change or go away. And of course, this should act like a music
+playing application, able to fetch metadata for an item automatically as
+discussed in this paper, <em>Why can’t I manage academic papers like MP3s</em>
+(<a href="http://freelancepropaganda.com/archives/MP3vPDF.pdf">PDF</a>) .</p>
+<h2><span id="id628546"></span>Resources to watch</h2>
+<ul>
+<li>
+<p>The OpenOffice.org <a href="http://bibliographic.openoffice.org/">bibliographic project
+page</a>.</p>
+</li>
+<li>
+<p>The OpenOffice.org bibliographic
+<a href="http://bibliographic.openoffice.org/servlets/ProjectMailingListList">lists</a>.</p>
+</li>
+<li>
+<p>Bruce's <a href="http://netapps.muohio.edu/blogs/darcusb/darcusb/">blog</a>.</p>
+</li>
+<li>
+<p>My bibliographic software
+<a href="http://del.icio.us/ptsefton/ptsefton+bibliographicsoftware">posts</a>
+(via del.icio.us).</p>
+</li>
+</ul>
+<blockquote>
+<hr />
+</blockquote>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'bibliographic_software:_a_biased_summary';
+                var disqus_url = 'http://ptsefton.com/2006/03/13/bibliographic_software:_a_biased_summary/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Real life scenarios for creating and disseminating linked-data publications - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2011/06/16/real-life-scenarios-for-creating-and-disseminating-linked-data-publications/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="In this presentation for Semantic Web Technologies for Libraries and Readers (STLR 2011), which I can&#39;t attend in person I want to talk about what happens before things hit the library. I have pre-recorded a couple of demos and asked Jodi Schneider if she would mind introducing the talk for …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Real life scenarios for creating and disseminating linked-data publications"/>
+        <meta property="og:url" content="/2011/06/16/real-life-scenarios-for-creating-and-disseminating-linked-data-publications/index.html"/>
+        <meta property="og:description" content="In this presentation for Semantic Web Technologies for Libraries and Readers (STLR 2011), which I can&#39;t attend in person I want to talk about what happens before things hit the library. I have pre-recorded a couple of demos and asked Jodi Schneider if she would mind introducing the talk for …"/>
+        <meta property="article:published_time" content="2011-06-16" />
+            <meta property="article:section" content="Data Packaging Standards" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2011/06/16/real-life-scenarios-for-creating-and-disseminating-linked-data-publications/index.html"
+                       rel="bookmark"
+                       title="Permalink to Real life scenarios for creating and disseminating linked-data publications">
+                        Real life scenarios for creating and disseminating linked-data publications
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-06-16T08:36:16+00:00"> Thu 16 June 2011</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>In this presentation for<span id="wsite-title"></span><span></span></a>
+Semantic Web Technologies for Libraries and Readers (<a href="http://stlr2011.weebly.com/"><span>STLR
+2011</span></a>), which I can't attend in
+person I want to talk about what happens before things hit the library.
+I have pre-recorded a couple of demos and asked Jodi Schneider if she
+would mind introducing the talk for me <span
+class="spCh spChx2013">–</span> I know she has been following this work
+for a while <span class="spCh spChx2013">–</span> maybe she can read out
+this brief blog post and pretend to be me?</p>
+<p>When I submitted this paper I selected three categories for it.</p>
+<ul>
+<li>
+<p>Strategies for semantic publishing (technical, social, and economic)</p>
+</li>
+<li>
+<p>Approaches for consuming semantic representations of digital
+documents and electronic media<br />
+and collaboration</p>
+</li>
+<li>
+<p>Social semantic approaches for using, publishing, and filtering
+scholarly<br />
+objects and personal electronic media</p>
+</li>
+</ul>
+<p>But really it's mainly about the first one, about getting linked data
+semantics into digital libraries.</p>
+<p>The proposal for this paper also had some stuff in it about 'big themes'
+but given that I am not going to be there in person, and it is only a
+short demo slot I will not attempt to address those themes.</p>
+<h1><span id="id2"></span><span></span></a>The ongoing issue with publishing to the web</h1>
+<p>Ever since the web began to hit the mainstream, there has been a big gap
+between what's on the web as HTML and the kinds of documents that people
+write in academia <span class="spCh spChx2013">–</span> papers, theses,
+reports, and so on.</p>
+<ol>
+<li>
+<p>For research publications PDF files rule. PDF is what is deposited
+in institutional repositories, and what people manage (or mismanage)
+in their personal digital libraries. PDF is not conducive to rich
+semantics (Yes, it can be done, the web is already ready for
+linked-data and <em>all</em> the action is on the web. And yes, some
+publishers are doing good things with the web, but they don't
+typically allow DIY authoring and repository deposit of rich
+semantic materials).</p>
+</li>
+<li>
+<p>Word processors and tools like LaTeX don't <em>Just Work</em> for making
+web documents it's more like <em>Just Doesn't Work</em>.</p>
+</li>
+<li>
+<p>When we start talking about semantics <span
+class="spCh spChx2013">–</span> and wanting to have stuff like RDFa
+in web pages <span class="spCh spChx2013">–</span> it is really hard
+to do with run-of-the mill scholarship, because our authoring tools
+don't support formal semantics. (Yes there are XML tool-chains such
+as TEI <span class="spCh spChx2013">–</span> but the heavy-duty XML
+approach has never been shown to work for large cohorts of
+non-technical users).</p>
+</li>
+</ol>
+<h1><span id="id4"></span><span></span></a>Demos</h1>
+<p>I want to show a couple of demos</p>
+<ul>
+<li>
+<p>A method for encoding Linked Data statements in URLS, so they can be
+used in any system that support simple HTTP hyperlinks. URLs are
+supported everywhere and will survive being saved as .doc, copied
+and pasted, emailed and so on, if not a nuclear winter. See the
+<a href="http://screencast.com/t/QdC9et9vUWG"><span>screencast</span></a>. This
+includes a lightning look at the <a href="http://code.google.com/p/integrated-content-environment/"><span>The Integrated Content
+Environment</span></a><span
+class="T2">2</span> which tries to close the gap between document
+authoring tools like word processors and the web.</p>
+</li>
+<li>
+<p>Packaging all of the above using EPUB, the open ebook standard using
+various tools and techniques from the <a href="http://jiscpub.blogs.edina.ac.uk/"><span>Digital Monograph
+Technical Landscape
+study</span></a>  using ORE<span
+class="T2">4</span> resource maps. See the<a href="http://screencast.com/t/pQwHU1M8Mc9"><span>
+screencast</span></a>. One thing I
+didn't mention in the screencast is that this work builds on work
+done by the KnoweldgeBlog project in the UK who are on in the next
+slot in the workshop <span class="spCh spChx2013">–</span> we've
+never met. Hello!</p>
+</li>
+<li>
+<p>I also wanted to look at new models for scholarly objects that allow
+documents, data and provenance to be managed, reposited and
+disseminated by demoing <a href="http://code.google.com/p/the-fascinator/"><span>The Fascinator
+Desktop</span></a>.<span
+class="T2">3</span> but unfortunately that's not possible right now
+as the software in question is being moved to Google Code and the
+builds are broken <span class="spCh spChx2013">–</span> it should be
+fixed next week. I refer you to a long posting I put together for
+the <a href="http://ptsefton.com/2010/12/09/beyond-the-pdf-proposed-session-bring-the-web-to-the-researcher-mainly-on-authoring-tools.htm"><span>Beyond the PDF workshop which has a lot of
+screenshots</span></a>.</p>
+<p>They key feature of this tool is that it can work with a wide
+variety of things and bundle them together into a single object,.
+The idea is to provide a web interface to your hard disk, or
+Dropbox-like share. In the post I look at a research object
+consisting of a paper, some data in a spreadsheet, some provenance
+information, and touch on how semantics about the scientific content
+of the paper could be marked up using the 'triplink' technique I
+demonstrated above. (I'll comment below when I am able to post a
+screencast).</p>
+</li>
+</ul>
+<p>Sorry I couldn't make it to Ottawa, hope you all enjoy the workshop.</p>
+<p>Copyright <span rel="http://purl.org/dc/elements/1.1/creator"
+resource="http://trove.nla.gov.au/people/541658"><span
+property="http://xmlns.com/foaf/0.1/name"
+resource="http://trove.nla.gov.au/people/541658">Peter
+Sefton</span></span>, 2011-06-16. Licensed under <span
+rel="http://creativecommons.org/licence">Creative Commons
+Attribution-Share Alike 2.5 Australia</span>.
+&lt;http://creativecommons.org/licenses/by-sa/2.5/au/&gt;</p>
+<p><span class="Default_20_Paragraph_20_Font"><span
+style="country:US; language:en; "><span
+class="T1"><a><span></span></a><img src="/wp-content/uploads/2011/06/m40ca94ba.png" alt="graphics1" /></span></span></span></p>
+<p>This post was written in OpenOffice.org, using templates and tools
+provided by the <a href="http://ice.usq.edu.au/"><span>Integrated Content
+Environment</span></a> project.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'real-life-scenarios-for-creating-and-disseminating-linked-data-publications';
+                var disqus_url = 'http://ptsefton.com/2011/06/16/real-life-scenarios-for-creating-and-disseminating-linked-data-publications/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

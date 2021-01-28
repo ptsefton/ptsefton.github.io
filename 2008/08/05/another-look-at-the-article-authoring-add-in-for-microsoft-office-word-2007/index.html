@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Another look at the Article Authoring Add-in for Microsoft Office Word 2007 - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2008/08/05/another-look-at-the-article-authoring-add-in-for-microsoft-office-word-2007/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="Usability? Lock in Preservation An alternative The “Article Authoring Add-in for Microsoft Office Word 2007” (AAAiMOW1) has been turned loose as a release candidate. I looked at an earlier version of this a while a ago. The name of the thing doesn&#39;t let on that it is targeting just …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Another look at the Article Authoring Add-in for Microsoft Office Word 2007"/>
+        <meta property="og:url" content="/2008/08/05/another-look-at-the-article-authoring-add-in-for-microsoft-office-word-2007/index.html"/>
+        <meta property="og:description" content="Usability? Lock in Preservation An alternative The “Article Authoring Add-in for Microsoft Office Word 2007” (AAAiMOW1) has been turned loose as a release candidate. I looked at an earlier version of this a while a ago. The name of the thing doesn&#39;t let on that it is targeting just …"/>
+        <meta property="article:published_time" content="2008-08-05" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2008/08/05/another-look-at-the-article-authoring-add-in-for-microsoft-office-word-2007/index.html"
+                       rel="bookmark"
+                       title="Permalink to Another look at the Article Authoring Add-in for Microsoft Office Word 2007">
+                        Another look at the Article Authoring Add-in for Microsoft Office Word 2007
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2008-08-05T05:32:51+00:00"> Tue 05 August 2008</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id1">Usability?</a></li>
+<li><a href="#id2">Lock in</a></li>
+<li><a href="#id3">Preservation</a></li>
+<li><a href="#id4">An alternative</a></li>
+</ul>
+</div>
+<div>
+<p>The <span class="spCh spChx201c">“</span><a href="http://www.microsoft.com/downloads/details.aspx?familyid=09c55527-0759-4d6d-ae02-51e90131997e">Article Authoring Add-in for
+Microsoft Office Word
+2007</a><span
+class="spCh spChx201d">”</span> (AAAiMOW<a href="#ftn0"><span
+style="vertical-align: super;"><span
+class="footnote">1</span></span></a>) has been turned loose as a
+release candidate. I <a href="http://ptsefton.com/2008/04/24/some-comments-on-the-nlm-xml-plugin-for-word-2007.htm">looked at an earlier version of this a while a
+ago</a>.</p>
+<p>The name of the thing doesn't let on that it is targeting just one
+version of what an article looks like, in the form of the <a href="../%EF%BB%BFhttp://dtd.nlm.nih.gov/publishing/tag-library/2.2/">NLM
+schema</a>
+I'm not sure if that reflects confidence that the NLM schema is generic
+enough to cope with all articles or anticipates a future version which
+can support multiple formats.</p>
+<p>I had a lot of questions in my previous post <span
+class="spCh spChx2013">–</span> most of which I think are not yet
+answered, although Pablo Fernicola did drop by my blog and shed light on
+some of the issues.</p>
+<p>This time, with a fresh virtual installation of Windows XP running under
+VirtualBox on OS X the plugin worked a bit better for me so I could see
+it in full flight. I still have some serious concerns about this add-in
+thing and what it might mean for organizations.</p>
+<p>I was going to make a few quick comments about usability, preservation
+and lock-in but this post kept growing, I emailed Jon Udell for his take
+and did a few tests, and it's ended up well on the way to 2000 words.</p>
+<p>[Update : (Minor edits and fixes)</p>
+<p>I should point out that while this post is quite picky I'm glad to see
+this work going on in Microsoft and I'd love to see how it works out.</p>
+<p>Look, if you're not concerned about using an application which is only
+for Word 2007 on Windows XP or Vista to create articles which you don't
+need to re-use or archive then most of what I've got to say here is
+irrelevant.]</p>
+<h1><span id="id1"></span><!--id1--></a>Usability?</h1>
+<p>I can't find any reports of how this plugin works in real life. Has
+anyone tried it? Are you all under NDAs?</p>
+<p>I'm concerned about the way that you can add NLM structural elements all
+over the place, and nested inside each other in bizarre ways, but then
+you can't save to the new proprietary .nlmx format because of validation
+errors.</p>
+<p>It would be pretty easy to show how you can create invalid structures
+using this plugin but I don't really think that's a useful stunt to pull
+<span class="spCh spChx2013">–</span> what I want to see is what
+<strong>real</strong> problems, or lack of them people have with the structural
+stuff.</p>
+<p>Me, I found it a bit weird but as I said I didn't try to write an
+article with it.</p>
+<p>There's one interface device that I really like. Each 'section' element
+gets a little handle above it so you can drag the whole thing around:</p>
+<p><span
+style="display: block"><a name="graphics1"></a><img src="/wp-content/uploads/2008/08/m11c0c37s248x871.jpg" alt="graphics1" /></span>It
+would be really nice if this applied to the document outline as well as
+part of the normal Word interface not just to the special embedded XML
+sections. I could just style a bit of content as <code>Heading 2</code>, which is
+part of the document outline structure, and be able to drag around the
+whole of that implied section. Word already does something very like
+this if you use the Outline view. Of course, dragging sections in an NLM
+document doesn't make sense as they're supposed to be in a particular
+order, but I don't imagine most people would drag the high-level
+sections. (There's some kind of complex process for dealing with section
+ordering or editors, I think).</p>
+<p>I'm not sure if I get why the embedded XML is any better than just
+recognizing that the text 'Abstract' in <code>Heading 2</code> style is a the start
+of the Abstract section. Or you could define sub-classes of heading if
+you really wanted to such as <code>Heading 2 - Abstract</code>.</p>
+<p>You could still have a toolbar like this so that people can drop in
+sections where they want them:</p>
+<h1><span id="id2"></span><!--id2--></a><span style="display: block"><a name="graphics2"></a><img src="/wp-content/uploads/2008/08/m43505a27s552x1201.jpg" alt="graphics2" /></span>Lock in</h1>
+<p>This add-in represents a new opportunity for Microsoft to lock users in
+to Word, having just moved on from the proprietary .doc format. This is
+not just a matter of trying to sell more copies of Microsoft Office it's
+about encouraging users to create documents that only work with a
+particular version of Office.</p>
+<p>We have just been through a great long debate about standardizing word
+processing formats. Microsoft got their way and had their OOXML format
+accepted as an ISO Standard (<a href="http://www.iso.org/iso/pressrelease.htm?refid=Ref1123">ISO/IEC DIS
+29500</a>). The
+benefit is supposed to be that when you write a word processing document
+it can be managed and edited in more than one application but I have
+always been very dubious about how this fits with the way you can embed
+arbitrary foreign XML in Word documents. By contrast the Open Document
+Format approach is an <a href="http://blogs.sun.com/GullFOSS/entry/new_extensible_metadata_support_with">RDF based extension
+mechanism</a>
+which seems a lot cleaner.</p>
+<p>I tried out some simple interop with an AAAiMOW document.</p>
+<ol>
+<li>
+<p>Word 2008 on OS X can open it, and you can edit the document at
+least a little bit, apparently without breaking it, but anything you
+add doesn't have the magic embedded XML. It round tripped without
+error but I assume you could break some of the XML.</p>
+</li>
+<li>
+<p>NeoOffice Writer on the Mac can open the .docx file and you can
+edit, but if you save it and re-open in Word then you get an error .
+The good news was that Word 2007 was apparently able to rescue the
+content but the bad news was that embedded XML went AWOL.</p>
+</li>
+</ol>
+<p>At the moment I would not have any confidence that anything except Word
+2007 can deal with documents created with the add-in, which is as
+advertised. Of course, if that's what your team of scientists is using
+then no problem, provided you think about how you will preserve the
+outputs (see below).</p>
+<p>That quick interop test was using the new .docx format which is <strong>not</strong>
+the same as <a href="http://www.iso.org/iso/pressrelease.htm?refid=Ref1123">ISO/IEC DIS
+29500</a>, which
+won't be available as a Word format until the next version.</p>
+<p>One of the features of the AAAiMOW is a new file format. Yes. A new
+non-standard file format which is a misbegotten mashup of OOXML and NLM.
+I'm not sure how this is different from the way the content is embedded
+in the .docx file. From the readme file:</p>
+<blockquote>
+<p>Both the article contents and metadata authored through the add-in are
+stored using XML, as part of a single file, using the Open XML format
+for the content and the NLM tagset for the metadata. Content which
+does not have an equivalent in Word, or extends existing Word
+elements, is stored as custom XML elements within the Open XML data
+stream. When a file is saved in the NLM format, the resulting XML file
+is stored within a nlmx file, using the same Open Packaging
+Conventions used by docx files, providing a single file which can
+package all related content (such as images) and supports
+extensibility.</p>
+</blockquote>
+<p>Meanwhile, the next service pack for Word 2007 will add support for the
+Open Document Format (ODF) as a native file format. I'm assuming the
+plugin won't work with ODF. (Pablo, am I wrong?)</p>
+<p>There's some very alarming use of the passive voice in the documentation
+too, a classic computer industry trick. Say it <strong>can</strong> be done without
+mentioning who's going to do it and how much it's going to cost.</p>
+<blockquote>
+<p>Based on the use of Open Packaging Conventions, the Open XML format,
+and the NLM tagset, tools can be built to access any part of the file,
+content or metadata, and extract, validate, or add information to the
+file, as part of the publishing workflow.</p>
+</blockquote>
+<p><span class="spCh spChx201c">“</span>Can be built?<span
+class="spCh spChx201d">”</span> Please. We have one format mixed in to
+another format using a user interface that is only accessible from an
+expensive proprietary application. I'm sure I could write a script to
+pull the NLM bits out of the Open XML but for each new kind of embedded
+XML I would have to rewrite my code and test that it works with the user
+interface code that has been added to Word <span
+class="spCh spChx2013">–</span> in this case it involves dealing with
+some special attributes to re-order sections (I think) <span
+class="spCh spChx2013">–</span> doesn't look easy or pleasant to me.</p>
+<p>[Update <span class="spCh spChx2013">–</span> to be clear there is no
+way that I can see for an author to export he NLM XML format only. I'm
+assuming that must be something that happens using a different tool.]</p>
+<p>And it is worth remembering that this plugin is not accessible to the
+majority even of Windows users. For example here at USQ Word 2007 has
+not been rolled out yet<a href="#ftn1"><span style="vertical-align: super;"><span
+class="footnote">2</span></span></a>. And the plugin is not
+available at all on platforms other than Windows. That's not what I
+hoped the new standards-wielding Microsoft was on about.</p>
+<h1><span id="id3"></span><!--id3--></a>Preservation</h1>
+<p>There are going to be serious issues with preservation. What are
+archivists supposed to do with bastard mashed-up formats like this which
+depend on a particular package to make sense of them?</p>
+<p>It is true that for documents that make it to publication in the NLM XML
+format this should not be an issue: the resulting XML should be perfect
+for archiving. But I can see that a lot of things that are of value
+might not make it through to XML. What about archived author's
+manuscripts which are one of the backbones of Open Access? What about
+the original editable files for images drawn using Microsoft Office
+tools, which are embedded in the source file?</p>
+<p>Think about what would happen if this approach became common for
+different XML formats <span class="spCh spChx2013">–</span> there could
+be a proliferation of non-standard polluted Word document to deal with
+in repositories.</p>
+<p>This add-in represents the Microsoft business model in action. See Brian
+Jones' response to my probing on the issue of how this bastard mashup
+stuff is supposed to work. I quoted
+<a href="http://blogs.msdn.com/brian_jones/archive/2005/07/08/436973.aspx#452483">this</a>
+last time, but it's worth reminding ourselves that this is what
+Microsoft is about, never mind the standards:</p>
+<blockquote>
+<p>There is a huge market that exists today for custom Office solutions.
+People customize the Office applications in all kinds of ways to try
+to get more out of their documents. By adding the support for custom
+defined schemas, we made it much easier to build semi-structured
+solutions on top of Word. Rather than rely on hacks with styles or
+bookmarks, folks could create a simple schema and add some XML tags
+into their existing document solutions.</p>
+<p><a href="http://blogs.msdn.com/brian_jones/archive/2005/07/08/436973.aspx#452483">http://blogs.msdn.com/brian_jones/archive/2005/07/08/436973.aspx#452483</a></p>
+</blockquote>
+<p>Brian Jones calls using styles to carry semantics 'a hack' and yet
+embedding foreign XML in a Word document and hand-crafting a user
+interface to deal with the resulting mishmash of tags is somehow not a
+hack? I agree that styles and bookmarks (and tables <span
+class="spCh spChx2013">–</span> we use them a lot) are somewhat limited
+carriers for microformats but the XML embedding thing has always looked
+like a trap to me <span class="spCh spChx2013">–</span> too expensive to
+set up and maintain and too much embedded in the Windows world. As I
+mentioned above, I think the new extension mechanism for ODF may be a
+better compromise <span class="spCh spChx2013">–</span> maybe we'll see
+that in the ODF support in the service pack release in 2009.</p>
+<h1><span id="id4"></span><!--id4--></a>An alternative</h1>
+<p>There's an alternative approach which is to use features that are common
+to word processors in general and which are expressed in the underlying
+file formats directly, which I wrote about in my last post. There would
+be some interesting challenges in finding interoperable ways to embed
+all the 'special' items that are allowed <span
+class="spCh spChx2013">–</span> some of these are already supported in
+our ICE templates but not quite with the same structural rigor as in
+this the add-in.</p>
+<p><span
+style="display: block"><a name="graphics3"></a><img src="/wp-content/uploads/2008/08/m24c568es552x731.jpg" alt="graphics3" /></span></p>
+<p>Chris Rusbridge from the <a href="http://ptsefton.com/2008/04/24/some-comments-on-the-nlm-xml-plugin-for-word-2007.htm#comment-1542">lamented in the comments of my last
+post</a>
+that we don't do NLM export from <a href="http://ice.usq.edu.au/">ICE</a> <span
+class="spCh spChx2013">–</span> but I reckon we could produce NLM XML
+from ICE documents with no more subsequent work required of editors than
+you would get using the AAAiMOW (I'm guessing <span
+class="spCh spChx2013">–</span> we have no data about how well it [the
+add-in] works and I have yet to work through the section of the
+documentation for editors).</p>
+<p>The readme tells us that styles don't work (emphasis mine):</p>
+<blockquote>
+<p>Custom XML elements are used to represent other abstractions that
+exist in the NLM tagset, but that are not found in Word, and to do so
+in a manner that can be presented to the author for editing in a
+robust way <strong>(unlike the use of custom styles, which was one of the
+ways to try to solve this problem in earlier versions of Word, and was
+not very reliable).</strong></p>
+</blockquote>
+<p>I have no doubt that there are lots of terrible style based systems out
+there, but we have worked hard on making styles usable, interoperable
+and easy to apply and providing robust rapid-feedback document
+conversion.</p>
+<p>(Maybe both of us are wrong <span class="spCh spChx2013">–</span> MJ
+Suhonos at <a href="http://pkp.sfu.ca/lemon8">PKP thinks that you can create
+XML</a> without using either styles or embedded
+XML by using document formatting to infer structure.)</p>
+<p>Would anyone care to fund a small project to see if we can use ICE to
+produce similar overall results (in terms of overall ROI) to the AAAiMOW
+but in a cross-platform solution? Microsoft? Anyone in the UK with
+access to JISC funds? A publisher?</p>
+<hr />
+<div style="font-size: .9em;">
+<p><span class="footnote"></span>
+<a href="#ftn0-text">1</a> Sounds like a noise emanating from a petulant feline.</p>
+</span>
+</div>
+<div style="font-size: .9em;">
+<p><span class="footnote"></span>
+<a href="#ftn1-text">2</a> We're bracing for the onslaught on the help desk as
+hundreds of users have to re-learn commands they've been using for their
+whole working lives. It seems to us on the <a href="http://ice.usq.edu.au/">ICE</a>
+team that this is a perfect time to introduce our users to the copy of
+OpenOffice.org which will be on their computer.</p>
+</span>
+</div>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'another-look-at-the-article-authoring-add-in-for-microsoft-office-word-2007';
+                var disqus_url = 'http://ptsefton.com/2008/08/05/another-look-at-the-article-authoring-add-in-for-microsoft-office-word-2007/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

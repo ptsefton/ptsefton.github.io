@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Open Repositories 2018 Presentation: ReDBox 2.0 / Provisioner - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2018/07/06/RedBoX-Provisioner-OR2018/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="This is a presentation that Gavin Kennedy and I gave at Open Repositories 2018 in Bozeman Montana. I am posting this on the UTS eResearch website and on my own site. Gavin Kennedy, QCIF Peter Sefton, University of Technology Sydney &#39; title=&#39;ReDBox 2.0 / Provisioner Gavin Kennedy, QCIF Peter Sefton, University of Technology Sydney &#39; border=&#39;1&#39; width=&#39;85%&#39;/&gt; Notes - Slide 1 The first part of this presentation was narrated by Gavin. Notes - Slide 2 ReDBox is a …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Open Repositories 2018 Presentation: ReDBox 2.0 / Provisioner"/>
+        <meta property="og:url" content="/2018/07/06/RedBoX-Provisioner-OR2018/index.html"/>
+        <meta property="og:description" content="This is a presentation that Gavin Kennedy and I gave at Open Repositories 2018 in Bozeman Montana. I am posting this on the UTS eResearch website and on my own site. Gavin Kennedy, QCIF Peter Sefton, University of Technology Sydney &#39; title=&#39;ReDBox 2.0 / Provisioner Gavin Kennedy, QCIF Peter Sefton, University of Technology Sydney &#39; border=&#39;1&#39; width=&#39;85%&#39;/&gt; Notes - Slide 1 The first part of this presentation was narrated by Gavin. Notes - Slide 2 ReDBox is a …"/>
+        <meta property="article:published_time" content="2018-07-06" />
+            <meta property="article:section" content="Repositories" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2018/07/06/RedBoX-Provisioner-OR2018/index.html"
+                       rel="bookmark"
+                       title="Permalink to Open Repositories 2018 Presentation: ReDBox 2.0 / Provisioner">
+                        Open Repositories 2018 Presentation: ReDBox 2.0 / Provisioner
+
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-07-06T00:00:00+02:00"> Fri 06 July 2018</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is a presentation that Gavin Kennedy and I gave at <a href="http://www.or2018.net/">Open Repositories
+2018</a> in Bozeman Montana.</p>
+<p>I am posting this on the <a href="https://eresearch.uts.edu.au/">UTS eResearch website</a> and on <a href="http://ptsefton.com">my own site</a>.</p>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide01.png' alt='ReDBox 2.0 / Provisioner
+<p>Gavin Kennedy, QCIF
+Peter Sefton, University of Technology Sydney
+' title='ReDBox 2.0 / Provisioner</p>
+<p>Gavin Kennedy, QCIF
+Peter Sefton, University of Technology Sydney
+' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 1</p>
+</summary>
+<p>The first part of this presentation was narrated by Gavin.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide02.png' alt='ReDBox
+ReDBox is a Research Data Management Platform that assists researchers and institutions to plan, create and publish their research data assets.
+Open source (github.com/redbox-mint)
+Managed and supported by QCIF
+Fully customisable
+Integration and interoperation
+Cloudified
+Community Driven
+' title='ReDBox
+ReDBox is a Research Data Management Platform that assists researchers and institutions to plan, create and publish their research data assets.
+Open source (github.com/redbox-mint)
+Managed and supported by QCIF
+Fully customisable
+Integration and interoperation
+Cloudified
+Community Driven
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 2</p>
+</summary>
+<p>ReDBox is a Research Data Management Platform. It assists researchers and institutions to plan, create and publish their research data assets.</p>
+<ul>
+<li>It is proudly open source.</li>
+<li>It is managed and supported by the QCIF Engineering Services team.</li>
+<li>It is fully customisable.</li>
+<li>It is an integration platform, it will join your platforms together. It is interoperable, your platforms will happily exchange information with ReDBox.</li>
+<li>It is in the cloud: mostly, we are progressively increasing our cloud options.</li>
+<li>But most important is that it is community driven, the work we do to continuously improve ReDBox is determined, prioritised and often contributed by our community.</li>
+</ul>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide03.png' alt='ReDBox History
+' title='ReDBox History
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 3</p>
+</summary>
+<p>ReDBox has a rich history, with ongoing support from the Australian eResearch sector. Originally ReDBox was created on top of the Fascinator platform by USQ back in 2010 and taken up by successive institutions under the ANDS Metadata Stores funding program. In 2012 QCIF took over the management of ReDBox, giving it a stable non-partisan home. 2015 saw our first cloud version in ReDBox Lite, last year we produced our first SaaS version with the RAPportal, and this year we are releasing ReDBox 2.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide04.png' alt='ReDBox Community
+' title='ReDBox Community
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 4</p>
+</summary>
+<p>This slide shows the institutions we know are using ReDBOX. The ones above the
+line have support contract with QCIF which help to pay for maintenance and
+enhancement of the software.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide05.png' alt='ReDBox 1.x
+Institutional Data Catalogue ++
+Metadata Store
+Mint Name Space Authority
+DMPt
+Curator
+Harvester
+Transformers
+API
+OAI/PMH Publisher
+<p>' title='ReDBox 1.x
+Institutional Data Catalogue ++
+Metadata Store
+Mint Name Space Authority
+DMPt
+Curator
+Harvester
+Transformers
+API
+OAI/PMH Publisher</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 5</p>
+</summary>
+<p>At its core ReDBox is a customisable research data registry, providing forms, workflows and system
+integrations to assist institutions in creating and managing the metadata
+describing research data collections. It includes the innovative Mint platform
+to provide a name-authority lookup service for researcher information and
+project details, as well as commonly used research classifications, such as FOR
+codes. Mint helps to create high quality linked-data metadata, by supplying URIs
+as metadata values rather than strings which can be error-prone and ambiguous.</p>
+<p>It incorporates a Data Management Planning tool, curation functions and a
+flexible harvester tool to pull data in from external platforms. It is a
+schemaless forms driven platform, incorporating configurable transformers to
+generate metadata from a standard schema, like RIF/CS or DataCite Citation
+format.</p>
+<p>ReDBox includes a full set of APIs and provides an OAI-PMH interface for
+metadata harvesting by repositories including Research Data Australia.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide06.png' alt='ReDBox 2.0
+Technology refresh
+Single web application framework (Sails.js)
+Easy to configure forms
+New object model (JSON-LD in MongoDB)
+Modular/plug-in architecture
+Multi-institutional RBaaS (e.g. RAPortal.org.au)
+DLC (Data LifeCycle) support via RAiDs
+maDMPs
+Workspace concept to manage resources and datasets
+Flexible storage provisioning with the UTS Provisioner Framework
+Dataset harvesting, archiving (OCFL) and publishing
+Comprehensive search/discovery tool
+<p>' title='ReDBox 2.0
+Technology refresh
+Single web application framework (Sails.js)
+Easy to configure forms
+New object model (JSON-LD in MongoDB)
+Modular/plug-in architecture
+Multi-institutional RBaaS (e.g. RAPortal.org.au)
+DLC (Data LifeCycle) support via RAiDs
+maDMPs
+Workspace concept to manage resources and datasets
+Flexible storage provisioning with the UTS Provisioner Framework
+Dataset harvesting, archiving (OCFL) and publishing
+Comprehensive search/discovery tool</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 6</p>
+</summary>
+<p>In late 2017 QCIF embarked upon a complete refresh of the ReDBox technology
+stack, assisted by RDS and UTS. We threw out the clunky front end tech stack and
+used Angular.js, a javascript framework that hasn’t gone off overnight. We have
+created a form configuration process to let you create your own forms and style
+them using bootstrap. It is easy to extend functionality using a plugin
+architecture. We can deploy it so multiple institutions to run off a hosted
+version of ReDBox, our ReDBox as a Service offering.  The DMP tool now supports
+Machine Actionable DMPs. We have introduced a Workspace concept for managing
+resources within ReDBox. And with UTS we are implementing provisioning, data
+harvesting and rewriting the search/discovery tool.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide07.png' alt='Data Life Cycle
+' title='Data Life Cycle
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 7</p>
+</summary>
+<p>And this is where the Data Life Cycle is supported. It allows users to plan for
+their data, acquire the resources for storing their data, harvest file level
+data and metadata back into ReDBox, curate it, archive it, publish it and make
+it discoverable.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide08.png' alt='ReDBox
+maDMPs
+' title='ReDBox
+maDMPs
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 8</p>
+</summary>
+<p>Mercifully for you, this is not a demo. This is just a screen shot of a full
+blown DMP, with the DMP components organised in a tabular form. At this point I
+will remind everyone that it is fully configurable and that the forms can be as
+minimal or extensive as you require.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide09.png' alt='RAP
+www.raportal.org.au
+Configurable SaaS Platform
+Proto-DMP
+RAiD Support in ReDBox
+Institutional Views
+<p>' title='RAP
+www.raportal.org.au
+Configurable SaaS Platform
+Proto-DMP
+RAiD Support in ReDBox
+Institutional Views</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 9</p>
+</summary>
+<p>An example of the minimum form is the Research Activity Portal (RAP). The RAP is
+our first configurable SaaS platform. It is a proto-DMP designed for users to
+register their research activity in order to get a RAiD, which is a Research
+Activity ID. It is available nationally in Australia and supports institutional
+views, so an individual institution can have a RAP themed to their institution
+with customised forms.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide10.png' alt='Provisioner - principles
+<p>' title='Provisioner - principles</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 10</p>
+</summary>
+<p>At this point Petie took over the talking.</p>
+<p>The next few slides go through some of the principles behind the service-provisioning aspect of ReDBOX.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide11.png' alt='Give the people what they (should) want
+Improved ability to do
+high-integrity high-impact research
+' title='Give the people what they (should) want
+Improved ability to do
+high-integrity high-impact research
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 11</p>
+</summary>
+<p>We try to appeal to Researcher’s better selves: who doesn’t want to do high
+integrity research that has high impact?</p>
+<p>Knowing where your data are is obviously key to Research Integrity, and is
+mandated by research norms, codes of practice and by funders. The provisioner
+helps with this; because provisioning can be invoked from a Research Data
+Management Plan (RDMP), the provisioned research space - we call them
+<em>workspaces</em> - has a bit of metadata that points back to the RDMP, which carries
+details about authorship, ownership of rights, retention requirements etc.</p>
+<p>We also try to improve research impact - by making data available with as much
+provenance as possible to encourage re-use.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide12.png' alt='An army of bots
+To automate obvious things, like provisioning lab notebooks to everyone in a lab, providing a git repository for every software PhD
+' title='An army of bots
+To automate obvious things, like provisioning lab notebooks to everyone in a lab, providing a git repository for every software PhD
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 12</p>
+</summary>
+<p>“An army of bots” is not really a principle, the principle is that everything
+possible should be done to automatically capture research data where it is and
+link it back to its custodian, and to metadata about the context in which the
+data were collected, curated or created. In the eResearch team at UTS we have
+long experience with customer requests such as “can we make sure that every
+student has a file-share to which the supervising panel also has read access
+even as the supervisors change” or “can I have an eNotebook for every PhD
+candidate in my department”. The provisioner will help with this kind of
+automation and more; we want to do things like report on how many electronic
+notebooks or git repositories are owned by the staff and students in a cohort
+that are NOT linked to an RDMP.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide13.png' alt='Small Pieces, loosely joined
+Avoid point to point integration, use standards for integration
+<p>' title='Small Pieces, loosely joined
+Avoid point to point integration, use standards for integration</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 13</p>
+</summary>
+<p>When we started work on what became the Provisioner module of ReDBOX we were looking at how to integrate data applications that house research workspaces. For example how might we assist researchers in moving - maybe by reference rather than copying - data from a project in a microsocope-image database to the storage service in a visualization facility so the developers there can work on analytics and visualizations, and then archive the original data, code and outputs of the viz process? When we considered the scope of this and that we might be supporting dozens of applications that provide workspaces over the next few years, and working more loosely with hundreds more we realiased that we didn’t want to be doing <code>n * n</code> integrations, where <code>n</code> is the number of research apps we support. We looked to <em>standards</em> for managing data.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide14.png' alt='DataCrate Packaging
+' title='
+<p>DataCrate Packaging
+' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 14</p>
+</summary>
+<p>One of the key standards was a way of moving “packages” of research data, where a package might mean a zip file, a manifest of data-by-reference or a directory of well-described data on a file share. From this search was born DataCrate - a specification which links together several existing standards into what we think is a best-practice generic way to ship and display research data.</p>
+<p>This screenshot is of a the index.html file from a DataCrate which you can take a look at <a href="https://data.research.uts.edu.au/examples/v0.2/farms_to_freeways/">online</a> or <a href="https://data.research.uts.edu.au/examples/v0.2/farms_to_freeways.zip">download as a zip file</a>.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide15.png' alt='DataCrate Packaging
+' title='
+<p>DataCrate Packaging
+' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 15</p>
+</summary>
+<p>You can read more about the <a href="https://github.com/UTS-eResearch/datacrate/tree/master/spec">spec at github</a> and in the <a href="http://ptsefton.com/2018/06/29/DataCrate_2018.htm">presentation</a> I (Petie) gave at OR2018.</p>
+<p>Summary: It uses BagIt for organizing files with checksums, JSON-LD for high-fidelity extensible metadata (linked data in JSON format), uses the schema.org vocabulary where possible for general metadata (dates, places, people) and specifies where to look for terms that are not covered by schema.org.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide16.png' alt='' title='' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 16</p>
+</summary>
+<p>This diagram is a highly abstracted view of the UTS architecture for research-data management. Researchers are shown in many places in this diagram to emphasise, that while they <em>can</em> use the Stash (ReDBox) portal to edit Research Data Management Plans, and describe data sets, them can ALSO continue to use research <em>workspaces</em> independently. We aim to have an army of ‘provisioner bots’ working to help keep track of this.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide17.png' alt='' title='' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 17</p>
+</summary>
+<p>This is a mock-up of the Redbox 2.0 functionality showing the way researchers will be able to manage the research process, creating data management plans and requesting workspaces, as well as identifying existing workspaces and linking to them. The right-hand screenshot shows how gitlab projects can be linked to a Research Data Management Plan as <em>workspaces</em>.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide18.gif' alt='' title='
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 18</p>
+</summary>
+<p>This animation shows how a researcher will create a new workspace - in this case a gitlab repository. The Provisioner uses the gitlab API to connect as the user, create a new project/workspace, and leaves behind a calling card which links the project back to the RDMP. Later, the researcher will be able to archive and maybe publish this data via Provisioner, and it will know where to find the data.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide19.png' alt='' title='' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 19</p>
+</summary>
+<p>This diagram shows how Research apps will be loosely coupled with Stash (the UTS name for our data management system that runs ReDBOX).</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide20.png' alt='' title='' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 20</p>
+</summary>
+<p>This diagram shows the technical architecture of the system. The “Repository” is actually several loosely coupled sub systems. The UTS implementation of ReDBox 2 will be a kind of “deconstructed” repository with the functions we see in more monolithic software such as DSPace or Samvera residing in different places. For example ReDBox is about data and workspace management, but the Data resides in research apps and in a static file-based archive, and the public-facing discovery service will be a separate application (which we’re working on at the moment).</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide21.png' alt='Future possibilities
+Generic long tail data repositories
+Integration with preservation systems
+More provisioning plugins (eg Github, OSF, Figshare)
+National data catalogue
+Actionable Service Catalogue
+(inter)National DMP
+Open data workflows
+Generate project portals
+' title='Future possibilities
+Generic long tail data repositories
+Integration with preservation systems
+More provisioning plugins (eg Github, OSF, Figshare)
+National data catalogue
+Actionable Service Catalogue
+(inter)National DMP
+Open data workflows
+Generate project portals
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 21</p>
+</summary>
+<p>This slide lists some of the future possibilities for ReDBox - we’re particularly interested in its potential at a national or consortial level.</p>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide22.png' alt='Sustainability
+Yes, it is FREE OPEN SOURCE SOFTWARE, but...
+QCIF is Not For Profit
+Competitive, commercial environment
+Sandstone mentality
+Small team, permanent staff
+Financial sustainability
+Support subscriptions
+Projects - implementations &amp; customisations
+Managed hosting
+SaaS model
+Community and Communication
+Community driven development
+' title='Sustainability
+Yes, it is FREE OPEN SOURCE SOFTWARE, but...
+QCIF is Not For Profit
+Competitive, commercial environment
+Sandstone mentality
+Small team, permanent staff
+Financial sustainability
+Support subscriptions
+Projects - implementations &amp; customisations
+Managed hosting
+SaaS model
+Community and Communication
+Community driven development
+' border='1'  width='85%'/>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 22</p>
+</summary>
+<p>Finally (from Gavin) some words on sustainability.</p>
+<p>ReDBox is free open source software and you can download and run it today. But</p>
+<ul>
+<li>
+<p>QCIF is a not for profit organisation that can’t afford to cover the costs of ReDBox and the NCRIS grants are a distant memory.</p>
+</li>
+<li>
+<p>So we have multiple models for subscribing to a support service. This covers our maintenance costs.</p>
+</li>
+<li>
+<p>We fund development through projects like our collaboration with UTS.</p>
+</li>
+<li>
+<p>We offer increasingly commercial services like managed hosting of ReDBox.</p>
+</li>
+<li>
+<p>We are rolling out the Software as a Service (SaaS) version with a transactional charging model, subject ot feedback, next year.</p>
+</li>
+<li>
+<p>We depend on our community and free and open communication with our community, so we know what each are doing.</p>
+</li>
+<li>
+<p>And we depend on our community to drive the direction of ReDBox.</p>
+</li>
+</ul>
+</details>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2018/07/06/RedBoX-Provisioner-OR2018/Slide23.png' alt='More            www.redboxresearchdata.com.au
+<p>' title='More            www.redboxresearchdata.com.au</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<details open="open">
+<summary>
+<p><em>Notes</em> - Slide 23</p>
+</summary>
+<p>If you would like to know more please check out our <a href="https://www.redboxresearchdata.com.au">website</a>.</p>
+</details>
+</section>
+<br/><br/><hr/>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'RedBoX-Provisioner-OR2018';
+                var disqus_url = 'http://ptsefton.com/2018/07/06/RedBoX-Provisioner-OR2018/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

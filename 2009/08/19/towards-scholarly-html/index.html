@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Towards Scholarly HTML - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2009/08/19/towards-scholarly-html/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="[update 2010-08-31 Clarified something] Abstract The problem: paper-based thinking The Integrated Content Environment ICE features Journals in ICE Electronic theses and dissertations Conclusion: a proposed new model References Copyright © 2009 Published by Peter Sefton A while ago, I got an email for the nice people at Elsevier (actually I think …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Towards Scholarly HTML"/>
+        <meta property="og:url" content="/2009/08/19/towards-scholarly-html/index.html"/>
+        <meta property="og:description" content="[update 2010-08-31 Clarified something] Abstract The problem: paper-based thinking The Integrated Content Environment ICE features Journals in ICE Electronic theses and dissertations Conclusion: a proposed new model References Copyright © 2009 Published by Peter Sefton A while ago, I got an email for the nice people at Elsevier (actually I think …"/>
+        <meta property="article:published_time" content="2009-08-19" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2009/08/19/towards-scholarly-html/index.html"
+                       rel="bookmark"
+                       title="Permalink to Towards Scholarly HTML">
+                        Towards Scholarly HTML
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-08-19T11:05:02+00:00"> Wed 19 August 2009</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>[update 2010-08-31 Clarified something]</p>
+<div class="page-toc">
+<ul>
+<li><a href="#id1">Abstract</a></li>
+<li><a href="#id2">The problem: paper-based thinking</a></li>
+<li><a href="#id3">The Integrated Content Environment</a>
+<ul>
+<li><a href="#id4">ICE features</a></li>
+<li><a href="#id5">Journals in ICE</a></li>
+<li><a href="#id6">Electronic theses and dissertations</a></li>
+</ul>
+</li>
+<li><a href="#id7">Conclusion: a proposed new model</a></li>
+<li><a href="#id8">References</a></li>
+</ul>
+</div>
+<div>
+<p>Copyright © 2009 Published by Peter
+Sefton A while ago, I got an email for the nice people at Elsevier
+(actually I think it might have been from a machine, but never mind)
+saying that the article I wrote for Serials Review is now available here
+using this DOI:
+<a href="http://dx.doi.org/10.1016/j.serrev.2009.05.001">doi:10.1016/j.serrev.2009.05.001</a>.
+At the moment that link seems to resolve to an open version of the
+article, whether or not you have a subscription to the journal but I
+guess that will change; when it is 'published' you will only see the
+article if you are clicking from inside a network that's on their list
+of subscribers. If not, you will need money to see it. But I can post
+the article here with the copyright statement you see below and remind
+you that you need to use the DOI to cite the paper should you wish to.
+No naughty linking back here (unless it is to reference these comments
+I'm adding). And no linking to the version I'm about to put in ePrints.
+OK? Even though you know that if you do link to the DOI some people may
+not be able to see the article in the future, don't do it, use the DOI
+link. There, I think I told you. The version I am posting here that you
+<strong>MUST NOT LINK TO</strong> is my copy, updated to match the changes made in
+the approval process, but Elsevier have yet to add their very valuable
+formatting (read on to find out more about what I think about <strong>that</strong>).
+Also, I have to warn you that me, I don't understand is the license that
+Elsevier is extending to you, the reader. I asked them a while back (on
+June 2nd 2009). I got a reply that didn't answer my questions, ~~which
+I present to you here~~. Here is the email of June 2nd:</p>
+<blockquote>
+<p>Dear [deleted], Thanks for getting back to me. I have read the page
+you linked below [PS: it was this link
+<a href="http://www.elsevier.com/wps/find/authorsview.authors/authorsrights">http://www.elsevier.com/wps/find/authorsview.authors/authorsrights</a>]
+and the pamphlet it links to and I still have two main questions. 1.
+What should the copyright statement on my final draft read when I
+deposit it in my local repository: (c) Peter Sefton or (c) Elsevier?
+2. What LICENSE should be attached to the file? That is, how do I let
+readers know &quot;those who download or access the PDF of your article
+must abide by your copyright agreement with regard to this electronic
+copy.&quot; Is there a single page statement of my copyright agreement in
+its entirety somewhere? what rights Do readers have? For example, the
+version (#2) of the pamphlet linked from the author rights page is
+different from the latest version at Library Connect (#4) and they
+have different rules about how much text users may quote from an
+article. Neither has anything to say on how readers may store and
+distribute my version of the article. Is that up to me? Can I attach a
+creative commons license to it? Peter</p>
+</blockquote>
+<p>I followed this up this morning, but, until I hear back all I can say is
+that while I can post this here with the copyright notice below, I'm not
+sure you have permission to read it or keep it in your web cache or
+print it. Caveat Lector, I guess. This is as-approved except that I have
+fixed the most glaring problem with the references, a missing URL for a
+self-citation from the eResearch Australasia Conference last year.
+Remember, to cite this paper, use <strong>this</strong>:
+<a href="http://dx.doi.org/10.1016/j.serrev.2009.05.001">doi:10.1016/j.serrev.2009.05.001</a>
+From here down is not mine: ------- Copyright © 2009 Published by Elsevier Inc.
+Towards scholarly HTML</p>
+<p>Peter Sefton</p>
+<p>Sefton, is Manager Software Research and Development Team, Australian
+Digital Futures Institute, University of Southern Queensland, Australia
+Available online 30 June 2009.</p>
+<h1><a name="id1"></a>Abstract</h1>
+<p>The editors of this special edition originally asked if institutional
+repositories are shaping and changing scholarly communications. While
+the Open Access movement has had a profound impact, there is at least
+one area where repositories are not. While repositories are Web-based,
+they almost always contain only print-oriented materials which are not
+fully realizing the fabric of the Web and its ability to link documents
+to each other and to data.</p>
+<p>This article will explore some of the factors that have contributed to
+this print-dominated situation and then report on work undertaken at the
+University of Southern Queensland (USQ) to make repositories more
+Web-like, using a publishing system which was originally devised at the
+university for publishing course materials to multiple formats. The
+article concludes with a description of a new model for changing
+scholarship by focusing on post-graduate theses and new journals in an
+open access context.</p>
+<p>Keywords: Web publishing; Word processing; Institutional repositories;
+Open access publishing; Australian Digital Futures Institute; Content
+management systems</p>
+<h1><a name="id2"></a>The problem: paper-based thinking</h1>
+<p>Two types of software packages had a profound effect on publishing
+before the World Wide Web. Beginning in the late 1970s, the word
+processor provided for efficient production of text—words could be rearranged and edited
+without having to be re-typed from beginning to end or altered using
+physical means, such as cut and paste of typed text or obscuring
+typescript with correction fluid and then typing or writing over it.
+Then from the mid-1980s, desktop publishing began to democratize access
+to typesetting tools. Because of this desktop publishing revolution,
+word processors began to ship with a &quot;What You See Is What You Get&quot; (WYSIWYG) view, which encouraged text
+production and formatting to become one and the same operation, Coombs
+et al. give a useful summary of the state of the art in 1987.[1] Before
+the Web, authors had become used to editing within the constraints of
+the A4 or US Letter page. It has been argued that this WYSIWYG desktop
+publishing revolution has had a counter-productive effect on the
+progress of publishing, and scholarly publishing in particular, by
+promulgating what Sorgaard and Sandahl call the ‘paper metaphor’.[2] The World Wide Web is now the key
+distribution for scholarship, offering new potential for documents which
+are seamlessly integrated with machine-readable data and with
+human-readable visualization services for data as discussed by
+Murray-Rust and Rzepa in their paper introducing the term datument to
+represent this new kind of eScholarship.[3] Since the Web arrived in the
+mid 1990s, writing tools, such as Microsoft Word, have failed to adapt
+to a Web-based publishing environment.[4] Typical Web export from word
+processors producing HTML is far from standards compliant and unsuitable
+for use on journal Web sites or in institutional repositories. I will
+show below how this works with the dominance of the paper metaphor to
+reinforce the role of the PDF as the currency for research reporting.
+Word processors are merely the most common writing tool for the academy,
+not necessarily the best. Many proposals have been put forward for
+structured authoring using XML (and before that SGML) which has worked
+well in industries, such as legal publishing and the military where
+specialist editorial teams can be trained and supported. Norman Walsh[5]
+captures the essence of the advantages of structured authoring in a
+contribution to a debate in the Journal of Digital Information. While
+the principle is sound in a theoretical sense, experience at the
+University of Southern Queensland (USQ) with an end-to-end XML
+publishing system for course materials has not been encouraging—the completed system had close to zero
+uptake from academic staff.[6] It is true that many commercial
+publishers use XML in their production systems, but it is unusual for
+authors to contribute XML; in most cases authors submit word-processing
+files which are then converted to XML behind the scenes. I reviewed the
+state of the art and the (very limited) literature on how word
+processing might be integrated into back-end publishing systems in a
+2006 paper for the Australian World Wide Web conference,[7] and in 2008
+for the Australasian eResearch conference.[8] Since then Microsoft
+Research has released previews of a Microsoft Word-based tool which is
+claimed to produce XML conforming to the National Library of Medicine
+schema, but there is so far no evidence of the tool being used by
+typical authors. To illustrate the potential divide between the author's
+version and the publisher's, consider that Elsevier, the publisher of
+this journal, recently ran a competition, Article 2.0[9] to show the
+future of a scientific article. The competition winner shows that a
+journal article may be the Web locus for discussion, annotation and
+semantic relationships, but this competition was built on XML source
+documents which are created and held by the publisher, so there is no
+way that a typical institutional repository could easily provide the
+same services. This is a case where the publisher is shaping scholarly
+communications, or at least exploring how to do so, but a lack of tools
+means that repositories are unlikely to be able to do likewise. This
+creates a distinct divide between the publisher's more richly marked-up
+version and the version held by the author in word processing format or
+the typesetting system LaTeX,[10] neither of which allow high quality
+HTML unless the author has used a particular set of templates and/or
+macros and has access to specific conversion software. So there is no
+way for most author manuscripts, which are commonly deposited in
+institutional repositories, to be turned into usable Web content, let
+alone with links to data and semantic-Web content. The best most authors
+could hope for with their version would be to convert it to PDF and
+deposit in a repository, while the publisher can do much more with the
+article. Against this background, our work in shaping scholarly
+communications in the Australian Digital Futures Institute (ADFI) USQ
+has been focused on three areas:</p>
+<ol>
+<li>Empowering authors with content creation using tools that are not
+constrained by the paper metaphor so that, no matter what happens on
+the publisher's side of the transaction, authors can use and re-use
+their work as flexibly as possible.</li>
+<li>Work on integrating with institutional repositories, particularly in
+packaging, using the Open Access Initiative protocol for Object
+Reuse and Exchange (OAI-ORE).[11]</li>
+<li>Most importantly, providing the above tools for use by post-graduate
+students writing theses; feeding new users into the academy who know
+how to create ‘Article 2.0’ type content for themselves.</li>
+</ol>
+<p>These themes are discussed below, showing how the technology now exists
+for authors to transcend the limitations of paper formatting. With these
+in place, there will be scope for truly open journal processes to emerge
+both with open and toll-access publishers and the discontinuity between
+the author's version and the publishers will disappear.</p>
+<h1><a name="id3"></a>The Integrated Content Environment</h1>
+<p>The Integrated Content Environment (ICE) is an open source system
+created at USQ for producing courseware.[12] In early 2009 ICE became a
+core system, considered an essential part of the operations of the
+university. In the ICE system, efforts have been made to make sure that
+authors are not constrained by the &quot;paper metaphor&quot;; it provides the ability to preview a
+document continuously in Web format during its production, thus
+encouraging the use of styles and empowering users to create structured
+documents in their word processor. ICE has one very important
+property—while it is in some sense
+an XML-based publishing system, the main XML format it targets is
+XHTML,[13] while print versions are currently produced by using word
+processing software in an completely automated process. This system
+provides many of the benefits of flexible delivery using XML, with low
+development costs for print production and a lot of flexibility for
+authors to control formatting details while still creating structured
+documents.</p>
+<h2><a name="id4"></a>ICE features</h2>
+<p>ICE has several key features</p>
+<ul>
+<li>Automated document conversion with a rapid feedback cycle so authors
+can see their content in a Web context as they write.</li>
+<li>Inline-threaded annotation in a Web view. The screenshot in Fig. 1
+shows a colleague commenting on a draft version of this paper.
+<a name="graphics2"></a><img src="/wp-content/uploads/2009/08/54c8bce5-397x273.jpeg" alt="graphics2" />
+Figure 1. A screenshot of the ICE inline annotation system in a Web
+browser, showing threaded comments.</li>
+<li>Protocols for linking to data that support a document and make
+research more reproducible, as well as live visualization tools.
+This has been demonstrated in the TheOREM project [note we will
+reference a forthcoming paper at Open Repositories 2009 here—details TBC].</li>
+</ul>
+<p>ICE can be used in three modes:</p>
+<ol>
+<li>As a complete distributed content management system as used for
+course creation at USQ.</li>
+<li>As a central content management system where groups can collaborate
+on content.</li>
+<li>As a set of software components that can be embedded in other
+applications. This has been done at USQ to integrate ICE conversion
+services into the Moodle learning management system, and some
+experiments have been undertaken with the Open Journal Systems
+software.</li>
+</ol>
+<h2><a name="id5"></a>Journals in ICE</h2>
+<p>The e-Journal of Instructional Science and Technology (e-JIST) is an
+open access journal published by USQ which served as a demonstration.
+The final issue serves as an example of how ICE can be used in journal
+production. This screenshot of a paper[14] in Fig. 2 shows that a
+low-end journal may be produced in HTML and PDF from single source
+files, but it does not deal with authoring or submission processes.
+<a name="graphics3"></a><img src="/wp-content/uploads/2009/08/m26b1bb66-567x240.jpeg" alt="graphics3" />
+Figure 2. A screenshot of the e-Jist journal in a Web browser. We now
+have a nascent collaboration with the Public Knowledge Project. The
+Public Knowledge Project is a research and development initiative
+directed toward improving the scholarly and public quality of academic
+research through the development of innovative online publishing and
+knowledge-sharing environments.[15] With PKP we are looking at how ICE
+might be integrated with their suite of open access journals, conference
+and monograph workflow tools, particularly the Open Journal Systems
+(OJS)[16] to provide the same benefits outlined above for ICE, with
+authors able to see their content in both Web and print formats as soon
+as they upload it, and with reviewers having the option to critique
+submissions online in a Web browser. Related to OJS, work by a
+consortium of Australian institutions[17] resulted in a packaging
+mechanism for journals, leading to the ability for journals created with
+the OJS to be sent to a repository automatically; proof of concept work
+has been completed that shows that ICE templates, coupled to a system
+like OJS, could automate production of Web and print versions of journal
+articles.[18]</p>
+<h2><a name="id6"></a>Electronic theses and dissertations</h2>
+<p>While journal articles are most commonly distributed as PDF files, so
+today are electronic theses and dissertations. The ADFI has been
+involved in two projects which are attempting provide tools for thesis
+writing which result in Web-integrated documents with PDF version for
+printing and with data integrated as best as they can be into the
+document and the production workflow. I presented an initial proof of
+concept for ICE as a thesis editor at the 2007 Electronic Thesis and
+Dissertation conference,[19] containing a comparison with other thesis
+production processes based on XML formats, which led to a collaboration
+with Murray-Rust's team on the ICE-TheOREM^20^ project which builds on
+work in ADFI on converting theses to ICE format. Internally, we are
+working with a small group of PhD candidates to supply an ICE server for
+thesis management, where candidates will be able to store a thesis as a
+set of word-processing documents, along with data files. Supervisors
+will be able to comment on the work using an annotation system without
+having to touch the original documents. Working with early career
+researchers is one way to bring about change in scholarly
+communications. Theses are under institutional and departmental control
+so it is possible to influence candidates to work with innovative
+systems in the hope that practices which improve the dissemination and
+re-reproducibility of research will be taken up by these new researchers
+as they enter the academy. In addition to the cultural aspects of the
+work with PhD candidates, there is an important technical dimension to
+the work on ICE-TheOREM, which is to formalize the way that systems,
+such as content management systems and repositories, can exchange
+content. The ORE in TheOREM is for Object Reuse and Exchange—a protocol that for the first time
+provides a Web-native way to describe compound Web resources, such as
+theses consisting of multiple chapters, with associated images, style
+sheets and data files. The project has demonstrated how a thesis can be
+created and managed with a word processor and automatically packaged
+using an ORE resource map for automated ingest into a repository.
+ICE-TheOREM has produced a new model for repository-aided thesis
+production and dissemination where an author can manage their thesis,
+have it backed up automatically, with a complete audit trail of
+stand-off annotations left by their supervisor(s). When the thesis is
+ready for examination, it can be placed in a research-office repository
+from where the examination process is managed. There is potential here
+for examiners to use the same kinds of annotation systems and evaluative
+forms as are used by supervisors, but PDF for reading in print form is
+also provided. Feedback from this system would need to be sent back to
+ICE, for action by the candidate, which is a feature we have yet to
+build. From the thesis repository, content is delivered to the
+institutional repository automatically via a pull protocol Atom Archive,
+as it comes off embargo. While the ICE-TheOREM work is, at this stage, a
+proof of concept, it does illustrate a repository-based publishing
+process as shown here.
+<a name="Object1"></a><img src="/wp-content/uploads/2009/08/31db17b1.gif" alt="Object1" /></p>
+<h1><a name="id7"></a>Conclusion: a proposed new model</h1>
+<p>While ICE provides a ‘missing
+link’ in the form of tools for
+creating Web content from word processors and our work on ORE and
+repository integration provides packaging and delivery mechanisms to
+deliver data-supported papers into repositories and journals, this
+technology alone is of little use when expectations are shaped by
+current practice as follows:</p>
+<ul>
+<li>Institutional repositories are expected to contain only PDF.</li>
+<li>Publishers ask for word or LaTeX documents which they then process
+into PDF and, maybe, HTML without any supporting data or complex
+visualization technologies.</li>
+</ul>
+<p>There is no incentive for an author to create anything other than what
+is demanded of them by publishers, which is typically a source file that
+cannot be used to create anything but PDF. Above I have shown some of
+the progress we are making towards a new scholarly communications
+process where research publications and data are seamlessly integrated
+as part of the Web, beyond the paper metaphor. Below I outline a model
+of how a university such as USQ might position itself as a change-agent
+to drive scholarly publishing towards a more seamlessly Web-based model.
+This approach would build on one of the key strengths of the established
+distance education model of long-form course content materials delivered
+as Web-native documents via a core supported IT system (ICE), working on
+two fronts:</p>
+<ol>
+<li>To take the proof of concept work from ICE-TheOREM and to do for
+theses what we did for courseware at USQ and become the first
+institution in Australia with a mandate for all theses to be made
+available not just on the Web in PDF but of the Web, in HTML. The
+most obvious way for a candidate to comply would be to use ICE but
+other tool chains could be used.</li>
+<li>To make the courseware process more like a research workflow by
+introducing post publication peer review for course content, thus
+turning an established workflow into a publishing model without
+attempting to change an existing system over which we have little
+influence.</li>
+</ol>
+<p>The first of these is a straightforward policy decision which could be
+made by the university. There is precedence in that electronic
+submission of theses and deposit in the repository is already mandatory,
+as is the use of ICE for all new courses, so this would be a simple
+step, accomplished after a year or two of piloting. This step is a
+natural one in the approach of changing scholarly publishing from below.
+The second point involves rather more interaction with the outside world
+and needs a little explanation. One of the issues faced by staff is that
+while they are responsible for writing course material, it is not
+recognized as a contribution to the research literature and is not
+counted in government reporting as such. Because copyright in course
+materials is held by the university and these materials are managed
+centrally, it is not even clear at times what the authorship of a paper
+is. A proposed model would work like this:</p>
+<ol>
+<li>An author creates courseware which is published as open courseware
+by the university.</li>
+<li>The author writes a short paper abstracting a module or book from
+the courseware with an explanation of what the item represents: it
+might be a literature review or contain instructional design which
+is the product of research into previous cohorts of students.</li>
+<li>The author submits the paper to an existing journal or to a new kind
+of open access journal, which would be article-centric and arrange
+for peer review on a rolling basis as articles are submitted—with the output of the journal
+deposited directly into a repository of papers on pedagogical
+practice.</li>
+<li>Reviewers would be able to recommend not only changes to a paper to
+make it publishable, but to the courseware item itself.</li>
+</ol>
+<p>This model for influencing scholarly communications sidesteps
+established incumbents on both sides of the publishing fence by working
+with new academics on one hand and, on the other, a whole class of
+research which is undervalued. If such a model does succeed then we
+might be able to provide a positive answer to the question posed by the
+editors of this special edition of Serials Review about how repositories
+have influenced publishing models.</p>
+<h1><a name="id8"></a>References</h1>
+<p>[1] J.H. Coombs, A.H. Renear and S.J. DeRose, &quot;Markup systems and the
+future of scholarly text processing,&quot;, Commun. ACM 30 (11) (1987), pp.
+933-947
+http://portal.acm.org/citation.cfm?id=32206.32209. Full Text via
+CrossRef | View Record in Scopus | Cited By in Scopus (45) [2] P. Sørgaard and T. I. Sandahl, &quot;Problems with styles in word processing:
+a weak foundation for electronic publishing with SGML,&quot; Proceedings of the 30th HICSS. [3] P.
+Murray-Rust and H.S. Rzepa, &quot;The next big thing: from hypermedia to
+datuments,&quot;, Journal of Digital
+Information 5 (1) (2004), p. 248
+http://jodi.tamu.edu/Articles/v05/i01/Murray-Rust/?printable=1. [4]
+Peter Sefton, &quot;eResearch for Word
+users?&quot;
+http://espace.library.uq.edu.au/view/UQ:155359 [5] N. Walsh, &quot;XML: one
+input-many outputs: a response to
+Hillesund,&quot;, Journal of Digital
+Information 3 (1) (2002). [6] Peter Sefton, &quot;eResearch for Word users?&quot;
+http://espace.library.uq.edu.au/view/UQ:155359 [7] P. Sefton, The
+integrated content environment for research and scholarship,&quot; Project site, ICE Website
+http://ice.usq.edu.au/introduction/ice_rs.htm (2006). [8] Peter Sefton,
+&quot;eResearch for Word users?&quot;
+http://espace.library.uq.edu.au/view/UQ:155359 [9] , Elsevier, &quot;Elsevier Article 2.0 Contest,&quot; Publisher website, Elsevier
+http://article20.elsevier.com/contest/home.html (2009). [10] , P.T.
+LaTeX3, &quot;LaTeX2E for authors
+http://www.latex-project.org/guides/usrguide.pdf (2001). [11] , SLYCAT
+IONSREPORT, &quot;OAI-ORE specifications,
+Scholarly Communications Report 12 (1) (2008), p. 5. [12] P Sefton,
+&quot;The integrated content
+environment,&quot; in AUSWEB 2006
+(presented at the AUSWEB 2006, Noosa: Southern Cross University, 2006),
+http://eprints.usq.edu.au/archive/00000697/01/Sefton_ICE-ausweb06-paper-revised-3.pdf.
+[13] W3C, &quot;XHTML™ 1.0 The Extensible HyperText Markup
+Language (Second Edition),&quot; 2002,
+http://www.w3.org/TR/xhtml1/. [14] J. C. Taylor, &quot;Open courseware futures: creating a
+parallel universe,&quot; e-Journal of
+Instructional Science and Technology (e-JIST) 10, no. 1 (2007),
+http://www.usq.edu.au/electpub/e-jist/docs/vol10_no1/papers/full_papers/taylorj.htm.
+[15] PKP, &quot;Public Knowledge
+Project,&quot; Project Web site, Public
+Knowledge Project, 2009, http://pkp.sfu.ca/. [16] &quot;Open Journal Systems | Public Knowledge
+Project,&quot; Project Web site, Public
+Knowledge Project, 2009, http://pkp.sfu.ca/?q=ojs. [17] J. Pearce et
+al., &quot;The Australian METS
+profile—a journey about
+metadata,&quot; D-Lib Magazine 14, no.
+3/4 (2008), http://www.dlib.org/dlib/march08/pearce/03pearce.html. [18]
+USQ, &quot;ICE Developers Blog » Blog Archive » Linking authoring tools to
+repositories,&quot; Project weblog,
+Integrated Content Environment Blog, 2007,
+http://ice.usq.edu.au/blog/2007/12/18/linking-authoring-tools-to-repositories.html.
+[19] Peter Sefton, &quot;An integrated
+approach to preparing, publishing, presenting and preserving
+theses,&quot; in ETD 2007 (presented at
+the Electronic Theses and Dissertations, Uppsala, 2007),
+http://eprints.usq.edu.au/archive/00002653/. [20] Neil Jacobs, &quot;Departmental Thesis Management System
+development using the Integrated Content Environment (TheOREM-ICE),&quot; 2008,
+http://www.jisc.ac.uk/whatwedo/programmes/digitalrepositories2007/theorem-ice.aspx.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'towards-scholarly-html';
+                var disqus_url = 'http://ptsefton.com/2009/08/19/towards-scholarly-html/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2019/07/01/OCLF/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="This is a presentation by Michael Lynch and Peter Sefton, delivered by Peter Sefton at Open Repositories 2019 in Hamburg. My travel was funded by the University of Technology Sydney. &#39; title=&#39;Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney Michael Lynch, Peter Sefton University of Technology Sydney, Australia &#39; border=&#39;1&#39; width=&#39;85%&#39;/&gt; This presentation will discuss an implementation of the Oxford Common File Layout (OCFL) in an institutional research data repository at …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney"/>
+        <meta property="og:url" content="/2019/07/01/OCLF/index.html"/>
+        <meta property="og:description" content="This is a presentation by Michael Lynch and Peter Sefton, delivered by Peter Sefton at Open Repositories 2019 in Hamburg. My travel was funded by the University of Technology Sydney. &#39; title=&#39;Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney Michael Lynch, Peter Sefton University of Technology Sydney, Australia &#39; border=&#39;1&#39; width=&#39;85%&#39;/&gt; This presentation will discuss an implementation of the Oxford Common File Layout (OCFL) in an institutional research data repository at …"/>
+        <meta property="article:published_time" content="2019-07-01" />
+            <meta property="article:section" content="Repositories" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2019/07/01/OCLF/index.html"
+                       rel="bookmark"
+                       title="Permalink to Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney">
+                        Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-07-01T00:00:00+02:00"> Mon 01 July 2019</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is a presentation by Michael Lynch and Peter Sefton, delivered by Peter Sefton at Open Repositories 2019 in Hamburg. My travel was funded by the University of Technology Sydney.</p>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide01.png' alt='Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+Michael Lynch, Peter Sefton
+University of Technology Sydney, Australia
+<p>' title='Implementation of a Research Data Repository using the Oxford Common File Layout standard at the University of Technology Sydney
+Michael Lynch, Peter Sefton
+University of Technology Sydney, Australia</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>This presentation will discuss an implementation of the Oxford Common File Layout (OCFL) in an institutional research data repository at the University of Technology. We will describe our system in terms of the conference themes of Open and Sustainable and with reference to the needs and user experience of data depositors and users (many have large data, and or large numbers of files). OCFL, which is an approach to repository implementation based on static data, was developed to deal with a number of issues with “traditional” repository design, many of which are particularly acute when dealing with research data. We will cover how this meets our user and institutional needs and is a sustainable approach to managing data.</p>
+<p>This was presented by Peter Sefton - so the “I” throughout is him.</p>
+<p>This presentation was in <a href="https://www.conftool.net/or2019/index.php?page=browseSessions&amp;form_session=380&amp;presentations=show">a session about OCFL</a> so we didn’t need to explain the standard in detail.</p>
+<p>Here’s what they say on the <a href="https://ocfl.io/">OCFL site</a>:</p>
+<blockquote>
+<p>This Oxford Common File Layout (OCFL) specification describes an application-independent approach to the storage of digital information in a structured, transparent, and predictable manner. It is designed to promote long-term object management best practices within digital repositories.</p>
+<p>Specifically, the benefits of the OCFL include:</p>
+<ul>
+<li>Completeness, so that a repository can be rebuilt from the files it stores</li>
+<li>Parsability, both by humans and machines, to ensure content can be understood in the absence of original software</li>
+<li>Robustness against errors, corruption, and migration between storage technologies</li>
+<li>Versioning, so repositories can make changes to objects allowing their history to persist</li>
+<li>Storage diversity, to ensure content can be stored on diverse storage infrastructures including conventional filesystems and cloud object stores</li>
+</ul>
+</blockquote>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide02.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>Also Moises Sacal worked with us on this.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide03.png' alt="&gt; repo = new Repository()
+<p>&quot; title='&gt; repo = new Repository()</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>Hello and welcome to this presentation about OCFL at UTS. Don’t be alarmed - yes there’s javascript code on the screen, but there will not be a test!</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide04.png' alt='&gt; repo = new Repository()
+<p>Repository { ocflVersion: '1.0', objectIdToPath: [Function] }</p>
+<p>R</p>
+<p>' title='&gt; repo = new Repository()</p>
+<p>Repository { ocflVersion: '1.0', objectIdToPath: [Function] }</p>
+<p>R</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>To me, being able to type <code>npm install ocfl</code> then  instantiate a repository in an interactive shell is quite amazing - when I first worked with repositories, from about 2006, installing a repository was a big job, there were usually lots of prerequisites and installation (for example see this guide to installing UQ’s <a href="https://web.archive.org/web/20130419100148/http://www.rubric.edu.au/techreports/Fez_Full_Installation_Procedure_LatestNov06.htm">Fez Fedora repository</a> could be very finicky, but then in those days the repositories were “full stack” services whereas OCFL is just about the heart and soul of a repository, the storage.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide05.png' alt='What you’re going to get
+An explanation of OCFL ...
+... from a UTS perspective.
+<p>A confession.</p>
+<p>And some philosophy:
+“What is a ‘repository’ anyway”
+' title='What you’re going to get
+An explanation of OCFL ...
+... from a UTS perspective.</p>
+<p>A confession.</p>
+<p>And some philosophy:
+“What is a ‘repository’ anyway”
+' border='1'  width='85%'/&gt;</p>
+<p>This talk is not just about OCFL, it reflects on the role of repositories and how we should view them in our infrastructure.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide06.png' alt='Confession TODO
+http://www.rubric.edu.au/techreports/migration_toolkit.htm
+' title='Confession TODO
+http://www.rubric.edu.au/techreports/migration_toolkit.htm
+' border='1'  width='85%'/>
+<p>My first “Confession”.</p>
+<p>Many, many years ago I was the technical manager for the RUBRIC project -
+Regional Universities Building Research Infrastructure Collaboratively. This
+project helped a group of about nine partner unis get their first publications
+repositories up and running and our team morphed into the the national
+repository support service for Australia. As part of this work we built a
+variety of migration tools to assist people in getting data from existing
+systems such as endnote, or ingesting MARC (library) metadata into a repository.
+To do this we used the DSpace archive format, a simple directory-plus-metadata
+file format that was not unlike OCFL.</p>
+<p>It occurred to me at the time that we could build a simple static repository
+system that used something like the DSpace archive format, with separate ingest
+workflows, and build a portal using something like Apace Solr (though at that
+stage there really wasn’t anything else like Apache Solr).</p>
+<p>I didn’t follow up on those thoughts, as I thought they
+were a bit heretical - the monolithic repository architecture was the orthodoxy,
+though I did flirt with this idea in this article about discovery portals and
+persistent identifiers. Anyway, it seems like those <em>wrong</em> thoughts are
+something I can talk about, now that we have OCFL.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide07.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p><strong>Confession 2</strong></p>
+<p>When I was working on the Australian Government funded NeCTAR Virtual Lab project, Alveo I suggested we start with a Hydra/Fedora repository as the ‘heart’ of the Virtual Lab, the repository component. That worked well in that we got up and running very fast with a discovery portal for data - but ran into problems when it came to data access - for example making Item Lists - data-sets - performed terribly because of the overhead inherent in the Hydra architecture.</p>
+<p>I <a href="http://www.doria.fi/handle/10024/97740">delivered a presentation at Open Repositories 2014</a>, written with other Alveo staff, that explored some of the problems with using a “full stack” repository at scale.</p>
+<p>Initially (and throughout the project) <a href="https://orcid.org/0000-0003-2357-9652">Steve Cassidy</a> was suggesting a more OCFL-like way of loading data where it would be arranged on disk by some kind of curation human or machine orchestrated process and then indexed. Steve was right. I was wrong. I’d love to come back to the Alveo lab architecture for another go, maybe in a future round of <a href="https://ror.org/038sjwq14">ARDC</a> investment?</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide08.png' alt='&gt; repo.create(&quot;/Users/124411/everything&quot;)
+<p>' title='&gt; repo.create(&quot;/Users/124411/everything&quot;)</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>Like I said, creating a repository is this simple.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide09.png' alt='What is a repository
+anyway?
+<p>' title='What is a repository
+anyway?</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>But what is a repository?</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide10.png' alt='
+A lifestyle
+An application for managing scholarly comms
+A service or collection of services like a Library
+A service or collection of services like an Archive
+A service or [...] like a Records Management department
+A place to put stuff
+An software application to store stuff
+' title='
+A lifestyle
+An application for managing scholarly comms
+A service or collection of services like a Library
+A service or collection of services like an Archive
+A service or [...] like a Records Management department
+A place to put stuff
+An software application to store stuff
+' border='1'  width='85%'/>
+<p>There are a variety of ways to look at a “repository” - all of these are facets of what a repository can be.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide11.png' alt='🛒 📬 🐿 💽 🗃🗄🔭🔎🔬
+<p>' title='🛒 📬 🐿 💽 🗃🗄🔭🔎🔬</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>Repositories are no longer just places to put stuff (if they ever were) - they’re positively bristling with services. Over the 13 years of this conference, repositories have become shall we say baroque. And in some cases slow. They also tend to have problems when you present them with a terabyte file, or ten million 1 kilobyte files. OCFL is, we think, in part a reaction from our community to those realities.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide12.png' alt='CON
+<p>' title='CON</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>Using OCFL as the storage layer in a repository is a radical separation of con-</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide13.png' alt='CERNS
+<p>' title='CERNS</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>-cerns.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide14.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>This is a view of our eResearch Architecture - Stash is our Data Management service, which is an implementation of <a href="https://www.redboxresearchdata.com.au/">ReDBox</a>. The point of showing the diagram is not to go through it all in detail, but to show how complex the ecosystem of research data services can be - and where data archive / repository core sits. The OCFL components (the publication and archive file-systems) are shown in red, while Agents (the repository Adaptor that writes content from Research Workspace Services in a repository, the Public and Private data portales) that access OCFL are shown in blue.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide15.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>This is our work-in-progress discovery portal - this is not built in to the repository like it would be with, say DSpace, it’s a separate service that indexes an OCFL repository (in this case the public data).</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide16.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>Here’s the same diagram stripped back a bit more ...</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide17.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>And even more stripped back, to show only the core repository service (in red) and a couple of services that interact with it (in blue).</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide18.png' alt='' title='' border='1'  width='85%'/>
+<p>And here’s the actually repository part - the storage layer.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide19.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>The idea of OCFL is that there are services that all access this core layer but they’re disposable and/or interchangeable, and you just leave your precious data where it is, on disk (or some virtual disk-like view of whatever the storage solution <em>de jour</em> happens to be).</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide20.png' alt='TODO	
+Progressively drill down on the architecture until it’s “just”  a partition.
+' title='TODO	
+Progressively drill down on the architecture until it’s “just”  a partition.
+' border='1'  width='85%'/>
+<p>Here’s a screenshot of what an OCFL object looks like - it’s a series of versioned directories, each with a detailed inventory.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide21.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>No this slide is not about a zoological repository. It’s about the Elephants in the repository AKA the risks that come with an OCFL implementation.</p>
+<ul>
+<li>
+<p>The main issue in implementation is making sure that you have to THINK about the design of software to update the repository at the same time. You don’t want to end up with (a) corrupt files or (b) transactions that didn’t complete.</p>
+</li>
+<li>
+<p>OCFL is also very new (it’s not at version 1 yet) so there’s some risk that the services we are hoping for won’t arrive - but given that our data are still safe on our own storage infrastructure and it possible to code-up an OCFL consuming application in a matter of days this is not a serious risk.</p>
+</li>
+</ul>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide22.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>OCFL needs some explaining. I’ve had a couple of conversations with developers where it takes them a little while to get what it’s for.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide23.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>But they DO get it.</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide24.png' alt='But why do I have to use this?
+Every mature language now has a thing that builds a project for you, gives you a skeleton so they’re all in the same spot every time.
+Michael Lynch 
+' title='But why do I have to use this?
+Every mature language now has a thing that builds a project for you, gives you a skeleton so they’re all in the same spot every time.
+Michael Lynch 
+' border='1'  width='85%'/>
+<p>Mike Lynch’s summary - this is a modern take on “how to I organise my stuff” - in this sense OCFL is like a framework for data - and we all use frameworks for code these days,</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide25.png' alt='
+<p>' title='</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>We have some good news to announce - we have a grant to continue our OCFL work from the <a href="https://ror.org/038sjwq14">Australian Research Data Commons</a>. (I’ve used the new Research Organisation Registry (ROR) ID for ARDC, just because it’s new and you should all check out the ROR).</p>
+<p>We’re going to be demonstrating large-scale use of OCFL, with research objects described using <a href="https://researchobject.github.io/ro-crate/">RO-Crate</a> metadata. (See also my presentation on <a href="/2019/06/21/DataCrate-OR2019.htm">DataCrate</a> which introduces RO-Crate).</p>
+</section>
+<br/><br/><hr/>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='/2019/07/01/OCLF/Slide26.png' alt='🤔
+<p>' title='🤔</p>
+<p>' border='1'  width='85%'/&gt;</p>
+<p>So what do we think?</p>
+<p>Working with OCFL has been really great for the team at UTS - it’s well designed, and just when you think “hey, how do I do file-locking” you find that there’s a hint in the design (a <code>/deposit</code> directory in this case) that points towards a solution.</p>
+<p>Over at the <a href="https://researchobject.github.io/ro-crate/">RO-Crate</a> project Stian and Eoghan and I really liked the OCFL approach of having a clear spec with implementation notes, and we’re going to try to emulate that as we work on merging Research Object and DataCrate into one general purpose way of describing and packaging research data.</p>
+<p>See also my presentation on <a href="/2019/06/21/DataCrate-OR2019.htm">DataCrate</a> which introduces RO-Crate.</p>
+</section>
+<br/><br/><hr/>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'OCLF';
+                var disqus_url = 'http://ptsefton.com/2019/07/01/OCLF/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

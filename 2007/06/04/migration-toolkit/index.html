@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Batch tools for repository migration: the RUBRIC solution - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2007/06/04/migration-toolkit/index.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="On the RUBRIC project we do a lot of moving of data between Institutional Repository software applications. Here are a few notes on the approach we&#39;ve taken to data migration and batch-ingest, I hope that this will eventually be written up as a paper. There was a poster that Caroline …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Batch tools for repository migration: the RUBRIC solution"/>
+        <meta property="og:url" content="/2007/06/04/migration-toolkit/index.html"/>
+        <meta property="og:description" content="On the RUBRIC project we do a lot of moving of data between Institutional Repository software applications. Here are a few notes on the approach we&#39;ve taken to data migration and batch-ingest, I hope that this will eventually be written up as a paper. There was a poster that Caroline …"/>
+        <meta property="article:published_time" content="2007-06-04" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2007/06/04/migration-toolkit/index.html"
+                       rel="bookmark"
+                       title="Permalink to Batch tools for repository migration: the RUBRIC solution">
+                        Batch tools for repository migration: the RUBRIC solution
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2007-06-04T00:00:00+02:00"> Mon 04 June 2007</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>On the <a href="http://rubric.edu.au/">RUBRIC project</a> we do a lot of moving of
+data between Institutional Repository software applications. Here are a
+few notes on the approach we've taken to data migration and
+batch-ingest, I hope that this will eventually be written up as a paper.
+There was a poster that Caroline Drury gave at OpenRepositories 2007 but
+it doesn't seem to be available online, we'll have to remedy that.</p>
+<p>When we started, we tried using the batch-upload that comes with the
+Vital repository solution. It uses XML configuration files to describe a
+migration scenario. It suffered a little bit from a lack of
+documentation, but the biggest problem was more fundamental than that:
+it was the complexity of trying to deal with the kinds of real-world
+migration we see <span class="spCh spChx2013">–</span> how do you
+express what do do with different kinds of files? How to understand some
+arbitrary export format from another application? Apart from all that we
+also wanted to work with DSpace.</p>
+<p>So, I decided to take an alternative approach and to use a general
+purpose programming language, rather than struggling with increasingly
+complex configuration.</p>
+<p><a href="http://techxplorer.com/">Corey Wallis</a>, who worked too-briefly with the
+RUBRIC tech team wrote the first batch of scripts, using Python, with
+one script per migration scenario. But the design turned out not to be
+optimal, as the scripts ended up needing too many configuration options
+and before too long we were approaching the kind of complexity we were
+trying to get around. (Not Corey's fault, mine).</p>
+<p>Our second attempt has been coded mostly by <a href="http://techteam.wordpress.com/">Tim McCallum and Bron
+Dye</a>, using the Unix approach of <span
+class="spCh spChx201c">“</span>Do one thing, do it well.<span
+class="spCh spChx201d">”</span> <a href="#ftn0"><span
+style="vertical-align: super;"><span
+class="footnote">1</span></span></a>.</p>
+<p>Let's take the example of migrating content from and
+<a href="http://adt.caul.edu.au/">ADT</a> (Australasian Digital Theses) repository
+into a Fedora based repository. We have a proper
+<a href="http://rubric.edu.au/techreports/tech_report-adt_harvest_to_foxml.htm">procedure</a>
+up for this if you want all the detail, but I'll run through some of the
+main ideas.</p>
+<p>We use the DSpace Simple Archive Format as an intermediate file format,
+the advantage of this as the instead of going all the way to Fedora, you
+can '<a href="http://www.urbandictionary.com/define.php?term=get+off+at+redfern">Get off at
+Redfern</a>'
+and put stuff into a DSpace repository or run a few more scripts and go
+through terminate at Fedora. The simple archive format uses one
+directory per compound object, with a metadata file and all the required
+data streams and dead-simple manifest file. We wrote a Python class to
+handle the format, so scripts can easily open or create an archive and
+do CRUD <a href="#ftn1"><span style="vertical-align: super;"><span
+class="footnote">2</span></span></a> operations on it.</p>
+<p>(When there are better standards for cross-repository ingest and export
+formats it will make sense to switch over to using those. More on this
+after I visit the UK next week amongst other things I will find out
+about <a href="http://www.ukoln.ac.uk/repositories/digirep/index/SWORD">SWORD</a>:</p>
+<blockquote>
+<p>SWORD (Simple Web-service Offering Repository Deposit) will take
+forward the Deposit protocol developed by a small working group as
+part of the JISC Digital Repositories Programme by implementing it as
+a lightweight web-service in four major repository software platforms:
+EPrints, DSpace, Fedora and IntraLibrary. The existing protocol
+documentation will be finalised by project partners and a prototype
+<span class="spCh spChx2018">‘</span>smart deposit<span
+class="spCh spChx2019">’</span> tool will be developed to facilitate
+easier and more effective population of repositories. The project
+intends to take an iterative approach to developing and revising the
+protocol, web-services and client implementation through evaluative
+testing and feedback mechanisms. Community acceptance and take-up will
+be sought through dissemination activities. The project is led by
+UKOLN, University of Bath, with partners at the University of Wales,
+Aberystwyth, the University of Southampton and Intrallect Ltd. The
+project aims to improve the efficiency and quality of repository
+deposit and to diversity and expedite the options for timely
+population of repositories with content whilst promoting a common
+deposit interface and supporting the Information Environment
+principles of interoperability.</p>
+<p><a href="http://www.ukoln.ac.uk/repositories/digirep/index/SWORD">http://www.ukoln.ac.uk/repositories/digirep/index/SWORD</a></p>
+</blockquote>
+<p>)</p>
+<p>The first script in a thesis migration is one that's specific to ADT. A
+harvester that screen-scrapes ADT pages and extracts metadata <span
+class="spCh spChx2013">–</span> we use Python's extensive web-powers for
+this. It writes the results out into a the simple archive format.</p>
+<p>One of the most useful scripts is one that iterates over an archive and
+runs an XSLT transformation. We use this a lot, for taking the
+not-terribly-well standardized Dublin Core metatadata used by various
+ADT repositories and transforming it to MARCXML format, for transforming
+that into a new Dublin Core data stream. (Different sites in the ADT
+program use different capitalisation on their dublin core elements names
+for example).</p>
+<p>Speaking of XSLT, of course we use
+<a href="http://utf-x.sourceforge.net/">UTF-X</a> to unit-test all our XSLT
+transformations. What happens is the tech team get advice from <a href="http://metalogger.wordpress.com/tag/metadata/">Metadata
+Speciast Neil Godfrey</a>
+about a particular cross-walk they need to code. They encode Neil's
+advice as a series of UTF-X tests then write the XSLT. The tests help a
+lot in preventing regression and serve to document the crosswalk. Here's
+a bit grabbed at random to illustrate what a test looks like:</p>
+<pre><code>&lt;!-- Abstract Element --&gt;
+
+&lt;utfx:test&gt;
+
+&lt;utfx:name&gt;Abstract Element&lt;/utfx:name&gt;
+
+&lt;utfx:assert-equal&gt;
+
+&lt;utfx:source validate=&quot;no&quot;&gt;
+
+&lt;eprintsdata &gt;
+
+&lt;record&gt;
+
+&lt;field name=&quot;abstract&quot;&gt;[Introduction]: European Australians have always had trouble&lt;/field&gt;
+
+&lt;/record&gt;
+
+&lt;/eprintsdata&gt;
+
+&lt;/utfx:source&gt;
+
+&lt;utfx:expected validate=&quot;no&quot;&gt;
+
+&lt;oai_dc:dc xmlns:dc=&quot;http://purl.org/dc/elements/1.1&quot; xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc&quot;&gt;
+
+&lt;dc:description&gt;[Introduction]: European Australians have always had trouble&lt;/dc:description&gt;
+
+&lt;/oai_dc:dc&gt;   
+
+&lt;/utfx:expected&gt;
+
+&lt;/utfx:assert-equal&gt;
+
+&lt;/utfx:test&gt;
+</code></pre>
+<p>This test shows that in our input data <code>&lt;field name=&quot;abstract&quot;&gt;</code> maps to
+the Dublin Core element <code>&lt;dc:description&gt;</code>. Not much to it, but it
+<strong>really helps</strong> <strong>to do this first</strong>, and then write the XSLT.</p>
+<p>(Note that the UTF-X tests aren't up on the public download site yet as
+they contain bits of real data <span class="spCh spChx2013">–</span>
+it's all open access but we want to confirm with our partners that they
+don't mind it being up there)</p>
+<p>I love walking in to our office, looking across to someone's computer
+and seeing that all the tests are green. Here's a screenshot of some
+tests for something or other <span class="spCh spChx2013">–</span> each
+line represents one test and the green [OK] means that it passes.</p>
+<p><img src="/blog/2007/06/04/migration-toolkit/1.jpg" alt="graphics1" /></p>
+<p>We have other scripts to extract full-text from PDF files, and turn the
+simple archive format into FOXML for ingest into the Fedora repository
+and still more to do various little fixups that seem to be required like
+having namespaces declared in special spots in XML files, even though it
+shouldn't matter where they are declared.</p>
+<p>So far I'm really happy with the <em>do one thing</em> approach, and I bet that
+even as repositories get better at talking to each other our toolkit
+will still be useful for munging data from outside the repository
+echo-chamber.</p>
+<p>PS.</p>
+<p>Just after I wrote this we ran into an issue with namespaces in some of
+the data migration stuff for one of our partners; because there was a
+substantial bank of unit tests in place the total time to completely
+change a couple of stylesheets was only about half an hour, and at the
+end of that we're confident that they are working exactly the same way
+as they were before.</p>
+<hr />
+<div style="font-size: .9em;">
+<div class="footnote">
+<p><a href="#ftn0-text">1</a>Wikipedia contributors, <span
+class="spCh spChx201c">“</span>Unix philosophy - Wikipedia, the free
+encyclopedia,<span class="spCh spChx201d">”</span> 2007,
+http://en.wikipedia.org/wiki/Unix_philosophy#McIlroy:_A_Quarter_Century_of_Unix
+(accessed June 4, 2007).\</p>
+</div>
+</div>
+<hr />
+<div style="font-size: .9em;">
+<div class="footnote">
+<p><a href="#ftn1-text">2</a>Wikipedia contributors, <span
+class="spCh spChx201c">“</span>Create, read, update and delete -
+Wikipedia, the free encyclopedia,<span class="spCh spChx201d">”</span>
+http://en.wikipedia.org/wiki/CRUD_(acronym) (accessed June 4, 2007).\</p>
+</div>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'migration-toolkit';
+                var disqus_url = 'http://ptsefton.com/2007/06/04/migration-toolkit/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

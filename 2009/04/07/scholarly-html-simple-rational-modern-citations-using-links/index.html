@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Scholarly HTML: Simple, rational modern citations using links - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2009/04/07/scholarly-html-simple-rational-modern-citations-using-links/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="I dashed off a quick post last week about Scholarly HTML which had a bunch of ideas for a new kind of online journal. I reckon I was pretty spot on with my timing. Hours after I posted it, I saw the announcement from Elsevier about the winners of their …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Scholarly HTML: Simple, rational modern citations using links"/>
+        <meta property="og:url" content="/2009/04/07/scholarly-html-simple-rational-modern-citations-using-links/index.html"/>
+        <meta property="og:description" content="I dashed off a quick post last week about Scholarly HTML which had a bunch of ideas for a new kind of online journal. I reckon I was pretty spot on with my timing. Hours after I posted it, I saw the announcement from Elsevier about the winners of their …"/>
+        <meta property="article:published_time" content="2009-04-07" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2009/04/07/scholarly-html-simple-rational-modern-citations-using-links/index.html"
+                       rel="bookmark"
+                       title="Permalink to Scholarly HTML: Simple, rational modern citations using links">
+                        Scholarly HTML: Simple, rational modern citations using links
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-04-07T06:37:05+00:00"> Tue 07 April 2009</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+</div>
+<div>
+<p>I dashed off a quick post last week about <a href="http://ptsefton.com/2009/03/31/scholarly-html.htm">Scholarly
+HTML</a> which had a
+bunch of ideas for a new kind of online journal.</p>
+<p>I reckon I was pretty spot on with my timing. Hours after I posted it, I
+saw the announcement from Elsevier about the winners of their <a href="http://article20.elsevier.com/contest/home.html">Article
+2.0 competition.</a>The
+<a href="http://surguy.net/bricks/elsevier/00012998/0036/0001/05000486/about.html">winner</a>
+has implemented some of the things I was calling for, which is great. I
+considered having our group enter this competition, but apart from
+limited time, the biggest issue I had was that the competition was about
+what you could do with Elsevier's XML, not what you could do about the
+elephant in the scholarly publishing process which is how the XML gets
+created. Me, I'd like to see a Journal 2.0 competition that looks at the
+whole process including the business model and the authoring and review.</p>
+<p>The ideas didn't really spell out who does what and what the workflows
+would look like. I will go through some of the detail now in a few more
+posts. In this post I'd like to look at one dimension which was not
+addressed by the winner <span class="spCh spChx2013">–</span> how an
+author should cite their references. The winning entry does <a href="http://surguy.net/bricks/elsevier/00012998/0036/0001/05000486/about.html">look at
+this after the
+fact</a>:</p>
+<blockquote>
+<p><strong>Enhancing references with DOIs</strong> - Digital Object Identifiers can be
+added to references in the document, by the document author, or by
+third parties. This allows references to be made more useful for
+users. This is a specific example of the reference level assertions
+described above - DOIs are added by selecting the Add Assertion link
+next to an item of content, selecting a type of DOI, and entering the
+DOI.</p>
+</blockquote>
+<p>DOIs are one way to identify articles, but why should this be done by
+the readers? If they're good identifiers why not let authors cite using
+DOIs in the first place?</p>
+<p>I have one very firm idea about this I'd like to try out. I reckon it
+should be possible to add citations using links. After all, I think, the
+main point of a citation is to uniquely identify a reference. I asked
+Twitter:</p>
+<blockquote>
+<p>Today I'm going to think about citations - what do we need them to do?
+Identify the reference, right? What else? #eresearch</p>
+</blockquote>
+<p>So far two replies.</p>
+<blockquote>
+<p><a href="http://twitter.com/petermurrayrust"><span class="Strong_20_Emphasis">petermurrayrust
+</span></a>@<a href="http://twitter.com/ptsefton">ptsefton</a>
+would be nice if we could find out when a publication actually appears
+in print</p>
+</blockquote>
+<p>OK <span class="spCh spChx2013">–</span> but that's something that would
+have to happen after we work out a good ID and how to express it is a
+link. I'll set that aside.</p>
+<blockquote>
+<p><a href="http://twitter.com/dorotheasalo"><span class="Strong_20_Emphasis">dorotheasalo
+</span></a>@<a href="http://twitter.com/ptsefton">ptsefton</a>:
+be suckable into bib managers; properly credit authors for
+impact-factor purposes; allow readers to guess @ article's usefulness</p>
+</blockquote>
+<p>These are all must haves, and they are all about metadata associated
+with a reference. Given a good ID a machine should be able to do better
+than a person at managing and presenting this metadata. The way we
+manage metadata at the moment though, everybody is responsible for
+maintaining their own metadata in their paper. Some do it efficiently,
+via shared bibliographies and services like CiteULike, some use tools
+like Zotero which are edging towards sharing, while apparently some
+still do it manually. Just this week we have discovered someone at USQ
+still wanting to teach people how to dot the Ts and cross the Is to make
+APA references <span class="spCh spChx2013">–</span> get the computer to
+do it, I say.</p>
+<p>I can see three main ways to cite by link that I think might work. In
+order of desirability:</p>
+<ol>
+<li>
+<p>If the article is in Scholarly HTML then it will contain
+suckdownable metadata and be addressable to the paragraph level, so
+it will be a matter of pointing to the permalink for the paragraph
+or section heading you want to cite.</p>
+</li>
+<li>
+<p>Reference by a known kind of ID, like PubMed
+<a href="http://en.wikipedia.org/wiki/PMID">PMID</a> or a
+<a href="http://en.wikipedia.org/wiki/Digital_object_identifier">DOI</a>, using
+one or more sites that journals flag as reliable sources of
+metadata. For example linking to a pubmed ID like
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/12748199">this</a>.</p>
+</li>
+<li>
+<p>Linking to one or more (depends on the discipline) online citation
+manager service such as CiteULike, Connotea or Zotero. Here's a page
+from my <a href="http://www.zotero.org/ptsefton/568/items/17">Zotero
+library</a> which I
+scraped from WordCat.</p>
+</li>
+</ol>
+<p>Note that I don't include linking to any-old repository, journal or
+website, or Google Scholar as the results would be too unpredictable and
+the metadata is likely to be crap.</p>
+<p>Journal-side systems could scrape the metadata from a page and provide
+the information Dorothea recommends, like suckdownable metadata, pop up
+abstracts and maybe author identity. Here's what Zotero makes of it
+<span class="spCh spChx2013">–</span> and Zotero' suckdowners are all
+available so could be used in other code.</p>
+<p><a name="graphics1"></a><img src="/wp-content/uploads/2009/04/m2976d43f-436x181.jpg" alt="graphics1" /></p>
+<p>How would this work for editorial and review processes? Upon submission,
+the computer will fetch down the references and format them in a way
+that is most convenient for editorial use <span
+class="spCh spChx2013">–</span> this could be whatever the editors and
+reviewers are used to or some other thing optimized for clarity. They
+would be able to give feedback on the metadata for a citation as
+necessary just as they do now.</p>
+<p>Another idea would be for the journal itself to keep a reference
+database, and to ask authors to use it by simply linking to it <span
+class="spCh spChx2013">–</span> thereby making sure that there is a
+consistent way for the same citation to be referenced across articles
+and issues. This should vastly improve citation metrics. For example
+they could put up a Zotero library for the journal with everything cited
+so far in a canonical format, and require that authors reference that by
+URL if the thing they wish to cite is in there. If not, then authors can
+use one of the methods above, but as part of the journal workflow - and
+this could be automated - the editors will create a Zotero record for
+the new citation and update the submitted HTML.</p>
+<p>And what about page numbers? We could ask authors to append a parameter
+to their URL but that would be messy and would need tool support. So how
+about just doing it like this, inline as the anchor text for a link:
+<a href="http://www.zotero.org/ptsefton/568/items/17">p20</a>. Remember this is to
+keep authoring simple it's not how the article will appear on the web
+later, where the reader may even be able to choose the reference format
+they prefer. Remember, though, with Scholarly HTML articles everything
+is on one page with individually addressable paragraphs.</p>
+<p>As with the previous post on this I am going into areas where I am far
+from well informed. Are there already journals with simple, rational,
+modern citation requirements such as requiring only DOIs?</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'scholarly-html-simple-rational-modern-citations-using-links';
+                var disqus_url = 'http://ptsefton.com/2009/04/07/scholarly-html-simple-rational-modern-citations-using-links/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

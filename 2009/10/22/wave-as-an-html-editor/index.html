@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Wave as a Scholarly HTML editor - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2009/10/22/wave-as-an-html-editor/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="[Update: immediately after publishing I changed the title a little bit] Formatting Citations Conclusion I did a series of articles here a while back ** about trying to use various word processors and editing tools to write scholarly works for publication in HTML. Then this year, I looked in more detail …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Wave as a Scholarly HTML editor"/>
+        <meta property="og:url" content="/2009/10/22/wave-as-an-html-editor/index.html"/>
+        <meta property="og:description" content="[Update: immediately after publishing I changed the title a little bit] Formatting Citations Conclusion I did a series of articles here a while back ** about trying to use various word processors and editing tools to write scholarly works for publication in HTML. Then this year, I looked in more detail …"/>
+        <meta property="article:published_time" content="2009-10-22" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2009/10/22/wave-as-an-html-editor/index.html"
+                       rel="bookmark"
+                       title="Permalink to Wave as a Scholarly HTML editor">
+                        Wave as a Scholarly HTML editor
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-10-22T01:49:11+00:00"> Thu 22 October 2009</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>[Update: immediately after publishing I changed the title a little bit]</p>
+<div class="page-toc">
+<ul>
+<li><a href="#id1">Formatting</a></li>
+<li><a href="#id2">Citations</a></li>
+<li><a href="#id3">Conclusion</a></li>
+</ul>
+</div>
+<div>
+<p>I did a <a href="http://delicious.com/ptsefton/ptsefton+xhtmlchallenge">series of articles here a while back ** about trying to use
+various word processors and editing tools to write scholarly works for
+publication in
+HTML</a>. Then this
+year, I looked in more detail at what <a href="http://delicious.com/ptsefton/ptsefton+scholarlyhtml">Scholarly
+HTML</a> might be
+like.</p>
+<p>Now it's Google Wave's turn. I got my invitation (thanks Jim) and
+immediately had a look at how it might be used for collaborative
+authoring for papers. I'll cover two things here; (a) document structure
+and formatting tools and (b) citations. I won't say too much about the
+collaborative aspects until we have tried it out, but they seem to work
+as advertised, a few of us were able to muck around in a document
+together without too much trouble.</p>
+<h1><span id="id1"></span></a>Formatting</h1>
+<p>The first thing I do with any editor is see how it structures documents.
+Wave has a slightly weird (to me) set of choices. It has headings, which
+is a start, and a whole lot of direct formatting tools, which is
+disappointing, and lacks both numbered lists and block-quotes which is a
+real pity.</p>
+<p>But the really interesting (to me) part is the way it handles bullet
+lists.</p>
+<p>If I put in a little list like this:</p>
+<ul>
+<li>
+<p>List 1</p>
+<ul>
+<li>
+<p>List 2</p>
+</li>
+<li>
+<p>List 2</p>
+</li>
+</ul>
+</li>
+<li>
+<p>List 1</p>
+</li>
+</ul>
+<p>Then the HTML it produces is like this:</p>
+<pre><code>&lt;pstyle=&quot;margin-left: 14px;&quot; class=&quot;simulated-li bullet-type-0&quot;&gt;List 1&lt;br&gt;&lt;/p&gt;
+
+&lt;pstyle=&quot;margin-left: 28px;&quot; class=&quot;simulated-li bullet-type-1&quot;&gt;List 2&lt;br&gt;&lt;/p&gt;
+
+&lt;pstyle=&quot;margin-left: 14px;&quot; class=&quot;simulated-li bullet-type-0&quot;&gt;List 1&lt;br&gt;&lt;/p&gt;
+</code></pre>
+<p>Not a list-element in sight! It uses plain-old paragraphs with a mixture
+of classes (which is fine by me) and direct formatting which is a bit
+less so: &quot;margin-left: 28px;&quot;. This will probably get some people
+riled-up, but actually I think it is a reasonable approach for an
+editing environment, provided one can export to proper HTML later and
+make something like this:</p>
+<pre><code>&lt;ul&gt;
+
+&lt;li&gt;&lt;p&gt;List 1&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;p&gt;List 2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;List 2&lt;/p&gt;&lt;/li&gt;
+
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;List 1&lt;/p&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+</code></pre>
+<p>Why is this approach of using plain-old paragraphs reasonable? It's
+because of the mess that most editors get into when editing lists. All
+the in-browser editors I have seen have major problems making sensible
+structure, they let you do stupid meaningless things like have two
+adjacent bullet lists, but don't let you collapse them. I last wrote
+about this <a href="http://ptsefton.com/2008/02/21/xhtml-challenge-mozilla-seamonkey-composer-is-not-suitable-for-writing-academic-papers.htm">looking a Mozilla Seamonkey
+Composer</a>,
+which is a desktop tool.</p>
+<p>The Wave approach is very similar to what we do in
+<a href="http://ice.usq.edu.au/">ICE</a>. ICE uses styles in a word processor (MS
+Word or OpenOffice.org Writer) to <em>imply</em> structure. In an ICE document
+the above list would be made using styles, shown here in braces. The ICE
+Toolbar has buttons just like the Wave ones <span
+class="spCh spChx2013">–</span> to toggle bullets and promote and
+demote.</p>
+<ul>
+<li>
+<p>{li1b} List 1</p>
+<ul>
+<li>
+<p>{li2b} List 2</p>
+</li>
+<li>
+<p>{li2b} List 2</p>
+</li>
+</ul>
+</li>
+<li>
+<p>{li1b} List 1</p>
+</li>
+</ul>
+<p>So, provided there is a way in Wave for us to add an export as HTML
+feature like the one in ICE which I'm sure there is, then I'm happy with
+the flat-paragraph approach. I would really love to see blockquotes
+supported and custom styles would be really great. But even if
+blockquotes aren't supported we can look for indented paragraphs and map
+them to blockquote elements.</p>
+<h1><span id="id2"></span></a>Citations</h1>
+<p>The other thing that's essential for writing a paper is good reference
+and citation support. I asked on Twitter if there was a Zotero gadget
+yet, and Bruce Darcus pointed me
+to<a href="http://blogs.nature.com/wp/nascent/2009/07/igor_a_google_wave_robot_to_ma.html">Igor</a>,
+which doesn't support Zotero, but does connect to PubMed, Connotea or
+Citeulike. It works by looking for text like:</p>
+<blockquote>
+<p>(cite sefton 2006)</p>
+</blockquote>
+<p>Then inserting a reference and updating the bibliography. I have not
+tried Igor but it looks like it is limited to one citation style.</p>
+<p>All I would want would be a plugin to look for links to an online Zotero
+account like this: <a href="http://www.zotero.org/ptsefton/items/77278">http://www.zotero.org/ptsefton/items/77278</a> or to a
+DOI, <a href="http://ptsefton.com/2009/04/07/scholarly-html-simple-rational-modern-citations-using-links.htm">as I described back in
+April</a>
+and provide a variant of the Zotero word processor plugin feature to
+format citations and bibliographies. One issue might be that as I
+understand it parts of the Zotero citation code depend on Firefox
+specific libraries, so can't be made to function across-browsers.</p>
+<h1><span id="id3"></span></a>Conclusion</h1>
+<p>I think Wave shows some promise as a collaborative editing tool, but
+it's only going to be useful for simple documents to start with, what
+with the lack of table and numbered list support. I'd be surprised if
+Zotero support doesn't manifest soon, but if it doesn't then we'll
+probably get around to that in my team at some stage.</p>
+<p>Of course there's lots more to talk about with the potential for
+embedding scientific objects etc, as <a href="http://blog.openwetware.org/scienceintheopen/2009/07/19/sci-bar-foo-etc-part-iii-google-wave-session-at-scifoo/">discussed in this
+post</a>.
+I'll come back to that.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'wave-as-an-html-editor';
+                var disqus_url = 'http://ptsefton.com/2009/10/22/wave-as-an-html-editor/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

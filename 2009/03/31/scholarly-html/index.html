@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Scholarly HTML - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2009/03/31/scholarly-html/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="Background Rules of the game What it should be like A few weeks ago, I felt there was something in the air to do with desktop tools for eResearch. We went with that in the form of The Desktop Fascinator and have been enjoying a productive conversation with others in …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Scholarly HTML"/>
+        <meta property="og:url" content="/2009/03/31/scholarly-html/index.html"/>
+        <meta property="og:description" content="Background Rules of the game What it should be like A few weeks ago, I felt there was something in the air to do with desktop tools for eResearch. We went with that in the form of The Desktop Fascinator and have been enjoying a productive conversation with others in …"/>
+        <meta property="article:published_time" content="2009-03-31" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2009/03/31/scholarly-html/index.html"
+                       rel="bookmark"
+                       title="Permalink to Scholarly HTML">
+                        Scholarly HTML
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-03-31T06:43:33+00:00"> Tue 31 March 2009</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<div class="page-toc">
+<ul>
+<li><a href="#id1">Background</a></li>
+<li><a href="#id3">Rules of the game</a></li>
+<li><a href="#id4">What it should be like</a></li>
+</ul>
+</div>
+<div>
+<p>A few weeks ago, I felt there was something in the air to do with
+desktop tools for eResearch. We went with that in the form of The
+Desktop Fascinator and have been enjoying a productive conversation with
+others in the, um, what's the word for the twitter-o-blog-o-sphere?</p>
+<p>This week I feel the time is right to look with fresh eyes at something
+we have been over and over in the <a href="http://ice.usq.edu.au/">ICE</a> project;
+the place of HTML in scholarly publishing. There have been a couple of
+things happen recently that made me look at the issues in a new light.</p>
+<p>I'm going to propose here an application profile of HTML for scholarly
+works, with some conventions for representing an article or chapter as a
+single web page, with referenceable paragraphs, semantic web via a
+linked data approach, simple inline citations and protocols for
+representing quotes, examples etc; <span
+class="spCh spChx201c">“</span>Scholarly HTML<span
+class="spCh spChx201d">”</span>. This is only a working title and it's a
+bad one because if you search for that you get a lot of hits for
+filenames; <code>scholarly.html</code>.</p>
+<p>I am sure I am not the first to think of some of these ideas <span
+class="spCh spChx2013">–</span> any pointers to prior-art would be
+appreciated.</p>
+<h1><span id="id1"></span><!--id1--></a>Background</h1>
+<p>Lets start with Rick Jelliffe, who <a href="http://broadcast.oreilly.com/2009/03/master-blaster.html">talked about Dennis Hamilton's
+notion of standards floors and
+ceilings</a> in
+relation to my relentless ranting about HTML:</p>
+<blockquote>
+<p>Dennis Hamilton over at the ODF TC made an interesting point recently
+about <em>floors</em> and <em>ceilings</em> and interoperability: both are needed. I
+think one of Peter's main points is this issue of having an adequate
+floor: that HTML should be this floor but its support by desktop
+vendors in their applications continues to be ratty.</p>
+</blockquote>
+<p>I like this idea of a floor and that's where I think we need to work if
+we want to mobilise the <a href="http://scienceblogs.com/commonknowledge/2009/03/lions_tigers_and_crowds.php">micro-crowds that John Wilbanks talks
+about</a>:</p>
+<blockquote>
+<p>The difference is that .005% of all web users gets us Wikipedia. .005%
+of geneticists gets us a table at T.G.I. Friday's. My point was that
+the math breaks down for crowds and science.</p>
+</blockquote>
+<p>If we further break that down into 50% of the geneticists using LaTeX
+and 30% using Word 2007 and 20% using something else (I made this up
+what do geneticists use to write their papers and theses?) then we have
+made an even smaller pool of users who will be able to tag their work
+with terms from genetic ontologies. I'm talking about using the Word
+2007 add-in that John Wilbanks has been working on with Microsoft. But
+what if we worked out a way to do semantic-web-scholarly publishing in
+HTML that would be useful for all of the people at the table at T.G.I.
+Friday's, whatever that is.</p>
+<p>Then we have Mark Pilgrim doing his <a href="http://diveintomark.org/archives/2009/03/27/dive-into-history-2009-edition">update to Dive into Python in
+HTML</a>.
+Bye bye DocBook. Hello HTML.</p>
+<blockquote>
+<p>Anyway, I now realize that there were some hidden assumptions behind
+my design decisions in 2000. Some of those assumptions turned out to
+be wrong, or at least not-completely-right. Sure, a lot of people
+downloaded DiP, but it still pales in comparison to the number of
+visitors I got from search traffic. In 2000, I fretted about my <span
+class="spCh spChx201c">“</span>home page<span
+class="spCh spChx201d">”</span> and my <span
+class="spCh spChx201c">“</span>navigation aids.<span
+class="spCh spChx201d">”</span> Nobody cares about any of that
+anymore, and I have nine years of access logs to prove it.</p>
+<p>So, I am writing DiP3 in pure HTML and, modulo some <a href="http://diveintopython3.org/about.html">lossless
+minimizations</a>, publishing
+exactly what I write. This makes the proofreading feedback cycle
+faster <span class="spCh spChx2014">—</span> instead of <span
+class="spCh spChx201c">“</span>building<span
+class="spCh spChx201d">”</span> the HTML output, I just hit <code>Ctrl-R</code>.
+I expected it to make some things more complicated, but they turn out
+not to matter very much.</p>
+</blockquote>
+<p>There's no discussion in this post about what the publisher will do to
+make it into a book, but whatever toolchains these people use should be
+able to be adapted to HTML, particularly if there was a profile which
+people could use to say 'this blockquote is an example'. There are other
+bits which I'm sure could be cleaned up too with a bit of jQuery <span
+class="spCh spChx2013">–</span> like automated numbering of examples or
+headings.</p>
+<p>I am guessing Mark Pilgrim used emacs to write, sorry '<a href="http://diveintopython3.org/about.html">lovingly hand
+craft</a>' this thing, but with the
+set of guidelines he gives for how to format stuff you could do it in a
+wiki, or WordPress or you guessed it, <a href="http://ice.usq.edu.au/">ICE</a>. And
+as for cruft in the HTML, well provided people use the key things we
+care about, like headings, and block-quotes and so on then we can strip
+out the rest.</p>
+<p>ICE makes PDF and HTML <span class="spCh spChx2013">–</span> but for the
+purposes of a new scholarly publishing model we can set PDF aside as
+something we will generate later on, from whatever is most convenient.
+The HTML is the bit that matters now.</p>
+<p>This reminded me of Peter Murray Rust <a href="http://wwmm.ch.cam.ac.uk/blogs/murrayrust/?p=1212">on
+PDF</a>:</p>
+<blockquote>
+<p>Why should documents have page numbers? why should be have two columns
+per page. Because the publishers force it on us.</p>
+</blockquote>
+<p>And what Tim Bray said, ages and ages ago before he went quiet on this
+whole topic. Here's <a href="http://weblog.infoworld.com/udell/2004/11/30.html">Jon Udell on Tim
+Bray</a>:</p>
+<blockquote>
+<p>Musing on the European Commission's findings, Tim Bray wondered if
+maybe XHTML had gotten short shrift:</p>
+<blockquote>
+<p>They considered, and rejected, XHTML as a standard office document
+format. I think that it can do most things you need in a modern
+office document and has remarkably few real drawbacks.
+[<a href="http://www.tbray.org/ongoing/When/200x/2004/06/17/CustomSchemas">ongoing</a>]</p>
+</blockquote>
+<p>I'm not ready to go along with the other conclusion he reaches in that
+posting -- that custom schemas are a red herring. But I agree that
+XHTML is more valuable than most people think. For the vast majority
+of useful documents, it can have as much structure as we need, and for
+the rest it can be extended internally with namespaced inclusions. But
+the real power arises from its hypertextual nature. For me,
+increasingly, <strong>there is no office, and there is</strong> <strong>no desktop, there
+is only a network of linked documents</strong>. A successful open document
+format will have to be supremely well-adapted to that environment, as
+XHTML is.</p>
+</blockquote>
+<h1><span id="id3"></span><!--id3--></a>Rules of the game</h1>
+<p>As we're talking about laying a floor here rather than swinging from the
+ceiling I want stuff that could be authored in a generic HTML editor, or
+in any other tool that can produce HTML, like a wiki, or Moodle, or
+WordPress, or using something like Google docs. So that means really
+simple mechanisms and microformats and nothing that depends on anything
+that costs money to use.</p>
+<p>What I'm thinking is, everyone can do links so lets go crazy with links.</p>
+<p>Unfortunately even <a href="http://www.w3.org/TR/xhtml-rdfa-primer/">RDFa</a> is
+out, as you can't do it via a word processor or a typical WYSIWYG HTML
+editing tool. I reckon adding the rel attribute it too hard but what
+would make it easy for everyone is if the CC people set up a has-licence
+page where the rel is part of the endpoint. So this example from the
+RDFa primer:</p>
+<pre><code>All content on this site is licensed under
+
+&lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/3.0/&quot;&gt;
+
+    a Creative Commons License
+
+&lt;/a&gt;.
+</code></pre>
+<p>Becomes this, where you bundle the predicate and the object together and
+link to them from the subject.</p>
+<pre><code>All content on this site is licensed under
+
+&lt;a  href=&quot;http://creativecommons.org/licenses/by/3.0/haslicense&quot;&gt;
+
+    a Creative Commons License
+
+&lt;/a&gt;.
+</code></pre>
+<p>The trick is not to link to an identifier for the license but an
+identifier for license-plus-verb.</p>
+<h1><span id="id4"></span><!--id4--></a>What it should be like</h1>
+<p>Here's a list of stuff the Scholarly HTML should do, off the top of my
+head. Argue with me:</p>
+<ul>
+<li>
+<p><strong>Headings. Documents should definitely have headings.</strong> They don't
+need nested sections because the headings are enough for a machine
+to work out the nesting. If a journal/discipline really really must
+have some fixed structure you could validate that the first heading
+element contains the text 'Introduction' and so on.</p>
+<p>The page should have title, and the title should be put in the top
+of the document in an <code>&lt;h1 class=”title”&gt;</code> element. Thereafter the
+next heading should be a plain-old <code>h1</code>. If naughty users jump from
+<code>h1</code> to <code>h3</code> we'll just normalize that back to <code>h2</code> later on.</p>
+<p>If you really really need more formal structure then how about
+putting an empty link in the heading to a web page for something
+like an NLM section, meaning this 'h1' is the same as that NLM
+element. But do you really need all those elements if the paper <em>is</em>
+the HTML?</p>
+</li>
+<li>
+<p><strong>Protocols for representing things like examples</strong>. Mark Pilgrim
+says he uses blockquotes, but there should be some class that lets
+you tell an example of your own from a quotation. We don't need a
+standards committee yet, we need some examples.</p>
+</li>
+<li>
+<p><strong>Metadata, using a linked data approach</strong> (which I am going to
+describe in another post, but which I have <a href="http://ptsefton.com/2009/03/17/more-on-microsoft-word-and-non-interoperable-standards-compliance.htm">touched on
+before</a>).</p>
+<blockquote>
+<p>What if my local ePrints repostiory had a page for me-as-author.
+It might look like
+<a href="http://eprints.usw.edu.au/authors/PeterMacolmSefton">http://eprints.usw.edu.au/authors/PeterMacolmSefton</a> and resolve
+to a page that describes me and the works that are attributed to
+me with a note there that says <span
+class="spCh spChx201c">“</span>if you want to indicate that this
+person is an author of a paper, link their name as it appears on
+the work to this page<span class="spCh spChx201d">”</span>. That
+is way simpler to implement than the stuff we talked about in our
+paper on <a href="http://www.dspace.cam.ac.uk/handle/1810/206423">embedding semantics in word processing
+documents</a>.</p>
+</blockquote>
+<p>The journal itself could provide is-author pages for those who don't
+have them yet as they collect data about the authors in their
+journal websites anyway. We'll work out a way to relate the
+is-author pages together later. We have to start somewhere.</p>
+</li>
+<li>
+<p>Links from terms mentioned in the text to <strong>ontologies</strong> that
+describe them. This is going to be kind of silly if all we do is
+link the same term to the same ontology over and over again like the
+<a href="http://ptsefton.com/2009/03/27/more-on-microsoft-collaboration-and-word-processor-interop.htm">discussion about 'Potter syndrome' we had here last
+week</a>
+as that string unlikely to be ambiguous, but could be useful if you
+link different strings of text to the same ontology. Like, say you
+could link <span class="spCh spChx201c">“</span>distinctive
+lightning shaped scarring on forehead<span
+class="spCh spChx201d">”</span> to Potter syndrome.</p>
+</li>
+<li>
+<p><strong>Linkable paragraphs</strong> <span class="spCh spChx2013">–</span> via a
+mechanism like <a href="http://www.tbray.org/ongoing/When/200x/2004/05/31/PurpleAgain">Tim Bray's purple
+pilcrows</a>.
+These could be used to cite the paper but could also be key to
+<a href="file:///home/sefton/Documents/%20http://ptsefton.com/2009/01/05/potential-projects-1-a-general-purpose-document-annotation-system.htm">stand-off annotation/discussion
+services</a>.
+This does not need to be done by the author <span
+class="spCh spChx2013">–</span> we can make scripts that do that
+when the page crosses the curation boundary. ICE has cute tricks it
+uses to provide Ids for pages that are partly based on their content
+so we can tell when a paragraph has changed, but keep it around if
+someone has commented on it.</p>
+</li>
+<li>
+<p><strong>Dead simple reference management</strong> via links to trusted sources.
+In many disciplines the manuscript should be able to do what
+Peter-Muray Rust said and just use a DOI <span
+class="spCh spChx2013">–</span> the publisher can be responsible to
+fetching the metadata and making a bibliography. How about you let
+the user choose the referencing style and select it on the fly using
+Zotero's growing CSL library? Or skip that altogether an let readers
+import the references into their own libraries.</p>
+</li>
+</ul>
+<p>Illustrations? I don't know, that's one we will have to work through.
+Maths likewise.</p>
+<p>Out of scope for now is how ORE would be used to describe a
+data-supported paper with the text and all its associated images and
+data files as an aggregation. This is partly because there are very few
+end-user tools that would let someone package a document in this way but
+I think they will start to appear. There's one for WordPress for
+example.</p>
+<p>Beyond just putting stuff on the web, I think this approach would make
+it simpler to write lots of the tools that are going to machine-read the
+semantic-scholarly web; make them all work on Scholarly HTML rather than
+trying to deal with several different upstream formats.</p>
+</div>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'scholarly-html';
+                var disqus_url = 'http://ptsefton.com/2009/03/31/scholarly-html/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

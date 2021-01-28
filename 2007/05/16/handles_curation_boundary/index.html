@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Another good use for handles: identifying items in the ICE content management system throughout thier lifecycle - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2007/05/16/handles_curation_boundary/index.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="Back to talking about persistent identifiers, specifically handles, and this time it&#39;s to do with the ICE-RS project. I have mentioned that I was a handles skeptic, but now I&#39;m coming around. In writing-up how ICE can be used for a multimedia thesis for my paper at ETD 2007 it …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Another good use for handles: identifying items in the ICE content management system throughout thier lifecycle"/>
+        <meta property="og:url" content="/2007/05/16/handles_curation_boundary/index.html"/>
+        <meta property="og:description" content="Back to talking about persistent identifiers, specifically handles, and this time it&#39;s to do with the ICE-RS project. I have mentioned that I was a handles skeptic, but now I&#39;m coming around. In writing-up how ICE can be used for a multimedia thesis for my paper at ETD 2007 it …"/>
+        <meta property="article:published_time" content="2007-05-16" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+font-size: 11px;
+background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2007/05/16/handles_curation_boundary/index.html"
+                       rel="bookmark"
+                       title="Permalink to Another good use for handles: identifying items in the ICE content management system throughout thier lifecycle">
+                        Another good use for handles: identifying items in the ICE content management system throughout thier lifecycle
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2007-05-16T00:00:00+02:00"> Wed 16 May 2007</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div>
+<p>Back to talking about persistent identifiers, specifically handles, and
+this time it's to do with the
+<a href="http://ice.usq.edu.au/introduction/ice_rs.htm">ICE-RS</a> project.</p>
+<p>I have mentioned that I was a handles
+<a href="http://ptsefton.com/blog/2006/11/01/repository-maintenance">skeptic</a>,
+but now I'm <a href="http://ptsefton.com/blog/2007/03/16/killer_handles">coming
+around</a>.</p>
+<p>In writing-up how <a href="http://ice.usq.edu.au/">ICE</a> can be used for a
+multimedia thesis for my paper at <a href="http://epc.ub.uu.se/etd2007/">ETD
+2007</a> it became clear that there is a
+workflow issue to with identifying and linking to multimedia content. My
+paper is on in <a href="http://epc.ub.uu.se/etd2007/sessions/1.html">this
+session</a> <span
+class="spCh spChx2013">–</span> maybe the full text will show up there
+at some point.</p>
+<p>The indetifier / linking problem is that right from the draft stage you
+want to be able to distribute a thesis to supervisors or reviewers in
+two forms; online, and in print.</p>
+<p>One crucial stage is the examination stage; how can we deal with
+distribution? The easy way is electronically. If you're sending to
+reviewers electronically then the multimedia will just be there, and it
+can be linked relative to the text. But what about a printed version?
+The print copy should include URLs that can be used to fetch the media
+file. But how does the author know what that URL will be? And who will
+change it when the thesis goes into the institutional repository?</p>
+<p>These are all issues to do with the <a href="http://ptsefton.com/blog/2007/02/07/curation-boundary">curation
+boundary</a> which
+is now documented in an
+<a href="http://www.ariadne.ac.uk/issue51/treloar-groenewegen/">article</a>
+(Treloar and Groenewegen 2007).</p>
+<p>Enter handles. If everything in an ICE repository had a persistent ID in
+the <a href="http://handle.net/">handles</a> infrastructure then ICE could take
+care of the URL for you. All the author would have to do is link to the
+media they'd like to include in the usual way, and the ICE system would
+make a new handle and update links to use a handle resolver. The result
+of all this would be that authors would not have to worry about finding
+appropriate copies of their work, the ICE system would be able to take
+care of all that, and the URL for a media file that might be out there
+in an examiner's copy of the thesis would still work years later even if
+the thesis itself has moved around since then.</p>
+<p>Without some system like handles the author and/or support staff would
+need to be continually editing documents as they moved through different
+stages and were distributed for different purposes.</p>
+<p>How would this work? (Warning <span class="spCh spChx2013">–</span> gets
+detailed and boring from here down)</p>
+<p>For my thesis I want to link my piano performance.</p>
+<ol>
+<li>
+<p>Get the sound file and put it in ICE.</p>
+</li>
+<li>
+<p>Find the file in the ICE file manger.</p>
+</li>
+<li>
+<p>Right click on the file and copy the URL. It might look something
+like:</p>
+<pre><code>http://localhost:8000/pacakges/phd/media/performance.m4a
+</code></pre>
+</li>
+<li>
+<p>Paste into an ICE document with the URL showing up as text either
+in-line or in the references section. Now I've got a text document
+with a link to the sound file that a reader can type in to their web
+browser.</p>
+</li>
+<li>
+<p>Render the document into PDF using ICE. Magically the URL changes to
+be something like:</p>
+<pre><code>http://resolver.usq.edu.au/hdl/xxxx.x/385329084239058239058
+</code></pre>
+</li>
+<li>
+<p>If you visit that URL then it would resolve to something like:</p>
+<pre><code>http://ice-repos.usq.edu.au/pacakges/phd/media/performance.m4a
+</code></pre>
+</li>
+<li>
+<p>Behind the scenes ICE will do some technical stuff:</p>
+<ul>
+<li>
+<p>Assign unique ID to the sound file, say 385329084239058239058.
+ICE can be offline to do this step.</p>
+</li>
+<li>
+<p>When ICE is online, change the link I used to use the handle and
+tell the handle server that this document now lives in my ICE
+repository <span class="spCh spChx2013">–</span> this way I can
+move or rename the file in ICE without breaking the link.</p>
+</li>
+<li>
+<p>On rendering the document within ICE, change from the handle
+back to a relative link.</p>
+</li>
+<li>
+<p>On creating a PDF file change the link that I inserted to show a
+handle ID.</p>
+</li>
+<li>
+<p>On export to a repository change ALL the links within the thesis
+to use handles and change the handle records to resolve to the
+item's new home in the repository,.</p>
+</li>
+<li>
+<p>On export to an ordinary web server change all the links back to
+ordinary paths.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1><span id="id62"></span>Bibliography</h1>
+<p>Treloar, A, and D Groenewegen. 2007. ARROW, DART and ARCHER: A Quiver
+Full of Research Repository and Related Projects. <em>Ariadne</em>.
+<a href="http://www.ariadne.ac.uk/issue51/treloar-groenewegen/">http://www.ariadne.ac.uk/issue51/treloar-groenewegen/</a> (accessed May
+16, 2007).</p>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'handles_curation_boundary';
+                var disqus_url = 'http://ptsefton.com/2007/05/16/handles_curation_boundary/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
