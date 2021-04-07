@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>FAIR Data Management; It's a lifestyle not a lifecycle - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://ptsefton.com/2021/04/07/rdmpic/index.html">
+
+        <meta name="author" content="ptsefton" />
+        <meta name="description" content="I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the FAIR data principles; that data should be Findable, Accessible, Interoperable and Reusable. But first, here&#39;s a rant about some modeling and diagramming styles and trends …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="FAIR Data Management; It&#39;s a lifestyle not a lifecycle"/>
+        <meta property="og:url" content="http://ptsefton.com/2021/04/07/rdmpic/index.html"/>
+        <meta property="og:description" content="I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the FAIR data principles; that data should be Findable, Accessible, Interoperable and Reusable. But first, here&#39;s a rant about some modeling and diagramming styles and trends …"/>
+        <meta property="article:published_time" content="2021-04-07" />
+            <meta property="article:section" content="Research Data Management" />
+            <meta property="article:author" content="ptsefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://ptsefton.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://ptsefton.com/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://ptsefton.com/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ptsefton.com/theme/css/style.css" type="text/css"/>
+
+        <link href="http://ptsefton.com/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+body {
+  font-size: 16px;
+}
+figure {
+   margin-bottom: 30px;
+}
+
+blockquote {
+    font-size: 16px;
+    background-color: rgb(245, 245, 204);
+}
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://ptsefton.com/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://ptsefton.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://ptsefton.com/2021/04/07/rdmpic/index.html"
+                       rel="bookmark"
+                       title="Permalink to FAIR Data Management; It's a lifestyle not a lifecycle">
+                        FAIR Data Management; It's a lifestyle not a lifecycle
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2021-04-07T00:00:00+02:00"> Wed 07 April 2021</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the <a href="https://www.nature.com/articles/sdata201618">FAIR data principles</a>; that data should be Findable, Accessible, Interoperable and Reusable.</p>
+<p>But first,  here's a rant about some modeling and diagramming styles and trends that I <strong>do not like</strong>.</p>
+<p>I took part in a fun Twitter thread recently <a href="https://twitter.com/FCTweedie/status/1359694360472821761">kicked off by Fiona Tweedie</a>.</p>
+<blockquote>
+<p>Fiona Tweedie
+<a href="https://twitter.com/FCTweedie">@FCTweedie</a>
+So my current bugbear is university processes that seem to forget that the
+actual work of higher ed is doing research and/ or teaching. This &quot;research
+lifecycle&quot; diagram from @UW is a stunning <a href="https://www.washington.edu/research/research-home-page/research-lifecycle-main-t1-blowout-2/">example</a>:</p>
+</blockquote>
+<img alt="The UW MyResearch Lifecycle with the four stages: Plan/Propose, Setup, Manage, and Closeout" src="http://ptsefton.com/2021/04/07/rdmpic/uw.png">
+<p>In this tweet Dr Tweedie has called out Yet Another Research Lifecycle Diagram That Leaves Out The Process Of You Know, Actually Doing Research. This process-elision happened more than once when I was working as an eResearch manager - management would get in the consultants to look at research systems, talk to the research office and graduate school and come up with a &quot;journey map&quot; of administrative processes that either didn't mention the actual DOING research or represented it as a tiny segment, never mind that it's, you know, the main thing researchers do when they're being researchers rather than teachers or administrators.</p>
+<p>At least the consultants would usually produce a 'journey map' that got you from point A to Point B using chevrons to &gt;&gt; indicate progress and didn't insist that everything was a 'lifecycle'.</p>
+<p>Something like:</p>
+<pre><code>Plan / Propose  &gt;&gt; Setup  &gt;&gt; Manage / Do Research &gt;&gt; Closeout
+</code></pre>
+<p>But all too commonly processes are represented using the tired old metaphor of a lifecycle.</p>
+<p><strong>Reminder: A lifecycle is a biological process; how organisms come into existence, reproduce and die via various means including producing seeds, splitting themselves in two, um, making love, laying eggs and so on.</strong></p>
+<p>It's really stretching the metaphor to talk about research in this way - maybe the research outputs in the UW &quot;closeout&quot; phase are eggs that hatch into new bouncing baby <em>proposals</em>?</p>
+<p>Regrettably, arranging things in circles and using the &quot;lifecycle&quot; metaphor is very common - see this Google image search for &quot;Research Lifecycle&quot;:</p>
+<img src="http://ptsefton.com/2021/04/07/rdmpic/research_lifecycle_search.png"/> 
+<p>I wonder if the diagramming tools that are available to people are part of the issue - Microsoft Word, for example can build cycles and other diagrams out of a bullet list.</p>
+<p>(I thought it would be amusing to draw the UW diagram from above as a set cogs but this happened - you can only have 3 cogs in a Word diagram.)</p>
+<img src="http://ptsefton.com/2021/04/07/rdmpic/cogs.png" alt="Attempt to use Microsoft Word to make a diagram 4 cogs for Plan/Propose, Setup, Manage, and Closeout but it will only draw three of them" >
+<a id="main">
+<h2>Research Data Management as a Cycle</h2>
+<p>Now that I've got that off my chest let's look at research data management. Here's a diagram which is in fairly wide use, from <a href="https://guides.library.ucsc.edu/datamanagement/">The University of California</a>.</p>
+<img src="http://ptsefton.com/2021/04/07/rdmpic/ResearchCycleUCSC.jpg" alt="">
+<p>(This image has a CC-BY logo which means I can use it if I attribute it - but I'm not 100% clear on the original source of the diagram - it seems to be from UC somewhere.)</p>
+<!-- There's a JCU version https://libguides.jcu.edu.au/research-data-management-toolkit -->
+<p>Marco used this one in some presentations we gave. I thought we could do better.</p>
+<p>The good part of this diagram is that it shows research data management as a cyclical, recurring activity - which for FAIR data it needs to be.</p>
+<p>What I don't like:</p>
+<ol>
+<li>
+<p>I think it is trying to show a project (ie grant) level view of research with data management happening in ONE spot on the journey. Typically researchers do research all the time (or in between teaching or when they can get time on equipment) not at a particular point in some administrative &quot;journey map&quot;. We often hear feedback that their research is a lifetime activity and does not happen the way administrators and IT think it does.</p>
+</li>
+<li>
+<p>&quot;Archive&quot; is shown as a single-step pre-publication. This is a terrible message; if we are to start really doing FAIR data then data need to be described and made findable and accessible ASAP.</p>
+</li>
+<li>
+<p>The big so-called lifecycle is (to me) very contrived and looks like a librarian view of the world with data searching as a stand-alone process before research data management planning. Not clear whether <em>Publication</em> means articles or data.</p>
+</li>
+<li>
+<p>&quot;Data Search / Reuse&quot; is a type of &quot;Collection&quot;, and why is it happening before data management planning? &quot;Re-Collection&quot; is also a kind of collection, so we can probably collapse all those together (the <em>Findable</em> and <em>Accessible</em> in FAIR).</p>
+</li>
+<li>
+<p>It’s not clear whether Publication means articles or data or both.</p>
+</li>
+<li>
+<p>Most research uses some kind of data storage but very often not directly; people might be interacting with a lab notebook system or a data repository - at UTS we arrived at the concept of &quot;workspaces&quot; to capture this.</p>
+</li>
+</ol>
+<h1>The &quot;Minimum Viable FAIR Diagram&quot;</h1>
+<p>Marco and I have a sketch of a new diagram that attempts to address these issues and addresses what needs to be in place for broad-scale FAIR data practice.</p>
+<p>Two of the FAIR principles suggest services that need to be in place; ways to <em>Find</em> and <em>Access</em> data. The I and R in FAIR are not something that can be encapsulated in a service, as such, rather they imply that data are well described for re-use and <em>Interoperation</em> of systems and in <em>Reusable</em> formats.</p>
+<p>As it happens, there is a common infrastructure component which encapsulates <em>finding</em>  data and <em>accessing</em>; the repository.  Repositories are services which hold data and make it discoverable and accessible, with governance that ensures that data does not change without notice and is available for access over agreed time frames - sometimes with detailed access control.  Repositories may be general purpose or specialized around a particular type of data: gene sequences, maps, code, microscope images etc. They may also be ad-hoc - at a lab level they could be a well laid out, well managed file system.</p>
+<p>Some well-funded disciplines have established global or national repositories and workflows for some or all of their data, notably physics and astronomy, bioinformatics, geophysical sciences, climate and marine science. Some of these may not be thought of by their community as repositories -  but according to our functional definition they are repositories, even if they are &quot;just&quot; vast shared file systems or databases where everyone knows what's what and data managers keep stuff organized. Also, some institutions have institutional data repositories but it is by no means common practice across the whole of the research sector that data find their way into any of these repositories.</p>
+<p><strong>Remember: data storage is not all files-on-disks</strong>. Researchers use a very wide range of tools which may make data inaccessible outside of the tool. Examples include: cloud-based research (lab) notebook systems in which data is deposited alongside narrative activity logs; large shared virtual laboratories where data are uploaded; Secure eResearch Platforms (SERPs) which allow access only via virtualized desktops with severely constrained data ingress and egress; survey tools; content management systems; digital asset management systems; email (yes, it's true some folks use email as project archives!); to custom-made code for a single experiment.</p>
+<p><strong>Our general term for all of the infrastructures that researchers use for RDM day to day including general purpose storage is “workspaces”.</strong></p>
+<p>Many, if not most <em>workspaces</em> do not have high levels of governance, and data may be technically or legally inaccessible over the long term. They should not be considered as suitable archives or repositories - hence our emphasis on making sure that data can be described and deposited into general purpose, standards-driven repository services.</p>
+<p>The following is a snapshot of the core parts of an idealised FAIR data service. It shows the activities that researchers undertake, acquiring data from observations, instruments and by reuse, conducting analysis and data description in a working environment, and depositing results into one or more repositories.</p>
+<p>We wanted it to show:</p>
+<ul>
+<li>
+<p>That infrastructure services are required for research data management - researchers don't just &quot;Archive&quot; their data without support - they and those who will reuse data need repository services in some form.</p>
+</li>
+<li>
+<p>That research is conducted using workspace environments - more infrastructure.</p>
+</li>
+</ul>
+<img src="http://ptsefton.com/2021/04/07/rdmpic/new-diagram.png" alt="A work-in-progress sketch of FAIR research data management." >
+<p>We (by which I mean Marco) will make this prettier soon.</p>
+<p>And yes, there is a legitimate cycle in this diagram it's the FIND -&gt; ACCESS -&gt; REUSE -&gt; DESCRIBE -&gt; DEPOSIT cycle that's inherent in the FAIR lifestyle.</p>
+<p>Things that might still be missing:</p>
+<ul>
+<li>
+<p>Some kind of rubbish bin - to show that workspaces are ephemeral and working data that doesn't make the cut may be culled, and that some data is held only for a time.</p>
+</li>
+<li>
+<p>What do you think's missing?</p>
+</li>
+</ul>
+<p>Thoughts anyone?  Comments below or take it up on twitter with @ptsefton.</p>
+<p>(I have reworked parts of a document that Marco and I have been working on with Guido Aben for this document, and thanks to recent graduate Florence Sefton for picking up typos and sense-checking).</p>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'rdmpic';
+                var disqus_url = 'http://ptsefton.com/2021/04/07/rdmpic/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="http://ptsefton.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+      <p>This site is hosted by <a
+      href='https://www.webfaction.com/?aid=2969'>webfaction</a>, and has
+      been since 2004, with no problems whatsoever, and steadily
+      decreasing cost. If you <a
+      href='https://www.webfaction.com/?aid=2969'>sign up</a> I can
+      get a small discount on my hosting.</p>
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://ptsefton.com/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://ptsefton.com/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://ptsefton.com/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

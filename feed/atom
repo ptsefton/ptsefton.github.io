@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="http://ptsefton.com/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>http://ptsefton.com/</id><updated>2021-01-28T00:00:00+01:00</updated><entry><title>Research Data Management looking outward from IT</title><link href="http://ptsefton.com/2021/01/28/rdm4aero/index.html" rel="alternate"></link><published>2021-01-28T00:00:00+01:00</published><updated>2021-01-28T00:00:00+01:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-01-28:/2021/01/28/rdm4aero/index.html</id><summary type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="http://ptsefton.com/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>http://ptsefton.com/</id><updated>2021-04-07T00:00:00+02:00</updated><entry><title>FAIR Data Management; It's a lifestyle not a lifecycle</title><link href="http://ptsefton.com/2021/04/07/rdmpic/index.html" rel="alternate"></link><published>2021-04-07T00:00:00+02:00</published><updated>2021-04-07T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-04-07:/2021/04/07/rdmpic/index.html</id><summary type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
+&lt;p&gt;But first,  here's a rant about some modeling and diagramming styles and trends …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
+&lt;p&gt;But first,  here's a rant about some modeling and diagramming styles and trends that I &lt;strong&gt;do not like&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I took part in a fun Twitter thread recently &lt;a href="https://twitter.com/FCTweedie/status/1359694360472821761"&gt;kicked off by Fiona Tweedie&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fiona Tweedie
+&lt;a href="https://twitter.com/FCTweedie"&gt;@FCTweedie&lt;/a&gt;
+So my current bugbear is university processes that seem to forget that the
+actual work of higher ed is doing research and/ or teaching. This &amp;quot;research
+lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washington.edu/research/research-home-page/research-lifecycle-main-t1-blowout-2/"&gt;example&lt;/a&gt;:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img alt="The UW MyResearch Lifecycle with the four stages: Plan/Propose, Setup, Manage, and Closeout" src="http://ptsefton.com/2021/04/07/rdmpic/uw.png"&gt;
+&lt;p&gt;In this tweet Dr Tweedie has called out Yet Another Research Lifecycle Diagram That Leaves Out The Process Of You Know, Actually Doing Research. This process-elision happened more than once when I was working as an eResearch manager - management would get in the consultants to look at research systems, talk to the research office and graduate school and come up with a &amp;quot;journey map&amp;quot; of administrative processes that either didn't mention the actual DOING research or represented it as a tiny segment, never mind that it's, you know, the main thing researchers do when they're being researchers rather than teachers or administrators.&lt;/p&gt;
+&lt;p&gt;At least the consultants would usually produce a 'journey map' that got you from point A to Point B using chevrons to &amp;gt;&amp;gt; indicate progress and didn't insist that everything was a 'lifecycle'.&lt;/p&gt;
+&lt;p&gt;Something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Plan / Propose  &amp;gt;&amp;gt; Setup  &amp;gt;&amp;gt; Manage / Do Research &amp;gt;&amp;gt; Closeout
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But all too commonly processes are represented using the tired old metaphor of a lifecycle.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reminder: A lifecycle is a biological process; how organisms come into existence, reproduce and die via various means including producing seeds, splitting themselves in two, um, making love, laying eggs and so on.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It's really stretching the metaphor to talk about research in this way - maybe the research outputs in the UW &amp;quot;closeout&amp;quot; phase are eggs that hatch into new bouncing baby &lt;em&gt;proposals&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;Regrettably, arranging things in circles and using the &amp;quot;lifecycle&amp;quot; metaphor is very common - see this Google image search for &amp;quot;Research Lifecycle&amp;quot;:&lt;/p&gt;
+&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/research_lifecycle_search.png"/&gt; 
+&lt;p&gt;I wonder if the diagramming tools that are available to people are part of the issue - Microsoft Word, for example can build cycles and other diagrams out of a bullet list.&lt;/p&gt;
+&lt;p&gt;(I thought it would be amusing to draw the UW diagram from above as a set cogs but this happened - you can only have 3 cogs in a Word diagram.)&lt;/p&gt;
+&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/cogs.png" alt="Attempt to use Microsoft Word to make a diagram 4 cogs for Plan/Propose, Setup, Manage, and Closeout but it will only draw three of them" &gt;
+&lt;a id="main"&gt;
+&lt;h2&gt;Research Data Management as a Cycle&lt;/h2&gt;
+&lt;p&gt;Now that I've got that off my chest let's look at research data management. Here's a diagram which is in fairly wide use, from &lt;a href="https://guides.library.ucsc.edu/datamanagement/"&gt;The University of California&lt;/a&gt;.&lt;/p&gt;
+&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/ResearchCycleUCSC.jpg" alt=""&gt;
+&lt;p&gt;(This image has a CC-BY logo which means I can use it if I attribute it - but I'm not 100% clear on the original source of the diagram - it seems to be from UC somewhere.)&lt;/p&gt;
+&lt;!-- There's a JCU version https://libguides.jcu.edu.au/research-data-management-toolkit --&gt;
+&lt;p&gt;Marco used this one in some presentations we gave. I thought we could do better.&lt;/p&gt;
+&lt;p&gt;The good part of this diagram is that it shows research data management as a cyclical, recurring activity - which for FAIR data it needs to be.&lt;/p&gt;
+&lt;p&gt;What I don't like:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;I think it is trying to show a project (ie grant) level view of research with data management happening in ONE spot on the journey. Typically researchers do research all the time (or in between teaching or when they can get time on equipment) not at a particular point in some administrative &amp;quot;journey map&amp;quot;. We often hear feedback that their research is a lifetime activity and does not happen the way administrators and IT think it does.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;quot;Archive&amp;quot; is shown as a single-step pre-publication. This is a terrible message; if we are to start really doing FAIR data then data need to be described and made findable and accessible ASAP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The big so-called lifecycle is (to me) very contrived and looks like a librarian view of the world with data searching as a stand-alone process before research data management planning. Not clear whether &lt;em&gt;Publication&lt;/em&gt; means articles or data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;quot;Data Search / Reuse&amp;quot; is a type of &amp;quot;Collection&amp;quot;, and why is it happening before data management planning? &amp;quot;Re-Collection&amp;quot; is also a kind of collection, so we can probably collapse all those together (the &lt;em&gt;Findable&lt;/em&gt; and &lt;em&gt;Accessible&lt;/em&gt; in FAIR).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It’s not clear whether Publication means articles or data or both.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Most research uses some kind of data storage but very often not directly; people might be interacting with a lab notebook system or a data repository - at UTS we arrived at the concept of &amp;quot;workspaces&amp;quot; to capture this.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;The &amp;quot;Minimum Viable FAIR Diagram&amp;quot;&lt;/h1&gt;
+&lt;p&gt;Marco and I have a sketch of a new diagram that attempts to address these issues and addresses what needs to be in place for broad-scale FAIR data practice.&lt;/p&gt;
+&lt;p&gt;Two of the FAIR principles suggest services that need to be in place; ways to &lt;em&gt;Find&lt;/em&gt; and &lt;em&gt;Access&lt;/em&gt; data. The I and R in FAIR are not something that can be encapsulated in a service, as such, rather they imply that data are well described for re-use and &lt;em&gt;Interoperation&lt;/em&gt; of systems and in &lt;em&gt;Reusable&lt;/em&gt; formats.&lt;/p&gt;
+&lt;p&gt;As it happens, there is a common infrastructure component which encapsulates &lt;em&gt;finding&lt;/em&gt;  data and &lt;em&gt;accessing&lt;/em&gt;; the repository.  Repositories are services which hold data and make it discoverable and accessible, with governance that ensures that data does not change without notice and is available for access over agreed time frames - sometimes with detailed access control.  Repositories may be general purpose or specialized around a particular type of data: gene sequences, maps, code, microscope images etc. They may also be ad-hoc - at a lab level they could be a well laid out, well managed file system.&lt;/p&gt;
+&lt;p&gt;Some well-funded disciplines have established global or national repositories and workflows for some or all of their data, notably physics and astronomy, bioinformatics, geophysical sciences, climate and marine science. Some of these may not be thought of by their community as repositories -  but according to our functional definition they are repositories, even if they are &amp;quot;just&amp;quot; vast shared file systems or databases where everyone knows what's what and data managers keep stuff organized. Also, some institutions have institutional data repositories but it is by no means common practice across the whole of the research sector that data find their way into any of these repositories.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remember: data storage is not all files-on-disks&lt;/strong&gt;. Researchers use a very wide range of tools which may make data inaccessible outside of the tool. Examples include: cloud-based research (lab) notebook systems in which data is deposited alongside narrative activity logs; large shared virtual laboratories where data are uploaded; Secure eResearch Platforms (SERPs) which allow access only via virtualized desktops with severely constrained data ingress and egress; survey tools; content management systems; digital asset management systems; email (yes, it's true some folks use email as project archives!); to custom-made code for a single experiment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Our general term for all of the infrastructures that researchers use for RDM day to day including general purpose storage is “workspaces”.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Many, if not most &lt;em&gt;workspaces&lt;/em&gt; do not have high levels of governance, and data may be technically or legally inaccessible over the long term. They should not be considered as suitable archives or repositories - hence our emphasis on making sure that data can be described and deposited into general purpose, standards-driven repository services.&lt;/p&gt;
+&lt;p&gt;The following is a snapshot of the core parts of an idealised FAIR data service. It shows the activities that researchers undertake, acquiring data from observations, instruments and by reuse, conducting analysis and data description in a working environment, and depositing results into one or more repositories.&lt;/p&gt;
+&lt;p&gt;We wanted it to show:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;That infrastructure services are required for research data management - researchers don't just &amp;quot;Archive&amp;quot; their data without support - they and those who will reuse data need repository services in some form.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;That research is conducted using workspace environments - more infrastructure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/new-diagram.png" alt="A work-in-progress sketch of FAIR research data management." &gt;
+&lt;p&gt;We (by which I mean Marco) will make this prettier soon.&lt;/p&gt;
+&lt;p&gt;And yes, there is a legitimate cycle in this diagram it's the FIND -&amp;gt; ACCESS -&amp;gt; REUSE -&amp;gt; DESCRIBE -&amp;gt; DEPOSIT cycle that's inherent in the FAIR lifestyle.&lt;/p&gt;
+&lt;p&gt;Things that might still be missing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Some kind of rubbish bin - to show that workspaces are ephemeral and working data that doesn't make the cut may be culled, and that some data is held only for a time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What do you think's missing?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thoughts anyone?  Comments below or take it up on twitter with @ptsefton.&lt;/p&gt;
+&lt;p&gt;(I have reworked parts of a document that Marco and I have been working on with Guido Aben for this document, and thanks to recent graduate Florence Sefton for picking up typos and sense-checking).&lt;/p&gt;
+</content><category term="Research Data Management"></category></entry><entry><title>Research Data Management looking outward from IT</title><link href="http://ptsefton.com/2021/01/28/rdm4aero/index.html" rel="alternate"></link><published>2021-01-28T00:00:00+01:00</published><updated>2021-01-28T00:00:00+01:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-01-28:/2021/01/28/rdm4aero/index.html</id><summary type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
 &lt;p&gt;Carina asked:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It would be really interesting to find out what is happening in the research data management space …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
@@ -1822,101 +1908,4 @@ Michael Lynch
 &lt;p&gt;See also my presentation on &lt;a href="/2019/06/21/DataCrate-OR2019.htm"&gt;DataCrate&lt;/a&gt; which introduces RO-Crate.&lt;/p&gt;
 &lt;/section&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;hr/&gt;
-</content><category term="Repositories"></category></entry><entry><title>Trip Report - Open Repositories 2019 - Peter Sefton</title><link href="http://ptsefton.com/2019/07/01/OR2019/index.html" rel="alternate"></link><published>2019-07-01T00:00:00+02:00</published><updated>2019-07-01T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2019-07-01:/2019/07/01/OR2019/index.html</id><summary type="html">&lt;p&gt;This is &lt;a href="https://eresearch.uts.edu.au/2019/07/01/OR2019.htm"&gt;reposted from the UTS eResearch Website&lt;/a&gt; with minor edits.&lt;/p&gt;
-&lt;p&gt;This year Open Repositories was in Hamburg, Germany. I was funded by my employer the
-University of Technology Sydney to attend. I gave two presentations, one on &lt;a href="/2019/07/01/OCLF.htm"&gt;our work on scalable research data repositories&lt;/a&gt;
-and other on &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;research data …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is &lt;a href="https://eresearch.uts.edu.au/2019/07/01/OR2019.htm"&gt;reposted from the UTS eResearch Website&lt;/a&gt; with minor edits.&lt;/p&gt;
-&lt;p&gt;This year Open Repositories was in Hamburg, Germany. I was funded by my employer the
-University of Technology Sydney to attend. I gave two presentations, one on &lt;a href="/2019/07/01/OCLF.htm"&gt;our work on scalable research data repositories&lt;/a&gt;
-and other on &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;research data packaging&lt;/a&gt; and ran a workshop, more on
-which is below.&lt;/p&gt;
-&lt;p&gt;This year was an intense, focussed conference for me. &lt;a href="http://ptsefton.com/2018/07/10/or2018.htm"&gt;Last year&lt;/a&gt;
-I had a few take-aways from presentations; this year was one of those
-conferences where the value was in the conversations and in getting down to
-work.&lt;/p&gt;
-&lt;h1&gt;Keynotes&lt;/h1&gt;
-&lt;p&gt;I didn't get much out of the opening Keynote, from &lt;a href="https://jeffgothelf.com/"&gt;Jeff Gothelf&lt;/a&gt;, who's
-apparently a star in the User Experience (UX) world. It was a pretty generic
-presentation, with some well timed jokes but not very &lt;em&gt;useful&lt;/em&gt;. Ok, UX is
-important, but when your examples are coming from well-resourced projects what
-are resource-constrained repository workers supposed to do to improve UX?&lt;/p&gt;
-&lt;p&gt;My mate &lt;a href="https://cottagelabs.com/"&gt;Richard Jones&lt;/a&gt; from Cottage Labs asked a great question about how we can improve
-the UX for developers using APIs but didn't get much of an answer.&lt;/p&gt;
-&lt;p&gt;Even though I would have preferred a more on-topic keynote, it did spark a
-number of useful conversations in the breaks, including some I had with Richard
-about how we can build developer-friendly services. I always learn lots from Mr
-Jones at OR.&lt;/p&gt;
-&lt;p&gt;The closing Keynote was much more audience-appropriate. &lt;a href="https://orcid.org/0000-0003-1613-5981"&gt;Heather Piwowar&lt;/a&gt;, who
-has, like, direct User Experience of Open Repositories gave us all a kind of
-career-affirming hug; pointing out that the repository people in the room are
-helping to build huge database of open scholarly information.&lt;/p&gt;
-&lt;p&gt;We put up and maintain the content, and her &lt;a href="https://unpaywall.org/"&gt;Unpaywall&lt;/a&gt; site finds it:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;An open database of 23,565,946 free scholarly articles.
-We harvest Open Access content from over 50,000 publishers and repositories, and make it easy to find, track, and use.
-&lt;a href="https://unpaywall.org/"&gt;https://unpaywall.org/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;She reckons our
-time is about to come - that we're at the take-off point for hockey-stick
-growth. Here's her presentation
-&lt;a href="https://www.slideshare.net/hpiwowar/open-repositories-2019-closing-keynote-heather-piwowar"&gt;The Breakout Moment for open repositories is now&lt;/a&gt;.
-On topic, useful and inspiring.&lt;/p&gt;
-&lt;h1&gt;Workshop in data packaging&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://orcid.org/0000-0001-8131-2150"&gt;Eoghan Ó Carragáin&lt;/a&gt;, &lt;a href="https://orcid.org/0000-0001-9842-9718"&gt;Stian Soiland-Reyes&lt;/a&gt; and I ran an all-day workshop on Data Packaging
-which was well attended - we ran through the background in the morning, what
-data packaging is all about, why it's important and Eoghan gave us a tour of
-some of the major efforts going on in the space at the moment. Stian gave more
-detail on Research Objects, and &lt;a href="https://orcid.org/0000-0001-9530-627X"&gt;Marina  Soares E Silva&lt;/a&gt; talked about recent developments with Mendeley Data.&lt;/p&gt;
-&lt;p&gt;We structured the discussion around these themes or functions of Research Data Packaging:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Strategic: Transform scholarly practice, distribute the stuff that makes
-research complete, focus on redo-ability and reproducibility (eg Research
-Object) - Self-documenting: Describe the stuff in a programmer friendly way
-(eg FD, DataCrate), with a view to making it interoperable (eg DataCrate, RO),
-try to ensure Reusability (RO) - add human readable HTML (DataCrate,
-DataSpice)&lt;/li&gt;
-&lt;li&gt;Self-contained: Bundle stuff (eg Zip, TAR, .dmg, RAR).&lt;/li&gt;
-&lt;li&gt;Safe: Make sure the stuff is what it’s supposed to be using checksums (eg BagIt, FD) &amp;amp; Preservation / archival practice&lt;/li&gt;
-&lt;li&gt;Serialization Syntax: XML (Legacy systems), JSON (FD) Linked Data (RDF, JSON-LD eg RO, DataCrate)&lt;/li&gt;
-&lt;li&gt;Schemas - which one(s) to use?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We did a quick pass on these topics in the morning, looped back to the most
-popular ones in the afternoon - has some impromptu lightning talks and finished
-up with a session where we solicited Use Cases to go into the &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;RO-Crate&lt;/a&gt; process
-Thanks go to &lt;a href="https://orcid.org/0000-0003-1541-5631"&gt;Paul Walk&lt;/a&gt; and &lt;a href="https://orcid.org/0000-0003-3311-3741"&gt;Neil Jefferies&lt;/a&gt; both of whom I've known for a
-decade or so for showing up and contributing enthusiastically.&lt;/p&gt;
-&lt;h1&gt;My conference&lt;/h1&gt;
-&lt;img alt='Hotel converted from an old water tower' src='http://ptsefton.com/2019/07/01/OR2019/movenpick.jpg'&gt;
-&lt;p&gt;I was lucky in my choice of converted water tower to stay in. I got to have
-breakfast with &lt;a href="https://orcid.org/0000-0003-1419-2405"&gt;Martin Fenner&lt;/a&gt; from DataCite (we met back in 2011
-at the first Beyond the PDF meeting). He was on the list for our Monday workshop
-but couldn't make it. I filled Martin in on what we're doing with &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;RO-Crate&lt;/a&gt; - how we're using Schema.org metadata in JSON-LD. Martin was completely on-board
-with using Schema.org, and told me that if we have that, then using the DataCite
-XML format would probably be redundant. If that works out then that simplifies
-things - we need to talk more about this on the RO-Crate Project.&lt;/p&gt;
-&lt;p&gt;Martin also seemed to me to be frustrated that there are still a number of
-packaging efforts with no clear leader - simple, I said, just endorse RO-Crate
-when it comes out as DataCite approved :)&lt;/p&gt;
-&lt;p&gt;Stian and Eoghan and I took the opportunity to get stuck in to editing the
-RO-Crate draft, and getting to know each other a bit - forging a strong editorial team for &lt;a href="/2019/07/01/DataCrate-OR2019.htm"&gt;RO-Crate&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I chaired a short-presentation session (7 minutes, 24 slides) - I like to get
-the presenters all down on stage at the end, get them to re-introduce
-themselves, give them a minute to tell us anything they forgot in the heat of
-presentation then get a discussion going.&lt;/p&gt;
-&lt;img alt="The session I chaired" src="http://ptsefton.com/2019/07/01/OR2019/lecture-hall.jpg"&gt;
-&lt;h1&gt;Hamburg&lt;/h1&gt;
-&lt;img alt='A pretty shop' src='http://ptsefton.com/2019/07/01/OR2019/alsterhaus.jpg'&gt;
-&lt;img alt='Stickers on rubbish bins' src='http://ptsefton.com/2019/07/01/OR2019/stickers.jpg'&gt;
-&lt;p&gt;Hamburg's a great place to wander around - lots of parks and lots of stickers on
-garbage bins  that I really liked.&lt;/p&gt;
-&lt;img alt='Wedding photo in a park' src='http://ptsefton.com/2019/07/01/OR2019/gardens.jpg'&gt;
-&lt;img alt='"Antifa Zone" sticker on a road sign' src='http://ptsefton.com/2019/07/01/OR2019/antifa.jpg'&gt;
-&lt;p&gt;Hamburg harbour, where we went for the conference dinner boat ride, is a giant
-metaphor for Data Packaging. Container terminals as far as the eye can see being
-loaded and unloaded by giant robot-cranes. Shipping containers are, of course, a
-triumph of standardization and here you could see them being moved around at
-industrial scale - just like we're going to do using RO-Crate for Research Data.&lt;/p&gt;
-&lt;img alt='Shipping containers and a wind turbine, Hamburg harbour' src='http://ptsefton.com/2019/07/01/OR2019/containers.jpg'&gt;
-</content><category term="DataCrate"></category></entry></feed>
+</content><category term="Repositories"></category></entry></feed>
