@@ -41,11 +41,28 @@ body {
 }
 figure {
    margin-bottom: 30px;
+  text-align: center;
 }
 
 blockquote {
     font-size: 16px;
     background-color: rgb(245, 245, 204);
+}
+
+
+.video-container {
+    position: relative;
+    width: 80%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* unvisited link */
@@ -200,7 +217,7 @@ ptsefton.com            </a>
         <li><a href="http://ptsefton.com/author/michael-lynch.html">Michael Lynch</a> (1)</li>
         <li><a href="http://ptsefton.com/author/peter-petie-sefton.html">Peter (Petie) Sefton</a> (234)</li>
         <li><a href="http://ptsefton.com/author/peter-sefton.html">Peter Sefton</a> (3)</li>
-        <li><a href="http://ptsefton.com/author/ptsefton.html">ptsefton</a> (218)</li>
+        <li><a href="http://ptsefton.com/author/ptsefton.html">ptsefton</a> (219)</li>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -259,6 +276,11 @@ ptsefton.com            </a>
                     <li class="list-group-item">
                         <a href="http://ptsefton.com/category/misc.html">
                             <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/music.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Music
                         </a>
                     </li>
                     <li class="list-group-item">

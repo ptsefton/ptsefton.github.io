@@ -41,11 +41,28 @@ body {
 }
 figure {
    margin-bottom: 30px;
+  text-align: center;
 }
 
 blockquote {
     font-size: 16px;
     background-color: rgb(245, 245, 204);
+}
+
+
+.video-container {
+    position: relative;
+    width: 80%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* unvisited link */
@@ -748,6 +765,18 @@ ptsefton.com            </a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-music">Music <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-music" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2021-04-08T00:00:00+02:00">Thu 08 April 2021</time></span> <a href="http://ptsefton.com/2021/04/08/lockdowns1/index.html">What did you do in the lockdowns PT? Part 1 - music videos</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse-repositories">Repositories <span class="badge pull-right">17</span></a>
                     </h4>
                 </div>
@@ -881,6 +910,11 @@ ptsefton.com            </a>
                     <li class="list-group-item">
                         <a href="http://ptsefton.com/category/misc.html">
                             <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/music.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Music
                         </a>
                     </li>
                     <li class="list-group-item">

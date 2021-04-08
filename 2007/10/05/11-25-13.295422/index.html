@@ -45,11 +45,28 @@ body {
 }
 figure {
    margin-bottom: 30px;
+  text-align: center;
 }
 
 blockquote {
     font-size: 16px;
     background-color: rgb(245, 245, 204);
+}
+
+
+.video-container {
+    position: relative;
+    width: 80%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* unvisited link */
@@ -389,6 +406,11 @@ you're going to be seeing my draft blog posts.</p>
                     <li class="list-group-item">
                         <a href="http://ptsefton.com/category/misc.html">
                             <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/music.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Music
                         </a>
                     </li>
                     <li class="list-group-item">
