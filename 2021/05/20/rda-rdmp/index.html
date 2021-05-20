@@ -13,13 +13,13 @@
 <link rel="canonical" href="http://ptsefton.com/2021/05/20/rda-rdmp/index.html">
 
         <meta name="author" content="ptsefton" />
-        <meta name="description" content="I was invited to speak at an RDA (Research Data Alliance) &#39;Infrastructure and Data Management Plans (DMPs)&#39; webinar on May 18th as part of a panel talking about Data Management Plans and infrastructure. Here are my slides for my five minutes of RDA-fame - with some notes about what I said …" />
+        <meta name="description" content="[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a …" />
 
         <meta property="og:site_name" content="ptsefton.com" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Infrastructure and what do we really want for DMPs"/>
         <meta property="og:url" content="http://ptsefton.com/2021/05/20/rda-rdmp/index.html"/>
-        <meta property="og:description" content="I was invited to speak at an RDA (Research Data Alliance) &#39;Infrastructure and Data Management Plans (DMPs)&#39; webinar on May 18th as part of a panel talking about Data Management Plans and infrastructure. Here are my slides for my five minutes of RDA-fame - with some notes about what I said …"/>
+        <meta property="og:description" content="[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a …"/>
         <meta property="article:published_time" content="2021-05-20" />
             <meta property="article:section" content="Research Data Management" />
             <meta property="article:author" content="ptsefton" />
@@ -248,7 +248,8 @@ ptsefton.com            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>I was invited to speak at an RDA (Research Data Alliance) 'Infrastructure and Data Management Plans (DMPs)' webinar on May 18th as part of a panel talking about Data Management Plans and infrastructure.</p>
+                <p>[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a W A L K I am beginning to think he didn't read it at all)]</p>
+<p>I was invited to speak at an RDA (Research Data Alliance) 'Infrastructure and Data Management Plans (DMPs)' webinar on May 18th as part of a panel talking about Data Management Plans and infrastructure.</p>
 <p>Here are my slides for my five minutes of RDA-fame - with some notes about what I said, some things I forgot to say and some things I learned.</p>
 <p>Liz Stokes from ARDC asked me:</p>
 <blockquote>
@@ -264,8 +265,8 @@ ptsefton.com            </a>
 <li>A commercial arrangement like a subscription where downloads are available for a certain time?</li>
 </ul>
 <p>A repository would not need to worry about all of that if we had a mechanism to pass a licence URL to a licence service and let <em>it</em> sort it out - authenticate the user, then authorize data access or not based on their membership of a group.</p>
-<p>Before I spoke John Chodacki from the  <a href="https://cdlib.org/">Califormnia Digital Library</a>, standing in for Maria Praetzellis, talked about some work they're doing with field research stations and data management plans, using a Data Management Planning tool called DMPTool. One of Maria's slides showed a graph of how a data management plan links to publications, organisations, funders, datasets and you guessed it, <em>people</em>, identified with standard researcher IDs - ORCIDs. Given that applications like DMPTool, and our home-grown ReDBox Data Management Platform are keeping track of both researcher (and potentially research participant) cohorts and data deposits - these applications might ALSO be able to do the authentication and authorization steps for</p>
-<p>My final slide I had prepared was about the need for cohort or group management services so we can give groups of people a license to access certain data. I have been sketching out potential software architectures for a couple of client projects that deal with this at internet-scale via standard ways of treating licences, it is worth exploring how that group management could be made a developed in Data Management (Planning) applications.</p>
+<p>Before I spoke John Chodacki from the  <a href="https://cdlib.org/">Califormnia Digital Library</a>, standing in for Maria Praetzellis, talked about some work they're doing with field research stations and data management plans, using a Data Management Planning tool called DMPTool. One of Maria's slides showed a graph of how a data management plan links to publications, organisations, funders, datasets and you guessed it, <em>people</em>, identified with standard researcher IDs - ORCIDs. Given that applications like DMPTool, and our home-grown ReDBox Data Management Platform are keeping track of both researcher (and potentially research participant) cohorts and data deposits - these applications might ALSO be able to do the authentication and authorization steps for other services which provision things; repositories that provision data and workspaces that provision services.</p>
+<p>My final slide I had prepared was about the need for cohort or group management services so we can give groups of people a license to access certain data. I have been sketching out potential software architectures for a couple of client projects that deal with this at internet-scale via standard ways of treating licences, it is worth exploring how that group management could be  developed in Data Management (Planning) applications.</p>
 <h2>The talk</h2>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide1.png' alt='
@@ -321,13 +322,13 @@ National Storage Resources
 2
 Possible Project Components
 ' title='3' border='1'  width='85%'/&gt;</p>
-<p>This is a slide sent to be by Ian Duncan from the ARDC “Data Lifecycle” project, circa 2016. Note the box top left labelled “Provisioning” - this was an exciting vision which we picked up and implemented at UTS. We added provisioning services to the open source RedBox research data management platform that we just heard about from Andrew, which are now available to the whole community.</p>
+<p>This is a slide sent to me by Ian Duncan from the ARDC “Data Lifecycle” project, circa 2016. Note the box top left labelled “Provisioning” - this was an exciting vision which we picked up and implemented at UTS. We added provisioning services to the open source RedBox research data management platform that heard about from Andrew Brazzati who talked just before me, which are now available to the whole community.</p>
 <p>The Data Lifecycle project ”morphed into” (Ian’s Words)  the  <a href="https://www.raid.org.au/">Research Activity Identifier Service</a> offered by ARDC - this addresses part, but not all of the Data Lifecycle vision - being able to identify activities is OK but what we really need is a way for cohorts of researchers, their support staff and other participants to be able to access resources. I’ll come back to this point.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide4.png' alt='
 <p>' title='4' border='1'  width='85%'/&gt;</p>
-<p>I didn’t include this in my presentation - but two of the other presenters did! It was drawn by Gerrad Barthelot at UTS following an architecture workshop with the eResearch team - building on the idea of Provisioning as the core useful service - which we leared about partly from the Data Lifecycle project.</p>
+<p>I didn’t include this in my presentation - but two of the other presenters did! It was drawn by Gerrad Barthelot at UTS following an architecture workshop with the eResearch team - building on the idea of Provisioning as the core useful service - which we learned about partly from the Data Lifecycle project.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide5.png' alt='
@@ -382,9 +383,9 @@ Local Data
 🔬 https://en.wikipedia.org/wiki/Scanning_electron_microscope
 RO-Crate
 ' title='7' border='1'  width='85%'/&gt;</p>
-<p>One area I'm putting time into is standardization for data interchange, particularly standardizing ways fo turing amporphouse data into well described, packaged Digital Objects that can be Reused and moved between Interoperable systems (the I and R in FAIR) - via the <a href="https://www.researchobject.org/ro-crate/">RO-Crate spec</a></p>
-<p>RO-Crate s method for describing a dataset as a (FAIR) Digital Object using a <strong>single linked-data metadata document</strong> that can be put in a zip file or download. This is a key enabler for infrastructure that allows for Interop; the I in FAIR.</p>
-<p>RO-Crate is seeing strong uptake in some communities and is being built in to systems such as <a href="https://about.workflowhub.eu/How-to-make-a-workflow-RO-crate/">Workflow Hub</a>, <a href="https://news.aarnet.edu.au/from-endangered-languages-to-the-science-mesh-australian-researchers-are-helping-to-design-and-build-next-gen-petascale-fair-data-repositories/">PARADISEC</a>, a new project I'm going to be involved in for Humanities and Social Science Data in Australia - more on that soon, and the via European Open Science Cloud (see the next slide).</p>
+<p>One area I'm putting time into is standardization for data interchange, particularly standardizing ways for turning piles of amorphous data into well described, packaged Digital Objects that can be Reused and moved between Interoperable systems (the I and R in FAIR) - via the <a href="https://www.researchobject.org/ro-crate/">RO-Crate spec</a></p>
+<p>RO-Crate is a method for describing a dataset as a (FAIR) Digital Object using a <strong>single linked-data metadata document</strong> that can be put in a zip file or download. This is a key enabler for infrastructure that allows for Interop; the I in FAIR.</p>
+<p>RO-Crate is seeing strong uptake in some communities and is being built in to systems such as <a href="https://about.workflowhub.eu/How-to-make-a-workflow-RO-crate/">Workflow Hub</a>, <a href="https://news.aarnet.edu.au/from-endangered-languages-to-the-science-mesh-australian-researchers-are-helping-to-design-and-build-next-gen-petascale-fair-data-repositories/">PARADISEC</a>, a new project I'm going to be involved in for Humanities and Social Science Data in Australia - more on that soon, and via the European Open Science Cloud (see the next slide).</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide8.png' alt='
