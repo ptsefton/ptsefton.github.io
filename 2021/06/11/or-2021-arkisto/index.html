@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Arkisto: a repository based platform for managing all kinds of research data - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://ptsefton.com/2021/06/11/or-2021-arkisto/index.html">
+
+        <meta name="author" content="Peter (Petie) Sefton" />
+        <meta name="description" content="University of Technology Sydney The University of Melbourne &#39; title=&#39;0&#39; border=&#39;1&#39; width=&#39;85%&#39;/&gt; This presentation by Peter Sefton, Marco La Rosa and Michael Lynch was delivered at Open Repositories 2021 conference on 2021-06-10 (Australian time) - Marco La Rosa did most of the talking, with help from Michael Lynch. We want to emphasise that this presentation is based on the FAIR principles that data …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Arkisto: a repository based platform for managing all kinds of research data"/>
+        <meta property="og:url" content="http://ptsefton.com/2021/06/11/or-2021-arkisto/index.html"/>
+        <meta property="og:description" content="University of Technology Sydney The University of Melbourne &#39; title=&#39;0&#39; border=&#39;1&#39; width=&#39;85%&#39;/&gt; This presentation by Peter Sefton, Marco La Rosa and Michael Lynch was delivered at Open Repositories 2021 conference on 2021-06-10 (Australian time) - Marco La Rosa did most of the talking, with help from Michael Lynch. We want to emphasise that this presentation is based on the FAIR principles that data …"/>
+        <meta property="article:published_time" content="2021-06-11" />
+            <meta property="article:section" content="Repositories" />
+            <meta property="article:author" content="Peter (Petie) Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://ptsefton.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://ptsefton.com/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://ptsefton.com/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ptsefton.com/theme/css/style.css" type="text/css"/>
+
+        <link href="http://ptsefton.com/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+body {
+  font-size: 16px;
+}
+
+.figure {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.caption {
+  font-style: italic bold;
+  text-align: center;
+
+}  
+
+
+blockquote {
+    font-size: 16px;
+    font-style: bold;
+    background-color: rgb(250, 250, 0);
+}
+
+
+.video-container {
+    margin: auto; /* make em equal */
+    text-align:center;
+    }
+
+
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://ptsefton.com/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://ptsefton.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://ptsefton.com/2021/06/11/or-2021-arkisto/index.html"
+                       rel="bookmark"
+                       title="Permalink to Arkisto: a repository based platform for managing all kinds of research data">
+                        Arkisto: a repository based platform for managing all kinds of research data
+
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2021-06-11T00:00:00+02:00"> Fri 11 June 2021</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide0.png' alt='Arkisto: a repository based platform for managing all kinds of research data
+Peter Sefton1, Marco La Rosa2, Michael Lynch1
+<p>University of Technology Sydney
+The University of Melbourne
+' title='0' border='1'  width='85%'/&gt;</p>
+<p>This presentation by Peter Sefton, Marco La Rosa and Michael Lynch was delivered at <a href="https://www.openrepositories.org/">Open Repositories</a> 2021 conference on 2021-06-10 (Australian time) - Marco La Rosa did most of the talking, with help from Michael Lynch.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide1.png' alt='This presentation is 
+FAIR
+driven
+' title='1' border='1'  width='85%'/>
+<p>We want to emphasise that this presentation is based on the <a href="https://en.wikipedia.org/wiki/FAIR_data">FAIR principles</a> that data should be Findable, Accessible, Interoperable and Reusable.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide2.png' alt='
+<p>Repositories: institutional, domain or both</p>
+<p>Find / Access services
+Research Data Management Plan
+Workspaces:</p>
+<p>working storage
+domain specific tools
+domain specific services
+collect
+describe
+analyse
+Reusable, Interoperable
+data objects
+deposit early
+deposit often
+Findable, Accessible, Reusable data objects
+reuse data objects
+V1.1  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>🗑️
+Active cleanup processes  workspaces considered ephemeral
+🗑️
+Policy based data management
+' title='2' border='1'  width='85%'/&gt;</p>
+<p>This schematic is a high level view of research data management showing workspaces enabling research activities (collect, analyse, describe) linked to repositories in a continuous cycle. This is similar to the software development model of commit early and commit often but in this case, deposit well described objects often and re-use as required. Workspaces can include systems like Redcap, OwnCloud and other active work systems and they should be treated as ephemeral and dirty. Repositories can include systems like Zenodo and Figshare where FAIR objects are managed for long term preservation and re-use.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide3.png' alt='Q. How can we  “FIRST LOOK AFTER THE DATA”
+🐩
+' title='3' border='1'  width='85%'/>
+<p>Data must be well described in open standards
+Data not locked up
+We know it’s portable between applications
+Data storage layer is COMPLETELY separate from the services layer(s)
+So how? Use standards.... Weren’t you wondering about the picture of a STANDARD Poodle?</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide4.png' alt='
+<p>ANSWER:  OCFL<br />
+' title='4' border='1'  width='85%'/&gt;</p>
+<p>UTS has been an early adopter of the OCFL (Oxford Common File Layout) specification - a way of storing file sustainably on a file system (coming soon: s3 cloud storage) so it does not need to be migrated. I [presented on this at the Open Repositories conference] (https://eresearch.uts.edu.au/2019/07/01/OCLF.htm). PARADISEC has built a scalable and performant demonstrator using OCFL.
+Completeness, so that a repository can be rebuilt from the files it stores
+Parsability, both by humans and machines, to ensure content can be understood in the absence of original software
+Robustness against errors, corruption, and migration between storage technologies
+Versioning, so repositories can make changes to objects allowing their history to persist
+Storage diversity, to ensure content can be stored on diverse storage infrastructures including conventional filesystems and cloud object stores</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide5.png' alt='
+Repository (Find / Access) services
+CS3MESH4EOSC
+FAIR Description Service
+Publish stable FAIR digital objects
+(Research Object Crates)
+Describe data sets
+future connectors
+V1.0 © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/ 
+' title='5' border='1'  width='85%'/>
+<p>This is an example of service connection in the CS3MESH4EOSC. In this schematic we can see a FAIR Description Service forming the bridge between the CS3MESH4EOSC services (workspaces) and various repositories. A FAIR description service uses linked-data to describe data and its context. The next slide shows some of what you might want to add to a Digital Object (data package) to make it Findable, Interoperable and Reusable.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide6.png' alt='☁️
+📂
+<p>📄
+ID? Title? Description?</p>
+<p>👩‍🔬👨🏿‍🔬Who created this data?
+📄What parts does it have?
+📅 When?
+🗒️ What is it about?
+♻️ How can it be reused?
+🏗️ As part of which project?
+💰 Who funded it?
+⚒️ How was it made?
+Addressable resources
+Local Data
+👩🏿‍🔬 https://orcid.org/0000-0001-2345-6789
+🔬 https://en.wikipedia.org/wiki/Scanning_electron_microscope
+' title='6' border='1'  width='85%'/&gt;</p>
+<p>RO-Crate is method for describing a dataset as a digital object using a <strong>single linked-data metadata document</strong></p>
+<ul>
+<li>Lightweight approach to packaging research data with metadata - the examples here aid in the F, A, I and R in FAIR. For example “how can it be reused” means a data licence that specifies who can access, use and distribute data. And “How was it made” is important for reuse and interoperability - think file formats, resolution etc.</li>
+<li>Community effort - 40+ contributors from AU, EU and US.</li>
+<li>Can aggregate files and/or any URI-addressable content, with contextual information to aid decisions about re-use. (Who What When Where Why How).</li>
+<li>Uses Schema.org as the main ontology, with domain-specific extensions</li>
+<li>Has human readable summaries of datasets</li>
+</ul>
+<p>Sefton is an Editor of the specification: http://www.researchobject.org/ro-crate/</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide7.png' alt='FAIR Digital Object Export Service
+FAIR Description Service
+Repositories
+CS3MESH4EOSC
+Specific export coded for each service
+Export for curation
+Describe FAIR
+Digital Object packages (RO-Crate)
+Publish stable FAIR Digital Objects
+(RO-Crate)
+Check out for reuse
+(Research Object Crates)
+V1.1 © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/ 
+' title='7' border='1'  width='85%'/>
+<p>When your data is well described you can start thinking about higher level processes and workflows connecting workspaces to repositories. And your services can evolve over time as requirements change and systems improve without needing to transform your data first. Too often research data management infrastructures get caught up in the specific technologies / systems to be implemented without considering how an ecosystem of services can work as whole. If the previous architecture slide was a low level view of the CS3MESH4EOSC implementation then this is a higher level view of a possible architecture that connects workspaces to repositories.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide8.png' alt='Identity: authentication, authorisation and group services 
+workspaces
+repositories
+V0.1 DRAFT  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/ 
+<p>Provisioning
+' title='8' border='1'  width='85%'/&gt;</p>
+<p>Going up another few levels we can see that the picture is incomplete. The environment of repositories and workspaces needs more services to actually form a functional system for end users. Going forward we need to think about how to do cross-service authentication of parties and authorization of access to resources,  and group membership; licensing, environment provisioning etc. In this way we can tie together the active workspaces and repository services into a cohesive application for end users.</p>
+<p>(See a <a href="/2021/06/11/faira">blog post from Peter Sefton floating ideas about how we might close this gap specifically for data-access licenses</a>).</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide9.png' alt='' title='9' border='1'  width='85%'/>
+<p>Here’s a schematic of just such an environment at UTS - this shows how the the Stash research data management system, which is an instance of <a href="https://www.redboxresearchdata.com.au/">ReDBox</a>, orchestrates workspaces and connects them to a research data catalogue (which is actually now a repository).</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide10.png' alt='Who is doing this?
+' title='10' border='1'  width='85%'/>
+<p>So who is doing this? The PARADISEC (https://paradisec.org.au) project has built a demonstrator (https://mod.paradisec.org.au) using these technologies that is scaleable and performant with approximately 70TB of data!</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide11.png' alt='TOOLS 🧰 ⚒️ and SPECS
+OCFL Spec: https://ocfl.io/
+Research Object Crate (RO-Crate) Spec: http://www.researchobject.org/ro-crate
+UTS: https://github.com/UTS-eResearch/ro-crate-js
+OCFL JS
+UTS OCFL JS Implementation: https://github.com/uts-eresearch/ocfl-js
+CoEDL OCFL JS implementation: https://github.com/CoEDL/ocfl-js
+UTS RO Crate / SOLR portal: https://github.com/uts-eresearch/oni-express
+Describo: 
+https://github.com/Arkisto-Platform/describo 
+https://github.com/Arkisto-Platform/describo-online
+https://github.com/Arkisto-Platform/describo-data-packs
+CoEDL Modern PARADISEC: https://github.com/CoEDL/modpdsc
+CoEDL OCFL tools: https://github.com/CoEDL/ocfl-tools
+' title='11' border='1'  width='85%'/>
+<p>And there’s an ever growing ecosystem of tools and libraries.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide12.png' alt='' title='12' border='1'  width='85%'/>
+<p>Describo is an application to build RO-Crates. Installable as a desktop application it simplifies the process of packaging up data as RO-Crates.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide13.png' alt='https://arkisto-platform.github.io/
+' title='13' border='1'  width='85%'/>
+<p>The Arkisto website <a href="https://arkisto-platform.github.io/">https://arkisto-platform.github.io/</a>covers all the things we talked about here and more; it has links to all the Standards used, a growing number of case studies, abstract use cases and links to tools; repository.</p>
+</section>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'or-2021-arkisto';
+                var disqus_url = 'http://ptsefton.com/2021/06/11/or-2021-arkisto/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="http://ptsefton.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/music.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Music
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+  
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://ptsefton.com/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://ptsefton.com/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://ptsefton.com/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
