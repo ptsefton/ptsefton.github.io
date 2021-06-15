@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="http://ptsefton.com/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>http://ptsefton.com/</id><updated>2021-06-11T00:00:00+02:00</updated><entry><title>FIIR Data Management; Findable Inaccessible Interoperable and Reusable?</title><link href="http://ptsefton.com/2021/06/11/faira/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/faira/index.html</id><summary type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
-&lt;p&gt;I am posting this now because I have joined a pair of related projects as a senior technical advisor and an we will …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
+&lt;p&gt;[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]&lt;/p&gt;
+&lt;p&gt;I am posting this now because …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
+&lt;p&gt;[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]&lt;/p&gt;
 &lt;p&gt;I am posting this now because I have joined a pair of related projects as a senior technical advisor and an we will have to look at access-authorization to data on both - licenses will vary from open, to click-through agreements, to complex cultural restrictions such as &lt;a href="https://publish.illinois.edu/commonsknowledge/2017/09/07/an-introduction-to-traditional-knowledge-labels-and-licenses/#:~:text=Traditional%20knowledge%2C%20or%20TK%2C%20labels,data%20management%20and%20presentation%20strategies."&gt;TK Licenses&lt;/a&gt;;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://doi.org/10.47486/PL074"&gt;Australian Text Analytics Platform (ATAP)&lt;/a&gt;&lt;/li&gt;
@@ -13,7 +15,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;R1.1. (Meta)data are released with a clear and accessible data usage licence&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;The licence might say (in your local natural language) &amp;quot;Members of international research project XYX can access this dataset&amp;quot;. Or &amp;quot;contact us for a specific licence (and we'll add you to a license-holder group if approved)&amp;quot;.&lt;/p&gt;
+&lt;p&gt;The licence might say (in your local natural language) &amp;quot;Members of international research project XYX can access this dataset&amp;quot;. Or &amp;quot;contact us for a specific licence (and we'll add you to a license-holder group if approved)&amp;quot;. [Update: 2021-06-16 Or This content is licensed to an individual ID]&lt;/p&gt;
 &lt;p&gt;Now the dataset can be deposited in a repository, which will take care of &lt;em&gt;some of&lt;/em&gt; the FAIR principles for you including the F-word stuff.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;h2&gt;Findable&lt;/h2&gt;
@@ -46,6 +48,7 @@
 &lt;p&gt;Question is, could we do something like this at national or global scale?&lt;/p&gt;
 &lt;p&gt;We are part of the way there - we can authenticate users in a number of ways, eg by the Australian Access Federation (&lt;a href="https://aaf.edu.au/"&gt;AAF&lt;/a&gt;) and equivalents around the world, and there are protocols that allow a service to authenticate using Google, Facebook, Github et al. These all rely on variants of a pattern where a user of service &lt;code&gt;A&lt;/code&gt; is redirected to an authentication service &lt;code&gt;B&lt;/code&gt; where they put in their password or a one-time key, and whatever other mechanism the IT department deem necessary, and then are redirected back to service &lt;code&gt;A&lt;/code&gt; with an assurance from &lt;code&gt;B&lt;/code&gt; that this person is who they say they are.&lt;/p&gt;
 &lt;p&gt;What we don't have (as far as I'm aware) is a general purpose protocol for checking whether someone holds a licence. A repository could redirect a web user to a Group Licence Server and the user could transact with the licence service, authenticate themselves (in whatever way that licence service supports) and then the licence service could check it's internal lists of who has what licence and then return it. If the license is just a click through then the user could to the clicking - or request access,or pay money or whatever is required.&lt;/p&gt;
+&lt;p&gt;[Update: 2021-06-16 This class of service would also be useful for provisioning access to things other than data - such as compute or other workspace resources. Making this a standard protocol means that these services could be offered by different organizations, yes we want national ones but for some kinds of sensitive data a community might want to run and control their own.]&lt;/p&gt;
 &lt;p&gt;(We are aware of the work on FAIR Digital Objects and the &lt;a href="https://fairdo.org/"&gt;FDO Forum&lt;/a&gt; - it does say there that:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;FAIR Digital Objects (FDO) provide a conceptual and implementation framework to develop scalable cross-disciplinary capabilities, deal with the increasing data volumes and their inherent complexity, build tools that help to increase trust in data, create mechanisms to efficiently operate in the domain of scientific assertions, and promote data interoperability.&lt;/p&gt;
@@ -247,11 +250,11 @@ CoEDL OCFL tools: https://github.com/CoEDL/ocfl-tools
 &lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide0.png' alt='Research Object Crate (RO-Crate) Update
 Peter Sefton &amp;amp; Stian Soiland-Reyes 
 ' title='0' border='1'  width='85%'/&gt;
-&lt;p&gt;This was presented by Peter Sefton at the Open Repositories 2021 conference on 2021-06-10 (in Australia). RO-Crate has been presented at Open Repositories several times, including a workshop in 2019, so we won’t go through a very detailed introduction but we WILL start with with a quick introduction for …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;p&gt;This presentation by Peter Sefton and Stian Soiland-Reyes was presented by Peter Sefton at the Open Repositories 2021 conference on 2021-06-10 (in Australia). RO-Crate has been presented at Open Repositories several times, including a workshop in 2019, so we won’t go through a very detailed introduction but we WILL …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
 &lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide0.png' alt='Research Object Crate (RO-Crate) Update
 Peter Sefton &amp;amp; Stian Soiland-Reyes 
 ' title='0' border='1'  width='85%'/&gt;
-&lt;p&gt;This was presented by Peter Sefton at the Open Repositories 2021 conference on 2021-06-10 (in Australia). RO-Crate has been presented at Open Repositories several times, including a workshop in 2019, so we won’t go through a very detailed introduction but we WILL start with with a quick introduction for those who have not seen it before.&lt;/p&gt;
+&lt;p&gt;This presentation by Peter Sefton and Stian Soiland-Reyes was presented by Peter Sefton at the Open Repositories 2021 conference on 2021-06-10 (in Australia). RO-Crate has been presented at Open Repositories several times, including a workshop in 2019, so we won’t go through a very detailed introduction but we WILL start with with a quick introduction for those who have not seen it before.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
 &lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide1.png' alt='☁️
