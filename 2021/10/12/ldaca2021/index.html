@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://ptsefton.com/2021/10/12/ldaca2021/index.html">
+
+        <meta name="author" content="Peter Sefton" />
+        <meta name="description" content="This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online eResearch Australasia Conference on October 12th 2021. The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture. Here …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis"/>
+        <meta property="og:url" content="http://ptsefton.com/2021/10/12/ldaca2021/index.html"/>
+        <meta property="og:description" content="This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online eResearch Australasia Conference on October 12th 2021. The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture. Here …"/>
+        <meta property="article:published_time" content="2021-10-12" />
+            <meta property="article:section" content="Arkisto" />
+            <meta property="article:author" content="Peter Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://ptsefton.com/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://ptsefton.com/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://ptsefton.com/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ptsefton.com/theme/css/style.css" type="text/css"/>
+
+        <link href="http://ptsefton.com/feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+body {
+  font-size: 16px;
+}
+
+.figure {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.caption {
+  font-style: italic bold;
+  text-align: center;
+
+}  
+
+
+blockquote {
+    font-size: 16px;
+    font-style: bold;
+    background-color: rgb(250, 250, 0);
+}
+
+
+.video-container {
+    margin: auto; /* make em equal */
+    text-align:center;
+    }
+
+
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://ptsefton.com/" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://ptsefton.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://ptsefton.com/2021/10/12/ldaca2021/index.html"
+                       rel="bookmark"
+                       title="Permalink to Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis">
+                        Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
+
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2021-10-12T00:00:00+02:00"> Tue 12 October 2021</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online <a href="https://conference.eresearch.edu.au/2021-program/">eResearch Australasia Conference</a> on October 12th 2021.</p>
+<p>The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture.</p>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
+Peter Sefton &amp; Moises Sacal
+technical architecture for a
+' title='0' border='1'  width='85%'/>
+<p>Here is the abstract as submitted:</p>
+<p>The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are building towards a scalable and flexible language data and analytics commons. These projects will be  part of the Humanities and Social Sciences Research Data Commons (HASS RDC).</p>
+<p>The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander,  migrant and Pacific communities.</p>
+<p>The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artefacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations.</p>
+<p>In this presentation we will present the proposed architecture of the system, the principles that informed it and demonstrate the first version. Features of the solution include the use of the Arkisto Platform (presented at eResearch 2020), which leverages the Oxford Common File Layout. This enables storing complete version-controlled digital objects described using linked data with rich context via the Research Object Crate (RO-Crate) format. The solution features a distributed authorization model where the agency archiving data may be separate from that authorising access.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide1.png' alt='Project Team(alphabetical order)
+Michael D’Silva 
+Marco Fahmi
+Leah Gustafson 
+Michael Haugh
+Cale Johnstone 
+Kathrin Kaiser 
+Sara King 
+Marco La Rosa 
+Mel Mistica 
+Simon Musgrave 
+Joel Nothman 
+Moises Sacal 
+Martin Schweinberger 
+PT Sefton 
+<p>With thanks for their contribution:
+Partner Institutions:
+' title='1' border='1'  width='85%'/&gt;</p>
+<p>This cluster of projects is led by Professor Michael Haugh of the School of Languages and Culture at the University of Queensland with several partner institutions.</p>
+<p>I work on Gundungurra and Darug land in the Blue Mountains, Moises is on the land of the Gadigal peoples of the Eora Nation. We would like to show acknowledge the traditional custodians of the lands on which we live and work and the importance of indigenous knowledge, culture and language to the these projects.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide2.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).
+' title='2' border='1'  width='85%'/>
+<p>This work is supported by the Australian Research Data Commons.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide3.png' alt='⛰️ 🔏    
+' title='3' border='1'  width='85%'/>
+<p>We are going to talk about the emerging architecture and focus in on one very important part of it: Access control. 🔏</p>
+<p>But first, some background.⛰️</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide4.png' alt='The platform will:
+Be sustainable, with a focus on data preservation as an overriding concern - data will not be ‘trapped’ in a particular platform and all data and code developed on the platform will be in a “migration free” layout ready for reuse
+preserve interoperable and re-usable data via the use of common standards for describing and structuring data with useful detailed context and provenance 
+make data from ATAP and LDaCA and collections discoverable - with the caveat that harvesting harmonised metadata from existing corpora may be difficult
+Provide workbench services for computational research - starting with code-notebooks but with the aim of building towards no-code environments and automatically re-runnable workflows
+include clear licensing on all data and code on how data may be reused, informed by a legally sound policy framework, with an access-control framework to allow automated data access where possible (there are some external dependencies here)
+be distributed - with data held by a number of different organizations under a variety of governance models and technologies  (potentially including copies for redundancy or to put data close to compute  and analytical services)
+enable best-practice in research, with research products such as code and derived data available as “fully documented research objects” that as as re-runnable and rigorously described as possible
+provide and be able to show value in enabling and measuring the impact of research 
+<p>' title='4' border='1'  width='85%'/&gt;</p>
+<p>The architecture for the Data Commons project is informed by  as set of goals and principles starting with ensuring that important data assets have the best chance of persisting into the future.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide5.png' alt='
+<p>Repositories: institutional, domain or both</p>
+<p>Find / Access services
+Research Data Management Plan
+Workspaces:</p>
+<p>working storage
+domain specific tools
+domain specific services
+collect
+describe
+analyse
+Reusable, Interoperable
+data objects
+deposit early
+deposit often
+Findable, Accessible, Reusable data objects
+reuse data objects
+V1.1  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/</p>
+<p>🗑️
+Active cleanup processes  workspaces considered ephemeral
+🗑️
+Policy based data management
+' title='5' border='1'  width='85%'/&gt;</p>
+<p>The diagram which we developed with Marco La Rosa makes a distinction between managed repository storage and the places where work is done - “workspaces”. Workspaces are where researchers collect, analyse and describe data. Examples  include the most basic of research IT services, file storage as well as analytical tools such as Jupyter notebooks (the backbone of ATAP - the text analytics platform). Other examples of workspaces include code repositories such as GitHub or GitLab (a slightly different sense of the word repository), survey tools, electronic (lab) notebooks and bespoke code written for particular research programmes - these workspaces are essential research systems but usually are not set up for long term management of data.
+The cycle in the centre of  this diagram shows an idealised research practice where data are collected and described and deposited into a repository frequently. Data are made findable and accessible  as soon as possible and can be “re-collected” for use and re-use.</p>
+<p>For data to be re-usable by humans and machines (such as ATAP notebook code that consumes datasets in a predictable way) it must be well described. The ATAP and LDaCA approach to this is to use the Research Object Crate (RO-Crate) specification. RO-Crate is essentially a guide to using a number of standards and standard approaches to describe both data and re-runnable software such as workflows or notebooks.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide6.png' alt='
+<p>' title='6' border='1'  width='85%'/&gt;</p>
+<p>In the context of the previous high-level map distinguishing workspaces and repository services, we are using the Arkisto Platform (introduced <a href="http://ptsefton.com/2020/11/23/Arkisto/index.html">at eResearch 2020</a>).</p>
+<p>Arkisto is an approach to eResearch service that places the emphasis on ensuring the long term preservation of data independently of code and services - recognizing the ephemeral nature of software.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide7.png' alt='' title='7' border='1'  width='85%'/>
+<p>An example of a corpus is the PARADISEC collection - Pacific and Regional Archive for Digital Sources in Endangered Cultures</p>
+<p>PARADISEC has viewers for various content types: video and audio with time aligned transcriptions, image set viewers and document viewers (xml, pdf and microsoft formats). We are working on making these viewers available across Arkisto sites by having a standard set of hooks for adding viewer plugins to a site as needed.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide8.png' alt='Compute
+<p>HPC
+Cloud
+Desktop</p>
+<p>collect
+describe
+analyse
+🗑️
+Active cleanup processes  workspaces considered ephemeral
+… etc
+ATAP Notebooks
+Apps, Code, Workflows</p>
+<p>Deposit /Publish
+PARADISEC
+Analytics Portal
+Code discovery
+Launch / Rerun
+Data Discovery
+Authenticated API</p>
+<p>Workbench
+Notebooks
+Data import by URL
+Export fully described pkg
+Stretch goals:
+Code gen / simple interfaces eg Discursis</p>
+<p>BYOData 🥂
+⚙️
+STORAGE (including Cloudstor)
+.
+Data Curation
+&amp; description
+Reuse
+Licence Server
+Identity Management
+AAF / social media accounts</p>
+<p>Data Cleaning
+OCR / transcription format migration
+Archive &amp; Preservation Repositoriesinstitutional, domain or both
+AU Nat. Corpus
+AusLan (sign)
+Sydney Speaks
+ATAP Corpus
+Reference,Training &amp; BYO
+Workspaces:
+working storage
+domain specific tools
+domain specific services
+Harvested
+external
+Lang. portal(s)
+Corpus discovery
+Item discovery
+Authenticated API
+Create virtual corpora</p>
+<p>' title='8' border='1'  width='85%'/&gt;</p>
+<p>This slide captures the overall high-level architecture - there will be an analytical workbench (left of the diagram) which is the basis of the Australian Text Analytics (ATAP) project - this will focus on notebook-style programming using one of the emerging Jupyter notebook platforms in that space. The exact platform is not 100% decided yet, but that has not stopped the team from starting to collect and develop notebooks that open up text analytics to new coders from the linguistics community. Our engagement lead, Dr Simon Musgrave sees the ATAP work as primarily an educational enterprise - which will be underpinned by services built on the Arkisto standards that allow for rigorous, re-runnable research.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide9.png' alt='Compute
+<p>HPC
+Cloud
+Desktop</p>
+<p>collect
+describe
+analyse
+🗑️
+Active cleanup processes  workspaces considered ephemeral
+… etc
+ATAP Notebooks
+Apps, Code, Workflows</p>
+<p>Deposit /Publish
+PARADISEC
+Lang. portal(s)
+Corpus discovery
+Item discovery
+Authenticated API
+Create virtual corpora</p>
+<p>Analytics Portal
+Code discovery
+Launch / Rerun
+Data Discovery
+Authenticated API</p>
+<p>Workbench
+Notebooks
+Data import by URL
+Export fully described pkg
+Stretch goals:
+Code gen / simple interfaces eg Discursis</p>
+<p>BYOData 🥂
+⚙️
+STORAGE (including Cloudstor)
+.
+Data Curation
+&amp; description
+Reuse
+Licence Server
+Identity Management
+AAF / social media accounts</p>
+<p>Data Cleaning
+OCR / transcription format migration
+Archive &amp; Preservation Repositoriesinstitutional, domain or both
+AU Nat. Corpus
+AusLan (sign)
+Sydney Speaks
+ATAP Corpus
+Reference,Training &amp; BYO
+Workspaces:
+working storage
+domain specific tools
+domain specific services
+Harvested
+external
+Our demo today looks at this part …
+' title='9' border='1'  width='85%'/&gt;</p>
+<p>Today we will look in detail at one important part of this architecture - access control. How can we make sure that in a distributed system, with multiple data repositories and registries residing with different data custodians, the right people have access to the right data?</p>
+<p>I didn’t spell this out in the recorded conference presentation, but for data that resides in the repositories at the right of the diagram we want to encourage research processes that clearly separate data from code. Notebooks and other code workflows that use data will fetch a version-controlled reference copy from a repository - using an access key if needed, process the data and produce results that are then deposited into an appropriate repository alongside the code itself.  Given that a lot of the data in the language world is NOT available under open licenses such as Creative Commons it is important to establish this practice - each user of the data must negotiate or be granted access individually. Research can still be reproducible using this model, but without a culture of sharing datasets without regard for the rights of those who were involved in the creations of the data.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide10.png' alt='
+<p>' title='10' border='1'  width='85%'/&gt;</p>
+<p>Regarding rights, our project is informed by the <a href="https://www.gida-global.org/care">CARE principles</a> for indegenous data.</p>
+<blockquote>
+<p>The current movement toward open data and open science does not fully engage with Indigenous Peoples rights and interests. Existing principles within the open data movement (e.g. FAIR: findable, accessible, interoperable, reusable) primarily focus on characteristics of data that will facilitate increased data sharing among entities while ignoring power differentials and historical contexts. The emphasis on greater data sharing alone creates a tension for Indigenous Peoples who are also asserting greater control over the application and use of Indigenous data and Indigenous Knowledge for collective benefit</p>
+</blockquote>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide11.png' alt='
+<p>' title='11' border='1'  width='85%'/&gt;</p>
+<p>https://localcontexts.org/labels/traditional-knowledge-labels/</p>
+<p>We are designing the system so that it can work with diverse ways of expressing access rights, for example licensing like the Tribal Knowledge labels.The idea is to separate safe storage of data with a license on each item, which may reference the TK labels from a system that is administered by the data custodians who can make decisions about who is allowed to access data.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide12.png' alt='Case Study - Sydney Speaks
+<p>' title='12' border='1'  width='85%'/&gt;</p>
+<p>We are working on a case-study with the <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">Sydney Speaks project</a> via steering committee member Professor Catherine Travis.</p>
+<blockquote>
+<p>This project seeks to document and explore Australian English, as spoken in Australia’s largest and most ethnically and linguistically diverse city – Sydney.
+The title “Sydney Speaks” captures a key defining feature of the project: the data come from recorded conversations between Sydney siders, as they tell stories about their lives and experiences, their opinions and attitudes. This allows us to measure how their lived experiences impact their speech patterns.
+Working within the framework of variationist sociolinguistics, we examine variation in phonetics, grammar and discourse, in an effort to answer questions of fundamental interest both to Australian English, and language variation and change more broadly, including:</p>
+<ul>
+<li>How has Australian English as spoken in Sydney changed over the past 100 years?</li>
+<li>Has the change in the ethnic diversity over that time period (and in particular, over the past 40 years) had any impact on the way Australian English is spoken?</li>
+<li>What affects the way variation and change spread through society
+<ul>
+<li>Who are the initiators and who are the leaders in change?</li>
+<li>How do social networks function in a modern metropolis?</li>
+<li>What social factors are relevant to Sydney speech today, and over time (gender? class? region? ethnic identity?)
+A better understanding of what kind of variation exists in Australian English, and of how and why Australian English has changed over time can help society be more accepting of speech variation and even help address prejudices based on ways of speaking.
+Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www.dynamicsoflanguage.edu.au/sydney-speaks/</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>The collection contains recordings of people speaking both contemporary and historic.</p>
+<p>Because this involved human participants there are restrictions on the distribution of data - a situation we see with lots of studies involving people in a huge range of disciplines.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide13.png' alt='Sydney Speaks Licenses
+' title='13' border='1'  width='85%'/>
+<p>There are four tiers of data access we need to enforce and observe for this data based on the participant agreements and ethics arrangements under which the data were collected.</p>
+<p>Concerns about rights and interests are important for any data involving people - and a large amount the data both indigenous and non-indigenous we are using will require access control that ensures that data sharing is appropriate.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide14.gif' alt='Demo
+' title='14' border='1'  width='85%'/>
+<p>In this example demo we uploaded various collections and are authorising with Github organisations</p>
+<p>In a our production release we will use AAF to authorise different groups</p>
+<p>Let's find a dataset: The Sydney Speaks Corpus</p>
+<p>As you can see we cannot see any data</p>
+<p>Lets login… We authorise Github…</p>
+<p>Now you can see we have access sub corpus data and I am just opening a couple of items</p>
+<p>—</p>
+<p>Now in Github we can see the group management example.</p>
+<p>I have given access to all the licences to myself, as you can see here and given access to licence A to others.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide15.png' alt='
+<p>' title='15' border='1'  width='85%'/&gt;</p>
+<p>This diagram is a sketch of the interaction that took place in the demo - it shows how a repository can delegate authorization to an external system - in this case Github rather than CILogon. But we are working with the ARDC to set up a trial with the Australian Access Federation to allow CILogon access for the HASS Research Data Commons so we can pilot group-based access control.</p>
+<p>NOTE: This diagram has been updated slightly from the version presented at the conference to make it clear that the lookup to find the licence for the data set is <em>internal</em> to the repository - the id is a DOI but it is not being resolved over the web.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide16.png' alt='
+🚧
+' title='16' border='1'  width='85%'/>
+<p>In this presentation, about work which is still very much under construction, we have:</p>
+<ul>
+<li>Shown an overview of a complete Data Commons Architecture</li>
+<li>Previewed a distributed access-control mechanism which will separates out the the job of storing and delivering data from that of authorising access</li>
+<li>We'll be back next year with more about how analytics and data repositories connect using structure and linked data.</li>
+</ul>
+</section>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'ldaca2021';
+                var disqus_url = 'http://ptsefton.com/2021/10/12/ldaca2021/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="http://ptsefton.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/arkisto.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/music.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Music
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://ptsefton.com/category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://twitter.com/ptsefton" target="_blank">
+                Twitter: @ptsefton
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+  
+        
+
+	&copy; 2021 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://ptsefton.com/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://ptsefton.com/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://ptsefton.com/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
