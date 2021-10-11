@@ -1,5 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="http://ptsefton.com/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>http://ptsefton.com/</id><updated>2021-06-11T00:00:00+02:00</updated><entry><title>FIIR Data Management; Findable Inaccessible Interoperable and Reusable?</title><link href="http://ptsefton.com/2021/06/11/faira/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/faira/index.html</id><summary type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="http://ptsefton.com/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>http://ptsefton.com/</id><updated>2021-10-12T00:00:00+02:00</updated><entry><title>Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis</title><link href="http://ptsefton.com/2021/10/12/ldaca2021/index.html" rel="alternate"></link><published>2021-10-12T00:00:00+02:00</published><updated>2021-10-12T00:00:00+02:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2021-10-12:/2021/10/12/ldaca2021/index.html</id><summary type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
+&lt;p&gt;The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
+Peter Sefton &amp;amp; Moises Sacal
+technical architecture for a
+' title='0' border='1'  width='85%'/&gt;
+&lt;p&gt;Here …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
+&lt;p&gt;The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
+Peter Sefton &amp;amp; Moises Sacal
+technical architecture for a
+' title='0' border='1'  width='85%'/&gt;
+&lt;p&gt;Here is the abstract as submitted:&lt;/p&gt;
+&lt;p&gt;The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are building towards a scalable and flexible language data and analytics commons. These projects will be  part of the Humanities and Social Sciences Research Data Commons (HASS RDC).&lt;/p&gt;
+&lt;p&gt;The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander,  migrant and Pacific communities.&lt;/p&gt;
+&lt;p&gt;The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artefacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations.&lt;/p&gt;
+&lt;p&gt;In this presentation we will present the proposed architecture of the system, the principles that informed it and demonstrate the first version. Features of the solution include the use of the Arkisto Platform (presented at eResearch 2020), which leverages the Oxford Common File Layout. This enables storing complete version-controlled digital objects described using linked data with rich context via the Research Object Crate (RO-Crate) format. The solution features a distributed authorization model where the agency archiving data may be separate from that authorising access.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide1.png' alt='Project Team(alphabetical order)
+Michael D’Silva 
+Marco Fahmi
+Leah Gustafson 
+Michael Haugh
+Cale Johnstone 
+Kathrin Kaiser 
+Sara King 
+Marco La Rosa 
+Mel Mistica 
+Simon Musgrave 
+Joel Nothman 
+Moises Sacal 
+Martin Schweinberger 
+PT Sefton 
+&lt;p&gt;With thanks for their contribution:
+Partner Institutions:
+' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This cluster of projects is led by Professor Michael Haugh of the School of Languages and Culture at the University of Queensland with several partner institutions.&lt;/p&gt;
+&lt;p&gt;I work on Gundungurra and Darug land in the Blue Mountains, Moises is on the land of the Gadigal peoples of the Eora Nation. We would like to show acknowledge the traditional custodians of the lands on which we live and work and the importance of indigenous knowledge, culture and language to the these projects.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide2.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).
+' title='2' border='1'  width='85%'/&gt;
+&lt;p&gt;This work is supported by the Australian Research Data Commons.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide3.png' alt='⛰️ 🔏    
+' title='3' border='1'  width='85%'/&gt;
+&lt;p&gt;We are going to talk about the emerging architecture and focus in on one very important part of it: Access control. 🔏&lt;/p&gt;
+&lt;p&gt;But first, some background.⛰️&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide4.png' alt='The platform will:
+Be sustainable, with a focus on data preservation as an overriding concern - data will not be ‘trapped’ in a particular platform and all data and code developed on the platform will be in a “migration free” layout ready for reuse
+preserve interoperable and re-usable data via the use of common standards for describing and structuring data with useful detailed context and provenance 
+make data from ATAP and LDaCA and collections discoverable - with the caveat that harvesting harmonised metadata from existing corpora may be difficult
+Provide workbench services for computational research - starting with code-notebooks but with the aim of building towards no-code environments and automatically re-runnable workflows
+include clear licensing on all data and code on how data may be reused, informed by a legally sound policy framework, with an access-control framework to allow automated data access where possible (there are some external dependencies here)
+be distributed - with data held by a number of different organizations under a variety of governance models and technologies  (potentially including copies for redundancy or to put data close to compute  and analytical services)
+enable best-practice in research, with research products such as code and derived data available as “fully documented research objects” that as as re-runnable and rigorously described as possible
+provide and be able to show value in enabling and measuring the impact of research 
+&lt;p&gt;' title='4' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The architecture for the Data Commons project is informed by  as set of goals and principles starting with ensuring that important data assets have the best chance of persisting into the future.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide5.png' alt='
+&lt;p&gt;Repositories: institutional, domain or both&lt;/p&gt;
+&lt;p&gt;Find / Access services
+Research Data Management Plan
+Workspaces:&lt;/p&gt;
+&lt;p&gt;working storage
+domain specific tools
+domain specific services
+collect
+describe
+analyse
+Reusable, Interoperable
+data objects
+deposit early
+deposit often
+Findable, Accessible, Reusable data objects
+reuse data objects
+V1.1  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/&lt;/p&gt;
+&lt;p&gt;🗑️
+Active cleanup processes  workspaces considered ephemeral
+🗑️
+Policy based data management
+' title='5' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;The diagram which we developed with Marco La Rosa makes a distinction between managed repository storage and the places where work is done - “workspaces”. Workspaces are where researchers collect, analyse and describe data. Examples  include the most basic of research IT services, file storage as well as analytical tools such as Jupyter notebooks (the backbone of ATAP - the text analytics platform). Other examples of workspaces include code repositories such as GitHub or GitLab (a slightly different sense of the word repository), survey tools, electronic (lab) notebooks and bespoke code written for particular research programmes - these workspaces are essential research systems but usually are not set up for long term management of data.
+The cycle in the centre of  this diagram shows an idealised research practice where data are collected and described and deposited into a repository frequently. Data are made findable and accessible  as soon as possible and can be “re-collected” for use and re-use.&lt;/p&gt;
+&lt;p&gt;For data to be re-usable by humans and machines (such as ATAP notebook code that consumes datasets in a predictable way) it must be well described. The ATAP and LDaCA approach to this is to use the Research Object Crate (RO-Crate) specification. RO-Crate is essentially a guide to using a number of standards and standard approaches to describe both data and re-runnable software such as workflows or notebooks.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide6.png' alt='
+&lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;In the context of the previous high-level map distinguishing workspaces and repository services, we are using the Arkisto Platform (introduced &lt;a href="http://ptsefton.com/2020/11/23/Arkisto/index.html"&gt;at eResearch 2020&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Arkisto is an approach to eResearch service that places the emphasis on ensuring the long term preservation of data independently of code and services - recognizing the ephemeral nature of software.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide7.png' alt='' title='7' border='1'  width='85%'/&gt;
+&lt;p&gt;An example of a corpus is the PARADISEC collection - Pacific and Regional Archive for Digital Sources in Endangered Cultures&lt;/p&gt;
+&lt;p&gt;PARADISEC has viewers for various content types: video and audio with time aligned transcriptions, image set viewers and document viewers (xml, pdf and microsoft formats). We are working on making these viewers available across Arkisto sites by having a standard set of hooks for adding viewer plugins to a site as needed.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide8.png' alt='Compute
+&lt;p&gt;HPC
+Cloud
+Desktop&lt;/p&gt;
+&lt;p&gt;collect
+describe
+analyse
+🗑️
+Active cleanup processes  workspaces considered ephemeral
+… etc
+ATAP Notebooks
+Apps, Code, Workflows&lt;/p&gt;
+&lt;p&gt;Deposit /Publish
+PARADISEC
+Analytics Portal
+Code discovery
+Launch / Rerun
+Data Discovery
+Authenticated API&lt;/p&gt;
+&lt;p&gt;Workbench
+Notebooks
+Data import by URL
+Export fully described pkg
+Stretch goals:
+Code gen / simple interfaces eg Discursis&lt;/p&gt;
+&lt;p&gt;BYOData 🥂
+⚙️
+STORAGE (including Cloudstor)
+.
+Data Curation
+&amp;amp; description
+Reuse
+Licence Server
+Identity Management
+AAF / social media accounts&lt;/p&gt;
+&lt;p&gt;Data Cleaning
+OCR / transcription format migration
+Archive &amp;amp; Preservation Repositoriesinstitutional, domain or both
+AU Nat. Corpus
+AusLan (sign)
+Sydney Speaks
+ATAP Corpus
+Reference,Training &amp;amp; BYO
+Workspaces:
+working storage
+domain specific tools
+domain specific services
+Harvested
+external
+Lang. portal(s)
+Corpus discovery
+Item discovery
+Authenticated API
+Create virtual corpora&lt;/p&gt;
+&lt;p&gt;' title='8' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This slide captures the overall high-level architecture - there will be an analytical workbench (left of the diagram) which is the basis of the Australian Text Analytics (ATAP) project - this will focus on notebook-style programming using one of the emerging Jupyter notebook platforms in that space. The exact platform is not 100% decided yet, but that has not stopped the team from starting to collect and develop notebooks that open up text analytics to new coders from the linguistics community. Our engagement lead, Dr Simon Musgrave sees the ATAP work as primarily an educational enterprise - which will be underpinned by services built on the Arkisto standards that allow for rigorous, re-runnable research.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide9.png' alt='Compute
+&lt;p&gt;HPC
+Cloud
+Desktop&lt;/p&gt;
+&lt;p&gt;collect
+describe
+analyse
+🗑️
+Active cleanup processes  workspaces considered ephemeral
+… etc
+ATAP Notebooks
+Apps, Code, Workflows&lt;/p&gt;
+&lt;p&gt;Deposit /Publish
+PARADISEC
+Lang. portal(s)
+Corpus discovery
+Item discovery
+Authenticated API
+Create virtual corpora&lt;/p&gt;
+&lt;p&gt;Analytics Portal
+Code discovery
+Launch / Rerun
+Data Discovery
+Authenticated API&lt;/p&gt;
+&lt;p&gt;Workbench
+Notebooks
+Data import by URL
+Export fully described pkg
+Stretch goals:
+Code gen / simple interfaces eg Discursis&lt;/p&gt;
+&lt;p&gt;BYOData 🥂
+⚙️
+STORAGE (including Cloudstor)
+.
+Data Curation
+&amp;amp; description
+Reuse
+Licence Server
+Identity Management
+AAF / social media accounts&lt;/p&gt;
+&lt;p&gt;Data Cleaning
+OCR / transcription format migration
+Archive &amp;amp; Preservation Repositoriesinstitutional, domain or both
+AU Nat. Corpus
+AusLan (sign)
+Sydney Speaks
+ATAP Corpus
+Reference,Training &amp;amp; BYO
+Workspaces:
+working storage
+domain specific tools
+domain specific services
+Harvested
+external
+Our demo today looks at this part …
+' title='9' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Today we will look in detail at one important part of this architecture - access control. How can we make sure that in a distributed system, with multiple data repositories and registries residing with different data custodians, the right people have access to the right data?&lt;/p&gt;
+&lt;p&gt;I didn’t spell this out in the recorded conference presentation, but for data that resides in the repositories at the right of the diagram we want to encourage research processes that clearly separate data from code. Notebooks and other code workflows that use data will fetch a version-controlled reference copy from a repository - using an access key if needed, process the data and produce results that are then deposited into an appropriate repository alongside the code itself.  Given that a lot of the data in the language world is NOT available under open licenses such as Creative Commons it is important to establish this practice - each user of the data must negotiate or be granted access individually. Research can still be reproducible using this model, but without a culture of sharing datasets without regard for the rights of those who were involved in the creations of the data.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide10.png' alt='
+&lt;p&gt;' title='10' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;Regarding rights, our project is informed by the &lt;a href="https://www.gida-global.org/care"&gt;CARE principles&lt;/a&gt; for indegenous data.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The current movement toward open data and open science does not fully engage with Indigenous Peoples rights and interests. Existing principles within the open data movement (e.g. FAIR: findable, accessible, interoperable, reusable) primarily focus on characteristics of data that will facilitate increased data sharing among entities while ignoring power differentials and historical contexts. The emphasis on greater data sharing alone creates a tension for Indigenous Peoples who are also asserting greater control over the application and use of Indigenous data and Indigenous Knowledge for collective benefit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide11.png' alt='
+&lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;https://localcontexts.org/labels/traditional-knowledge-labels/&lt;/p&gt;
+&lt;p&gt;We are designing the system so that it can work with diverse ways of expressing access rights, for example licensing like the Tribal Knowledge labels.The idea is to separate safe storage of data with a license on each item, which may reference the TK labels from a system that is administered by the data custodians who can make decisions about who is allowed to access data.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide12.png' alt='Case Study - Sydney Speaks
+&lt;p&gt;' title='12' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;We are working on a case-study with the &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;Sydney Speaks project&lt;/a&gt; via steering committee member Professor Catherine Travis.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This project seeks to document and explore Australian English, as spoken in Australia’s largest and most ethnically and linguistically diverse city – Sydney.
+The title “Sydney Speaks” captures a key defining feature of the project: the data come from recorded conversations between Sydney siders, as they tell stories about their lives and experiences, their opinions and attitudes. This allows us to measure how their lived experiences impact their speech patterns.
+Working within the framework of variationist sociolinguistics, we examine variation in phonetics, grammar and discourse, in an effort to answer questions of fundamental interest both to Australian English, and language variation and change more broadly, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How has Australian English as spoken in Sydney changed over the past 100 years?&lt;/li&gt;
+&lt;li&gt;Has the change in the ethnic diversity over that time period (and in particular, over the past 40 years) had any impact on the way Australian English is spoken?&lt;/li&gt;
+&lt;li&gt;What affects the way variation and change spread through society
+&lt;ul&gt;
+&lt;li&gt;Who are the initiators and who are the leaders in change?&lt;/li&gt;
+&lt;li&gt;How do social networks function in a modern metropolis?&lt;/li&gt;
+&lt;li&gt;What social factors are relevant to Sydney speech today, and over time (gender? class? region? ethnic identity?)
+A better understanding of what kind of variation exists in Australian English, and of how and why Australian English has changed over time can help society be more accepting of speech variation and even help address prejudices based on ways of speaking.
+Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http://www.dynamicsoflanguage.edu.au/sydney-speaks/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The collection contains recordings of people speaking both contemporary and historic.&lt;/p&gt;
+&lt;p&gt;Because this involved human participants there are restrictions on the distribution of data - a situation we see with lots of studies involving people in a huge range of disciplines.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide13.png' alt='Sydney Speaks Licenses
+' title='13' border='1'  width='85%'/&gt;
+&lt;p&gt;There are four tiers of data access we need to enforce and observe for this data based on the participant agreements and ethics arrangements under which the data were collected.&lt;/p&gt;
+&lt;p&gt;Concerns about rights and interests are important for any data involving people - and a large amount the data both indigenous and non-indigenous we are using will require access control that ensures that data sharing is appropriate.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide14.gif' alt='Demo
+' title='14' border='1'  width='85%'/&gt;
+&lt;p&gt;In this example demo we uploaded various collections and are authorising with Github organisations&lt;/p&gt;
+&lt;p&gt;In a our production release we will use AAF to authorise different groups&lt;/p&gt;
+&lt;p&gt;Let's find a dataset: The Sydney Speaks Corpus&lt;/p&gt;
+&lt;p&gt;As you can see we cannot see any data&lt;/p&gt;
+&lt;p&gt;Lets login… We authorise Github…&lt;/p&gt;
+&lt;p&gt;Now you can see we have access sub corpus data and I am just opening a couple of items&lt;/p&gt;
+&lt;p&gt;—&lt;/p&gt;
+&lt;p&gt;Now in Github we can see the group management example.&lt;/p&gt;
+&lt;p&gt;I have given access to all the licences to myself, as you can see here and given access to licence A to others.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide15.png' alt='
+&lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
+&lt;p&gt;This diagram is a sketch of the interaction that took place in the demo - it shows how a repository can delegate authorization to an external system - in this case Github rather than CILogon. But we are working with the ARDC to set up a trial with the Australian Access Federation to allow CILogon access for the HASS Research Data Commons so we can pilot group-based access control.&lt;/p&gt;
+&lt;p&gt;NOTE: This diagram has been updated slightly from the version presented at the conference to make it clear that the lookup to find the licence for the data set is &lt;em&gt;internal&lt;/em&gt; to the repository - the id is a DOI but it is not being resolved over the web.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide16.png' alt='
+🚧
+' title='16' border='1'  width='85%'/&gt;
+&lt;p&gt;In this presentation, about work which is still very much under construction, we have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shown an overview of a complete Data Commons Architecture&lt;/li&gt;
+&lt;li&gt;Previewed a distributed access-control mechanism which will separates out the the job of storing and delivering data from that of authorising access&lt;/li&gt;
+&lt;li&gt;We'll be back next year with more about how analytics and data repositories connect using structure and linked data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+</content><category term="Arkisto"></category></entry><entry><title>FIIR Data Management; Findable Inaccessible Interoperable and Reusable?</title><link href="http://ptsefton.com/2021/06/11/faira/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/faira/index.html</id><summary type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
 &lt;p&gt;[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]&lt;/p&gt;
 &lt;p&gt;I am posting this now because …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
 &lt;p&gt;[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]&lt;/p&gt;
@@ -1172,196 +1470,4 @@ factors are associated with higher/lower levels of mobility.&lt;/p&gt;
 &lt;p&gt;The emphasis in on FIRST keeping data safe and re-usable by storing and describing it using standards, so that in the absence of budget and resources to maintain complex virtual labs the data are still available for re-use, and THEN to use our growing set of interoperable tools to build data hubs, with re-usable data viewer plugins and standards-based interoperable analytical services.&lt;/p&gt;
 &lt;p&gt;There are active projects under way at the Universities of Melbourne and University of Technology Sydney across a wide range if disciplines and we are seeking funding to enhance the platform.&lt;/p&gt;
 &lt;/section&gt;
-</content><category term="Arkisto Platform"></category></entry><entry><title>You won't believe this shocking semantic web trick I use to avoid publishing my own ontologies! Will I end up going to hell for this?</title><link href="http://ptsefton.com/2020/03/24/semantic_web_hacks/index.html" rel="alternate"></link><published>2020-03-24T00:00:00+01:00</published><updated>2020-03-24T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2020-03-24:/2020/03/24/semantic_web_hacks/index.html</id><summary type="html">&lt;p&gt;[Update - as soon as this went live I spotted an error in the final example and fixed it].&lt;/p&gt;
-&lt;p&gt;In this post I describe a disgusting, filthy, but possibly beautiful hack* I
-devised to get around a common problem in data description using semantic web
-techniques, specifically JSON-LD and schema.org …&lt;/p&gt;</summary><content type="html">&lt;p&gt;[Update - as soon as this went live I spotted an error in the final example and fixed it].&lt;/p&gt;
-&lt;p&gt;In this post I describe a disgusting, filthy, but possibly beautiful hack* I
-devised to get around a common problem in data description using semantic web
-techniques, specifically JSON-LD and schema.org . How can we allow people who
-don't happen to be Semantic Web über-geeks to be able to define their own
-vocabularies when they need to go beyond common vocabularies like schema.org?&lt;/p&gt;
-&lt;p&gt;* You tell me - beautiful or evil?&lt;/p&gt;
-&lt;p&gt;&lt;a href="#spoiler"&gt;Jump to the spoiler at end - actually there are two hacks&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For the last few years most of the posts on this blog have been presentations
-I've given at conferences, for example there's a series of posts on &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt;,
-the
-&lt;a href="http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm"&gt;most recent of which&lt;/a&gt;
-was from eResearch Australasia. &lt;a href="https://researchobject.github.io/ro-crate/"&gt;RO-Crate&lt;/a&gt; is a specification for describing and packaging
-research data (could be any data, really, but the main use cases that drove
-development come from research).&lt;/p&gt;
-&lt;p&gt;RO-Crate uses &lt;a href="https://json-ld.org/"&gt;JSON-LD&lt;/a&gt; as its main metadata format, with vocabulary terms which
-mostly come from Schema.org: this makes it reasonably&lt;br /&gt;
-easy for developers to write tools to generate good-quality low-ambiguity metadata in an
-extensible way. I'm not going to do a full JSON-LD tutorial, but to give you an idea
-RO-CRATE JSON-LD looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-    &amp;quot;@id&amp;quot;: &amp;quot;./&amp;quot;,
-    &amp;quot;@type&amp;quot;: &amp;quot;Dataset&amp;quot;,
-    &amp;quot;name&amp;quot;: &amp;quot;My dataset&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is easy to work with because it's just &lt;a href="https://en.wikipedia.org/wiki/JSON"&gt;JSON&lt;/a&gt;, with a trick up its sleeve - the keys in the JSON object, such as &lt;code&gt;name&lt;/code&gt; are are defined in a 'context'. At its simplest, the context is a just a lookup between a key and a URI - in this case the context is defined like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-    &amp;quot;@context&amp;quot;: &amp;quot;https://w3id.org/ro/crate/1.0/context&amp;quot;,
-    
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And in the JSON document you get from &lt;a href="https://w3id.org/ro/crate/1.0/context"&gt;https://w3id.org/ro/crate/1.0/context&lt;/a&gt;, among a few hundred other properties is:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;     &amp;quot;name&amp;quot;: &amp;quot;http://schema.org/name&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you go to &lt;a href="http://schema.org/name"&gt;http://schema.org/name&lt;/a&gt; you can read a definition of the &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Having definitions is important. Let's take the metadata term &amp;quot;title&amp;quot;. In Dublin Core
-&lt;a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/title/"&gt;title's the name of a resource&lt;/a&gt;
-in
-&lt;a href="http://xmlns.com/foaf/spec/#term_title"&gt;FOAF it's a title as in Mr, Mrs, Dr, Reverend etc&lt;/a&gt;
-in &lt;a href="https://schema.org/title"&gt;schema.org title's a job title&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;With all these terms I can use a URI to get to a human readable page to read about the term but here's our problem:
-not everyone has the resources to define metadata terms by making an ontology and hosting it somewhere online.&lt;/p&gt;
-&lt;p&gt;So, what to do when you want to describe something, and provide some definitions
-but there's no obvious ontology to hand?&lt;/p&gt;
-&lt;p&gt;Lets look at an example.
-&lt;a href="https://orcid.org/0000-0002-9369-5862"&gt;Dr Alana Piper&lt;/a&gt; at UTS has some criminal
-history data, which includes transcriptions of prison records - she sent  me a
-spreadsheet with data on about 2600 prison records in PDF format.&lt;/p&gt;
-&lt;p&gt;Some of the variables in Alana's data were
-easy to map to schema.org vocabulary, like &lt;a href="http://schema.org/name"&gt;name&lt;/a&gt; and
-&lt;a href="http://schema.org/birthDate"&gt;birthDate&lt;/a&gt; but some others that are not defined in
-a handy online ontology, like &lt;code&gt;sentence&lt;/code&gt; and &lt;code&gt;offence&lt;/code&gt;. You can see some sample
-data of Alana's
-&lt;a href="https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/ConvictionsSample/#action_1"&gt;here in an RO-Crate&lt;/a&gt;.
-RO-Crates come with web-previews - this is a bit of data that refers to a
-&lt;code&gt;sentence&lt;/code&gt; for one Nora Abbot for the &lt;code&gt;offence&lt;/code&gt; of Vagrancy.&lt;/p&gt;
-&lt;p&gt;I like JSON-LD in general but if you don't define mappings for the keys you're
-using then when you use JSON-LD software to process the files the undefined keys
-and their values disappear from your document, which is &lt;em&gt;not&lt;/em&gt; user or developer
-friendly. I don't like that at all - nobody expects their data to be discarded
-when self-important, opinionated software library feels like it.&lt;/p&gt;
-&lt;p&gt;And more annoyingly, if you have an ad-hoc vocabulary there's no way to define
-that in your JSON-LD file or even the data that ships with it. Context keys MUST
-map to complete URLs.&lt;/p&gt;
-&lt;p&gt;There's a workaround. You can use a catch all &lt;code&gt;@vocab&lt;/code&gt; key in the &lt;code&gt;@context&lt;/code&gt; for
-your JSON-LD which points to a URI so that any undefined terms get forced into a
-particular vocabulary. Schema.org does this - so if you use that context then
-you use whatever terms you like and JSON-LD processors won't swallow your data
-BUT that's cheating and it's not useful as you don't get real URIs that can be
-resolved to read a definition of the term. You get FAKE URIs.&lt;/p&gt;
-&lt;p&gt;Here's a screenshot of what the initial RO-Crate I made with Alana's data looked
-like - it shows that some of terms (like &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;startTime&lt;/code&gt; and &lt;code&gt;location&lt;/code&gt; are
-defined - these have a question-mark link beside them you can follow to read the
-definition. But a couple of others (&lt;code&gt;sentence&lt;/code&gt; and &lt;code&gt;offence&lt;/code&gt;) didn't have
-definitions - cos while they do map to a URI, The URI is a FAKE and it's not
-listed in the official RO-Crate @context.&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2020/03/24/semantic_web_hacks/sentence.png" alt="Screen capture of metadata in RO-CRATE, described above"&gt;
-&lt;p&gt;I've been thinking about this a lot, and looking for approaches
-to publishing light-weight semantic web vocabs (about which I found pretty much
-nothing) and eventually I came across some &lt;a href="http://ptsefton.com/2009/04/08/journal-20-embedding-semantics-in-documents.htm"&gt;very interesting work&lt;/a&gt; from ten years ago, which
-looked at how to encode semantic statements into a URL for use in content
-authoring systems that don't allow entry of linked data directly. The solution was to
-encode semantic web stuff like &lt;code&gt;this-document&lt;/code&gt; &lt;code&gt;has-author&lt;/code&gt; &lt;code&gt;https://orcid.org/0000-0002-3545-944X&lt;/code&gt;  into a URL. Hey, that idea could be adapted to this situation.&lt;/p&gt;
-&lt;p&gt;Anyway, what I came up with &lt;em&gt;this&lt;/em&gt; decade was the idea of coding the entire
-definition for property into a URL so we can put that URL into a local context.
-Stupid? Probably. Naughty Fun that's likely to get disapproving looks from
-computer scientists and semantic-web purists? Certainly.&lt;/p&gt;
-&lt;p&gt;Ok, so what does a definition for a property look like? We can ask the schema.org
-server about that from the command line:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl  -L -H &amp;quot;Accept: application/ld+json&amp;quot; schema.org/name
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If we do that, we get: some JSON-LD which I've pruned a bit here:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;@context&amp;quot;: {
-    &amp;quot;schema&amp;quot;: &amp;quot;http://schema.org/&amp;quot;,
-    ...
-    &amp;quot;rdf&amp;quot;: &amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;quot;,
-    &amp;quot;rdfa&amp;quot;: &amp;quot;http://www.w3.org/ns/rdfa#&amp;quot;,
-    &amp;quot;rdfs&amp;quot;: &amp;quot;http://www.w3.org/2000/01/rdf-schema#&amp;quot;,
-    &amp;quot;schema&amp;quot;: &amp;quot;http://schema.org/&amp;quot;,
-   ...
-  },
-  &amp;quot;@id&amp;quot;: &amp;quot;schema:name&amp;quot;,
-  &amp;quot;@type&amp;quot;: &amp;quot;rdf:Property&amp;quot;,
-  
-  ...
-  &amp;quot;rdfs:comment&amp;quot;: &amp;quot;The name of the item.&amp;quot;,
-  &amp;quot;rdfs:label&amp;quot;: &amp;quot;name&amp;quot;,
-   ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Seems to me the MVD (that's &amp;quot;Minimum Viable Document&amp;quot;) for defining
-a property are an &lt;code&gt;@id&lt;/code&gt;, &lt;code&gt;rdf:label&lt;/code&gt; and the &lt;code&gt;rdfs:comment&lt;/code&gt; so I threw together a
-simple single-page web thing on the examples bit of our repository server at
-work that would decode those out of a URL and, well, just show them to you (and I linked to it via
-the venerable PURL service so it doesn't need a domain name).&lt;/p&gt;
-&lt;a name="spoiler"&gt; 
-&lt;h1&gt;Hack 1&lt;/h1&gt;
-&lt;/a&gt;
-&lt;p&gt;So, my first filthy web hack was to change the code I used to generate the RO-Crate of Alana's data - fed it some extra config with definitions of her metadata terms, then set up a super simple one-page web app which ACTs like it's the documentation for an ontology, but actually, you supply your own documentation, in the form of a link, like this:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://purl.org/adhoc?@type=rdf:Property&amp;rdfs:label=sentence&amp;rdfs:comment=Penalty imposed by court for criminal conviction. As the data is drawn from prison records, this will usually consist of a specified term of imprisonment and the type of imprisonment conditions, e.g. 6 months hard labour. However, during this historical period it was common for persons convicted of a minor offence to be sentenced to a fine 'with the option' of a prison sentence if they were unable to pay it. After the introduction in Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been declared 'habitual criminals' could also receive an indefinite sentence that meant they were imprisoned until the government authorities determined that they had sufficiently reformed. Some prisoners also faced additional penalties in addition to their prison sentence, such as periods of solitary confinement, in irons or whippings.&amp;@id=http%3A%2F%2Fpurl.org%2Fadhoc%3F%40type%3Drdf%3AProperty%26rdfs%3Alabel%3Dsentence"&gt;http://purl.org/adhoc?@type=rdf:Property&amp;amp;rdfs:label=sentence&amp;amp;rdfs:comment=Penalty imposed by court for criminal conviction. As the data is drawn from prison records, this will usually consist of a specified term of imprisonment and the type of imprisonment conditions, e.g. 6 months hard labour. However, during this historical period it was common for persons convicted of a minor offence to be sentenced to a fine 'with the option' of a prison sentence if they were unable to pay it. After the introduction in Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been declared 'habitual criminals' could also receive an indefinite sentence that meant they were imprisoned until the government authorities determined that they had sufficiently reformed. Some prisoners also faced additional penalties in addition to their prison sentence, such as periods of solitary confinement, in irons or whippings.&amp;amp;@id=http%3A%2F%2Fpurl.org%2Fadhoc%3F%40type%3Drdf%3AProperty%26rdfs%3Alabel%3Dsentence&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Follow that and you get a page something like this (it will change and may be removed by the internet police):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h1&gt;Property: sentence&lt;/h1&gt;
-&lt;p&gt;@id: http://purl.org/adhoc?@type=rdf:Property&amp;amp;rdfs:label=sentence&lt;/p&gt;
-&lt;p&gt;Label: sentence&lt;/p&gt;
-&lt;h2&gt;Description:&lt;/h2&gt;
-&lt;p&gt;Penalty imposed by court for criminal conviction. As the data is
-drawn from prison records, this will usually consist of a specified term of
-imprisonment and the type of imprisonment conditions, e.g. 6 months hard
-labour. However, during this historical period it was common for persons
-convicted of a minor offence to be sentenced to a fine 'with the option' of a
-prison sentence if they were unable to pay it. After the introduction in
-Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been
-declared 'habitual criminals' could also receive an indefinite sentence that
-meant they were imprisoned until the government authorities determined that
-they had sufficiently reformed. Some prisoners also faced additional penalties
-in addition to their prison sentence, such as periods of solitary confinement,
-in irons or whippings.&lt;/p&gt;
-&lt;p&gt;To use this property use this text Copy to clipboard &amp;lt;...&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;See what I did there? Got around the limitations of JSON-LD and its (I think
-harmful) insistence that context terms must resolve to URLs and supplied a
-self-documenting URL which, at least in the context of RO-Crate will allow a user to see
-something &lt;em&gt;useful&lt;/em&gt; when they view the data.&lt;/p&gt;
-&lt;p&gt;(If JSON-LD is Linked Data encoded in JSON then this must be &lt;em&gt;URL-LD&lt;/em&gt;,
-linked data encoded in URLs - or is it &lt;em&gt;URI-LD&lt;/em&gt;?)&lt;/p&gt;
-&lt;h2&gt;Hack 2&lt;/h2&gt;
-&lt;p&gt;Having done this work, and actually put up that web page to illustrate it I then came up with what might be a more elegant solution to the actual problem at hand, which is shipping usable definitions of ad-hoc terms around in an &lt;a href="https://researchobject.github.io/ro-crate/1.0/#ro-crate-metadata-file-ro-crate-metadatajsonld"&gt;RO-Crate Metadata File&lt;/a&gt;. The trick is similar to something we already do in RO-Crate to make metadata as useful as possible. The thing is, some URIs in the semantic web world don't actually resolve to anything usable by most humans which means that in the &lt;a href="https://researchobject.github.io/ro-crate/1.0/#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files"&gt;RO-Crate Website&lt;/a&gt; that can accompany a crate the explanatory links are not helpful, so we came up with a way to provide links that &lt;em&gt;are&lt;/em&gt; useful by adding an item to the RO-CRate metadata that species a more useful link using the &lt;em&gt;sameAs&lt;/em&gt; property.&lt;/p&gt;
-&lt;p&gt;The example in the RO-Crate spec uses the BIBO &lt;code&gt;interviewee&lt;/code&gt; property. It's URL does not resolve to a useful page (that used to be because it went to an RDF file not a web page, but is doubly so at time of writing because it resolves to an error page at purl.org).&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;@context&amp;quot;: [ 
-    &amp;quot;https://w3id.org/ro/crate/1.0/context&amp;quot;,
-    {&amp;quot;interviewee&amp;quot;: &amp;quot;http://purl.org/ontology/bibo/interviewee&amp;quot;},
-  ],
-  &amp;quot;@graph&amp;quot;: [
-  {
-      &amp;quot;@id&amp;quot;: &amp;quot;http://purl.org/ontology/bibo/interviewee&amp;quot;,
-      &amp;quot;sameAs&amp;quot;: &amp;quot;http://neologism.ecs.soton.ac.uk/bibo.html#interviewee&amp;quot;,
-      &amp;quot;@type&amp;quot;: &amp;quot;Thing&amp;quot;
-  }
- ]
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The above offers &lt;a href="http://neologism.ecs.soton.ac.uk/bibo.html#interviewee"&gt;a more useful alternative URL&lt;/a&gt; and the code that generates the HTML summary of the RO-Crate can use that to provide a gloss [?]. But what if we actual also include the definition?&lt;/p&gt;
-&lt;p&gt;Instead of the above outrageously big URL with all the info to define &lt;code&gt;sentence&lt;/code&gt; in it we could add this to our metadata with a made-up URL for the term and an on-board rdf:Property to define it:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; &amp;quot;@context&amp;quot;: [ 
-    &amp;quot;https://w3id.org/ro/crate/1.0/context&amp;quot;,
-    {&amp;quot;sentence&amp;quot;: &amp;quot;http://example.com/criminal-characters/sentence&amp;quot;},
-  ],
-&amp;quot;@graph&amp;quot;: [
-  {
-      &amp;quot;@id&amp;quot;: &amp;quot;http://example.com/criminal-characters/sentence&amp;quot;,
-      &amp;quot;@type&amp;quot;: &amp;quot;rdf:Property&amp;quot;,
-      &amp;quot;rdfs:label&amp;quot;: &amp;quot;sentence&amp;quot;,
-      &amp;quot;rdf:comment&amp;quot;: &amp;quot;Penalty imposed by court for criminal conviction. As the data is drawn from prison records, this will usually consist of a specified term of imprisonment and the type of imprisonment conditions, e.g. 6 months hard labour. However, during this historical period it was common for persons convicted of a minor offence to be sentenced to a fine 'with the option' of a prison sentence if they were unable to pay it. After the introduction in Victoria of the Indeterminate Sentences Act in 1907, prisoners who had been declared 'habitual criminals' could also receive an indefinite sentence that meant they were imprisoned until the government authorities determined that they had sufficiently reformed. Some prisoners also faced additional penalties in addition to their prison sentence, such as periods of solitary confinement, in irons or whippings.&amp;quot;
-      }
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I could then hack the RO-Crate web viewer to use the label and comment supplied here.&lt;/p&gt;
-&lt;p&gt;So - what do you think?&lt;/p&gt;
-&lt;p&gt;a.  Hack 1?
-b.  Hack 2?
-c.  Both?
-d.  Neither?&lt;/p&gt;
-&lt;p&gt;Will I go blind?&lt;/p&gt;
-&lt;p&gt;I think Hack 2 will work but Hack 1 is funnier.&lt;/p&gt;
-</content><category term="Repositories"></category></entry></feed>
+</content><category term="Arkisto Platform"></category></entry></feed>
