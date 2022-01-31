@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="https://ptsefton.com/" rel="alternate"></link><link href="https://ptsefton.com/feed/atom" rel="self"></link><id>https://ptsefton.com/</id><updated>2021-10-12T00:00:00+02:00</updated><entry><title>Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis</title><link href="https://ptsefton.com/2021/10/12/ldaca2021/index.html" rel="alternate"></link><published>2021-10-12T00:00:00+02:00</published><updated>2021-10-12T00:00:00+02:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2021-10-12:/2021/10/12/ldaca2021/index.html</id><summary type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="https://ptsefton.com/" rel="alternate"></link><link href="https://ptsefton.com/feed/atom" rel="self"></link><id>https://ptsefton.com/</id><updated>2022-01-27T00:00:00+01:00</updated><entry><title>Infrastructure for Multilingual Text Analysis</title><link href="https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/index.html" rel="alternate"></link><published>2022-01-27T00:00:00+01:00</published><updated>2022-01-27T00:00:00+01:00</updated><author><name>Simon Musgrave, Peter Sefton</name></author><id>tag:ptsefton.com,2022-01-27:/2022/01/27/DAMTA_Slides_v1/index.html</id><summary type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide0.png' alt='Infrastructure for Multilingual Text Analysis
+Simon Musgrave
+Peter Sefton
+Language Data Commons of Australia (LDaCA)
+University of Queensland
+' title='0' border='1'  width='85%'/&gt;
+&lt;p&gt;This presentation is from an online event on January 27th 2022. Digital Approaches to Multilingual Text Analysis delivered by Simon Musgrave and Peter Sefton.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;About this event&lt;/h3&gt;
+&lt;p&gt;The use of DH tools and methods have been applied across a variety of corpora but text-analysis of English language sources has dominated …&lt;/p&gt;&lt;/blockquote&gt;&lt;/section&gt;</summary><content type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide0.png' alt='Infrastructure for Multilingual Text Analysis
+Simon Musgrave
+Peter Sefton
+Language Data Commons of Australia (LDaCA)
+University of Queensland
+' title='0' border='1'  width='85%'/&gt;
+&lt;p&gt;This presentation is from an online event on January 27th 2022. Digital Approaches to Multilingual Text Analysis delivered by Simon Musgrave and Peter Sefton.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;About this event&lt;/h3&gt;
+&lt;p&gt;The use of DH tools and methods have been applied across a variety of corpora but text-analysis of English language sources has dominated this field. These approaches are increasingly being used in languages and linguistics research for non-English corpora. At the same time, the integration of these tools has seen new research questions and possibilities emerge, including questions such as “Is there a non-Anglo digital humanities (DH), and if so, what are its characteristics” (Fiormonte 2016: 438). Recent studies have begun to examine aspects such as OCR for historical text analysis and data mining (Hill &amp;amp; Hengchen 2019; Goodman et al. 2018), multilingual computation analysis (Dombrowski 2020), semantic and sentiment analysis (Daems et al. 2019) and historical linguistics (Evans 2016), among others. The papers in this conference present a diverse range of projects and critiques of digital methods across different languages.&lt;/p&gt;
+&lt;p&gt;January 27th 1:45pm – 7:30pm AEDT&lt;/p&gt;
+&lt;p&gt;Convener: Joshua Brown Senior Lecturer and Convenor, Italian Studies, Australian National University and Katrina Grant Senior Lecturer, Centre for Digital Humanities Research, Australian National University&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide1.png' alt='Why we need research infrastructure
+Collecting data is time-consuming (expensive)
+Making data reusable while respecting rights is very desirable
+FAIR and CARE principles should guide us
+Managing this at the level of individual projects is onerous
+Even for small datasets
+Separate infrastructure encourages best practices
+FAIRer data
+Wider availability of data management expertise
+Better alignment with technology change
+' title='1' border='1'  width='85%'/&gt;
+&lt;p&gt;If we accept that making sharing and reuse of data (consistent with ethical considerations) should be the default, managing even small amounts of data can be onerous. Having infrastructures which can take on the task relieves researchers of some of this burden and brings advantages: more reliable &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR&lt;/a&gt; compliance, access to data management experts, more responsive to changing technology (at least for the life of the infrastructure)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide2.png' alt='Introducing the Language Data Commons of Australia (LDaCA)
+LDaCA will make nationally significant language data available for academic and non-academic use and provides a model for ensuring continued access with appropriate community control
+LDaCA aims to provide access to materials which record language use in Australia
+In some cases, LDaCA will provide federated access to existing collections
+In other cases, LDaCA will be a repository 
+' title='2' border='1'  width='85%'/&gt;
+&lt;p&gt;Regardless of where data is housed, access will be through one portal (external data may also be accessible by other routes). Access control will follow the &lt;a href="https://www.gida-global.org/care"&gt;CARE Principles for Indigenous Data Governance&lt;/a&gt; where original providers of data have moral rights which must be considered, data owners/custodians will control lists of authorised users.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide3.png' alt='Multilingual material
+Multilingual Australia (ABS data):
+In 2016, there were over 300 separately identified languages spoken in Australian homes
+More than one-fifth (21 per cent) of Australians spoke a language other than English at home
+An infrastructure with the stated aims of LDaCA has to be able to handle data:
+From multiple languages
+With multiple writing systems
+With multiple annotations (translations, phonetics, syntax etc)
+In principle, Unicode encoding and suitable fonts should be capable of doing this
+How does it work in practice?
+' title='3' border='1'  width='85%'/&gt;
+&lt;p&gt;'record language use in Australia' covers a huge range of possibilities. Current figures on slide, plus at least 250 Australian languages pre-European arrival, at least half no longer spoken but records remain (not for all). Unicode is not always without problems – how are we doing in meeting these goals so far? First, the architecture....&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide4.png' alt='LDaCA Architecture
+' title='4' border='1'  width='85%'/&gt;
+&lt;p&gt;The LDaCA technical architecture is based on the &lt;a href="https://arkisto-platform.github.io/"&gt;Arkisto platform&lt;/a&gt;, storing data in the &lt;a href="https://arkisto-platform.github.io/standards/ocfl/"&gt;Oxford Common File Layout&lt;/a&gt; (OCFL), with data objects such as linguistic items and collections described in detail using &lt;a href="https://arkisto-platform.github.io/standards/ro-crate/"&gt;Research Object Crate&lt;/a&gt; (RO-Crate). RO-Crate is a linked-data approach to describing data which is based on widely used standards for structural and descriptive properties such as dates and contributors, with extensions for language data being built on work in the &lt;a href="http://www.language-archives.org/"&gt;Open Language Archives&lt;/a&gt; (OLAC). RO-Crate is an international collaboration with diverse contributors, the specification is in English and most RO-Crates at this point have English metadata and contents, but there is demand for content in other languages and future versions of the spec will cover multilingual use cases.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide5.png' alt='The demonstration material
+All levels of government in Australia make documents available in multiple languages
+Demonstration corpus uses documents from:
+Services Australia
+Department of Health (Victoria)
+Languages:
+Arabic
+Farsi (Persian)
+Turkish
+Vietnamese
+Chinese (simplified characters)
+' title='5' border='1'  width='85%'/&gt;
+&lt;p&gt;Simon pointed out here that the languages all use different writing systems, 3 completely distinct systems (Turkish and Vietnamese use extended Roman scripts, Farsi uses an Arabic based script)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/demo.gif' alt='' title='6' border='1'  width='85%'/&gt;
+&lt;p&gt;This quick demonstration screencast shows a work-in-progress prototype of the LDaCA portal which will give controlled access to language resources to those who are licensed to see them  – in this demonstrator we have openly available multilingual Australian Government documents in PDF and text format and a small history dataset containing interviews with women from Western Sydney, &lt;a href="http://omeka.uws.edu.au/farmstofreeways/"&gt;Farms to Freeways&lt;/a&gt;. Eventually the LDaCA repository will contain a wide variety of data including speech, video, sign, images and digitized text with a browse and search interface to allow researchers to find data they are interested in – provided, of course that they have been granted an appropriate licence to view and use the data. In this demonstration our colleague Moises Sacal Bonequi peforms searches in different languages to find repository objects of interest. Each object has multiple translations stored in separate files, in both PDF and text format.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide7.png' alt='Why bother? 
+What are the relevant data sources?
+Lots more government documents
+Serial publications:
+Tim Sherratt lists 52 non-English sources in Trove
+31 commenced publication before 1945
+German prominent in C19
+Substantial resources &amp;gt;1945 in Italian and Greek
+Chinese publications always present
+Use of LOTEs in Australia is under-researched, huge opportunities to collect data
+' title='7' border='1'  width='85%'/&gt;
+&lt;p&gt;Is there data in Australia which makes it worth worrying about this? Yes – at least two important sources of written material, plus this is an under-researched field with lots of questions to be answered and therefore lots of data to be collected. For example, there is research on differing usage in Vietnamese depending on speakers' time of arrival in Australia (1970s v. later), yet to be replicated with other similarly time-layered communities.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/Slide8.png' alt='Acknowledgments
+The Language Data Commons of Australia project received investment from the NCRIS-enabled Australian Research Data Commons (ARDC) through two of its programs:
+Data Partnerships Program: Developing policy and technology foundations of a nationally integrated research infrastructure for language data collections of high strategic importance for the Australian research community.
+HASS Research Data Commons and Indigenous Research Capability Program: Capitalising on existing infrastructure, securing vulnerable and dispersed collections and linking with improved analysis environments for new research outcomes.
+Software developer: Moises Sacal Bonequi 
+' title='8' border='1'  width='85%'/&gt;
+&lt;/section&gt;
+</content><category term="Repositories"></category></entry><entry><title>Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis</title><link href="https://ptsefton.com/2021/10/12/ldaca2021/index.html" rel="alternate"></link><published>2021-10-12T00:00:00+02:00</published><updated>2021-10-12T00:00:00+02:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2021-10-12:/2021/10/12/ldaca2021/index.html</id><summary type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
 &lt;p&gt;The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
 &lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
@@ -1313,161 +1421,4 @@ Credits
 And here's the obligatory team snapshot at Cahill's lookout. Left to right - Fiona Tweedie, me, Sharyn Wise, Moises Sacal, Anselm Motha, Simon Kruik (front), Pascal Tampubolon, Michael Lake and Weisi Chen. (Mike Lynch couldn't make it)
 &lt;/figcaption&gt;
 &lt;/figure&gt;
-</content><category term="misc"></category></entry><entry><title>An open, composable standards–based research eResearch platform: Arkisto</title><link href="https://ptsefton.com/2020/11/23/Arkisto/index.html" rel="alternate"></link><published>2020-11-23T00:00:00+01:00</published><updated>2020-11-23T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2020-11-23:/2020/11/23/Arkisto/index.html</id><summary type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide01.png' alt='
-&lt;p&gt;' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Research data from all disciplines has interest and value that extends beyond funding cycles and must continue to be managed …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide01.png' alt='
-&lt;p&gt;' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Research data from all disciplines has interest and value that extends beyond funding cycles and must continue to be managed and preserved for the long term. However much of the effort in eResearch goes into building systems which provide functionality and services that operate on data but which actually put data at risk, that is, by loading data into a particular tool so that  the data is not be easily retrievable if the service cannot be sustained, or, at worst, the data is lost.&lt;/p&gt;
-&lt;p&gt;The Arkisto (https://arkisto-platform.github.io/why/) approach is to work with a set of standards which make data available for long term access. Using the Oxford Common File Layout (OCFL) to organize data in a repository and Research Object Crate to describe data down to the file or even variable level Arkisto supports the safeguarding of data for the long term. A growing set of Arkisto-compatible software tools allow data ingest into repositories, and the creation of data discovery portals that connect data to analytical, visualisation and computing tools.&lt;/p&gt;
-&lt;p&gt;In this presentation we will introduce the standards based platform and show a number of examples from multiple disciplines of current Arkisto deployments, including an institutional Research Data Portal, a snapshot of the Expert Nation history project, crowd-sourced data from historical criminology , and the Pacific And Regional Archive for Digital Sources in Endangered Cultures (PARADISEC).&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide02.png' alt='
-&lt;p&gt;⚠️&lt;/p&gt;
-&lt;p&gt;⚠️
-' title='2' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Across the sector we build services  that operate on data but which actually put data at risk, that is, by loading data into a particular tool so that  the data is not be easily retrievable if the service cannot be sustained, or, at worst, the data is lost.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide03.png' alt='
-&lt;p&gt;🐩&lt;/p&gt;
-&lt;p&gt;🐩
-' title='3' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;The Arkisto (https://arkisto-platform.github.io/why/) approach is to work with a set of standards which make data available for long term access.
-The closest emoji I could find to represent standards was this “standard poodle”.  Previously I used a toothbrush - on the basis that “standards are like toothbrushes, everyone wants to use their own”&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide04.png' alt='🐩#1: Oxford Common File Layout
-&lt;p&gt;🐩#1: Oxford Common File Layout&lt;/p&gt;
-&lt;p&gt;' title='4' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;The first of the two core standards is the Oxford Common File Layout (OCFL) to organize data in a repository as a set of files. This approach is scalable indefinitely, and reduces the risk that data will be locked up in monolithic systems.&lt;/p&gt;
-&lt;p&gt;This diagram by Mike Lynch shows a series of different sized collections of data, each with a label. The labels (manifests)  in this case are purely about data integrity - and contain checksums. The bundles of data are the next level up as we move on to look at Standard number 2.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide05.png' alt='🐩#2: Research Object Crate
-&lt;p&gt;🐩#2: Research Object Crate&lt;/p&gt;
-&lt;p&gt;' title='5' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;RO-Crate is the standard Arkisto uses for packaging and describing data sets. It is based on other standards:&lt;/p&gt;
-&lt;p&gt;JSON-LD - an encoding scheme for linked-data using the universally accepted JSON format (Javascript Object Notation) to encode information about Data Entities such as files and folders and Contextual Entities such as people, places, instruments, data licenses. Files can be described in detail.&lt;/p&gt;
-&lt;p&gt;Schema.org is used as the main ontology, for classes and properties - it has coverage for all the basic Who What Where style metadata and is used by Google’s dataset search and a number of other projects. There are a few terms from other ontologies where Schema.org does not have coverage.&lt;/p&gt;
-&lt;p&gt;RO-Crates may also have an HTML human readable summary of data. If you find a stray crate in your downloads folder it is easy to click on the HTML file and get a summary of what’s inside - they can also be hosted on the web using a plain-old webserver.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide06.png' alt='
-&lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is a screenshot of an RO-Crate in the &lt;a href="https://data.research.uts.edu.au/publication/67222dfddbd57f659ded65a0cd5c70e1/"&gt;UTS data portal&lt;/a&gt;. We are looking at it’s HTML summary.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide07.png' alt='
-&lt;p&gt;' title='7' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;With extensive metadata.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide08.png' alt='TOOLS 🧰 ⚒️ and SPECS
-OCFL Spec: https://ocfl.io/
-Research Object Crate (RO-Crate) Spec: http://www.researchobject.org/ro-crate
-UTS: https://github.com/UTS-eResearch/ro-crate-js
-UTS OCFL JS Implementation: https://github.com/uts-eresearch/ocfl-js
-UTS RO Crate / SOLR portal: https://github.com/uts-eresearch/oni-express
-UTS Describo: https://github.com/UTS-eResearch/describo
-UTS Describo Data Packs: https://github.com/UTS-eResearch/describo-data-packs
-CoEDL OCFL JS implementation: https://github.com/CoEDL/ocfl-js
-CoEDL Modern PARADISEC: https://github.com/CoEDL/modpdsc
-CoEDL OCFL tools: https://github.com/CoEDL/ocfl-tools
-TOOLS 🧰 ⚒️ and SPECS
-OCFL Spec: https://ocfl.io/
-Research Object Crate (RO-Crate) Spec: http://www.researchobject.org/ro-crate
-UTS: https://github.com/UTS-eResearch/ro-crate-js
-UTS OCFL JS Implementation: https://github.com/uts-eresearch/ocfl-js
-UTS RO Crate / SOLR portal: https://github.com/uts-eresearch/oni-express
-UTS Describo: https://github.com/UTS-eResearch/describo
-UTS Describo Data Packs: https://github.com/UTS-eResearch/describo-data-packs
-CoEDL OCFL JS implementation: https://github.com/CoEDL/ocfl-js
-CoEDL Modern PARADISEC: https://github.com/CoEDL/modpdsc
-CoEDL OCFL tools: https://github.com/CoEDL/ocfl-tools
-' title='8' border='1'  width='85%'/&gt;
-&lt;p&gt;A growing set of Arkisto-compatible software tools allow data ingest into repositories, and the creation of data discovery portals that connect data to analytical, visualisation and computing tools.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide09.png' alt='
-&lt;p&gt;' title='9' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;On important tool is Describo, a desktop (and soon to be online) tool for describing data using the RO-Crate standard. It created linked-data descriptions that can describe a dataset at the top level, and also individual files or variable inside files.&lt;/p&gt;
-&lt;p&gt;There are two projects working on online version of Describo - one at UTS and on led by CERN working with the European National Research Networks.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide10.png' alt='' title='10' border='1'  width='85%'/&gt;
-&lt;p&gt;Describo can be configured for use in specific domains, for example in cultural archives like PARADISEC. This slide shows how users can create entities and link them, and select from pre-defined data loaded in as part of the profile.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide11.png' alt='
-&lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Arkisto currently has two data discovery tools that index the contents of an OCFL repository so human and machines can discover data and connect to analytical, visualisation and computing tools. This is Michael Lynch’s diagram showing, from the left, how data can be “delivered” to a repository via standard tools (such as rsync) over SSH.&lt;/p&gt;
-&lt;p&gt;An indexing process uses Solr (or another index like Elasticsearch) the RO-Crate metadata for objects builds an index that can be then used for search and faceted browsing over data. There is a user on the right, requesting access to a dataset  and a security guard checking her credentials - the user has the rights to see datasets marked with a *.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide12.png' alt='' title='12' border='1'  width='85%'/&gt;
-&lt;p&gt;Here is an example from the PARADISEC indexer. As per the Arkisto appraoacgh, PARADISEC site is data driven - objects are stored on disk in OCFL using RO-Crate for describe each research object. Indexing tools walk the OCFL filesystem looking for RO-Crates, then, using the crate metadata in addition to the OCFL inventory metadata construct appropriate indexes into the content. In this example we can see version 1 of this item and the metadata we get from the OCFL inventory.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide13.png' alt='Expert Nation Snapshot
-&lt;p&gt;Expert Nation Snapshot&lt;/p&gt;
-&lt;p&gt;' title='13' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is an example of faceted search interface - constructed using the Oni portal tool  developed at UTS - this is showing a data-export from the Expert Nation &lt;a href="https://expertnation.org/"&gt;https://expertnation.org/&lt;/a&gt; with the tagline “Universities, War and 1920s &amp;amp; 30s Australia” led by  Associate Professor &lt;a href="https://www.uts.edu.au/staff/tamson.pietsch"&gt;Tamson Pietsch&lt;/a&gt; - who asked us to create an archive of the state of the dataset to support a book. We are working with Pietsch’s team to configure the portal to be useful in exporting the data. The SectorName facet is particularly important; it shows that the health sector was by far the biggest employer of returned service people.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide14.png' alt='
-&lt;p&gt;' title='14' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Here is another dataset - this time we are looking at an RO-Crate sitting on a plain old web site  (not a search portal). This is a screenshot of a map with a time-window function showing where one Laura Adams was convicted of 42 offences between 1918 and 1942. The power of the Arkisto platform, based on Standards is that adding this kind of functionality to other collections with geographical features in it is a matter of writing a few simple bits of code - the component can be re-used because the data and metadata use the RO-Crate standard (which in turn is built on other standards).The data in this demonstrator came from Alana  Piper’s &lt;a href="https://criminalcharacters.com/"&gt;Criminal Characters&lt;/a&gt;  project.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide15.png' alt='
-&lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is a screenshot of geographical data about a single offender’s sentences that has been exported in to the Time Layered Cultural Map.&lt;/p&gt;
-&lt;p&gt;We are working on making this an automated service so that any Arkisto portal can be configured to display relevant geo-data but also to be able to export it for analysis to other tools via APIs including at large scale.&lt;/p&gt;
-&lt;p&gt;The researcher, Dr Alana Piper says:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Analytical possibilities here would be uploading all offenders in bulk and
-comparing the 'range' results to determine what types of offences or other
-factors are associated with higher/lower levels of mobility.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide16.png' alt='Modern PARADISEC
-&lt;p&gt;Modern PARADISEC&lt;/p&gt;
-&lt;p&gt;' title='16' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;A modern catalog driven from OCFL and RO-Crate. This is the landing page built from the content indexed into elastic search. We can see the number of collections, items, contributors and universities at a glance. There are controls for jumping to a specific item or collection and a simple auto complete search for quickly finding known content. The bottom half is a dynamic list of the most recently updated items.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide17.png' alt='' title='17' border='1'  width='85%'/&gt;
-&lt;p&gt;PARADISEC has viewers for various content types: video and audio with time aligned transcriptions, image set viewers and document viewers (xml, pdf and microsoft formats). We are working on making these viewers available across Arkisto sites by having a standard set of hooks for adding viewer plugins to a site as needed.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide18.png' alt='' title='18' border='1'  width='85%'/&gt;
-&lt;p&gt;PARADISE has advanced search and deep indexing into transcriptions with the ability to play segments directly from the search interface.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide19.png' alt='
-&lt;p&gt;' title='19' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is another Arkisto based website - it’s a confidential access controlled database of successful grant applications using an OCFL repository, RO-Crate objects presented by the Oni portal.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide20.png' alt='
-&lt;p&gt;' title='20' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;The Arkisto website has a growing list of use cases for different data pipelines - here’s a sketch of the architecture we’re working on for &lt;a href="https://www.uts.edu.au/staff/shauna.murray"&gt;Associate Professor Shauna Murray’s&lt;/a&gt;  group at UTS - managing data from a sensor network in estuaries along the NSW coast.&lt;/p&gt;
-&lt;p&gt;See the &lt;a href="https://arkisto-platform.github.io/use-cases/"&gt;Use Cases&lt;/a&gt; page for more.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide21.png' alt='
-&lt;p&gt;https://arkisto-platform.github.io&lt;/p&gt;
-&lt;p&gt;https://arkisto-platform.github.io
-' title='21' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;To conclude:&lt;/p&gt;
-&lt;p&gt;Arkisto is a flexible research platform which can be used to assemble  a variety of data pipelines, for a variety of disciplines.&lt;/p&gt;
-&lt;p&gt;The emphasis in on FIRST keeping data safe and re-usable by storing and describing it using standards, so that in the absence of budget and resources to maintain complex virtual labs the data are still available for re-use, and THEN to use our growing set of interoperable tools to build data hubs, with re-usable data viewer plugins and standards-based interoperable analytical services.&lt;/p&gt;
-&lt;p&gt;There are active projects under way at the Universities of Melbourne and University of Technology Sydney across a wide range if disciplines and we are seeking funding to enhance the platform.&lt;/p&gt;
-&lt;/section&gt;
-</content><category term="Arkisto Platform"></category></entry></feed>
+</content><category term="misc"></category></entry></feed>
