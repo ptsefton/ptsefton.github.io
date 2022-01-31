@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="http://ptsefton.com/" rel="alternate"></link><link href="http://ptsefton.com/feed/atom" rel="self"></link><id>http://ptsefton.com/</id><updated>2021-10-12T00:00:00+02:00</updated><entry><title>Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis</title><link href="http://ptsefton.com/2021/10/12/ldaca2021/index.html" rel="alternate"></link><published>2021-10-12T00:00:00+02:00</published><updated>2021-10-12T00:00:00+02:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2021-10-12:/2021/10/12/ldaca2021/index.html</id><summary type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="https://ptsefton.com/" rel="alternate"></link><link href="https://ptsefton.com/feed/atom" rel="self"></link><id>https://ptsefton.com/</id><updated>2021-10-12T00:00:00+02:00</updated><entry><title>Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis</title><link href="https://ptsefton.com/2021/10/12/ldaca2021/index.html" rel="alternate"></link><published>2021-10-12T00:00:00+02:00</published><updated>2021-10-12T00:00:00+02:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2021-10-12:/2021/10/12/ldaca2021/index.html</id><summary type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
 &lt;p&gt;The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
 Peter Sefton &amp;amp; Moises Sacal
 technical architecture for a
 ' title='0' border='1'  width='85%'/&gt;
 &lt;p&gt;Here …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This is a presentation by Peter (Petie) Sefton and Moises Sacal, delivered at the online &lt;a href="https://conference.eresearch.edu.au/2021-program/"&gt;eResearch Australasia Conference&lt;/a&gt; on October 12th 2021.&lt;/p&gt;
 &lt;p&gt;The presentation was by recorded video - this is a written version. Mosies and I are both employed by the University of Queensland School of Languages and Culture.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide0.png' alt='Towards a (technical architecture for a) HASS Research Data Commons for language and text analysis
 Peter Sefton &amp;amp; Moises Sacal
 technical architecture for a
 ' title='0' border='1'  width='85%'/&gt;
@@ -20,7 +20,7 @@ technical architecture for a
 &lt;p&gt;In this presentation we will present the proposed architecture of the system, the principles that informed it and demonstrate the first version. Features of the solution include the use of the Arkisto Platform (presented at eResearch 2020), which leverages the Oxford Common File Layout. This enables storing complete version-controlled digital objects described using linked data with rich context via the Research Object Crate (RO-Crate) format. The solution features a distributed authorization model where the agency archiving data may be separate from that authorising access.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide1.png' alt='Project Team(alphabetical order)
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide1.png' alt='Project Team(alphabetical order)
 Michael D’Silva 
 Marco Fahmi
 Leah Gustafson 
@@ -42,18 +42,18 @@ Partner Institutions:
 &lt;p&gt;I work on Gundungurra and Darug land in the Blue Mountains, Moises is on the land of the Gadigal peoples of the Eora Nation. We would like to show acknowledge the traditional custodians of the lands on which we live and work and the importance of indigenous knowledge, culture and language to the these projects.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide2.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide2.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).
 ' title='2' border='1'  width='85%'/&gt;
 &lt;p&gt;This work is supported by the Australian Research Data Commons.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide3.png' alt='⛰️ 🔏    
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide3.png' alt='⛰️ 🔏    
 ' title='3' border='1'  width='85%'/&gt;
 &lt;p&gt;We are going to talk about the emerging architecture and focus in on one very important part of it: Access control. 🔏&lt;/p&gt;
 &lt;p&gt;But first, some background.⛰️&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide4.png' alt='The platform will:
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide4.png' alt='The platform will:
 Be sustainable, with a focus on data preservation as an overriding concern - data will not be ‘trapped’ in a particular platform and all data and code developed on the platform will be in a “migration free” layout ready for reuse
 preserve interoperable and re-usable data via the use of common standards for describing and structuring data with useful detailed context and provenance 
 make data from ATAP and LDaCA and collections discoverable - with the caveat that harvesting harmonised metadata from existing corpora may be difficult
@@ -66,7 +66,7 @@ provide and be able to show value in enabling and measuring the impact of resear
 &lt;p&gt;The architecture for the Data Commons project is informed by  as set of goals and principles starting with ensuring that important data assets have the best chance of persisting into the future.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide5.png' alt='
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide5.png' alt='
 &lt;p&gt;Repositories: institutional, domain or both&lt;/p&gt;
 &lt;p&gt;Find / Access services
 Research Data Management Plan
@@ -94,18 +94,18 @@ The cycle in the centre of  this diagram shows an idealised research practice wh
 &lt;p&gt;For data to be re-usable by humans and machines (such as ATAP notebook code that consumes datasets in a predictable way) it must be well described. The ATAP and LDaCA approach to this is to use the Research Object Crate (RO-Crate) specification. RO-Crate is essentially a guide to using a number of standards and standard approaches to describe both data and re-runnable software such as workflows or notebooks.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide6.png' alt='
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide6.png' alt='
 &lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;In the context of the previous high-level map distinguishing workspaces and repository services, we are using the Arkisto Platform (introduced &lt;a href="http://ptsefton.com/2020/11/23/Arkisto/index.html"&gt;at eResearch 2020&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Arkisto is an approach to eResearch service that places the emphasis on ensuring the long term preservation of data independently of code and services - recognizing the ephemeral nature of software.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide7.png' alt='' title='7' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide7.png' alt='' title='7' border='1'  width='85%'/&gt;
 &lt;p&gt;An example of a corpus is the PARADISEC collection - Pacific and Regional Archive for Digital Sources in Endangered Cultures&lt;/p&gt;
 &lt;p&gt;PARADISEC has viewers for various content types: video and audio with time aligned transcriptions, image set viewers and document viewers (xml, pdf and microsoft formats). We are working on making these viewers available across Arkisto sites by having a standard set of hooks for adding viewer plugins to a site as needed.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide8.png' alt='Compute
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide8.png' alt='Compute
 &lt;p&gt;HPC
 Cloud
 Desktop&lt;/p&gt;
@@ -163,7 +163,7 @@ Create virtual corpora&lt;/p&gt;
 &lt;p&gt;This slide captures the overall high-level architecture - there will be an analytical workbench (left of the diagram) which is the basis of the Australian Text Analytics (ATAP) project - this will focus on notebook-style programming using one of the emerging Jupyter notebook platforms in that space. The exact platform is not 100% decided yet, but that has not stopped the team from starting to collect and develop notebooks that open up text analytics to new coders from the linguistics community. Our engagement lead, Dr Simon Musgrave sees the ATAP work as primarily an educational enterprise - which will be underpinned by services built on the Arkisto standards that allow for rigorous, re-runnable research.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide9.png' alt='Compute
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide9.png' alt='Compute
 &lt;p&gt;HPC
 Cloud
 Desktop&lt;/p&gt;
@@ -223,7 +223,7 @@ Our demo today looks at this part …
 &lt;p&gt;I didn’t spell this out in the recorded conference presentation, but for data that resides in the repositories at the right of the diagram we want to encourage research processes that clearly separate data from code. Notebooks and other code workflows that use data will fetch a version-controlled reference copy from a repository - using an access key if needed, process the data and produce results that are then deposited into an appropriate repository alongside the code itself.  Given that a lot of the data in the language world is NOT available under open licenses such as Creative Commons it is important to establish this practice - each user of the data must negotiate or be granted access individually. Research can still be reproducible using this model, but without a culture of sharing datasets without regard for the rights of those who were involved in the creations of the data.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide10.png' alt='
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide10.png' alt='
 &lt;p&gt;' title='10' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Regarding rights, our project is informed by the &lt;a href="https://www.gida-global.org/care"&gt;CARE principles&lt;/a&gt; for indegenous data.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -231,13 +231,13 @@ Our demo today looks at this part …
 &lt;/blockquote&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide11.png' alt='
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide11.png' alt='
 &lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;https://localcontexts.org/labels/traditional-knowledge-labels/&lt;/p&gt;
 &lt;p&gt;We are designing the system so that it can work with diverse ways of expressing access rights, for example licensing like the Tribal Knowledge labels.The idea is to separate safe storage of data with a license on each item, which may reference the TK labels from a system that is administered by the data custodians who can make decisions about who is allowed to access data.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide12.png' alt='Case Study - Sydney Speaks
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide12.png' alt='Case Study - Sydney Speaks
 &lt;p&gt;' title='12' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;We are working on a case-study with the &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;Sydney Speaks project&lt;/a&gt; via steering committee member Professor Catherine Travis.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -262,13 +262,13 @@ Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http
 &lt;p&gt;Because this involved human participants there are restrictions on the distribution of data - a situation we see with lots of studies involving people in a huge range of disciplines.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide13.png' alt='Sydney Speaks Licenses
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide13.png' alt='Sydney Speaks Licenses
 ' title='13' border='1'  width='85%'/&gt;
 &lt;p&gt;There are four tiers of data access we need to enforce and observe for this data based on the participant agreements and ethics arrangements under which the data were collected.&lt;/p&gt;
 &lt;p&gt;Concerns about rights and interests are important for any data involving people - and a large amount the data both indigenous and non-indigenous we are using will require access control that ensures that data sharing is appropriate.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide14.gif' alt='Demo
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide14.gif' alt='Demo
 ' title='14' border='1'  width='85%'/&gt;
 &lt;p&gt;In this example demo we uploaded various collections and are authorising with Github organisations&lt;/p&gt;
 &lt;p&gt;In a our production release we will use AAF to authorise different groups&lt;/p&gt;
@@ -281,13 +281,13 @@ Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http
 &lt;p&gt;I have given access to all the licences to myself, as you can see here and given access to licence A to others.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide15.png' alt='
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide15.png' alt='
 &lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This diagram is a sketch of the interaction that took place in the demo - it shows how a repository can delegate authorization to an external system - in this case Github rather than CILogon. But we are working with the ARDC to set up a trial with the Australian Access Federation to allow CILogon access for the HASS Research Data Commons so we can pilot group-based access control.&lt;/p&gt;
 &lt;p&gt;NOTE: This diagram has been updated slightly from the version presented at the conference to make it clear that the lookup to find the licence for the data set is &lt;em&gt;internal&lt;/em&gt; to the repository - the id is a DOI but it is not being resolved over the web.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/10/12/ldaca2021/Slide16.png' alt='
+&lt;img src='https://ptsefton.com/2021/10/12/ldaca2021/Slide16.png' alt='
 🚧
 ' title='16' border='1'  width='85%'/&gt;
 &lt;p&gt;In this presentation, about work which is still very much under construction, we have:&lt;/p&gt;
@@ -297,7 +297,7 @@ Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http
 &lt;li&gt;We'll be back next year with more about how analytics and data repositories connect using structure and linked data.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/section&gt;
-</content><category term="Arkisto"></category></entry><entry><title>FIIR Data Management; Findable Inaccessible Interoperable and Reusable?</title><link href="http://ptsefton.com/2021/06/11/faira/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/faira/index.html</id><summary type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
+</content><category term="Arkisto"></category></entry><entry><title>FIIR Data Management; Findable Inaccessible Interoperable and Reusable?</title><link href="https://ptsefton.com/2021/06/11/faira/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/faira/index.html</id><summary type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
 &lt;p&gt;[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]&lt;/p&gt;
 &lt;p&gt;I am posting this now because …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.&lt;/p&gt;
 &lt;p&gt;[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]&lt;/p&gt;
@@ -341,7 +341,7 @@ Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http
 &lt;/blockquote&gt;
 &lt;p&gt;In some cases the repository itself will have some kind of built in access control using groups, or licences or some-such. For example, the &lt;a href="https://alveo.edu.au/"&gt;Alveo&lt;/a&gt; virtual lab funded by NeCTAR in Australia, on which I worked, has a local licence checker, as each collection has a licence. Some licences just require a click-through agreement, others are associated with lists of users who have paid money, or are blessed by a group-owner.&lt;/p&gt;
 &lt;p&gt;I'm not citing Alveo as a much-used or successful service, it was not, overall, a great success in terms of uptake, but I think it has a good data-licence architecture; there is a licence-component that was separate from the rest of the system. The licence checking sits in front of the &amp;quot;Findability&amp;quot; part of the data and the API - not much of that data is available without at least some kind of licence that users have to agree to.&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2021/06/11/faira/plantuml_Alveo.png" alt="Diagram"&gt;
+&lt;img src="https://ptsefton.com/2021/06/11/faira/plantuml_Alveo.png" alt="Diagram"&gt;
 &lt;p&gt;This pattern makes a clear separation between the licence as an abstract, identifiable thing, and a service to keep track of who holds the licence.&lt;/p&gt;
 &lt;p&gt;Question is, could we do something like this at national or global scale?&lt;/p&gt;
 &lt;p&gt;We are part of the way there - we can authenticate users in a number of ways, eg by the Australian Access Federation (&lt;a href="https://aaf.edu.au/"&gt;AAF&lt;/a&gt;) and equivalents around the world, and there are protocols that allow a service to authenticate using Google, Facebook, Github et al. These all rely on variants of a pattern where a user of service &lt;code&gt;A&lt;/code&gt; is redirected to an authentication service &lt;code&gt;B&lt;/code&gt; where they put in their password or a one-time key, and whatever other mechanism the IT department deem necessary, and then are redirected back to service &lt;code&gt;A&lt;/code&gt; with an assurance from &lt;code&gt;B&lt;/code&gt; that this person is who they say they are.&lt;/p&gt;
@@ -357,16 +357,16 @@ Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http
 &lt;p&gt;What if we had a class of stand-alone service where anyone could set up a group and add users to it? A project lead could decide on what is an acceptable way to authenticate, via Academic Federations like AAF or ORCID, public services like Github or Facebook etc and then add a list of users via email addresses or other IDs. And what if there was a way to auto-populate that group by linking through to &lt;a href="https://osf.io/"&gt;OSF&lt;/a&gt; groups, or Github organisations, Slack etc (all of which use different APIs and none of which know about licences in this sense as far as I know). This would be useful for groups of researchers who need access to storage, compute, and yes, datasets with particular licence provisions. There could be free-to-use group access for individuals and paid services for orgs like learned societies who can use the list to make deals with infrastructure providers for example. And there need not only be one of these services, they'd work well at a National level I think but could be more granular or discipline based.&lt;/p&gt;
 &lt;p&gt;(Does such a thing already exist? Did I miss it? Let me know in the comments below or on twitter - I'm @ptsefton)&lt;/p&gt;
 &lt;p&gt;We could do this something like the way modern authentication services work with a simple hand-off of a user to an authentication service, but with the addition of licence URL, to a service that says - yep I vouch for this person they have a licence to see the data.&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2021/06/11/faira/plantuml_FAIRA.png" alt="Diagram"&gt;
+&lt;img src="https://ptsefton.com/2021/06/11/faira/plantuml_FAIRA.png" alt="Diagram"&gt;
 &lt;p&gt;The above interaction diagram is purely a fantasy of mine. I'm not an Internet Engineer - so I have probably made some horrible errors, please let me know.&lt;/p&gt;
 &lt;p&gt;Obviously this requires a trust-framework; repositories would have to trust the licence servers and vice-versa and these relationships would have to be time-limited and renewable. You wouldn't want to trust a service for longer than their domain registration for example in case someone else you don't trust buys the domain, that kind of thing. And you'd want some public key stuff happening so that transactions are signed (a further mitigation against domain squatters - they would presumably not have your private key).&lt;/p&gt;
 &lt;p&gt;And this is not an overly complicated application we're talking about - all access-controlled APIs already have to do some of this locally. It's the the governance - the trust federations that will take time and significant resources (so lets start now :-).&lt;/p&gt;
 &lt;p&gt;And while we're on the subject of trust - this scheme would work in the same way most research does - with trust in the people working on the projects - typically they have access to data and are trusted to keep it safe. Being a member of a project team in health research, for example often involves joining a host organization as an honorary staff member, and being subject to all its policies and procedures. Some research groups have high levels of governance; people are identified using things like nursing registrations, and other certifications; some are ad-hoc collections of people identified by a PI using any old-email address.&lt;/p&gt;
 &lt;p&gt;NOTE: for data that needs to be kept really really secure? Data that can never even be put on a hard drive and left on a bus - then this proposal is &lt;em&gt;not&lt;/em&gt; the scheme for that data - that's where you'd be looking at a Secure eResearch Platform (SeRP) where the data lives in a walled garden and can be inspected only via a locked-down terminal application, or even stricter, you might only have secure on-site access to data that's air-gapped from any network.&lt;/p&gt;
 &lt;p&gt;Here's a sketch of some infrastructure. Essentially this is what happened inside Alveo - the question is can it be distributed so repositories can be de-coupled from authorization services?&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2021/06/11/faira/plantuml_ARCH.png" alt="Diagram"&gt;
-</content><category term="Research Data Management"></category></entry><entry><title>Arkisto: a repository based platform for managing all kinds of research data</title><link href="http://ptsefton.com/2021/06/11/or-2021-arkisto/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/or-2021-arkisto/index.html</id><summary type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide0.png' alt='Arkisto: a repository based platform for managing all kinds of research data
+&lt;img src="https://ptsefton.com/2021/06/11/faira/plantuml_ARCH.png" alt="Diagram"&gt;
+</content><category term="Research Data Management"></category></entry><entry><title>Arkisto: a repository based platform for managing all kinds of research data</title><link href="https://ptsefton.com/2021/06/11/or-2021-arkisto/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/or-2021-arkisto/index.html</id><summary type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide0.png' alt='Arkisto: a repository based platform for managing all kinds of research data
 Peter Sefton1, Marco La Rosa2, Michael Lynch1
 &lt;p&gt;University of Technology Sydney
 The University of Melbourne
@@ -374,12 +374,12 @@ The University of Melbourne
 &lt;p&gt;This presentation by Peter Sefton, Marco La Rosa and Michael Lynch was delivered at &lt;a href="https://www.openrepositories.org/"&gt;Open Repositories&lt;/a&gt; 2021 conference on 2021-06-10 (Australian time) - Marco La Rosa did most of the talking, with help from Michael Lynch.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide1.png' alt='This presentation is 
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide1.png' alt='This presentation is 
 FAIR
 driven
 ' title='1' border='1'  width='85%'/&gt;
 &lt;p&gt;We want to emphasise that this presentation is based on the &lt;a href="https://en.wikipedia.org/wiki/FAIR_data"&gt;FAIR principles&lt;/a&gt; that data …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide0.png' alt='Arkisto: a repository based platform for managing all kinds of research data
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide0.png' alt='Arkisto: a repository based platform for managing all kinds of research data
 Peter Sefton1, Marco La Rosa2, Michael Lynch1
 &lt;p&gt;University of Technology Sydney
 The University of Melbourne
@@ -387,14 +387,14 @@ The University of Melbourne
 &lt;p&gt;This presentation by Peter Sefton, Marco La Rosa and Michael Lynch was delivered at &lt;a href="https://www.openrepositories.org/"&gt;Open Repositories&lt;/a&gt; 2021 conference on 2021-06-10 (Australian time) - Marco La Rosa did most of the talking, with help from Michael Lynch.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide1.png' alt='This presentation is 
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide1.png' alt='This presentation is 
 FAIR
 driven
 ' title='1' border='1'  width='85%'/&gt;
 &lt;p&gt;We want to emphasise that this presentation is based on the &lt;a href="https://en.wikipedia.org/wiki/FAIR_data"&gt;FAIR principles&lt;/a&gt; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide2.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide2.png' alt='
 &lt;p&gt;Repositories: institutional, domain or both&lt;/p&gt;
 &lt;p&gt;Find / Access services
 Research Data Management Plan
@@ -420,7 +420,7 @@ Policy based data management
 &lt;p&gt;This schematic is a high level view of research data management showing workspaces enabling research activities (collect, analyse, describe) linked to repositories in a continuous cycle. This is similar to the software development model of commit early and commit often but in this case, deposit well described objects often and re-use as required. Workspaces can include systems like Redcap, OwnCloud and other active work systems and they should be treated as ephemeral and dirty. Repositories can include systems like Zenodo and Figshare where FAIR objects are managed for long term preservation and re-use.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide3.png' alt='Q. How can we  “FIRST LOOK AFTER THE DATA”
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide3.png' alt='Q. How can we  “FIRST LOOK AFTER THE DATA”
 🐩
 ' title='3' border='1'  width='85%'/&gt;
 &lt;p&gt;Data must be well described in open standards
@@ -430,7 +430,7 @@ Data storage layer is COMPLETELY separate from the services layer(s)
 So how? Use standards.... Weren’t you wondering about the picture of a STANDARD Poodle?&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide4.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide4.png' alt='
 &lt;p&gt;ANSWER:  OCFL&lt;br /&gt;
 ' title='4' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;UTS has been an early adopter of the OCFL (Oxford Common File Layout) specification - a way of storing file sustainably on a file system (coming soon: s3 cloud storage) so it does not need to be migrated. I [presented on this at the Open Repositories conference] (https://eresearch.uts.edu.au/2019/07/01/OCLF.htm). PARADISEC has built a scalable and performant demonstrator using OCFL.
@@ -441,7 +441,7 @@ Versioning, so repositories can make changes to objects allowing their history t
 Storage diversity, to ensure content can be stored on diverse storage infrastructures including conventional filesystems and cloud object stores&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide5.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide5.png' alt='
 Repository (Find / Access) services
 CS3MESH4EOSC
 FAIR Description Service
@@ -454,7 +454,7 @@ V1.0 © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by
 &lt;p&gt;This is an example of service connection in the CS3MESH4EOSC. In this schematic we can see a FAIR Description Service forming the bridge between the CS3MESH4EOSC services (workspaces) and various repositories. A FAIR description service uses linked-data to describe data and its context. The next slide shows some of what you might want to add to a Digital Object (data package) to make it Findable, Interoperable and Reusable.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide6.png' alt='☁️
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide6.png' alt='☁️
 📂
 &lt;p&gt;📄
 ID? Title? Description?&lt;/p&gt;
@@ -482,7 +482,7 @@ Local Data
 &lt;p&gt;Sefton is an Editor of the specification: http://www.researchobject.org/ro-crate/&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide7.png' alt='FAIR Digital Object Export Service
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide7.png' alt='FAIR Digital Object Export Service
 FAIR Description Service
 Repositories
 CS3MESH4EOSC
@@ -499,7 +499,7 @@ V1.1 © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by
 &lt;p&gt;When your data is well described you can start thinking about higher level processes and workflows connecting workspaces to repositories. And your services can evolve over time as requirements change and systems improve without needing to transform your data first. Too often research data management infrastructures get caught up in the specific technologies / systems to be implemented without considering how an ecosystem of services can work as whole. If the previous architecture slide was a low level view of the CS3MESH4EOSC implementation then this is a higher level view of a possible architecture that connects workspaces to repositories.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide8.png' alt='Identity: authentication, authorisation and group services 
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide8.png' alt='Identity: authentication, authorisation and group services 
 workspaces
 repositories
 V0.1 DRAFT  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/ 
@@ -509,16 +509,16 @@ V0.1 DRAFT  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/lice
 &lt;p&gt;(See a &lt;a href="/2021/06/11/faira"&gt;blog post from Peter Sefton floating ideas about how we might close this gap specifically for data-access licenses&lt;/a&gt;).&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide9.png' alt='' title='9' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide9.png' alt='' title='9' border='1'  width='85%'/&gt;
 &lt;p&gt;Here’s a schematic of just such an environment at UTS - this shows how the the Stash research data management system, which is an instance of &lt;a href="https://www.redboxresearchdata.com.au/"&gt;ReDBox&lt;/a&gt;, orchestrates workspaces and connects them to a research data catalogue (which is actually now a repository).&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide10.png' alt='Who is doing this?
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide10.png' alt='Who is doing this?
 ' title='10' border='1'  width='85%'/&gt;
 &lt;p&gt;So who is doing this? The PARADISEC (https://paradisec.org.au) project has built a demonstrator (https://mod.paradisec.org.au) using these technologies that is scaleable and performant with approximately 70TB of data!&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide11.png' alt='TOOLS 🧰 ⚒️ and SPECS
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide11.png' alt='TOOLS 🧰 ⚒️ and SPECS
 OCFL Spec: https://ocfl.io/
 Research Object Crate (RO-Crate) Spec: http://www.researchobject.org/ro-crate
 UTS: https://github.com/UTS-eResearch/ro-crate-js
@@ -536,26 +536,26 @@ CoEDL OCFL tools: https://github.com/CoEDL/ocfl-tools
 &lt;p&gt;And there’s an ever growing ecosystem of tools and libraries.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide12.png' alt='' title='12' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide12.png' alt='' title='12' border='1'  width='85%'/&gt;
 &lt;p&gt;Describo is an application to build RO-Crates. Installable as a desktop application it simplifies the process of packaging up data as RO-Crates.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-arkisto/Slide13.png' alt='https://arkisto-platform.github.io/
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-arkisto/Slide13.png' alt='https://arkisto-platform.github.io/
 ' title='13' border='1'  width='85%'/&gt;
 &lt;p&gt;The Arkisto website &lt;a href="https://arkisto-platform.github.io/"&gt;https://arkisto-platform.github.io/&lt;/a&gt;covers all the things we talked about here and more; it has links to all the Standards used, a growing number of case studies, abstract use cases and links to tools; repository.&lt;/p&gt;
 &lt;/section&gt;
-</content><category term="Repositories"></category></entry><entry><title>Research Object Crate (RO-Crate) Update</title><link href="http://ptsefton.com/2021/06/11/or-2021-ro-crate/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/or-2021-ro-crate/index.html</id><summary type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide0.png' alt='Research Object Crate (RO-Crate) Update
+</content><category term="Repositories"></category></entry><entry><title>Research Object Crate (RO-Crate) Update</title><link href="https://ptsefton.com/2021/06/11/or-2021-ro-crate/index.html" rel="alternate"></link><published>2021-06-11T00:00:00+02:00</published><updated>2021-06-11T00:00:00+02:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2021-06-11:/2021/06/11/or-2021-ro-crate/index.html</id><summary type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide0.png' alt='Research Object Crate (RO-Crate) Update
 Peter Sefton &amp;amp; Stian Soiland-Reyes 
 ' title='0' border='1'  width='85%'/&gt;
 &lt;p&gt;This presentation by Peter Sefton and Stian Soiland-Reyes was presented by Peter Sefton at the Open Repositories 2021 conference on 2021-06-10 (in Australia). RO-Crate has been presented at Open Repositories several times, including a workshop in 2019, so we won’t go through a very detailed introduction but we WILL …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide0.png' alt='Research Object Crate (RO-Crate) Update
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide0.png' alt='Research Object Crate (RO-Crate) Update
 Peter Sefton &amp;amp; Stian Soiland-Reyes 
 ' title='0' border='1'  width='85%'/&gt;
 &lt;p&gt;This presentation by Peter Sefton and Stian Soiland-Reyes was presented by Peter Sefton at the Open Repositories 2021 conference on 2021-06-10 (in Australia). RO-Crate has been presented at Open Repositories several times, including a workshop in 2019, so we won’t go through a very detailed introduction but we WILL start with with a quick introduction for those who have not seen it before.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide1.png' alt='☁️
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide1.png' alt='☁️
 📂
 &lt;p&gt;📄
 ID? Title? Description?&lt;/p&gt;
@@ -575,13 +575,13 @@ Local Data
 &lt;p&gt;RO-Crate is method for describing a dataset as a digital object using a &lt;strong&gt;single linked-data metadata document&lt;/strong&gt; which can have descriptions of files and resources that are local or remote, and can contain discipline-appropriate context for the data.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide2.png' alt='📂
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide2.png' alt='📂
 &lt;p&gt;🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️
 ' title='2' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;The dataset may contain any kind of data resource about anything, in any format as a file or URL&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide3.png' alt='📂
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide3.png' alt='📂
 &lt;p&gt;|-- Folder1/
 |          |-- file1.this
 |          |-- file2.that
@@ -607,7 +607,7 @@ Local Data
 &lt;p&gt;Each resource can have a machine readable description in JSON-LD format&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide4.png' alt='📂
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide4.png' alt='📂
 &lt;p&gt;|-- Folder1/
 |          |-- file1.this
 |          |-- file2.that
@@ -620,7 +620,7 @@ Local Data
 &lt;p&gt;What does this mean for repositories? It means that a repository can show the contents of a digital object using either a standard display library, or a customised one.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide5.png' alt='♻️
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide5.png' alt='♻️
 &lt;p&gt;📂
 📈Chart1&lt;/p&gt;
 &lt;p&gt;🏭 CreateAction
@@ -636,41 +636,41 @@ URL: https://example.com/workflow/1235
 &lt;p&gt;What does this mean for repositories? Repositories will be able to launch software environments; if the digital object can be run in an emulator, or a notebook environment then there is potential to launch that.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide6.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide6.png' alt='
  🎁🗜️
 📮🚚
 &lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;RO-Crate Digital Objects may be packaged for distribution eg via Zip, Bagit and OCFL Objects.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide7.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide7.png' alt='
 v1.1
 ' title='7' border='1'  width='85%'/&gt;
 &lt;p&gt;Since last Open Repositories we have reached V1.1. The main change are tidying up the file extension and making it clear that RO-Crates are not just packages of files - they are aggregations of local and remote objects, we’ll cover some other changes as well in the rest of the talk.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide8.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide8.png' alt='
 &lt;p&gt;' title='8' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.researchobject.org/ro-crate/tools/"&gt;RO-Crate Tools&lt;/a&gt; keep coming.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide9.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide9.png' alt='
 &lt;p&gt;' title='9' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;RO-Crate is being adopted in &lt;a href="https://www.researchobject.org/ro-crate/in-use/"&gt;a number of projects&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide10.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide10.png' alt='
 &lt;p&gt;' title='10' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;And RO-Crate is a foundation standard of the &lt;a href="https://arkisto-platform.github.io/standards/ro-crate/"&gt;Arkisto platform&lt;/a&gt; - which was covered in the &lt;a href="/2021/06/11/or-2021-arkisto/"&gt;presentation&lt;/a&gt; before this one.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide11.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide11.png' alt='
 &lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;The RO-Crate team is now working on profiles - these will be guidance for humans and validation tools who want to use RO-Crate for specific purposes.&lt;/p&gt;
 &lt;p&gt;Image by Bryan Derksen - Original image Cup or faces paradox.jpg uploaded by Guam on 28 July 2005, SVG conversion by Bryan Derksen, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1733355&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide12.png' alt='Machine and human readable, search engine friendly and developer familiar.
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide12.png' alt='Machine and human readable, search engine friendly and developer familiar.
 FAIR Object middleware
 http://www.researchobject.org/ro-crate/
 Standard Web Native PIDs + JSON-LD + Schema.org, off the shelf archiving formats
@@ -685,7 +685,7 @@ Zero or more Contextual Entities
 &lt;p&gt;We are working on aligning RO-Crate with the work going on internationally on FAIR Digital Objects - coming from the standpoint of having a working FAIR-inspired way to create digital objects already.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide13.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide13.png' alt='
 &lt;p&gt;' title='13' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;From a forthcoming paper by Soiland-Reyes et al&lt;/p&gt;
 &lt;blockquote&gt;
@@ -693,17 +693,17 @@ Zero or more Contextual Entities
 &lt;/blockquote&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide14.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide14.png' alt='
 &lt;p&gt;' title='14' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;RO-Crate is featuring in discussions with Dataverse as a way of packing data.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide15.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide15.png' alt='
 &lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;RO-Crate is going to be integrated with Zenodo as part of the CS3MESH4EOSC project, and by extension presumably the  Invenio digital library framework. Of course RO-Crates can be deposited as they are can be wrapped as Zip files.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide16.png' alt='Other discussions / work going on
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide16.png' alt='Other discussions / work going on
 Ecological data description (via University of Queensland)
 Machine-actionable Research Data Management Plans - eg mapping to RO-Crate
 BioExcel - discussions are taking place
@@ -717,11 +717,11 @@ A major Japanese institute (via Paul Walk)
 &lt;p&gt;There are now enough things happening with RO-Crate that it is getting hard to keep track of it all  - this slide is an incomplete view of what’s happening now.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide17.png' alt='
+&lt;img src='https://ptsefton.com/2021/06/11/or-2021-ro-crate/Slide17.png' alt='
 &lt;p&gt;' title='17' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;RO-Crate is an open group - anyone can sign up - we have meetings twice a month that alternate between the European Morning and late evening / Australian late afternoon / Early morning.&lt;/p&gt;
 &lt;/section&gt;
-</content><category term="Data Packaging Standards"></category></entry><entry><title>Infrastructure and what do we really want for DMPs</title><link href="http://ptsefton.com/2021/05/20/rda-rdmp/index.html" rel="alternate"></link><published>2021-05-20T00:00:00+02:00</published><updated>2021-05-20T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-05-20:/2021/05/20/rda-rdmp/index.html</id><summary type="html">&lt;p&gt;[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a W A L K I am beginning to think he didn't read it at all)]&lt;/p&gt;
+</content><category term="Data Packaging Standards"></category></entry><entry><title>Infrastructure and what do we really want for DMPs</title><link href="https://ptsefton.com/2021/05/20/rda-rdmp/index.html" rel="alternate"></link><published>2021-05-20T00:00:00+02:00</published><updated>2021-05-20T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-05-20:/2021/05/20/rda-rdmp/index.html</id><summary type="html">&lt;p&gt;[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a W A L K I am beginning to think he didn't read it at all)]&lt;/p&gt;
 &lt;p&gt;[Updated 2021-05-23 further minor punctuation changes]&lt;/p&gt;
 &lt;p&gt;I was invited to speak at an RDA (Research Data Alliance) 'Infrastructure and Data Management Plans (DMPs)' webinar on May 18th as part of a panel talking about Data Management Plans and infrastructure.&lt;/p&gt;
 &lt;p&gt;Here are my slides for my five minutes of RDA-fame - with some notes about what I said, some things I forgot to say and some things I learned.&lt;/p&gt;
@@ -743,17 +743,17 @@ A major Japanese institute (via Paul Walk)
 &lt;p&gt;My final slide I had prepared was about the need for cohort or group management services so we can give groups of people a license to access certain data. I have been sketching out potential software architectures for a couple of client projects that deal with this at internet-scale via standard ways of treating licences, it is worth exploring how that group management could be  developed in Data Management (Planning) applications.&lt;/p&gt;
 &lt;h2&gt;The talk&lt;/h2&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide1.png' alt='
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide1.png' alt='
 &lt;p&gt;' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;I would like to acknowledge and pay my respects to the Gundungurra and Darug people who are the traditional custodians of the land on which I live and work.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide2.png' alt='🛠️
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide2.png' alt='🛠️
 ' title='2' border='1'  width='85%'/&gt;
 &lt;p&gt;RDMPs need to be useful. There are a couple of dimensions to this - without using the dreaded “Carrot and stick” metaphor they can be useful in that they help you comply with organizational and funder requirements, but also, they could be useful as a focal point for getting access to services.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide3.png' alt='provisioning
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide3.png' alt='provisioning
 researchers
 projects
 grants db
@@ -800,12 +800,12 @@ Possible Project Components
 &lt;p&gt;The Data Lifecycle project ”morphed into” (Ian’s Words)  the  &lt;a href="https://www.raid.org.au/"&gt;Research Activity Identifier Service&lt;/a&gt; offered by ARDC - this addresses part, but not all of the Data Lifecycle vision - being able to identify activities is OK but what we really need is a way for cohorts of researchers, their support staff and other participants to be able to access resources. I’ll come back to this point.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide4.png' alt='
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide4.png' alt='
 &lt;p&gt;' title='4' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;I didn’t include this in my presentation - but two of the other presenters did! It was drawn by Gerrad Barthelot at UTS following an architecture workshop with the eResearch team - building on the idea of Provisioning as the core useful service - which we learned about partly from the Data Lifecycle project.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide5.png' alt='
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide5.png' alt='
 &lt;p&gt;Repositories: institutional, domain or both&lt;/p&gt;
 &lt;p&gt;Find / Access services
 Research Data Management Plan
@@ -834,12 +834,12 @@ Policy based data management
 &lt;p&gt;If you accept this premise, then I think the thing you have to do as a data manager or custodian is work out where all these pieces are - do you have a DMP system yet? Is there a data repository at your institution? There's no point in having data policies or running training unless these bits of infrastructure are in place. And they often aren't.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide6.png' alt='🤔
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide6.png' alt='🤔
 ' title='6' border='1'  width='85%'/&gt;
 &lt;p&gt;I am an independent agent now - since the position of eResearch Support Manager was considered to be redundant by UTS. At least for now I am in a position to work on what &lt;em&gt;I&lt;/em&gt; want to work on; for me that means looking for gaps - things that need doing in the research sector.  This next couple of slides  is not so much - what can you expect from infrastructure as in expect to be able to get right now, but what infrastructure we need to demand, to support, to ask institutions and projects like the Australian Research Data Commons to support.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide7.png' alt='☁️
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide7.png' alt='☁️
 📂
 &lt;p&gt;📄
 ID? Title? Description?&lt;/p&gt;
@@ -862,19 +862,19 @@ RO-Crate
 &lt;p&gt;RO-Crate is seeing strong uptake in some communities and is being built in to systems such as &lt;a href="https://about.workflowhub.eu/How-to-make-a-workflow-RO-crate/"&gt;Workflow Hub&lt;/a&gt;, &lt;a href="https://news.aarnet.edu.au/from-endangered-languages-to-the-science-mesh-australian-researchers-are-helping-to-design-and-build-next-gen-petascale-fair-data-repositories/"&gt;PARADISEC&lt;/a&gt; and a new project I'm going to be involved in for Humanities and Social Science Data in Australia - more on that soon. And via the European Open Science Cloud (see the next slide).&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide8.png' alt='
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide8.png' alt='
 ' title='8' border='1'  width='85%'/&gt;
 &lt;p&gt;As an example of something Marco and I have been working on (via connections with AARNet) - the CS3MESH4EOSC - is “Democratising FAIR” by helping to link the pink “workspaces” box with the green “repositories” box in our RDM diagram.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/05/20/rda-rdmp/Slide9.png' alt='
+&lt;img src='https://ptsefton.com/2021/05/20/rda-rdmp/Slide9.png' alt='
 A number of smiley faces representing people grouped into three overlapping cohorts.
 &lt;p&gt;' title='9' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;We don’t have a good way to define groups of people across institutional boundaries which is an essential part of provisioning services to research projects and provisioning non-open data.&lt;/p&gt;
 &lt;p&gt;As noted above - Research Data Management (Planning) Tools could be one part of the infrastructure needed to identity data licences, who holds that licence - meaning that repositories that know the license for data can hand-off authorization and authentication to the DMP system. John Chodacki encouraged me to feed these ideas and requirements into DMPTool process, lets consider this post the first step in that.&lt;/p&gt;
 &lt;p&gt;Steven McEachern from the Australian Data Archive and I also promised to follow up on the issue of data access/licencing.&lt;/p&gt;
 &lt;/section&gt;
-</content><category term="Research Data Management"></category></entry><entry><title>What did you do in the lockdowns PT? Part 1 - Music Videos</title><link href="http://ptsefton.com/2021/04/08/lockdowns1/index.html" rel="alternate"></link><published>2021-04-08T00:00:00+02:00</published><updated>2021-04-08T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-04-08:/2021/04/08/lockdowns1/index.html</id><summary type="html">&lt;p&gt;Post looks too long? Don't want to read? Here's the summary. Last year Gail McGlinn* and I did the lockdown home-recording thing. We put out at least one song video per week for a year (and counting - we're up to 58 over 53 weeks). Searchable, sortable website &lt;a href="http://teamhappyband.com/"&gt;here&lt;/a&gt;. We learned …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Post looks too long? Don't want to read? Here's the summary. Last year Gail McGlinn* and I did the lockdown home-recording thing. We put out at least one song video per week for a year (and counting - we're up to 58 over 53 weeks). Searchable, sortable website &lt;a href="http://teamhappyband.com/"&gt;here&lt;/a&gt;. We learned some things, got better at performing for the phone camera and our microphones and better at mixing and publishing the result.&lt;/p&gt;
+</content><category term="Research Data Management"></category></entry><entry><title>What did you do in the lockdowns PT? Part 1 - Music Videos</title><link href="https://ptsefton.com/2021/04/08/lockdowns1/index.html" rel="alternate"></link><published>2021-04-08T00:00:00+02:00</published><updated>2021-04-08T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-04-08:/2021/04/08/lockdowns1/index.html</id><summary type="html">&lt;p&gt;Post looks too long? Don't want to read? Here's the summary. Last year Gail McGlinn* and I did the lockdown home-recording thing. We put out at least one song video per week for a year (and counting - we're up to 58 over 53 weeks). Searchable, sortable website &lt;a href="http://teamhappyband.com/"&gt;here&lt;/a&gt;. We learned …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Post looks too long? Don't want to read? Here's the summary. Last year Gail McGlinn* and I did the lockdown home-recording thing. We put out at least one song video per week for a year (and counting - we're up to 58 over 53 weeks). Searchable, sortable website &lt;a href="http://teamhappyband.com/"&gt;here&lt;/a&gt;. We learned some things, got better at performing for the phone camera and our microphones and better at mixing and publishing the result.&lt;/p&gt;
 &lt;p&gt;* Disclosure Gail's my wife. We got married; she proposed, I &lt;a href="https://youtu.be/Ct0RQv6hiN8"&gt;accepted&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="video-container"&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Ct0RQv6hiN8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
@@ -948,7 +948,7 @@ A number of smiley faces representing people grouped into three overlapping coho
 &lt;p&gt;Nobody likes us! Actually we know that's not true, some of the songs get  hundreds of plays on Facebook but not many people actually click the like button, maybe twenty or so. But then you run into people in the supermarket; they say &amp;quot;love the songs keep it up&amp;quot;! And there &lt;em&gt;are&lt;/em&gt; quite a few people who listen every week on FB we just can't tell they're enjoying it. There are complex reasons for this lack of engagement - some people don't like to like things so that (they think) the evil FB can't track them. I think the default auto-play for video might be a factor too - the video starts playing, and that might not be a good time, so people skip forward to something else.&lt;/p&gt;
 &lt;p&gt;It's kind of demoralizing that it is MUCH easier to get likes with pictures of the dog.&lt;/p&gt;
  &lt;div class="figure"&gt;
- &lt;img src="http://ptsefton.com/2021/04/08/lockdowns1/pup.png" alt="Puppies win every time"&gt;
+ &lt;img src="https://ptsefton.com/2021/04/08/lockdowns1/pup.png" alt="Puppies win every time"&gt;
  &lt;div class="caption"&gt;
 &lt;p&gt;Our spoiled covid-hound, Floki - about 18 months old. Much more &lt;em&gt;like&lt;/em&gt;able on the socials than our music.&lt;/p&gt;
  &lt;/div&gt;
@@ -999,7 +999,7 @@ A number of smiley faces representing people grouped into three overlapping coho
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Everything I know about music production is from YouTube. Everything I know about song writing is from deep in my soul. Thank you for reading all the way to the bottom. Normal service will resume next week.&lt;/p&gt;
-</content><category term="Music"></category></entry><entry><title>FAIR Data Management; It's a lifestyle not a lifecycle</title><link href="http://ptsefton.com/2021/04/07/rdmpic/index.html" rel="alternate"></link><published>2021-04-07T00:00:00+02:00</published><updated>2021-04-07T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-04-07:/2021/04/07/rdmpic/index.html</id><summary type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
+</content><category term="Music"></category></entry><entry><title>FAIR Data Management; It's a lifestyle not a lifecycle</title><link href="https://ptsefton.com/2021/04/07/rdmpic/index.html" rel="alternate"></link><published>2021-04-07T00:00:00+02:00</published><updated>2021-04-07T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-04-07:/2021/04/07/rdmpic/index.html</id><summary type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
 &lt;p&gt;But first,  here's a rant about some modeling and diagramming styles and trends …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
 &lt;p&gt;But first,  here's a rant about some modeling and diagramming styles and trends that I &lt;strong&gt;do not like&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;I took part in a fun Twitter thread recently &lt;a href="https://twitter.com/FCTweedie/status/1359694360472821761"&gt;kicked off by Fiona Tweedie&lt;/a&gt;.&lt;/p&gt;
@@ -1010,7 +1010,7 @@ So my current bugbear is university processes that seem to forget that the
 actual work of higher ed is doing research and/ or teaching. This &amp;quot;research
 lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washington.edu/research/research-home-page/research-lifecycle-main-t1-blowout-2/"&gt;example&lt;/a&gt;:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img alt="The UW MyResearch Lifecycle with the four stages: Plan/Propose, Setup, Manage, and Closeout" src="http://ptsefton.com/2021/04/07/rdmpic/uw.png"&gt;
+&lt;img alt="The UW MyResearch Lifecycle with the four stages: Plan/Propose, Setup, Manage, and Closeout" src="https://ptsefton.com/2021/04/07/rdmpic/uw.png"&gt;
 &lt;p&gt;In this tweet Dr Tweedie has called out Yet Another Research Lifecycle Diagram That Leaves Out The Process Of You Know, Actually Doing Research. This process-elision happened more than once when I was working as an eResearch manager - management would get in the consultants to look at research systems, talk to the research office and graduate school and come up with a &amp;quot;journey map&amp;quot; of administrative processes that either didn't mention the actual DOING research or represented it as a tiny segment, never mind that it's, you know, the main thing researchers do when they're being researchers rather than teachers or administrators.&lt;/p&gt;
 &lt;p&gt;At least the consultants would usually produce a 'journey map' that got you from point A to Point B using chevrons to &amp;gt;&amp;gt; indicate progress and didn't insist that everything was a 'lifecycle'.&lt;/p&gt;
 &lt;p&gt;Something like:&lt;/p&gt;
@@ -1020,14 +1020,14 @@ lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washi
 &lt;p&gt;&lt;strong&gt;Reminder: A lifecycle is a biological process; how organisms come into existence, reproduce and die via various means including producing seeds, splitting themselves in two, um, making love, laying eggs and so on.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;It's really stretching the metaphor to talk about research in this way - maybe the research outputs in the UW &amp;quot;closeout&amp;quot; phase are eggs that hatch into new bouncing baby &lt;em&gt;proposals&lt;/em&gt;?&lt;/p&gt;
 &lt;p&gt;Regrettably, arranging things in circles and using the &amp;quot;lifecycle&amp;quot; metaphor is very common - see this Google image search for &amp;quot;Research Lifecycle&amp;quot;:&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/research_lifecycle_search.png"/&gt; 
+&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/research_lifecycle_search.png"/&gt; 
 &lt;p&gt;I wonder if the diagramming tools that are available to people are part of the issue - Microsoft Word, for example can build cycles and other diagrams out of a bullet list.&lt;/p&gt;
 &lt;p&gt;(I thought it would be amusing to draw the UW diagram from above as a set cogs but this happened - you can only have 3 cogs in a Word diagram.)&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/cogs.png" alt="Attempt to use Microsoft Word to make a diagram 4 cogs for Plan/Propose, Setup, Manage, and Closeout but it will only draw three of them" &gt;
+&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/cogs.png" alt="Attempt to use Microsoft Word to make a diagram 4 cogs for Plan/Propose, Setup, Manage, and Closeout but it will only draw three of them" &gt;
 &lt;a id="main"&gt;
 &lt;h2&gt;Research Data Management as a Cycle&lt;/h2&gt;
 &lt;p&gt;Now that I've got that off my chest let's look at research data management. Here's a diagram which is in fairly wide use, from &lt;a href="https://guides.library.ucsc.edu/datamanagement/"&gt;The University of California&lt;/a&gt;.&lt;/p&gt;
-&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/ResearchCycleUCSC.jpg" alt=""&gt;
+&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/ResearchCycleUCSC.jpg" alt=""&gt;
 &lt;p&gt;(This image has a CC-BY logo which means I can use it if I attribute it - but I'm not 100% clear on the original source of the diagram - it seems to be from UC somewhere.)&lt;/p&gt;
 &lt;!-- There's a JCU version https://libguides.jcu.edu.au/research-data-management-toolkit --&gt;
 &lt;p&gt;Marco used this one in some presentations we gave. I thought we could do better.&lt;/p&gt;
@@ -1071,7 +1071,7 @@ lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washi
 &lt;p&gt;That research is conducted using workspace environments - more infrastructure.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src="http://ptsefton.com/2021/04/07/rdmpic/new-diagram.png" alt="A work-in-progress sketch of FAIR research data management." &gt;
+&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/new-diagram.png" alt="A work-in-progress sketch of FAIR research data management." &gt;
 &lt;p&gt;We (by which I mean Marco) will make this prettier soon.&lt;/p&gt;
 &lt;p&gt;And yes, there is a legitimate cycle in this diagram it's the FIND -&amp;gt; ACCESS -&amp;gt; REUSE -&amp;gt; DESCRIBE -&amp;gt; DEPOSIT cycle that's inherent in the FAIR lifestyle.&lt;/p&gt;
 &lt;p&gt;Things that might still be missing:&lt;/p&gt;
@@ -1085,7 +1085,7 @@ lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washi
 &lt;/ul&gt;
 &lt;p&gt;Thoughts anyone?  Comments below or take it up on twitter with @ptsefton.&lt;/p&gt;
 &lt;p&gt;(I have reworked parts of a document that Marco and I have been working on with Guido Aben for this document, and thanks to recent graduate Florence Sefton for picking up typos and sense-checking).&lt;/p&gt;
-</content><category term="Research Data Management"></category></entry><entry><title>Research Data Management looking outward from IT</title><link href="http://ptsefton.com/2021/01/28/rdm4aero/index.html" rel="alternate"></link><published>2021-01-28T00:00:00+01:00</published><updated>2021-01-28T00:00:00+01:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-01-28:/2021/01/28/rdm4aero/index.html</id><summary type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
+</content><category term="Research Data Management"></category></entry><entry><title>Research Data Management looking outward from IT</title><link href="https://ptsefton.com/2021/01/28/rdm4aero/index.html" rel="alternate"></link><published>2021-01-28T00:00:00+01:00</published><updated>2021-01-28T00:00:00+01:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-01-28:/2021/01/28/rdm4aero/index.html</id><summary type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
 &lt;p&gt;Carina asked:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It would be really interesting to find out what is happening in the research data management space …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
@@ -1096,7 +1096,7 @@ lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washi
 &lt;/blockquote&gt;
 &lt;p&gt;At this stage I was still the eResearch Support Manager at UTS - but I only had a couple of weeks left in that role.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide01.png' alt='Research Data Management 
+&lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide01.png' alt='Research Data Management 
 looking outward from IT
 Research Data Management 
 looking outward from IT
@@ -1104,19 +1104,19 @@ looking outward from IT
 &lt;p&gt;In this presentation I’m going to start from a naive IT perspective about research data.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide02.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide02.png' alt='
 &lt;p&gt;' title='2' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;I would like to acknowledge and pay my respects to the Gundungurra and Darug people who are the traditional custodians of the land on which I live and work.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide03.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide03.png' alt='
 ❄️
 &lt;p&gt;❄️
 ' title='3' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Research data is special - like snowflakes - and I don’t mean that in a mean way, Research Data could be anything - any shape any size and researchers are also special, not always 100% aligned with institutional priorities, they align with their disciplines and departments and research teams.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide04.png' alt='$data_management != $storage
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide04.png' alt='$data_management != $storage
 $data_management != $storage
 ' title='4' border='1'  width='85%'/&gt;
 &lt;p&gt;It’s obvious that buying storage doesn’t mean you’re doing data management well but that doesn’t mean it’s not worth restating.&lt;/p&gt;
@@ -1124,13 +1124,13 @@ $data_management != $storage
 &lt;p&gt;And remember that not all research data is the same “shape” as corporate data - it does not all come in database or tabular form - it can be images, video, text, with all kinds of structures.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide05.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide05.png' alt='
 💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾👩🏽‍🔬💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾
 &lt;p&gt;' title='5' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;There are several reasons we don’t want to just dole-out storage as needed.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide06.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide06.png' alt='
 💰
 &lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -1138,14 +1138,14 @@ $data_management != $storage
 &lt;/ol&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide07.png' alt='$storing != $sharing
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide07.png' alt='$storing != $sharing
 &lt;p&gt;' title='7' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;ol start="2"&gt;
 &lt;li&gt;Not everything is stored in “central storage” anyway. There are share-sync services like AARNet’s Cloudstor.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide08.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide08.png' alt='
 Emoji of lots of floppy disks with a researcher in the centre
 ' title='8' border='1'  width='85%'/&gt;
 &lt;ol start="3"&gt;
@@ -1153,7 +1153,7 @@ Emoji of lots of floppy disks with a researcher in the centre
 &lt;/ol&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide09.png' alt='Emoji of a trophy and a bomb
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide09.png' alt='Emoji of a trophy and a bomb
 ' title='9' border='1'  width='85%'/&gt;
 &lt;p&gt;So far we’ve just looked at things from an infrastructure perspective but that’s not actually why we’re here, us with jobs in eResearch. I think we’re here to help researchers do &lt;em&gt;excellent&lt;/em&gt; research with &lt;em&gt;integrity,&lt;/em&gt; AND we need to help our institutions and researchers manage &lt;em&gt;risk&lt;/em&gt;.&lt;/p&gt;
 &lt;ul&gt;
@@ -1175,7 +1175,7 @@ Emoji of lots of floppy disks with a researcher in the centre
 &lt;/ul&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide10.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide10.png' alt='
 &lt;p&gt;Image showing a research data management system that can provision research services (workspaces).&lt;/p&gt;
 &lt;p&gt;' title='10' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Inspired by the (defunct?) Research Data Lifecycle project that was conceived by the former  organizations that became the Australian Research Data Commons (ANDS, NeCTAR and RDSI) we came up with this architecture for a central research data management system (in our case we use the open source ReDBox system) loosely linked to a variety of research Workspaces, as we call them.&lt;/p&gt;
@@ -1183,60 +1183,60 @@ Emoji of lots of floppy disks with a researcher in the centre
 &lt;p&gt;(Diagram by Gerard Barthelot at UTS)&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide11.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide11.png' alt='
 &lt;p&gt;Screenshot of the OCFL home page.&lt;/p&gt;
 &lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;UTS has been an early adopter of the OCFL (Oxford Common File Layout) specificiation - a way of storing file sustainably on a file system (coming soon: s3 cloud storage) so it does not need to be migrated. I &lt;a href="https://eresearch.uts.edu.au/2019/07/01/OCLF.htm"&gt;presented on this at the Open Repositories conference&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide12.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide12.png' alt='
 &lt;p&gt;Screenshot of the RO-Crate home page.&lt;/p&gt;
 &lt;p&gt;' title='12' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;And at the same conference, I introduced the RO-Crate standards effort, which is a marriage between the DataCrate data packaging work we’ve been doing at UTS for a few years, and the Research Object project.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide13.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide13.png' alt='
 &lt;p&gt;Screenshot of the Arkisto page.&lt;/p&gt;
 &lt;p&gt;' title='13' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;We created the Arkisto platform to bring together all the work we’ve been doing to standardise research data metadata, and to build a toolkit for sustainable data repositories at all scales from single-collection up to institutional, and potentially discipline and national collections.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide14.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide14.png' alt='
 &lt;p&gt;Screenshot from the Arkisto use-cases page showing an idealized data-flow for sensor data using the Arkisto platform.&lt;/p&gt;
 &lt;p&gt;' title='14' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This is an example of one of many Arkisto deployment patterns you can read more on the &lt;a href="https://arkisto-platform.github.io/use-cases/"&gt;Arkisto Use Cases page&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide15.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide15.png' alt='
 &lt;p&gt;Screenshot of a search interface to a historical dataset.&lt;/p&gt;
 &lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This is an example of an Arkisto-platform output. Data exported from one content management system into an archive-ready RO-Crate package, which can then be made into a live site. This was created for Ass Prof Tamson Pietsch at UTS. The website is ephemeral - the data will be Interoperable and Reusable (I and R from FAIR) via the use of RO-Crate.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide16.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide16.png' alt='
 &lt;p&gt;Image of chickens roosting on the roof of their house rather than inside it.&lt;/p&gt;
 &lt;p&gt;' title='16' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Now to higher-level concerns: I built this infrastructure for my chooks (chickens) - they have a nice dry box with a roosting loft. But most of the time they roost on the roof.&lt;/p&gt;
 &lt;p&gt;We know all too well that researchers don’t always use the infrastructure we build for them - you have to get a few other things right as well.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide17.png' alt='… 
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide17.png' alt='… 
 and have the right policy environment …
 &lt;p&gt;' title='17' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide18.png' alt='… they will come, given the right training, incentives, support etc.
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide18.png' alt='… they will come, given the right training, incentives, support etc.
 &lt;p&gt;' title='18' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;One of the big frustrations I have had as an eResearch manager is that the expectations and aspirations  of funders and integrity managers and so on are well ahead of our capacity to deliver the services they want, and then when we DO get infrastructure sorted there are organizational challenges to getting people to use it. To go back to my metaphor, we can’t just pick up the researchers from the roof and put them in their loft, or spray water on them to get them to move.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide20.png' alt='CS3MESH4EOSC T4.2
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide20.png' alt='CS3MESH4EOSC T4.2
 CS3MESH4EOSC T4.2
 ' title='20' border='1'  width='85%'/&gt;
 &lt;p&gt;Via Gavin Kennedy and Guido Aben from AARNet Marco La Rosa and I are helping out with this charmingly named project which is adding data management service to storage, syncronization and sharing services. Contracts not yet in place so won't say much about this yet.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide21.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide21.png' alt='
 &lt;p&gt;Schreenshot of CS3MESH4EOSC homepage.&lt;/p&gt;
 &lt;p&gt;' title='21' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.cs3mesh4eosc.eu/about"&gt;https://www.cs3mesh4eosc.eu/about&lt;/a&gt; EOSC is the European Open Science Cloud&lt;/p&gt;
@@ -1246,30 +1246,30 @@ CS3MESH4EOSC will connect locally and individually provided services, and scale 
 &lt;/blockquote&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide19.png' alt=' Telescope emoji' title='19' border='1'  width='85%'/&gt;
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide19.png' alt=' Telescope emoji' title='19' border='1'  width='85%'/&gt;
 &lt;p&gt;I told Carina I would look outwards as well. What are we keeping an eye on?&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide22.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide22.png' alt='
     Book and factory emojis
 ' title='22' border='1'  width='85%'/&gt;
 &lt;p&gt;Watch out for the book factory. Sorry, the publishing industry.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide23.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide23.png' alt='
     Fox and hen emojis
 ' title='23' border='1'  width='85%'/&gt;
 &lt;p&gt;The publishing industry is going to “help” the sector look after it’s research data.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide24.png' alt='
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide24.png' alt='
 © 
 ' title='24' border='1'  width='85%'/&gt;
 &lt;p&gt;Like, you, know, they did with the copyright in publications. Not only did that industry work out how to take over copyright in research works, they successfully moved from selling us hard-copy resources that we could keep in our own libraries  to charging an annual rent on the literature - getting to the point where they can argue that they are essential to maintaining the scholarly record and MUST be involved in the publishing process even when the (sometimes dubious, patchy) quality checks are performed by &lt;em&gt;us&lt;/em&gt; who created the literature.&lt;/p&gt;
 &lt;p&gt;It’s up to research institutions whether this story repeats with research data - remember who you’re dealing with when you sign those contracts!&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide25.png' alt='Some questions I will explore post UTS
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide25.png' alt='Some questions I will explore post UTS
 How many research institutions in Australia have secure, scalable, sustainable Research Data repositories that support FAIR practices?
 When are we going to have national repositories?
 How many of the eResearch Platforms funded under various programs have sustainable data management stories? How much data is locked-up behind APIs and will be inaccessible if the software stops running?
@@ -1277,14 +1277,14 @@ How many of the eResearch Platforms funded under various programs have sustainab
 &lt;p&gt;In the 2010s the Australian National Data (ANDS) service funded investment in Metadata stores; one of these was the ReDBOX research data management platform which is alive and well and being sustained by QCIF with a subscription maintenance service. But ANDS didn’t fund development of Research Data Repositories.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='http://ptsefton.com/2021/01/28/rdm4aero/Slide26.png' alt='Credits
+    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide26.png' alt='Credits
 The UTS eResaerch team
 Michael Lynch, Sharyn Wise, Fiona Tweedie, Moises Sacal, Marco La Rosa, Pascal Tampubolon,  Anelm Motha, Michael Lake, Matthew Gaston ,Simon Kruik, Weisi Chen from Intersect Austrlaia and our RDM project sponsor Louise Wheeler
 Credits
 &lt;p&gt;' title='26' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;The work I’ve talked about here was all done with with the UTS team.&lt;/p&gt;
 &lt;/section&gt;
-</content><category term="Research Data Management"></category></entry><entry><title>Redundant.</title><link href="http://ptsefton.com/2021/01/04/redundant/index.html" rel="alternate"></link><published>2021-01-04T00:00:00+01:00</published><updated>2021-01-04T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2021-01-04:/2021/01/04/redundant/index.html</id><summary type="html">&lt;p&gt;Thursday 10 December 2020 was my last day at &lt;a href="https://uts.edu.au"&gt;UTS&lt;/a&gt; as the eResearch Support Manager. The position was declared to be redundant under the &amp;quot;Voluntary Separation Program&amp;quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.&lt;/p&gt;
+</content><category term="Research Data Management"></category></entry><entry><title>Redundant.</title><link href="https://ptsefton.com/2021/01/04/redundant/index.html" rel="alternate"></link><published>2021-01-04T00:00:00+01:00</published><updated>2021-01-04T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2021-01-04:/2021/01/04/redundant/index.html</id><summary type="html">&lt;p&gt;Thursday 10 December 2020 was my last day at &lt;a href="https://uts.edu.au"&gt;UTS&lt;/a&gt; as the eResearch Support Manager. The position was declared to be redundant under the &amp;quot;Voluntary Separation Program&amp;quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.&lt;/p&gt;
 &lt;p&gt;This is the third redundancy for me, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Thursday 10 December 2020 was my last day at &lt;a href="https://uts.edu.au"&gt;UTS&lt;/a&gt; as the eResearch Support Manager. The position was declared to be redundant under the &amp;quot;Voluntary Separation Program&amp;quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.&lt;/p&gt;
 &lt;p&gt;This is the third redundancy for me, and apart from fleeting feelings of uselessness, bitterness and mild despair being redundant, and of no use to anyone any more, has worked out fine for me in the past.&lt;/p&gt;
 &lt;p&gt;I've enjoyed working at UTS for the past nearly six years - this year was challenging for a lot of people, but working from home suited me.&lt;/p&gt;
@@ -1304,36 +1304,36 @@ Credits
 &lt;p&gt;I have accepted an honorary position as a Visiting Fellow in the School of Mathematical and Physical Sciences, within the Faculty of Science so I can keep working with some of the research teams on data management and analytical pipelines, and will sit on an advisory committee that I'll tell you about next year.&lt;/p&gt;
 &lt;p&gt;The core eResearch team had an end-of-2020/bye-bye-Petie get together. A couple of people couldn't make it but the rest of us chartered a double-decker and had a bit of a tour of the upper Blue Mountains followed by fully catered lunch. I can only hope that I came half way to the standard of the UTS Ariel Function Centre with my humble efforts at the stove, and some knife work from Pascal and Anselm (pictured below) on the side dishes.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="http://ptsefton.com/2021/01/04/redundant/bus.jpg"&gt;
+&lt;img src="https://ptsefton.com/2021/01/04/redundant/bus.jpg"&gt;
 &lt;figcaption&gt;It's not often the Explorer Bus comes down this particular little street - we had to fight our way out through the overhanging trees with machetes. And I'd forgotten how much Coach Captain banter eclipses mere dad jokes - and our captain Michael has been coach captaining for 34 years so he has all the good patter. &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-&lt;img src="http://ptsefton.com/2021/01/04/redundant/cahills.jpg" alt="Nine people in front of a valley view" &gt;
+&lt;img src="https://ptsefton.com/2021/01/04/redundant/cahills.jpg" alt="Nine people in front of a valley view" &gt;
 &lt;figcaption&gt;
 And here's the obligatory team snapshot at Cahill's lookout. Left to right - Fiona Tweedie, me, Sharyn Wise, Moises Sacal, Anselm Motha, Simon Kruik (front), Pascal Tampubolon, Michael Lake and Weisi Chen. (Mike Lynch couldn't make it)
 &lt;/figcaption&gt;
 &lt;/figure&gt;
-</content><category term="misc"></category></entry><entry><title>An open, composable standards–based research eResearch platform: Arkisto</title><link href="http://ptsefton.com/2020/11/23/Arkisto/index.html" rel="alternate"></link><published>2020-11-23T00:00:00+01:00</published><updated>2020-11-23T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2020-11-23:/2020/11/23/Arkisto/index.html</id><summary type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
+</content><category term="misc"></category></entry><entry><title>An open, composable standards–based research eResearch platform: Arkisto</title><link href="https://ptsefton.com/2020/11/23/Arkisto/index.html" rel="alternate"></link><published>2020-11-23T00:00:00+01:00</published><updated>2020-11-23T00:00:00+01:00</updated><author><name>Peter (Petie) Sefton</name></author><id>tag:ptsefton.com,2020-11-23:/2020/11/23/Arkisto/index.html</id><summary type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide01.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide01.png' alt='
 &lt;p&gt;' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Research data from all disciplines has interest and value that extends beyond funding cycles and must continue to be managed …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This is a talk delivered in recorded format by Peter Sefton, Nick Thieberger, Marco La Rosa and Mike Lynch at eResearch Australasia 2020. Also posted &lt;a href="https://eresearch.uts.edu.au/2020/11/23/Arkisto.htm"&gt;on the UTS eResearch website&lt;/a&gt;.&lt;/p&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide01.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide01.png' alt='
 &lt;p&gt;' title='1' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Research data from all disciplines has interest and value that extends beyond funding cycles and must continue to be managed and preserved for the long term. However much of the effort in eResearch goes into building systems which provide functionality and services that operate on data but which actually put data at risk, that is, by loading data into a particular tool so that  the data is not be easily retrievable if the service cannot be sustained, or, at worst, the data is lost.&lt;/p&gt;
 &lt;p&gt;The Arkisto (https://arkisto-platform.github.io/why/) approach is to work with a set of standards which make data available for long term access. Using the Oxford Common File Layout (OCFL) to organize data in a repository and Research Object Crate to describe data down to the file or even variable level Arkisto supports the safeguarding of data for the long term. A growing set of Arkisto-compatible software tools allow data ingest into repositories, and the creation of data discovery portals that connect data to analytical, visualisation and computing tools.&lt;/p&gt;
 &lt;p&gt;In this presentation we will introduce the standards based platform and show a number of examples from multiple disciplines of current Arkisto deployments, including an institutional Research Data Portal, a snapshot of the Expert Nation history project, crowd-sourced data from historical criminology , and the Pacific And Regional Archive for Digital Sources in Endangered Cultures (PARADISEC).&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide02.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide02.png' alt='
 &lt;p&gt;⚠️&lt;/p&gt;
 &lt;p&gt;⚠️
 ' title='2' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Across the sector we build services  that operate on data but which actually put data at risk, that is, by loading data into a particular tool so that  the data is not be easily retrievable if the service cannot be sustained, or, at worst, the data is lost.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide03.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide03.png' alt='
 &lt;p&gt;🐩&lt;/p&gt;
 &lt;p&gt;🐩
 ' title='3' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
@@ -1341,14 +1341,14 @@ And here's the obligatory team snapshot at Cahill's lookout. Left to right - Fio
 The closest emoji I could find to represent standards was this “standard poodle”.  Previously I used a toothbrush - on the basis that “standards are like toothbrushes, everyone wants to use their own”&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide04.png' alt='🐩#1: Oxford Common File Layout
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide04.png' alt='🐩#1: Oxford Common File Layout
 &lt;p&gt;🐩#1: Oxford Common File Layout&lt;/p&gt;
 &lt;p&gt;' title='4' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;The first of the two core standards is the Oxford Common File Layout (OCFL) to organize data in a repository as a set of files. This approach is scalable indefinitely, and reduces the risk that data will be locked up in monolithic systems.&lt;/p&gt;
 &lt;p&gt;This diagram by Mike Lynch shows a series of different sized collections of data, each with a label. The labels (manifests)  in this case are purely about data integrity - and contain checksums. The bundles of data are the next level up as we move on to look at Standard number 2.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide05.png' alt='🐩#2: Research Object Crate
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide05.png' alt='🐩#2: Research Object Crate
 &lt;p&gt;🐩#2: Research Object Crate&lt;/p&gt;
 &lt;p&gt;' title='5' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;RO-Crate is the standard Arkisto uses for packaging and describing data sets. It is based on other standards:&lt;/p&gt;
@@ -1357,17 +1357,17 @@ The closest emoji I could find to represent standards was this “standard poodl
 &lt;p&gt;RO-Crates may also have an HTML human readable summary of data. If you find a stray crate in your downloads folder it is easy to click on the HTML file and get a summary of what’s inside - they can also be hosted on the web using a plain-old webserver.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide06.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide06.png' alt='
 &lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This is a screenshot of an RO-Crate in the &lt;a href="https://data.research.uts.edu.au/publication/67222dfddbd57f659ded65a0cd5c70e1/"&gt;UTS data portal&lt;/a&gt;. We are looking at it’s HTML summary.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide07.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide07.png' alt='
 &lt;p&gt;' title='7' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;With extensive metadata.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide08.png' alt='TOOLS 🧰 ⚒️ and SPECS
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide08.png' alt='TOOLS 🧰 ⚒️ and SPECS
 OCFL Spec: https://ocfl.io/
 Research Object Crate (RO-Crate) Spec: http://www.researchobject.org/ro-crate
 UTS: https://github.com/UTS-eResearch/ro-crate-js
@@ -1393,38 +1393,38 @@ CoEDL OCFL tools: https://github.com/CoEDL/ocfl-tools
 &lt;p&gt;A growing set of Arkisto-compatible software tools allow data ingest into repositories, and the creation of data discovery portals that connect data to analytical, visualisation and computing tools.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide09.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide09.png' alt='
 &lt;p&gt;' title='9' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;On important tool is Describo, a desktop (and soon to be online) tool for describing data using the RO-Crate standard. It created linked-data descriptions that can describe a dataset at the top level, and also individual files or variable inside files.&lt;/p&gt;
 &lt;p&gt;There are two projects working on online version of Describo - one at UTS and on led by CERN working with the European National Research Networks.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide10.png' alt='' title='10' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide10.png' alt='' title='10' border='1'  width='85%'/&gt;
 &lt;p&gt;Describo can be configured for use in specific domains, for example in cultural archives like PARADISEC. This slide shows how users can create entities and link them, and select from pre-defined data loaded in as part of the profile.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide11.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide11.png' alt='
 &lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Arkisto currently has two data discovery tools that index the contents of an OCFL repository so human and machines can discover data and connect to analytical, visualisation and computing tools. This is Michael Lynch’s diagram showing, from the left, how data can be “delivered” to a repository via standard tools (such as rsync) over SSH.&lt;/p&gt;
 &lt;p&gt;An indexing process uses Solr (or another index like Elasticsearch) the RO-Crate metadata for objects builds an index that can be then used for search and faceted browsing over data. There is a user on the right, requesting access to a dataset  and a security guard checking her credentials - the user has the rights to see datasets marked with a *.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide12.png' alt='' title='12' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide12.png' alt='' title='12' border='1'  width='85%'/&gt;
 &lt;p&gt;Here is an example from the PARADISEC indexer. As per the Arkisto appraoacgh, PARADISEC site is data driven - objects are stored on disk in OCFL using RO-Crate for describe each research object. Indexing tools walk the OCFL filesystem looking for RO-Crates, then, using the crate metadata in addition to the OCFL inventory metadata construct appropriate indexes into the content. In this example we can see version 1 of this item and the metadata we get from the OCFL inventory.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide13.png' alt='Expert Nation Snapshot
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide13.png' alt='Expert Nation Snapshot
 &lt;p&gt;Expert Nation Snapshot&lt;/p&gt;
 &lt;p&gt;' title='13' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This is an example of faceted search interface - constructed using the Oni portal tool  developed at UTS - this is showing a data-export from the Expert Nation &lt;a href="https://expertnation.org/"&gt;https://expertnation.org/&lt;/a&gt; with the tagline “Universities, War and 1920s &amp;amp; 30s Australia” led by  Associate Professor &lt;a href="https://www.uts.edu.au/staff/tamson.pietsch"&gt;Tamson Pietsch&lt;/a&gt; - who asked us to create an archive of the state of the dataset to support a book. We are working with Pietsch’s team to configure the portal to be useful in exporting the data. The SectorName facet is particularly important; it shows that the health sector was by far the biggest employer of returned service people.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide14.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide14.png' alt='
 &lt;p&gt;' title='14' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;Here is another dataset - this time we are looking at an RO-Crate sitting on a plain old web site  (not a search portal). This is a screenshot of a map with a time-window function showing where one Laura Adams was convicted of 42 offences between 1918 and 1942. The power of the Arkisto platform, based on Standards is that adding this kind of functionality to other collections with geographical features in it is a matter of writing a few simple bits of code - the component can be re-used because the data and metadata use the RO-Crate standard (which in turn is built on other standards).The data in this demonstrator came from Alana  Piper’s &lt;a href="https://criminalcharacters.com/"&gt;Criminal Characters&lt;/a&gt;  project.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide15.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide15.png' alt='
 &lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This is a screenshot of geographical data about a single offender’s sentences that has been exported in to the Time Layered Cultural Map.&lt;/p&gt;
 &lt;p&gt;We are working on making this an automated service so that any Arkisto portal can be configured to display relevant geo-data but also to be able to export it for analysis to other tools via APIs including at large scale.&lt;/p&gt;
@@ -1436,32 +1436,32 @@ factors are associated with higher/lower levels of mobility.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide16.png' alt='Modern PARADISEC
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide16.png' alt='Modern PARADISEC
 &lt;p&gt;Modern PARADISEC&lt;/p&gt;
 &lt;p&gt;' title='16' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;A modern catalog driven from OCFL and RO-Crate. This is the landing page built from the content indexed into elastic search. We can see the number of collections, items, contributors and universities at a glance. There are controls for jumping to a specific item or collection and a simple auto complete search for quickly finding known content. The bottom half is a dynamic list of the most recently updated items.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide17.png' alt='' title='17' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide17.png' alt='' title='17' border='1'  width='85%'/&gt;
 &lt;p&gt;PARADISEC has viewers for various content types: video and audio with time aligned transcriptions, image set viewers and document viewers (xml, pdf and microsoft formats). We are working on making these viewers available across Arkisto sites by having a standard set of hooks for adding viewer plugins to a site as needed.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide18.png' alt='' title='18' border='1'  width='85%'/&gt;
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide18.png' alt='' title='18' border='1'  width='85%'/&gt;
 &lt;p&gt;PARADISE has advanced search and deep indexing into transcriptions with the ability to play segments directly from the search interface.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide19.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide19.png' alt='
 &lt;p&gt;' title='19' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;This is another Arkisto based website - it’s a confidential access controlled database of successful grant applications using an OCFL repository, RO-Crate objects presented by the Oni portal.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide20.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide20.png' alt='
 &lt;p&gt;' title='20' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
 &lt;p&gt;The Arkisto website has a growing list of use cases for different data pipelines - here’s a sketch of the architecture we’re working on for &lt;a href="https://www.uts.edu.au/staff/shauna.murray"&gt;Associate Professor Shauna Murray’s&lt;/a&gt;  group at UTS - managing data from a sensor network in estuaries along the NSW coast.&lt;/p&gt;
 &lt;p&gt;See the &lt;a href="https://arkisto-platform.github.io/use-cases/"&gt;Use Cases&lt;/a&gt; page for more.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='http://ptsefton.com/2020/11/23/Arkisto/Slide21.png' alt='
+&lt;img src='https://ptsefton.com/2020/11/23/Arkisto/Slide21.png' alt='
 &lt;p&gt;https://arkisto-platform.github.io&lt;/p&gt;
 &lt;p&gt;https://arkisto-platform.github.io
 ' title='21' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
