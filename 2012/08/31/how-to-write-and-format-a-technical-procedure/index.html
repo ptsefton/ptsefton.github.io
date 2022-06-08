@@ -13,13 +13,13 @@
 <link rel="canonical" href="https://ptsefton.com/2012/08/31/how-to-write-and-format-a-technical-procedure/index.html">
 
         <meta name="author" content="ptsefton" />
-        <meta name="description" content="## About this document ### Background The first job I had after doing a PhD in linguistics, back in 1995 was as a technical writer for TAFE NSW, working exciting stuff like how to set up networking in the MicroVax servers they had running the networks in the computing labs (TAFE does …" />
+        <meta name="description" content="About this document Background The first job I had after doing a PhD in linguistics, back in 1995 was as a technical writer for TAFE NSW, working exciting stuff like how to set up networking in the MicroVax servers they had running the networks in the computing labs (TAFE does …" />
 
         <meta property="og:site_name" content="ptsefton.com" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="How to write and format a technical procedure"/>
         <meta property="og:url" content="https://ptsefton.com/2012/08/31/how-to-write-and-format-a-technical-procedure/index.html"/>
-        <meta property="og:description" content="## About this document ### Background The first job I had after doing a PhD in linguistics, back in 1995 was as a technical writer for TAFE NSW, working exciting stuff like how to set up networking in the MicroVax servers they had running the networks in the computing labs (TAFE does …"/>
+        <meta property="og:description" content="About this document Background The first job I had after doing a PhD in linguistics, back in 1995 was as a technical writer for TAFE NSW, working exciting stuff like how to set up networking in the MicroVax servers they had running the networks in the computing labs (TAFE does …"/>
         <meta property="article:published_time" content="2012-08-31" />
             <meta property="article:section" content="How to" />
             <meta property="article:author" content="ptsefton" />
@@ -249,15 +249,15 @@ ptsefton.com            </a>
                 </div>
                 <article itemscope="itemscope" itemtype="http://schema.org/ScholarlyArticle">
 <section>
-## About this document
+<h2>About this document</h2>
 <section>
-### Background
+<h3>Background</h3>
 <p>The first job I had after doing a PhD in linguistics, back in 1995 was
 as a technical writer for TAFE NSW, working exciting stuff like how to
 set up networking in the MicroVax servers they had running the networks
 in the computing labs (TAFE does vocational education). The tech-writing
 team leader was called David Drinkwater, and he taught me some simple
-rules that have proven to be very reliable[^1].</p>
+rules that have proven to be very reliable<a href="#1">*</a>.</p>
 <p>The most important rule is to use the imperative voice. That is, tell
 the reader exactly what to do in each and every step without ‘you
 should’ or ‘the following needs to be done’.  Every job I’ve had since I
@@ -266,7 +266,7 @@ so this time I’m putting in on my own site so I don’t have to rewrite it
 every five or so years. Suggestions are welcome, via the comments.</p>
 </section>
 <section>
-### Scope
+<h3>Scope</h3>
 <p>This is about reproducible procedures that need to be unambiguous. Think
 <em>training</em> rather than <em>education</em>. If something can be expressed as a
 kind of recipe then these guidelines will help to make it unambiguous
@@ -289,7 +289,7 @@ docs</a>.</p>
 expounding, even though it’s not strictly a procedural document.</p>
 </section>
 <section>
-### Audience
+<h3>Audience</h3>
 <p>This document is for people writing technical procedures, particularly
 to do with software, such as installation or user guides. No special
 technical skills are required apart from the ability to format a
@@ -297,9 +297,9 @@ document using headings and numbered lists.</p>
 </section>
 </section>
 <section>
-## The process
+<h2>The process</h2>
 <section>
-### Provide background
+<h3>Provide background</h3>
 <ol>
 <li>
 <p>Make sure that it is clear who the document is for by putting a
@@ -321,7 +321,7 @@ floppy disc half way through.</p>
 </ol>
 </section>
 <section>
-### Document the steps
+<h3>Document the steps</h3>
 <ol>
 <li>
 <p>Use imperative statements formatted as numbered lists.</p>
@@ -385,7 +385,7 @@ warn them explicitly.</p>
 </section>
 </section>
 <section>
-## Factor the procedure into blocks
+<h2>Factor the procedure into blocks</h2>
 <p>Yes, sometimes you need some non-procedural background to your
 procedure. Put it below a heading like this text. This kind of
 background is where you can put options such as variations people might
@@ -434,7 +434,7 @@ into manageable blocks of, say, no more than seven steps” was step 8,
 that was funny, but it was also wrong, so I re-organized the document.
 No, seven is not a magic number.</p>
 <section>
-#### Test it!
+<h4>Test it!</h4>
 <p>When you have finished:</p>
 <ol>
 <li>
@@ -458,7 +458,7 @@ working.</p>
 <p>Tell someone!</p>
 </section>
 <section>
-### Avoid writing documentation
+<h3>Avoid writing documentation</h3>
 <p>No, “Avoid writing documentation” does not mean “don’t document things
 that need to be documented”. It means, try to minimise the need for
 documentation.</p>
@@ -476,9 +476,9 @@ automate or eliminate everything you can.</p>
 </section>
 </section>
 <section>
-## Tips and tricks
+<h2>Tips and tricks</h2>
 <section>
-### For command line documentation
+<h3>For command line documentation</h3>
 <ol>
 <li>
 <p>Format  command-line commands in &lt;pre&gt; blocks for the web or in
@@ -499,7 +499,8 @@ them hard to test (this is a problem with PDF).</p>
 <p>If you really wanted the prompt because it showed the working
 directory or username then make that explicit with commands. For
 example:</p>
-<pre><code>#Become the user this app will run assu dc21cd ~ 
+<pre><code>#Become the user this app will run as
+su dc21cd ~ 
 </code></pre>
 </li>
 <li>
@@ -511,7 +512,7 @@ code.</p>
 </ol>
 </section>
 <section>
-### For desktop or web software
+<h3>For desktop or web software</h3>
 <ol>
 <li>
 <p>Use screenshots where they’re genuinely better than using text, at
@@ -541,7 +542,7 @@ class="apple-converted-space"> </span>Australia.
 </section>
 </section>
 </article>
-<p>[^1]:   The only thing I’ve changed from David’s original advice on
+<p><a name="1" />*:   The only thing I’ve changed from David’s original advice on
 writing about software is to recommend formatting mentions of menu
 items using &lt;code&gt; in HTML or a monospace font in print, but as
 David said, it is sufficient to use the exact capitalisation and

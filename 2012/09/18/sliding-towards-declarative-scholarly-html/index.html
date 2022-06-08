@@ -256,7 +256,7 @@ document, to give some context to the slides.</p>
 <p>I also find it much easier to develop some kinds of presentations if I
 write them out essay-style at the same time I am developing the slides.</p>
 <section itemscope itemtype="http://purl.org/ontology/bibo/Slide">
-##### Two things I think you should be able to do
+<h5>Two things I think you should be able to do</h5>
 <ul>
 <li>
 <p>Write in document mode and drop in some ‘slides’, like the thing
@@ -284,14 +284,14 @@ from the slides this **declarative Scholarly HTML technique** I’m
 talking about is a really important part of how we publish, present and
 preserve scholarship.
 <section>
-## The declarative Slide format
+<h2>The declarative Slide format</h2>
 <p>First, lets look at the HTML that drives this, then I’ll come back to
 how you author it, and how you get it to display, and why this matters.</p>
 <p>In an HTML document mark up any block level (container) element you’d
 like treated as a slide to say “This is a slide”, by referring to The
 Bibliographic Ontology.</p>
 <section itemscope="itemscope" itemtype="http://purl.org/ontology/bibo/Slide">
-##### Declarative slide markup in HTML using Microdata\*
+<h5>Declarative slide markup in HTML using Microdata*</h5>
 <pre><code>&lt;section itemtype=&quot;http://purl.org/ontology/bibo/Slide&quot; itemscope=&quot;&quot;&gt;
 …
 &lt;/section&gt;
@@ -306,7 +306,7 @@ convention such as \<div class=”slide”\> rather than one of the standard
 mechanisms for HTML semantics, and as far as I know none are designed to
 mix slides with other content.
 <section itemscope itemtype="http://purl.org/ontology/bibo/Slide">
-##### What’s wrong with \<div class=’slide’\>?
+<h5>What’s wrong with &lt;div class=’slide’&gt;?</h5>
 <ul>
 <li>
 <p>It’s a <strong>mere convention</strong>.</p>
@@ -338,7 +338,7 @@ action here in this post, and in my previous post, [on collaboration
 around research
 data](http://ptsefton.com/2012/09/12/virtual-infrastructure-and-research-support-fostering-collaboration-across-institutions.htm).
 <section itemscope="itemscope" itemtype="http://purl.org/ontology/bibo/Slide">
-##### Slidyfy Wordpress plugin; initial, crude modus operandi
+<h5>Slidyfy Wordpress plugin; initial, crude modus operandi</h5>
 <ol>
 <li>
 <p>Look for slides; elements of type
@@ -367,7 +367,7 @@ window. Then in new window:</p>
 </section>
 </section>
 <section>
-## Authoring Workflow Separating content from delivery
+<h2>Authoring Workflow Separating content from delivery</h2>
 <p>How would someone use this? Well, they’d reach for their Scholarly HTML
 editing environment. This might be a text editor, where they’d make HTML
 documents by hand, or they might work in Word or Open Office Writer, or
@@ -398,7 +398,7 @@ web server, or run the slides from their local machine. It would be next
 to impossible to post the result as a WordPress post for example. And it
 doesn’t allow mixing free-form document content with embedded slides.</p>
 <section itemscope itemtype="http://purl.org/ontology/bibo/Slide">
-##### The Pandoc approach – full marks for separation of content from presentation\*
+<h5>The Pandoc approach – full marks for separation of content from presentation*</h5>
 <p><img src="/wp-content/uploads/2012/09/wpid-slidyfy.docx.htm_slidyfy.docx_filesimage002.jpg" alt="" /></p>
 <p>*Pun intended</p>
 </section>
@@ -413,12 +413,12 @@ language may well be ideal for authoring those.
 something that runs in the content management system, or at time of
 viewing.</p>
 <section itemscope itemtype="http://purl.org/ontology/bibo/Slide">
-##### Some workflow options for making Scholarly Slides
+<h5>Some workflow options for making Scholarly Slides</h5>
 <p><img src="/wp-content/uploads/2012/09/wpid-slidyfy.docx.htm_slidyfy.docx_filesimage004.png" alt="" /></p>
 </section>
 </section>
 <section>
-## Why?
+<h2>Why?</h2>
 <p>This is not just about one person’s hopefully harmless fetish for mixing
 up blog posts with slides; there are lots of things that go on the
 scholarly web where embedding semantics is important.</p>
@@ -440,7 +440,7 @@ Semantic markup would be to format a research article into its parts.
 Instead of slides, you’d be marking up Method, Abstract, and Results et
 al.</p>
 <section itemscope itemtype="http://purl.org/ontology/bibo/Slide">
-##### Reasons this kind of technique is important
+<h5>Reasons this kind of technique is important</h5>
 <p>This allows us to:</p>
 <ol>
 <li>
@@ -464,7 +464,7 @@ will still be readable</p>
 </section>
 ****
 <section itemscope itemtype="http://purl.org/ontology/bibo/Slide">
-##### Getting it?
+<h5>Getting it?</h5>
 <p>If this kind of cheap web stunt appeals, then you can <a href="http://code.google.com/p/uws-eresearch/source/browse/#svn%2Ftrunk%2Fwordpress%2Fslidyfy">get it from the
 UWS eResearch Google Code
 repository</a>.
