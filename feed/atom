@@ -1,5 +1,437 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="https://ptsefton.com/" rel="alternate"></link><link href="https://ptsefton.com/feed/atom" rel="self"></link><id>https://ptsefton.com/</id><updated>2022-02-18T00:00:00+01:00</updated><entry><title>HASS RDC Technical Advisory Group Meeting LDaCA &amp; ATAP Intro</title><link href="https://ptsefton.com/2022/02/18/hass_rdc_tech_advisory/index.html" rel="alternate"></link><published>2022-02-18T00:00:00+01:00</published><updated>2022-02-18T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2022-02-18:/2022/02/18/hass_rdc_tech_advisory/index.html</id><summary type="html">&lt;p&gt;This is a presentation I gave to the &lt;a href="https://ardc.edu.au/collaborations/strategic-activities/hass-and-indigenous-research-data-commons/"&gt;Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program&lt;/a&gt;  Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ptsefton.com</title><link href="https://ptsefton.com/" rel="alternate"></link><link href="https://ptsefton.com/feed/atom" rel="self"></link><id>https://ptsefton.com/</id><updated>2022-11-25T00:00:00+01:00</updated><entry><title>Designing a metadata ecosystem for language research based on Research Object Crate (RO-Crate)</title><link href="https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/index.html" rel="alternate"></link><published>2022-11-25T00:00:00+01:00</published><updated>2022-11-25T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2022-11-25:/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/index.html</id><summary type="html">&lt;p&gt;&lt;a href="ldaca-metadata-ecosystem-eresearch-2022.pdf"&gt;PDF version&lt;/a&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide00.png' alt='Designing a metadata ecosystem for language research based on Research Object Crate (RO-Crate) Peter Sefton, Nick Thieberger, Marco La Rosa, Simon Musgrave, River Tae Smith, Moises Sacal Bonequi   ' title='Slide: 0' border='1'  width='85%%'/&gt;
+&lt;p&gt;By Peter Sefton, Nick Thieberger, Marco La Rosa, Simon Musgrave, River Tae Smith, Moises Sacal Bonequi – delivered by Peter Sefton at eResearch 2022 in Brisbane&lt;/p&gt;
+&lt;p&gt;This work is licensed under CC BY 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by/4 …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;&lt;a href="ldaca-metadata-ecosystem-eresearch-2022.pdf"&gt;PDF version&lt;/a&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide00.png' alt='Designing a metadata ecosystem for language research based on Research Object Crate (RO-Crate) Peter Sefton, Nick Thieberger, Marco La Rosa, Simon Musgrave, River Tae Smith, Moises Sacal Bonequi   ' title='Slide: 0' border='1'  width='85%%'/&gt;
+&lt;p&gt;By Peter Sefton, Nick Thieberger, Marco La Rosa, Simon Musgrave, River Tae Smith, Moises Sacal Bonequi – delivered by Peter Sefton at eResearch 2022 in Brisbane&lt;/p&gt;
+&lt;p&gt;This work is licensed under CC BY 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/&lt;/p&gt;
+&lt;p&gt;This presentation will look at how a Metadata Standard - RO-Crate - with Metadata Profile (the Language Data Commons) is being developed and implemented. Two major collections are collaborating on the standard, PARADISEC and the Language Data Commons of Australia (LDaCA). This ongoing standardisation effort for language data is designed to improve interoperability, reduce costs for data migration and allow storage on disk, object storage or in archival repositories.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.researchobject.org/ro-crate/"&gt;RO-Crate&lt;/a&gt; is a linked-data metadata system which allows discovery metadata (Who, what where) based on the widely adopted Schema.org vocabulary to be seamlessly integrated with more discipline specific metadata. RO-Crate uses metadata profiles to provide guidance for packaging resources for particular disciplines and purposes.&lt;/p&gt;
+&lt;p&gt;In this presentation we will introduce a RO-Crate metadata profile for language data which extends the core RO-Crate standard with new vocabulary terms adapted from pre-linked-data discipline specific metadata efforts, particularly the Open Language Archives Community (OLAC) standards. The profile has English-language guidance on how to structure collections of resources in a repository with links between them, such that they can be indexed and displayed via APIs and search/browse portals. The profile is also implemented as a series of machine-readable profiles for the Describo Online metadata description system.&lt;/p&gt;
+&lt;p&gt;We will demonstrate current ways of describing items in a variety of languages and modes (spoken, written and signed), from a large set of heterogeneous language resources held by PARADISEC and LDaCA. We will also show how to access them via API calls and a search portal, and how resources may be stored in simple storage systems using the Arkisto platform (a set of standards and principles).&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide01.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).   ARC LIEF LE210100013 (2021-2024) Nyingarn: a platform for primary sources in Australian Indigenous languages  ' title='Slide: 1' border='1'  width='85%%'/&gt;
+&lt;p&gt;This work is supported by the Australian Research Data Commons.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide02.png' alt=' With thanks for their contribution: Partner Institutions: ' title='Slide: 2' border='1'  width='85%%'/&gt;
+&lt;p&gt;The Language Data Commons of Australia Data Partnerships (&lt;a href="https://doi.org/10.47486/HIR001"&gt;LDaCA&lt;/a&gt;) and the Australian Text Analytics Platform (&lt;a href="https://doi.org/10.47486/PL074"&gt;ATAP&lt;/a&gt;) are building towards a scalable and flexible language data and analytics commons. These projects will be part of the Humanities and Social Sciences Research Data Commons (HASS RDC).&lt;/p&gt;
+&lt;p&gt;The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.&lt;/p&gt;
+&lt;p&gt;The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artefacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations. These projects are led by Professor Michael Haugh of the School of Languages and Culture at the University of Queensland with several partner institutions.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide03.png' alt='Pacific and Regional Archive for Digital Sources in Endangered Cultures Running for 20 years  1,337 languages represented 675 collections 37,510 items 405,289 files 15,540 hours (audio) 2,465 hours (video) 193 TB  October 2022  ' title='Slide: 3' border='1'  width='85%%'/&gt;
+&lt;p&gt;This page shows a &lt;a href="https://www.youtube.com/watch?v=CX-CODBwOVU&amp;amp;t=7s"&gt;YouTube demo of the PARADISEC web site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;PARADISEC (the Pacific And Regional Archive for Digital Sources in Endangered Cultures) is a digital archive of records of some of the many small cultures and languages of the world and it has developed models to ensure that the archive can provide access to interested communities while also conforming with emerging international standards for digital archiving. Australian researchers have been making unique and irreplaceable audiovisual recordings in the region since portable field recorders became available in the mid-twentieth century, yet until the establishment of PARADISEC there was no Australian repository for these invaluable research recordings.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide04.png' alt='  ' title='Slide: 4' border='1'  width='85%%'/&gt;
+&lt;p&gt;Goal: Be able to store data with an eye on preservation&lt;/p&gt;
+&lt;p&gt;In an archive like PARADISEC - it is important to be be able to maintain resources over the long term. For example, much material which falls within the scope of PARADISEC is stored on legacy media. PARADISEC archives tapes from a range of sources, such as the agencies in the Pacific shown in the images above. Such material needs to be digitised and returned to the source with meaningful metadata.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide05.png' alt='PARADISEC ACCESS  https://language-archives.services/about/data-loader ' title='Slide: 5' border='1'  width='85%%'/&gt;
+&lt;p&gt;PARADISEC has learned the importance of making the collection self-describing so it is not dependent on a database as the sole metadata source. It does use a database for administrative services, from which a text file with metadata for any item can be exported. This allows us to select an arbitrary set of items, put them on a hard disk, and use the dataloader application to generate an html catalog of just those items, drawing on the internal metadata file describing each item. This can be delivered on a hard disk to a local community or cultural organisation, or on a raspberry pi wifi local network to allow access on phones, as seen here in Erakor village in central Vanuatu.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide06.png' alt='ELAR: limited search capability, non-standard metadata schema, no ability to index annotation files, no bulk download LDaCA: rich metadata-first search, portable RO-Crate metadata, indexed annotations, bulk downloading of search results AUSLAN CORPUS ACCESS  ' title='Slide: 6' border='1'  width='85%%'/&gt;
+&lt;p&gt;Another example of how good metadata practice can improve community access is the Auslan (Australian Sign Language) corpus, for which community access is very important.&lt;/p&gt;
+&lt;p&gt;The Auslan Corpus has been stored with the Endangered Languages Archive (&lt;a href="https://www.elararchive.org/"&gt;ELAR&lt;/a&gt;) since 2008. However, ELAR does not currently suit the access needs of the Auslan corpus; it has low discoverability, and files must be downloaded individually. The corpus, along with the Auslan SignBank dictionary, is being included in LDaCA.&lt;/p&gt;
+&lt;p&gt;The Auslan Corpus holds great value as an educational tool for Auslan users and learners, both Deaf and hearing, and the move to LDaCA will allow further development of educational tools. One such tool is the ability, still under development, for Auslan Signbank dictionary to pull real-world examples of signs out of the corpus to show alongside dictionary entries.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide07.png' alt='' title='Slide: 7' border='1'  width='85%%'/&gt;
+&lt;p&gt;For all of the collections we are working with data is discoverable via some kind of web portal which indexes and displays the archive (repository) of data. These screenshots are of work in progress at LDaCA.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide08.png' alt='' title='Slide: 8' border='1'  width='85%%'/&gt;
+&lt;p&gt;The LDaCA services we are building use an API to drive the data portals. The API can be used for direct access with appropriate access control – see &lt;a href="posts/fair-care-eresearch-2022"&gt;another eResearch presentation&lt;/a&gt; which explains this in detail. These screenshots show code notebooks (running in BinderHub on the Nectar cloud) accessing language resources.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide09.png' alt='' title='Slide: 9' border='1'  width='85%%'/&gt;
+&lt;p&gt;Having looked at the user-facing products, websites and APIs, we turn our attention to how data is managed on disk.&lt;/p&gt;
+&lt;p&gt;In the PARADISEC system this is achieved by storing files on disk in a simple hierarchy - with metadata and other resources stored together in a directory - this scheme allows for hands-on management of data resources, independently of the software used to serve them.&lt;/p&gt;
+&lt;p&gt;This approach means that if the PARADISEC software-stack becomes un-maintainable for financial or technical reasons the important resources, the data, are stored safely on disk with their metadata and a new access portal could be constructed relatively easily.&lt;/p&gt;
+&lt;p&gt;Despite the valuable features of this solution, it is not generalisable. The metadata.xml is custom to PARADISEC, as is the software stack.&lt;/p&gt;
+&lt;p&gt;In 2019 PARADISEC and the eResearch team at UTS received small grants from the Australian National Data Service and began collaborating on an approach to managing archival repositories which built on this PARADISEC approach of storing metadata with data.&lt;/p&gt;
+&lt;p&gt;The UTS team presented on this at &lt;a href="https://ptsefton.com/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation/index.html"&gt;eResearch Australasia 2019&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide10.png' alt='  ' title='Slide: 10' border='1'  width='85%%'/&gt;
+&lt;p&gt;For this Research Data Commons work we are using the Arkisto Platform (introduced &lt;a href="http://ptsefton.com/2020/11/23/Arkisto/index.html"&gt;at eResearch 2020&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Arkisto aims to ensure the long term preservation of data independently of code and services, recognizing the ephemeral nature of software and platforms. We know that sustaining software platforms can be hard and aim to make sure that important data assets are not locked up in databases or hard-coded logic of some hard-to-maintain application.&lt;/p&gt;
+&lt;p&gt;Inspired by PARADISEC’s approach the Arkisto platform is based on the idea of storing data in simple easy to manage file or object storage systems with metadata in an easily readable standard format.&lt;/p&gt;
+&lt;p&gt;The LDaCA repositories use the Oxford Common File Layout (&lt;a href="https://ocfl.io/"&gt;OCFL&lt;/a&gt;) standard which is backed and used by a number of universities and has multiple implementations while PARADISEC data will be migrated to a simpler data storage approach &lt;a href="https://github.com/CoEDL/nocfl-js"&gt;NOCFL&lt;/a&gt;, which is a single-library implementation, inspired by some of the same aims, but with different implementation choices to avoid data being obfuscated by OCFL’s layout, which is a product of its commitment to immutable, write-once file management.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide11.png' alt='{    &amp;quot;conformsTo&amp;quot;: &amp;quot;http://purl.archive.org/language-data-commons/profile&amp;quot; }  ' title='Slide: 11' border='1'  width='85%%'/&gt;
+&lt;p&gt;Now to the main focus of this presentation - the metadata “Profile” we are jointly developing to ensure that language resources can be described in a way that is interoperable between software, and re-usable over time.&lt;/p&gt;
+&lt;p&gt;The Profile is an “RO-Crate Profile”, a kind of Cook Book for how to describe and package language data.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide12.png' alt='☁️ 📂  📄 ID? Title? Description?  👩‍🔬👨🏿‍🔬Who created this data? 📄What parts does it have?  📅 When?  🗒️ What is it about?  ♻️ How can it be reused? 🏗️ As part of which project?  💰 Who funded it? ⚒️ How was it made?  Addressable resources Local Data  👩🏿‍🔬 https://orcid.org/0000-0001-2345-6789 🔬 https://en.wikipedia.org/wiki/Scanning_electron_microscope ' title='Slide: 12' border='1'  width='85%%'/&gt;
+&lt;p&gt;RO-Crate is method for describing a dataset as a digital object using a &lt;strong&gt;single linked-data metadata document&lt;/strong&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide13.png' alt='📂  🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️ ' title='Slide: 13' border='1'  width='85%%'/&gt;
+&lt;p&gt;The dataset may contain any kind of data resource about anything, in any format as a file or URL&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide14.png' alt=' ' title='Slide: 14' border='1'  width='85%%'/&gt;
+&lt;p&gt;The RO-Crate standard also strongly recommends that JSON metadata is supplemented with an HTML preview - above we show what that looks like for a PARADISEC item. This is a screenshot of an HTML view of a PARADISEC Item generated using &lt;a href="https://github.com/UTS-eResearch/ro-crate-html-js"&gt;an HTML rendering tool for RO-Crate&lt;/a&gt;. The important point here is that this is a &lt;em&gt;generic&lt;/em&gt; viewer that can understand any RO-Crate. It may not be glamorous but it could be included in an archive as a way to provide human-readable access in the absence of portals that are data specific (but cost money to build and maintain).&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide15.png' alt=' https://mod.paradisec.org.au ' title='Slide: 15' border='1'  width='85%%'/&gt;
+&lt;p&gt;Here is the same page from the previous slide seen in a working model of an RO-Crate set exported from the current PARADISEC catalog, with a single page viewer using an elastic search. The two pages shown here are generated directly from metadata that was stored in an RO-Crate in a storage system using PARADISEC specific, rather than generic code.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide16.png' alt='  ' title='Slide: 16' border='1'  width='85%%'/&gt;
+&lt;p&gt;The &lt;a href="https://www.researchobject.org/ro-crate/1.1/structure.html"&gt;structure of an RO-Crate&lt;/a&gt; is very similar to the PARADISEC example above, but with a json file instead of XML, and an optional preview in HTML.&lt;/p&gt;
+&lt;p&gt;RO-Crate has a growing number of &lt;a href="https://www.researchobject.org/ro-crate/tools/"&gt;tools and software libraries&lt;/a&gt; which means that a team such as PARADISEC do not have to maintain their own bespoke software.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide17.png' alt=' ' title='Slide: 17' border='1'  width='85%%'/&gt;
+&lt;p&gt;The base vocabulary for the JSON-LD used in RO-Crate is schema.org - a widely used linked data standard. RO-Crate uses a handful of terms from other ontologies but importantly it allows for seamless extensibility with domain specific vocabularies, which is what we will talk about next.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide18.png' alt='  ' title='Slide: 18' border='1'  width='85%%'/&gt;
+&lt;p&gt;The PARADISEC metadata model is based on the Open Language Archives (OLAC) metadata standard. This is an XML based standard, but has good online documentation, which is perfect for migrating to a Linked Data approach.&lt;/p&gt;
+&lt;p&gt;We used the OLAC terms, including &lt;a href="http://www.language-archives.org/REC/type-20020628.html"&gt;some that were proposed but withdrawn&lt;/a&gt; as the basis for a new vocabulary.&lt;/p&gt;
+&lt;p&gt;As part of a LIEF project (2022-23, led by author Thieberger), revisions to the OLAC scheme are planned, together with rebuilding the OLAC metadata harvester and aggregator.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide19.png' alt='  ' title='Slide: 19' border='1'  width='85%%'/&gt;
+&lt;p&gt;The new Langauge Data Terms have been published at &lt;a href="https://purl.archive.org/language-data-commons/terms"&gt;https://purl.archive.org/language-data-commons/terms&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These terms have been modernised and mainstreamed from previous ways of describing resources, for example instead of describing the main item of interest as a PrimaryText (where text is any kind of communicative resource – not a bitstream of characters) we use the term PrimaryResource. And in the example in the image, the type of genre &lt;em&gt;Informational&lt;/em&gt; has been added to the set proposed in the OLAC vocabulary.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide20.png' alt='  ' title='Slide: 20' border='1'  width='85%%'/&gt;
+&lt;p&gt;(Image prompt DALL-E a hierarchical whale skeleton digital art)&lt;/p&gt;
+&lt;p&gt;Before we come back in detail to how RO-Crate works we will discuss the structure or skeleton of our language collections stored in a repository&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide21.png' alt=' ' title='Slide: 21' border='1'  width='85%%'/&gt;
+&lt;p&gt;Broadly speaking there are two ways that an Arkisto-style repository can be structured and the profile sets out criteria for choosing one of the options.&lt;/p&gt;
+&lt;p&gt;For small, stable collections of data an entire collection (often referred to a ‘corpus’ by linguists) can be stored in a single directory or directory-like structure in an object store.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide22.png' alt='  ' title='Slide: 22' border='1'  width='85%%'/&gt;
+&lt;p&gt;For larger collections the approach used by PARADISEC and most LDaCA collections is to store each Object or Item (typically a related set of recordings, or a single document) in a directory (or directory-like thing).&lt;/p&gt;
+&lt;p&gt;In this mode, each Object MUST link back to the Collection Object.&lt;/p&gt;
+&lt;p&gt;A Collection Object MAY have explicit listing of hasMember properties - which makes it possible to construct repository navigation (such as websites) more cheaply. This is the approach used in PARADISEC, while in LDaCA these links are constructed by an indexer servicer or summarizer application.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide23.png' alt='Describo Screenshot editing a collection record (PT)  ' title='Slide: 23' border='1'  width='85%%'/&gt;
+&lt;p&gt;This screenshot shows the Language Data Commons RO-Crate Profile in action. This is the &lt;a href="https://github.com/Arkisto-Platform/describo-online"&gt;Describo Online&lt;/a&gt; metadata editor, with configuration that reflects the profile being used to describe a language data collection using linked-data metadata.&lt;/p&gt;
+&lt;p&gt;In this case the description is of the collection object.&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide24.png' alt='LDaCA ' title='Slide: 24' border='1'  width='85%%'/&gt;
+&lt;p&gt;Once the data is described, we ingest it into a repository, as a set of files on disk or object storage and index it in a portal, as you can see in these screenshots.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide25.png' alt='Demo ' title='Slide: 25' border='1'  width='85%%'/&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=p-GZbe-Kzww&amp;amp;t=5s"&gt;Video of browsing a collection in an LDaCA repo&lt;/a&gt; showing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Going to the portal&lt;/li&gt;
+&lt;li&gt;Selecting a collection&lt;/li&gt;
+&lt;li&gt;Searching for content&lt;/li&gt;
+&lt;li&gt;Selecting a notebook&lt;/li&gt;
+&lt;li&gt;Launching Binder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This example notebook explores the collection via the rest API.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;In this presentation we have shown the major components of an ecosystem for storing, discovering and analysing language data using common standards for describing objects in a repository. The &lt;a href="https://www.researchobject.org/ro-crate/"&gt;RO-Crate&lt;/a&gt; standard is used as the key metadata container, with a common vocabulary of language specific terms for describing data. This approach should reduce development costs and increase data reuse. The approach can also be adapted to other disciplines and domains with the development only of new profiles..&lt;/p&gt;
+&lt;/section&gt;
+</content><category term="Metadata"></category></entry><entry><title>A CARE and FAIR-ready distributed access control system for human-created data using the Australian Access Federation and beyond</title><link href="https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/index.html" rel="alternate"></link><published>2022-11-16T00:00:00+01:00</published><updated>2022-11-16T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2022-11-16:/2022/11/16/fair-care-eresearch-2022/index.html</id><summary type="html">&lt;p&gt;This work is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by/4.0/"&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="fair-care-eresearch-2022.pdf"&gt;Download as PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="Slide00.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide00.png' title='Slide: 0' border='1'  width='85%%'/&gt;
+&lt;p&gt;This is write-up of a talk given at eResearch Australasia 2022, delivered by Peter Sefton, with some additional detail.&lt;/p&gt;
+&lt;p&gt;By: Peter Sefton, Jenny Fewster, Moises Sacal Bonequi, Cale Johnstone, Catherine Travis, River Tae Smith …&lt;/p&gt;&lt;/section&gt;</summary><content type="html">&lt;p&gt;This work is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by/4.0/"&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="fair-care-eresearch-2022.pdf"&gt;Download as PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="Slide00.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide00.png' title='Slide: 0' border='1'  width='85%%'/&gt;
+&lt;p&gt;This is write-up of a talk given at eResearch Australasia 2022, delivered by Peter Sefton, with some additional detail.&lt;/p&gt;
+&lt;p&gt;By: Peter Sefton, Jenny Fewster, Moises Sacal Bonequi, Cale Johnstone, Catherine Travis, River Tae Smith, Patrick Carnuccio&lt;/p&gt;
+&lt;p&gt;Edited by: Simon Musgrave&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide01.png" alt="alt text" title="Project Team(alphabetical order) Michael D’Silva  Marco Fahmi Leah Gustafson  Michael Haugh Cale Johnstone  Kathrin Kaiser  Sara King  Marco La Rosa  Mel Mistica  Simon Musgrave  Joel Nothman  Moises Sacal  Martin Schweinberger  PT Sefton   With thanks for their contribution: Partner Institutions:" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide01.png' alt='Project Team(alphabetical order) Michael D’Silva  Marco Fahmi Leah Gustafson  Michael Haugh Cale Johnstone  Kathrin Kaiser  Sara King  Marco La Rosa  Mel Mistica  Simon Musgrave  Joel Nothman  Moises Sacal  Martin Schweinberger  PT Sefton   With thanks for their contribution: Partner Institutions: ' title='Slide: 1' border='1'  width='85%%'/&gt;
+&lt;p&gt;The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are building towards a scalable and flexible language data and analytics commons. These projects will be part of the Humanities and Social Sciences Research Data Commons (HASS RDC).&lt;/p&gt;
+&lt;p&gt;The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.&lt;/p&gt;
+&lt;p&gt;The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artefacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations. These projects are led by Professor Michael Haugh of the School of Languages and Culture at the University of Queensland with several partner institutions.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide02.png" alt="alt text" title="The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS)." /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide02.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS). ' title='Slide: 2' border='1'  width='85%%'/&gt;
+&lt;p&gt;This work is supported by the Australian Research Data Commons.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide03.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide03.png' alt='  ' title='Slide: 3' border='1'  width='85%%'/&gt;
+&lt;p&gt;Last year at eResearch Australasia, the Language Data Commons of Australia (LDaCA) team presented a design for a distributed access control system which could look after the A-is-for-accessible in FAIR data; in this presentation we describe and demonstrate a pilot system based on that design, showing how data licenses that allow access by identified groups of people to language data collections can be used with an AAF pilot system (CILogon) to give the right people access to data resources.&lt;/p&gt;
+&lt;p&gt;The ARDC have invested in a pilot of this work as part of the HASS Research Data Commons and Indigenous Research Capability Program integration activities.&lt;/p&gt;
+&lt;p&gt;The system has to be able to implement data access policies with real-world complexity and one of our challenges has been developing a data access policy that works across a range of different collections of language data. Here we present a pilot data access policy that we have developed, describing how this policy captures the decisions that must be made by a range of data providers to ensure data accessibility that complies with diverse legal, moral and ethical considerations.
+We will discuss how the &lt;a href="https://www.gida-global.org/care"&gt;CARE&lt;/a&gt; and &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR&lt;/a&gt; principles underpin this work, and compare this work to other projects such as &lt;a href="https://ardc.edu.au/project/cadre/"&gt;CADRE&lt;/a&gt;, which promise to deliver more complex solutions in the future. Initial work is with collections curated in a research context but we will also address community access to these resources.&lt;/p&gt;
+&lt;p&gt;The idea is to separate safe storage of data from its delivery. Each item in a repository is stored with licensing information in natural language (English at the moment, but could be other languages) and the repository defers access decisions to an Authorization system, where data custodians can design whatever process they like for granting license access. This can range from simple click-through licenses where anyone can agree to license terms, to detailed multi-step workflows where applicants are vetted based on whatever criteria the rights holder wishes; qualifications, membership of a cultural group, have they paid a subscription fee, etc&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide04.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide04.png' alt='  ' title='Slide: 4' border='1'  width='85%%'/&gt;
+&lt;p&gt;Regarding rights, our project is informed by the &lt;a href="https://www.gida-global.org/care"&gt;CARE&lt;/a&gt; principles for Indigenous data which also describe the level of respect which should be given to any data collected from individuals or communities.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The current movement toward open data and open science does not fully engage with Indigenous Peoples rights and interests. Existing principles within the open data movement (e.g. FAIR: findable, accessible, interoperable, reusable) primarily focus on characteristics of data that will facilitate increased data sharing among entities while ignoring power differentials and historical contexts. The emphasis on greater data sharing alone creates a tension for Indigenous Peoples who are also asserting greater control over the application and use of Indigenous data and Indigenous Knowledge for collective benefit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide05.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide05.png' alt='  ' title='Slide: 5' border='1'  width='85%%'/&gt;
+&lt;p&gt;We are designing the system so that it can work with diverse ways of expressing access rights, for example we are considering how the approach described here could be extended based on the likes of the &lt;a href="https://localcontexts.org/labels/traditional-knowledge-labels/"&gt;Tribal Knowledge labels&lt;/a&gt;, incorporating them into the data licensing framework we discuss below.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide06.png" alt="alt text" title="Case Study - Sydney Speaks" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide06.png' alt='Case Study - Sydney Speaks  ' title='Slide: 6' border='1'  width='85%%'/&gt;
+&lt;p&gt;In this talk we look at a case-study with the &lt;a href="https://slll.cass.anu.edu.au/sydney-speaks"&gt;Sydney Speaks project&lt;/a&gt; via LDaCA steering committee member Professor &lt;a href="https://orcid.org/0000-0002-1410-3268"&gt;Catherine Travis&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This project seeks to document and explore Australian English, as spoken in Australia’s largest and most ethnically and linguistically diverse city – Sydney.
+The title “Sydney Speaks” captures a key defining feature of the project: the data come from recorded conversations between Sydney siders, as they tell stories about their lives and experiences, their opinions and attitudes. This allows us to measure how their lived experiences impact their speech patterns.
+Working within the framework of variationist sociolinguistics, we examine variation in phonetics, grammar and discourse, in an effort to answer questions of fundamental interest both to Australian English, and language variation and change more broadly, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How has Australian English as spoken in Sydney changed over the past 100 years?&lt;/li&gt;
+&lt;li&gt;Has the change in the ethnic diversity over that time period (and in particular, over the past 40 years) had any impact on the way Australian English is spoken?&lt;/li&gt;
+&lt;li&gt;What affects the way variation and change spread through society - Who are the initiators and who are the leaders in change? - How do social networks function in a modern metropolis? - What social factors are relevant to Sydney speech today, and over time (gender? class? region? ethnic identity?)
+A better understanding of what kind of variation exists in Australian English, and of how and why Australian English has changed over time can help society be more accepting of speech variation and even help address prejudices based on ways of speaking.
+Source: &lt;a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/"&gt;http://www.dynamicsoflanguage.edu.au/sydney-speaks/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The collection contains recordings of people speaking, both contemporary and historic.&lt;/p&gt;
+&lt;p&gt;Because this involved human participants there are restrictions on the distribution of data - a situation we see with lots of studies involving people in a huge range of disciplines.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide07.png" alt="alt text" title="Sydney Speaks Licenses" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide07.png' alt='Sydney Speaks Licenses ' title='Slide: 7' border='1'  width='85%%'/&gt;
+&lt;p&gt;There are four tiers of data access we need to enforce and observe for this data based on the participant agreements and ethics arrangements under which the data were collected.&lt;/p&gt;
+&lt;p&gt;Concerns about rights and interests are important for any data involving people - and a large amount the data both indigenous and non-indigenous we are using will require access control that ensures that data is shared with the right users under the right conditions.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide08.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide08.png' alt='' title='Slide: 8' border='1'  width='85%%'/&gt;
+&lt;p&gt;(Image generated by DALLE - prompt: A NSW Driver license for a wolfhound pup named Floki)&lt;/p&gt;
+&lt;p&gt;Lets go over some basics, starting with &lt;em&gt;licences&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A licence in this context is &lt;em&gt;a natural language document&lt;/em&gt; in which a copyright holder sets out the terms and conditions of use for data. Licences &lt;em&gt;may&lt;/em&gt; have metadata that describes them, eg a property to say that this is an open licence (and does not require a check when serving data).&lt;/p&gt;
+&lt;p&gt;A license is not a computer program, or configuration, or an AI entity that can make decisions, it’s a legal document. You may also know this as a “data sharing agreement” or “terms of use”. Examples of licenses we see all the time are the GNU GPL or the various Creative Commons licenses which grant rights to others to redistribute a creative work, and specifies conditions on what changes are permitted.&lt;/p&gt;
+&lt;p&gt;That said, metadata &lt;em&gt;about&lt;/em&gt; a license can be used to automate decision making - if it is labelled as being an open license, then a repository can serve data and include that data, if it is labeled as “closed” or more aptly, “authorization-required” then repository software can perform an authorization step, which we cover in detail later.&lt;/p&gt;
+&lt;p&gt;In the world of research data generated by or about human participants, licenses can’t always allow unauthenticated access and data redistribution, and they may permit distribution only to certain people, or classes or person. Some data, for example (particularly that which has not been or cannot be de-identified) can only be made available to the original research team.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide09.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide09.png' alt='  ' title='Slide: 9' border='1'  width='85%%'/&gt;
+&lt;p&gt;(Dall-e prompt : A sad dog sitting on an iceberg, XKCD)&lt;/p&gt;
+&lt;p&gt;So, a license is a document that expresses conditions such as “Data can be used by other researchers”, but unfortunately we don’t have systems in the research-data ecosystem which can automatically identify a user as “a researcher” (this may be surprising to some, but the Australian Access Federation can, at this stage, only say that someone has an account with an institution - it can’t tell a professor from a student administration officer and there are certainly no lists of “certified linguists”).&lt;/p&gt;
+&lt;p&gt;Here are some cold hard facts:&lt;/p&gt;
+&lt;p&gt;We don’t have an authority that can identify someone as a researcher,&lt;/p&gt;
+&lt;p&gt;Or a “linguist”,&lt;/p&gt;
+&lt;p&gt;Or an “anthropologist”,&lt;/p&gt;
+&lt;p&gt;Or a member of an ARC (Australian Research Council) research project,&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://ardc.edu.au/project/cadre/"&gt;CADRE&lt;/a&gt; project is working on systems that will eventually support all these things, but they are not available as services yet, and their initial focus is on government data, so we have to work out ways for our data custodians to make decisions on who is considered an “other researcher” in the absence of attribute-based authentication.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide10.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide10.png' alt='' title='Slide: 10' border='1'  width='85%%'/&gt;
+&lt;p&gt;The access control system we have been prototyping is based on licenses.&lt;/p&gt;
+&lt;p&gt;For any data object, which could be an entire collection, or one set of recordings of a speaker in a speech study, or a set of hand written linguistic field notes from the 1950s, or a novel etc we store a license with it. This means that future archivists / librarians and researchers can work out how to manage the data if the systems we build today for automated access are no longer operational and we give the license an ID which is a URL we can use to identify it uniquely.&lt;/p&gt;
+&lt;p&gt;This diagram shows how a license is explicitly linked to the data using a metadata description standard known as “Research Object Crate” &lt;a href="http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019/index.html"&gt;RO-Crate&lt;/a&gt; . Each object in the repository is a crate, with a metadata file that describes the object and (optionally) its component files, including the data license.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide11.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide11.png' alt='' title='Slide: 11' border='1'  width='85%%'/&gt;
+&lt;p&gt;(This diagram has been updated from the one presented at eResearch to show two portals instead of one)&lt;/p&gt;
+&lt;p&gt;Every item in a repository has a license, which may be an open one like CC Share Alike or a custom license derived from the ethics and participants agreements for a study in the context of local laws and institutional policy.&lt;/p&gt;
+&lt;p&gt;Using this license, distributed access portals in our architecture can check against an authorization system for each request for data. The portals may both host data with the same licensing but do not need to maintain access control lists.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide12.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide12.png' alt='' title='Slide: 12' border='1'  width='85%%'/&gt;
+&lt;p&gt;(Images: Various baskets of puppies by DALL-E)&lt;/p&gt;
+&lt;p&gt;When we first developed access controls for LDaCA in 2021 it was a requirement that data licensing and access control decisions be decoupled from each other, and from particular repository software. The usual approach in repositories is to build in a local access-control system, but this is tied to a particular implementation and will not work in a distributed environment where there are multiple different repositories, and services such as computational resources that researchers need to access to process data.&lt;/p&gt;
+&lt;p&gt;We could not find an available open source system for managing license-based access to data, so our starting approach used groups as a proxy for granting licences on that basis that all common user-directory services such as LDAP include the concept of user groups.&lt;/p&gt;
+&lt;p&gt;Scope:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;simplest possible license based approach to access control&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NOT attempting to be attribute based as that is not currently feasible within our project scope (see &lt;a href="https://ardc.edu.au/project/cadre/"&gt;CADRE&lt;/a&gt; for progress in that direction)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide13.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide13.png' alt='' title='Slide: 13' border='1'  width='85%%'/&gt;
+&lt;p&gt;The first prototype, which we presented at eResearch Australasia last year was a proof-of-concept Github based system. This demonstrated that authorization can be delegated from a repository to an external service. For each of the Sydney Speaks licenses there was a Github group (organization). The repository, when requested to serve data would get the user to login using the Github Authentication services, then check if the user was in the correct license group.&lt;/p&gt;
+&lt;p&gt;This worked, but there were issues with this approach:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;There are no workflow options (unless we build a workflow system), just adding people to a Github organisation to pre-authorize them&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The system only supported a single logon service, which is not widely used in academia or by community groups&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, we talked to the our colleagues at the Australian Access Federation (AAF), about a supported, research-sector-wide service.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide14.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide14.png' alt='' title='Slide: 14' border='1'  width='85%%'/&gt;
+&lt;p&gt;The AAF, as it happened were already working with other research groups on a service called &lt;a href="https://www.cilogon.org/"&gt;CILogon&lt;/a&gt; (hosted in the USA initially, but soon to be hosted in Australia), like Github, this service has groups (which was our way of associating users with licenses in the absence of a specific license-granting service), but also allows users to log in with a variety of Authentication providers, including research institutions, via the Australian Access Federation as well as social logins such as Google and Microsoft (and our old friend Github).&lt;/p&gt;
+&lt;p&gt;Again this worked, but the current version of CILogon does not have particularly easy-to-use ways for a license-holder to create groups - there are a number of abstract constructs to deal with and there is currently no way to build an approval workflow using the web interface, so as with the Github trial we would have needed to build this part (all of this may change, as the software is under constant development).&lt;/p&gt;
+&lt;p&gt;There is a &lt;a href="https://youtu.be/xEWXiM-jUfY"&gt;nine minute silent video&lt;/a&gt; of what this looked like on YouTube for those who are really interested.&lt;/p&gt;
+&lt;p&gt;AAF is engaging with our project on the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a cloud-based authentication and authorisation infrastructure (AAI) to support the needs of the project&lt;/li&gt;
+&lt;li&gt;understand and develop business process documentation for authorising access to data and services&lt;/li&gt;
+&lt;li&gt;configure the AAI to support these business processes and to develop extensions to facilitate new functionality that may be required&lt;/li&gt;
+&lt;li&gt;create a set of policies, standards and guidelines for managing researchers’ identity and access management&lt;/li&gt;
+&lt;li&gt;develop support documentation, train community representatives to operate the platform, and provide support to the community managers.
+The AAF has recommended CILogon &amp;amp; REMS as potential solutions to investigate &amp;amp; prototype&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CILogon is a federated identity management platform that provides the following features:
+support for institutional and community logins
+cross-institutional and community collaboration
+federated identity and group management
+a community management dashboard
+OIDC connectors for downstream services that support authorisation claims for services like
+REMS
+BinderHub
+JupyterHub
+LDaCA Dashboard&lt;/p&gt;
+&lt;p&gt;REMS (Resource Entitlement Management System) is a tool to help researchers browse resources such as datasets relevant to their research and to manage the application process for access to the resources.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide15.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide15.png' alt='REMS ' title='Slide: 15' border='1'  width='85%%'/&gt;
+&lt;p&gt;Recently (after the abstract for this presentation was submitted) the AAF team made us aware of the Resource Entitlement Management System, &lt;a href="https://github.com/CSCfi/rems"&gt;REMS&lt;/a&gt;, which is an open source application out of Finland. This software is the missing link for LDaCA in that it allows a data custodian to grant licenses to users. And it works with CILogon as an Authentication layer so we can let users log in using a variety of services.&lt;/p&gt;
+&lt;p&gt;At the core of REMS is a set of Licenses which can then be associated with Resources - in our design this is (almost always) a one-to-one correspondence, for example we would have a licence “Sydney Speaks Data Researcher Access License” corresponding to resource that represents ALL data with that licence. These Resources can then be made available through a catalog, and workflows can be set up for pre-authorization processes ranging from single-click authorizations where a user just accepts a licence and a bot approves it, to complex forms where users upload credentials and one or more data custodians approve their request, and grant them the licence.&lt;/p&gt;
+&lt;p&gt;It also has features for revoking permissions, and has a full API so admin tasks can be automated (for us that’s in the future).&lt;/p&gt;
+&lt;p&gt;Once a user has been granted a license in a pre-authorization process then a repository can authorize access to a resource by checking with REMS to see if a given user is pre-authorized. That is, has been granted a license. Note that users do not have to find REMS on their own - they will be directed to it from data and computing services when they need to apply for pre-authorization.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide16.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide16.png' alt='  ' title='Slide: 16' border='1'  width='85%%'/&gt;
+&lt;p&gt;This interaction diagram shows the flow involved in a user applying for a data license via REMS.&lt;/p&gt;
+&lt;p&gt;Not shown here are some design and preparation steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The research team read their ethics approval and participant agreements and craft one or more access agreements (AKA licenses) for a data set (NOTE: If the data can be made available automatically with just a license attached, such as when all parties have agreed that data can be Creative commons licensed, or the data is in the public domain then the following steps are not required)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The research team and support staff add the license to REMS, creating a “resource” a virtual offering that corresponds to any dataset that has the above license&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The research team add a workflow to REMS - this could range from an auto-approved click through where users can agree to license terms, through to detailed (manual) checking of their credentials.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next slide shows the interactions involved in accessing data once a user has been granted the license license.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide17.png" alt="alt text" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide17.png' alt='  ' title='Slide: 17' border='1'  width='85%%'/&gt;
+&lt;p&gt;This diagram shows the “access-control dance” for a user who has been granted a license in REMS obtaining access to a dataset at a data portal which gives access to data in a repository or archive.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide18.png" alt="alt text" title="Demo" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide18.png' alt='Demo ' title='Slide: 18' border='1'  width='85%%'/&gt;
+&lt;p&gt;In this video we demonstrate how to use REMS and how does a user request access to an LDaCA resource.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide19.png" alt="alt text" title="FAQ" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide19.png' alt='FAQ  ' title='Slide: 19' border='1'  width='85%%'/&gt;
+&lt;p&gt;(This section was added after the conference, to try to summarize the discussion and clarify requirements by starting an FAQ on this approach)&lt;/p&gt;
+&lt;h2&gt;Q Why not &amp;quot;just&amp;quot; implement an access control list (ACL) in the repository?&lt;/h2&gt;
+&lt;p&gt;There are a few reasons for the distributed approach we have taken in LDaCA:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;ACLs need maintenance over time - people's identities change, they retire and die, so storing a list of identifiers such as email addresses alongside content is not a viable long-term preservation strategy. Rather, we will encourage data custodians to describe in words what are permitted uses for the data, and by whom, in a license, then allow whomever is the current data custodian to manage that access in a separate administrative system. We expect these administrative systems to be ephemeral, and change over time but also to generate less friction over time as standards are developed. Expected future benefits of concentrating these processes will include that people do not have to prove the same claims they make about themselves multiple times and that it is easier for data custodians to authorize access.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;LDaCA data will be stored in a variety of places with separate portal applications serving data for specific purposes; if these systems all have in-built authorization schemes, even if they are the same, then we have the problem of synchronizing access control lists around a network of services.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accessing data that requires some sort of authorization process is not language or humanities specific, so working with an existing application that can handle pre-authorization workflows and access-control authorization decisions is an attractive choice and should allow LDaCA to take advantage of centrally managed services with functionality that improves over time rather than having to develop and maintain our own systems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If complex access controls are implemented inside a system then there is a risk that data becomes stranded inside that system and cannot be reused without completely re-implementing the access control. For example, imagine an archive of cultural material with complex access controls encoded into the business logic such as “this item is accessible only to male initiates”. Applications like this need to store user accounts with attributes on both data and user records that can be used to authorize access. There is a high risk of data being stranded in a system such as this if it is no longer supported. This will be mitigated somewhat if the rules are also expressed as licenses, perhaps a composition of Traditional Knowledge (TK) Labels - but the access system is baked-in to the application and not portable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Q: Yes but why does data need to have a license if we already have access controls?&lt;/h2&gt;
+&lt;p&gt;The point of Research Data Commons projects like LDaCA is to create an ecosystem where data can be re-used. For language data, this means that users, including researchers and community members, will be able to download data for certain authorised purposes and activities. The license is the way that data custodians communicate to data users (and future administrators) what those purposes activities are.&lt;/p&gt;
+&lt;p&gt;A license, which is always packaged with data will allow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A user to inspect a five-year-old dataset in their downloads folder and work out what they are allowed to do with it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An IT professional to clean up laptop that has been handed in by (or seized from – it happens) a departing faculty member.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A developer to re-create an access control replacing a decommissioned system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Q So many licenses! Sounds like a lot of work!&lt;/h2&gt;
+&lt;p&gt;We expect that the overhead of writing licenses will diminish greatly over time and standard clauses and complete licenses will be established. A data depositor will be able to choose from a set of standard license terms (such as a standard “restricted to CIs and participants license” for a given repository, using that as a template to mint their own license for a given data set with its own name and ID. The user can choose a standard way of adding pre-authorized licensees (such as email invitations). This ID can then be used by an authorization system.&lt;/p&gt;
+&lt;h2&gt;Q So you have centralized authorization into a system that grants licenses doesn't that mean you are locked-in to that system?&lt;/h2&gt;
+&lt;p&gt;No, and Yes&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;No&lt;/strong&gt;, there is no lock in regarding the list of Licenses and pre-authorized users; licenses and access control lists can be exported via an API so it is possible to import them into another system or save them for audit purposes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yes&lt;/strong&gt;, there is lockin, in that at this stage the workflow used to give access to users is specific to the system (such as REMS)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But&lt;/strong&gt;, because our process requires a governance step &lt;em&gt;first&lt;/em&gt; in writing a license, then there is a statement of intent for re-building those processes later if needed - a step which is very likely to be missing in a system with built-in access control.&lt;/p&gt;
+&lt;p&gt;Also, over time, we expect the administrative burden of constructing workflows will become less as standards are developed for a couple of things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Licenses can be made less complex (particularly in the context of academic studies) if they specify re-use by particular known cohorts in advance - this comes down to improving the design of studies to encourage data reuse. This may also help to simplify academic ethics processes in the medium to long term.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The CADRE project is looking to improve pre-authorization workflows that automatically source relevant information about potential users - fetching their publication record, and potentially remembering what certifications they have, so these attributes can be used and reused for decision making. It is conceivable that this approach might be useful in cultural contexts as well to allow data custodians to manage data sharing - this is a discussion we have yet to have in the broader HASS RDC.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Q What if I have a really simple requirement like giving access to just a couple of people - doesn’t this license approach just add complexity?&lt;/h2&gt;
+&lt;p&gt;If a data item needs to be locked down to a small group of people, say the chief investigator and the participants in a recorded dialogue then an obvious implementation is to maintain a small access control list (ACL) for the item. But all of the issues identified above with application-specific ACLs are the same, no matter the size of the cohort: the data set can’t be access controlled outside of its home system. If the system is no longer running then the data may be completely inaccessible, and if there is no license document stored with the data setting out terms of re-use in general terms then there is no indication to future administrators about who, if anyone, should have access of the data.&lt;/p&gt;
+&lt;h2&gt;Q: We don’t need a license, we have a “terms of use”&lt;/h2&gt;
+&lt;p&gt;Same thing. Terms of use for data are what a license does. We are designing our systems so that all the relevant terms and conditions go in one place to minimize confusion.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;The final three slides have been contributed by co-author Patrick.&lt;/p&gt;
+&lt;p&gt;These slides briefly outline the AAF process for the next phase that will provide the foundations for the development of the service and the creation of those policies to support the community and the service.&lt;/p&gt;
+&lt;p&gt;&lt;img src="Slide20.png" alt="alt text" title="Next Steps in the AAF Engagement ….. Revisit and consolidate the project’s vision through interviews and engagement with stakeholders,  collaborators and  community participants This next phase will provide the foundations for the development of policies to support the community. These will assist in creating a trusted community for access to sensitive data that supports the good practice and protocols. These activities are outlined in the following slides …" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide20.png' alt='Next Steps in the AAF Engagement ….. Revisit and consolidate the project’s vision through interviews and engagement with stakeholders,  collaborators and  community participants This next phase will provide the foundations for the development of policies to support the community. These will assist in creating a trusted community for access to sensitive data that supports the good practice and protocols. These activities are outlined in the following slides … ' title='Slide: 20' border='1'  width='85%%'/&gt;
+&lt;p&gt;This process will support the project to deliver a viable service that meets researchers’ needs and is trusted by the community and the participants to safely distribute data to authorised persons.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide21.png" alt="alt text" title="The AAF's business analyst conducts interviews with stakeholders and community members to discover and formalise the community's processes and requirements" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide21.png' alt='The AAF&amp;#x27;s business analyst conducts interviews with stakeholders and community members to discover and formalise the community&amp;#x27;s processes and requirements ' title='Slide: 21' border='1'  width='85%%'/&gt;
+&lt;p&gt;The AAF’s business analyst is conducting interviews with the key stakeholders.
+This discovery process will collect information on the current and the “to-be” state of the service.&lt;/p&gt;
+&lt;p&gt;Together these will establish goals and expectations and provide the basis for further prototyping a service that meets stakeholder needs.&lt;/p&gt;
+&lt;p&gt;The process will facilitate the building of a service that empowers the data custodians, the communities and participants to manage access.&lt;/p&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;img src="Slide22.png" alt="alt text" title="These feeds into the prototyping &amp;amp; implementing phase" /&gt;&lt;/p&gt;
+&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
+&lt;img src='https://ptsefton.com/2022/11/16/fair-care-eresearch-2022/Slide22.png' alt='These feeds into the prototyping &amp;amp; implementing phase   ' title='Slide: 22' border='1'  width='85%%'/&gt;
+&lt;p&gt;The basis for prototyping is iterative:
+Identify
+Prioritise
+Pilot
+Review
+Update requirements&lt;/p&gt;
+&lt;p&gt;This leads to a production service that meets participant, community and researcher requirements and unifies the services, policies and trust framework for the community.&lt;/p&gt;
+&lt;/section&gt;
+</content><category term="Acess"></category></entry><entry><title>HASS RDC Technical Advisory Group Meeting LDaCA &amp; ATAP Intro</title><link href="https://ptsefton.com/2022/02/18/hass_rdc_tech_advisory/index.html" rel="alternate"></link><published>2022-02-18T00:00:00+01:00</published><updated>2022-02-18T00:00:00+01:00</updated><author><name>Peter Sefton</name></author><id>tag:ptsefton.com,2022-02-18:/2022/02/18/hass_rdc_tech_advisory/index.html</id><summary type="html">&lt;p&gt;This is a presentation I gave to the &lt;a href="https://ardc.edu.au/collaborations/strategic-activities/hass-and-indigenous-research-data-commons/"&gt;Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program&lt;/a&gt;  Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there.&lt;/p&gt;
 &lt;p&gt;We will post this to the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is a presentation I gave to the &lt;a href="https://ardc.edu.au/collaborations/strategic-activities/hass-and-indigenous-research-data-commons/"&gt;Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program&lt;/a&gt;  Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there.&lt;/p&gt;
 &lt;p&gt;We will post this to the Language Data Commons of Australia (LDaCA) website soon and I'll link it here.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://ptsefton.com/2022/02/18/hass_rdc_tech_advisory/HASS RDC Technical Advisory Group Meeting LDaCA &amp; ATAP Intro.pdf"&gt;PDF version&lt;/a&gt;&lt;/p&gt;
@@ -1562,289 +1994,4 @@ A number of smiley faces representing people grouped into three overlapping coho
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Everything I know about music production is from YouTube. Everything I know about song writing is from deep in my soul. Thank you for reading all the way to the bottom. Normal service will resume next week.&lt;/p&gt;
-</content><category term="Music"></category></entry><entry><title>FAIR Data Management; It's a lifestyle not a lifecycle</title><link href="https://ptsefton.com/2021/04/07/rdmpic/index.html" rel="alternate"></link><published>2021-04-07T00:00:00+02:00</published><updated>2021-04-07T00:00:00+02:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-04-07:/2021/04/07/rdmpic/index.html</id><summary type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
-&lt;p&gt;But first,  here's a rant about some modeling and diagramming styles and trends …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been working with my colleague Marco La Rosa on summary diagrams that capture some important aspects of Research Data Management, and include the &lt;a href="https://www.nature.com/articles/sdata201618"&gt;FAIR data principles&lt;/a&gt;; that data should be Findable, Accessible, Interoperable and Reusable.&lt;/p&gt;
-&lt;p&gt;But first,  here's a rant about some modeling and diagramming styles and trends that I &lt;strong&gt;do not like&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;I took part in a fun Twitter thread recently &lt;a href="https://twitter.com/FCTweedie/status/1359694360472821761"&gt;kicked off by Fiona Tweedie&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Fiona Tweedie
-&lt;a href="https://twitter.com/FCTweedie"&gt;@FCTweedie&lt;/a&gt;
-So my current bugbear is university processes that seem to forget that the
-actual work of higher ed is doing research and/ or teaching. This &amp;quot;research
-lifecycle&amp;quot; diagram from @UW is a stunning &lt;a href="https://www.washington.edu/research/research-home-page/research-lifecycle-main-t1-blowout-2/"&gt;example&lt;/a&gt;:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;img alt="The UW MyResearch Lifecycle with the four stages: Plan/Propose, Setup, Manage, and Closeout" src="https://ptsefton.com/2021/04/07/rdmpic/uw.png"&gt;
-&lt;p&gt;In this tweet Dr Tweedie has called out Yet Another Research Lifecycle Diagram That Leaves Out The Process Of You Know, Actually Doing Research. This process-elision happened more than once when I was working as an eResearch manager - management would get in the consultants to look at research systems, talk to the research office and graduate school and come up with a &amp;quot;journey map&amp;quot; of administrative processes that either didn't mention the actual DOING research or represented it as a tiny segment, never mind that it's, you know, the main thing researchers do when they're being researchers rather than teachers or administrators.&lt;/p&gt;
-&lt;p&gt;At least the consultants would usually produce a 'journey map' that got you from point A to Point B using chevrons to &amp;gt;&amp;gt; indicate progress and didn't insist that everything was a 'lifecycle'.&lt;/p&gt;
-&lt;p&gt;Something like:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Plan / Propose  &amp;gt;&amp;gt; Setup  &amp;gt;&amp;gt; Manage / Do Research &amp;gt;&amp;gt; Closeout
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;But all too commonly processes are represented using the tired old metaphor of a lifecycle.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reminder: A lifecycle is a biological process; how organisms come into existence, reproduce and die via various means including producing seeds, splitting themselves in two, um, making love, laying eggs and so on.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;It's really stretching the metaphor to talk about research in this way - maybe the research outputs in the UW &amp;quot;closeout&amp;quot; phase are eggs that hatch into new bouncing baby &lt;em&gt;proposals&lt;/em&gt;?&lt;/p&gt;
-&lt;p&gt;Regrettably, arranging things in circles and using the &amp;quot;lifecycle&amp;quot; metaphor is very common - see this Google image search for &amp;quot;Research Lifecycle&amp;quot;:&lt;/p&gt;
-&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/research_lifecycle_search.png"/&gt; 
-&lt;p&gt;I wonder if the diagramming tools that are available to people are part of the issue - Microsoft Word, for example can build cycles and other diagrams out of a bullet list.&lt;/p&gt;
-&lt;p&gt;(I thought it would be amusing to draw the UW diagram from above as a set cogs but this happened - you can only have 3 cogs in a Word diagram.)&lt;/p&gt;
-&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/cogs.png" alt="Attempt to use Microsoft Word to make a diagram 4 cogs for Plan/Propose, Setup, Manage, and Closeout but it will only draw three of them" &gt;
-&lt;a id="main"&gt;
-&lt;h2&gt;Research Data Management as a Cycle&lt;/h2&gt;
-&lt;p&gt;Now that I've got that off my chest let's look at research data management. Here's a diagram which is in fairly wide use, from &lt;a href="https://guides.library.ucsc.edu/datamanagement/"&gt;The University of California&lt;/a&gt;.&lt;/p&gt;
-&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/ResearchCycleUCSC.jpg" alt=""&gt;
-&lt;p&gt;(This image has a CC-BY logo which means I can use it if I attribute it - but I'm not 100% clear on the original source of the diagram - it seems to be from UC somewhere.)&lt;/p&gt;
-&lt;!-- There's a JCU version https://libguides.jcu.edu.au/research-data-management-toolkit --&gt;
-&lt;p&gt;Marco used this one in some presentations we gave. I thought we could do better.&lt;/p&gt;
-&lt;p&gt;The good part of this diagram is that it shows research data management as a cyclical, recurring activity - which for FAIR data it needs to be.&lt;/p&gt;
-&lt;p&gt;What I don't like:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;I think it is trying to show a project (ie grant) level view of research with data management happening in ONE spot on the journey. Typically researchers do research all the time (or in between teaching or when they can get time on equipment) not at a particular point in some administrative &amp;quot;journey map&amp;quot;. We often hear feedback that their research is a lifetime activity and does not happen the way administrators and IT think it does.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;quot;Archive&amp;quot; is shown as a single-step pre-publication. This is a terrible message; if we are to start really doing FAIR data then data need to be described and made findable and accessible ASAP.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The big so-called lifecycle is (to me) very contrived and looks like a librarian view of the world with data searching as a stand-alone process before research data management planning. Not clear whether &lt;em&gt;Publication&lt;/em&gt; means articles or data.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&amp;quot;Data Search / Reuse&amp;quot; is a type of &amp;quot;Collection&amp;quot;, and why is it happening before data management planning? &amp;quot;Re-Collection&amp;quot; is also a kind of collection, so we can probably collapse all those together (the &lt;em&gt;Findable&lt;/em&gt; and &lt;em&gt;Accessible&lt;/em&gt; in FAIR).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;It’s not clear whether Publication means articles or data or both.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Most research uses some kind of data storage but very often not directly; people might be interacting with a lab notebook system or a data repository - at UTS we arrived at the concept of &amp;quot;workspaces&amp;quot; to capture this.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;The &amp;quot;Minimum Viable FAIR Diagram&amp;quot;&lt;/h1&gt;
-&lt;p&gt;Marco and I have a sketch of a new diagram that attempts to address these issues and addresses what needs to be in place for broad-scale FAIR data practice.&lt;/p&gt;
-&lt;p&gt;Two of the FAIR principles suggest services that need to be in place; ways to &lt;em&gt;Find&lt;/em&gt; and &lt;em&gt;Access&lt;/em&gt; data. The I and R in FAIR are not something that can be encapsulated in a service, as such, rather they imply that data are well described for re-use and &lt;em&gt;Interoperation&lt;/em&gt; of systems and in &lt;em&gt;Reusable&lt;/em&gt; formats.&lt;/p&gt;
-&lt;p&gt;As it happens, there is a common infrastructure component which encapsulates &lt;em&gt;finding&lt;/em&gt;  data and &lt;em&gt;accessing&lt;/em&gt;; the repository.  Repositories are services which hold data and make it discoverable and accessible, with governance that ensures that data does not change without notice and is available for access over agreed time frames - sometimes with detailed access control.  Repositories may be general purpose or specialized around a particular type of data: gene sequences, maps, code, microscope images etc. They may also be ad-hoc - at a lab level they could be a well laid out, well managed file system.&lt;/p&gt;
-&lt;p&gt;Some well-funded disciplines have established global or national repositories and workflows for some or all of their data, notably physics and astronomy, bioinformatics, geophysical sciences, climate and marine science. Some of these may not be thought of by their community as repositories -  but according to our functional definition they are repositories, even if they are &amp;quot;just&amp;quot; vast shared file systems or databases where everyone knows what's what and data managers keep stuff organized. Also, some institutions have institutional data repositories but it is by no means common practice across the whole of the research sector that data find their way into any of these repositories.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Remember: data storage is not all files-on-disks&lt;/strong&gt;. Researchers use a very wide range of tools which may make data inaccessible outside of the tool. Examples include: cloud-based research (lab) notebook systems in which data is deposited alongside narrative activity logs; large shared virtual laboratories where data are uploaded; Secure eResearch Platforms (SERPs) which allow access only via virtualized desktops with severely constrained data ingress and egress; survey tools; content management systems; digital asset management systems; email (yes, it's true some folks use email as project archives!); to custom-made code for a single experiment.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Our general term for all of the infrastructures that researchers use for RDM day to day including general purpose storage is “workspaces”.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Many, if not most &lt;em&gt;workspaces&lt;/em&gt; do not have high levels of governance, and data may be technically or legally inaccessible over the long term. They should not be considered as suitable archives or repositories - hence our emphasis on making sure that data can be described and deposited into general purpose, standards-driven repository services.&lt;/p&gt;
-&lt;p&gt;The following is a snapshot of the core parts of an idealised FAIR data service. It shows the activities that researchers undertake, acquiring data from observations, instruments and by reuse, conducting analysis and data description in a working environment, and depositing results into one or more repositories.&lt;/p&gt;
-&lt;p&gt;We wanted it to show:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;That infrastructure services are required for research data management - researchers don't just &amp;quot;Archive&amp;quot; their data without support - they and those who will reuse data need repository services in some form.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;That research is conducted using workspace environments - more infrastructure.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src="https://ptsefton.com/2021/04/07/rdmpic/new-diagram.png" alt="A work-in-progress sketch of FAIR research data management." &gt;
-&lt;p&gt;We (by which I mean Marco) will make this prettier soon.&lt;/p&gt;
-&lt;p&gt;And yes, there is a legitimate cycle in this diagram it's the FIND -&amp;gt; ACCESS -&amp;gt; REUSE -&amp;gt; DESCRIBE -&amp;gt; DEPOSIT cycle that's inherent in the FAIR lifestyle.&lt;/p&gt;
-&lt;p&gt;Things that might still be missing:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Some kind of rubbish bin - to show that workspaces are ephemeral and working data that doesn't make the cut may be culled, and that some data is held only for a time.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;What do you think's missing?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Thoughts anyone?  Comments below or take it up on twitter with @ptsefton.&lt;/p&gt;
-&lt;p&gt;(I have reworked parts of a document that Marco and I have been working on with Guido Aben for this document, and thanks to recent graduate Florence Sefton for picking up typos and sense-checking).&lt;/p&gt;
-</content><category term="Research Data Management"></category></entry><entry><title>Research Data Management looking outward from IT</title><link href="https://ptsefton.com/2021/01/28/rdm4aero/index.html" rel="alternate"></link><published>2021-01-28T00:00:00+01:00</published><updated>2021-01-28T00:00:00+01:00</updated><author><name>ptsefton</name></author><id>tag:ptsefton.com,2021-01-28:/2021/01/28/rdm4aero/index.html</id><summary type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
-&lt;p&gt;Carina asked:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It would be really interesting to find out what is happening in the research data management space …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;This is a presentation that I gave on Wednesday the 2nd of December 2020 at the AeRO (Australian eResearch Organizations) council meeting at the request of the chair Dr Carina Kemp).&lt;/p&gt;
-&lt;p&gt;Carina asked:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It would be really interesting to find out what is happening in the research data management space. And I’m not sure if it is too early, but maybe touch on what is happening in the EOSC Science Mesh Project.&lt;/p&gt;
-&lt;p&gt;The Audience of the AeRO Council is AeRo member reps from AAF, AARNet, QCIF, CAUDIT, CSIRO, GA, TPAC, The uni of Auckland, REANNZ, ADSEI, Curtin, UNSW, APO.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;At this stage I was still the eResearch Support Manager at UTS - but I only had a couple of weeks left in that role.&lt;/p&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-&lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide01.png' alt='Research Data Management 
-looking outward from IT
-Research Data Management 
-looking outward from IT
-' title='1' border='1'  width='85%'/&gt;
-&lt;p&gt;In this presentation I’m going to start from a naive IT perspective about research data.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide02.png' alt='
-&lt;p&gt;' title='2' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;I would like to acknowledge and pay my respects to the Gundungurra and Darug people who are the traditional custodians of the land on which I live and work.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide03.png' alt='
-❄️
-&lt;p&gt;❄️
-' title='3' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Research data is special - like snowflakes - and I don’t mean that in a mean way, Research Data could be anything - any shape any size and researchers are also special, not always 100% aligned with institutional priorities, they align with their disciplines and departments and research teams.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide04.png' alt='$data_management != $storage
-$data_management != $storage
-' title='4' border='1'  width='85%'/&gt;
-&lt;p&gt;It’s obvious that buying storage doesn’t mean you’re doing data management well but that doesn’t mean it’s not worth restating.&lt;/p&gt;
-&lt;p&gt;So &amp;quot;data storage is not data management&amp;quot;. In fact, the opposite might be true - think about buying a laptop - do you just get one that fits all your stuff and rely on getting a bigger one every few years? Or do you get a smaller main drive and learn how to make sure that your data's actually archived somewhere? That would be &lt;em&gt;managing&lt;/em&gt; data.&lt;/p&gt;
-&lt;p&gt;And remember that not all research data is the same “shape” as corporate data - it does not all come in database or tabular form - it can be images, video, text, with all kinds of structures.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide05.png' alt='
-💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾👩🏽‍🔬💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾💾
-&lt;p&gt;' title='5' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;There are several reasons we don’t want to just dole-out storage as needed.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide06.png' alt='
-💰
-&lt;p&gt;' title='6' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;It’s going to cost a lot of money and keep costing a lot of money&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide07.png' alt='$storing != $sharing
-&lt;p&gt;' title='7' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;Not everything is stored in “central storage” anyway. There are share-sync services like AARNet’s Cloudstor.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide08.png' alt='
-Emoji of lots of floppy disks with a researcher in the centre
-' title='8' border='1'  width='85%'/&gt;
-&lt;ol start="3"&gt;
-&lt;li&gt;Just keeping things doesn’t mean we can find them again&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide09.png' alt='Emoji of a trophy and a bomb
-' title='9' border='1'  width='85%'/&gt;
-&lt;p&gt;So far we’ve just looked at things from an infrastructure perspective but that’s not actually why we’re here, us with jobs in eResearch. I think we’re here to help researchers do &lt;em&gt;excellent&lt;/em&gt; research with &lt;em&gt;integrity,&lt;/em&gt; AND we need to help our institutions and researchers manage &lt;em&gt;risk&lt;/em&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The Australian Code for the Responsible Conduct of Research which all research organizations  need to adhere to if we get ARC or NHMRC grants sets out some institutional responsibilities to provide infrastructure and training&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;There are risks associated with research data, reputational, financial and risks to individuals and communities about whom we hold data&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;At UTS, we’ve embraced the Research Data Management Plan - as a way to assist in dealing with this risk. RDMPs have a mixed reputation here in Australia - some organizations have decided to keep them minimal and as streamlined as possible but at UTS the thinking is that they can be useful in addressing a lot of the issues raised so far.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Where’s the data for project X - when there’s an integrity investigation. Were procedures followed?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;How much storage are we going to need?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide10.png' alt='
-&lt;p&gt;Image showing a research data management system that can provision research services (workspaces).&lt;/p&gt;
-&lt;p&gt;' title='10' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Inspired by the (defunct?) Research Data Lifecycle project that was conceived by the former  organizations that became the Australian Research Data Commons (ANDS, NeCTAR and RDSI) we came up with this architecture for a central research data management system (in our case we use the open source ReDBox system) loosely linked to a variety of research Workspaces, as we call them.&lt;/p&gt;
-&lt;p&gt;The plan is that over time, researchers can plan and budget for data management in the short, medium and long term, provision services and use the system to archive data as they go.&lt;/p&gt;
-&lt;p&gt;(Diagram by Gerard Barthelot at UTS)&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide11.png' alt='
-&lt;p&gt;Screenshot of the OCFL home page.&lt;/p&gt;
-&lt;p&gt;' title='11' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;UTS has been an early adopter of the OCFL (Oxford Common File Layout) specificiation - a way of storing file sustainably on a file system (coming soon: s3 cloud storage) so it does not need to be migrated. I &lt;a href="https://eresearch.uts.edu.au/2019/07/01/OCLF.htm"&gt;presented on this at the Open Repositories conference&lt;/a&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide12.png' alt='
-&lt;p&gt;Screenshot of the RO-Crate home page.&lt;/p&gt;
-&lt;p&gt;' title='12' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;And at the same conference, I introduced the RO-Crate standards effort, which is a marriage between the DataCrate data packaging work we’ve been doing at UTS for a few years, and the Research Object project.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide13.png' alt='
-&lt;p&gt;Screenshot of the Arkisto page.&lt;/p&gt;
-&lt;p&gt;' title='13' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;We created the Arkisto platform to bring together all the work we’ve been doing to standardise research data metadata, and to build a toolkit for sustainable data repositories at all scales from single-collection up to institutional, and potentially discipline and national collections.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide14.png' alt='
-&lt;p&gt;Screenshot from the Arkisto use-cases page showing an idealized data-flow for sensor data using the Arkisto platform.&lt;/p&gt;
-&lt;p&gt;' title='14' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is an example of one of many Arkisto deployment patterns you can read more on the &lt;a href="https://arkisto-platform.github.io/use-cases/"&gt;Arkisto Use Cases page&lt;/a&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide15.png' alt='
-&lt;p&gt;Screenshot of a search interface to a historical dataset.&lt;/p&gt;
-&lt;p&gt;' title='15' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is an example of an Arkisto-platform output. Data exported from one content management system into an archive-ready RO-Crate package, which can then be made into a live site. This was created for Ass Prof Tamson Pietsch at UTS. The website is ephemeral - the data will be Interoperable and Reusable (I and R from FAIR) via the use of RO-Crate.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide16.png' alt='
-&lt;p&gt;Image of chickens roosting on the roof of their house rather than inside it.&lt;/p&gt;
-&lt;p&gt;' title='16' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;Now to higher-level concerns: I built this infrastructure for my chooks (chickens) - they have a nice dry box with a roosting loft. But most of the time they roost on the roof.&lt;/p&gt;
-&lt;p&gt;We know all too well that researchers don’t always use the infrastructure we build for them - you have to get a few other things right as well.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide17.png' alt='… 
-and have the right policy environment …
-&lt;p&gt;' title='17' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide18.png' alt='… they will come, given the right training, incentives, support etc.
-&lt;p&gt;' title='18' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;One of the big frustrations I have had as an eResearch manager is that the expectations and aspirations  of funders and integrity managers and so on are well ahead of our capacity to deliver the services they want, and then when we DO get infrastructure sorted there are organizational challenges to getting people to use it. To go back to my metaphor, we can’t just pick up the researchers from the roof and put them in their loft, or spray water on them to get them to move.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide20.png' alt='CS3MESH4EOSC T4.2
-CS3MESH4EOSC T4.2
-' title='20' border='1'  width='85%'/&gt;
-&lt;p&gt;Via Gavin Kennedy and Guido Aben from AARNet Marco La Rosa and I are helping out with this charmingly named project which is adding data management service to storage, syncronization and sharing services. Contracts not yet in place so won't say much about this yet.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide21.png' alt='
-&lt;p&gt;Schreenshot of CS3MESH4EOSC homepage.&lt;/p&gt;
-&lt;p&gt;' title='21' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.cs3mesh4eosc.eu/about"&gt;https://www.cs3mesh4eosc.eu/about&lt;/a&gt; EOSC is the European Open Science Cloud&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CS3MESH4EOSC  -  Interactive and agile sharing mesh of storage, data and applications for EOSC - aims to create an interoperable federation of data and higher-level services to enable friction-free collaboration between European researchers.
-CS3MESH4EOSC will connect locally and individually provided services, and scale them up at the European level and beyond, with the promise of reaching critical mass and brand recognition among European scientists that are not usually engaged with specialist eInfrastructures.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide19.png' alt=' Telescope emoji' title='19' border='1'  width='85%'/&gt;
-&lt;p&gt;I told Carina I would look outwards as well. What are we keeping an eye on?&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide22.png' alt='
-    Book and factory emojis
-' title='22' border='1'  width='85%'/&gt;
-&lt;p&gt;Watch out for the book factory. Sorry, the publishing industry.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide23.png' alt='
-    Fox and hen emojis
-' title='23' border='1'  width='85%'/&gt;
-&lt;p&gt;The publishing industry is going to “help” the sector look after it’s research data.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide24.png' alt='
-© 
-' title='24' border='1'  width='85%'/&gt;
-&lt;p&gt;Like, you, know, they did with the copyright in publications. Not only did that industry work out how to take over copyright in research works, they successfully moved from selling us hard-copy resources that we could keep in our own libraries  to charging an annual rent on the literature - getting to the point where they can argue that they are essential to maintaining the scholarly record and MUST be involved in the publishing process even when the (sometimes dubious, patchy) quality checks are performed by &lt;em&gt;us&lt;/em&gt; who created the literature.&lt;/p&gt;
-&lt;p&gt;It’s up to research institutions whether this story repeats with research data - remember who you’re dealing with when you sign those contracts!&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide25.png' alt='Some questions I will explore post UTS
-How many research institutions in Australia have secure, scalable, sustainable Research Data repositories that support FAIR practices?
-When are we going to have national repositories?
-How many of the eResearch Platforms funded under various programs have sustainable data management stories? How much data is locked-up behind APIs and will be inaccessible if the software stops running?
-&lt;p&gt;' title='25' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;In the 2010s the Australian National Data (ANDS) service funded investment in Metadata stores; one of these was the ReDBOX research data management platform which is alive and well and being sustained by QCIF with a subscription maintenance service. But ANDS didn’t fund development of Research Data Repositories.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof='http://purl.org/ontology/bibo/Slide'&gt;
-    &lt;img src='https://ptsefton.com/2021/01/28/rdm4aero/Slide26.png' alt='Credits
-The UTS eResaerch team
-Michael Lynch, Sharyn Wise, Fiona Tweedie, Moises Sacal, Marco La Rosa, Pascal Tampubolon,  Anelm Motha, Michael Lake, Matthew Gaston ,Simon Kruik, Weisi Chen from Intersect Austrlaia and our RDM project sponsor Louise Wheeler
-Credits
-&lt;p&gt;' title='26' border='1'  width='85%'/&amp;gt;&lt;/p&gt;
-&lt;p&gt;The work I’ve talked about here was all done with with the UTS team.&lt;/p&gt;
-&lt;/section&gt;
-</content><category term="Research Data Management"></category></entry></feed>
+</content><category term="Music"></category></entry></feed>
