@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Five ways RO-Crate data packages are important for repositories - ptsefton.com</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../2024/06/05/open-repositories-2024-ro-crate/index.html">
+
+        <meta name="author" content="Peter Sefton" />
+        <meta name="keywords" content="RO-Crate,Open Repositories" />
+        <meta name="description" content="This post is also available at the Language Data Commons of Australia site. PDF version Five ways RO-Crate data packages are important for repositories Presented at: The 19th International Conference on Open Repositories, June 3-6th 2024, Göteborg, Sweden Session: Presentations: Integrations for Research Data Management Time: 05/June/2024: 11 …" />
+
+        <meta property="og:site_name" content="ptsefton.com" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Five ways RO-Crate data packages are important for repositories"/>
+        <meta property="og:url" content="../../../../2024/06/05/open-repositories-2024-ro-crate/index.html"/>
+        <meta property="og:description" content="This post is also available at the Language Data Commons of Australia site. PDF version Five ways RO-Crate data packages are important for repositories Presented at: The 19th International Conference on Open Repositories, June 3-6th 2024, Göteborg, Sweden Session: Presentations: Integrations for Research Data Management Time: 05/June/2024: 11 …"/>
+        <meta property="article:published_time" content="2024-06-05" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="RO-Crate" />
+            <meta property="article:tag" content="Open Repositories" />
+            <meta property="article:author" content="Peter Sefton" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../../feed/atom" type="application/atom+xml" rel="alternate"
+              title="ptsefton.com ATOM Feed"/>
+ 
+
+<!-- VIA -->
+<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
+<!-- -->
+<style>
+body {
+  font-size: 16px;
+}
+
+.figure {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.caption {
+  font-style: italic bold;
+  text-align: center;
+
+}  
+
+
+blockquote {
+    font-size: 16px;
+    font-style: bold;
+    background-color: rgb(250, 250, 0);
+}
+
+
+.video-container {
+    margin: auto; /* make em equal */
+    text-align:center;
+    }
+
+
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] {
+  border-color: #2d262e;
+  border-style: solid;
+  margin: 30px;
+  padding: 10px 10px  10px 10px;
+  width: 90%;
+}
+
+section[typeof='http://purl.org/ontology/bibo/Slide'] img {
+  padding: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.navbar-default {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-brand {
+  color: #ffff00;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-text {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffff00;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffff00;
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle {
+  border-color: #b72bc0;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #b72bc0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffff00;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffff00;
+}
+.navbar-default .navbar-link {
+  color: #ffff00;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffff00;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffff00;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffff00;
+    background-color: #b72bc0;
+  }
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../../" class="navbar-brand">
+ptsefton.com            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav" role="menu">
+ 
+                    <li><a href="/">HOME</a></li>
+ 
+                    <li><a href="/cv/">CV</a></li>
+
+
+
+
+
+		    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../2024/06/05/open-repositories-2024-ro-crate/index.html"
+                       rel="bookmark"
+                       title="Permalink to Five ways RO-Crate data packages are important for repositories">
+                        Five ways RO-Crate data packages are important for repositories
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2024-06-05T00:00:00+02:00"> Wed 05 June 2024</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../tag/ro-crate.html">RO-Crate</a>
+        /
+	<a href="../../../../tag/open-repositories.html">Open Repositories</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This post is <a href="https://www.ldaca.edu.au/news/posts/open-repositories-2024-ro-crate/">also available at the Language Data Commons of Australia site</a>.</p>
+<p><a href="../../../../2024/06/05/open-repositories-2024-ro-crate/2024-OR-RO-Crate.pdf">PDF version</a></p>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide00.png' alt='Five ways RO-Crate data packages are important for repositories :: Peter Sefton*, Stian Soiland-Reyes** ::  :: *University of Queensland, Australia; **The University of Manchester, UK ::  ::  :: ' title='Slide: 0' border='1'  width='85%%'/>
+<h1>Five ways RO-Crate data packages are important for repositories</h1>
+<p>Presented at: The 19th International Conference on Open Repositories, June 3-6th 2024, Göteborg, Sweden</p>
+<p>Session: Presentations: Integrations for Research Data Management</p>
+<p>Time: 05/June/2024: 11:00 - 12:30 · Location: Drottningporten 1</p>
+<p>Peter Sefton*, Stian Soiland-Reyes**</p>
+<p>*University of Queensland, Australia; **The University of Manchester, UK</p>
+<p>Research Object Crate is a linked data metadata packaging standard which has been widely adopted in research contexts. In this presentation, we will briefly explain what RO-Crate is, how it is being adopted worldwide, then go on to list ways that RO-Crate is growing in importance in the repository world:</p>
+<ul>
+<li>
+<p>Uploading of complex multi-file objects means RO-Crate is compatible with any general-purpose repository that can accept a ZIP file (with some coding, repository services can do more with RO-Crates).</p>
+</li>
+<li>
+<p>Download for well-described data objects complete with metadata from a repository rather than just a ZIP or file with no metadata.</p>
+</li>
+<li>
+<p>Using RO-Crate metadata reduces the amount of customisation that is required in repository software, as ALL the metadata is described using the same simple, self-documenting linked-data structures, so generic display templates.</p>
+</li>
+<li>
+<p>Sufficiently well-described RO-Crates can be used to make data FAIR compliant, aiding in Findability, Accessibility, Interoperability and Reusability thanks to standardised metadata and mature tooling.</p>
+</li>
+<li>
+<p>And if you’re looking for a sustainable repository solution, there are tools which can run a repository from a set of static files on a storage service, in line with the ideas put forward by Suleman in the closing keynote for OR2023.</p>
+</li>
+</ul>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide01.png' alt='Uploading of complex multi-file objects … :: ' title='Slide: 1' border='1'  width='85%%'/>
+<h2>Uploading of complex multi-file objects</h2>
+<p>RO-Crate [1], [2] is a data packaging format and can be used to put multiple data files together with their metadata into a package such as a ZIP, tar or disk image file. This means that as long as your repository can handle a ZIP file it can take RO-Crates.</p>
+<p>RO-Crates enable data to travel with metadata.</p>
+<p>Beyond simply allowing the upload of opaque RO-Crates, there are opportunities for repository software to recognise metadata in an uploaded package and to pre-populate built-in metadata forms and/or datastores. This is not a pattern the authors have seen widely implemented in comprehensive institutionally focussed repositories, although at the time of writing it is being explored in Dataverse and InvenioRDM/Zenodo. We would encourage repository developers to explore this further, particularly those working with research data. RO-Crate support is increasing in research-domain repositories; e.g. RO-Crate upload with metadata extract is supported by WorkflowHub and ROHub).</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide02.png' alt='… is already supported even if the repo does not speak RO-Crate :: ' title='Slide: 2' border='1'  width='85%%'/>
+<p>One of the design features of an RO-Crate is that as it can be “just a ZIP file” it can be used with any old repository that can handle ZIP files. The JSON file can also be uploaded separately. As RO-Crate adoption increases, the repository may be able to start to use the RO-Crate metadata it already has. You can/will have heard from Dieuwertje Bloemen here at OR2024 that DataVerse has support for RO-Crate metadata preview and building import/export mechanisms.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide03.png' alt='📂 ::  :: | :: |- ro-crate-metadata.json :: |-- Folder1/  :: |          |-- file1.this :: |          |-- file2.that :: |-- Folder2/ :: |		   -- file1.this :: |          |-- file2.that :: |-2021-04-08 07.58.17.jpg  :: { ::       &quot;@id&quot;: &quot;2021-04-08 07.58.17.jpg&quot;, ::       &quot;@type&quot;: &quot;File&quot;, ::       &quot;contentSize&quot;: 3271409, ::       &quot;dateModified&quot;: &quot;2021-04-08T07:58:17+10:00&quot;, ::       &quot;description&quot;: &quot;&quot;, ::       &quot;encodingFormat&quot;: [ ::         { ::           &quot;@id&quot;:  &quot;https://www.nationalarchives.gov.uk/PRONOM/x-fmt/391&quot; ::         }, ::         &quot;image/jpeg&quot; ::       ], ::       &quot;name&quot;: &quot;Cute puppy&quot; ::     }, ::  ::  RO-Crate Metadata Document :: ' title='Slide: 3' border='1'  width='85%%'/>
+<p>The RO-Crate specification described a method of packaging data in a folder, which can be zipped, with any kind of file.</p>
+<p>This slide shows a folder of data, including a file with a typical obscure file name based on a timestamp (in this case created by a Dropbox upload from a digital camera). The RO-Crate Metadata file, in JSON Linked Data Format, can describe files. This one has a name (i.e. a title) for the file; “Cute puppy”.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide04.png' alt='📂 ::  :: |-- Folder1/  :: |          |-- file1.this :: |          |-- file2.that :: |-- Folder2/ :: |		     |-- file1.this :: |          |-- file2.that :: |-2021-04-08 07.58.17.jpg  ::  :: ' title='Slide: 4' border='1'  width='85%%'/>
+<p>A human-readable description and preview (ro-crate-preview.html) can be in an HTML file that lives alongside the metadata. This slide shows an HTML view of the data that shows the image with its metadata, including the Schema.org <code>name</code> (equivalent to a Dublin Core <code>title</code>) for the file.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide05.png' alt='' title='Slide: 5' border='1'  width='85%%'/>
+<p>Increasingly, research repository infrastructure is accepting RO-Crate input - this screenshot from WorkflowHub [documents the upload API[(https://about.workflowhub.eu/developer/ro-crate-api/) for submitting RO-Crate packaged descriptions of scientific workflows to the system. These can then be downloaded by others for reuse. Here, RO-Crate allows bypassing of the traditional “title, author, license, description” fields (rendered from the crate), as well as permitting user extensions on metadata to be kept in the repository.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide06.png' alt='2.  RO-Crate is a packaging format suitable for downloads :: 2. :: ' title='Slide: 6' border='1'  width='85%%'/>
+<h2>RO-Crate is a packaging format suitable for downloads</h2>
+<p>One of the perennial problems with downloads is that once a user has the data, it often does not come with metadata as shown on the landing page, or if present it is in an ad hoc or specialised format. RO-Crate solves this by specifying an extensible way to put linked-data metadata with data assets and to provide an HTML page or small website with the data to explain it. Thus data travels <em>with</em> its metadata and can be made human-readable.</p>
+<p>RO-Crate download is already available in many data repositories. Examples include:</p>
+<ul>
+<li>
+<p><a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://workflowhub.eu/&amp;ved=2ahUKEwi_wuuK9qmGAxWkAHkGHb9hDngQFnoECBgQAQ&amp;usg=AOvVaw0Mgw-ytkMOTMLIPdH1AorW">WorkflowHub</a>: A registry for describing, sharing and publishing scientific computational workflows.</p>
+</li>
+<li>
+<p><a href="https://www.rohub.org">ROHub</a>: A  repository of Earth Science datasets and computational methods.</p>
+</li>
+<li>
+<p><a href="https://tlcmap.org/">TLCMap</a>: The Time Layered Cultural map is a set of tools that work together for mapping Australian history and culture.</p>
+</li>
+<li>
+<p>The <a href="https://data.ldaca.org.au">Language Data Commons of Australia data portal</a>: entirely built on RO-Crates, the underlying data consists of crates-on-disk and the API is based on RO-Crate metadata.</p>
+</li>
+<li>
+<p><a href="https://wildlive.senckenberg.de/">Senckenberg Wildlive portal</a>: exposes metadata about automatic photo captures of endangered animals using RO-Crate.</p>
+</li>
+<li>
+<p>Dataverse: at the time of writing, RO-Crate downloads are in development.</p>
+</li>
+</ul>
+<p>We will encourage developers from other repository platforms to follow the Dataverse project’s lead and add RO-Crate support.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide07.png' alt=' :: ' title='Slide: 7' border='1'  width='85%%'/>
+<p>This is a screenshot of the <a href="https://uqz.zoom.us/j/85861337752">Gazetteer of Historical Australian Places</a> – not exactly a repository but an example of a place where people can download datasets.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide08.png' alt='HTML Preview Describes the files :: ' title='Slide: 8' border='1'  width='85%%'/>
+<p>This kind of download could be added to any repository system where there is at least one file that has metadata; offer a download ZIP option that has machine-readable JSON metadata (linked data in JSON-LD) and a human-readable summary of the metadata – this one has descriptions of a few files in it.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide09.png' alt='Enable programmatic downloads – include the metadata and its extensions :: signposting.org  :: ' title='Slide: 9' border='1'  width='85%%'/>
+<p>Every repository implementer should add FAIR Signposting – just a couple of HTTP headers – this means machines can go from an HTML landing page to the actual download without guesswork – or even better – to an RO-Crate! I’m sure you’ll hear this mentioned in one of the <a href="https://www.conftool.net/or2024/index.php?page=browseSessions&amp;presentations=show&amp;search=herbert">talks</a> by Herbert van de Sompel and colleagues, such as the one on <a href="https://www.conftool.net/or2024/index.php?page=browseSessions&amp;form_session=475#paperID246" title="FAIRiCat: Supporting Discovery of a Repository's Interoperability Affordances">FAIRiCat</a>. Again, DataVerse is ahead of the curve and has already implemented this.</p>
+<p>As we mentioned above, data should travel with the metadata – one example of this from the WorkflowHub is how other services like the LifeMonitor retrieves the RO-Crate and then looks for custom annotations in the metadata to pick up and connect to the testing infrastructure.  This was only possible because RO-Crate is extensible - you are not trapped with whatever 25 properties we’ve selected. The vessel is still RO-Crate, the repository didn't need to add anything to support the LifeMonitor.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide10.png' alt='3. Less user interface customisation will be needed for different types of metadata :: ' title='Slide: 10' border='1'  width='85%%'/>
+<p>One of the key benefits of linked-data metadata over previous ‘legacy’ approaches, is that multiple vocabularies can be combined into a single metadata document in a way that is not possible with, say MARC, or MODS XML, and that all these vocabularies can use the same syntax and approach to describing data. This means that a simple generic RO-Crate viewer can be used to visualise any metadata whether it is basic “Who, What, Where” metadata (like Dublin Core) or domain-specific metadata like the RO-Crate metadata profile (https://w3id.org/ldac/profile) used by the Language Data Commons of Australia. This can be displayed alongside the core RO-Crate metadata without any expensive configuration or coding. If the recommendations are followed, the RO-Crate metadata terms are self-documenting, e.g. all the Language Data Commons terms which use a Schema.org Style approach, are defined here: https://w3id.org/ldac/terms.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide11.png' alt=' ::  :: Here the mechanism is to use the ‘magic’ name METS.xml to store some extra metadata – with a fully linked-data system this kind of thing is not needed :: ' title='Slide: 11' border='1'  width='85%%'/>
+<p>This slide is a repeat of one we used last year – this screenshot is a bit of (undated) DSpace documentation found following a tip from Kim Sheppard – we have included it here to illustrate that storing additional metadata (in this case METS) for an object was done by convention – it had to be stored in a special file called METS.xml. Using a linked-data system means that we no longer have to do this kind of thing – there’s still one magic file name in RO-Crate but it’s only one for the metadata and one for the HTML preview – everything else is labelled and extensible.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide12.png' alt=' ::  :: ' title='Slide: 12' border='1'  width='85%%'/>
+<p>This is an example of a data object in RO-Hub, which has a variety of files described in the object.</p>
+<p>This site does not need to have multiple plugins for different kinds of data, as linked data has a generic structure. We saw another example of how the generic structure can be rendered in the opening example with a picture of Sefton's dog.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide13.png' alt='No need to invent (completely) new file formats anymore! ::  ::  :: ' title='Slide: 13' border='1'  width='85%%'/>
+<p>So now we can tell all these research software developers, I know you like making new file formats, and I would love to support that in my repository, so could you perhaps use RO-Crate as the basis for making that format? Then we can pull out all the boring stuff, even for new file extensions, we just detect it’s a ZIP file and look for that magic file. If it says it’s an RO-Crate we’ll believe you.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide14.png' alt='4. The availability of RO-Crate editing tools opens the way for repository software to focus on access and discoverability :: ' title='Slide: 14' border='1'  width='85%%'/>
+<p>The availability of RO-Crate editing tools opens the way for repository software to focus on access and discoverability.
+We argue that the core functionality of a repository is keeping data safe and making it available with appropriate access controls (remember, not all data can be made Open Access - the A for accessibility in FAIR is about giving the right people (or other agents) access to the right data). RO-Crates require clear licensing statements to travel with data, and we will demonstrate how these have been integrated into access-control systems.</p>
+<p>There is an opportunity, if RO-Crate is adopted as an interchange format, for the metadata editing functions (and authorisation) functions of a repository to be decoupled from it so the editor components for a particular metadata profile can be shared between repository instances, or handled in a more distributed architecture than in typical current repositories.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide15.png' alt=' :: ' title='Slide: 15' border='1'  width='85%%'/>
+<p>The <a href="https://describo.github.io/describo-users.html">Describo</a> website mentions this integration with the Dataverse repository where the Describo RO-Crate editor can be used to enter metadata. The pattern is potentially very powerful - separate the creation of metadata from the repository so that repositories can focus on data retention and multiple other applications can be built for use by researchers or other users – closer to or embedded in systems they are already using.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide16.png' alt=' :: RO-Crate editing :: Data Portal :: ' title='Slide: 16' border='1'  width='85%%'/>
+<p>The Language Data Commons of Australia team has produced an alternative to Describo known as Crate-O – this is available as a web component ready to drop in to any web app or can function stand-alone  – we use it as part of the workflow in maintaining the <a href="https://data.ldaca.edu.au/collection?id=arcp%3A%2F%2Fname%2Cdoi10.26180%252F23961609&amp;_crateId=arcp%3A%2F%2Fname%2Cdoi10.26180%252F23961609">data portal for the Language Data Commons of Australia</a>.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide17.png' alt=' Portal shows that accessing this data requires authorisation. First step: Log in.' title='Slide: 17' border='1'  width='85%%'/>
+<p>This slide shows the beginning of an access-control process. The data was prepared in RO-Crate format using batch-processing scripts and has a license attached. The repository portal is shown here - with an indication that the user needs to log in to access the data.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide18.png' alt=' logging in ' title='Slide: 18' border='1'  width='85%%'/>
+<p>The user logs in using CILogon (or another federated authentication service).</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide19.png' alt=' REMS ' title='Slide: 19' border='1'  width='85%%'/>
+<p>The user is then directed to an instance of REMS - the <a href="https://github.com/CSCfi/rems/">Resource Entitlement Management System</a> (REMS) to request that a licence be granted to access the data. REMS is open-source software.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide20.png' alt=' Applying for a license ' title='Slide: 20' border='1'  width='85%%'/>
+<p>After an approval process which may be automated, or may involve humans checking credentials, the user is directed back to the repository.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide21.png' alt='5. With a repository to keep data safe and serve it using persistent Identifiers, RO-Crates help make data FAIR  :: ' title='Slide: 21' border='1'  width='85%%'/>
+<p>With a repository to keep data safe and serve it using persistent identifiers, RO-Crates help make data FAIR.</p>
+<p>RO-Crate is increasingly being used to describe the provenance [3] of derived data in such a way that the workflows/computation that produced it can be re-run automatically to validate it, or as a basis for new research. This might be a button on a repository to run a bioinformatics workflow, or re-run a Jupyter notebook that produces a set of plots.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide22.png' alt='' title='Slide: 22' border='1'  width='85%%'/>
+<p>RO-Crate helps to enable FAIR research practice; RO-Crates can describe inputs, outputs and code in any combination to record research processes, and can be used to provision services.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide23.png' alt=' :: ' title='Slide: 23' border='1'  width='85%%'/>
+<p>This slide is a collage from a <a href="https://conference.eresearch.edu.au/wp-content/uploads/2023/11/1045-Alex-Ip.pdf">presentation at eResearch Australasia</a>, lead author Alex Ip put together showing some examples of code notebooks for text analytics and geophysics. Alex is working with the Language Data Commons of Australia team to make RO-Crate Profiles that can describe code, not just in terms of its authorship, language and inputs and outputs, but the (usually virtual) execution environment and hardware requirements needed to run it. This is a key step forward in the Interoperability and Reuse of data called for by the FAIR principles.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide24.png' alt='6. (bonus point) There are tools which can run a repository from a set of static files on a storage service, in line with the ideas put forward by Prof Suleman at OR 2023 :: ' title='Slide: 24' border='1'  width='85%%'/>
+<p>There are tools which can run a repository from a set of static files on a storage service, in line with the ideas put forward by prof Suleman at OR 2023.
+The team at the Language Data Commons of Australia, with partner institutions and colleagues, has been working to produce a set of tools for building Archival Repository software stacks that is based on a principled approach to keeping data safe, based on the principles presented in the Arkisto website[4] and more recently at <a href="https://w3id.org/ldac/pilars">https://w3id.org/ldac/pilars</a> the core idea is that a collection of RO-Crates in a storage service can be the basis of a repository – either using a simple on-disk directory layout or something more complicated such as an Oxford Common File Layout (OCFL) specification.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide25.png' alt='' title='Slide: 25' border='1'  width='85%%'/>
+<p>The [UTS Research Data Portal] is an example of a very minimal data repository system which uses a standard RO-Crate viewer to show RO-Crates that are sitting on file storage. This example is of an <a href="https://data.research.uts.edu.au/#view/0bacede4bd5a39993ec5088e6247cac8">engineering dataset</a>.</p>
+<br>
+</section>
+<section  typeof='http://purl.org/ontology/bibo/Slide' style="border:1px solid black;     margin-bottom: 100px; padding: 50px">
+<img src='../../../../2024/06/05/open-repositories-2024-ro-crate/Slide26.png' alt='The Language Data Commons of Australia Data Partnerships (LDaCA-DP), Language Data Commons of Australia Research Data Commons (LDaCA-RDC), and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768, https://doi.org/10.47486/HIR001, &amp; https://doi.org/10.47486/PL074)  :: from the Australian Research Data Commons (ARDC).  ::  :: The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS). :: ' title='Slide: 26' border='1'  width='85%%'/>
+<p>The Language Data Commons of Australia Data Partnerships (LDaCA-DP), Language Data Commons of Australia Research Data Commons (LDaCA-RDC), and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768, https://doi.org/10.47486/HIR001, &amp; https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC).</p>
+<p>The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).</p>
+</section>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'open-repositories-2024-ro-crate';
+                var disqus_url = 'http://ptsefton.com/2024/06/05/open-repositories-2024-ro-crate/index.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+            <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="../../../../category/acess.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Acess
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/arkisto.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/arkisto-platform.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/data-packaging-standards.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/datacrate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/datacrate-repositories-eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/eresearch.html">
+                            <i class="fa fa-folder-open fa-lg"></i> eResearch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/file-data-capture.html">
+                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/housekeeping.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/how-to.html">
+                            <i class="fa fa-folder-open fa-lg"></i> How to
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/jiscpub.html">
+                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/metadata.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Metadata
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/music.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Music
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/oni.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Oni
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/repositories.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Repositories
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/research-data-management.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/ro-crate.html">
+                            <i class="fa fa-folder-open fa-lg"></i> RO-Crate
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/scholarlyhtml.html">
+                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../../../../category/word-processing.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://uts.edu.au/" target="_blank">
+                Work
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://ukulelecircus.com/" target="_blank">
+                Play
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
+                Photos
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+       
+      <div class="col-xs-10">
+  
+        
+
+	&copy; 2024 Peter (Petie) Sefton
+	     
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

@@ -10,7 +10,7 @@
 
 
 
-<link rel="canonical" href="https://ptsefton.com/2021/06/11/faira/index.html">
+<link rel="canonical" href="../../../../2021/06/11/faira/index.html">
 
         <meta name="author" content="ptsefton" />
         <meta name="description" content="This is a work in progress post I&#39;m looking for feedback on the substance - there&#39;s a comment box below, email me, or see me on twitter: @ptsefton. [Update 2021-06-16: had some comments from Michael D&#39;Silva at AARNet - have added a couple of things below.] I am posting this now because …" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="ptsefton.com" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="FIIR Data Management; Findable Inaccessible Interoperable and Reusable?"/>
-        <meta property="og:url" content="https://ptsefton.com/2021/06/11/faira/index.html"/>
+        <meta property="og:url" content="../../../../2021/06/11/faira/index.html"/>
         <meta property="og:description" content="This is a work in progress post I&#39;m looking for feedback on the substance - there&#39;s a comment box below, email me, or see me on twitter: @ptsefton. [Update 2021-06-16: had some comments from Michael D&#39;Silva at AARNet - have added a couple of things below.] I am posting this now because …"/>
         <meta property="article:published_time" content="2021-06-11" />
             <meta property="article:section" content="Research Data Management" />
@@ -26,13 +26,13 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://ptsefton.com/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://ptsefton.com/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://ptsefton.com/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://ptsefton.com/theme/css/style.css" type="text/css"/>
+    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
 
-        <link href="https://ptsefton.com/feed/atom" type="application/atom+xml" rel="alternate"
+        <link href="../../../../feed/atom" type="application/atom+xml" rel="alternate"
               title="ptsefton.com ATOM Feed"/>
  
 
@@ -193,7 +193,7 @@ section[typeof='http://purl.org/ontology/bibo/Slide'] img {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://ptsefton.com/" class="navbar-brand">
+            <a href="../../../../" class="navbar-brand">
 ptsefton.com            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -210,7 +210,7 @@ ptsefton.com            </a>
 		    
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="https://ptsefton.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -226,7 +226,7 @@ ptsefton.com            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://ptsefton.com/2021/06/11/faira/index.html"
+                    <a href="../../../../2021/06/11/faira/index.html"
                        rel="bookmark"
                        title="Permalink to FIIR Data Management; Findable Inaccessible Interoperable and Reusable?">
                         FIIR Data Management; Findable Inaccessible Interoperable and Reusable?
@@ -289,7 +289,7 @@ ptsefton.com            </a>
 </blockquote>
 <p>In some cases the repository itself will have some kind of built in access control using groups, or licences or some-such. For example, the <a href="https://alveo.edu.au/">Alveo</a> virtual lab funded by NeCTAR in Australia, on which I worked, has a local licence checker, as each collection has a licence. Some licences just require a click-through agreement, others are associated with lists of users who have paid money, or are blessed by a group-owner.</p>
 <p>I'm not citing Alveo as a much-used or successful service, it was not, overall, a great success in terms of uptake, but I think it has a good data-licence architecture; there is a licence-component that was separate from the rest of the system. The licence checking sits in front of the &quot;Findability&quot; part of the data and the API - not much of that data is available without at least some kind of licence that users have to agree to.</p>
-<img src="https://ptsefton.com/2021/06/11/faira/plantuml_Alveo.png" alt="Diagram">
+<img src="../../../../2021/06/11/faira/plantuml_Alveo.png" alt="Diagram">
 <p>This pattern makes a clear separation between the licence as an abstract, identifiable thing, and a service to keep track of who holds the licence.</p>
 <p>Question is, could we do something like this at national or global scale?</p>
 <p>We are part of the way there - we can authenticate users in a number of ways, eg by the Australian Access Federation (<a href="https://aaf.edu.au/">AAF</a>) and equivalents around the world, and there are protocols that allow a service to authenticate using Google, Facebook, Github et al. These all rely on variants of a pattern where a user of service <code>A</code> is redirected to an authentication service <code>B</code> where they put in their password or a one-time key, and whatever other mechanism the IT department deem necessary, and then are redirected back to service <code>A</code> with an assurance from <code>B</code> that this person is who they say they are.</p>
@@ -305,14 +305,14 @@ ptsefton.com            </a>
 <p>What if we had a class of stand-alone service where anyone could set up a group and add users to it? A project lead could decide on what is an acceptable way to authenticate, via Academic Federations like AAF or ORCID, public services like Github or Facebook etc and then add a list of users via email addresses or other IDs. And what if there was a way to auto-populate that group by linking through to <a href="https://osf.io/">OSF</a> groups, or Github organisations, Slack etc (all of which use different APIs and none of which know about licences in this sense as far as I know). This would be useful for groups of researchers who need access to storage, compute, and yes, datasets with particular licence provisions. There could be free-to-use group access for individuals and paid services for orgs like learned societies who can use the list to make deals with infrastructure providers for example. And there need not only be one of these services, they'd work well at a National level I think but could be more granular or discipline based.</p>
 <p>(Does such a thing already exist? Did I miss it? Let me know in the comments below or on twitter - I'm @ptsefton)</p>
 <p>We could do this something like the way modern authentication services work with a simple hand-off of a user to an authentication service, but with the addition of licence URL, to a service that says - yep I vouch for this person they have a licence to see the data.</p>
-<img src="https://ptsefton.com/2021/06/11/faira/plantuml_FAIRA.png" alt="Diagram">
+<img src="../../../../2021/06/11/faira/plantuml_FAIRA.png" alt="Diagram">
 <p>The above interaction diagram is purely a fantasy of mine. I'm not an Internet Engineer - so I have probably made some horrible errors, please let me know.</p>
 <p>Obviously this requires a trust-framework; repositories would have to trust the licence servers and vice-versa and these relationships would have to be time-limited and renewable. You wouldn't want to trust a service for longer than their domain registration for example in case someone else you don't trust buys the domain, that kind of thing. And you'd want some public key stuff happening so that transactions are signed (a further mitigation against domain squatters - they would presumably not have your private key).</p>
 <p>And this is not an overly complicated application we're talking about - all access-controlled APIs already have to do some of this locally. It's the the governance - the trust federations that will take time and significant resources (so lets start now :-).</p>
 <p>And while we're on the subject of trust - this scheme would work in the same way most research does - with trust in the people working on the projects - typically they have access to data and are trusted to keep it safe. Being a member of a project team in health research, for example often involves joining a host organization as an honorary staff member, and being subject to all its policies and procedures. Some research groups have high levels of governance; people are identified using things like nursing registrations, and other certifications; some are ad-hoc collections of people identified by a PI using any old-email address.</p>
 <p>NOTE: for data that needs to be kept really really secure? Data that can never even be put on a hard drive and left on a bus - then this proposal is <em>not</em> the scheme for that data - that's where you'd be looking at a Secure eResearch Platform (SeRP) where the data lives in a walled garden and can be inspected only via a locked-down terminal application, or even stricter, you might only have secure on-site access to data that's air-gapped from any network.</p>
 <p>Here's a sketch of some infrastructure. Essentially this is what happened inside Alveo - the question is can it be distributed so repositories can be de-coupled from authorization services?</p>
-<img src="https://ptsefton.com/2021/06/11/faira/plantuml_ARCH.png" alt="Diagram">
+<img src="../../../../2021/06/11/faira/plantuml_ARCH.png" alt="Diagram">
 
             </div>
             <!-- /.entry-content -->
@@ -357,105 +357,105 @@ ptsefton.com            </a>
     <ul class="list-group list-group-flush">
 
 
-            <li class="list-group-item"><a href="https://ptsefton.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+            <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/acess.html">
+                        <a href="../../../../category/acess.html">
                             <i class="fa fa-folder-open fa-lg"></i> Acess
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/arkisto.html">
+                        <a href="../../../../category/arkisto.html">
                             <i class="fa fa-folder-open fa-lg"></i> Arkisto
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/arkisto-platform.html">
+                        <a href="../../../../category/arkisto-platform.html">
                             <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/data-packaging-standards.html">
+                        <a href="../../../../category/data-packaging-standards.html">
                             <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/datacrate.html">
+                        <a href="../../../../category/datacrate.html">
                             <i class="fa fa-folder-open fa-lg"></i> DataCrate
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/datacrate-repositories-eresearch.html">
+                        <a href="../../../../category/datacrate-repositories-eresearch.html">
                             <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/eresearch.html">
+                        <a href="../../../../category/eresearch.html">
                             <i class="fa fa-folder-open fa-lg"></i> eResearch
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/file-data-capture.html">
+                        <a href="../../../../category/file-data-capture.html">
                             <i class="fa fa-folder-open fa-lg"></i> File Data Capture
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/housekeeping.html">
+                        <a href="../../../../category/housekeeping.html">
                             <i class="fa fa-folder-open fa-lg"></i> Housekeeping
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/how-to.html">
+                        <a href="../../../../category/how-to.html">
                             <i class="fa fa-folder-open fa-lg"></i> How to
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/jiscpub.html">
+                        <a href="../../../../category/jiscpub.html">
                             <i class="fa fa-folder-open fa-lg"></i> jiscPUB
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/metadata.html">
+                        <a href="../../../../category/metadata.html">
                             <i class="fa fa-folder-open fa-lg"></i> Metadata
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/misc.html">
+                        <a href="../../../../category/misc.html">
                             <i class="fa fa-folder-open fa-lg"></i> misc
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/music.html">
+                        <a href="../../../../category/music.html">
                             <i class="fa fa-folder-open fa-lg"></i> Music
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/oni.html">
+                        <a href="../../../../category/oni.html">
                             <i class="fa fa-folder-open fa-lg"></i> Oni
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/repositories.html">
+                        <a href="../../../../category/repositories.html">
                             <i class="fa fa-folder-open fa-lg"></i> Repositories
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/research-data-management.html">
+                        <a href="../../../../category/research-data-management.html">
                             <i class="fa fa-folder-open fa-lg"></i> Research Data Management
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/ro-crate.html">
+                        <a href="../../../../category/ro-crate.html">
                             <i class="fa fa-folder-open fa-lg"></i> RO-Crate
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/scholarlyhtml.html">
+                        <a href="../../../../category/scholarlyhtml.html">
                             <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://ptsefton.com/category/word-processing.html">
+                        <a href="../../../../category/word-processing.html">
                             <i class="fa fa-folder-open fa-lg"></i> Word Processing
                         </a>
                     </li>
@@ -472,11 +472,6 @@ ptsefton.com            </a>
         <li class="list-group-item">
             <a href="http://ukulelecircus.com/" target="_blank">
                 Play
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://twitter.com/ptsefton" target="_blank">
-                Twitter: @ptsefton
             </a>
         </li>
         <li class="list-group-item">
@@ -501,7 +496,7 @@ ptsefton.com            </a>
   
         
 
-	&copy; 2023 Peter (Petie) Sefton
+	&copy; 2024 Peter (Petie) Sefton
 	     
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
@@ -510,13 +505,13 @@ ptsefton.com            </a>
       </div>
    </div>
 </footer>
-<script src="https://ptsefton.com/theme/js/jquery.min.js"></script>
+<script src="../../../../theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://ptsefton.com/theme/js/bootstrap.min.js"></script>
+<script src="../../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://ptsefton.com/theme/js/respond.min.js"></script>
+<script src="../../../../theme/js/respond.min.js"></script>
 
     <!-- Disqus -->
     <script type="text/javascript">
