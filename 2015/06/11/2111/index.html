@@ -1,76 +1,19 @@
-<!DOCTYPE html>
-<html lang="en"
->
+
+<html>
 <head>
-    <title>Ozmeka: extending the Omeka repository to make linked-data research data collections for (any and) all research disciplines - ptsefton.com</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<link rel="canonical" href="../../../../2015/06/11/2111/index.html">
-
-        <meta name="author" content="ptsefton" />
-        <meta name="description" content="There have been some adjustments to the authorship on this presentation, Peter Bugeia was on the abstract but didn’t end up contributing to the presentation, whereas Katrina Trewin withdrew her name from the proposal for a while, but successfully deployed the Farms to Freeways collection and decided to come …" />
-
-        <meta property="og:site_name" content="ptsefton.com" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Ozmeka: extending the Omeka repository to make linked-data research data collections for (any and) all research disciplines"/>
-        <meta property="og:url" content="../../../../2015/06/11/2111/index.html"/>
-        <meta property="og:description" content="There have been some adjustments to the authorship on this presentation, Peter Bugeia was on the abstract but didn’t end up contributing to the presentation, whereas Katrina Trewin withdrew her name from the proposal for a while, but successfully deployed the Farms to Freeways collection and decided to come …"/>
-        <meta property="article:published_time" content="2015-06-11" />
-            <meta property="article:section" content="Repositories" />
-            <meta property="article:author" content="ptsefton" />
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
-
-        <link href="../../../../feed/atom" type="application/atom+xml" rel="alternate"
-              title="ptsefton.com ATOM Feed"/>
- 
-
-<!-- VIA -->
-<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
-<!-- -->
+    <title>ptsefton.com :: Ozmeka: extending the Omeka repository to make linked-data research data collections for (any and) all research disciplines
+</title>
 <style>
-body {
-  font-size: 16px;
+.header {
+    
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
 }
 
-.figure {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.caption {
-  font-style: italic bold;
-  text-align: center;
-
-}  
-
-
-blockquote {
-    font-size: 16px;
-    font-style: bold;
-    background-color: rgb(250, 250, 0);
-}
-
-
-.video-container {
-    margin: auto; /* make em equal */
-    text-align:center;
-    }
 
 
 
@@ -79,9 +22,28 @@ a:link {
     color: #FF00FF;
 }
 
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
 /* visited link */
 a:visited {
     color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
 }
 
 /* mouse over link */
@@ -94,82 +56,51 @@ a:active {
     color: #0000FF;
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] {
-  border-color: #2d262e;
-  border-style: solid;
-  margin: 30px;
-  padding: 10px 10px  10px 10px;
-  width: 90%;
+a {
+    text-decoration: none; 
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] img {
-  padding: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+img {
+    max-width: 100%
+}
+section img {
+    width: 100%
+}
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
 }
 
-.navbar-default {
-  background-color: #ff00ff;
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-brand {
-  color: #ffff00;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-text {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle {
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffff00;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffff00;
-}
-.navbar-default .navbar-link {
-  color: #ffff00;
-}
-.navbar-default .navbar-link:hover {
-  color: #ffff00;
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+
+@media  screen and (min-width: 500px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffff00;
-    background-color: #b72bc0;
-  }
+@media  screen and (min-width: 700px) {
+    .content, .header {
+        width: 40%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
+
+
 </style>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -182,73 +113,31 @@ section[typeof='http://purl.org/ontology/bibo/Slide'] img {
 
 </script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
 <body>
+<div class="header">
+<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="../../../../" class="navbar-brand">
-ptsefton.com            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav" role="menu">
+
+</div>
+
+
+<div class="content">
+<h1> 
+Ozmeka: extending the Omeka repository to make linked-data research data collections for (any and) all research disciplines
  
-                    <li><a href="/">HOME</a></li>
- 
-                    <li><a href="/cv/">CV</a></li>
+</h1>
+<h2>2015-06-11 </h2>
 
-
-
-
-
-		    
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="../../../../2015/06/11/2111/index.html"
-                       rel="bookmark"
-                       title="Permalink to Ozmeka: extending the Omeka repository to make linked-data research data collections for (any and) all research disciplines">
-                        Ozmeka: extending the Omeka repository to make linked-data research data collections for (any and) all research disciplines
-
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-06-11T00:00:00+02:00"> Thu 11 June 2015</time>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                </div>
-                <img alt="Ozmeka: extending the Omeka repository to make linked-data research  data collections for (any and) all research disciplines Peter Sefton, University of Technology, Sydney, peter.sefton@uts.edu.au Sharyn Wise, University of Technology of Sydney, Sharyn.Wise@uts.edu.au Peter Bugeia, Intersect Australia Ltd, Sydney, peter.bugeia@intersect.org.au Katrina Trewin, University of Western Sydney, k.trewin@uws.edu.au Katrina Trewin, University of Western Sydney, k.trewin@uws.edu.au " src="../../../../2015/06/11/2111/img0.jpg"/>  
+<img alt="Ozmeka: extending the Omeka repository to make linked-data research  data collections for (any and) all research disciplines Peter Sefton, University of Technology, Sydney, peter.sefton@uts.edu.au Sharyn Wise, University of Technology of Sydney, Sharyn.Wise@uts.edu.au Peter Bugeia, Intersect Australia Ltd, Sydney, peter.bugeia@intersect.org.au Katrina Trewin, University of Western Sydney, k.trewin@uws.edu.au Katrina Trewin, University of Western Sydney, k.trewin@uws.edu.au " src="img0.jpg"/>  
 <p>There have been some adjustments to the authorship on this presentation,
 Peter Bugeia was on the abstract but didn’t end up contributing to the
 presentation, whereas Katrina Trewin withdrew her name from the proposal
@@ -284,7 +173,7 @@ complexity of creating new research data repository systems.</p>
 research data, the project to put the book data into Omeka took a
 different turn and the scientific data repository is still being
 developed.</p>
-<p><img alt=" " src="../../../../2015/06/11/2111/img1.jpg"/>   ### How does this presentation fit in to the conference?  Which Conference Themes are we touching on?  -   Supporting Open Scholarship, Open Science, and Cultural Heritage</p>
+<p><img alt=" " src="img1.jpg"/>   ### How does this presentation fit in to the conference?  Which Conference Themes are we touching on?  -   Supporting Open Scholarship, Open Science, and Cultural Heritage</p>
 <ul>
 <li>
 <p>Managing Research (and Open) Data</p>
@@ -311,11 +200,11 @@ strings!)</p>
 </li>
 </ul>
 <p>(The picture is one I took of the conference hotel)</p>
-<img alt=" " src="../../../../2015/06/11/2111/img2.jpg"/>   
+<img alt=" " src="img2.jpg"/>   
 <p>What’s Omeka?  We like to call Omeka the “Wordpress of repositories”  It’s a PHP application which is easy to install and get up and running
 and yes – it is a ‘repository’, it lets you upload digital objects,
 describe them with Dublin Core Metadata, and no, it’s not perfect.</p>
-<img alt=" " src="../../../../2015/06/11/2111/img3.jpg">
+<img alt=" " src="img3.jpg">
 <p>The Perfect Repository?</p>
 <p>So lets talk about this phrase “the perfect repository”. I have been following Jason Scott at the Internet archive (who would make a great keynote speaker for this conference, by the way
 and his work on rescuing and making available cultural heritage such as computer-related
@@ -337,14 +226,14 @@ of
 Good</a></p>
 <p><img alt="The Portland Common Data Model Omeka more-or-less implements a subset of the Portland Common Data Model, which I was introduced to yesterday in the Fedora workshop,
 although as I just mentioned it is not strong on Access control, having
-only a published/unpublished flag on items." src="../../../../2015/06/11/2111/img4.jpg"/></p>
-<img alt=" " src="../../../../2015/06/11/2111/img5.jpg"/> 
+only a published/unpublished flag on items." src="img4.jpg"/></p>
+<img alt=" " src="img5.jpg"/> 
 <p>Why Omeka? We’ll come back to this – but the ability to do Linked Data was one of the main attractions of Omeka. We had to add some code to make the relations appear like this, and easier to apply than I the ‘trunk’ version of Omeka 2.x but that development was not hard or expensive, compared to what It might have cost on top of other
 repository systems with more complex application stacks. Another</p>
 <p>(Note – if you look at the current version of Dharmae, the item
 relations will appear a little differently, as not all the Ozmeka
 enhanced code has been rolled out).</p>
-<img alt=" Australian national data service (ANDS) funded project … to  kick-start a major open data collection " src="../../../../2015/06/11/2111/img6.jpg"/> 
+<img alt=" Australian national data service (ANDS) funded project … to  kick-start a major open data collection " src="img6.jpg"/> 
 <p>I’m going to give you a quick backgrounder on our project by way of introduction: ANDS approached us with a funding opportunity to create an open data collection. Many of you will be familiar with the frustrations of funding rules : our constraint was that we were not allowed to
 develop software, although we could adapt it.</p>
 <p>The UTS team put the word out for publishable research data collections
@@ -354,7 +243,7 @@ a large Oral History project on the impacts of water management on
 stakeholders in the Murray Darling Basin – called Talking Fish.</p>
 <p>And they had had the amazing foresight – the foresight of the historian-
 to obtain informed consent to publically archive the interview data.</p>
-<img alt=" Field science in MDB (from Dharmae) " src="../../../../2015/06/11/2111/img7.jpg"/>  
+<img alt=" Field science in MDB (from Dharmae) " src="img7.jpg"/>  
 <p>In the image above MDB means he Murray Darling Basin, a big, long river system with hardly any water in it.  First up I’ll talk about Dharmae. was conceived as a multi-disciplinary data hub themed around water related research, with the “ecocultures”
 concept intended to flag that we welcome scientific data contributors
 (ecological or otherwise), as well as cultural data. Because they are
@@ -373,7 +262,7 @@ social sciences, history and particularly also indigenous knowledge.</p>
 practices and terminologies, we have an interesting information science
 problem:</p>
 <p>How to support data deposit and discovery by users from all disciplines?</p>
-<img alt=" Linked data & disambiguation " src="../../../../2015/06/11/2111/img8.jpg"/> 
+<img alt=" Linked data & disambiguation " src="img8.jpg"/> 
 <p>Essentially by using linked data. We extended the open source repository Omeka by allowing all named entities (like, places, people, species&quot;/&gt; to be linked to an authoritative source of truth.  Lets take location – it is one of the obvious correspondences between
 scientific and cultural data..</p>
 <p>That still doesn’t mean its an easy thing to link on. Place names are
@@ -383,7 +272,7 @@ place names, and better still we can derive their coordinates.</p>
 <p>Now we want users of Dharmae who are interested in finding data by
 location to access it in the way that makes sense to them – and that may
 not be name.</p>
-<img alt=" Lower Darling/Anabranch " src="../../../../2015/06/11/2111/img9.jpg"/>  
+<img alt=" Lower Darling/Anabranch " src="img9.jpg"/>  
 <p>In Dharmae readers can search by place name or they can use a map.  Here is one of 12 study regions from the Talking Fish data, showing the Lower Darling and Anabranch above Murray Sunset National Park.
 We georeferenced these regions using a Geonode map server, but we have
 superimposed the researchers hand-drawn map as a layer on top to
@@ -393,7 +282,7 @@ completed in this region, look at photos or investigate the species
 identified by participants.</p>
 <p>You can also search by Indigenous language Community if you prefer.</p>
 <p>How else could this be useful?</p>
-<img alt=" Lower Darling/Anabranch: " src="../../../../2015/06/11/2111/img10.jpg"/>  
+<img alt=" Lower Darling/Anabranch: " src="img10.jpg"/>  
 <p>It just so happens that we also have a satellite remote sensing dataset that corresponds reasonably well to this region above the national park.  It shows the Normalized Difference Vegetation Index for the region or the vegetation change over the decade 1996-2006.</p>
 <p>Relative increase in vegetation shows as green and relative decrease as
 pink.</p>
@@ -401,7 +290,7 @@ pink.</p>
 clues as to why?</p>
 <p>I can’t tell you that, but the point is that the more we enrich and link
 data, the more possible hypotheses we can generate.</p>
-<img alt=" The Graph " src="../../../../2015/06/11/2111/img11.jpg"/>  
+<img alt=" The Graph " src="img11.jpg"/>  
 <p>Here’s the graph of our solution: We created local records, so that the Dharmae hub could maintain its own set of ‘world-views’ while still interfacing with the semantic web knowledge graph.  This design pattern is something we want to explore more: having a local
 record for an entity or concept, with links to external authorities. So,
 for example we might use a Dbpedia URI for a person, and quote a
@@ -411,7 +300,7 @@ still part of the global graph. With the species data, this will allow
 researchers to explore the way the participants in Talking Fish talked
 about fish and compare this to what the Atlas of Living Australia says
 about nomenclature and distribution.</p>
-<img alt=" " src="../../../../2015/06/11/2111/img12.jpg"/>  
+<img alt=" " src="img12.jpg"/>  
 <p>From the [Journey to Horshoe Bend Website[(http://pubsites.uws.edu.au/coa/soca/jthb/index.html&quot;/&gt; at the University of Western Sydney:  &gt; TGH Strehlow’s biographical memoir, Journey to Horseshoe Bend, is a</p>
 <blockquote>
 <p>vivid ethno-historiographic account of the Aboriginal, settler and
@@ -445,7 +334,7 @@ version control.</li>
 <li>Cultural sensitivities were also a barrier to open publication (not
 an Omeka issue but a MODC one)</li>
 </ul>
-<img alt=" " src="../../../../2015/06/11/2111/img13.jpg"/> 
+<img alt=" " src="img13.jpg"/> 
 <p>Katrina Trewin is a data librarian, working at the University of Western Sydney. While the Journey to Horseshoe Bend project could not be completed using Omeka, due to resource constraints. Another project was able to be completed. Using Omeka, Katrina was able to build web site around an oral-history data set without needing any development. This
 work took place in parallel with the work on Dharmae at UTS so was not
 able to make use of some of the innovations introduced in that project
@@ -472,15 +361,15 @@ place. Chambers, Deborah; Liston, Carol; Wieneke, Christine (2015):
 Interview material from Western Sydney women's oral history project:
 'From farms to freeways: Women's memories of Western Sydney'. University
 of Western Sydney. http://dx.doi.org/10.4225/35/555d661071c76</p>
-<img alt="" src="../../../../2015/06/11/2111/img14.jpg"/> 
-  <img alt="" src="../../../../2015/06/11/2111/img15.jpg"/> 
-  <img alt = "" src="../../../../2015/06/11/2111/img16.jpg"/>
-<p>Katrina and team have <a href="http://research-data.uws.edu.au/redbox/default/detail/f2a31293037a80d464bde06efced5f62/">published all the data as a set of files</a> with a link to the [website&quot; src=&quot;{attach}http://omeka.uws.edu.au/farmstofreeways/&quot;/&gt; , in the institutional research data repository. This screenshot shows the data files available for download for re-use. My team at UTS are doing a
+<img alt="" src="img14.jpg"/> 
+  <img alt="" src="img15.jpg"/> 
+  <img alt = "" src="img16.jpg"/>
+<p>Katrina and team have <a href="http://research-data.uws.edu.au/redbox/default/detail/f2a31293037a80d464bde06efced5f62/">published all the data as a set of files</a> with a link to the [website&quot; src=&quot;http://omeka.uws.edu.au/farmstofreeways/&quot;/&gt; , in the institutional research data repository. This screenshot shows the data files available for download for re-use. My team at UTS are doing a
 similar thing with the Dharmae data.</p>
-<p><img alt=" " src="../../../../2015/06/11/2111/img17.jpg"/>   At UTS we are are constructing a growing ‘grid’ of research data services. This diagram is a sketch of how Omeka fits into this bigger picture, showing the geonode mapping service which supplies map display services and can harvest maps from Omeka as well. In this architecture, all items ultimately end up in an archival repository with a catalogue
+<p><img alt=" " src="img17.jpg"/>   At UTS we are are constructing a growing ‘grid’ of research data services. This diagram is a sketch of how Omeka fits into this bigger picture, showing the geonode mapping service which supplies map display services and can harvest maps from Omeka as well. In this architecture, all items ultimately end up in an archival repository with a catalogue
 description, as I showed earlier for the Farms to Freeways data.</p>
-<p><img alt=" " src="../../../../2015/06/11/2111/img18.jpg"/>   Interested? ~~Check out~~ Clone our Ozmeka github repostiories</p>
-<p><img alt=" " src="../../../../2015/06/11/2111/img19.jpg"/>   ### <strong>Conclusion</strong>  Omeka is a very simple <em>seeming</em> repository solution which is easy to dismiss for projects that demand the ‘perfect’ repository, but looking beyond its limitations it has some strengths that make it attractive for
+<p><img alt=" " src="img18.jpg"/>   Interested? <s>Check out</s> Clone our Ozmeka github repostiories</p>
+<p><img alt=" " src="img19.jpg"/>   ### <strong>Conclusion</strong>  Omeka is a very simple <em>seeming</em> repository solution which is easy to dismiss for projects that demand the ‘perfect’ repository, but looking beyond its limitations it has some strengths that make it attractive for
 creating ‘micro repository services’ (Field &amp; McSweeney 2014). Our work
 has made it easier to set up new research-data repositories that adhere
 to linked-data principles and create rich semantic web interfaces to
@@ -509,226 +398,17 @@ http://www.digitalhumanities.org/companion/.</p>
 Psychological Review 63, no. 2 (1956): 129–38.</p>
 <p>Strehlow, Theodor George Henry. Journey to Horseshoe Bend. [Sydney]:
 Angus and Robertson, 1969.</p>
-<p><img alt=" Credits Researchers: Prof. Heather Goodall Dr Michelle Voyer  Associate professor Carol Liston Dr Jodi Frawley Dr Kevin Davies eResearch: Sharyn Wise, Peter Sefton, Mike Lynch, Paul Nguyen, Mike Lake, Carmi Cronje, Thom McIntyre and Kevin Davies, Kim Heckenberg, Andrew Leahy, Lloyd Harischandra Library: Duncan Loxton (eScholarship) & Kendell Powell (Aboriginal & Torres Strait Islander Data Archive Officer), Katrina Trewin, Michael Gonzalez Thanks to: State Library of NSW Indigenous Unit, Atlas of Living Australia, Terrestrial Ecosystems Research Network and our funder, ANDS. " src="../../../../2015/06/11/2111/img20.jpg"/>  <div>  </div></p>
+<p><img alt=" Credits Researchers: Prof. Heather Goodall Dr Michelle Voyer  Associate professor Carol Liston Dr Jodi Frawley Dr Kevin Davies eResearch: Sharyn Wise, Peter Sefton, Mike Lynch, Paul Nguyen, Mike Lake, Carmi Cronje, Thom McIntyre and Kevin Davies, Kim Heckenberg, Andrew Leahy, Lloyd Harischandra Library: Duncan Loxton (eScholarship) & Kendell Powell (Aboriginal & Torres Strait Islander Data Archive Officer), Katrina Trewin, Michael Gonzalez Thanks to: State Library of NSW Indigenous Unit, Atlas of Living Australia, Terrestrial Ecosystems Research Network and our funder, ANDS. " src="img20.jpg"/>  <div>  </div></p>
 <details open="open">
 <p>I didn’t have this slide when I presented, and forgot to acknowledge the
 contribution of all of the above, and anyone who’s been left off by
 accident.</p>
 
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = '2111';
-                var disqus_url = 'http://ptsefton.com/2015/06/11/2111/index.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-
-
-            <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="../../../../category/acess.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Acess
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto-platform.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/data-packaging-standards.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate-repositories-eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/file-data-capture.html">
-                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/housekeeping.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/how-to.html">
-                            <i class="fa fa-folder-open fa-lg"></i> How to
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/jiscpub.html">
-                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/metadata.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Metadata
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/misc.html">
-                            <i class="fa fa-folder-open fa-lg"></i> misc
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/music.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Music
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/oni.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Oni
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/repositories.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Repositories
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/research-data-management.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/ro-crate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> RO-Crate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/scholarlyhtml.html">
-                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/word-processing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://uts.edu.au/" target="_blank">
-                Work
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://ukulelecircus.com/" target="_blank">
-                Play
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
-                Photos
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-       
-      <div class="col-xs-10">
-  
-        
-
-	&copy; 2024 Peter (Petie) Sefton
-	     
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="../../../../theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../../../theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../../../../theme/js/respond.min.js"></script>
-
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-    <!-- End Disqus Code -->
-
-</body>
+</div><script src="https://utteranc.es/client.js"
+        repo="ptsefton/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></body>
 </html>

@@ -1,76 +1,19 @@
-<!DOCTYPE html>
-<html lang="en"
->
+
+<html>
 <head>
-    <title>Infrastructure and what do we really want for DMPs - ptsefton.com</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<link rel="canonical" href="../../../../2021/05/20/rda-rdmp/index.html">
-
-        <meta name="author" content="ptsefton" />
-        <meta name="description" content="[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a …" />
-
-        <meta property="og:site_name" content="ptsefton.com" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Infrastructure and what do we really want for DMPs"/>
-        <meta property="og:url" content="../../../../2021/05/20/rda-rdmp/index.html"/>
-        <meta property="og:description" content="[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a …"/>
-        <meta property="article:published_time" content="2021-05-20" />
-            <meta property="article:section" content="Research Data Management" />
-            <meta property="article:author" content="ptsefton" />
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
-
-        <link href="../../../../feed/atom" type="application/atom+xml" rel="alternate"
-              title="ptsefton.com ATOM Feed"/>
- 
-
-<!-- VIA -->
-<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
-<!-- -->
+    <title>ptsefton.com :: Infrastructure and what do we really want for DMPs
+</title>
 <style>
-body {
-  font-size: 16px;
+.header {
+    
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
 }
 
-.figure {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.caption {
-  font-style: italic bold;
-  text-align: center;
-
-}  
-
-
-blockquote {
-    font-size: 16px;
-    font-style: bold;
-    background-color: rgb(250, 250, 0);
-}
-
-
-.video-container {
-    margin: auto; /* make em equal */
-    text-align:center;
-    }
 
 
 
@@ -79,9 +22,28 @@ a:link {
     color: #FF00FF;
 }
 
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
 /* visited link */
 a:visited {
     color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
 }
 
 /* mouse over link */
@@ -94,82 +56,51 @@ a:active {
     color: #0000FF;
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] {
-  border-color: #2d262e;
-  border-style: solid;
-  margin: 30px;
-  padding: 10px 10px  10px 10px;
-  width: 90%;
+a {
+    text-decoration: none; 
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] img {
-  padding: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+img {
+    max-width: 100%
+}
+section img {
+    width: 100%
+}
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
 }
 
-.navbar-default {
-  background-color: #ff00ff;
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-brand {
-  color: #ffff00;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-text {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle {
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffff00;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffff00;
-}
-.navbar-default .navbar-link {
-  color: #ffff00;
-}
-.navbar-default .navbar-link:hover {
-  color: #ffff00;
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+
+@media  screen and (min-width: 500px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffff00;
-    background-color: #b72bc0;
-  }
+@media  screen and (min-width: 700px) {
+    .content, .header {
+        width: 40%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
+
+
 </style>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -182,73 +113,31 @@ section[typeof='http://purl.org/ontology/bibo/Slide'] img {
 
 </script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
 <body>
+<div class="header">
+<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="../../../../" class="navbar-brand">
-ptsefton.com            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav" role="menu">
+
+</div>
+
+
+<div class="content">
+<h1> 
+Infrastructure and what do we really want for DMPs
  
-                    <li><a href="/">HOME</a></li>
- 
-                    <li><a href="/cv/">CV</a></li>
+</h1>
+<h2>2021-05-20 </h2>
 
-
-
-
-
-		    
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="../../../../2021/05/20/rda-rdmp/index.html"
-                       rel="bookmark"
-                       title="Permalink to Infrastructure and what do we really want for DMPs">
-                        Infrastructure and what do we really want for DMPs
-
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2021-05-20T00:00:00+02:00"> Thu 20 May 2021</time>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                </div>
-                <p>[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a W A L K I am beginning to think he didn't read it at all)]</p>
+<p>[Updated 2021-05-20 after Gail McGlinn and I got home from the pub and she read this through; fixed several terrible typos and the odd incomplete sentence - I knew I should not have let the dog proofread the version we put out this afternoon (he just wanted to go for a W A L K I am beginning to think he didn't read it at all)]</p>
 <p>[Updated 2021-05-23 further minor punctuation changes]</p>
 <p>I was invited to speak at an RDA (Research Data Alliance) 'Infrastructure and Data Management Plans (DMPs)' webinar on May 18th as part of a panel talking about Data Management Plans and infrastructure.</p>
 <p>Here are my slides for my five minutes of RDA-fame - with some notes about what I said, some things I forgot to say and some things I learned.</p>
@@ -270,17 +159,17 @@ ptsefton.com            </a>
 <p>My final slide I had prepared was about the need for cohort or group management services so we can give groups of people a license to access certain data. I have been sketching out potential software architectures for a couple of client projects that deal with this at internet-scale via standard ways of treating licences, it is worth exploring how that group management could be  developed in Data Management (Planning) applications.</p>
 <h2>The talk</h2>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide1.png' alt='
+<img src='Slide1.png' alt='
 <p>' title='1' border='1'  width='85%'/&gt;</p>
 <p>I would like to acknowledge and pay my respects to the Gundungurra and Darug people who are the traditional custodians of the land on which I live and work.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide2.png' alt='🛠️
+<img src='Slide2.png' alt='🛠️
 ' title='2' border='1'  width='85%'/>
 <p>RDMPs need to be useful. There are a couple of dimensions to this - without using the dreaded “Carrot and stick” metaphor they can be useful in that they help you comply with organizational and funder requirements, but also, they could be useful as a focal point for getting access to services.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide3.png' alt='provisioning
+<img src='Slide3.png' alt='provisioning
 researchers
 projects
 grants db
@@ -327,12 +216,12 @@ Possible Project Components
 <p>The Data Lifecycle project ”morphed into” (Ian’s Words)  the  <a href="https://www.raid.org.au/">Research Activity Identifier Service</a> offered by ARDC - this addresses part, but not all of the Data Lifecycle vision - being able to identify activities is OK but what we really need is a way for cohorts of researchers, their support staff and other participants to be able to access resources. I’ll come back to this point.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide4.png' alt='
+<img src='Slide4.png' alt='
 <p>' title='4' border='1'  width='85%'/&gt;</p>
 <p>I didn’t include this in my presentation - but two of the other presenters did! It was drawn by Gerrad Barthelot at UTS following an architecture workshop with the eResearch team - building on the idea of Provisioning as the core useful service - which we learned about partly from the Data Lifecycle project.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide5.png' alt='
+<img src='Slide5.png' alt='
 <p>Repositories: institutional, domain or both</p>
 <p>Find / Access services
 Research Data Management Plan
@@ -361,12 +250,12 @@ Policy based data management
 <p>If you accept this premise, then I think the thing you have to do as a data manager or custodian is work out where all these pieces are - do you have a DMP system yet? Is there a data repository at your institution? There's no point in having data policies or running training unless these bits of infrastructure are in place. And they often aren't.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide6.png' alt='🤔
+<img src='Slide6.png' alt='🤔
 ' title='6' border='1'  width='85%'/>
 <p>I am an independent agent now - since the position of eResearch Support Manager was considered to be redundant by UTS. At least for now I am in a position to work on what <em>I</em> want to work on; for me that means looking for gaps - things that need doing in the research sector.  This next couple of slides  is not so much - what can you expect from infrastructure as in expect to be able to get right now, but what infrastructure we need to demand, to support, to ask institutions and projects like the Australian Research Data Commons to support.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide7.png' alt='☁️
+<img src='Slide7.png' alt='☁️
 📂
 <p>📄
 ID? Title? Description?</p>
@@ -389,12 +278,12 @@ RO-Crate
 <p>RO-Crate is seeing strong uptake in some communities and is being built in to systems such as <a href="https://about.workflowhub.eu/How-to-make-a-workflow-RO-crate/">Workflow Hub</a>, <a href="https://news.aarnet.edu.au/from-endangered-languages-to-the-science-mesh-australian-researchers-are-helping-to-design-and-build-next-gen-petascale-fair-data-repositories/">PARADISEC</a> and a new project I'm going to be involved in for Humanities and Social Science Data in Australia - more on that soon. And via the European Open Science Cloud (see the next slide).</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide8.png' alt='
+<img src='Slide8.png' alt='
 ' title='8' border='1'  width='85%'/>
 <p>As an example of something Marco and I have been working on (via connections with AARNet) - the CS3MESH4EOSC - is “Democratising FAIR” by helping to link the pink “workspaces” box with the green “repositories” box in our RDM diagram.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2021/05/20/rda-rdmp/Slide9.png' alt='
+<img src='Slide9.png' alt='
 A number of smiley faces representing people grouped into three overlapping cohorts.
 <p>' title='9' border='1'  width='85%'/&gt;</p>
 <p>We don’t have a good way to define groups of people across institutional boundaries which is an essential part of provisioning services to research projects and provisioning non-open data.</p>
@@ -402,220 +291,11 @@ A number of smiley faces representing people grouped into three overlapping coho
 <p>Steven McEachern from the Australian Data Archive and I also promised to follow up on the issue of data access/licencing.</p>
 </section>
 
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = 'rda-rdmp';
-                var disqus_url = 'http://ptsefton.com/2021/05/20/rda-rdmp/index.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-
-
-            <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="../../../../category/acess.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Acess
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto-platform.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/data-packaging-standards.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate-repositories-eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/file-data-capture.html">
-                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/housekeeping.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/how-to.html">
-                            <i class="fa fa-folder-open fa-lg"></i> How to
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/jiscpub.html">
-                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/metadata.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Metadata
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/misc.html">
-                            <i class="fa fa-folder-open fa-lg"></i> misc
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/music.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Music
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/oni.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Oni
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/repositories.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Repositories
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/research-data-management.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/ro-crate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> RO-Crate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/scholarlyhtml.html">
-                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/word-processing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://uts.edu.au/" target="_blank">
-                Work
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://ukulelecircus.com/" target="_blank">
-                Play
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
-                Photos
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-       
-      <div class="col-xs-10">
-  
-        
-
-	&copy; 2024 Peter (Petie) Sefton
-	     
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="../../../../theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../../../theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../../../../theme/js/respond.min.js"></script>
-
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-    <!-- End Disqus Code -->
-
-</body>
+</div><script src="https://utteranc.es/client.js"
+        repo="ptsefton/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></body>
 </html>

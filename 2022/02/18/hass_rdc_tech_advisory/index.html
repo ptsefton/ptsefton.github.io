@@ -1,76 +1,19 @@
-<!DOCTYPE html>
-<html lang="en"
->
+
+<html>
 <head>
-    <title>HASS RDC Technical Advisory Group Meeting LDaCA & ATAP Intro - ptsefton.com</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<link rel="canonical" href="../../../../2022/02/18/hass_rdc_tech_advisory/index.html">
-
-        <meta name="author" content="Peter Sefton" />
-        <meta name="description" content="This is a presentation I gave to the Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there. We will post this to the …" />
-
-        <meta property="og:site_name" content="ptsefton.com" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="HASS RDC Technical Advisory Group Meeting LDaCA &amp; ATAP Intro"/>
-        <meta property="og:url" content="../../../../2022/02/18/hass_rdc_tech_advisory/index.html"/>
-        <meta property="og:description" content="This is a presentation I gave to the Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there. We will post this to the …"/>
-        <meta property="article:published_time" content="2022-02-18" />
-            <meta property="article:section" content="Repositories" />
-            <meta property="article:author" content="Peter Sefton" />
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
-
-        <link href="../../../../feed/atom" type="application/atom+xml" rel="alternate"
-              title="ptsefton.com ATOM Feed"/>
- 
-
-<!-- VIA -->
-<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
-<!-- -->
+    <title>ptsefton.com :: HASS RDC Technical Advisory Group Meeting LDaCA &amp; ATAP Intro
+</title>
 <style>
-body {
-  font-size: 16px;
+.header {
+    
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
 }
 
-.figure {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.caption {
-  font-style: italic bold;
-  text-align: center;
-
-}  
-
-
-blockquote {
-    font-size: 16px;
-    font-style: bold;
-    background-color: rgb(250, 250, 0);
-}
-
-
-.video-container {
-    margin: auto; /* make em equal */
-    text-align:center;
-    }
 
 
 
@@ -79,9 +22,28 @@ a:link {
     color: #FF00FF;
 }
 
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
 /* visited link */
 a:visited {
     color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
 }
 
 /* mouse over link */
@@ -94,82 +56,51 @@ a:active {
     color: #0000FF;
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] {
-  border-color: #2d262e;
-  border-style: solid;
-  margin: 30px;
-  padding: 10px 10px  10px 10px;
-  width: 90%;
+a {
+    text-decoration: none; 
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] img {
-  padding: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+img {
+    max-width: 100%
+}
+section img {
+    width: 100%
+}
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
 }
 
-.navbar-default {
-  background-color: #ff00ff;
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-brand {
-  color: #ffff00;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-text {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle {
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffff00;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffff00;
-}
-.navbar-default .navbar-link {
-  color: #ffff00;
-}
-.navbar-default .navbar-link:hover {
-  color: #ffff00;
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+
+@media  screen and (min-width: 500px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffff00;
-    background-color: #b72bc0;
-  }
+@media  screen and (min-width: 700px) {
+    .content, .header {
+        width: 40%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
+
+
 </style>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -182,94 +113,52 @@ section[typeof='http://purl.org/ontology/bibo/Slide'] img {
 
 </script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
 <body>
+<div class="header">
+<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="../../../../" class="navbar-brand">
-ptsefton.com            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav" role="menu">
+
+</div>
+
+
+<div class="content">
+<h1> 
+HASS RDC Technical Advisory Group Meeting LDaCA &amp; ATAP Intro
  
-                    <li><a href="/">HOME</a></li>
- 
-                    <li><a href="/cv/">CV</a></li>
+</h1>
+<h2>2022-02-18 </h2>
 
-
-
-
-
-		    
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="../../../../2022/02/18/hass_rdc_tech_advisory/index.html"
-                       rel="bookmark"
-                       title="Permalink to HASS RDC Technical Advisory Group Meeting LDaCA & ATAP Intro">
-                        HASS RDC Technical Advisory Group Meeting LDaCA & ATAP Intro
-
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2022-02-18T00:00:00+01:00"> Fri 18 February 2022</time>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                </div>
-                <p>This is a presentation I gave to the <a href="https://ardc.edu.au/collaborations/strategic-activities/hass-and-indigenous-research-data-commons/">Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program</a>  Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there.</p>
+<p>This is a presentation I gave to the <a href="https://ardc.edu.au/collaborations/strategic-activities/hass-and-indigenous-research-data-commons/">Humanities, Arts and Social Sciences Research Data Commons and Indigenous Research Capability Program</a>  Technical Advisory Group on Friday 11th February 2022. Thanks to Simon Musgrave for reviewing this and adding a little detail here and there.</p>
 <p>We will post this to the Language Data Commons of Australia (LDaCA) website soon and I'll link it here.</p>
-<p><a href="../../../../2022/02/18/hass_rdc_tech_advisory/HASS RDC Technical Advisory Group Meeting LDaCA & ATAP Intro.pdf">PDF version</a></p>
+<p><a href="HASS RDC Technical Advisory Group Meeting LDaCA & ATAP Intro.pdf">PDF version</a></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide00.png' alt='HASS RDC Technical Advisory Group Meeting
+<img src='Slide00.png' alt='HASS RDC Technical Advisory Group Meeting
 <p>LDaCA &amp; ATAP
 Intro
 Peter Sefton - p.sefton@uq.edu.au
-' title='Slide: 0' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 0' /&gt;</p>
 <p>The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are establishing a scalable and flexible language data and analytics commons. These projects will be part of the Humanities and Social Sciences Research Data Commons (HASS RDC).
 The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide01.png' alt='
-<p>' title='Slide: 1' border='1'  width='85%%'/&gt;</p>
+<img src='Slide01.png' alt='
+<p>' title='Slide: 1' /&gt;</p>
 <p>For this Research Data Commons work we are using the Arkisto Platform (introduced <a href="http://ptsefton.com/2020/11/23/Arkisto/index.html">at eResearch 2020</a>).</p>
 <p>Arkisto aims  to secure the long term preservation of data independently of code and services - recognizing the ephemeral nature of software and platforms. We know that sustaining software platforms can be hard and aim to make sure that important data assets are not locked up in database or hard-coded logic of some hard-to-maintain application.</p>
 <p>We are using three key standards on this project …</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide02.png' alt='
-<p>' title='Slide: 2' border='1'  width='85%%'/&gt;</p>
+<img src='Slide02.png' alt='
+<p>' title='Slide: 2' /&gt;</p>
 <p>The first standard is the <a href="https://ocfl.io/1.0/spec/">Oxford Common File Layout</a> - this is a way of keeping version controlled digital objects on a plain old filesystem or object store.</p>
 <p>Here’s the introduction to the spec:</p>
 <blockquote>
@@ -291,7 +180,7 @@ Finally, the community expressed a need to store content on a wide variety of st
 </blockquote>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide03.png' alt='☁️
+<img src='Slide03.png' alt='☁️
 📂
 <p>📄
 ID? Title? Description?</p>
@@ -307,48 +196,48 @@ Addressable resources
 Local Data
 👩🏿‍🔬 https://orcid.org/0000-0001-2345-6789
 🔬 https://en.wikipedia.org/wiki/Scanning_electron_microscope
-' title='Slide: 3' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 3' /&gt;</p>
 <p>The second standard is Research Object Crate. (RO-Crate) a method for describing any dataset of local or remote resources as a digital object using a <strong>single linked-data metadata document</strong>.</p>
 <p>RO-Crate is used in our platform both for describing data objects in the OCFL repository, and for delivering metadata over the API (which we’ll show in architecture diagrams and screenshots below).</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide04.png' alt='📂
+<img src='Slide04.png' alt='📂
 <p>🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️
-' title='Slide: 4' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 4' /&gt;</p>
 <p>RO-Crates may contain any kind of data resource about anything, in any format as a file or URL - it’s not just for language data; there are also many projects in the sciences starting to <a href="https://www.researchobject.org/ro-crate/in-use/">use RO-Crate</a>.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide05.png' alt='
-<p>' title='Slide: 5' border='1'  width='85%%'/&gt;</p>
+<img src='Slide05.png' alt='
+<p>' title='Slide: 5' /&gt;</p>
 <p>This image is taken from a <a href="https://slideplayer.com/slide/3919920/">presentation on digital preservation</a> .</p>
 <p>https://pcdm.org/2016/04/18/models</p>
 <p>The third key standard for Arkisto is the Portland Common Data Model. Like OCFL, this was developed by members of the digital library/repository community. It was devised as a way to do interchange between repository systems, most of which, it turned out had evolved very similar ways of having nested collections, digital objects that aggregate related files. Using this very simple ontology allows us to store data in the OCFL layer in a very flexible way - depending on factors like data size, licensing and whether data is likely to change or need to be withdrawn, we can store entire collections as OCFL objects or across many OCFL objects with PCDM used to show the structure of the data collections regardless of how they happen to be stored.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide06.png' alt='
+<img src='Slide06.png' alt='
 <p>RO-Crates MUST have licence information  that sets out conditions for use/reuse of the data</p>
 <p>This RO-Crate contains an entire PCDM collection
-' title='Slide: 6' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 6' /&gt;</p>
 <p>Back to RO-Crates.</p>
 <p>RO-Crates are self-documenting and can ship with a HTML file that allows a consumer of the crated data to see whatever documentation the crate authors have added.</p>
 <p>This crate contains an entire collection (RepositoryCollection is the RO-Crate term that corresponds to pcdm:Collection).</p>
 <p>Crates must have license information that set out how data may be used and if it may be redistributed. As we are dealing with language data which is (almost) always created by people, it is important that their intellectual property rights and privacy are respected. More on this later.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide07.png' alt='
-<p>' title='Slide: 7' border='1'  width='85%%'/&gt;</p>
+<img src='Slide07.png' alt='
+<p>' title='Slide: 7' /&gt;</p>
 <p>This shows a page for what we’re calling an Object (RepositoryObject). A RepositoryObject is a single “thing” such as a document, a conversation, a session in a speech study. (this was called an item in Alveo but given that both the Portland Common Data model and Oxford Common File Layout use “Object” we are using that term at least for now).</p>
 <p>This shows that the system is capable of dealing with unicode characters - which is good, as you would expect as it’s 2022 and this is a Language Data Commons, but there are still challenges, like dealing with mixtures of left to right and right to left text, and we need to find or define metadata terms to keep track of “language”, “writing system”, and the difference between things that started as orthographic (written) text, vs spoken or signed etc. There’s a group of us working on that, currently led by Nick Thieberger and Peter Sefton.</p>
 <p>Simon Musgrave and Peter Sefton <a href="https://ptsefton.com/2022/01/27/DAMTA_Slides_v1/">presented our progress with multilingual text</a> at a virtual workshop run by ANU in January.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide08.png' alt='
+<img src='Slide08.png' alt='
 <p>Link back to the container which has type RepositoryObject
-' title='Slide: 8' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 8' /&gt;</p>
 <p>Here’s another screenshot showing one of the government documents in PDF format - with a link back to the abstract RepositoryObject that houses all of the manifestations of the document in various languages.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide09.png' alt='
+<img src='Slide09.png' alt='
 <p>Repositories: institutional, domain or both</p>
 <p>Find / Access services
 Research Data Management Plan
@@ -370,13 +259,13 @@ V1.1  © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/b
 Active cleanup processes  workspaces considered ephemeral
 🗑️
 Policy based data management
-' title='Slide: 9' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 9' /&gt;</p>
 <p>The above diagram takes a big-picture view of research data management in the context of <em>doing</em> research. It makes a distinction between managed repository storage and the places where work is done - “workspaces”. Workspaces are where researchers collect, analyse and describe data. Examples  include the most basic of research IT services, file storage as well as analytical tools such as Jupyter notebooks (the backbone of ATAP - the text analytics platform). Other examples of workspaces include code repositories such as GitHub or GitLab (a slightly different sense of the word repository), survey tools, electronic (lab) notebooks and bespoke code written for particular research programmes - these workspaces are essential research systems but usually are not set up for long term management of data.
 The cycle in the centre of  this diagram shows an idealised research practice where data are collected and described and deposited into a repository frequently. Data are made findable and accessible  as soon as possible and can be “re-collected” for use and re-use.</p>
 <p>For data to be re-usable by humans and machines (such as ATAP notebook code that consumes datasets in a predictable way) it must be well described. The ATAP and LDaCA approach to this is to use the Research Object Crate (RO-Crate) specification. RO-Crate is essentially a guide to using a number of standards and standard approaches to describe both data and re-runnable software such as workflows or notebooks.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide10.png' alt='Compute
+<img src='Slide10.png' alt='Compute
 <p>HPC
 Cloud
 Desktop</p>
@@ -430,11 +319,11 @@ Corpus discovery
 Item discovery
 Authenticated API
 Create virtual corpora</p>
-<p>' title='Slide: 10' border='1'  width='85%%'/&gt;</p>
+<p>' title='Slide: 10' /&gt;</p>
 <p>This rather messy slide captures the overall high-level architecture for the LDaCA Research Data Commons  - there will be an analytical workbench (left of the diagram) which is the basis of the Australian Text Analytics (ATAP) project - this will focus on notebook-style programming using one of the emerging Jupyter notebook platforms in that space. (This is not 100% decided yet, but that has not stopped the team from starting to collect and develop notebooks that open up text analytics to new coders from the linguistics community.) Our engagement lead, Dr Simon Musgrave sees the ATAP work as primarily an educational enterprise encouraging researchers to adopt new research practices - which will be underpinned by services built on the Arkisto standards that allow for rigorous, re-runnable research.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide11.png' alt='Compute
+<img src='Slide11.png' alt='Compute
 <p>HPC
 Cloud
 Desktop</p>
@@ -489,51 +378,51 @@ Item discovery
 Authenticated API
 Create virtual corpora</p>
 <p>Talking mainly about this bit today
-' title='Slide: 11' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 11' /&gt;</p>
 <p>In this presentation we are going to focus on the portal/repository architecture more than on the ATAP notebook side of things. We know that we will be using (at least) the SWAN Jupyter notebook service perceived by AARNet but we are still scoping how notebooks will be made portable between systems and where they will be stored at various stages of their development. We will be supporting and encouraging researchers to archive notebooks wrapped in RO-Crates with re-use information OUTSIDE of the SWAN platform though - it’s a workspace, not a repository; it does not have governance in place for long term preservation.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide12.png' alt='
-<p>' title='Slide: 12' border='1'  width='85%%'/&gt;</p>
+<img src='Slide12.png' alt='
+<p>' title='Slide: 12' /&gt;</p>
 <p>This is a much simpler view zooming in on the core infrastructure components that we have built so far. We are starting with bulk ingest of existing collections and will add one-by-one deposit of individual items after that.</p>
 <p>This show the OCFL repository at the bottom - with a Data &amp; Access API that mediates access. This API understands the RO-Crate format and in particular its use of the Portland Common Data Model to structure data. The API also enforces access control to objects; every repository object has a license setting out the terms of use and re-use for its data, which will reflect the way the data were collected - whether participants signed agreements, ethics approvals and privacy law are all relevant here. Each license will correspond to a group of people who have agreed to and/or been selected by a data custodian. We are in negotiations with the <a href="https://aaf.edu.au/">Australian Access Federation (AAF)</a> to use their <a href="https://www.cilogon.org/">CILogon</a> service for this authorization step and for authentication of users across a wide variety of services including the AAF itself and Google, Microsoft, GitHub etc.</p>
 <p>There’s also an access portal which will be based on a full-text index (at this stage we’re using ElasticSearch) which is designed to help people find data they might be interested in using. This follows current conventions for browse/search interfaces which we’re familiar with from shopping sites - you can search for text and/or drill down using <em>facets</em> (which are called aggregations in Elastic-land). eg which language am in interested in or do I want [ ] Spoken or [ ] Written material?</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide13.png' alt='There may be several distributed file-based repositories feeding the same index
+<img src='Slide13.png' alt='There may be several distributed file-based repositories feeding the same index
 There may be several portals using the same index - eg to give collection specific advanced search
 There may be other kinds of index such as triple stores or relational databases that index tabular data 
-' title='Slide: 13' border='1'  width='85%%'/>
+' title='Slide: 13' />
 <p>This architecture is very modular and designed to operate in a distributed fashion, potentially with distributed file and/or object based repositories all being indexed by a centralised service. There may also be other ‘flavours’ of index such as triple or graph stores, relational databases that ingest tabular data or domain specific discovery tools such as corpus analysis software. And, there may be collection specific portals that show a slice of a bigger repository with features or branding specific to a subset of data.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide14.png' alt='
+<img src='Slide14.png' alt='
 <p>👹
-' title='Slide: 14' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 14' /&gt;</p>
 <p>This implementation of the Arkisto standards-stack is known as Oni.  That’s not really an acronym any more though it once stood for OCFL, Ngnix (a web server) or Node (a Javascript framework)  and an Index. An Oni is a kind of Japanese demon. 👹</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide15.png' alt='
-<p>' title='Slide: 15' border='1'  width='85%%'/&gt;</p>
+<img src='Slide15.png' alt='
+<p>' title='Slide: 15' /&gt;</p>
 <p>But how will data get into the OCFL repository? At the moment we’re loading data using a series of scripts which are being developed at our github organization.</p>
 <p>This diagram and the next come from the <a href="https://arkisto-platform.github.io/use-cases/">Arkisto Use cases page</a> it show how we will be converting data from existing collections into a form where they can be preserved in an OCFL repository and be part of a bigger collection, ALWAYS with access control based on licenses.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide16.png' alt='
-<p>' title='Slide: 16' border='1'  width='85%%'/&gt;</p>
+<img src='Slide16.png' alt='
+<p>' title='Slide: 16' /&gt;</p>
 <p>This is a screenshot our github repository showing the corpus migration tools we’ve started developing (there are six, and one general purpose text-cleaning tool). These repositories have not all been made public yet, but they will be - they contain tools to build Arkisto-ready file repositories that can be made available in one or more portals</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide17.png' alt='PIC OF ALVEO
-<p>' title='Slide: 17' border='1'  width='85%%'/&gt;</p>
+<img src='Slide17.png' alt='PIC OF ALVEO
+<p>' title='Slide: 17' /&gt;</p>
 <p>Here’s our portal which give a browse interface to allow drill-down data discovery.</p>
 <p>But wait! That’s not the LDaCA portal - that’s Alveo!</p>
 <p>Oh yes, so it is.</p>
 <p>Alveo was built ten years ago - and  has not seen a much uptake.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide18.png' alt='
-<p>' title='Slide: 18' border='1'  width='85%%'/&gt;</p>
+<img src='Slide18.png' alt='
+<p>' title='Slide: 18' /&gt;</p>
 <p>This screenshot shows some of the browse facets for the COOEE corpus, which contains early Australian <strong>written</strong> English materials. But facets like <code>Written Mode</code> and <code>Communication Medium</code> both of which are known for COOEE are not populated.</p>
 <p>There are a quite few things that were wrong with Alveo - like we obviously didn’t get all the metadata populated to the level that it would make these browse facets actually useful for filtering. But more importantly, there was not enough work done to check which browse facets <em>are</em> useful and not enough of the budget was able to be spent on user engagement and training rather than software development.</p>
 <p>One of my current LDaCA senior colleagues said to me a couple of years ago that Alveo was useless:  “I just wanted to get all the data” they siad. Me, I was thinking “but it has an API so you CAN get all the data - what’s the problem?”. We have tried not to repeat this mistake by making sure that the API delivers entire collections and we have some demonstrations of doing this for real work.</p>
@@ -541,7 +430,7 @@ There may be other kinds of index such as triple stores or relational databases 
 <p>We’re taking these lessons to heart in designing the LDaCA infrastructure - making sure that as we go we have people using the software - it helps that we have an in house (though distributed) development team rather than an external contractor so feedback is very fast - we can jump onto a call and demo stuff at any time.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/oni-api-edit-2.gif' alt='API Demo' title='Slide: 19' border='1'  width='85%%'/>
+<img src='oni-api-edit-2.gif' alt='API Demo' title='Slide: 19' />
 <p>We decided to build from the data API first.</p>
 <p>In this demo developer Moises Sacal Bonequi is looking at the API via the Postman tool. This demonstration shows how the API can be used to find collections (that conform to our metadata profile)</p>
 <ol>
@@ -552,24 +441,24 @@ There may be other kinds of index such as triple stores or relational databases 
 <p>This API has been used and road tested at ANU to develop techniques for topic modelling on the Sydney Speaks corpus (more about which corpus below) - by a student Marcel Reverter-Rambaldi under the supervision of  Prof Catherine Travis at ANU - we are hoping to publish this work as a re-usable notebook that can be adapted for other projects, and to allow the techniques the ANU team have been developing to be applied to other similar data in LDaCA.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide20.png' alt='
-<p>' title='Slide: 20' border='1'  width='85%%'/&gt;</p>
+<img src='Slide20.png' alt='
+<p>' title='Slide: 20' /&gt;</p>
 <p>And one of the data scientists who was working with us at UQ, Mel Mistica, developed a <a href="https://github.com/Australian-Text-Analytics-Platform/ro-crate-metadata/blob/main/ro-crate-metadata.ipynb">demonstration notebook</a> with our tech team that used the API to access another full collection (which is also suitable for the ANU topic modelling approach) - this notebook gets all the metadata for a small social history collection which contains transcribed interviews with women in Western Sydney and shows how a data scientist might explore what’s in it and start asking questions about the data, like the age distribution of the participants and start digging in to what they were talking about.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/oni-v3.1.gif' alt='Demo' title='Slide: 21' border='1'  width='85%%'/>
+<img src='oni-v3.1.gif' alt='Demo' title='Slide: 21' />
 <p>This screencast shows a work-in-progress snapshot of the Oni portal we talked about above in action, showing how search and browse might be used to find repository objects from the index - in this case searching for Arabic words in a small set of Australian Government documents.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide22.png' alt='
+<img src='Slide22.png' alt='
 🎄🎁
-' title='Slide: 22' border='1'  width='85%%'/>
+' title='Slide: 22' />
 <p>Hang on!</p>
 <p>You keep talking about “repositories” - don’t you always say stuff like <a href="http://ptsefton.com/2012/02/14/an-australian-research-data-repository/">A repository is not just a software application. It’s a lifestyle. It’s not just for Christmas</a>?</p>
 <p>That’s right - we’ve been talking about repository software architectures here but it is important to remember that a repository needs to be considered an institution rather than a software stack or collection of files, more “University Library” than “My Database”.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide23.png' alt='Compute
+<img src='Slide23.png' alt='Compute
 <p>HPC
 Cloud
 Desktop</p>
@@ -624,14 +513,14 @@ domain specific services
 Harvested
 external
 Our demo today looks at this part …
-' title='Slide: 23' border='1'  width='85%%'/&gt;</p>
+' title='Slide: 23' /&gt;</p>
 <p>The next half a dozen slides are based on <a href="https://ptsefton.com/2021/10/12/ldaca2021/index.html">a presentation I gave at eResearch Australasia 2021 with Moises Sacal Bonequi</a></p>
 <p>Today we will look in detail at one important part of this architecture - access control. How can we make sure that in a distributed system, with multiple data repositories and registries residing with different data custodians, the right people have access to the right data?</p>
 <p>I didn’t spell this out in the recorded conference presentation, but for data that resides in the repositories at the right of the diagram we want to encourage research processes that clearly separate data from code. Notebooks and other code workflows that use data will fetch a version-controlled reference copy from a repository - using an access key if needed, process the data and produce results that are then deposited into an appropriate repository alongside the code itself.  Given that a lot of the data in the language world is NOT available under open licenses such as Creative Commons it is important to establish this practice - each user of the data must negotiate or be granted access individually. Research can still be reproducible using this model, but without a culture of sharing datasets without regard for the rights of those who were involved in the creation of the data.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide24.png' alt='
-<p>' title='Slide: 24' border='1'  width='85%%'/&gt;</p>
+<img src='Slide24.png' alt='
+<p>' title='Slide: 24' /&gt;</p>
 <p>Regarding rights, our project is informed by the <a href="https://www.gida-global.org/care">CARE principles</a> for Indigenous data.</p>
 <blockquote>
 <p>The current movement toward open data and open science does not fully engage with Indigenous Peoples rights and interests. Existing principles within the open data movement (e.g. FAIR: findable, accessible, interoperable, reusable) primarily focus on characteristics of data that will facilitate increased data sharing among entities while ignoring power differentials and historical contexts. The emphasis on greater data sharing alone creates a tension for Indigenous Peoples who are also asserting greater control over the application and use of Indigenous data and Indigenous Knowledge for collective benefit</p>
@@ -639,14 +528,14 @@ Our demo today looks at this part …
 <p>But we do not see the CARE principles as only applying to Indigenous data and knowledge. Most language data is a record of the behaviour of people who have moral rights in the material (even if they do not have legal rights) and taking the CARE principles as relevant in such cases ensures serious thinking about the protection of tose moral rights.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide25.png' alt='
-<p>' title='Slide: 25' border='1'  width='85%%'/&gt;</p>
+<img src='Slide25.png' alt='
+<p>' title='Slide: 25' /&gt;</p>
 <p>https://localcontexts.org/labels/traditional-knowledge-labels/</p>
 <p>We are designing the system so that it can work with diverse ways of expressing access rights, for example licensing like the Tribal Knowledge labels.The idea is to separate safe storage of data with a license on each item, which may reference the TK labels from a system that is administered by the data custodians who can make decisions about who is allowed to access data.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide26.png' alt='Case Study - Sydney Speaks
-<p>' title='Slide: 26' border='1'  width='85%%'/&gt;</p>
+<img src='Slide26.png' alt='Case Study - Sydney Speaks
+<p>' title='Slide: 26' /&gt;</p>
 <p>We are working on a case-study with the <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">Sydney Speaks project</a> via steering committee member Catherine Travis.</p>
 <blockquote>
 <p>This project seeks to document and explore Australian English, as spoken in Australia’s largest and most ethnically and linguistically diverse city – Sydney.
@@ -670,14 +559,14 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 <p>Because this involved human participants there are restrictions on the distribution of data - a situation we see with lots of studies involving people in a huge range of disciplines.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide27.png' alt='Sydney Speaks Licenses
-' title='Slide: 27' border='1'  width='85%%'/>
+<img src='Slide27.png' alt='Sydney Speaks Licenses
+' title='Slide: 27' />
 <p>There are four tiers of data access we need to enforce and observe for this data based on the participant agreements and ethics arrangements under which the data were collected.</p>
 <p>Concerns about rights and interests are important for any data involving people - and a large amount the data both indigenous and non-indigenous we are using will require access control that ensures that data sharing is appropriate.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/security.gif' alt='Demonstration screencast
-' title='Slide: 28' border='1'  width='85%%'/>
+<img src='security.gif' alt='Demonstration screencast
+' title='Slide: 28' />
 <p>In this example demo we uploaded various collections and are authorising with Github organisations</p>
 <p>In a our production release we will use AAF to authorise different groups</p>
 <p>Let's find a dataset: The Sydney Speaks Corpus</p>
@@ -689,234 +578,25 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 <p>I have given access to all the licences to myself, as you can see here and given access to licence A to others.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide29.png' alt='
-<p>' title='Slide: 29' border='1'  width='85%%'/&gt;</p>
+<img src='Slide29.png' alt='
+<p>' title='Slide: 29' /&gt;</p>
 <p>This diagram is a sketch of the interaction that took place in the demo - it shows how a repository can delegate authorization to an external system - in this case Github rather than CILogon. But we are working with the ARDC to set up a trial with the Australian Access Federation to allow CILogon access for the HASS Research Data Commons so we can pilot group-based access control.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2022/02/18/hass_rdc_tech_advisory/Slide30.png' alt='TODO
+<img src='Slide30.png' alt='TODO
 Scope the infrastructure we need to support this (need more clarity on what data we will have and where it will be housed)
 Improve our testing for scale and implement Continuous Integration so we don’t break things with every new Corpus that comes on board
 Pick our metadata terms we will probably build on the OLAC (Open Language Archives) vocabularies - but there are other options such as the CLARIN (Eu) vocabs
 Integrate better with the Australian Text Analytics Platform ATAP - eg fire up a notebook from the search portal to operate on a collection of interest
-' title='Slide: 30' border='1'  width='85%%'/>
+' title='Slide: 30' />
 <p>There’s a lot still to do.</p>
 </section>
 
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = 'hass_rdc_tech_advisory';
-                var disqus_url = 'http://ptsefton.com/2022/02/18/hass_rdc_tech_advisory/index.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-
-
-            <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="../../../../category/acess.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Acess
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto-platform.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/data-packaging-standards.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate-repositories-eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/file-data-capture.html">
-                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/housekeeping.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/how-to.html">
-                            <i class="fa fa-folder-open fa-lg"></i> How to
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/jiscpub.html">
-                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/metadata.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Metadata
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/misc.html">
-                            <i class="fa fa-folder-open fa-lg"></i> misc
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/music.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Music
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/oni.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Oni
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/repositories.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Repositories
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/research-data-management.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/ro-crate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> RO-Crate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/scholarlyhtml.html">
-                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/word-processing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://uts.edu.au/" target="_blank">
-                Work
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://ukulelecircus.com/" target="_blank">
-                Play
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
-                Photos
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-       
-      <div class="col-xs-10">
-  
-        
-
-	&copy; 2024 Peter (Petie) Sefton
-	     
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="../../../../theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../../../theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../../../../theme/js/respond.min.js"></script>
-
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-    <!-- End Disqus Code -->
-
-</body>
+</div><script src="https://utteranc.es/client.js"
+        repo="ptsefton/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></body>
 </html>

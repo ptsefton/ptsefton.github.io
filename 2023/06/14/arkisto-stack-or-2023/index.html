@@ -1,76 +1,19 @@
-<!DOCTYPE html>
-<html lang="en"
->
+
+<html>
 <head>
-    <title>Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data - ptsefton.com</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<link rel="canonical" href="../../../../2023/06/14/arkisto-stack-or-2023/index.html">
-
-        <meta name="author" content="Peter Sefton" />
-        <meta name="description" content="Download as PDF This presentation was delivered by Peter Sefton at the Open Repositories 2023 conference in South Africa on 2023-06-14 in the Presentations: Discipline specific systems with FAIR principles session. It is also available on the LDaCA website. This contains the slides and complete speaker notes, which have been …" />
-
-        <meta property="og:site_name" content="ptsefton.com" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data"/>
-        <meta property="og:url" content="../../../../2023/06/14/arkisto-stack-or-2023/index.html"/>
-        <meta property="og:description" content="Download as PDF This presentation was delivered by Peter Sefton at the Open Repositories 2023 conference in South Africa on 2023-06-14 in the Presentations: Discipline specific systems with FAIR principles session. It is also available on the LDaCA website. This contains the slides and complete speaker notes, which have been …"/>
-        <meta property="article:published_time" content="2023-06-14" />
-            <meta property="article:section" content="Arkisto" />
-            <meta property="article:author" content="Peter Sefton" />
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="../../../../theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="../../../../theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
-
-        <link href="../../../../feed/atom" type="application/atom+xml" rel="alternate"
-              title="ptsefton.com ATOM Feed"/>
- 
-
-<!-- VIA -->
-<!-- http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 -->
-<!-- -->
+    <title>ptsefton.com :: Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data
+</title>
 <style>
-body {
-  font-size: 16px;
+.header {
+    
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
 }
 
-.figure {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.caption {
-  font-style: italic bold;
-  text-align: center;
-
-}  
-
-
-blockquote {
-    font-size: 16px;
-    font-style: bold;
-    background-color: rgb(250, 250, 0);
-}
-
-
-.video-container {
-    margin: auto; /* make em equal */
-    text-align:center;
-    }
 
 
 
@@ -79,9 +22,28 @@ a:link {
     color: #FF00FF;
 }
 
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
 /* visited link */
 a:visited {
     color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
 }
 
 /* mouse over link */
@@ -94,82 +56,51 @@ a:active {
     color: #0000FF;
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] {
-  border-color: #2d262e;
-  border-style: solid;
-  margin: 30px;
-  padding: 10px 10px  10px 10px;
-  width: 90%;
+a {
+    text-decoration: none; 
 }
 
-section[typeof='http://purl.org/ontology/bibo/Slide'] img {
-  padding: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+img {
+    max-width: 100%
+}
+section img {
+    width: 100%
+}
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
 }
 
-.navbar-default {
-  background-color: #ff00ff;
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-brand {
-  color: #ffff00;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-text {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #ffff00;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #ffff00;
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle {
-  border-color: #b72bc0;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #b72bc0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffff00;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffff00;
-}
-.navbar-default .navbar-link {
-  color: #ffff00;
-}
-.navbar-default .navbar-link:hover {
-  color: #ffff00;
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+
+@media  screen and (min-width: 500px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffff00;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffff00;
-    background-color: #b72bc0;
-  }
+@media  screen and (min-width: 700px) {
+    .content, .header {
+        width: 40%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
 }
+
+
 </style>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -182,73 +113,31 @@ section[typeof='http://purl.org/ontology/bibo/Slide'] img {
 
 </script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
 <body>
+<div class="header">
+<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="../../../../" class="navbar-brand">
-ptsefton.com            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav" role="menu">
+
+</div>
+
+
+<div class="content">
+<h1> 
+Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data
  
-                    <li><a href="/">HOME</a></li>
- 
-                    <li><a href="/cv/">CV</a></li>
+</h1>
+<h2>2023-06-14 </h2>
 
-
-
-
-
-		    
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="../../../../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="../../../../2023/06/14/arkisto-stack-or-2023/index.html"
-                       rel="bookmark"
-                       title="Permalink to Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data">
-                        Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data
-
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2023-06-14T00:00:00+02:00"> Wed 14 June 2023</time>
-    </span>
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                </div>
-                <p><a href="arkisto-stack-or-2023.pdf">Download as PDF</a></p>
+<p><a href="arkisto-stack-or-2023.pdf">Download as PDF</a></p>
 <p>This presentation was delivered by Peter Sefton at the <a href="https://or2023.openrepositories.org/">Open Repositories 2023</a> conference in South Africa on 2023-06-14 in the <a href="https://www.conftool.net/or2023/index.php?page=browseSessions&amp;form_session=460&amp;presentations=show">Presentations: Discipline specific systems with FAIR principles
 </a> session. It is also available on the <a href="https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/">LDaCA website</a>.</p>
 <p>This contains the slides and complete speaker notes, which have been edited after the conference.</p>
@@ -257,47 +146,47 @@ ptsefton.com            </a>
 <p>*The submitted abstract did not have the word data here - added for clarity</p>
 <p>By: Peter Sefton (University of Queensland), Simon Musgrave (University of Queensland &amp; Monash University) &amp; Nick Thieberger (University of Melbourne)</p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide01.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).   ARC LIEF LE210100013 (2021-2024) Nyingarn: a platform for primary sources in Australian Indigenous languages  ' title='Slide: 1' border='1'  width='85%%'/>
+<img src='Slide01.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).   ARC LIEF LE210100013 (2021-2024) Nyingarn: a platform for primary sources in Australian Indigenous languages  ' title='Slide: 1' />
 <p>This work is supported by the Australian Research Data Commons.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide02.png' alt=' With thanks for their contribution: Partner Institutions: ' title='Slide: 2' border='1'  width='85%%'/>
+<img src='Slide02.png' alt=' With thanks for their contribution: Partner Institutions: ' title='Slide: 2' />
 <p>The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are building towards a scalable and flexible language data and analytics commons. These projects will be part of the HASS (Humanities and Social Sciences) and Indigenous Research Data Commons (HASS+I RDC).</p>
 <p>The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.</p>
 <p>The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artifacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations. These projects are led by Professor Michael Haugh of the School of Languages and Cultures at the University of Queensland with several partner institutions.</p>
 <p>We would like to acknowledge the traditional custodians of the lands on which we live and work and the importance of indigenous knowledge, culture and language to the these projects. Peter Sefton lives and works on Wiradjuri land, and for Nick Thieberger and Simon Musgrave it's the land of the Kulin nation.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide03.png' alt='Pacific and Regional Archive for Digital Sources in Endangered Cultures (PARADISEC) Established 2003 Researchers concerned to digitise, preserve, and make accessible recordings in the many languages of the region around Australia No other agency taking responsibility for these recordings so they were at risk of loss Catalog exposes the existence of these recordings, 38,000 items in 690 collections Currently represent 1,350 languages, in 205 terabytes, with over 16,000 hours of audio recordings, 3,000 hours of video ' title='Slide: 3' border='1'  width='85%%'/>
+<img src='Slide03.png' alt='Pacific and Regional Archive for Digital Sources in Endangered Cultures (PARADISEC) Established 2003 Researchers concerned to digitise, preserve, and make accessible recordings in the many languages of the region around Australia No other agency taking responsibility for these recordings so they were at risk of loss Catalog exposes the existence of these recordings, 38,000 items in 690 collections Currently represent 1,350 languages, in 205 terabytes, with over 16,000 hours of audio recordings, 3,000 hours of video ' title='Slide: 3' />
 <p>PARADISEC is an online archive of cultural data which has been maintained for twenty years, in this presentation we will look at some of the lessons learned from PARADISEC. In summary – the PARADISEC approach to simple data and metadata storage is something we want to continue in LDaCA, while the high cost for PARADISEC of commissioning and maintaining its own software stack is something we want to address by taking a more standards-based approach to managing language and other data over the coming decades.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide04.png' alt='  ' title='Slide: 4' border='1'  width='85%%'/>
+<img src='Slide04.png' alt='  ' title='Slide: 4' />
 <p>The Arkisto platform started in 2019 as a way to capture the lessons of PARADISEC and other projects such as Alveo (another language data project similar in scope to LDaCA) which was presented at OR 2014: Sefton PM, Estival D, Cassidy S, Burnham D, Berghold J. The Human Communication Science Virtual Lab (HCS vLab): A repository microclimate in a rapidly evolving research-ecosystem. In: Open Repositories 2014. Helsinki; 2014 [cited 2016 Jul 19]. Available from: http://www.doria.fi/handle/10024/97740</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide05.png' alt='  ' title='Slide: 5' border='1'  width='85%%'/>
+<img src='Slide05.png' alt='  ' title='Slide: 5' />
 <p>This diagram was used in the bid documents that established LDaCA - it shows the progression of data from end-of life projects and active repositories into a standards-based data-commons.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide06.png' alt='  ' title='Slide: 6' border='1'  width='85%%'/>
+<img src='Slide06.png' alt='  ' title='Slide: 6' />
 <p>This is the data triage process we have been going through in LDaCA — and it should be noted that of all the data we are presented with, most of it needs to be reworked into the Arkisto Standards Stack. Even PARADISEC which in 2019 received the international <a href="https://www.coretrustseal.org/why-certification/certified-repositories/">Core Trust Seal</a> based on the <a href="http://www.coretrustseal.org/requirements/">DSA-WDS Core Trustworthy Data Repositories Requirements</a> is still in the process of migrating data to more sustainable formats.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide07.png' alt='  ' title='Slide: 7' border='1'  width='85%%'/>
+<img src='Slide07.png' alt='  ' title='Slide: 7' />
 <p>This is a taster of what data looks like in the kids of repositories we are talking about. This site contains harvested metadata about holdings on Australian Indigenous Languages in University of Queensland Libraries.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide08.png' alt='' title='Slide: 8' border='1'  width='85%%'/>
+<img src='Slide08.png' alt='' title='Slide: 8' />
 <p>The LDaCA services we are building use an API to drive the data portals. The API can be used for direct access with appropriate access control – see <a href="posts/fair-care-eresearch-2022">another eResearch presentation</a> which explains this in detail. These screenshots show code notebooks running in BinderHub on the Nectar cloud accessing language resources.</p>
 <p>This  work has also been <a href="https://digital.library.unt.edu/ark:/67531/metadc2114304/">written up</a> for the <em>2nd International Workshop on Digital Language Archives (LangArc 2023) virtual workshop on digital language archives</em> 2023-06-30.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide09.png' alt='  ' title='Slide: 9' border='1'  width='85%%'/>
+<img src='Slide09.png' alt='  ' title='Slide: 9' />
 <p>This is the overall architecture for data storage and delivery — missing is how data gets into to the repository, but we’ll come to that later.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide10.png' alt='  ' title='Slide: 10' border='1'  width='85%%'/>
+<img src='Slide10.png' alt='  ' title='Slide: 10' />
 <p>At this point I will introduce one of the themes of this talk. In March this year, <a href="https://bibwild.wordpress.com/2023/03/21/ocfl-and-source-of-truth-two-options/">this blog post was published</a> - looking at the pros and cons of using OCFL (the Oxford Common File Layout) as the “source of truth” for a system (say a repository).</p>
 <p>We are very much taking the OCFL (that is file-in-storage-as-the-source-of-truth) approach in LDaCA. Which begs the question: “But doesn’t that mean that it’s very specific to language data?” No, because we’re using a very flexible, extensible, discipline-neutral format for data description – yes, we have ways to specialise metadata and interfaces to language and other cultural metadata, but NO, the systems are not locked-in to that mode of operation. This means we should be able to share development and maintenance more broadly than with a single archive.</p>
 <p>Two main points we want to get across in this presentation:</p>
@@ -307,28 +196,28 @@ ptsefton.com            </a>
 </ul>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide11.png' alt='📂  🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️ ' title='Slide: 11' border='1'  width='85%%'/>
+<img src='Slide11.png' alt='📂  🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️ ' title='Slide: 11' />
 <p>So lets now start looking at the standards involved in the Arkisto approach. This is a slide from “What is RO-Crate” – The dataset may contain any kind of data resource about anything, in any format as a file or URL</p>
 <p>Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):Packaging research artefacts with RO-Crate.Data Science 5(2)https://doi.org/10.3233/DS-210053</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide12.png' alt='  ' title='Slide: 12' border='1'  width='85%%'/>
+<img src='Slide12.png' alt='  ' title='Slide: 12' />
 <p>The core standard for this work is RO-Crate (Research Object Crate) in which all data is input, stored and output. This a big step for eresearch systems – no longer is there a transformation step on data onboarding (we used the term ingest, but some project members and partners found the metaphor distasteful).</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide13.png' alt='  Here the mechanism is to use the ‘magic’ name METS.xml to store some extra metadata – with a fully linked-data system this kind of thing is not needed ' title='Slide: 13' border='1'  width='85%%'/>
+<img src='Slide13.png' alt='  Here the mechanism is to use the ‘magic’ name METS.xml to store some extra metadata – with a fully linked-data system this kind of thing is not needed ' title='Slide: 13' />
 <p>This screenshot is a bit of (undated) DSpace documentation found following a tip from Kim Sheppard – we have included it here to illustrate that storing additional metadata (in this case METS) for an object was done by convention. Using a linked-data system means that we no longer have to do this kind of thing – there’s still one magic file name in RO-Crate but it’s only one for the metadata and one for the HTML preview – everything else is labelled and extensible.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide14.png' alt='Using this core layer gives you interoperability with generic tools and general purpose “Who What Where” metadata ' title='Slide: 14' border='1'  width='85%%'/>
+<img src='Slide14.png' alt='Using this core layer gives you interoperability with generic tools and general purpose “Who What Where” metadata ' title='Slide: 14' />
 <p>In the early days of the “Open Repositories” movement repositories had Dublin Core metadata (a standard with a few different flavours).</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide15.png' alt=' Using a domain specific profile extends the core RO-Crate for a specific type of data – eg language data, computational workflows or “cultural collections”  (You can use more than one profile) ' title='Slide: 15' border='1'  width='85%%'/>
+<img src='Slide15.png' alt=' Using a domain specific profile extends the core RO-Crate for a specific type of data – eg language data, computational workflows or “cultural collections”  (You can use more than one profile) ' title='Slide: 15' />
 <p>These days using linked data it is no longer necessary to have a bevy of XML schemas with incompatible encodings to store data from different schemas, different voclabularies and ontologies can co-exist and be expressed in a common way.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide16.png' alt='' title='Slide: 16' border='1'  width='85%%'/>
+<img src='Slide16.png' alt='' title='Slide: 16' />
 <p>In the PARADISEC system this is achieved by storing files on disk in a simple hierarchy - with metadata and other resources stored together in a directory - this scheme allows for hands-on management of data resources, independently of the software used to serve them.</p>
 <p>This approach means that if the PARADISEC software-stack becomes un-maintainable for financial or technical reasons the important resources, the data, are stored safely on disk with their metadata and a new access portal could be constructed relatively easily.</p>
 <p>Despite the valuable features of this solution, it is not generalisable. The metadata.xml is custom to PARADISEC, as is the software stack.</p>
@@ -336,37 +225,37 @@ ptsefton.com            </a>
 <p>The UTS team presented on this at <a href="https://ptsefton.com/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation/index.html">eResearch Australasia 2019</a></p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide17.png' alt='  ' title='Slide: 17' border='1'  width='85%%'/>
+<img src='Slide17.png' alt='  ' title='Slide: 17' />
 <p>The <a href="https://www.researchobject.org/ro-crate/1.1/structure.html">structure of an RO-Crate</a> is very similar to the PARADISEC example above, but with a json file instead of XML, and an optional preview in HTML.</p>
 <p>RO-Crate has a growing number of <a href="https://www.researchobject.org/ro-crate/tools/">tools and software libraries</a> which means that a team such as PARADISEC does not have to maintain their own bespoke software.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide18.png' alt='  ' title='Slide: 18' border='1'  width='85%%'/>
+<img src='Slide18.png' alt='  ' title='Slide: 18' />
 <p>Here, for comparison is <a href="https://wiki.lyrasis.org/display/FEDORA6x/Fedora+OCFL+Object+Structure#FedoraOCFLObjectStructure-FedoraAtomicResource-Container">how Fedora 6 would store an object (an Atomic Resource in Fedora-speak) like this with multiple files</a>. Like RO-Cratee this uses linked-dataa but in this case split up into multiple files containing RDF triples. (This is similar to the pre-RO-Crate approach taken by the Research Object spec).</p>
 <p>This also shows some of what an OCFL repository looks like – this is an OCFL object with a single version.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide19.png' alt=' This is an RO-Crate Object which is stored as an OCFL Object ' title='Slide: 19' border='1'  width='85%%'/>
+<img src='Slide19.png' alt=' This is an RO-Crate Object which is stored as an OCFL Object ' title='Slide: 19' />
 <p>This screenshot shows an example of an Arkisto-style use of OCFL (all of the metadata is stored in the ro-crate-metadata.json rather than spread out as in Fedora).</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide20.png' alt='  ' title='Slide: 20' border='1'  width='85%%'/>
+<img src='Slide20.png' alt='  ' title='Slide: 20' />
 <p>Now we come to the second core standard in our stack the <a href="https://ocfl.io">Oxford Common File Layout</a> – which is something we found out about via OpenRepositories – I couldn’t make the presentation, but I got a corridor briefing on this from Neil Jeffries in Bozeman at OR 2018.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide21.png' alt='  ' title='Slide: 21' border='1'  width='85%%'/>
+<img src='Slide21.png' alt='  ' title='Slide: 21' />
 <p>This slide shows the interface between our core standards – a compliant OCFL repository has Objects within it that conform to the RO-Crate specification.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide22.png' alt='  ' title='Slide: 22' border='1'  width='85%%'/>
+<img src='Slide22.png' alt='  ' title='Slide: 22' />
 <p>This slide illustrates the flexibility of the approach we’re taking. As LDaCA is a national project, our archival repositories and those of our partners such as PARADISEC will be distributed with differences of governance, varying by organisation, language type and discipline, though there is still a desire to be able to aggregate data into services that make it findable.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide23.png' alt='  S3-Style Object store Plain Old File Store ' title='Slide: 23' border='1'  width='85%%'/>
+<img src='Slide23.png' alt='  S3-Style Object store Plain Old File Store ' title='Slide: 23' />
 <p>The storage services may not all be the same in this model, some may be file systems, some may be object stores, and they may be hosted by and governed by a variety of organizations.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide24.png' alt='  ' title='Slide: 24' border='1'  width='85%%'/>
+<img src='Slide24.png' alt='  ' title='Slide: 24' />
 <p>This slide shows how we have abstracted the “A” for Access in FAIR out of the repository and into a separate centralised or at least <em>concentrated</em> system. We have a <a href="https://www.ldaca.edu.au/posts/fair-care-eresearch-2022/">full write-up of this approach from the 2022 eResearch Australasia conference</a> and we don’t have time to go through it in detail here, but in summary:</p>
 <ul>
 <li>Every object in the repository has a Data Reuse License with some management metadata.</li>
@@ -376,271 +265,62 @@ ptsefton.com            </a>
 <p>Note that our work is also informed by the <a href="https://www.gida-global.org/care">CARE principles for Indigenous data Governance (Collective benefit, Authority to control, Responsibility, Ethics)</a> which frame the way FAIR protocols are implemented. Again, see the <a href="https://digital.library.unt.edu/ark:/67531/metadc2114304/">LangArc workshop write-up</a>.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide25.png' alt='  Ok but how does the data get there? ' title='Slide: 25' border='1'  width='85%%'/>
+<img src='Slide25.png' alt='  Ok but how does the data get there? ' title='Slide: 25' />
 <p>Let’s revisit this diagram. What’s missing?</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide26.png' alt='  ' title='Slide: 26' border='1'  width='85%%'/>
+<img src='Slide26.png' alt='  ' title='Slide: 26' />
 <p>In the first phase of the LDaCA project, work focused on batch import of data using tools to convert collections – this approach was used on contemporary collections as well as for “rescuing” collections from older repository system.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide27.png' alt=' {      &quot;@id&quot;: &quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&quot;,      &quot;@type&quot;: &quot;SoftwareSourceCode&quot;,      &quot;name&quot;: &quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&quot;,      &quot;description&quot;: &quot;Converts an RO-Crate to an LDaCA OCFL collection as long as the crate has repository Objects and Collections that are members of a RepositoryCollection in the root dataset&quot;,      &quot;programmingLanguage&quot;: {        &quot;@id&quot;: &quot;https://en.wikipedia.org/wiki/Node.js&quot;      }    },    {      &quot;@id&quot;: &quot;#provenance&quot;,      &quot;name&quot;: &quot;Created RO-Crate using corpus-tools-ro-crate&quot;,      &quot;@type&quot;: &quot;CreateAction&quot;,      &quot;instrument&quot;: {        &quot;@id&quot;: &quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&quot;      },      &quot;result&quot;: {        &quot;@id&quot;: &quot;ro-crate-metadata.json&quot;      }    } The act of creation of this metadata is documented ' title='Slide: 27' border='1'  width='85%%'/>
+<img src='Slide27.png' alt=' {      &quot;@id&quot;: &quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&quot;,      &quot;@type&quot;: &quot;SoftwareSourceCode&quot;,      &quot;name&quot;: &quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&quot;,      &quot;description&quot;: &quot;Converts an RO-Crate to an LDaCA OCFL collection as long as the crate has repository Objects and Collections that are members of a RepositoryCollection in the root dataset&quot;,      &quot;programmingLanguage&quot;: {        &quot;@id&quot;: &quot;https://en.wikipedia.org/wiki/Node.js&quot;      }    },    {      &quot;@id&quot;: &quot;#provenance&quot;,      &quot;name&quot;: &quot;Created RO-Crate using corpus-tools-ro-crate&quot;,      &quot;@type&quot;: &quot;CreateAction&quot;,      &quot;instrument&quot;: {        &quot;@id&quot;: &quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&quot;      },      &quot;result&quot;: {        &quot;@id&quot;: &quot;ro-crate-metadata.json&quot;      }    } The act of creation of this metadata is documented ' title='Slide: 27' />
 <p>This slide shows some JSON-LD metadata that describes the way this RO-Crate metadata was created – illustrating how RO-Crate can be used to record provenance.</p>
 <p>(UPDATE: I didn't explain <a href="https://json-ld.org/">JSON-LD</a> properly during the presentation. JSON-LD is a method of encoding linked-data (which can be quite esoteric and unapproachable) in JSON a method of describing data in simple text, which is widely used and understood by programmers.)</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide28.png' alt=' ' title='Slide: 28' border='1'  width='85%%'/>
+<img src='Slide28.png' alt=' ' title='Slide: 28' />
 <p>This part of the architecture we are working on now…</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide29.png' alt='' title='Slide: 29' border='1'  width='85%%'/>
+<img src='Slide29.png' alt='' title='Slide: 29' />
 <p>Here we see the Crate-O metadata tool (which is a zero-install web application that runs in Chrome and other browsers that support the new FilesystemAPI) being used to add an Organization as the Affiliation for a Person entity. Having imported this &quot;Context Entity&quot; (that's the RO-Crate term) it can then be re-used within the crate which we see here as the schema.org <code>publisher</code> property is linked to the same organization.</p>
 <p>(At this stage Crate-O is still to be connected to the repository stack - that will happen in the second half of 2023)</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide30.png' alt='  ' title='Slide: 30' border='1'  width='85%%'/>
+<img src='Slide30.png' alt='  ' title='Slide: 30' />
 <p>We hope to work with other editor projects (eg <a href="https://describo.github.io/#/">Describo</a>) to make editor profiles as compatible as possible.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide31.png' alt='  ' title='Slide: 31' border='1'  width='85%%'/>
+<img src='Slide31.png' alt='  ' title='Slide: 31' />
 <p>The next series of slides show some examples of our approach implemented in a variety of contexts.</p>
 <p>Here’s another repository that uses RO-Crate metadata (from the Language Data Commons of Australia / Australian Text Analytics Platform) – here users can launch a Jupyter notebook containing Python code (and explanatory text) that processes a dataset.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide32.png' alt=' SCREENSHOT OF NOTEBOOK  ' title='Slide: 32' border='1'  width='85%%'/>
+<img src='Slide32.png' alt=' SCREENSHOT OF NOTEBOOK  ' title='Slide: 32' />
 <p>This is a screenshot of a Jupyter notebook that can process data from a repository via its API.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide33.png' alt='  ' title='Slide: 33' border='1'  width='85%%'/>
+<img src='Slide33.png' alt='  ' title='Slide: 33' />
 <p>This slide shows the Arkisto stack powering the University of Technology Sydney’s Research Data Repository.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide34.png' alt='  ' title='Slide: 34' border='1'  width='85%%'/>
+<img src='Slide34.png' alt='  ' title='Slide: 34' />
 <p>This page shows some screenshots of an internal-only application at UTS which gives academic staff access to successful research grant proposals – the data are stored in the same kind of Arkisto standards-based storage stack as we have presented here – with an interface that is tuned for this use case, with some custom access control to make sure that staff are <em>very</em> aware that these are sensitive and confidential documents.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide35.png' alt='  ' title='Slide: 35' border='1'  width='85%%'/>
+<img src='Slide35.png' alt='  ' title='Slide: 35' />
 <p>This is a screenshot of data from a history project <a href="https://expertnation.org/">Expert Nation</a> exported to RO-Crate format and <a href="https://expertnation.research.uts.edu.au/">put online to support a book</a>.</p>
 </section>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
-<img src='../../../../2023/06/14/arkisto-stack-or-2023/Slide36.png' alt='  Want to join us? Your project here?  Get in touch… ' title='Slide: 36' border='1'  width='85%%'/>
+<img src='Slide36.png' alt='  Want to join us? Your project here?  Get in touch… ' title='Slide: 36' />
 <p>In conclusion, we have given a quick tour of a standards-based repository stack (loosely called Arkisto) and illustrated it with current work at the Language Data Commons of Australia and PARADISEC projects, but along the way have tried to emphasise that this is generic, re-usable architecture – and is based on standards. By using an extensible metadata standard with a growing community, and a storage-layer standard forged from an acquired aversion to systems migration we aim to reduce the risk to very important cultural data by working with as many communities as possible on software tools, so that we reduce cost and risk for all of us.</p>
 </section>
 
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = 'arkisto-stack-or-2023';
-                var disqus_url = 'http://ptsefton.com/2023/06/14/arkisto-stack-or-2023/index.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-
-
-            <li class="list-group-item"><a href="../../../../"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="../../../../category/acess.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Acess
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/arkisto-platform.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Arkisto Platform
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/data-packaging-standards.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Data Packaging Standards
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/datacrate-repositories-eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> DataCrate, Repositories, eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/eresearch.html">
-                            <i class="fa fa-folder-open fa-lg"></i> eResearch
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/file-data-capture.html">
-                            <i class="fa fa-folder-open fa-lg"></i> File Data Capture
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/housekeeping.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Housekeeping
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/how-to.html">
-                            <i class="fa fa-folder-open fa-lg"></i> How to
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/jiscpub.html">
-                            <i class="fa fa-folder-open fa-lg"></i> jiscPUB
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/metadata.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Metadata
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/misc.html">
-                            <i class="fa fa-folder-open fa-lg"></i> misc
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/music.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Music
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/oni.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Oni
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/repositories.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Repositories
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/research-data-management.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Research Data Management
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/ro-crate.html">
-                            <i class="fa fa-folder-open fa-lg"></i> RO-Crate
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/scholarlyhtml.html">
-                            <i class="fa fa-folder-open fa-lg"></i> ScholarlyHTML
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="../../../../category/word-processing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Word Processing
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://uts.edu.au/" target="_blank">
-                Work
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://ukulelecircus.com/" target="_blank">
-                Play
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.flickr.com/photos/25201123@N03/" target="_blank">
-                Photos
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-       
-      <div class="col-xs-10">
-  
-        
-
-	&copy; 2024 Peter (Petie) Sefton
-	     
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="../../../../theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../../../theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../../../../theme/js/respond.min.js"></script>
-
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'ptsefton'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-    <!-- End Disqus Code -->
-
-</body>
+</div><script src="https://utteranc.es/client.js"
+        repo="ptsefton/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></body>
 </html>

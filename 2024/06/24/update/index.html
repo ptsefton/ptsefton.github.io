@@ -1,0 +1,186 @@
+
+<html>
+<head>
+    <title>ptsefton.com :: Twenty year celebration: Site update number three</title>
+<style>
+.header {
+    
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
+}
+
+
+
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+a {
+    text-decoration: none; 
+}
+
+img {
+    max-width: 100%
+}
+section img {
+    width: 100%
+}
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+
+@media  screen and (min-width: 500px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
+}
+
+@media  screen and (min-width: 700px) {
+    .content, .header {
+        width: 40%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
+}
+
+
+</style>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
+<body>
+<div class="header">
+<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+
+
+</div>
+
+
+<div class="content">
+<h1> 
+Twenty year celebration: Site update number three 
+</h1>
+<h2>2024-06-24 </h2>
+
+<p>This blog turned 20 this year.</p>
+<p>Now, I mostly use this site to put up what Simon Willison calls <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">annotated conference presentations</a><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> like <a href="2024/06/04/open-repositories-2024-pilars/">this recent one from June</a>. Most of the projects or institutions I've worked for don't bother to maintain their websites over time, but with my own site I still have access to (most of) the stuff I've done in one place.</p>
+<p>It's down to only a few posts a year for the last several years, but <em>maybe</em> I'll start putting more things here so the Large Language Models (The &quot;AIs&quot;) have some fresh content to feed on.</p>
+<p>Speaking iof the AIs, people have been asking me and my team about using AI to create metadata for ages, so I thought I'd give it a go here. I used another LLM to help me write a script to use GPT4.0 to categorise my posts using using the set of categories you see on the home page. It seemed to do an OK job, but managed to go well off piste and tag <a href="http://localhost:8080/2013/07/26/4a-data-management-acquiring-acting-on-archiving-and-advertising-data-at-the-university-of-western-sydney/">this post</a> with &quot;Research Data Pokémon_mgmt&quot; - making up its own tag. I like that so I'm keeping it.</p>
+<p><img src="image.png" alt="Alt text"></p>
+<h2>History</h2>
+<p>This site started in 2024 using <a href="https://jtauber.com/leonardo/">Leonardo</a>, a Python-based blog engine which required a server to be running. In 2007 I moved it to Wordpress, which I was using for lots of other sites at work and hosted it with the same provider.</p>
+<p>In 2015 I started working at UTS; we got sick of the constant upgrades and the overhead of running a Wordpress instance for the eResearch website and ported that site to <a href="https://getpelican.com/">Pelican</a>, a tool which produces static web sites that don't need a database and ongoing maintenance like Wordpress, so I migrated ptsefton.com at the same time (and I am now noticing that I missed a few bits in that process).</p>
+<p>Static site generators, of which there are hundreds, typically work by transforming text files in markdown format into HTML files that can be hosted with your images and other files without needing anything running on a server (except a web server). The UTS eResearch team evaluated a number of static site generators at the time - and I recall them all being a bit annoying in various ways but Pelican was the least so, partly because we were a Python Shop, as they say.</p>
+<p>Some time after 2015 I realised that I didn't even need to pay for hosting, and moved the site to github pages where it is as of mid 2024.</p>
+<h2>New tool - 11ty</h2>
+<p>Now I've decided to update the site to use a Javascript framework called Eleventy, AKA 11ty, which I've been using in some projects for work. It's (currently) annoying me less than Pelican, and I've been home by myself for a week while Gail is away, so I can spend evenings playing with it and learning how it all works. I didn't even consider Hugo which we also use for work or Jekyll which is very widely used, as both of those have <em>really</em> annoyed me. And this is my site, so I don't want to be annoyed.</p>
+<p><a href="https://www.11ty.dev/">11ty</a> is very flexible (that's their thing, the 11ty developers) but for something where you can use any templating engine and you can mix code into every nook and cranny, it has some perplexing hard-wired behaviour.</p>
+<p>There's a built in thing where you use &quot;tags&quot; to classify things and these &quot;tags&quot; cause 11ty to make &quot;collections&quot;. Here's the (not very clear) explanation:</p>
+<blockquote>
+<p>While pagination allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the tags key in the front matter.</p>
+<p>Take care to note that tags have a singular purpose in Eleventy: to construct collections of content. Some blogging platforms use Tags to refer to a hierarchy of labels for the content (e.g. a tag cloud).</p>
+<p><a href="https://www.11ty.dev/docs/collections/">https://www.11ty.dev/docs/collections/</a></p>
+</blockquote>
+<p>I have indeed taken care to note this, and it's annoying, because I'd rather Eleventy didn't use a term like &quot;tag&quot; to mean &quot;collection&quot; and then to bake this in to the code; what if I have a lot of content from another site that used &quot;tag&quot; in the other sense? Either make it configurable like all the other configurable things you're proud of, or use something that <em>won't</em> clash with what &quot;some blogging platforms do&quot;, preferably something like, say <code>_11ty_collection</code> or <code>collection</code>.</p>
+<p>Also weird (to me) is the thing where all your actual documents are considered to be &quot;templates&quot; as well as the things I would call templates, such as the generic layouts for the pages on the site.</p>
+<p>The only thing that took me a significant amount of time to configure was working out how to co-locate  posts and the images that go with them.</p>
+<p>Eleventy is not unusual in making this difficult. For some reason, most of these static site generators that I've seen don't simply copy images used in a post from the folder where you write the post through to a folder in the output; the designers think it's a good idea to put all your images <em>over there</em> somewhere. I found a Github issue about this which led me to try out an unreleased image plugin which didn't really do what I wanted. See <a href="https://github.com/11ty/eleventy/issues/2428#issuecomment-2184485821">my contribution to that issue</a> showing what I ended up after a few hours of frustration.</p>
+<p>The thing is once I worked out I needed to do it, adding that bit of dodgy code was super-easy to do, as have been most of the other things I've wanted like adding support for markdown footnotes<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>, or putting in an Atom feed, the usual things. These are simple to add and configure. Full marks for that.</p>
+<h2>Design</h2>
+<p>Previously I have spent time working with &quot;themes&quot; to add styling and structure to the site with time I didn't bother instead of</p>
+<p>It's still using (almost) the same colour scheme as the <a href="https://web.archive.org/web/20040604021801/http://ptsefton.com/blog/">first version</a>. Like a stopped calendar, pink and yellow comes back into fashion every so often.</p>
+<p><img src="image-1.png" alt="Alt text"></p>
+<h2>Comments</h2>
+<p>I have been using Disqus comments for years but I'm locked out of my account and I can't reset my password cos it won't send me an email to that account, but there's no email support unless I'm on a paid plan, but I can't start a paid plan because I'm locked out of my account. I'm thinking of screen-scraping the old comments but for now they'll just be missing.</p>
+<p>Anyway, if you're reading this then the site has been migrated. I'm assuming if you're here then you're likely to have a github.com account and that the feed is working. Leave a comment to let me know you're out there?</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>I have been doing this for years, and like Simon I have tool, which I should tidy up and document here <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>like this! <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</div><script src="https://utteranc.es/client.js"
+        repo="ptsefton/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></body>
+</html>
