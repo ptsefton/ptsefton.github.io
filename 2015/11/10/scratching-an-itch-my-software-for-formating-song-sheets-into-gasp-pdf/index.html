@@ -211,7 +211,7 @@ Scratching an itch: my software for formating song-sheets into, *gasp* PDF!
 </div>
 <p>So, I had the technology to render chords (even at grand piano scale) but then it turned I couldn't find chord definition files for more instruments. There are lots of chord charts in image formats, of course, but no data that I can find, which led to working out how to compile <a href="http://sniff.numachi.com/~rickheit/chord/ch/">this old C code</a> and modify it a bit to produce chord-data files (my update to that code is not done enough to release).</p>
 <p>Anyway, the above song looks like this when run through <em>my</em> software. Now, after a couple of months of part-time tinkering in I can type <code>./chordprobook.py -o --instrument Uke uni-verse.cho</code> and this appears!</p>
-<p><img src="/blog/chordprobook/uni-verse.cho_key_C_uke.png" alt="Uni-verse rendered for printing"></p>
+<p><img src="uni-verse.cho_key_C_uke.png" alt="Uni-verse rendered for printing"></p>
 <p>Better yet, <em>I have it set up now with a cloud server watching the dropbox, so if you put in a text file with a .cho extension it will auto-generate a PDF for the song</em>. That is, in our shared band folder in Dropbox, if anyone creates a new song file, a new PDF appears automagically about a second later. Drop me a line if you'd like to try it - all you have to do is share a Dropbox folder with an account of mine. This is one of my favourite deployment patterns for software, almost like a no-interface user-interface. I'll write more about this matter soon.</p>
 <p>Along the way I learned:</p>
 <ul>
