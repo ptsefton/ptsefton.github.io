@@ -1,0 +1,201 @@
+
+<html>
+<head>
+    <title>ptsefton.com :: Recipe Markup Theory and a Practice</title>
+<style>
+.header {
+    
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
+}
+
+
+
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+a {
+    text-decoration: none; 
+}
+
+img {
+    max-width: 100%
+}
+section img {
+    width: 100%
+}
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+
+@media  screen and (min-width:  900px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
+}
+
+@media  screen and (min-width: 1200px) {
+    .content, .header {
+        width: 40%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    
+}
+
+
+</style>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
+<body>
+<div class="header">
+<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+
+
+</div>
+
+
+<div class="content">
+<h1> 
+Recipe Markup Theory and a Practice 
+</h1>
+<h2>2004-06-02 </h2>
+
+<p>
+Ben Hammersley is <a class="external" href="https://web.archive.org/web/20040603203546/http://www.benhammersley.com/weblog/2004/05/23/an_omelette_and_a_glass_of_wine.html">writing teases about recipes</a>. Apparently he's working on an online recipe database. He has links to two ways of structuring recipes. When I put up recipes here I may or may not use one of those to create them. But I <i>will</i> put some kind of markup on the HTML I serve for (at least) the recipe as a whole and the list of ingredients. If other people used the same classes then that would indeed be Hammersley's 'loosely joined, lightly grilled web coolness'. 
+</p>
+<p>
+I call this approach <i>Udellian</i>. When the <a class="external" href="https://web.archive.org/web/20040603203546/http://weblog.infoworld.com/udell/2004/01/19.html">XHTML-aware search engines</a> advocated by Jon Udell start to arrive we will be able mine recipes across the Internet, or at least within our own caches, regardless of the back-end software used to create them. While we're talking recipes here, the same thing would apply to other domains, such as course materials, where parts of a page could be marked up as 'activity' or 'quiz'.
+</p>
+<p>
+In XPATH you could ask:
+</p>
+<p>
+</p><pre>//*[@class='recipe' and .//*[@class='ingredients' and contains(.,'lemon') and contains(.,'tuna')]] </pre>
+<p>
+Which I assert means "get me any element with a class of recipe, which has somewhere within it a element of class ingredients containing the string <i>lemon</i> and the string <i>tuna</i>". And yes we have a potential case problem here, although not if you are careful about wording. Of course we would put this behind a nicer interface for recipe-finding. 
+</p>
+<p>
+Here's my version of Bill Granger's baked Tuna Risotto with Tomatoes, from the Australian version of <i>Delicious</i> magazine, March 2003. My partner forces me to cook this about once a week. 
+</p>
+<p>
+I present this with 'recipe' and 'ingredients' as class names but I imagine a system for broader use would have a namespace-style prefix.
+</p>
+<p>
+</p><div class="recipe"><h3>Recipe:  Baked Tuna Risotto</h3>
+<p>
+</p><div class="ingredients"><h4>Ingredients </h4>
+<ul><li>Some olive oil</li>
+<li>1 onion</li>
+<li>1 chili</li>
+<li>1 800g can of tuna (Bill recommends Sirena brand 'Itlalian Style' tuna suffering in spring water, I say go for the one luxuriating in oil)</li>
+<li>1 cup Arborio rice</li>
+<li>1 cup dry white wine (<a class="external" title="Goon is Australian for wine that comes in a plastic bag" href="https://web.archive.org/web/20040603203546/http://www.google.com/search?q=goon+cask+wine&amp;sourceid=mozilla-search&amp;start=0&amp;start=0&amp;ie=utf-8&amp;oe=utf-8">goon</a> will do nicely)</li>
+<li>1/2 cup  water</li>
+<li>1 400g can of tomatoes</li>
+<li>Handful of basil, and or mint.</li>
+<li>Some wedges of lemon or lime.</li></ul>
+<p>
+</p></div>
+<p></p>
+<p>
+Preheat your oven to 200 degrees c. 
+</p>
+<p>
+Get a big pot with a lid. A cast-iron enameled one is good. 
+</p>
+<p>
+In the big pot, cook the onion in olive oil for a while then chuck in chili and the rice and get it hot. Add the(drained) Tuna, tomato and the liquid. Bring to the boil. Whack on the lid and stick it in the oven for half an hour.
+</p>
+<p>
+To serve, throw on the herbs, torn up, and squeeze on lemon juice. Remember that the lid is very very hot.
+</p>
+<p>
+Bill's original had no wine, only water. Some variations:
+</p>
+<p>
+</p><div class="ingredients"><h4>Ingredients  Variations</h4>
+<ul><li>Handful of olives</li>
+<li>Vegetables — I have no idea which ones but my sister says she puts veges in. I wouldn't.</li>
+</div><script src="https://utteranc.es/client.js"
+        repo="ptsefton/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></body>
+</html>
