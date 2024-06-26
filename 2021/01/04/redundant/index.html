@@ -5,7 +5,6 @@
 </title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -61,11 +60,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -79,6 +82,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -86,22 +110,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -110,7 +148,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -122,22 +159,21 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
-
-
-<div class="content">
-<h1> 
-Redundant.
+    <div class="content">
+        <h1> 
+        Redundant.
  
-</h1>
-<h2>2021-01-04 </h2>
+        </h1>
+        <h2>2021-01-04 </h2>
 
-<p>Thursday 10 December 2020 was my last day at <a href="https://uts.edu.au">UTS</a> as the eResearch Support Manager. The position was declared to be redundant under the &quot;Voluntary Separation Program&quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.</p>
+        <p>Thursday 10 December 2020 was my last day at <a href="https://uts.edu.au">UTS</a> as the eResearch Support Manager. The position was declared to be redundant under the &quot;Voluntary Separation Program&quot;. I guess the corporate maths works for UTS and it works for me. Thanks COVID-19.</p>
 <p>This is the third redundancy for me, and apart from fleeting feelings of uselessness, bitterness and mild despair being redundant, and of no use to anyone any more, has worked out fine for me in the past.</p>
 <p>I've enjoyed working at UTS for the past nearly six years - this year was challenging for a lot of people, but working from home suited me.</p>
 <p>My colleagues and I built a good strong eResearch team, developed an eResearch strategy, and worked towards it, reporting as we went (see last year's <a href="https://eresearch.uts.edu.au/eresearch/strategy-2019/">update on 2019</a>). The team provides &quot;full-stack&quot; support - from racking and stacking servers to policy and strategy development; from one-on-one help with coding problems to faculty research committee meetings about data management planning. Every one of the team works directly with our stakeholders from research students to Deputy Vice Chancellors. As I leave, UTS has a new joined-up Research Systems Strategic Plan to which we all contributed ready to go, and the team has clear strategies for Research Data Management and computing support.</p>
@@ -166,11 +202,11 @@ And here's the obligatory team snapshot at Cahill's lookout. Left to right - Fio
 </figcaption>
 </figure>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

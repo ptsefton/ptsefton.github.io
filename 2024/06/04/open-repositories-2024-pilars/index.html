@@ -5,7 +5,6 @@
 </title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -61,11 +60,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -79,6 +82,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -86,22 +110,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -110,7 +148,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -122,22 +159,21 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
-
-
-<div class="content">
-<h1> 
-A comprehensive, open and sustainable set of principles and tools for low (and high) resource Archival Repositories
+    <div class="content">
+        <h1> 
+        A comprehensive, open and sustainable set of principles and tools for low (and high) resource Archival Repositories
  
-</h1>
-<h2>2024-06-04 </h2>
+        </h1>
+        <h2>2024-06-04 </h2>
 
-<p>This post is <a href="https://www.ldaca.edu.au/news/posts/open-repositories-2024-pilars/">also available at the Language Data Commons of Australia site</a>.</p>
+        <p>This post is <a href="https://www.ldaca.edu.au/news/posts/open-repositories-2024-pilars/">also available at the Language Data Commons of Australia site</a>.</p>
 <p><a href="2024-OR-PILARS.pdf">PDF version</a></p>
 <section  typeof='http://purl.org/ontology/bibo/Slide' >
 <img src='Slide00.png' alt='A comprehensive, open and sustainable set of principles protocols and tools for low (and high) resource archival-repositories :: Peter Sefton, Robert McLellan, Michael Lynch**, Moises Sacal Bonequi*, Nick Thieberger*** ::  :: ' title='Slide: 0' />
@@ -337,11 +373,11 @@ Sefton, P., Sacal Bonequi, M., Sebastian, A., &amp; Raadgever, M. (2023, June 13
 <p>Thieberger, N. 2023. Doing it for Ourselves: The New Archive Built by and Responsive to the Researcher. Digital Humanities Quarterly (DHQ) Volume 17 Number 1. https://digitalhumanities.org/dhq/vol/17/1/000667/000667.html</p>
 <hr>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

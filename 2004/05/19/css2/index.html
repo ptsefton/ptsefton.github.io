@@ -4,7 +4,6 @@
     <title>ptsefton.com :: More on CSS vs tables</title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -60,11 +59,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -78,6 +81,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -85,22 +109,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,7 +147,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -121,21 +158,20 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
+    <div class="content">
+        <h1> 
+        More on CSS vs tables 
+        </h1>
+        <h2>2004-05-19 </h2>
 
-
-<div class="content">
-<h1> 
-More on CSS vs tables 
-</h1>
-<h2>2004-05-19 </h2>
-
-<p>In the last post on CSS I think I gave the impression that I was, for some reason waiting for Norman Walsh to talk more about CSS. What I meant was that there are a lot of pages on the web now saying things like &quot;Tables are bad&quot;, and advocating CSS layout - and I wanted to jump into a current discussion with my concerns. Next time I will try to say what I mean without coming across like some crazy stalker. This time I want to talk about XSLT as an alternative to CSS for layout.</p>
+        <p>In the last post on CSS I think I gave the impression that I was, for some reason waiting for Norman Walsh to talk more about CSS. What I meant was that there are a lot of pages on the web now saying things like &quot;Tables are bad&quot;, and advocating CSS layout - and I wanted to jump into a current discussion with my concerns. Next time I will try to say what I mean without coming across like some crazy stalker. This time I want to talk about XSLT as an alternative to CSS for layout.</p>
 <p>Norman has posted useful follow-up material. And he says:</p>
 <p>Frankly, the fact that the style is separated from the content seems perfectly reasonable to me.</p>
 <p>Me too, but in the business context in which I work, where we commission internal and external designers to do page layout, we have never had satisfactory results from the div + CSS approach. We always go back to tables because the designers can make them work, cheaply. Even if CSS did not have all the problems it has with inconsistent implementation, it would still probably require more work to lay things out because of the complexity of the CSS model, and the disconnection between the things you are laying out and the layout language.</p>
@@ -156,11 +192,11 @@ More on CSS vs tables
 </li>
 </ul>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

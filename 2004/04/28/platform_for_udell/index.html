@@ -4,7 +4,6 @@
     <title>ptsefton.com :: Jon Udell needs a place to put stuff</title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -60,11 +59,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -78,6 +81,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -85,22 +109,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,7 +147,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -121,21 +158,20 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
+    <div class="content">
+        <h1> 
+        Jon Udell needs a place to put stuff 
+        </h1>
+        <h2>2004-04-28 </h2>
 
-
-<div class="content">
-<h1> 
-Jon Udell needs a place to put stuff 
-</h1>
-<h2>2004-04-28 </h2>
-
-<p>Over the last year or so Jon Udell has published code fragments to do a number of useful search-related things. In May last year there was an email search system that grabbed stuff from Outlook and full-text indexed it with Lucene. This year there have been two generations (one, two) of an RSS feed storage system that normalises all feeds to into XHTML, then keeps them in Berkeley DB XML so you can query them using XPath.</p>
+        <p>Over the last year or so Jon Udell has published code fragments to do a number of useful search-related things. In May last year there was an email search system that grabbed stuff from Outlook and full-text indexed it with Lucene. This year there have been two generations (one, two) of an RSS feed storage system that normalises all feeds to into XHTML, then keeps them in Berkeley DB XML so you can query them using XPath.</p>
 <p>Now he's talking about a proxy on your computer to save all the web pages you look at, which would let you search them with XPath, (And &quot;Local proxies are geeky curiosities today, but someday we'll wonder how we lived without them.&quot;)</p>
 <p>Imagine if we could combine all of these bits of sample code into a single program, ready to act as the cache for your web proxy and provide an indexed view of your own stuff. Whether you are dealing with an RSS feed, an email, a web page you have visited, a word processing document that's in development, a playlist, or whatever, there is always a normalised XHTML rendition available, and you can do XPath and full text queries across all of it.</p>
 <p>More importantly though, your computer could use XPath to find relationships between things that didn't know about each other until they got to your computer.</p>
@@ -146,11 +182,11 @@ Jon Udell needs a place to put stuff
 <p>I call my version of this lightweight repository, which Jon Udell has been hinting at for ages, the 'Fragletorium' - which I assert is Latin for a place to keep your fraglets — I did study Latin for one term in 1977 at school. And my classmates used to assert that it would be of no use. How wrong they were.</p>
 <p>At this stage the Fragletorium is somewhat of an imaginary friend. Do you believe in it?</p>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

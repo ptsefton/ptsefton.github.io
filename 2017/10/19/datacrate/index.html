@@ -4,7 +4,6 @@
     <title>ptsefton.com :: DataCrate Formalising ways of packaging research data for re-use and dissemination</title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -60,11 +59,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -78,6 +81,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -85,22 +109,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,7 +147,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -121,21 +158,20 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
+    <div class="content">
+        <h1> 
+        DataCrate Formalising ways of packaging research data for re-use and dissemination 
+        </h1>
+        <h2>2017-10-19 </h2>
 
-
-<div class="content">
-<h1> 
-DataCrate Formalising ways of packaging research data for re-use and dissemination 
-</h1>
-<h2>2017-10-19 </h2>
-
-<p>[Update: 2017-10-20 Fixed a few typos and some formatting.]</p>
+        <p>[Update: 2017-10-20 Fixed a few typos and some formatting.]</p>
 <p>This is a presentation I gave at eResearch Australasia 2017-10-18 about the new <a href="https://github.com/UTS-eResearch/datacrate/blob/master/spec/0.1/data_crate_specification_v0.1.md">Draft (v0.1) Data Crate Specification</a> for data packaging I've just completed, with lots of help from others (credits at the end).</p>
 <h3>BACKGROUND</h3>
 <p>In 2013 Peter Sefton and Peter Bugeia presented at eResearch Australasia on a format for packaging research data(1), using standards based metadata, with one innovative feature – instead of including metadata in a machine readable format only, each data package came with an HTML file that contained both human and machine readable metadata, via RDFa, which allows semantic assertions to be embedded in a web page.</p>
@@ -697,11 +733,11 @@ Devine, Katrin Trewin, Ingrid Mason, Peter Bugeia</p>
 </details>
 </section>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

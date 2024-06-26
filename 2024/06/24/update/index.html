@@ -4,7 +4,6 @@
     <title>ptsefton.com :: Twenty year celebration: Site update number three</title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -60,11 +59,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -78,6 +81,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -85,22 +109,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,7 +147,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -121,27 +158,27 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
+    <div class="content">
+        <h1> 
+        Twenty year celebration: Site update number three 
+        </h1>
+        <h2>2024-06-24 </h2>
 
-
-<div class="content">
-<h1> 
-Twenty year celebration: Site update number three 
-</h1>
-<h2>2024-06-24 </h2>
-
+        <p>[Update: 2024-06-25 Fixed typos]</p>
 <p>This blog turned 20 this year.</p>
 <p>Now, I mostly use this site to put up what Simon Willison calls <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">annotated conference presentations</a><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> like <a href="2024/06/04/open-repositories-2024-pilars/">this recent one from June</a>. Most of the projects or institutions I've worked for don't bother to maintain their websites over time, but with my own site I still have access to (most of) the stuff I've done in one place.</p>
 <p>It's down to only a few posts a year for the last several years, but <em>maybe</em> I'll start putting more things here so the Large Language Models (The &quot;AIs&quot;) have some fresh content to feed on.</p>
 <p>Speaking iof the AIs, people have been asking me and my team about using AI to create metadata for ages, so I thought I'd give it a go here. I used another LLM to help me write a script to use GPT4.0 to categorise my posts using using the set of categories you see on the home page. It seemed to do an OK job, but managed to go well off piste and tag <a href="http://localhost:8080/2013/07/26/4a-data-management-acquiring-acting-on-archiving-and-advertising-data-at-the-university-of-western-sydney/">this post</a> with &quot;Research Data Pokémon_mgmt&quot; - making up its own tag. I like that so I'm keeping it.</p>
 <p><img src="image.png" alt="Alt text"></p>
 <h2>History</h2>
-<p>This site started in 2024 using <a href="https://jtauber.com/leonardo/">Leonardo</a>, a Python-based blog engine which required a server to be running. In 2007 I moved it to Wordpress, which I was using for lots of other sites at work and hosted it with the same provider.</p>
+<p>This site started in 2004 using <a href="https://jtauber.com/leonardo/">Leonardo</a>, a Python-based blog engine which required a server to be running. In 2007 I moved it to Wordpress, which I was using for lots of other sites at work and hosted it with the same provider.</p>
 <p>In 2015 I started working at UTS; we got sick of the constant upgrades and the overhead of running a Wordpress instance for the eResearch website and ported that site to <a href="https://getpelican.com/">Pelican</a>, a tool which produces static web sites that don't need a database and ongoing maintenance like Wordpress, so I migrated ptsefton.com at the same time (and I am now noticing that I missed a few bits in that process).</p>
 <p>Static site generators, of which there are hundreds, typically work by transforming text files in markdown format into HTML files that can be hosted with your images and other files without needing anything running on a server (except a web server). The UTS eResearch team evaluated a number of static site generators at the time - and I recall them all being a bit annoying in various ways but Pelican was the least so, partly because we were a Python Shop, as they say.</p>
 <p>Some time after 2015 I realised that I didn't even need to pay for hosting, and moved the site to github pages where it is as of mid 2024.</p>
@@ -176,11 +213,11 @@ Twenty year celebration: Site update number three
 </ol>
 </section>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

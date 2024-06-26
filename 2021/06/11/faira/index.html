@@ -4,7 +4,6 @@
     <title>ptsefton.com :: FIIR Data Management; Findable Inaccessible Interoperable and Reusable?</title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -60,11 +59,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -78,6 +81,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -85,22 +109,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,7 +147,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -121,21 +158,20 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
+    <div class="content">
+        <h1> 
+        FIIR Data Management; Findable Inaccessible Interoperable and Reusable? 
+        </h1>
+        <h2>2021-06-11 </h2>
 
-
-<div class="content">
-<h1> 
-FIIR Data Management; Findable Inaccessible Interoperable and Reusable? 
-</h1>
-<h2>2021-06-11 </h2>
-
-<p>This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.</p>
+        <p>This is a work in progress post I'm  looking for feedback on the substance - there's a comment box below, email me, or see me on twitter: @ptsefton.</p>
 <p>[Update 2021-06-16: had some comments from Michael D'Silva at AARNet - have added a couple of things below.]</p>
 <p>I am posting this now because I have joined a pair of related projects as a senior technical advisor and an we will have to look at access-authorization to data on both - licenses will vary from open, to click-through agreements, to complex cultural restrictions such as <a href="https://publish.illinois.edu/commonsknowledge/2017/09/07/an-introduction-to-traditional-knowledge-labels-and-licenses/#:~:text=Traditional%20knowledge%2C%20or%20TK%2C%20labels,data%20management%20and%20presentation%20strategies.">TK Licenses</a>;</p>
 <ol>
@@ -202,11 +238,11 @@ FIIR Data Management; Findable Inaccessible Interoperable and Reusable?
 <p>Here's a sketch of some infrastructure. Essentially this is what happened inside Alveo - the question is can it be distributed so repositories can be de-coupled from authorization services?</p>
 <p><img src="./plantuml_ARCH.png" alt="@startuml ARCHtitle: A sketch of a group-licence management architectureskinparam defaultFontSize 18cloud &quot;Authorization services&quot; as as {rectangle &quot;AAF&quot; {}rectangle &quot;Microsoft&quot; {}rectangle &quot;Google&quot; {}rectangle &quot;FB&quot; {}}rectangle &quot;Group Service&quot; as gs {  rectangle &quot;Group Management&quot; as gm {database &quot;Group Lists&quot; as gl {}}rectangle &quot;License Creator&quot; as lc {database &quot;Group Access Licenses&quot; as gal {}}rectangle &quot;Licence Checker&quot; as lk {}}database Repository as rep {}actor useruser -up-&gt; rep : (1) Can I have dataset 4958309583?rep -up-&gt; lk  : (2) Authenticate user https://orcid.org/xyzand see if they have group licencelk ---up---&gt; AAF :  (3) Authenticate userAAF ---&gt;  lk: (4) OKlk -&gt; lc : (5) Does user https://orcid.org/xyz have groupd licence FDE45466-liclc -&gt; gl : (6) Is user in group FDE45466-?gl --&gt; lc : (7) Yesgal -&gt; lk : (8) Yeslk -&gt; rep : (9) OK to serverep -&gt; user : (10) Here's your dataset@enduml"></p>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>

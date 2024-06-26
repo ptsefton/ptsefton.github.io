@@ -5,7 +5,6 @@
 </title>
 <style>
 .header {
-    
   background-color: #ff00ff;
   border-color: #b72bc0;
   color: #ffff00;
@@ -61,11 +60,15 @@ a {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 section img {
     width: 100%
 }
+
 td, th {
     padding-top: 20px;
     padding-right: 20px;
@@ -79,6 +82,27 @@ td, th {
     }
 
 
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 @media  screen and (min-width:  900px) {
     .content, .header {
@@ -86,22 +110,36 @@ td, th {
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
     
 }
 
 @media  screen and (min-width: 1200px) {
     .content, .header {
-        width: 40%;
+        width: 55%;
         padding-left: 20%;
         padding-right: 30%;
     }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
     
 }
 
 
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
 </style>
-
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -110,7 +148,6 @@ td, th {
 
   ga('create', 'UA-898010-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -122,43 +159,38 @@ td, th {
 
   gtag('config', 'G-6JNHBJL67Q');
 </script>
+
 <body>
-<div class="header">
-<h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
 
 
-</div>
-
-
-<div class="content">
-<h1> 
-A CARE and FAIR-ready distributed access control system for human-created data using the Australian Access Federation and beyond
+    <div class="content">
+        <h1> 
+        A CARE and FAIR-ready distributed access control system for human-created data using the Australian Access Federation and beyond
  
-</h1>
-<h2>2022-11-20 </h2>
+        </h1>
+        <h2>2022-11-20 </h2>
 
-<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+        <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 <p><a href="fair-care-eresearch-2022.pdf">Download as PDF</a></p>
-<p><img src="Slide00.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide00.png' title='Slide: 0' />
 <p>This is write-up of a talk given at eResearch Australasia 2022, delivered by Peter Sefton, with some additional detail.</p>
 <p>By: Peter Sefton, Jenny Fewster, Moises Sacal Bonequi, Cale Johnstone, Catherine Travis, River Tae Smith, Patrick Carnuccio</p>
 <p>Edited by: Simon Musgrave</p>
 </section>
-<p><img src="Slide01.png" alt="alt text" title="Project Team(alphabetical order) Michael D’Silva  Marco Fahmi Leah Gustafson  Michael Haugh Cale Johnstone  Kathrin Kaiser  Sara King  Marco La Rosa  Mel Mistica  Simon Musgrave  Joel Nothman  Moises Sacal  Martin Schweinberger  PT Sefton   With thanks for their contribution: Partner Institutions:"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide01.png' alt='Project Team(alphabetical order) Michael D’Silva  Marco Fahmi Leah Gustafson  Michael Haugh Cale Johnstone  Kathrin Kaiser  Sara King  Marco La Rosa  Mel Mistica  Simon Musgrave  Joel Nothman  Moises Sacal  Martin Schweinberger  PT Sefton   With thanks for their contribution: Partner Institutions: ' title='Slide: 1' />
 <p>The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are building towards a scalable and flexible language data and analytics commons. These projects will be part of the Humanities and Social Sciences Research Data Commons (HASS RDC).</p>
 <p>The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.</p>
 <p>The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artefacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations. These projects are led by Professor Michael Haugh of the School of Languages and Culture at the University of Queensland with several partner institutions.</p>
 </section>
-<p><img src="Slide02.png" alt="alt text" title="The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS)."></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide02.png' alt='The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS). ' title='Slide: 2' />
 <p>This work is supported by the Australian Research Data Commons.</p>
 </section>
-<p><img src="Slide03.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide03.png' alt='  ' title='Slide: 3' />
 <p>Last year at eResearch Australasia, the Language Data Commons of Australia (LDaCA) team presented a design for a distributed access control system which could look after the A-is-for-accessible in FAIR data; in this presentation we describe and demonstrate a pilot system based on that design, showing how data licenses that allow access by identified groups of people to language data collections can be used with an AAF pilot system (CILogon) to give the right people access to data resources.</p>
@@ -167,7 +199,6 @@ A CARE and FAIR-ready distributed access control system for human-created data u
 We will discuss how the <a href="https://www.gida-global.org/care">CARE</a> and <a href="https://www.nature.com/articles/sdata201618">FAIR</a> principles underpin this work, and compare this work to other projects such as <a href="https://ardc.edu.au/project/cadre/">CADRE</a>, which promise to deliver more complex solutions in the future. Initial work is with collections curated in a research context but we will also address community access to these resources.</p>
 <p>The idea is to separate safe storage of data from its delivery. Each item in a repository is stored with licensing information in natural language (English at the moment, but could be other languages) and the repository defers access decisions to an Authorization system, where data custodians can design whatever process they like for granting license access. This can range from simple click-through licenses where anyone can agree to license terms, to detailed multi-step workflows where applicants are vetted based on whatever criteria the rights holder wishes; qualifications, membership of a cultural group, have they paid a subscription fee, etc</p>
 </section>
-<p><img src="Slide04.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide04.png' alt='  ' title='Slide: 4' />
 <p>Regarding rights, our project is informed by the <a href="https://www.gida-global.org/care">CARE</a> principles for Indigenous data which also describe the level of respect which should be given to any data collected from individuals or communities.</p>
@@ -175,12 +206,10 @@ We will discuss how the <a href="https://www.gida-global.org/care">CARE</a> and 
 <p>The current movement toward open data and open science does not fully engage with Indigenous Peoples rights and interests. Existing principles within the open data movement (e.g. FAIR: findable, accessible, interoperable, reusable) primarily focus on characteristics of data that will facilitate increased data sharing among entities while ignoring power differentials and historical contexts. The emphasis on greater data sharing alone creates a tension for Indigenous Peoples who are also asserting greater control over the application and use of Indigenous data and Indigenous Knowledge for collective benefit</p>
 </blockquote>
 </section>
-<p><img src="Slide05.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide05.png' alt='  ' title='Slide: 5' />
 <p>We are designing the system so that it can work with diverse ways of expressing access rights, for example we are considering how the approach described here could be extended based on the likes of the <a href="https://localcontexts.org/labels/traditional-knowledge-labels/">Tribal Knowledge labels</a>, incorporating them into the data licensing framework we discuss below.</p>
 </section>
-<p><img src="Slide06.png" alt="alt text" title="Case Study - Sydney Speaks"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide06.png' alt='Case Study - Sydney Speaks  ' title='Slide: 6' />
 <p>In this talk we look at a case-study with the <a href="https://slll.cass.anu.edu.au/sydney-speaks">Sydney Speaks project</a> via LDaCA steering committee member Professor <a href="https://orcid.org/0000-0002-1410-3268">Catherine Travis</a>.</p>
@@ -199,13 +228,11 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 <p>The collection contains recordings of people speaking, both contemporary and historic.</p>
 <p>Because this involved human participants there are restrictions on the distribution of data - a situation we see with lots of studies involving people in a huge range of disciplines.</p>
 </section>
-<p><img src="Slide07.png" alt="alt text" title="Sydney Speaks Licenses"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide07.png' alt='Sydney Speaks Licenses ' title='Slide: 7' />
 <p>There are four tiers of data access we need to enforce and observe for this data based on the participant agreements and ethics arrangements under which the data were collected.</p>
 <p>Concerns about rights and interests are important for any data involving people - and a large amount the data both indigenous and non-indigenous we are using will require access control that ensures that data is shared with the right users under the right conditions.</p>
 </section>
-<p><img src="Slide08.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide08.png' alt='' title='Slide: 8' />
 <p>(Image generated by DALLE - prompt: A NSW Driver license for a wolfhound pup named Floki)</p>
@@ -215,7 +242,6 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 <p>That said, metadata <em>about</em> a license can be used to automate decision making - if it is labelled as being an open license, then a repository can serve data and include that data, if it is labeled as “closed” or more aptly, “authorization-required” then repository software can perform an authorization step, which we cover in detail later.</p>
 <p>In the world of research data generated by or about human participants, licenses can’t always allow unauthenticated access and data redistribution, and they may permit distribution only to certain people, or classes or person. Some data, for example (particularly that which has not been or cannot be de-identified) can only be made available to the original research team.</p>
 </section>
-<p><img src="Slide09.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide09.png' alt='  ' title='Slide: 9' />
 <p>(Dall-e prompt : A sad dog sitting on an iceberg, XKCD)</p>
@@ -227,21 +253,18 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 <p>Or a member of an ARC (Australian Research Council) research project,</p>
 <p>The <a href="https://ardc.edu.au/project/cadre/">CADRE</a> project is working on systems that will eventually support all these things, but they are not available as services yet, and their initial focus is on government data, so we have to work out ways for our data custodians to make decisions on who is considered an “other researcher” in the absence of attribute-based authentication.</p>
 </section>
-<p><img src="Slide10.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide10.png' alt='' title='Slide: 10' />
 <p>The access control system we have been prototyping is based on licenses.</p>
 <p>For any data object, which could be an entire collection, or one set of recordings of a speaker in a speech study, or a set of hand written linguistic field notes from the 1950s, or a novel etc we store a license with it. This means that future archivists / librarians and researchers can work out how to manage the data if the systems we build today for automated access are no longer operational and we give the license an ID which is a URL we can use to identify it uniquely.</p>
 <p>This diagram shows how a license is explicitly linked to the data using a metadata description standard known as “Research Object Crate” <a href="http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019/index.html">RO-Crate</a> . Each object in the repository is a crate, with a metadata file that describes the object and (optionally) its component files, including the data license.</p>
 </section>
-<p><img src="Slide11.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide11.png' alt='' title='Slide: 11' />
 <p>(This diagram has been updated from the one presented at eResearch to show two portals instead of one)</p>
 <p>Every item in a repository has a license, which may be an open one like CC Share Alike or a custom license derived from the ethics and participants agreements for a study in the context of local laws and institutional policy.</p>
 <p>Using this license, distributed access portals in our architecture can check against an authorization system for each request for data. The portals may both host data with the same licensing but do not need to maintain access control lists.</p>
 </section>
-<p><img src="Slide12.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide12.png' alt='' title='Slide: 12' />
 <p>(Images: Various baskets of puppies by DALL-E)</p>
@@ -257,7 +280,6 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 </li>
 </ul>
 </section>
-<p><img src="Slide13.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide13.png' alt='' title='Slide: 13' />
 <p>The first prototype, which we presented at eResearch Australasia last year was a proof-of-concept Github based system. This demonstrated that authorization can be delegated from a repository to an external service. For each of the Sydney Speaks licenses there was a Github group (organization). The repository, when requested to serve data would get the user to login using the Github Authentication services, then check if the user was in the correct license group.</p>
@@ -272,7 +294,6 @@ Source: <a href="http://www.dynamicsoflanguage.edu.au/sydney-speaks/">http://www
 </ul>
 <p>So, we talked to the our colleagues at the Australian Access Federation (AAF), about a supported, research-sector-wide service.</p>
 </section>
-<p><img src="Slide14.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide14.png' alt='' title='Slide: 14' />
 <p>The AAF, as it happened were already working with other research groups on a service called <a href="https://www.cilogon.org/">CILogon</a> (hosted in the USA initially, but soon to be hosted in Australia), like Github, this service has groups (which was our way of associating users with licenses in the absence of a specific license-granting service), but also allows users to log in with a variety of Authentication providers, including research institutions, via the Australian Access Federation as well as social logins such as Google and Microsoft (and our old friend Github).</p>
@@ -299,7 +320,6 @@ JupyterHub
 LDaCA Dashboard</p>
 <p>REMS (Resource Entitlement Management System) is a tool to help researchers browse resources such as datasets relevant to their research and to manage the application process for access to the resources.</p>
 </section>
-<p><img src="Slide15.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide15.png' alt='REMS ' title='Slide: 15' />
 <p>Recently (after the abstract for this presentation was submitted) the AAF team made us aware of the Resource Entitlement Management System, <a href="https://github.com/CSCfi/rems">REMS</a>, which is an open source application out of Finland. This software is the missing link for LDaCA in that it allows a data custodian to grant licenses to users. And it works with CILogon as an Authentication layer so we can let users log in using a variety of services.</p>
@@ -307,7 +327,6 @@ LDaCA Dashboard</p>
 <p>It also has features for revoking permissions, and has a full API so admin tasks can be automated (for us that’s in the future).</p>
 <p>Once a user has been granted a license in a pre-authorization process then a repository can authorize access to a resource by checking with REMS to see if a given user is pre-authorized. That is, has been granted a license. Note that users do not have to find REMS on their own - they will be directed to it from data and computing services when they need to apply for pre-authorization.</p>
 </section>
-<p><img src="Slide16.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide16.png' alt='  ' title='Slide: 16' />
 <p>This interaction diagram shows the flow involved in a user applying for a data license via REMS.</p>
@@ -325,17 +344,14 @@ LDaCA Dashboard</p>
 </ul>
 <p>The next slide shows the interactions involved in accessing data once a user has been granted the license license.</p>
 </section>
-<p><img src="Slide17.png" alt="alt text"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide17.png' alt='  ' title='Slide: 17' />
 <p>This diagram shows the “access-control dance” for a user who has been granted a license in REMS obtaining access to a dataset at a data portal which gives access to data in a repository or archive.</p>
 </section>
-<p><img src="Slide18.png" alt="alt text" title="Demo"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide18.png' alt='Demo ' title='Slide: 18' />
 <p>In this video we demonstrate how to use REMS and how does a user request access to an LDaCA resource.</p>
 </section>
-<p><img src="Slide19.png" alt="alt text" title="FAQ"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide19.png' alt='FAQ  ' title='Slide: 19' />
 <p>(This section was added after the conference, to try to summarize the discussion and clarify requirements by starting an FAQ on this approach)</p>
@@ -392,12 +408,10 @@ LDaCA Dashboard</p>
 </section>
 <p>The final three slides have been contributed by co-author Patrick.</p>
 <p>These slides briefly outline the AAF process for the next phase that will provide the foundations for the development of the service and the creation of those policies to support the community and the service.</p>
-<p><img src="Slide20.png" alt="alt text" title="Next Steps in the AAF Engagement ….. Revisit and consolidate the project’s vision through interviews and engagement with stakeholders,  collaborators and  community participants This next phase will provide the foundations for the development of policies to support the community. These will assist in creating a trusted community for access to sensitive data that supports the good practice and protocols. These activities are outlined in the following slides …"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide20.png' alt='Next Steps in the AAF Engagement ….. Revisit and consolidate the project’s vision through interviews and engagement with stakeholders,  collaborators and  community participants This next phase will provide the foundations for the development of policies to support the community. These will assist in creating a trusted community for access to sensitive data that supports the good practice and protocols. These activities are outlined in the following slides … ' title='Slide: 20' />
 <p>This process will support the project to deliver a viable service that meets researchers’ needs and is trusted by the community and the participants to safely distribute data to authorised persons.</p>
 </section>
-<p><img src="Slide21.png" alt="alt text" title="The AAF's business analyst conducts interviews with stakeholders and community members to discover and formalise the community's processes and requirements"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide21.png' alt='The AAF&#x27;s business analyst conducts interviews with stakeholders and community members to discover and formalise the community&#x27;s processes and requirements ' title='Slide: 21' />
 <p>The AAF’s business analyst is conducting interviews with the key stakeholders.
@@ -405,7 +419,6 @@ This discovery process will collect information on the current and the “to-be�
 <p>Together these will establish goals and expectations and provide the basis for further prototyping a service that meets stakeholder needs.</p>
 <p>The process will facilitate the building of a service that empowers the data custodians, the communities and participants to manage access.</p>
 </section>
-<p><img src="Slide22.png" alt="alt text" title="These feeds into the prototyping &amp; implementing phase"></p>
 <section typeof='http://purl.org/ontology/bibo/Slide'>
 <img src='Slide22.png' alt='These feeds into the prototyping &amp; implementing phase   ' title='Slide: 22' />
 <p>The basis for prototyping is iterative:
@@ -417,11 +430,11 @@ Update requirements</p>
 <p>This leads to a production service that meets participant, community and researcher requirements and unifies the services, policies and trust framework for the community.</p>
 </section>
 
-</div><script src="https://utteranc.es/client.js"
-        repo="ptsefton/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></body>
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
 </html>
