@@ -4,12 +4,134 @@
   <subtitle>Peter (PT) Sefton&#39;s blog -- mostly about research data and archival repositories these days</subtitle>
   <link href="https://ptsefton.com/feed/atom" rel="self" />
   <link href="https://ptsefton.com/" />
-  <updated>2024-06-26T00:00:00Z</updated>
+  <updated>2025-09-24T00:00:00Z</updated>
   <id>https://ptsefton.com/</id>
   <author>
     <name>Peter Sefton</name>
     <email>pt@ptsefton.com</email>
   </author>
+  <entry>
+    <title>LDaCA Technical Architecture Update
+</title>
+    <link href="https://ptsefton.com/2025/09/24/ldaca-architecture-update/" />
+    <updated>2025-09-24T00:00:00Z</updated>
+    <id>https://ptsefton.com/2025/09/24/ldaca-architecture-update/</id>
+    <content type="html">&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide00.png&quot; alt=&quot;LDaCA Technical Architecture update 2025 :: PT Sefton, Moises Sacal Bonequi, Ben Foley :: &quot; title=&quot;Slide: 0&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;This presentation is an update on the Language Data Commons of Australia (LDaCA) technical architecture for the LDaCA Steering Committee meeting 22 August 2025, written by members of the LDaCA team; me, Moises Sacal, and Ben Foley edited by Bridey Lea. This version has the slides we presented and our notes, edited for clarity. There&#39;s a more compact version of this up over on the  &lt;a href=&quot;https://www.ldaca.edu.au/news/posts/2025-ldaca_technical_architecture_update/&quot;&gt;LDaCA site&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The architecture for LDaCA has not changed significantly for the last couple of years. We are still basing our design on the &lt;a href=&quot;http://w3id.org/ldac/pilars&quot;&gt;PILARS&lt;/a&gt; protocols.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide01.png&quot; alt=&quot;What’s in this presentation? :: News :: Refresh memories of the distinction between Workspaces vs Archival Repositories :: Explore the architecture of our work on Archival Repositories :: Decentralised approach: multiple Data Stores under appropriate governance :: Standards and specifications: :: RO-Crate for describing data objects :: RO-Crate Metadata Profiles for data interchange within a discipline or domain (like language data) :: Open source tools :: &quot; title=&quot;Slide: 1&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;This presentation will report on some recent developments, mostly in behind-the-scenes improvements to our software stack. It will give a brief refresh of the principles behind the LDaCA approach, and talk about our decentralised approach to data management and how it fits with the metadata standards we have been developing for the last few years. We will also show how the open source tools used across LDaCA’s network of collaborators are starting to be harmonised and shared between services, reducing development and maintenance costs and improving sustainability.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide02.png&quot; alt=&quot;News! :: John Ferlito (PARADISEC) has created a new version of the LDaCA portal using a simpler API that can be used for PARADISEC and LDaCA (and potentially Nyingarn and many other repositories) :: New API is “An RO-Crate API” - AROCAPI :: Generic API for collections of Objects/Items :: Objects are described using RO-Crates :: Working together on a new Oni-stack using the new API  :: New stack can be used for RAPID and other data portals :: &quot; title=&quot;Slide: 2&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;The big news is a new API a new RO-Crate API (“An RO-Crate API” - &lt;a href=&quot;https://github.com/Language-Research-Technology/arocapi&quot;&gt;AROCAPI&lt;/a&gt; ) which offers a standardised interface to PILARS-style storage where data is stored as RO-Crates, organized into &amp;quot;Collections&amp;quot; of &amp;quot;Objects&amp;quot; according to the Portland Common Data Model (&lt;a href=&quot;https://pcdm.org/&quot;&gt;PCDM&lt;/a&gt;) specification, which is built-in to RO-Crate.&lt;/p&gt;
+&lt;p&gt;A concrete example is that PARADISEC will implement different authentication routes (using the existing “Nabu” catalog) than the LDaCA data portal which uses &lt;a href=&quot;https://cadre.ada.edu.au/login&quot;&gt;CADRE&lt;/a&gt; ([REMS])(https://www.elixir-finland.org/en/aai-rems-2/).&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide03.png&quot; alt=&quot;More news :: 🤞💾 :: &quot; title=&quot;Slide: 3&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;Promising discussions are taking place with one of our partners about taking on LDaCA data long-term (instead of having to distribute the collections across partner institutions). This would give a consolidated basis for a Language Data repository and a broader Humanities data service.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide04.png&quot; alt=&quot;collect &amp;amp; :: organise :: Language data is rarely organised or described in reusable ways, if it&amp;#x27;s described at all :: conserve :: A lot of language data is at risk of being lost forever  :: find :: It’s difficult to know what language data exists and where to find it :: Ad hoc tools, analysis and annotation methods are used, lacking reproducibility :: Shared tools can process, analyse, reuse, repurpose, annotate, visualise and enhance data at scale :: access :: Processes for granting permissions and getting access to data are either absent or aren’t easy to understand or apply :: analyse  :: Standards and tools are available and being applied by data stewards :: Good governance and standardised, distributed storage of data helps  :: preserve and return data :: Discovering and locating language data is easy via linked portals :: Access controls are in place and easy to use, so that data access can be given to the right people  :: LDaCA Execution Strategy Overview :: Strengthen the data management skills of language worker communities  :: Develop shared tools, standards and technical infrastructure to help data stewards care for  data for the long term :: Build data portals with useful search functions and lightweight technical structures :: Create guidance for data stewards to document and grant access and reuse rights :: Support language communities to gain greater control over their language data :: Develop tools for data and metadata conversion, processing, analysis, annotation, visualisation, and enrichment :: Develop and guide the implementationof local and national policy and governance toolkits :: Provide examples and training for research at scale :: guide :: Best practice advice and training for working with language data is available from a single source which is easy to find :: Guidance and training for collecting, handling, using and analysing data are scattered and hard to find :: Version: 2025-07-31 :: &amp;gt; analysis overview :: Starting state (2021) :: Desired state (2028) :: Activities :: &quot; title=&quot;Slide: 4&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;This slide shows the LDaCA execution strategy. All of the strands (Collect &amp;amp; organise, Conserve, Find, Access, Analyse, Guide) are relevant to the technical architecture.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide05.png&quot; alt=&quot; ::  :: Repositories: institutional, domain or both ::  ::  ::  ::  ::  ::  :: Find / Access services :: Research Data Management Plan :: Workspaces: ::  :: working storage :: domain specific tools :: domain specific services :: collect :: describe :: analyse :: Reusable, Interoperable  :: data objects :: deposit early :: deposit often :: Findable, Accessible, Reusable data objects :: reuse data objects :: V1.0 © Marco La Rosa, Peter Sefton 2021 https://creativecommons.org/licenses/by-sa/4.0/  ::  :: &quot; title=&quot;Slide: 5&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;From the very beginning of the project, the LDaCA architecture has been designed around the principle that to build a “Research Data Commons” we need to look after data above all else. We took an approach that considered long-term data management separately from current uses of the data.&lt;/p&gt;
+&lt;p&gt;This resulted in some design choices which are markedly different from those commonly seen in software development for research.&lt;/p&gt;
+&lt;p&gt;Effort was put into:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organising and describing data using open specifications BEFORE building features into applications;&lt;/li&gt;
+&lt;li&gt;Designing an access-control system with long-term adaptability in mind (read &lt;a href=&quot;https://www.ldaca.edu.au/news/posts/fair-care-eresearch-2022/&quot;&gt;the story about that&lt;/a&gt; as presented at eResearch Australasia 2022);&lt;/li&gt;
+&lt;li&gt;Batch-conversion of existing data to the new approach; and&lt;/li&gt;
+&lt;li&gt;Developing a metadata framework and tools to implement it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this foundation, and the new interoperability we gain from our collaboration on the AROCAPI API, we are well placed to move into a phase of rapid expansion of the data assets building workspace services. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The new LDaCA analytics forum will drive analytical workspaces&lt;/li&gt;
+&lt;li&gt;Work by the LDaCA technical team will continue to improve data preparation workspaces, possibly by collaborating to adapt the Nyingarn Workspace for general purpose use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide06.png&quot; alt=&quot;&quot; title=&quot;Slide: 6&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;In 2024, we released the Protocols for Implementing Long Term Archival Repositories (PILARS), described in this &lt;a href=&quot;https://www.ldaca.edu.au/news/posts/open-repositories-2024-pilars/&quot;&gt;2024 presentation at Open Repositories&lt;/a&gt;. The first principle of PILARS is that data should be portable, not locked in to a particular interface, service or mode of storage. Following the lead of PARADISEC two decades ago, the protocols call for storing data in commodity storage services such as file systems or (cloud) object storage services. This means that data is available independently of any specific software.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide07.png&quot; alt=&quot; ::  :: collect &amp;amp; :: organise :: Language data is rarely organised or described in reusable ways, if it&amp;#x27;s described at all :: conserve :: A lot of language data is at risk of being lost forever  :: find :: It’s difficult to know what language data exists and where to find it :: Ad hoc tools, analysis and annotation methods are used, lacking reproducibility :: Shared tools can process, analyse, reuse, repurpose, annotate, visualise and enhance data at scale :: access :: Processes for granting permissions and getting access to data are either absent or aren’t easy to understand or apply :: analyse  :: Standards and tools are available and being applied by data stewards :: Good governance and standardised, distributed storage of data helps  :: preserve and return data :: Discovering and locating language data is easy via linked portals :: Access controls are in place and easy to use, so that data access can be given to the right people  :: LDaCA Execution Strategy Overview :: Strengthen the data management skills of language worker communities  :: Develop shared tools, standards and technical infrastructure to help data stewards care for  data for the long term :: Build data portals with useful search functions and lightweight technical structures :: Create guidance for data stewards to document and grant access and reuse rights :: Support language communities to gain greater control over their language data :: Develop tools for data and metadata conversion, processing, analysis, annotation, visualisation, and enrichment :: Develop and guide the implementationof local and national policy and governance toolkits :: Provide examples and training for research at scale :: guide :: Best practice advice and training for working with language data is available from a single source which is easy to find :: Guidance and training for collecting, handling, using and analysing data are scattered and hard to find :: Version: 2025-07-31 :: Starting state (2021) :: Desired state (2028) :: Activities :: &quot; title=&quot;Slide: 7&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;For the rest of this presentation, we will focus on recent developments in the “Green zone” – the Archival Repository functions of the LDaCA architecture. We will not be talking about the analysis stream as that will be discussed in detail in the newly established Analytics Forum.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide08.png&quot; alt=&quot;&quot; title=&quot;Slide: 8&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;I (PT) wanted to throw in a personal story here. This is an unstaged picture of my (PT Sefton’s) garage this morning. The box of hard drives contains some old backups of mine just in case, and also my late father Ian Sefton’s physics education research data, stuff like student feedback from lab programs in the 80s trialling different approaches to teaching core physics concepts and extensive literature reviews. These HAVE been handed on to his younger colleagues but could easily have ended up only available here in this garage. I wanted to remind us all that this project is a once in a career opportunity to develop processes for organising data and putting it somewhere alongside other data in a Data Commons where (a) your descendants are not made responsible for it and put it in a box in the shed or chuck it in a skip; and (b) others can find it, use it (subject to the clear “data will” license permissions you left with the data to describe who should be allowed to do what with it), and build on your legacy.&lt;/p&gt;
+&lt;p&gt;Remember:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Storage is not data management (particularly if the storage is a shopping bag full of mistreated hard drives)&lt;/li&gt;
+&lt;li&gt;Passing boxes of storage devices hand to hand is NOT a good strategy to conserve data&lt;/li&gt;
+&lt;li&gt;Hard drives are not archives&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide09.png&quot; alt=&quot;PILARS 1: Data is Portable: assets are not locked-in to a particular mode of storage, interface or service  :: &quot; title=&quot;Slide: 9&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;The first principle of PILARS is that data should be portable, not locked-in to a particular mode of storage, interface or service. Following the lead of PARADISEC two decades ago, the protocols call for storing data in commodity storage services such as file systems or (cloud) object storage services. This means that data is available independently of any specific software. This diagram is a sketch of how this approach allows for a wide range of architectures – data stored according to the protocols can be indexed and served over an API (with appropriate access controls). Over the next few slides, we will show some of the architectures that have emerged over the last couple of years at LDaCA.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide10.png&quot; alt=&quot;One storage service ↔ One API ↔ One Portal ::  :: This pattern will be used for LDaCA, the Batchelor CALL Collection, RAPID (Hansard) the UTS Research Data  Repository and other major collections :: &quot; title=&quot;Slide: 10&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;The first example is the LDaCA data portal, which is a central access-controlled gateway to the data that we have been collecting.&lt;/p&gt;
+&lt;p&gt;NOTE: during the project it has been unclear how we would look after data at the conclusion of the project. No single organisation had put up its hand up to host data for the medium to long term, but as noted in the News section we have had some positive talks with one of our partner institutions indicating that they may have an appetite for hosting data that otherwise does not have a home, and/or providing some redundancy for at-risk collections where data custodians are comfortable with a copy residing at the university (we won’t say which one until negotiations are more advanced).&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide11.png&quot; alt=&quot;One data store ↔ One API ↔ 2 portals (demo) ::  :: DEMO ONLY ::  ::  :: &quot; title=&quot;Slide: 11&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;This slide shows a demo of two different portal designs accessing the same PARADISEC data, which has been accomplished using the new AROCAPI API. The API will speed development of new PILARS-compliant Research Data Commons deployments, using a variety of storage services and portals that can be adapted and &amp;quot;mixed and matched&amp;quot; via a common API.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide12.png&quot; alt=&quot;Other deployment options :: Set up a stand-alone service for a specific archive (Batchelor CALL Collection work in progress) :: Automation of deployment of portals on demand for testing or show and tell :: Distributed regional archival repositories,local orgs share infrastructure, avoiding cloud services :: Put part (or all) of a collection on a tiny computer (Raspberry Pi) for distribution :: ↑Raspberry Pi containing a collection :: ←Access on mobile via wifi :: &quot; title=&quot;Slide: 12&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;Alongside the data portal, we have explored other ways of sharing data assets, including local distribution via portable computers such as Raspberry Pi with a local wireless network. We have also discussed establishing regional cooperative networks where communities reduce risk by holding data for each other.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide13.png&quot; alt=&quot;Services, software, standards and guides :: &quot; title=&quot;Slide: 13&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;With our partners, we have developed and adapted a suite of other technical resources, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Oni portal software for mid-to-large deployments. Version 1 is live and Version 2 is currently under development with PARADISEC, involving a new shared API and code base that can be used across LDaCA and beyond.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/CSCfi/rems&quot;&gt;REMS&lt;/a&gt; overlaid with &lt;a href=&quot;https://cadre.ada.edu.au/login&quot;&gt;CADRE&lt;/a&gt; to manage access control for identified users. A service agreement between LDaCA and CADRE has been signed, to manage access control. REMS is still the backend of this tool, but CADRE’s wrapper makes it more user-friendly. CADRE version 2 will replace the admin component of REMS and is in the testing phase now.&lt;/li&gt;
+&lt;li&gt;‘Corpus tools’ for migrating data from existing formats to LDaCA-ready RO-Crates are &lt;a href=&quot;https://github.com/Language-Research-Technology?q=corpus-tool&quot;&gt;available on github&lt;/a&gt;. These reduce the cost of developing new migration tools by adapting existing corpus tools, provide reproducible migration processes and are a strong foundation for quality assurance checks.&lt;/li&gt;
+&lt;li&gt;Software libraries for managing data in RO-Crate, maintaining schemas available on our &lt;a href=&quot;https://github.com/Language-Research-Technology&quot;&gt;github organisation&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;RO-Crate preparation tools, including:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://language-research-technology.github.io/crate-o/#/&quot;&gt;Crate-O&lt;/a&gt; (now included in Nyingarn)&lt;/li&gt;
+&lt;li&gt;Crate-O-compatible spreadsheet templates for DIY data import and supporting familiar Excel-based workflows — &lt;a href=&quot;https://www.ldaca.edu.au/resources/user-guides/crate-o/convert-spreadsheet/&quot;&gt;documented&lt;/a&gt; on the LDaCA website&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sites.google.com/site/metadatatooldiscussion/home&quot;&gt;LaMeta&lt;/a&gt;, which now has RO-Crate support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ro-crate.ldaca.edu.au/&quot;&gt;RO-Crate playground&lt;/a&gt; to experiment with and validate metadata.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Data preparation workspaces:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nyingarn.net/&quot;&gt;Nyingarn&lt;/a&gt; (focussed on creating searchable text from manuscripts)&lt;/li&gt;
+&lt;li&gt;Our next steps will involve a multi-modal workspace, for audio and video transcription.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide16.png&quot; alt=&quot;&quot; title=&quot;Slide: 16&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;This diagram shows how the PILARS principles have been implemented by different organisations. Each example uses open source software, and accepted standards for metadata and storage, meaning that data is portable.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
+&lt;img src=&quot;https://ptsefton.com/2025/09/24/ldaca-architecture-update/Slide17.png&quot; alt=&quot;= :: &quot; title=&quot;Slide: 19&quot; border=&quot;1&quot; width=&quot;85%%&quot;&gt;
+&lt;p&gt;This slide shows one &lt;em&gt;potential&lt;/em&gt; view of LDaCA’s architecture in 2026. There may be an opportunity to deepen the collaboration between the UQ LDaCA team and the PARADISEC team at Melbourne, sharing the development of more code.&lt;/p&gt;
+&lt;p&gt;For example, Nyingarn’s incomplete repository function could be done by a stand alone instance of the Oni portal, or as shown here, added to the LDaCA portal as a collection.&lt;/p&gt;
+&lt;p&gt;Likewise the non-existent user-focussed data preparation functions of Nyigarn, where a user can describe an object and submit it could be generalized for use in LDaCA.&lt;/p&gt;
+&lt;p&gt;Changes shown in this diagram:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove the “&lt;a href=&quot;https://github.com/CoEDL/nocfl-js&quot;&gt;NOCFL&lt;/a&gt;” storage service from &lt;a href=&quot;https://nyingarn.net/&quot;&gt;Nyingarn&lt;/a&gt; and replace with either OCFL or an Object Store solution&lt;/li&gt;
+&lt;li&gt;Upgrade Nyingarn workspace to be a generic data onboarding app for all kinds of data (rather than only manuscript transcription focus)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To conclude, we have an opportunity now to consider how the distributed LDaCA technical team can collaborate on key pieces of re-deployable infrastructure. This work is having an impact in other Australian Research Data Commons  (&lt;a href=&quot;https://ardc.edu.au/&quot;&gt;ARDC&lt;/a&gt;) co-investments.&lt;/p&gt;
+&lt;/section&gt;
+</content>
+  </entry>
   <entry>
     <title>Open Repositories 2024 Trip Report: Göteborg</title>
     <link href="https://ptsefton.com/2024/06/26/open-repositories-2024-trip/" />
@@ -28,7 +150,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Well, Claire Knowles, Kim Shepherd and I proposed a workshop - it was accepted and Kim and I ran it on the Monday with Claire&#39;s colleague John Salter.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/image-3.png&quot; alt=&quot;Kim Shepherd, Me, John Salter with Wray the whippet&quot;&gt;&lt;/p&gt;
-&lt;p class=&quot;caption&quot;&gt;The workshop team: Kim, Me, John&lt;/p&gt;
+&lt;p class=&quot;caption&quot;&gt;The workshop team: Kim, Me, John [Update forgot to mention Wray the whippet from Leeds - he has a name that starts with WR cos White Rose https://eprints.whiterose.ac.uk/ ]&lt;/p&gt;
 &lt;p&gt;We had a teaching space at the uni, a short tram ride from the hotel. There were about 15 people in the room for the morning.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/image-4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p class=&quot;caption&quot;&gt;The workshop room&lt;/p&gt;
@@ -66,7 +188,7 @@ We’d love to see some of these ideas continue to develop and to show up at OR2
 &lt;/blockquote&gt;
 &lt;p&gt;This presentation included a mention of a &lt;a href=&quot;http://ptsefton.com/2023/06/14/arkisto-stack-or-2023/&quot;&gt;presentation I gave last year at OR&lt;/a&gt; - about separating storage from display/dissemination and is using a similar pattern with OCFL as a storage layer. The difference is that the University of Texas team are using Fedora as the API to access the OCFL. This was not an option when we started our work with LDaCA (RRKive) but it may be worth exploring for us going forward. To get technical, one main difference between the approaches is that the RRKive approach follows the RO-Crate specification to store metadata about objects in OCFL while Fedora 6 (as far as I know based on attending a workshop last year) stores many small metadata files - at least one per content file and one per object which can pose additional challenges with file-system limits. I&#39;m not up to date with all the Fedora discussions about this, but I do know that the too-many-little-files problem is being addressed in the next release of OCFL.&lt;/p&gt;
 &lt;p&gt;One of their projects is an Indigenous Language Archive which is similar to what we&#39;re doing at LDaCA; The Archive of the Indigenous Languages of Latin America (AILLA).&lt;/p&gt;
-&lt;p&gt;Here&#39;s a &lt;a href=&quot;https://ailla.utexas.org/search/?q=alpaca&quot;&gt;search for &amp;quot;alpaca&amp;quot;&lt;/a&gt; - which thanks to Moises is the LDaCA mascot 🦙.&lt;/p&gt;
+&lt;p&gt;Here&#39;s a &lt;a href=&quot;https://ailla.utexas.org/search/?q=alpaca&quot;&gt;search for &amp;quot;alpaca&amp;quot;&lt;/a&gt; - which thanks to Moises is the LDaCA mascot 🦙&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/image-2.png&quot; alt=&quot;A search for Alpaca at AILLA&quot;&gt;&lt;/p&gt;
 &lt;p class=&quot;caption&quot;&gt;A search for Alpaca&lt;/p&gt;
 &lt;h1&gt;Venue&lt;/h1&gt;
@@ -142,7 +264,7 @@ https://doi.org/10.1098/rsos.230206&lt;/p&gt;
 &lt;p&gt;Next year in Chicago will be the 20th of these conferences. I&#39;ll probably attend. Thinking about some stuff to do:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Another workshop along the lines of the one we ran this year? I think so, but it will be interesting to see the feedback from participants and the conference committee.&lt;/li&gt;
-&lt;li&gt;A reflection on 20 years of Open Repositories, from a very different perspective than Richard Jone&#39;s, of course.&lt;/li&gt;
+&lt;li&gt;A reflection on 20 years of Open Repositories, from a very different perspective than Richard&#39;s, of course.&lt;/li&gt;
 &lt;li&gt;Maybe suggest a panel discussion on the future of the conference and even the name? Is it meant to be a conference about &lt;em&gt;Publications&lt;/em&gt; Repositories or is it more than that? (We know it&#39;s much more than that)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr class=&quot;footnotes-sep&quot;&gt;
@@ -151,6 +273,8 @@ https://doi.org/10.1098/rsos.230206&lt;/p&gt;
 &lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;RO-Crate was created five years ago merging two approaches; DataCrate and Research Objects. In DataCrate the &#39;easy to open&#39; HTML file was called CATALOG.html (and there was CATALOG.jsonld) - but we changed this to avoid having name collisions with the content being packaged, at the cost of making it much more obscure. Easy Open is a potential antidote to this, and can be added to RO-Crates. EasyCrate? &lt;a href=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/#fnref1&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&quot;fn2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;This idea is 100% aligned with RO-Crate but experience is showing that this aspect of the spec is under-valued by implementers, and many existing crate download services don&#39;t do this well at all in my opinion. &lt;a href=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/#fnref2&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn3&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;UPDATE: 2024-06-27 from Ben Foley - &amp;quot;Just a minor point which might be worth correcting for posterity, Melindah Holden was the first to call us &amp;quot;alpacas&amp;quot;. She was on the board of FLA and at some of the early meetings. Moises has certainly championed the use of it 😀 &lt;a href=&quot;https://ptsefton.com/2024/06/26/open-repositories-2024-trip/#fnref3&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -1231,156 +1355,5 @@ What about contextual information?&lt;/p&gt;
 &lt;h2&gt;The Oni stack, OCFL library, API and Elastic Search:&lt;/h2&gt;
 &lt;p&gt;https://github.com/Language-Research-Technology/oni-ui&lt;/p&gt;
 </content>
-  </entry>
-  <entry>
-    <title>Designing a metadata ecosystem for language research based on Research Object Crate (RO-Crate)
-</title>
-    <link href="https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/" />
-    <updated>2022-11-25T00:00:00Z</updated>
-    <id>https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/</id>
-    <content type="html">&lt;p&gt;&lt;a href=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/ldaca-metadata-ecosystem-eresearch-2022.pdf&quot;&gt;PDF version&lt;/a&gt;&lt;/p&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide00.png&quot; alt=&quot;Designing a metadata ecosystem for language research based on Research Object Crate (RO-Crate) Peter Sefton, Nick Thieberger, Marco La Rosa, Simon Musgrave, River Tae Smith, Moises Sacal Bonequi   &quot; title=&quot;Slide: 0&quot;&gt;
-&lt;p&gt;By Peter Sefton, Nick Thieberger, Marco La Rosa, Simon Musgrave, River Tae Smith, Moises Sacal Bonequi – delivered by Peter Sefton at eResearch 2022 in Brisbane&lt;/p&gt;
-&lt;p&gt;This work is licensed under CC BY 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/&lt;/p&gt;
-&lt;p&gt;This presentation will look at how a Metadata Standard - RO-Crate - with Metadata Profile (the Language Data Commons) is being developed and implemented. Two major collections are collaborating on the standard, PARADISEC and the Language Data Commons of Australia (LDaCA). This ongoing standardisation effort for language data is designed to improve interoperability, reduce costs for data migration and allow storage on disk, object storage or in archival repositories.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.researchobject.org/ro-crate/&quot;&gt;RO-Crate&lt;/a&gt; is a linked-data metadata system which allows discovery metadata (Who, what where) based on the widely adopted Schema.org vocabulary to be seamlessly integrated with more discipline specific metadata. RO-Crate uses metadata profiles to provide guidance for packaging resources for particular disciplines and purposes.&lt;/p&gt;
-&lt;p&gt;In this presentation we will introduce a RO-Crate metadata profile for language data which extends the core RO-Crate standard with new vocabulary terms adapted from pre-linked-data discipline specific metadata efforts, particularly the Open Language Archives Community (OLAC) standards. The profile has English-language guidance on how to structure collections of resources in a repository with links between them, such that they can be indexed and displayed via APIs and search/browse portals. The profile is also implemented as a series of machine-readable profiles for the Describo Online metadata description system.&lt;/p&gt;
-&lt;p&gt;We will demonstrate current ways of describing items in a variety of languages and modes (spoken, written and signed), from a large set of heterogeneous language resources held by PARADISEC and LDaCA. We will also show how to access them via API calls and a search portal, and how resources may be stored in simple storage systems using the Arkisto platform (a set of standards and principles).&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide01.png&quot; alt=&quot;The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).   ARC LIEF LE210100013 (2021-2024) Nyingarn: a platform for primary sources in Australian Indigenous languages  &quot; title=&quot;Slide: 1&quot;&gt;
-&lt;p&gt;This work is supported by the Australian Research Data Commons.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide02.png&quot; alt=&quot; With thanks for their contribution: Partner Institutions: &quot; title=&quot;Slide: 2&quot;&gt;
-&lt;p&gt;The Language Data Commons of Australia Data Partnerships (&lt;a href=&quot;https://doi.org/10.47486/HIR001&quot;&gt;LDaCA&lt;/a&gt;) and the Australian Text Analytics Platform (&lt;a href=&quot;https://doi.org/10.47486/PL074&quot;&gt;ATAP&lt;/a&gt;) are building towards a scalable and flexible language data and analytics commons. These projects will be part of the Humanities and Social Sciences Research Data Commons (HASS RDC).&lt;/p&gt;
-&lt;p&gt;The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.&lt;/p&gt;
-&lt;p&gt;The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artefacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations. These projects are led by Professor Michael Haugh of the School of Languages and Culture at the University of Queensland with several partner institutions.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide03.png&quot; alt=&quot;Pacific and Regional Archive for Digital Sources in Endangered Cultures Running for 20 years  1,337 languages represented 675 collections 37,510 items 405,289 files 15,540 hours (audio) 2,465 hours (video) 193 TB  October 2022  &quot; title=&quot;Slide: 3&quot;&gt;
-&lt;p&gt;This page shows a &lt;a href=&quot;https://www.youtube.com/watch?v=CX-CODBwOVU&amp;amp;t=7s&quot;&gt;YouTube demo of the PARADISEC web site&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;PARADISEC (the Pacific And Regional Archive for Digital Sources in Endangered Cultures) is a digital archive of records of some of the many small cultures and languages of the world and it has developed models to ensure that the archive can provide access to interested communities while also conforming with emerging international standards for digital archiving. Australian researchers have been making unique and irreplaceable audiovisual recordings in the region since portable field recorders became available in the mid-twentieth century, yet until the establishment of PARADISEC there was no Australian repository for these invaluable research recordings.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide04.png&quot; alt=&quot;  &quot; title=&quot;Slide: 4&quot;&gt;
-&lt;p&gt;Goal: Be able to store data with an eye on preservation&lt;/p&gt;
-&lt;p&gt;In an archive like PARADISEC - it is important to be be able to maintain resources over the long term. For example, much material which falls within the scope of PARADISEC is stored on legacy media. PARADISEC archives tapes from a range of sources, such as the agencies in the Pacific shown in the images above. Such material needs to be digitised and returned to the source with meaningful metadata.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide05.png&quot; alt=&quot;PARADISEC ACCESS  https://language-archives.services/about/data-loader &quot; title=&quot;Slide: 5&quot;&gt;
-&lt;p&gt;PARADISEC has learned the importance of making the collection self-describing so it is not dependent on a database as the sole metadata source. It does use a database for administrative services, from which a text file with metadata for any item can be exported. This allows us to select an arbitrary set of items, put them on a hard disk, and use the dataloader application to generate an html catalog of just those items, drawing on the internal metadata file describing each item. This can be delivered on a hard disk to a local community or cultural organisation, or on a raspberry pi wifi local network to allow access on phones, as seen here in Erakor village in central Vanuatu.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide06.png&quot; alt=&quot;ELAR: limited search capability, non-standard metadata schema, no ability to index annotation files, no bulk download LDaCA: rich metadata-first search, portable RO-Crate metadata, indexed annotations, bulk downloading of search results AUSLAN CORPUS ACCESS  &quot; title=&quot;Slide: 6&quot;&gt;
-&lt;p&gt;Another example of how good metadata practice can improve community access is the Auslan (Australian Sign Language) corpus, for which community access is very important.&lt;/p&gt;
-&lt;p&gt;The Auslan Corpus has been stored with the Endangered Languages Archive (&lt;a href=&quot;https://www.elararchive.org/&quot;&gt;ELAR&lt;/a&gt;) since 2008. However, ELAR does not currently suit the access needs of the Auslan corpus; it has low discoverability, and files must be downloaded individually. The corpus, along with the Auslan SignBank dictionary, is being included in LDaCA.&lt;/p&gt;
-&lt;p&gt;The Auslan Corpus holds great value as an educational tool for Auslan users and learners, both Deaf and hearing, and the move to LDaCA will allow further development of educational tools. One such tool is the ability, still under development, for Auslan Signbank dictionary to pull real-world examples of signs out of the corpus to show alongside dictionary entries.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide07.png&quot; alt=&quot;&quot; title=&quot;Slide: 7&quot;&gt;
-&lt;p&gt;For all of the collections we are working with data is discoverable via some kind of web portal which indexes and displays the archive (repository) of data. These screenshots are of work in progress at LDaCA.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide08.png&quot; alt=&quot;&quot; title=&quot;Slide: 8&quot;&gt;
-&lt;p&gt;The LDaCA services we are building use an API to drive the data portals. The API can be used for direct access with appropriate access control – see &lt;a href=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/posts/fair-care-eresearch-2022&quot;&gt;another eResearch presentation&lt;/a&gt; which explains this in detail. These screenshots show code notebooks (running in BinderHub on the Nectar cloud) accessing language resources.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide09.png&quot; alt=&quot;&quot; title=&quot;Slide: 9&quot;&gt;
-&lt;p&gt;Having looked at the user-facing products, websites and APIs, we turn our attention to how data is managed on disk.&lt;/p&gt;
-&lt;p&gt;In the PARADISEC system this is achieved by storing files on disk in a simple hierarchy - with metadata and other resources stored together in a directory - this scheme allows for hands-on management of data resources, independently of the software used to serve them.&lt;/p&gt;
-&lt;p&gt;This approach means that if the PARADISEC software-stack becomes un-maintainable for financial or technical reasons the important resources, the data, are stored safely on disk with their metadata and a new access portal could be constructed relatively easily.&lt;/p&gt;
-&lt;p&gt;Despite the valuable features of this solution, it is not generalisable. The metadata.xml is custom to PARADISEC, as is the software stack.&lt;/p&gt;
-&lt;p&gt;In 2019 PARADISEC and the eResearch team at UTS received small grants from the Australian National Data Service and began collaborating on an approach to managing archival repositories which built on this PARADISEC approach of storing metadata with data.&lt;/p&gt;
-&lt;p&gt;The UTS team presented on this at &lt;a href=&quot;https://ptsefton.com/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation/index.html&quot;&gt;eResearch Australasia 2019&lt;/a&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide10.png&quot; alt=&quot;  &quot; title=&quot;Slide: 10&quot;&gt;
-&lt;p&gt;For this Research Data Commons work we are using the Arkisto Platform (introduced &lt;a href=&quot;http://ptsefton.com/2020/11/23/Arkisto/index.html&quot;&gt;at eResearch 2020&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Arkisto aims to ensure the long term preservation of data independently of code and services, recognizing the ephemeral nature of software and platforms. We know that sustaining software platforms can be hard and aim to make sure that important data assets are not locked up in databases or hard-coded logic of some hard-to-maintain application.&lt;/p&gt;
-&lt;p&gt;Inspired by PARADISEC’s approach the Arkisto platform is based on the idea of storing data in simple easy to manage file or object storage systems with metadata in an easily readable standard format.&lt;/p&gt;
-&lt;p&gt;The LDaCA repositories use the Oxford Common File Layout (&lt;a href=&quot;https://ocfl.io/&quot;&gt;OCFL&lt;/a&gt;) standard which is backed and used by a number of universities and has multiple implementations while PARADISEC data will be migrated to a simpler data storage approach &lt;a href=&quot;https://github.com/CoEDL/nocfl-js&quot;&gt;NOCFL&lt;/a&gt;, which is a single-library implementation, inspired by some of the same aims, but with different implementation choices to avoid data being obfuscated by OCFL’s layout, which is a product of its commitment to immutable, write-once file management.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide11.png&quot; alt=&#39;{    &quot;conformsTo&quot;: &quot;http://purl.archive.org/language-data-commons/profile&quot; }  &#39; title=&quot;Slide: 11&quot;&gt;
-&lt;p&gt;Now to the main focus of this presentation - the metadata “Profile” we are jointly developing to ensure that language resources can be described in a way that is interoperable between software, and re-usable over time.&lt;/p&gt;
-&lt;p&gt;The Profile is an “RO-Crate Profile”, a kind of Cook Book for how to describe and package language data.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide12.png&quot; alt=&quot;☁️ 📂  📄 ID? Title? Description?  👩‍🔬👨🏿‍🔬Who created this data? 📄What parts does it have?  📅 When?  🗒️ What is it about?  ♻️ How can it be reused? 🏗️ As part of which project?  💰 Who funded it? ⚒️ How was it made?  Addressable resources Local Data  👩🏿‍🔬 https://orcid.org/0000-0001-2345-6789 🔬 https://en.wikipedia.org/wiki/Scanning_electron_microscope &quot; title=&quot;Slide: 12&quot;&gt;
-&lt;p&gt;RO-Crate is method for describing a dataset as a digital object using a &lt;strong&gt;single linked-data metadata document&lt;/strong&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide13.png&quot; alt=&quot;📂  🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️ &quot; title=&quot;Slide: 13&quot;&gt;
-&lt;p&gt;The dataset may contain any kind of data resource about anything, in any format as a file or URL&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide14.png&quot; alt=&quot; &quot; title=&quot;Slide: 14&quot;&gt;
-&lt;p&gt;The RO-Crate standard also strongly recommends that JSON metadata is supplemented with an HTML preview - above we show what that looks like for a PARADISEC item. This is a screenshot of an HTML view of a PARADISEC Item generated using &lt;a href=&quot;https://github.com/UTS-eResearch/ro-crate-html-js&quot;&gt;an HTML rendering tool for RO-Crate&lt;/a&gt;. The important point here is that this is a &lt;em&gt;generic&lt;/em&gt; viewer that can understand any RO-Crate. It may not be glamorous but it could be included in an archive as a way to provide human-readable access in the absence of portals that are data specific (but cost money to build and maintain).&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide15.png&quot; alt=&quot; https://mod.paradisec.org.au &quot; title=&quot;Slide: 15&quot;&gt;
-&lt;p&gt;Here is the same page from the previous slide seen in a working model of an RO-Crate set exported from the current PARADISEC catalog, with a single page viewer using an elastic search. The two pages shown here are generated directly from metadata that was stored in an RO-Crate in a storage system using PARADISEC specific, rather than generic code.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide16.png&quot; alt=&quot;  &quot; title=&quot;Slide: 16&quot;&gt;
-&lt;p&gt;The &lt;a href=&quot;https://www.researchobject.org/ro-crate/1.1/structure.html&quot;&gt;structure of an RO-Crate&lt;/a&gt; is very similar to the PARADISEC example above, but with a json file instead of XML, and an optional preview in HTML.&lt;/p&gt;
-&lt;p&gt;RO-Crate has a growing number of &lt;a href=&quot;https://www.researchobject.org/ro-crate/tools/&quot;&gt;tools and software libraries&lt;/a&gt; which means that a team such as PARADISEC do not have to maintain their own bespoke software.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide17.png&quot; alt=&quot; &quot; title=&quot;Slide: 17&quot;&gt;
-&lt;p&gt;The base vocabulary for the JSON-LD used in RO-Crate is schema.org - a widely used linked data standard. RO-Crate uses a handful of terms from other ontologies but importantly it allows for seamless extensibility with domain specific vocabularies, which is what we will talk about next.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide18.png&quot; alt=&quot;  &quot; title=&quot;Slide: 18&quot;&gt;
-&lt;p&gt;The PARADISEC metadata model is based on the Open Language Archives (OLAC) metadata standard. This is an XML based standard, but has good online documentation, which is perfect for migrating to a Linked Data approach.&lt;/p&gt;
-&lt;p&gt;We used the OLAC terms, including &lt;a href=&quot;http://www.language-archives.org/REC/type-20020628.html&quot;&gt;some that were proposed but withdrawn&lt;/a&gt; as the basis for a new vocabulary.&lt;/p&gt;
-&lt;p&gt;As part of a LIEF project (2022-23, led by author Thieberger), revisions to the OLAC scheme are planned, together with rebuilding the OLAC metadata harvester and aggregator.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide19.png&quot; alt=&quot;  &quot; title=&quot;Slide: 19&quot;&gt;
-&lt;p&gt;The new Langauge Data Terms have been published at &lt;a href=&quot;https://purl.archive.org/language-data-commons/terms&quot;&gt;https://purl.archive.org/language-data-commons/terms&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;These terms have been modernised and mainstreamed from previous ways of describing resources, for example instead of describing the main item of interest as a PrimaryText (where text is any kind of communicative resource – not a bitstream of characters) we use the term PrimaryResource. And in the example in the image, the type of genre &lt;em&gt;Informational&lt;/em&gt; has been added to the set proposed in the OLAC vocabulary.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide20.png&quot; alt=&quot;  &quot; title=&quot;Slide: 20&quot;&gt;
-&lt;p&gt;(Image prompt DALL-E a hierarchical whale skeleton digital art)&lt;/p&gt;
-&lt;p&gt;Before we come back in detail to how RO-Crate works we will discuss the structure or skeleton of our language collections stored in a repository&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide21.png&quot; alt=&quot; &quot; title=&quot;Slide: 21&quot;&gt;
-&lt;p&gt;Broadly speaking there are two ways that an Arkisto-style repository can be structured and the profile sets out criteria for choosing one of the options.&lt;/p&gt;
-&lt;p&gt;For small, stable collections of data an entire collection (often referred to a ‘corpus’ by linguists) can be stored in a single directory or directory-like structure in an object store.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide22.png&quot; alt=&quot;  &quot; title=&quot;Slide: 22&quot;&gt;
-&lt;p&gt;For larger collections the approach used by PARADISEC and most LDaCA collections is to store each Object or Item (typically a related set of recordings, or a single document) in a directory (or directory-like thing).&lt;/p&gt;
-&lt;p&gt;In this mode, each Object MUST link back to the Collection Object.&lt;/p&gt;
-&lt;p&gt;A Collection Object MAY have explicit listing of hasMember properties - which makes it possible to construct repository navigation (such as websites) more cheaply. This is the approach used in PARADISEC, while in LDaCA these links are constructed by an indexer servicer or summarizer application.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide23.png&quot; alt=&quot;Describo Screenshot editing a collection record (PT)  &quot; title=&quot;Slide: 23&quot;&gt;
-&lt;p&gt;This screenshot shows the Language Data Commons RO-Crate Profile in action. This is the &lt;a href=&quot;https://github.com/Arkisto-Platform/describo-online&quot;&gt;Describo Online&lt;/a&gt; metadata editor, with configuration that reflects the profile being used to describe a language data collection using linked-data metadata.&lt;/p&gt;
-&lt;p&gt;In this case the description is of the collection object.&lt;/p&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide24.png&quot; alt=&quot;LDaCA &quot; title=&quot;Slide: 24&quot;&gt;
-&lt;p&gt;Once the data is described, we ingest it into a repository, as a set of files on disk or object storage and index it in a portal, as you can see in these screenshots.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2022/11/25/ldaca-metadata-ecosystem-eresearch-2022/Slide25.png&quot; alt=&quot;Demo &quot; title=&quot;Slide: 25&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=p-GZbe-Kzww&amp;amp;t=5s&quot;&gt;Video of browsing a collection in an LDaCA repo&lt;/a&gt; showing:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Going to the portal&lt;/li&gt;
-&lt;li&gt;Selecting a collection&lt;/li&gt;
-&lt;li&gt;Searching for content&lt;/li&gt;
-&lt;li&gt;Selecting a notebook&lt;/li&gt;
-&lt;li&gt;Launching Binder&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This example notebook explores the collection via the rest API.&lt;/p&gt;
-&lt;h1&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;In this presentation we have shown the major components of an ecosystem for storing, discovering and analysing language data using common standards for describing objects in a repository. The &lt;a href=&quot;https://www.researchobject.org/ro-crate/&quot;&gt;RO-Crate&lt;/a&gt; standard is used as the key metadata container, with a common vocabulary of language specific terms for describing data. This approach should reduce development costs and increase data reuse. The approach can also be adapted to other disciplines and domains with the development only of new profiles..&lt;/p&gt;
-&lt;/section&gt;
-&lt;/section&gt;</content>
   </entry>
 </feed>
