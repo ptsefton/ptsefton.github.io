@@ -1,0 +1,335 @@
+
+<html>
+<head>
+    <title>ptsefton.com :: Low friction FAIR interoperability using RO-Crate metadata in text analytics pipelines
+</title>
+<style>
+.header {
+  background-color: #ff00ff;
+  border-color: #b72bc0;
+  color: #ffff00;
+  padding-top: 12pt;
+  padding-bottom: 12pt;
+  font-family: monospace;
+}
+
+
+
+
+/* unvisited link */
+a:link {
+    color: #FF00FF;
+}
+
+.header a:link {
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+button {
+    color: #ffff00;
+    background-color: #ff00ff;
+    font-family: monospace;
+}
+
+/* visited link */
+a:visited {
+    color: #FF00AA;
+}
+
+.header a:visited {
+    color: #FFFF00;
+}
+
+h1, h2 {
+    color: # FF00FF
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00AA;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+a {
+    text-decoration: none; 
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+section img {
+    width: 100%
+}
+
+td, th {
+    padding-top: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.content {
+	font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.8em;
+    }
+
+
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+    color: #FF00FF;
+
+    background-color: rgba(255, 255, 0, 0.2); 
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+@media  screen and (min-width:  900px) {
+    .content, .header {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    .row {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+    
+}
+
+@media  screen and (min-width: 1200px) {
+    .content, .header {
+        width: 55%;
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+    .row {
+        display: grid;
+        grid-template-columns: 75% 25%;
+}
+    
+}
+
+
+.date {
+      font-style: italic;
+}
+
+.cat p {
+        line-height: 1em;
+}
+
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
+
+<body>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
+
+
+    <div class="content">
+        <h1> 
+        Low friction FAIR interoperability using RO-Crate metadata in text analytics pipelines
+ 
+        </h1>
+        <h2>2025-10-23 </h2>
+
+        <p><a href="Low friction FAIR interoperability using RO-Crate metadata in text analytics pipelines.pdf">PDF version</a></p>
+<p>Copyright Rosanna Smith, Mike Lynch, Peter Sefton, Simon Musgrave, River Tae Smith 2025  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Creative Commons Attribution-Share Alike 4.0 International</a>.</p>
+<p>This presentation is from the <a href="https://conference.eresearch.edu.au/">eResearch Australasia Conference</a>. It was delivered by Rosanna Smith and Michael Lynch. I'm putting it here as one of the authors.</p>
+<p>We followed this presentation with an RO-Crate Birds of a Feather session with some other colleagues. We were able to help out a few RO-Crate commiunity memebers with some of their questions, and direct them towards solutions and avenues for further discussion - mainly the <a href="https://docs.google.com/document/d/1l0EmDVE4k6oEZSoMGjes8mMNrJboRlmZW-kvjaeVqvE/">RO-Crate Regional Drop in Calls</a>.</p>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide00.png' alt='Low friction FAIR interoperability using RO-Crate metadata in text analytics pipelines :: Rosanna Smith, Mike Lynch, Peter Sefton, Simon Musgrave, River Tae Smith :: ' title='Slide: 0' border='1'  width='85%%'/>
+<p>Research Object Crate (RO-Crate) is a simple method for linked-data description and packaging of data. Since 2021, the Language Data Commons of Australia (LDaCA) project has onboarded a number of language data collections with thousands of files. These are all consistently described as RO-Crates using a human and machine-readable Metadata Profile, discoverable through an online portal, and available via an access-controlled API. This presentation will show how analytics workflows can be connected to data in the LDaCA repository and use linked data descriptions, such as the W3C “CSV for the web” (CSVW) standard, to automatically detect and load the right data for analytical workflows. We will show how the general-purpose flexible linked metadata and raw data is prepared for use with common tools implemented in Jupyter notebooks.
+This work, funded by the Australian Research Data Commons ARDC, has enabled novel research by making data collected using sub-disciplinary norms of linguistics available to researchers working in other specialised areas – we will show examples of this and how this approach is relevant to other HASS and STEM disciplines, demonstrating work which would not have been possible without this co-investment between the Language Data Commons partners and ARDC
+The presentation should be accessible to the broad audience of eResearch and be of particular relevance to those with an interest in workflows and analytics, as well as metadata, vocabulary and repository specialists. It shows a FAIR research system which runs on open specifications and code and can be redeployed for other domains.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide01.png' alt='About Us ::  :: The Language Data Commons of Australia (LDaCA) is part of the Humanities and Social Sciences and Indigenous Research Data Commons which is led by the Australian Research Data Commons (ARDC). ::  :: ' title='Slide: 1' border='1'  width='85%%'/>
+<p>The Language Data Commons of Australia or LDaCA is part of the Humanities and Social Sciences and Indigenous Research Data Commons, which is led by the ARDC.</p>
+<p>This project is co-funded by the University of Queensland (UQ). Authors Rosanna, Peter, Simon and River all work with UQ and Mike is with the University of Sydney.</p>
+<p>What you see on the right is the execution strategy and what drives the LDaCA tech team.</p>
+<p>To summarise, the strategy is about data management, developing tools and standards, technical architecture, and care for data in the long term.</p>
+<p>LDaCA builds data portals with robust access controls in place, and this ensures that access is as open as possible but as restricted as needed according to the data stewards and communities the collections relate to.</p>
+<p>We also develop shared tools for processing, analysis and visualisation of data and metadata, some of which we’ll be demonstrating today. We will be focussing on the indicated parts of this strategy “access” and “analyse”.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide02.png' alt='Activities :: Analytical workflows are typically not published, re-runnable or reusable :: transparent :: adaptable :: Methods are specialized to particular studies or research cohorts :: There are many analytical tools available but they require different input formats :: There are readily accessible, self documenting connectors making it easy to apply analytical methods  :: documented :: (Meta)Data formats, tools, research workflows are varied, and under-documented :: connected :: Researchers can use tools and processes to publish, find, (re)use and adapt computational methods to new contexts  :: Key methods and workflows are adaptable to work in different research contexts with documentation of their uses and limitations :: Documentation and training programs available to help researchers adopt appropriate standards :: LDaCA Analyse - Strategic Overview :: findable :: Document, demonstrate and teach methods for publishing findable, (re)usable and readable research code :: Train researchers in data management, standardised data formats, preparation, transformation and wrangling of data for analysis :: Document methods and develop toolkits to transform BYO (meta)data to standard formats without compromising data integrity :: Train researchers in computational methods application and development :: Develop guidance and train researchers on how to choose appropriate analytical approaches eg ethical and appropriate use of AI - raise awareness of computational methods :: Identify promising methods, practices and workflows, including emerging methods (AI) and adapt them across research contexts ethically and appropriately :: Develop data connections that link Language Data Commons compliant data - in portal and BYO - to analytical tools :: Develop and demonstrate end-to-end best-practice workflows to connect researchers, data and computational tools :: LDaCA infrastructure is interconnected, with suitable interfaces, data formats and guidance on  :: appropriate usage :: Appropriate implementations of analytical methods are hard to find :: Version: 2025-07-31 :: contextually appropriate :: It is unclear when and how methods can and should be (re)used in different research contexts :: Researchers are more aware of computational methods, and can use LDaCA guidance to match appropriate methods to their and others’ data. :: Starting state (2021) :: Desired state (2028) :: Activities ::  ::  ::  :: ' title='Slide: 2' border='1'  width='85%%'/>
+<p>Looking at analytics specifically, LDaCA aims to ensure workflows and infrastructure developed for analysing collections are available for access and reuse.</p>
+<p>These should also be easy to re-run with clear documentation on their uses and limitations, and should allow for adaptation for a range of contexts.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide03.png' alt='Implementation :: The LDaCA architecture is implemented using the Protocols for Implementing Long-Term Archival Repository Services (PILARS) :: https://w3id.org/ldac/pilars :: ' title='Slide: 3' border='1'  width='85%%'/>
+<p>The core idea of LDaCA is to develop standardised methods for describing and organising data in a Data Commons environment, which reduces friction in finding, using and re-using data.</p>
+<p>We have captured this approach with PILARS, which are Protocols for Implementing Long-Term Archival Repository Services.</p>
+<p>These services should be designed to work in low-resource environments, allowing communities to have agency and control over their materials.</p>
+<p>The protocols prioritise sustainability, simplicity and standardisation, with linked-data description and clear licensing.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide04.png' alt='Storage :: Storage Objects are deposited in a repository. In LDaCA each storage object is an RO-Crate. :: An RO-Crate is a Research Object (or RO) formed of a collection of data (a crate), a special ro-crate-metadata.json file which describes the collection and its license information. :: The ro-crate-metadata.json file is a JSON-LD metadata file at the root of an RO-Crate that describes the crate, its contents, and their relationships in a machine-readable way. ::  :: ' title='Slide: 4' border='1'  width='85%%'/>
+<p>Data is organised into objects, taking into account practical considerations such as the size of each object, and access conditions. Each data object is stored in a repository as an RO-Crate (which stands for Research Object Crate).</p>
+<p>An RO-Crate is a way of packaging research data that stores the data together with its associated metadata and other component files, such as the data license.</p>
+<p>In this diagram, we have one collection containing items, such as a set of interviews, and each item describes the files linked to it, in this case, a text file and an audio file. Licenses for each of the items are also included.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide05.png' alt='Data Annotation :: A Metadata Profile describes how storage objects should be modelled, and how files should be described. https://w3id.org/ldac/profile  :: This profile draws on the Language Data Commons Schema – a Schema.org Style set of terms for describing language data in an Archival Repository and for data interchange.  https://w3id.org/ldac/terms  :: LDaCA uses Research Object Crate (RO-Crate) metadata to describe each storage object. Each OCFL object has an RO-Crate metadata document (ro-crate-metadata.json), making it an RO-Crate. :: ' title='Slide: 5' border='1'  width='85%%'/>
+<p>The RO-Crates are modelled according to a metadata profile which outlines the expected collection structure and provides guidance on describing language data in a repository.</p>
+<p>The profile uses <a href="http://schema.org">schema.org</a>  as its foundation for metadata description, as well as a few other standard vocabularies.</p>
+<p>It also draws on the Language Data Commons schema <a href="http://w3id.org/ldac/terms">http://w3id.org/ldac/terms</a>, which contains metadata terms specific to describing language data.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide06.png' alt='Index :: Portals can be indexed from the storage to make them findable. :: ' title='Slide: 6' border='1'  width='85%%'/>
+<p>This diagram overviews the architecture for indexing data with a focus on findability, and illustrates the key conceptual components of our data storage architecture.</p>
+<p>Storage services follow the PILARS protocols and store data as a series of Storage Objects using the Oxford Common File Layout (OCFL). This is a specification from the digital library community for storing data independently of applications such as portals, repositories or particular analytical pipelines.</p>
+<p>This data is distributed across multiple storage services, including file-systems and object stores hosted by different institutions.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide07.png' alt='Distributed Access Control :: Motivation :: FAIR (Findable, Accessible, Interoperable, Reusable) data principles require not just openness but controlled access in many contexts. :: Traditional centralized access control solutions struggle with scalability, cross-institutional trust, privacy, and fine-grained permissions. ::  :: ' title='Slide: 7' border='1'  width='85%%'/>
+<p>The diagram shows our distributed access control approach at LDaCA, and this is motivated by a need for controlled access in conjunction with CARE and FAIR data principles.</p>
+<p>Each item in the repository is stored as an RO-Crate with licensing information included, and the repository defers access decisions to an external authentication and authorization system.</p>
+<p>Here, data custodians can design whatever process they like for granting license access, ranging from simple click-through licenses to detailed multi-step workflows based on whatever criteria the rights holder requires.</p>
+<p>This can be scaled to multiple portals and repositories as well.</p>
+<p>(Image is from here: https://github.com/Language-Research-Technology/plantuml-diagrams/blob/main/generic/simple-distributed-access-control.svg)</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide08.png' alt='Portal(s) :: Main portal: data.ldaca.edu.au :: Terraform automation allows for additional portals to be built on demand. ::  :: ' title='Slide: 8' border='1'  width='85%%'/>
+<p>All of this architecture comes together in the “main” portal, where we add language data collections that meet LDaCA’s collection guidelines. These are batch loaded from scripts into a loading area and then they’re indexed appropriately.</p>
+<p>We’ve also set up automation with <a href="https://developer.hashicorp.com/terraform">Terraform</a> to build portals on demand for communities, so that bespoke requirements for the portal interface and other needs can be catered to.</p>
+<p>The portals provide secure access to the data in an automated way through an API, and this is also used for downloads and analytics.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide09.png' alt='Analysis ::  :: ' title='Slide: 9' border='1'  width='85%%'/>
+<p>On the analytics side, we’re building Jupyter notebooks to explore the collections, which users can launch in a binder infrastructure, and these are also accessible in the portal.</p>
+<p>The notebooks allow you to download the collection data and analyse its contents in a repeatable way with reproducible results.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide10.png' alt='Reproducible Analysis :: Jupyter notebooks can break due to: :: Library upgrades :: Version changes :: Missing credentials :: Undocumented requirements :: Mitigate this with BinderHub: :: Launch pre-configured notebooks as interactive computing environments :: Explicitly defined hardware and software requirements :: ' title='Slide: 10' border='1'  width='85%%'/>
+<p>Library upgrades and version changes can break once-working Jupyter Notebooks, and this makes it difficult for future users to verify and reproduce results or build on them.</p>
+<p>BinderHubs enhances reproducibility by allowing users to launch pre-configured notebooks as interactive computing environments, and these have explicitly defined hardware and software requirements.</p>
+<p>We use the Nectar BinderHub service that is provided by the ARDC and AARNet.</p>
+<p>To illustrate this, I’ll walk through a recent notebook that has been developed for the COOEE collection.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide11.png' alt='Example: A COrpus of Oz Early English (COOEE) :: A collection of texts written in Australia between 1788 and 1900. ::  :: Divided into four time periods: :: Period 1: 1788-1825 :: Period 2: 1826-1850 :: Period 3: 1851-1875 :: Period 4: 1876-1900 :: Contains material from four registers: :: Speech-based (SB) :: Private written (PrW) :: Public written (PcW) :: Government English (GE) :: ' title='Slide: 11' border='1'  width='85%%'/>
+<p>The COrpus of Oz Early English, or COOEE, is a collection of texts written in Australia between 1788 and 1900. These include letters, published materials in book form, and other historical text.</p>
+<p>The corpus is divided into four time periods, each holding about 500,000 words.</p>
+<p>It’s also divided into four registers: these are Speech-based, Private Written, Public Written and Government English. The proportions of these registers is consistent for each time period as well.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide12.png' alt='COOEE Notebook - Metadata Standardisation :: Stratifying COOEE across time period and register makes 16 sub-corpora, allowing for comparative analysis such as topic modeling. :: Metadata standardisation required to reduce friction, increase interoperability: :: Mapping of collection-specific terms to schema.org standard: :: Birth → birthDate :: Gender → gender :: Nr → identifier :: Identifying the main text of the collection for analysis with the Language Data Commons Schema term ldac:mainText, e.g. :: &quot;ldac:mainText&quot;: { ::    &quot;@id&quot;: &quot;data/1-001-plain.txt&quot; :: } :: ' title='Slide: 12' border='1'  width='85%%'/>
+<p>Because COOEE is organised across both time period and register, the corpus can be stratified into 16 sub-corpora and allows for analysis of linguistic features according to either or both of the variables.</p>
+<p>Our notebook uses these sub-corpora as the basis for topic modeling, to show what topics are more or less strongly associated with particular sub-corpora.</p>
+<p>Before we could analyse the collection though, there was some transformation of metadata needed, so that where possible, the terms adhere to a standard framework that can be applied across collections, and allow for further interoperability.</p>
+<p>A number of these included mapping metadata in the COOEE collection to their schema.org equivalents, for example, Birth to birthDate, and Nr to identifier.</p>
+<p>We also needed to identify the main text for analysis, because each object in the COOEE collection has two types of text files - one is the plain text and the other has metadata encoding, with information about the register and the author of the text.</p>
+<p>For analysis, we only want to use the plain text so that the metadata codes won’t be included as part of the topic counts.</p>
+<p>For this, we defined the new term mainText in the Language Data Commons Schema vocabulary, which identifies the most relevant sub-component for computational text analytics.</p>
+<p>This metadata standardisation is an important step because it not only makes analysis faster and easier to do, but also allows us to re-use analytical approaches on multiple collections, and streamlines processes like comparing datasets.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide13.png' alt='COOEE Notebook - Downloading and preparing the data :: Download collection from LDaCA Portal. :: Use RO-Crate tabulator to create a table including both text data and metadata from the RepositoryObject entities, focussing on ldac:mainText. :: Convert to Pandas DataFrame :: Slice dataframe by register and time period to create 16 documents. :: ' title='Slide: 13' border='1'  width='85%%'/>
+<p>In the notebook, we first download the whole COOEE collection directly from the LDaCA Portal, and then we use the RO-Crate tabulator Python library which converts RO-Crate linked data (a network, or “graph” of relationships) to tabular representations (rows and columns).</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide14.png' alt='Analysis :: Because of the nature of the linked data format, we have built tools to convert linked data to tabular forms. :: ' title='Slide: 14' border='1'  width='85%%'/>
+<p>The tabulator also allows you to select the tables and properties that are relevant to your analysis. Mike will talk about this later in more detail.</p>
+<p>We also specify the mainText field as the property to be loaded and indexed as the text to analyse for this collection.</p>
+<p>We then convert the table to a Pandas DataFrame so that the metadata sits alongside the text data.</p>
+<p>Finally, we slice the data by register and time period, and concatenate the text of each document within a slice to create 16 large documents.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide15.png' alt='COOEE Notebook - Tokenization :: Natural Language Toolkit (NLTK) :: Documents converted to lists of words :: Removed punctuation marks, numbers, new line symbols and common words (e.g. the, and, of, etc.) :: \nI have not much news since I wrote, except that the weather is now beautiful, and in consequence the gold frenzy has burst forth now in full force, :: &#x27;much&#x27;,			&#x27;consequence&#x27;, :: &#x27;news&#x27;,			&#x27;gold&#x27;, :: &#x27;since&#x27;,			&#x27;frenzy&#x27;, :: &#x27;write&#x27;,			&#x27;burst&#x27;, :: &#x27;except&#x27;,		&#x27;forth&#x27;, :: &#x27;weather&#x27;,		&#x27;full&#x27;, :: &#x27;beautiful&#x27;,		&#x27;force&#x27;, ::  ::  :: ' title='Slide: 15' border='1'  width='85%%'/>
+<p>In order to discover the topics in the collection, we need to be working with a list of words for each document instead of paragraphs of text.</p>
+<p>For this, we used the Natural Language Toolkit Python libraries, which allow us to tokenise the data.</p>
+<p>Some words and other items in the text can be considered as 'noise' for the analysis and these are removed: these include punctuation marks, numbers, artefacts of digital text such as new line symbols and many common function words which are not relevant for the analysis.</p>
+<p>The diagram shows an example of some of the input text in the first box, and the second box shows the same data tokenised in a list with punctuation and other ‘noise’ items removed.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide16.png' alt='COOEE Notebook - Visualising the data :: ' title='Slide: 16' border='1'  width='85%%'/>
+<p>Using the tokenised word lists, we can now model the data using Gensim, and visualise the output, and we’ve done this with both interactive and static options.</p>
+<p>LDAvis – on the left – is an interactive visualisation of the topics learned by the model. The circles represent topics, and the most prevalent topics are larger. The bars show individual word frequencies.</p>
+<p>Because this visualisation is interactive, users can select a topic circle to view its most salient terms, which can be used to analyse any plausible semantic groupings in those topics.</p>
+<p>The heatmap – on the right – shows the distribution of topics across time periods and registers. The horizontal rows of three or four dark squares show where topics are strongly associated with a particular register across time.</p>
+<p>Although this particular notebook example is just run on the COOEE data, these processes can be easily re-applied to explore further collections, and can be adjusted according to the needs of the user.</p>
+<p>I’ll now hand over to Mike to talk more about the RO-Crate tabulator.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide17.png' alt='Tabulator :: Observable v RO-Crates? :: Needed a tool to turn a JSON-LD graph into tables ::  :: &quot;Tables&quot;: { ::     &quot;RepositoryObject&quot;: [..], :: 	&quot;Person&quot; [..], :: .. :: } ::  :: ' title='Slide: 17' border='1'  width='85%%'/>
+<p>The first version of Tabulator was written because a new version of the Observable data visualisation platform had come out which allowed you to build interactive dashboards without requiring a custom backend.</p>
+<p>I wanted to see how quickly I could use it to visualise the contents of an RO-Crate.</p>
+<p>Observable is a data-sciency tool so it really wants to work with tables. So Tabulator needed to be able to turn a random RO-Crate, which could be an arbitrary network of entities, into a set of tables.</p>
+<p>I'm a software engineer, so the first version was extremely general and not very performant. In most practical cases, you only want to turn a couple of the entities into tables - with the LDaCA collections, for example, things like RepositoryObjects, and also lifting relations to Persons into the table of documents</p>
+<p>With a bit of config the Tabulator can be used to convert the COOEE RO-Crate to an SQLite database with a row for each of the documents and their metadata - you can then load it in Observable and start building interactive plots to look at corpus features.</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide18.png' alt='Annotated CSV exports :: { ::       &quot;name&quot;: &quot;author_local:birthDateEstimateStart&quot;, ::       &quot;label&quot;: &quot;local:birthDateEstimateStart&quot;, ::       &quot;propertyUrl&quot;: &quot;arcp://name,hdl10.26180~23961609/terms#birthDateEstimateStart&quot;, ::       &quot;description&quot;: &quot;The start of the range of possible birth dates for a person - this is used when the birth date field was specified to the decade like 188x&quot;, ::       &quot;@id&quot;: &quot;#COLUMN_documents.csv_author_local:birthDateEstimateStart&quot;, ::       &quot;@type&quot;: &quot;csvw:Column&quot; :: } :: ' title='Slide: 18' border='1'  width='85%%'/>
+<p>Tables are also how researchers like to work with data, because you can load them into spreadsheets. But that raises the problem of spreadsheets and data types - CSV is just text with commas - there's no type information.</p>
+<p>But - we're exporting our data from a well-crafted RO-Crate, which has schema.org mappings, and there's an existing standard, CSVW, which can annotate CSV with JSON-LD column types.</p>
+<p>So Tabulator can export CSVs, together with a secondary RO-Crate which provides a CSVW schema for each of the exported tables, explaining what the columns are and providing links to definitions</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide19.png' alt='Getting specific :: Tabulator: general :: Tabulator-LDaCA: takes advantage of common features :: data.ldaca.edu.au :: Streaming tabular text ::  ::  :: ' title='Slide: 19' border='1'  width='85%%'/>
+<p>We've got more work underway at Sydney Informatics Hub to make it easier to use the Tabulator on LDaCA corpora. I still want to keep it as a general-purpose library but we can add some Python code which will use the common features of LDaCA RO-Crates to get out the relevant entities and build a table of the texts.</p>
+<p>This will then feed into the work we're doing on a new web frontend to a range of different text-analytics tools.</p>
+<p>Eventually, rather than downloading a whole corpus, running Tabulator and then loading it, you could run a component which fetches texts from the LDaCA data portal and returns rows which can be analysed in a web interface</p>
+<p>General purpose - visualise/analyse in your platform of cj</p>
+</section>
+<section typeof='http://purl.org/ontology/bibo/Slide'>
+<img src='Slide20.png' alt='' title='Slide: 20' border='1'  width='85%%'/>
+<p>To conclude, this work is part of a Data Commons. The key idea is to create low-friction analysis pipelines by:</p>
+<ul>
+<li>Having consistently described, well managed data available with a discovery portal and secure access APIs</li>
+<li>Data prep tools which will make it possible to align BYO data with the standards</li>
+<li>Tools should be easy to run on more than one data set, datasets work with more than one tool</li>
+<li>Limitations and assumptions on tools are clearly documented</li>
+<li>Tools are adaptable to different contexts</li>
+</ul>
+</section>
+
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
+</html>
