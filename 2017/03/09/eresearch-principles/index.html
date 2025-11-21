@@ -111,16 +111,21 @@ blockquote {
 /* utility classes */
 .date { font-style: italic; }
 
-/* categories: yellow -> pink gradient; no rounded corners */
+/* categories: inline like a span; italic; no rounded corners */
 .cat {
-    display: inline-block;
-    padding: 0.15rem 0.5rem;
+    display: inline;
+    font-style: italic;
     color: #111;
     line-height: 1;
     border-radius: 0;
+    padding: 0;
 }
 
-.cat p { line-height: 1em; margin: 0; }
+.cat p {
+    display: inline;
+    line-height: 1em;
+    margin: 0 0.5rem 0 0;
+}
 
 /* layout: stacked on small screens, two-column on larger */
 .row {
