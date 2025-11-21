@@ -39,22 +39,37 @@ a:visited { color: #8b2d93; }
 a:hover { color: #4a144f; }
 a:active { color: #0000FF; }
 
+.title a {
+        font-weight: bold;
+
+}
 /* header links */
 .header a { color: #FFFF00; text-decoration: none; }
 
-/* buttons */
+/* buttons: smaller, slightly rounded, with spacing so they don't touch */
 button {
-    color: #FFFFF;
-    background-color: #00000;
+    color: #FFFF00;
+    background-color: #FF00FF;
     font-family: monospace;
     border: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 0 0.5rem 0.4rem 0; /* gap to avoid touching when side-by-side */
+    cursor: pointer;
+}
+
+/* keep form controls square but let buttons remain rounded */
+input, select, textarea {
     border-radius: 0;
 }
 
-/* remove rounded corners for common controls */
-button, input, select, textarea {
-    border-radius: 0;
+/* ensure category buttons maintain spacing and inline flow */
+.cat button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.4rem;
+    vertical-align: middle;
 }
 
 /* headings */

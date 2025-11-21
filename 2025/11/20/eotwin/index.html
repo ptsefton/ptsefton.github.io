@@ -40,22 +40,37 @@ a:visited { color: #8b2d93; }
 a:hover { color: #4a144f; }
 a:active { color: #0000FF; }
 
+.title a {
+        font-weight: bold;
+
+}
 /* header links */
 .header a { color: #FFFF00; text-decoration: none; }
 
-/* buttons */
+/* buttons: smaller, slightly rounded, with spacing so they don't touch */
 button {
-    color: #FFFFF;
-    background-color: #00000;
+    color: #FFFF00;
+    background-color: #FF00FF;
     font-family: monospace;
     border: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 0 0.5rem 0.4rem 0; /* gap to avoid touching when side-by-side */
+    cursor: pointer;
+}
+
+/* keep form controls square but let buttons remain rounded */
+input, select, textarea {
     border-radius: 0;
 }
 
-/* remove rounded corners for common controls */
-button, input, select, textarea {
-    border-radius: 0;
+/* ensure category buttons maintain spacing and inline flow */
+.cat button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.4rem;
+    vertical-align: middle;
 }
 
 /* headings */
@@ -186,16 +201,17 @@ blockquote {
         </h1>
         <h2>2025-11-20 </h2>
 
-        <p><a href="#video">Skip the intro, straight to video</a></p>
+        <p><a href="#video">Skip the intro, straight to video</a>
+Or play using the <a href="./the_end_of_the_world_is_nighish_chart.pdf">chart</a> or read up on the background in the free <a href="./the-end-of-the-world-is-nighish.pdf">PDF</a>.</p>
 <p>I am getting around to setting up a part of this website for all my songs as something to leave behind for the two people who might care about that (they know who they are). Meanwhile, I have this blog so I'm putting this here.</p>
-<p>This song is inspired by <a href="https://scottcook.net/">Scott Cook</a> - a Canadian musician. It's only been performed in public once or twice so I thought I'd better learn to play it again before I completely forgot how it goes. Also I told Scott I'd send it to him, so now I think I have to at least try to sing it. I've been working in the &quot;studio&quot; but we sang it at the Katoomba open mic last night.</p>
+<p>This song is inspired by <a href="https://scottcook.net/">Scott Cook</a> - a wonderful Canadian musician. It's only been performed in public once or twice so I thought I'd better learn to play it again before I completely forgot how it goes. Also I told Scott I'd send it to him, so now I think I have to at least try to sing it. I've been working in the &quot;studio&quot; but we sang it at the Katoomba open mic last night.</p>
 <p>When I tested this song out on my friend Brian he said. &quot;That's dense!&quot; and I was like &quot;You're dense!&quot; and he was like, no I mean there's a lot going on in that song, it needs footnotes. So I made footnotes - which are in the <a href="./the-end-of-the-world-is-nighish.pdf">PDF</a> download. The PDF doesn't have the chords in it so I've included a <a href="./the_end_of_the_world_is_nighish_chart.pdf">chart</a> with them in it it too. They're a bit funny but you'll get the hang of it if you retune your guitar a little bit. Actually I'm a bit worried about what to call the first on - it's a kind of D Minor 7 but I think that mostly it functions as a B Flat Major chord with no root, and an added 4th or 11th or whatever. The song is in B Flat - I'm sure of that.</p>
 <p>But don't worry about the <a href="./the-end-of-the-world-is-nighish.pdf">PDF</a> now I'll cover the main points in this intro, you can download it later and print it out, that's yours to keep, as a memento. One young bloke even asked me to sign his copy, but we're not up to that part of the story yet.</p>
 <p>Scott wouldn't mind this intro I'm sure, he's a folk singer, and he's been known to have a bit of a chat. Some of those type of singers hardly get around to singing not to name any Folk Singer, Folk Singers called Steve.</p>
-<p>We begin our story in the nineteen eighties. Back in those days there were these &quot;Record Shops&quot; and we'd go there and find the kind of music we were after and then look through these 'bins' that were labelled alphabetically. Back in those days I was always thinking about band names -- in hindsight I should have practiced actually being a band rather than just saying we were one. Anyway, I thought a good move would be to choose an name between the &quot;Velvet Underground&quot; and and the &quot;Violent Femmes&quot; so when the cool kids were flipping through the &quot;Vinyls&quot; in the &quot;V&quot; bin they'd find us. Though in those days Vinyls was not a thing, it was all Album, or LPs or cassettes.</p>
+<p>We begin our story in the nineteen eighties. Back in those days there were these &quot;Record Shops&quot; and we'd go there and find the kind of music we were after and then look through these 'bins' that were labelled alphabetically. I was always thinking about band names -- in hindsight I should have practiced actually being a band rather than just saying we were one. Anyway, I thought a good move would be to choose an name between the &quot;Velvet Underground&quot; and and the &quot;Violent Femmes&quot; so when the cool kids were flipping through the &quot;Vinyls&quot; in the &quot;V&quot; bin they'd find us. Though in those days Vinyl was not a count-noun, we called them something else.</p>
 <p>Anyway, perusing the dictionary thought I might call my band &quot;Vermicide&quot; or &quot;Vermicidal Vendetta&quot;</p>
 <p>Jump forward to 2019 and we're in a tent at the Kangaroo Valley Folk Festival, at the showgrounds - just got married, so we're on our honeymoon and we're listening to &quot;Scott Cook and the She'll be rights&quot;. Something went a little bit wrong on stage - some kind of minor stuff up and Scott said something along the lines of &quot;Sorry everyone, this band is somewhere between nonchalance and negligence&quot;. I'm generally not a &quot;she'll be right&quot; kind of person, being more of a &quot;this will end in tears&quot; disposition, but I liked that phrase and I typed it into my song ideas file.</p>
-<p>Then, weirdly, a few years later, still waiting for someone to discover the band I didn't bother forming I was plucked from the obscurity of an open mic in Lithgow to perform at ... a Comedy night with some rude comedians from Sydney picking on the audience and talking about sex and drugs and then &quot;The inaugural Lithgow Comedy Festival&quot;. I didn't have to pay very much to perform, thanks Martin and as you can imagine the exposure was terrifically valuable. Anyway, for the occasion I thought I'd better make a new song to go with my one about the dog park that people think is funny -- it's not really, it's a tragic and closely observed look at a few very pressing social issues with swearing and drug references but no sex and I don't pick on the audience though I do shout a little bit.</p>
+<p>Then, weirdly, a few years later, still waiting for someone to discover the band I didn't bother forming I was plucked from the obscurity of an open mic in Lithgow to perform at ... a Comedy night with some rude comedians from Sydney picking on the audience and talking about sex and drugs. And then when that went OK, &quot;The inaugural Lithgow Comedy Festival&quot;. I didn't have to pay very much to perform, thanks Martin and as you can imagine the exposure was terrifically valuable. Anyway, for the occasion I thought I'd better make a new song to go with my one about the dog park that people think is funny -- it's not really, it's a tragic and closely observed look at a few very pressing social issues with swearing and drug references but no sex and I don't pick on the audience though I do shout a little bit.</p>
 <p>So anyway - unlike some people in 2023, I didn't get chatGPT to write a song for me but I did ask it what English word was half way between Negligence and Nonchalance - and it replied with bit of computer code that fetches a dodgy list of English words, finds Scott's two words in it and gets the one that's halfway in between. Back then that was kind of spooky. It also suggested that that word was <em>negotiate</em>, which is absolute bullshit - it's waaay to close to Negligence so it's obviously not that.</p>
 <pre><code class="language-python">import urllib.request
 url = &quot;https://raw.githubusercontent.com/dwyl/english-words/master/words.txt&quot;
