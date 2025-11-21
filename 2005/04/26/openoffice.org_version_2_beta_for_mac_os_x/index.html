@@ -1,141 +1,142 @@
-
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ptsefton.com :: OpenOffice.org version 2 Beta for Mac OS X</title>
 <style>
+/* Global reset / box-sizing */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #111;
+    background: #fff;
+}
+
+/* container keeps content centered and readable on all devices */
+.header, .content {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+/* header */
 .header {
-  background-color: #ff00ff;
-  border-color: #b72bc0;
+  background-color: #FF00FF; /* toned purple */
+  border-color: #FF00FF;
   color: #ffff00;
-  padding-top: 12pt;
-  padding-bottom: 12pt;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   font-family: monospace;
+  text-align: left;
 }
 
+/* links */
+a { text-decoration: none; color: #6b1d7a; }
+a:visited { color: #8b2d93; }
+a:hover { color: #4a144f; }
+a:active { color: #0000FF; }
 
+/* header links */
+.header a { color: #FFFF00; text-decoration: none; }
 
-
-/* unvisited link */
-a:link {
-    color: #FF00FF;
-}
-
-.header a:link {
-    color: #FFFF00;
-    text-decoration: none; 
-}
-
+/* buttons */
 button {
-    color: #ffff00;
-    background-color: #ff00ff;
+    color: #FFFFF;
+    background-color: #00000;
     font-family: monospace;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0;
 }
 
-/* visited link */
-a:visited {
-    color: #FF00AA;
+/* remove rounded corners for common controls */
+button, input, select, textarea {
+    border-radius: 0;
 }
 
-.header a:visited {
-    color: #FFFF00;
-}
-
+/* headings */
 h1, h2 {
-    color: # FF00FF
+    color: #FF00FF;
+    margin: 0.25rem 0 0.5rem 0;
 }
 
-/* mouse over link */
-a:hover {
-    color: #FF00AA;
-}
-
-/* selected link */
-a:active {
-    color: #0000FF;
-}
-
-a {
-    text-decoration: none; 
-}
-
+/* images */
 img {
     max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 section img {
-    width: 100%
+    width: 100%;
+    height: auto;
 }
 
+/* table cells */
 td, th {
-    padding-top: 20px;
-    padding-right: 20px;
+    padding: 0.6rem;
     vertical-align: top;
     text-align: left;
 }
 
+/* content typography */
 .content {
-	font-family: Verdana, system-ui, Helvetica, sans-serif;
-    line-height: 1.8em;
-    }
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #222;
+}
 
-
+/* caption and blockquote */
 .caption {
     text-align: center;
-    background-color: rgba(255, 0, 255, 0.2); 
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    background-color: rgba(255, 0, 255, 0.06);
+    padding: 0.75rem;
+    margin: 0.5rem 0;
 }
 
 blockquote {
     font-style: italic;
-    font-weight: bold;
-    color: #FF00FF;
-
-    background-color: rgba(255, 255, 0, 0.2); 
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    font-weight: 600;
+    color: #6b1d7a;
+    background-color: rgba(255, 255, 0, 0.08);
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border-left: 4px solid rgba(183,43,192,0.2);
 }
 
+/* utility classes */
+.date { font-style: italic; }
 
-@media  screen and (min-width:  900px) {
-    .content, .header {
-        width: 60%;
-        padding-left: 20%;
-        padding-right: 30%;
-    }
-    .row {
+/* categories: yellow -> pink gradient; no rounded corners */
+.cat {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    color: #111;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 0;
+}
+.cat p { line-height: 1em; margin: 0; }
+
+/* layout: stacked on small screens, two-column on larger */
+.row {
     display: grid;
-    grid-template-columns: 75% 25%;
-}
-    
-}
-
-@media  screen and (min-width: 1200px) {
-    .content, .header {
-        width: 55%;
-        padding-left: 20%;
-        padding-right: 30%;
-    }
-    .row {
-        display: grid;
-        grid-template-columns: 75% 25%;
-}
-    
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-
-.date {
-      font-style: italic;
+/* breakpoints */
+@media (min-width: 720px) {
+    .row { grid-template-columns: 2fr 1fr; }
+    .header, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
 
-.cat p {
-        line-height: 1em;
+@media (min-width: 1200px) {
+    .header, .content { padding-left: 2rem; padding-right: 2rem; }
 }
 
 </style>
