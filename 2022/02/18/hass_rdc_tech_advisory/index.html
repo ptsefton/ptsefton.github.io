@@ -117,10 +117,10 @@ blockquote {
     display: inline-block;
     padding: 0.15rem 0.5rem;
     color: #111;
-    font-weight: 600;
     line-height: 1;
     border-radius: 0;
 }
+
 .cat p { line-height: 1em; margin: 0; }
 
 /* layout: stacked on small screens, two-column on larger */
@@ -128,6 +128,13 @@ blockquote {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+}
+
+/* spacing for post list entries */
+.post {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 /* breakpoints */
