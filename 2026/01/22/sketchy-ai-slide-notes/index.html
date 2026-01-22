@@ -1,0 +1,233 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ptsefton.com :: Google&#39;s sketchy AI
+</title>
+<style>
+/* Global reset / box-sizing */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Verdana, system-ui, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #111;
+    background: #fff;
+}
+
+/* container keeps content centered and readable on all devices */
+.header, .content {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+/* header */
+.header {
+  background-color: #FF00FF; /* toned purple */
+  border-color: #FF00FF;
+  color: #ffff00;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: monospace;
+  text-align: left;
+}
+
+/* links */
+a { text-decoration: none; color: #6b1d7a; }
+a:visited { color: #8b2d93; }
+a:hover { color: #4a144f; }
+a:active { color: #0000FF; }
+
+.title a {
+        font-weight: bold;
+
+}
+/* header links */
+.header a { color: #FFFF00; text-decoration: none; }
+
+/* buttons: smaller, slightly rounded, with spacing so they don't touch */
+button {
+    color: #FFFF00;
+    background-color: #FF00FF;
+    font-family: monospace;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 0 0.5rem 0.4rem 0; /* gap to avoid touching when side-by-side */
+    cursor: pointer;
+}
+
+/* keep form controls square but let buttons remain rounded */
+input, select, textarea {
+    border-radius: 0;
+}
+
+/* ensure category buttons maintain spacing and inline flow */
+.cat button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.4rem;
+    vertical-align: middle;
+}
+
+/* headings */
+h1, h2 {
+    color: #FF00FF;
+    margin: 0.25rem 0 0.5rem 0;
+}
+
+/* images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+section img {
+    width: 100%;
+    height: auto;
+}
+
+/* table cells */
+td, th {
+    padding: 0.6rem;
+    vertical-align: top;
+    text-align: left;
+}
+
+/* content typography */
+.content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #222;
+}
+
+/* caption and blockquote */
+.caption {
+    text-align: center;
+    background-color: rgba(255, 0, 255, 0.06);
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: 600;
+    color: #6b1d7a;
+    background-color: rgba(255, 255, 0, 0.08);
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border-left: 4px solid rgba(183,43,192,0.2);
+}
+
+/* utility classes */
+.date { font-style: italic; }
+
+/* categories: inline like a span; italic; no rounded corners */
+.cat {
+    display: inline;
+    font-style: italic;
+    color: #111;
+    line-height: 1;
+    border-radius: 0;
+    padding: 0;
+}
+
+.cat p {
+    display: inline;
+    line-height: 1em;
+    margin: 0 0.5rem 0 0;
+}
+
+/* layout: stacked on small screens, two-column on larger */
+.row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* spacing for post list entries */
+.post {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* breakpoints */
+@media (min-width: 720px) {
+    .row { grid-template-columns: 2fr 1fr; }
+    .header, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+@media (min-width: 1200px) {
+    .header, .content { padding-left: 2rem; padding-right: 2rem; }
+}
+
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-898010-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6JNHBJL67Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6JNHBJL67Q');
+</script>
+
+<body>
+    <div class="header">
+        <h2><a href="/">[ptsefton.com]</a> | <a href="/Pages/cv.html"> [CV & Bio] </a></h2>
+    </div>
+
+
+    <div class="content">
+        <h1> 
+        Google&#39;s sketchy AI
+ 
+        </h1>
+        <h2>2026-01-22 </h2>
+
+        <p>You've all noticed that Google is a bit shit lately, right? You get AI answers instead of decent search results, and for me at least it always sends me to Reddit where there's more AI shit.</p>
+<p>Quite a few of the bloggers I follow have been talking about how they are extracting themselves from the services run by the big tech companies, for all sorts of reasons to do with risk, privacy, social justice and so on. This post is just another reminder that maybe using stuff from Google et al is not such a great idea.</p>
+<p>This story is kind of funny, but it's also <em>very</em> sobering.</p>
+<p>We were in this meeting today, me, Moises, Ben and we were joined by River who guessed the Zoom room ID and joined us. We were working on this presentation, only as you see here in this screenshot the slide notes were not showing up for Moises.</p>
+<p><img src="./image.png" alt="alt text"></p>
+<p>(The bottom of the page where there is normally some stuff is just a void)</p>
+<p>Not in Safari, not in Chrome, and not in Firefox. I was all, like &quot;Works for me&quot; in the tab I'd had open all week, and wondering if it was a recent permissions change I'd made. But no, turned out it didn't work for Ben or River, and if I opened the presentation in a new browser session it didn't work for me either.</p>
+<p>And then River said - hey, it looks like it's something to do with this. He'd done the developer thing and opened the develop tools and had a poke around the screen and found this:</p>
+<pre><code class="language-html">&lt;div class=&quot;appsSketchyGenerativeaiNudgesCanvasNudgeSurfaceSoyContainer&quot; id=&quot;canvas-nudge-surface-soy-container&quot;&gt;&lt;/div&gt;
+
+</code></pre>
+<p>This happens to be right before the <code>speakernotes-container</code> div - where, one assumes the speaker notes live.</p>
+<pre><code class="language-html">&lt;div id=&quot;speakernotes-container&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<p>Yep there's a an element in Google's office product used by millions of people with a class called <code>appsSketchyGenerativeaiNudgesCanvasNudgeSurfaceSoyContainer</code>. May contain traces of sketchy generative AI but least it's lactose free :-). The fact that it's a class indicates that it might be used in more than one place, so who knows what else it is breaking.</p>
+<p>You can't make this stuff up. You need a SketchyGenerativeai for that, though to be fair there are actually other bits of the interface that have sketchy in the name - maybe it doesn't mean shitty in this context?</p>
+<p>And then Ben said if you delete that class the page works again. The little handle reappears and you can drag it up to see your notes.</p>
+<p>The little handle: <img src="image-2.png" alt="alt text"></p>
+<p>And we're back:</p>
+<p><img src="image-1.png" alt="alt text"></p>
+<p>Now we do pay for this Google stuff at work and I use it for all sorts of things also pay. But hey, I am thinking that this is a very good reminder to get thinking about how to move all our stuff to services that are not, you know, turning to shit.</p>
+
+    </div><script src="https://utteranc.es/client.js"
+            repo="ptsefton/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>  
+    </script></body>
+</html>
