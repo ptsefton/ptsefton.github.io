@@ -4,12 +4,41 @@
   <subtitle>Peter (PT) Sefton&#39;s blog -- mostly about research data and archival repositories these days</subtitle>
   <link href="https://ptsefton.com/feed/atom" rel="self" />
   <link href="https://ptsefton.com/" />
-  <updated>2025-11-20T00:00:00Z</updated>
+  <updated>2026-01-22T00:00:00Z</updated>
   <id>https://ptsefton.com/</id>
   <author>
     <name>Peter Sefton</name>
     <email>pt@ptsefton.com</email>
   </author>
+  <entry>
+    <title>Google&#39;s sketchy AI
+</title>
+    <link href="https://ptsefton.com/2026/01/22/sketchy-ai-slide-notes/" />
+    <updated>2026-01-22T00:00:00Z</updated>
+    <id>https://ptsefton.com/2026/01/22/sketchy-ai-slide-notes/</id>
+    <content type="html">&lt;p&gt;You&#39;ve all noticed that Google is a bit shit lately, right? You get AI answers instead of decent search results, and for me at least it always sends me to Reddit where there&#39;s more AI shit.&lt;/p&gt;
+&lt;p&gt;Quite a few of the bloggers I follow have been talking about how they are extracting themselves from the services run by the big tech companies, for all sorts of reasons to do with risk, privacy, social justice and so on. This post is just another reminder that maybe using stuff from Google et al is not such a great idea.&lt;/p&gt;
+&lt;p&gt;This story is kind of funny, but it&#39;s also &lt;em&gt;very&lt;/em&gt; sobering.&lt;/p&gt;
+&lt;p&gt;We were in this meeting today, me, Moises, Ben and we were joined by River who guessed the Zoom room ID and joined us. We were working on this presentation, only as you see here in this screenshot the slide notes were not showing up for Moises.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ptsefton.com/2026/01/22/sketchy-ai-slide-notes/image.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;(The bottom of the page where there is normally some stuff is just a void)&lt;/p&gt;
+&lt;p&gt;Not in Safari, not in Chrome, and not in Firefox. I was all, like &amp;quot;Works for me&amp;quot; in the tab I&#39;d had open all week, and wondering if it was a recent permissions change I&#39;d made. But no, turned out it didn&#39;t work for Ben or River, and if I opened the presentation in a new browser session it didn&#39;t work for me either.&lt;/p&gt;
+&lt;p&gt;And then River said - hey, it looks like it&#39;s something to do with this. He&#39;d done the developer thing and opened the develop tools and had a poke around the screen and found this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div class=&amp;quot;appsSketchyGenerativeaiNudgesCanvasNudgeSurfaceSoyContainer&amp;quot; id=&amp;quot;canvas-nudge-surface-soy-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This happens to be right before the &lt;code&gt;speakernotes-container&lt;/code&gt; div - where, one assumes the speaker notes live.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div id=&amp;quot;speakernotes-container&amp;quot;&amp;gt; ... &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Yep there&#39;s a an element in Google&#39;s office product used by millions of people with a class called &lt;code&gt;appsSketchyGenerativeaiNudgesCanvasNudgeSurfaceSoyContainer&lt;/code&gt;. May contain traces of sketchy generative AI but least it&#39;s lactose free :-). The fact that it&#39;s a class indicates that it might be used in more than one place, so who knows what else it is breaking.&lt;/p&gt;
+&lt;p&gt;You can&#39;t make this stuff up. You need a SketchyGenerativeai for that, though to be fair there are actually other bits of the interface that have sketchy in the name - maybe it doesn&#39;t mean shitty in this context?&lt;/p&gt;
+&lt;p&gt;And then Ben said if you delete that class the page works again. The little handle reappears and you can drag it up to see your notes.&lt;/p&gt;
+&lt;p&gt;The little handle: &lt;img src=&quot;https://ptsefton.com/2026/01/22/sketchy-ai-slide-notes/image-2.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;And we&#39;re back:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ptsefton.com/2026/01/22/sketchy-ai-slide-notes/image-1.png&quot; alt=&quot;alt text&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now we do pay for this Google stuff at work and I use it for all sorts of things also pay. But hey, I am thinking that this is a very good reminder to get thinking about how to move all our stuff to services that are not, you know, turning to shit.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The End of The World is Nigh (ish)
 </title>
@@ -1137,191 +1166,5 @@ ADA has an interest in establishing the means for providing suitable representat
 &lt;img src=&quot;https://ptsefton.com/2023/06/29/report-or-2023/image-9.png&quot; alt=&quot;Me flipping a roti while Zayed cheers me on&quot;&gt;
 &lt;p&gt;&lt;em&gt;Here I am flipping a roti&lt;/em&gt;&lt;/p&gt;
 &lt;/a&gt;</content>
-  </entry>
-  <entry>
-    <title>Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data
-</title>
-    <link href="https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/" />
-    <updated>2023-06-14T00:00:00Z</updated>
-    <id>https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/</id>
-    <content type="html">&lt;p&gt;&lt;a href=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/arkisto-stack-or-2023.pdf&quot;&gt;Download as PDF&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This presentation was delivered by Peter Sefton at the &lt;a href=&quot;https://or2023.openrepositories.org/&quot;&gt;Open Repositories 2023&lt;/a&gt; conference in South Africa on 2023-06-14 in the &lt;a href=&quot;https://www.conftool.net/or2023/index.php?page=browseSessions&amp;amp;form_session=460&amp;amp;presentations=show&quot;&gt;Presentations: Discipline specific systems with FAIR principles
-&lt;/a&gt; session. It is also available on the &lt;a href=&quot;https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/&quot;&gt;LDaCA website&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This contains the slides and complete speaker notes, which have been edited after the conference.&lt;/p&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;p&gt;We will present a standards-based generalized architecture for large-scale data* repositories for research and preservation illustrated with real world examples drawn from a number of languages and cultural archive projects. This work is taking place in the context of the Australian Humanities and Social Sciences Research Data Commons, particularly the Language Data component thereof and the long-established PARADISEC cultural archive. The standards used include the Oxford Common File Layout for storage, Research Object CRATE (RO-Crate) for consistent linked-data description of FAIR digital objects, and a language data metadata profile to ensure long-term interoperability between systems and re-usability over time. We also discuss data licensing and authorization for access to non-open resources. We suggest that the approach shown here may be used in other disciplines or for other kinds of digital library, repository or archival systems.&lt;/p&gt;
-&lt;p&gt;*The submitted abstract did not have the word data here - added for clarity&lt;/p&gt;
-&lt;p&gt;By: Peter Sefton (University of Queensland), Simon Musgrave (University of Queensland &amp;amp; Monash University) &amp;amp; Nick Thieberger (University of Melbourne)&lt;/p&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide01.png&quot; alt=&quot;The Language Data Commons of Australia (LDaCA) and Australian Text Analytics Platform (ATAP) projects received investment (https://doi.org/10.47486/DP768 and https://doi.org/10.47486/PL074) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).   ARC LIEF LE210100013 (2021-2024) Nyingarn: a platform for primary sources in Australian Indigenous languages  &quot; title=&quot;Slide: 1&quot;&gt;
-&lt;p&gt;This work is supported by the Australian Research Data Commons.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide02.png&quot; alt=&quot; With thanks for their contribution: Partner Institutions: &quot; title=&quot;Slide: 2&quot;&gt;
-&lt;p&gt;The Language Data Commons of Australia Data Partnerships (LDaCA) and the Australian Text Analytics Platform (ATAP) are building towards a scalable and flexible language data and analytics commons. These projects will be part of the HASS (Humanities and Social Sciences) and Indigenous Research Data Commons (HASS+I RDC).&lt;/p&gt;
-&lt;p&gt;The Data Commons will focus on preservation and discovery of distributed multi-modal language data collections under a variety of governance frameworks. This will include access control that reflects ethical constraints and intellectual property rights, including those of Aboriginal and Torres Strait Islander, migrant and Pacific communities.&lt;/p&gt;
-&lt;p&gt;The platform will provide workbench services to support computational research, starting with code-notebooks with no-code research tools provided in later phases. Research artifacts such as code and derived data will be made available as fully documented research objects that are re-runnable and rigorously described. Metrics to demonstrate the impact of the platform are projected to include usage statistics, data and article citations. These projects are led by Professor Michael Haugh of the School of Languages and Cultures at the University of Queensland with several partner institutions.&lt;/p&gt;
-&lt;p&gt;We would like to acknowledge the traditional custodians of the lands on which we live and work and the importance of indigenous knowledge, culture and language to the these projects. Peter Sefton lives and works on Wiradjuri land, and for Nick Thieberger and Simon Musgrave it&#39;s the land of the Kulin nation.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide03.png&quot; alt=&quot;Pacific and Regional Archive for Digital Sources in Endangered Cultures (PARADISEC) Established 2003 Researchers concerned to digitise, preserve, and make accessible recordings in the many languages of the region around Australia No other agency taking responsibility for these recordings so they were at risk of loss Catalog exposes the existence of these recordings, 38,000 items in 690 collections Currently represent 1,350 languages, in 205 terabytes, with over 16,000 hours of audio recordings, 3,000 hours of video &quot; title=&quot;Slide: 3&quot;&gt;
-&lt;p&gt;PARADISEC is an online archive of cultural data which has been maintained for twenty years, in this presentation we will look at some of the lessons learned from PARADISEC. In summary – the PARADISEC approach to simple data and metadata storage is something we want to continue in LDaCA, while the high cost for PARADISEC of commissioning and maintaining its own software stack is something we want to address by taking a more standards-based approach to managing language and other data over the coming decades.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide04.png&quot; alt=&quot;  &quot; title=&quot;Slide: 4&quot;&gt;
-&lt;p&gt;The Arkisto platform started in 2019 as a way to capture the lessons of PARADISEC and other projects such as Alveo (another language data project similar in scope to LDaCA) which was presented at OR 2014: Sefton PM, Estival D, Cassidy S, Burnham D, Berghold J. The Human Communication Science Virtual Lab (HCS vLab): A repository microclimate in a rapidly evolving research-ecosystem. In: Open Repositories 2014. Helsinki; 2014 [cited 2016 Jul 19]. Available from: http://www.doria.fi/handle/10024/97740&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide05.png&quot; alt=&quot;  &quot; title=&quot;Slide: 5&quot;&gt;
-&lt;p&gt;This diagram was used in the bid documents that established LDaCA - it shows the progression of data from end-of life projects and active repositories into a standards-based data-commons.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide06.png&quot; alt=&quot;  &quot; title=&quot;Slide: 6&quot;&gt;
-&lt;p&gt;This is the data triage process we have been going through in LDaCA — and it should be noted that of all the data we are presented with, most of it needs to be reworked into the Arkisto Standards Stack. Even PARADISEC which in 2019 received the international &lt;a href=&quot;https://www.coretrustseal.org/why-certification/certified-repositories/&quot;&gt;Core Trust Seal&lt;/a&gt; based on the &lt;a href=&quot;http://www.coretrustseal.org/requirements/&quot;&gt;DSA-WDS Core Trustworthy Data Repositories Requirements&lt;/a&gt; is still in the process of migrating data to more sustainable formats.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide07.png&quot; alt=&quot;  &quot; title=&quot;Slide: 7&quot;&gt;
-&lt;p&gt;This is a taster of what data looks like in the kids of repositories we are talking about. This site contains harvested metadata about holdings on Australian Indigenous Languages in University of Queensland Libraries.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide08.png&quot; alt=&quot;&quot; title=&quot;Slide: 8&quot;&gt;
-&lt;p&gt;The LDaCA services we are building use an API to drive the data portals. The API can be used for direct access with appropriate access control – see &lt;a href=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/posts/fair-care-eresearch-2022&quot;&gt;another eResearch presentation&lt;/a&gt; which explains this in detail. These screenshots show code notebooks running in BinderHub on the Nectar cloud accessing language resources.&lt;/p&gt;
-&lt;p&gt;This  work has also been &lt;a href=&quot;https://digital.library.unt.edu/ark:/67531/metadc2114304/&quot;&gt;written up&lt;/a&gt; for the &lt;em&gt;2nd International Workshop on Digital Language Archives (LangArc 2023) virtual workshop on digital language archives&lt;/em&gt; 2023-06-30.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide09.png&quot; alt=&quot;  &quot; title=&quot;Slide: 9&quot;&gt;
-&lt;p&gt;This is the overall architecture for data storage and delivery — missing is how data gets into to the repository, but we’ll come to that later.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide10.png&quot; alt=&quot;  &quot; title=&quot;Slide: 10&quot;&gt;
-&lt;p&gt;At this point I will introduce one of the themes of this talk. In March this year, &lt;a href=&quot;https://bibwild.wordpress.com/2023/03/21/ocfl-and-source-of-truth-two-options/&quot;&gt;this blog post was published&lt;/a&gt; - looking at the pros and cons of using OCFL (the Oxford Common File Layout) as the “source of truth” for a system (say a repository).&lt;/p&gt;
-&lt;p&gt;We are very much taking the OCFL (that is file-in-storage-as-the-source-of-truth) approach in LDaCA. Which begs the question: “But doesn’t that mean that it’s very specific to language data?” No, because we’re using a very flexible, extensible, discipline-neutral format for data description – yes, we have ways to specialise metadata and interfaces to language and other cultural metadata, but NO, the systems are not locked-in to that mode of operation. This means we should be able to share development and maintenance more broadly than with a single archive.&lt;/p&gt;
-&lt;p&gt;Two main points we want to get across in this presentation:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;We are taking seriously the idea that data-in-storage should be “batteries included” – everything needed to preserve and use the data is stored together and systems can be reconstituted from this storage.&lt;/li&gt;
-&lt;li&gt;This approach IS generic – different vocabularies / schemas can be plugged-in by design.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide11.png&quot; alt=&quot;📂  🔬 🔭 📹 💽 🖥️ ⚙️🎼🌡️🔮🎙️🔍🌏📡💉🏥💊🌪️ &quot; title=&quot;Slide: 11&quot;&gt;
-&lt;p&gt;So lets now start looking at the standards involved in the Arkisto approach. This is a slide from “What is RO-Crate” – The dataset may contain any kind of data resource about anything, in any format as a file or URL&lt;/p&gt;
-&lt;p&gt;Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):Packaging research artefacts with RO-Crate.Data Science 5(2)https://doi.org/10.3233/DS-210053&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide12.png&quot; alt=&quot;  &quot; title=&quot;Slide: 12&quot;&gt;
-&lt;p&gt;The core standard for this work is RO-Crate (Research Object Crate) in which all data is input, stored and output. This a big step for eresearch systems – no longer is there a transformation step on data onboarding (we used the term ingest, but some project members and partners found the metaphor distasteful).&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide13.png&quot; alt=&quot;  Here the mechanism is to use the ‘magic’ name METS.xml to store some extra metadata – with a fully linked-data system this kind of thing is not needed &quot; title=&quot;Slide: 13&quot;&gt;
-&lt;p&gt;This screenshot is a bit of (undated) DSpace documentation found following a tip from Kim Sheppard – we have included it here to illustrate that storing additional metadata (in this case METS) for an object was done by convention. Using a linked-data system means that we no longer have to do this kind of thing – there’s still one magic file name in RO-Crate but it’s only one for the metadata and one for the HTML preview – everything else is labelled and extensible.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide14.png&quot; alt=&quot;Using this core layer gives you interoperability with generic tools and general purpose “Who What Where” metadata &quot; title=&quot;Slide: 14&quot;&gt;
-&lt;p&gt;In the early days of the “Open Repositories” movement repositories had Dublin Core metadata (a standard with a few different flavours).&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide15.png&quot; alt=&quot; Using a domain specific profile extends the core RO-Crate for a specific type of data – eg language data, computational workflows or “cultural collections”  (You can use more than one profile) &quot; title=&quot;Slide: 15&quot;&gt;
-&lt;p&gt;These days using linked data it is no longer necessary to have a bevy of XML schemas with incompatible encodings to store data from different schemas, different voclabularies and ontologies can co-exist and be expressed in a common way.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide16.png&quot; alt=&quot;&quot; title=&quot;Slide: 16&quot;&gt;
-&lt;p&gt;In the PARADISEC system this is achieved by storing files on disk in a simple hierarchy - with metadata and other resources stored together in a directory - this scheme allows for hands-on management of data resources, independently of the software used to serve them.&lt;/p&gt;
-&lt;p&gt;This approach means that if the PARADISEC software-stack becomes un-maintainable for financial or technical reasons the important resources, the data, are stored safely on disk with their metadata and a new access portal could be constructed relatively easily.&lt;/p&gt;
-&lt;p&gt;Despite the valuable features of this solution, it is not generalisable. The metadata.xml is custom to PARADISEC, as is the software stack.&lt;/p&gt;
-&lt;p&gt;In 2019 PARADISEC and the eResearch team at UTS received small grants from the Australian National Data Service and began collaborating on an approach to managing archival repositories which built on this PARADISEC approach of storing metadata with data.&lt;/p&gt;
-&lt;p&gt;The UTS team presented on this at &lt;a href=&quot;https://ptsefton.com/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation/index.html&quot;&gt;eResearch Australasia 2019&lt;/a&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide17.png&quot; alt=&quot;  &quot; title=&quot;Slide: 17&quot;&gt;
-&lt;p&gt;The &lt;a href=&quot;https://www.researchobject.org/ro-crate/1.1/structure.html&quot;&gt;structure of an RO-Crate&lt;/a&gt; is very similar to the PARADISEC example above, but with a json file instead of XML, and an optional preview in HTML.&lt;/p&gt;
-&lt;p&gt;RO-Crate has a growing number of &lt;a href=&quot;https://www.researchobject.org/ro-crate/tools/&quot;&gt;tools and software libraries&lt;/a&gt; which means that a team such as PARADISEC does not have to maintain their own bespoke software.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide18.png&quot; alt=&quot;  &quot; title=&quot;Slide: 18&quot;&gt;
-&lt;p&gt;Here, for comparison is &lt;a href=&quot;https://wiki.lyrasis.org/display/FEDORA6x/Fedora+OCFL+Object+Structure#FedoraOCFLObjectStructure-FedoraAtomicResource-Container&quot;&gt;how Fedora 6 would store an object (an Atomic Resource in Fedora-speak) like this with multiple files&lt;/a&gt;. Like RO-Cratee this uses linked-dataa but in this case split up into multiple files containing RDF triples. (This is similar to the pre-RO-Crate approach taken by the Research Object spec).&lt;/p&gt;
-&lt;p&gt;This also shows some of what an OCFL repository looks like – this is an OCFL object with a single version.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide19.png&quot; alt=&quot; This is an RO-Crate Object which is stored as an OCFL Object &quot; title=&quot;Slide: 19&quot;&gt;
-&lt;p&gt;This screenshot shows an example of an Arkisto-style use of OCFL (all of the metadata is stored in the ro-crate-metadata.json rather than spread out as in Fedora).&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide20.png&quot; alt=&quot;  &quot; title=&quot;Slide: 20&quot;&gt;
-&lt;p&gt;Now we come to the second core standard in our stack the &lt;a href=&quot;https://ocfl.io&quot;&gt;Oxford Common File Layout&lt;/a&gt; – which is something we found out about via OpenRepositories – I couldn’t make the presentation, but I got a corridor briefing on this from Neil Jeffries in Bozeman at OR 2018.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide21.png&quot; alt=&quot;  &quot; title=&quot;Slide: 21&quot;&gt;
-&lt;p&gt;This slide shows the interface between our core standards – a compliant OCFL repository has Objects within it that conform to the RO-Crate specification.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide22.png&quot; alt=&quot;  &quot; title=&quot;Slide: 22&quot;&gt;
-&lt;p&gt;This slide illustrates the flexibility of the approach we’re taking. As LDaCA is a national project, our archival repositories and those of our partners such as PARADISEC will be distributed with differences of governance, varying by organisation, language type and discipline, though there is still a desire to be able to aggregate data into services that make it findable.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide23.png&quot; alt=&quot;  S3-Style Object store Plain Old File Store &quot; title=&quot;Slide: 23&quot;&gt;
-&lt;p&gt;The storage services may not all be the same in this model, some may be file systems, some may be object stores, and they may be hosted by and governed by a variety of organizations.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide24.png&quot; alt=&quot;  &quot; title=&quot;Slide: 24&quot;&gt;
-&lt;p&gt;This slide shows how we have abstracted the “A” for Access in FAIR out of the repository and into a separate centralised or at least &lt;em&gt;concentrated&lt;/em&gt; system. We have a &lt;a href=&quot;https://www.ldaca.edu.au/posts/fair-care-eresearch-2022/&quot;&gt;full write-up of this approach from the 2022 eResearch Australasia conference&lt;/a&gt; and we don’t have time to go through it in detail here, but in summary:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Every object in the repository has a Data Reuse License with some management metadata.&lt;/li&gt;
-&lt;li&gt;Each repository only needs an authoritative list of licenses and trusted license management systems to be able to serve the data.&lt;/li&gt;
-&lt;li&gt;License management is handled by a dedicated system that can deal with application and invitation workflows to grant licenses (including simple self-serve click-through license agreements)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Note that our work is also informed by the &lt;a href=&quot;https://www.gida-global.org/care&quot;&gt;CARE principles for Indigenous data Governance (Collective benefit, Authority to control, Responsibility, Ethics)&lt;/a&gt; which frame the way FAIR protocols are implemented. Again, see the &lt;a href=&quot;https://digital.library.unt.edu/ark:/67531/metadc2114304/&quot;&gt;LangArc workshop write-up&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide25.png&quot; alt=&quot;  Ok but how does the data get there? &quot; title=&quot;Slide: 25&quot;&gt;
-&lt;p&gt;Let’s revisit this diagram. What’s missing?&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide26.png&quot; alt=&quot;  &quot; title=&quot;Slide: 26&quot;&gt;
-&lt;p&gt;In the first phase of the LDaCA project, work focused on batch import of data using tools to convert collections – this approach was used on contemporary collections as well as for “rescuing” collections from older repository system.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide27.png&quot; alt=&quot; {      &amp;quot;@id&amp;quot;: &amp;quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&amp;quot;,      &amp;quot;@type&amp;quot;: &amp;quot;SoftwareSourceCode&amp;quot;,      &amp;quot;name&amp;quot;: &amp;quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&amp;quot;,      &amp;quot;description&amp;quot;: &amp;quot;Converts an RO-Crate to an LDaCA OCFL collection as long as the crate has repository Objects and Collections that are members of a RepositoryCollection in the root dataset&amp;quot;,      &amp;quot;programmingLanguage&amp;quot;: {        &amp;quot;@id&amp;quot;: &amp;quot;https://en.wikipedia.org/wiki/Node.js&amp;quot;      }    },    {      &amp;quot;@id&amp;quot;: &amp;quot;#provenance&amp;quot;,      &amp;quot;name&amp;quot;: &amp;quot;Created RO-Crate using corpus-tools-ro-crate&amp;quot;,      &amp;quot;@type&amp;quot;: &amp;quot;CreateAction&amp;quot;,      &amp;quot;instrument&amp;quot;: {        &amp;quot;@id&amp;quot;: &amp;quot;https://github.com/Language-Research-Technology/corpus-tools-ro-crate&amp;quot;      },      &amp;quot;result&amp;quot;: {        &amp;quot;@id&amp;quot;: &amp;quot;ro-crate-metadata.json&amp;quot;      }    } The act of creation of this metadata is documented &quot; title=&quot;Slide: 27&quot;&gt;
-&lt;p&gt;This slide shows some JSON-LD metadata that describes the way this RO-Crate metadata was created – illustrating how RO-Crate can be used to record provenance.&lt;/p&gt;
-&lt;p&gt;(UPDATE: I didn&#39;t explain &lt;a href=&quot;https://json-ld.org/&quot;&gt;JSON-LD&lt;/a&gt; properly during the presentation. JSON-LD is a method of encoding linked-data (which can be quite esoteric and unapproachable) in JSON a method of describing data in simple text, which is widely used and understood by programmers.)&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide28.png&quot; alt=&quot; &quot; title=&quot;Slide: 28&quot;&gt;
-&lt;p&gt;This part of the architecture we are working on now…&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide29.png&quot; alt=&quot;&quot; title=&quot;Slide: 29&quot;&gt;
-&lt;p&gt;Here we see the Crate-O metadata tool (which is a zero-install web application that runs in Chrome and other browsers that support the new FilesystemAPI) being used to add an Organization as the Affiliation for a Person entity. Having imported this &amp;quot;Context Entity&amp;quot; (that&#39;s the RO-Crate term) it can then be re-used within the crate which we see here as the schema.org &lt;code&gt;publisher&lt;/code&gt; property is linked to the same organization.&lt;/p&gt;
-&lt;p&gt;(At this stage Crate-O is still to be connected to the repository stack - that will happen in the second half of 2023)&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide30.png&quot; alt=&quot;  &quot; title=&quot;Slide: 30&quot;&gt;
-&lt;p&gt;We hope to work with other editor projects (eg &lt;a href=&quot;https://describo.github.io/#/&quot;&gt;Describo&lt;/a&gt;) to make editor profiles as compatible as possible.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide31.png&quot; alt=&quot;  &quot; title=&quot;Slide: 31&quot;&gt;
-&lt;p&gt;The next series of slides show some examples of our approach implemented in a variety of contexts.&lt;/p&gt;
-&lt;p&gt;Here’s another repository that uses RO-Crate metadata (from the Language Data Commons of Australia / Australian Text Analytics Platform) – here users can launch a Jupyter notebook containing Python code (and explanatory text) that processes a dataset.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide32.png&quot; alt=&quot; SCREENSHOT OF NOTEBOOK  &quot; title=&quot;Slide: 32&quot;&gt;
-&lt;p&gt;This is a screenshot of a Jupyter notebook that can process data from a repository via its API.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide33.png&quot; alt=&quot;  &quot; title=&quot;Slide: 33&quot;&gt;
-&lt;p&gt;This slide shows the Arkisto stack powering the University of Technology Sydney’s Research Data Repository.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide34.png&quot; alt=&quot;  &quot; title=&quot;Slide: 34&quot;&gt;
-&lt;p&gt;This page shows some screenshots of an internal-only application at UTS which gives academic staff access to successful research grant proposals – the data are stored in the same kind of Arkisto standards-based storage stack as we have presented here – with an interface that is tuned for this use case, with some custom access control to make sure that staff are &lt;em&gt;very&lt;/em&gt; aware that these are sensitive and confidential documents.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide35.png&quot; alt=&quot;  &quot; title=&quot;Slide: 35&quot;&gt;
-&lt;p&gt;This is a screenshot of data from a history project &lt;a href=&quot;https://expertnation.org/&quot;&gt;Expert Nation&lt;/a&gt; exported to RO-Crate format and &lt;a href=&quot;https://expertnation.research.uts.edu.au/&quot;&gt;put online to support a book&lt;/a&gt;.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section typeof=&quot;http://purl.org/ontology/bibo/Slide&quot;&gt;
-&lt;img src=&quot;https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/Slide36.png&quot; alt=&quot;  Want to join us? Your project here?  Get in touch… &quot; title=&quot;Slide: 36&quot;&gt;
-&lt;p&gt;In conclusion, we have given a quick tour of a standards-based repository stack (loosely called Arkisto) and illustrated it with current work at the Language Data Commons of Australia and PARADISEC projects, but along the way have tried to emphasise that this is generic, re-usable architecture – and is based on standards. By using an extensible metadata standard with a growing community, and a storage-layer standard forged from an acquired aversion to systems migration we aim to reduce the risk to very important cultural data by working with as many communities as possible on software tools, so that we reduce cost and risk for all of us.&lt;/p&gt;
-&lt;/section&gt;
-&lt;/section&gt;</content>
   </entry>
 </feed>
